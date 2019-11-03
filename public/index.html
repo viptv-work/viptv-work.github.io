@@ -1,17 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title>viptv</title>
+    <meta charset="utf-8" />
+    <meta name="renderer" content="webkit" />
+    <meta name="force-rendering" content="webkit" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no"
+    />
+    <title>VipTV 在线音乐播放器</title>
+    <meta
+      name="keywords"
+      content="VipTV,播放器,在线音乐,在线播放器,音乐播放器,在线音乐播放器,VipTV 在线音乐播放器"
+    />
+    <meta name="description" content="VipTV在线音乐播放器" />
+    <link
+      rel="stylesheet"
+      href="//at.alicdn.com/t/font_1367495_eza6utwbiqn.css"
+    />
+    <style type="text/css">
+      noscript {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 1996520;
+        background: #fff;
+        text-align: center;
+        font-weight: 700;
+        font-size: 34px;
+        line-height: 100px;
+      }
+      #appLoading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1996;
+        width: 100%;
+        height: 100%;
+        font-size: 20px;
+        background: rgba(255, 255, 255, 1);
+      }
+      #appLoading.removeAnimate {
+        animation: removeAnimate 0.3s 0.5s 1 both;
+      }
+      #appLoading .loader {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 5em;
+        height: 5em;
+        transform: translate(-50%, -50%) rotate(165deg);
+      }
+      #appLoading .loader::before,
+      #appLoading .loader::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        display: block;
+        width: 1em;
+        height: 1em;
+        border-radius: 0.5em;
+        transform: translate(-50%, -50%);
+      }
+      #appLoading .loader::before {
+        animation: before 2s infinite;
+      }
+      #appLoading .loader::after {
+        animation: after 2s infinite;
+      }
+      @keyframes before {
+        0% {
+          width: 1em;
+          box-shadow: 2em -1em rgba(225, 20, 98, 0.75),
+            -2em 1em rgba(111, 202, 220, 0.75);
+        }
+        35% {
+          width: 5em;
+          box-shadow: 0 -1em rgba(225, 20, 98, 0.75),
+            0 1em rgba(111, 202, 220, 0.75);
+        }
+        70% {
+          width: 1em;
+          box-shadow: -2em -1em rgba(225, 20, 98, 0.75),
+            2em 1em rgba(111, 202, 220, 0.75);
+        }
+        100% {
+          box-shadow: 2em -1em rgba(225, 20, 98, 0.75),
+            -2em 1em rgba(111, 202, 220, 0.75);
+        }
+      }
+      @keyframes after {
+        0% {
+          height: 1em;
+          box-shadow: 1em 2em rgba(61, 184, 143, 0.75),
+            -1em -2em rgba(233, 169, 32, 0.75);
+        }
+        35% {
+          height: 5em;
+          box-shadow: 1em 0 rgba(61, 184, 143, 0.75),
+            -1em 0 rgba(233, 169, 32, 0.75);
+        }
+        70% {
+          height: 1em;
+          box-shadow: 1em -2em rgba(61, 184, 143, 0.75),
+            -1em 2em rgba(233, 169, 32, 0.75);
+        }
+        100% {
+          box-shadow: 1em 2em rgba(61, 184, 143, 0.75),
+            -1em -2em rgba(233, 169, 32, 0.75);
+        }
+      }
+      @keyframes removeAnimate {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+    </style>
+    <script>
+      ;(function() {
+        if (!!window.ActiveXObject || 'ActiveXObject' in window) {
+          window.location = 'http://music.mtnhao.com/tips.html'
+          return false
+        }
+      })()
+    </script>   
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but viptv doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      VipTV 在线音乐播放器<br />为了更好的体验请开启 script
     </noscript>
-    <div id="app"></div>
+    <div id="appLoading">
+      <div class="loader"></div>
+    </div>
+    <div id="mmPlayer"></div>
     <!-- built files will be auto injected -->
   </body>
 </html>
