@@ -1,0 +1,1678 @@
+[{
+	"name": "CCTV1高清",
+	"pID": "608807420",
+	"assetID": "2201057821",
+	"videoType": "LIVE",
+	"nowPlaying": "人与自然-2019-307",
+	"startTime": "05:27",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2201/057/821/201903121802_1_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2201/057/821/New_hd_C1_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2201/057/821/201903121802_1_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2201/057/821/201903121802_New_hd_C1_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2201/057/821/201903121802_1_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2201/057/821/New_hd_C1_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2201/057/821/201903121802_1_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2201/057/821/201903121802_New_hd_C1_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60880742020191103010",
+		"startTime": "05:27",
+		"endTime": "06:00",
+		"playName": "人与自然-2019-307",
+		"ranking": "10",
+		"sequence": "220105782120191103010",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60880742020191103011",
+		"startTime": "06:00",
+		"endTime": "08:33",
+		"playName": "朝闻天下",
+		"ranking": "11",
+		"sequence": "220105782120191103011",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV2财经高清",
+	"pID": "631780532",
+	"assetID": "5101064231",
+	"videoType": "LIVE",
+	"nowPlaying": "职场健康课",
+	"startTime": "04:59",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/346/945/201901231150_New_hd_C2_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/346/945/New_hd_C2_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/346/945/201901231150_New_hd_C2_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/346/945/201901231150_New_hd_C2_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/346/945/201901231150_New_hd_C2_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/346/945/New_hd_C2_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/346/945/201901231150_New_hd_C2_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/346/945/201901231150_New_hd_C2_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "63178053220191103008",
+		"startTime": "04:59",
+		"endTime": "06:00",
+		"playName": "职场健康课",
+		"ranking": "8",
+		"sequence": "550034694520191103008",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "63178053220191103009",
+		"startTime": "06:00",
+		"endTime": "07:00",
+		"playName": "经济信息联播",
+		"ranking": "9",
+		"sequence": "550034694520191103009",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV3综艺",
+	"pID": "609017193",
+	"assetID": "2200291045",
+	"videoType": "LIVE",
+	"nowPlaying": "艺览天下-2019-29",
+	"startTime": "05:08",
+	"endTime": "05:59",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/291/045/201901231137_New_C3_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/291/045/New_C3_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/291/045/201901231137_New_C3_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/291/045/201901231137_New_C3_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/291/045/201901231137_New_C3_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/291/045/New_C3_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/291/045/201901231137_New_C3_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/291/045/201901231137_New_C3_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60901719320191103011",
+		"startTime": "05:08",
+		"endTime": "05:59",
+		"playName": "艺览天下-2019-29",
+		"ranking": "11",
+		"sequence": "220029104520191103011",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60901719320191103012",
+		"startTime": "05:59",
+		"endTime": "07:17",
+		"playName": "星光大道1",
+		"ranking": "12",
+		"sequence": "220029104520191103012",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV4中文国际高清",
+	"pID": "631780421",
+	"assetID": "5101064235",
+	"videoType": "LIVE",
+	"nowPlaying": "中国文艺-2019-44（周末版）",
+	"startTime": "05:00",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/346/947/201901231151_New_hd_C4_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/346/947/New_hd_C4_tb_sc_TB_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/346/947/201901231151_New_hd_C4_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/346/947/201901231151_New_hd_C4_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/346/947/201901231151_New_hd_C4_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/346/947/New_hd_C4_tb_sc_TB_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/346/947/201901231151_New_hd_C4_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/346/947/201901231151_New_hd_C4_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "63178042120191103010",
+		"startTime": "05:00",
+		"endTime": "06:00",
+		"playName": "中国文艺-2019-44（周末版）",
+		"ranking": "10",
+		"sequence": "550034694720191103010",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "63178042120191103011",
+		"startTime": "06:00",
+		"endTime": "06:30",
+		"playName": "海峡两岸-2019-306",
+		"ranking": "11",
+		"sequence": "550034694720191103011",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV-5体育",
+	"pID": "641886657",
+	"assetID": "5102048704",
+	"videoType": "LIVE",
+	"nowPlaying": "实况录像-2015年巴斯鲈钓8威尔逊湖站",
+	"startTime": "05:30",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/163/201901231138_New_C5_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/163/New_C5_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/163/201901231138_New_C5_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/163/201901231138_New_C5_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/163/201901231138_New_C5_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/163/New_C5_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/163/201901231138_New_C5_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/163/201901231138_New_C5_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "64188665720191103006",
+		"startTime": "05:30",
+		"endTime": "06:00",
+		"playName": "实况录像-2015年巴斯鲈钓8威尔逊湖站",
+		"ranking": "6",
+		"sequence": "550051616320191103006",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "64188665720191103007",
+		"startTime": "06:00",
+		"endTime": "06:30",
+		"playName": "赛事集锦-ATP周刊37",
+		"ranking": "7",
+		"sequence": "550051616320191103007",
+		"status": 1
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV5+体育赛事",
+	"pID": "641886733",
+	"assetID": "5102048819",
+	"videoType": "LIVE",
+	"nowPlaying": "赛事集锦-2018/2019赛季高尔夫欧巡赛精选28—葡萄牙大师赛",
+	"startTime": "05:30",
+	"endTime": "07:30",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/276/201901231143_201901181543146767_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/276/201901181543146767_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/276/201901231143_201901181543146767_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/276/201901231143_201901181542545072_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/276/201901231143_201901181543146767_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/276/201901181543146767_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/276/201901231143_201901181543146767_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/276/201901231143_201901181542545072_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "64188673320191103005",
+		"startTime": "05:30",
+		"endTime": "07:30",
+		"playName": "赛事集锦-2018/2019赛季高尔夫欧巡赛精选28—葡萄牙大师赛",
+		"ranking": "5",
+		"sequence": "550051627620191103005",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "64188673320191103006",
+		"startTime": "07:30",
+		"endTime": "08:00",
+		"playName": "赛事集锦-NHL一周进球集锦4",
+		"ranking": "6",
+		"sequence": "550051627620191103006",
+		"status": 1
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV6电影",
+	"pID": "608919883",
+	"assetID": "2200258579",
+	"videoType": "LIVE",
+	"nowPlaying": "狙击时刻",
+	"startTime": "05:22",
+	"endTime": "06:44",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/258/579/201901231143_New_C6_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/258/579/New_C6_tb_sc_TB_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/258/579/201901231143_New_C6_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/258/579/201901231143_New_C6_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/258/579/201901231143_New_C6_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/258/579/New_C6_tb_sc_TB_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/258/579/201901231143_New_C6_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/258/579/201901231143_New_C6_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60891988320191103006",
+		"startTime": "05:22",
+		"endTime": "06:44",
+		"playName": "狙击时刻",
+		"ranking": "6",
+		"sequence": "220025857920191103006",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60891988320191103007",
+		"startTime": "06:44",
+		"endTime": "08:23",
+		"playName": "八卦拳之蓝凤凰",
+		"ranking": "7",
+		"sequence": "220025857920191103007",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV8电视剧",
+	"pID": "609154254",
+	"assetID": "2200258589",
+	"videoType": "LIVE",
+	"nowPlaying": "苦乐村官18/30",
+	"startTime": "05:06",
+	"endTime": "05:52",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/258/589/201901191642_201901101211106256_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/258/589/201901101211106256_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/258/589/201901191642_201901101211106256_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/258/589/201901191642_201901101211102937_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/258/589/201901191642_201901101211106256_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/258/589/201901101211106256_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/258/589/201901191642_201901101211106256_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/258/589/201901191642_201901101211102937_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60915425420191103010",
+		"startTime": "05:06",
+		"endTime": "05:52",
+		"playName": "苦乐村官18/30",
+		"ranking": "10",
+		"sequence": "220025858920191103010",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60915425420191103011",
+		"startTime": "05:52",
+		"endTime": "06:40",
+		"playName": "苦乐村官19/30",
+		"ranking": "11",
+		"sequence": "220025858920191103011",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV9纪录",
+	"pID": "608920109",
+	"assetID": "2200149080",
+	"videoType": "LIVE",
+	"nowPlaying": "全景自然2019-13",
+	"startTime": "05:46",
+	"endTime": "06:47",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/149/080/201901231151_201901181653265092_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/149/080/201901181653265092_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/149/080/201901231151_201901181653265092_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/149/080/201901231151_201901181651537823_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/149/080/201901231151_201901181653265092_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/149/080/201901181653265092_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/149/080/201901231151_201901181653265092_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/149/080/201901231151_201901181651537823_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60892010920191103008",
+		"startTime": "05:46",
+		"endTime": "06:47",
+		"playName": "全景自然2019-13",
+		"ranking": "8",
+		"sequence": "220014908020191103008",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60892010920191103009",
+		"startTime": "06:47",
+		"endTime": "07:43",
+		"playName": "魅力万象2019-13",
+		"ranking": "9",
+		"sequence": "220014908020191103009",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV10高清",
+	"pID": "624878405",
+	"assetID": "5100001696",
+	"videoType": "LIVE",
+	"nowPlaying": "读书-2019-261",
+	"startTime": "02:06",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/874/201901231152_New_hd_C10_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/874/New_hd_C10_tb_sc_TB_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/874/201901231152_New_hd_C10_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/874/201901231152_New_hd_C10_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/874/201901231152_New_hd_C10_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/874/New_hd_C10_tb_sc_TB_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/874/201901231152_New_hd_C10_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/874/201901231152_New_hd_C10_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "62487840520191103005",
+		"startTime": "02:06",
+		"endTime": "06:00",
+		"playName": "读书-2019-261",
+		"ranking": "5",
+		"sequence": "550021287420191103005",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "62487840520191103006",
+		"startTime": "06:00",
+		"endTime": "06:10",
+		"playName": "读书-2019-261",
+		"ranking": "6",
+		"sequence": "550021287420191103006",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV11戏曲",
+	"pID": "609017121",
+	"assetID": "2202203618",
+	"videoType": "LIVE",
+	"nowPlaying": "中国京剧像音像集萃-2019-8京剧《审头刺汤》（主演张克 赵秀君）",
+	"startTime": "00:27",
+	"endTime": "06:06",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/618/201902051954_New_C11_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/618/New_C11_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/618/201902051954_New_C11_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/618/201902051954_New_C11_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/618/201902051954_New_C11_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/618/New_C11_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/618/201902051954_New_C11_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/618/201902051954_New_C11_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60901712120191103002",
+		"startTime": "00:27",
+		"endTime": "06:06",
+		"playName": "中国京剧像音像集萃-2019-8京剧《审头刺汤》（主演张克 赵秀君）",
+		"ranking": "2",
+		"sequence": "220220361820191103002",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60901712120191103003",
+		"startTime": "06:06",
+		"endTime": "07:16",
+		"playName": "九州大戏台-2019-51好戏连连看 豫剧《五世请缨》选场二",
+		"ranking": "3",
+		"sequence": "220220361820191103003",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV12社会与法",
+	"pID": "609017191",
+	"assetID": "2202208788",
+	"videoType": "LIVE",
+	"nowPlaying": "小区大事-2019-43",
+	"startTime": "01:31",
+	"endTime": "06:03",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/788/201901231152_New_C12_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/788/New_C12_H32_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/788/201901231152_New_C12_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/788/201901231152_New_C12_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/788/201901231152_New_C12_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/788/New_C12_H32_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/788/201901231152_New_C12_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/788/201901231152_New_C12_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60901719120191103004",
+		"startTime": "01:31",
+		"endTime": "06:03",
+		"playName": "小区大事-2019-43",
+		"ranking": "4",
+		"sequence": "220220878820191103004",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60901719120191103005",
+		"startTime": "06:03",
+		"endTime": "06:36",
+		"playName": "法律讲堂-2019-305",
+		"ranking": "5",
+		"sequence": "220220878820191103005",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV13新闻",
+	"pID": "608807423",
+	"assetID": "2202208864",
+	"videoType": "LIVE",
+	"nowPlaying": "新闻调查",
+	"startTime": "05:12",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/864/201901231153_New_C13_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/864/New_C13_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/864/201901231153_New_C13_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/864/201901231153_New_C13_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/864/201901231153_New_C13_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/864/New_C13_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/864/201901231153_New_C13_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/864/201901231153_New_C13_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60880742320191103013",
+		"startTime": "05:12",
+		"endTime": "06:00",
+		"playName": "新闻调查",
+		"ranking": "13",
+		"sequence": "220220886420191103013",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60880742320191103014",
+		"startTime": "06:00",
+		"endTime": "09:00",
+		"playName": "朝闻天下",
+		"ranking": "14",
+		"sequence": "220220886420191103014",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV14少儿高清",
+	"pID": "624878440",
+	"assetID": "5100001697",
+	"videoType": "LIVE",
+	"nowPlaying": "彭德怀元帅8/36",
+	"startTime": "00:28",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/875/201901231153_New_hd_C14_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/875/New_hd_C14_tb_sc_TB_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/875/201901231153_New_hd_C14_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/875/201901231153_New_hd_C14_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/875/201901231153_New_hd_C14_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/875/New_hd_C14_tb_sc_TB_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/875/201901231153_New_hd_C14_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/875/201901231153_New_hd_C14_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "62487844020191103002",
+		"startTime": "00:28",
+		"endTime": "06:00",
+		"playName": "彭德怀元帅8/36",
+		"ranking": "2",
+		"sequence": "550021287520191103002",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "62487844020191103003",
+		"startTime": "06:00",
+		"endTime": "07:00",
+		"playName": "动画大放映（周末早间版）-2019-8",
+		"ranking": "3",
+		"sequence": "550021287520191103003",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV15音乐",
+	"pID": "608807408",
+	"assetID": "2202203578",
+	"videoType": "LIVE",
+	"nowPlaying": "音乐告诉你-2019-215艺术家带你听音乐（215）",
+	"startTime": "02:23",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/578/201901231153_New_C15_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/578/New_C15_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/578/201901231153_New_C15_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/578/201901231153_New_C15_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/578/201901231153_New_C15_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/578/New_C15_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/578/201901231153_New_C15_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/578/201901231153_New_C15_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60880740820191103004",
+		"startTime": "02:23",
+		"endTime": "06:00",
+		"playName": "音乐告诉你-2019-215艺术家带你听音乐（215）",
+		"ranking": "4",
+		"sequence": "220220357820191103004",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60880740820191103005",
+		"startTime": "06:00",
+		"endTime": "06:33",
+		"playName": "中国节拍-2019-20",
+		"ranking": "5",
+		"sequence": "220220357820191103005",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV17农业农村",
+	"pID": "660321844",
+	"assetID": "5102385378",
+	"videoType": "LIVE",
+	"nowPlaying": "田间示范秀",
+	"startTime": "00:39",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/874/263/201908071731_New_C17_h169_sc_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/874/263/201908071731_New_C17_V32_sc_V23_720.webp",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/874/263/201908071731_New_C17_h169_sc_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/874/263/201908071731_New_C17_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/874/263/201908071731_New_C17_h169_sc_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/874/263/201908071731_New_C17_V32_sc_HSJ720V.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/874/263/201908071731_New_C17_h169_sc_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/874/263/201908071731_New_C17_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "66032184420191103002",
+		"startTime": "00:39",
+		"endTime": "06:00",
+		"playName": "田间示范秀",
+		"ranking": "2",
+		"sequence": "550087426320191103002",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "66032184420191103003",
+		"startTime": "06:00",
+		"endTime": "06:49",
+		"playName": "田间示范秀",
+		"ranking": "3",
+		"sequence": "550087426320191103003",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV1综合",
+	"pID": "608807427",
+	"assetID": "2200291011",
+	"videoType": "LIVE",
+	"nowPlaying": "人与自然-2019-307",
+	"startTime": "05:27",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/291/011/201903121840_3bc087997a5643f7c14464f12c8f113_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/291/011/3bc087997a5643f7c14464f12c8f113_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/291/011/201903121840_3bc087997a5643f7c14464f12c8f113_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/291/011/201903121840_New_C1_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/291/011/201903121840_3bc087997a5643f7c14464f12c8f113_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/291/011/3bc087997a5643f7c14464f12c8f113_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/291/011/201903121840_3bc087997a5643f7c14464f12c8f113_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/291/011/201903121840_New_C1_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60880742720191103010",
+		"startTime": "05:27",
+		"endTime": "06:00",
+		"playName": "人与自然-2019-307",
+		"ranking": "10",
+		"sequence": "220029101120191103010",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60880742720191103011",
+		"startTime": "06:00",
+		"endTime": "08:33",
+		"playName": "朝闻天下",
+		"ranking": "11",
+		"sequence": "220029101120191103011",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV2财经",
+	"pID": "635492309",
+	"assetID": "2202204017",
+	"videoType": "LIVE",
+	"nowPlaying": "职场健康课",
+	"startTime": "04:59",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/204/017/201901231150_New_C2_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/204/017/New_C2_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/204/017/201901231150_New_C2_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/204/017/201901231150_New_C2_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/204/017/201901231150_New_C2_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/204/017/New_C2_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/204/017/201901231150_New_C2_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/204/017/201901231150_New_C2_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "63549230920191103008",
+		"startTime": "04:59",
+		"endTime": "06:00",
+		"playName": "职场健康课",
+		"ranking": "8",
+		"sequence": "220220401720191103008",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "63549230920191103009",
+		"startTime": "06:00",
+		"endTime": "07:00",
+		"playName": "经济信息联播",
+		"ranking": "9",
+		"sequence": "220220401720191103009",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV3高清",
+	"pID": "624878271",
+	"assetID": "5100001683",
+	"videoType": "LIVE",
+	"nowPlaying": "艺览天下-2019-29",
+	"startTime": "05:08",
+	"endTime": "05:59",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/864/201901231138_New_hd_C3_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/864/New_hd_C3_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/864/201901231138_New_hd_C3_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/864/201901231138_New_hd_C3_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/864/201901231138_New_hd_C3_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/864/New_hd_C3_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/864/201901231138_New_hd_C3_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/864/201901231138_New_hd_C3_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "62487827120191103011",
+		"startTime": "05:08",
+		"endTime": "05:59",
+		"playName": "艺览天下-2019-29",
+		"ranking": "11",
+		"sequence": "550021286420191103011",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "62487827120191103012",
+		"startTime": "05:59",
+		"endTime": "07:17",
+		"playName": "星光大道1",
+		"ranking": "12",
+		"sequence": "550021286420191103012",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV4中文国际",
+	"pID": "608807424",
+	"assetID": "2202208882",
+	"videoType": "LIVE",
+	"nowPlaying": "中国文艺-2019-44（周末版）",
+	"startTime": "05:00",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/882/201901231150_New_C4_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/882/New_C4_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/882/201901231150_New_C4_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/882/201901231150_New_C4_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/882/201901231150_New_C4_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/882/New_C4_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/882/201901231150_New_C4_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/882/201901231150_New_C4_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60880742420191103010",
+		"startTime": "05:00",
+		"endTime": "06:00",
+		"playName": "中国文艺-2019-44（周末版）",
+		"ranking": "10",
+		"sequence": "220220888220191103010",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60880742420191103011",
+		"startTime": "06:00",
+		"endTime": "06:30",
+		"playName": "海峡两岸-2019-306",
+		"ranking": "11",
+		"sequence": "220220888220191103011",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV-5体育高清",
+	"pID": "641886683",
+	"assetID": "5102048712",
+	"videoType": "LIVE",
+	"nowPlaying": "实况录像-2015年巴斯鲈钓8威尔逊湖站",
+	"startTime": "05:30",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/171/201901231142_New_hd_C5_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/171/New_hd_C5_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/171/201901231142_New_hd_C5_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/171/201901231142_New_hd_C5_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/171/201901231142_New_hd_C5_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/171/New_hd_C5_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/171/201901231142_New_hd_C5_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/171/201901231142_New_hd_C5_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "64188668320191103006",
+		"startTime": "05:30",
+		"endTime": "06:00",
+		"playName": "实况录像-2015年巴斯鲈钓8威尔逊湖站",
+		"ranking": "6",
+		"sequence": "550051617120191103006",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "64188668320191103007",
+		"startTime": "06:00",
+		"endTime": "06:30",
+		"playName": "赛事集锦-ATP周刊37",
+		"ranking": "7",
+		"sequence": "550051617120191103007",
+		"status": 1
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV5+体育赛事高清",
+	"pID": "641886773",
+	"assetID": "5102048803",
+	"videoType": "LIVE",
+	"nowPlaying": "赛事集锦-2018/2019赛季高尔夫欧巡赛精选28—葡萄牙大师赛",
+	"startTime": "05:30",
+	"endTime": "07:30",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/288/201901231143_201901181551599175_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/288/201901181551599175_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/288/201901231143_201901181551599175_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/288/201901231143_201901181551278302_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/288/201901231143_201901181551599175_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/288/201901181551599175_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/288/201901231143_201901181551599175_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/516/288/201901231143_201901181551278302_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "64188677320191103005",
+		"startTime": "05:30",
+		"endTime": "07:30",
+		"playName": "赛事集锦-2018/2019赛季高尔夫欧巡赛精选28—葡萄牙大师赛",
+		"ranking": "5",
+		"sequence": "550051628820191103005",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "64188677320191103006",
+		"startTime": "07:30",
+		"endTime": "08:00",
+		"playName": "赛事集锦-NHL一周进球集锦4",
+		"ranking": "6",
+		"sequence": "550051628820191103006",
+		"status": 1
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV6高清",
+	"pID": "624878396",
+	"assetID": "5100001694",
+	"videoType": "LIVE",
+	"nowPlaying": "狙击时刻",
+	"startTime": "05:22",
+	"endTime": "06:44",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/872/201901231143_New_hd_C6_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/872/New_hd_C6_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/872/201901231143_New_hd_C6_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/872/201901231143_New_hd_C6_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/872/201901231143_New_hd_C6_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/872/New_hd_C6_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/872/201901231143_New_hd_C6_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/872/201901231143_New_hd_C6_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "62487839620191103006",
+		"startTime": "05:22",
+		"endTime": "06:44",
+		"playName": "狙击时刻",
+		"ranking": "6",
+		"sequence": "550021287220191103006",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "62487839620191103007",
+		"startTime": "06:44",
+		"endTime": "08:23",
+		"playName": "八卦拳之蓝凤凰",
+		"ranking": "7",
+		"sequence": "550021287220191103007",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV8高清",
+	"pID": "624878356",
+	"assetID": "5100001695",
+	"videoType": "LIVE",
+	"nowPlaying": "苦乐村官18/30",
+	"startTime": "05:06",
+	"endTime": "05:52",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/868/201901231144_New_hd_C8_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/868/New_hd_C8_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/868/201901231144_New_hd_C8_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/868/201901231144_New_hd_C8_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/868/201901231144_New_hd_C8_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/868/New_hd_C8_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/868/201901231144_New_hd_C8_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/5500/212/868/201901231144_New_hd_C8_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "62487835620191103010",
+		"startTime": "05:06",
+		"endTime": "05:52",
+		"playName": "苦乐村官18/30",
+		"ranking": "10",
+		"sequence": "550021286820191103010",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "62487835620191103011",
+		"startTime": "05:52",
+		"endTime": "06:40",
+		"playName": "苦乐村官19/30",
+		"ranking": "11",
+		"sequence": "550021286820191103011",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV9Documentary",
+	"pID": "609006487",
+	"assetID": "2200179356",
+	"videoType": "LIVE",
+	"nowPlaying": "特别呈现",
+	"startTime": "05:00",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/356/201901231151_New_C9_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/356/New_C9_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/356/201901231151_New_C9_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/356/201901231151_New_C9_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/356/201901231151_New_C9_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/356/New_C9_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/356/201901231151_New_C9_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/356/201901231151_New_C9_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60900648720191103009",
+		"startTime": "05:00",
+		"endTime": "06:00",
+		"playName": "特别呈现",
+		"ranking": "9",
+		"sequence": "220017935620191103009",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60900648720191103010",
+		"startTime": "06:00",
+		"endTime": "06:30",
+		"playName": "发现之路",
+		"ranking": "10",
+		"sequence": "220017935620191103010",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV10科教",
+	"pID": "608880731",
+	"assetID": "2202203740",
+	"videoType": "LIVE",
+	"nowPlaying": "读书-2019-261",
+	"startTime": "02:06",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/740/201901231159_New_C10_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/740/New_C10_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/740/201901231159_New_C10_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/740/201901231159_New_C10_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/740/201901231159_New_C10_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/740/New_C10_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/740/201901231159_New_C10_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/203/740/201901231159_New_C10_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60888073120191103005",
+		"startTime": "02:06",
+		"endTime": "06:00",
+		"playName": "读书-2019-261",
+		"ranking": "5",
+		"sequence": "220220374020191103005",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60888073120191103006",
+		"startTime": "06:00",
+		"endTime": "06:10",
+		"playName": "读书-2019-261",
+		"ranking": "6",
+		"sequence": "220220374020191103006",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTVNEWS",
+	"pID": "609017205",
+	"assetID": "2202196407",
+	"videoType": "LIVE",
+	"nowPlaying": "亚洲观察",
+	"startTime": "05:30",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/196/407/201901231153_New_news_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/196/407/New_news_tb_sc_TB_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/196/407/201901231153_New_news_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/196/407/201901231153_New_news_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/196/407/201901231153_New_news_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/196/407/New_news_tb_sc_TB_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/196/407/201901231153_New_news_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/196/407/201901231153_New_news_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60901720520191103012",
+		"startTime": "05:30",
+		"endTime": "06:00",
+		"playName": "亚洲观察",
+		"ranking": "12",
+		"sequence": "220219640720191103012",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60901720520191103013",
+		"startTime": "06:00",
+		"endTime": "07:00",
+		"playName": "全景",
+		"ranking": "13",
+		"sequence": "220219640720191103013",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV14少儿",
+	"pID": "609017204",
+	"assetID": "2202208850",
+	"videoType": "LIVE",
+	"nowPlaying": "彭德怀元帅8/36",
+	"startTime": "00:28",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/850/201901231153_New_C14_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/850/New_C14_tb_sc_TB_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/850/201901231153_New_C14_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/850/201901231153_New_C14_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/850/201901231153_New_C14_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/850/New_C14_tb_sc_TB_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/850/201901231153_New_C14_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/208/850/201901231153_New_C14_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60901720420191103002",
+		"startTime": "00:28",
+		"endTime": "06:00",
+		"playName": "彭德怀元帅8/36",
+		"ranking": "2",
+		"sequence": "220220885020191103002",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60901720420191103003",
+		"startTime": "06:00",
+		"endTime": "07:00",
+		"playName": "动画大放映（周末早间版）-2019-8",
+		"ranking": "3",
+		"sequence": "220220885020191103003",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV阿拉伯语",
+	"pID": "609154345",
+	"assetID": "2200179303",
+	"videoType": "LIVE",
+	"nowPlaying": "电视剧",
+	"startTime": "04:30",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/303/201911011727_New_AL_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/303/New_AL_tb_sc_TB_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/303/201911011727_New_AL_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/303/201911011727_New_AL_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/303/201911011727_New_AL_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/303/New_AL_tb_sc_TB_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/303/201911011727_New_AL_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/303/201911011727_New_AL_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60915434520191103008",
+		"startTime": "04:30",
+		"endTime": "06:00",
+		"playName": "电视剧",
+		"ranking": "8",
+		"sequence": "220017930320191103008",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60915434520191103009",
+		"startTime": "06:00",
+		"endTime": "06:45",
+		"playName": "纪录片",
+		"ranking": "9",
+		"sequence": "220017930320191103009",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV西班牙语",
+	"pID": "609006450",
+	"assetID": "2200179337",
+	"videoType": "LIVE",
+	"nowPlaying": "神州行",
+	"startTime": "05:30",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/337/201901231154_New_XB_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/337/New_XB_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/337/201901231154_New_XB_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/337/201901231154_New_XB_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/337/201901231154_New_XB_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/337/New_XB_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/337/201901231154_New_XB_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/337/201901231154_New_XB_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60900645020191103014",
+		"startTime": "05:30",
+		"endTime": "06:00",
+		"playName": "神州行",
+		"ranking": "14",
+		"sequence": "220017933720191103014",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60900645020191103015",
+		"startTime": "06:00",
+		"endTime": "06:30",
+		"playName": "纪录片",
+		"ranking": "15",
+		"sequence": "220017933720191103015",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV法语",
+	"pID": "609006476",
+	"assetID": "2200179324",
+	"videoType": "LIVE",
+	"nowPlaying": "对话",
+	"startTime": "05:30",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/324/201911011727_New_FY_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/324/New_FY_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/324/201911011727_New_FY_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/324/201911011727_New_FY_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/324/201911011727_New_FY_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/324/New_FY_H34_sc_V34_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/324/201911011727_New_FY_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/324/201911011727_New_FY_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60900647620191103014",
+		"startTime": "05:30",
+		"endTime": "06:00",
+		"playName": "对话",
+		"ranking": "14",
+		"sequence": "220017932420191103014",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60900647620191103015",
+		"startTime": "06:00",
+		"endTime": "06:30",
+		"playName": "综合新闻",
+		"ranking": "15",
+		"sequence": "220017932420191103015",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV俄语",
+	"pID": "609006446",
+	"assetID": "2200179332",
+	"videoType": "LIVE",
+	"nowPlaying": "中国厨艺",
+	"startTime": "05:45",
+	"endTime": "06:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/332/201911011727_New_EY_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/332/New_EY_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/332/201911011727_New_EY_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/332/201911011727_New_EY_H34_sc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/332/201911011727_New_EY_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/332/New_EY_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/332/201911011727_New_EY_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/179/332/201911011727_New_EY_H34_sc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60900644620191103012",
+		"startTime": "05:45",
+		"endTime": "06:00",
+		"playName": "中国厨艺",
+		"ranking": "12",
+		"sequence": "220017933220191103012",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60900644620191103013",
+		"startTime": "06:00",
+		"endTime": "06:45",
+		"playName": "综合新闻",
+		"ranking": "13",
+		"sequence": "220017933220191103013",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV第一剧场",
+	"pID": "606886720",
+	"assetID": "2200019158",
+	"videoType": "LIVE",
+	"nowPlaying": "我的仨妈俩爸--13/46",
+	"startTime": "01:38",
+	"endTime": "07:03",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/158/201901231146_New_DY_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/158/201901231146_699004_dyjc_V23_720.webp",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/158/201901231146_New_DY_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/158/201901231146_699004_dyjc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/158/201901231146_New_DY_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/158/201901231146_699004_dyjc_HSJ720V.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/158/201901231146_New_DY_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/158/201901231146_699004_dyjc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60688672020191103003",
+		"startTime": "01:38",
+		"endTime": "07:03",
+		"playName": "我的仨妈俩爸--13/46",
+		"ranking": "3",
+		"sequence": "220001915820191103003",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60688672020191103004",
+		"startTime": "07:03",
+		"endTime": "07:49",
+		"playName": "我的仨妈俩爸--12/46",
+		"ranking": "4",
+		"sequence": "220001915820191103004",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV电视指南",
+	"pID": "606889139",
+	"assetID": "2200018679",
+	"videoType": "LIVE",
+	"nowPlaying": "四季味道-175",
+	"startTime": "05:10",
+	"endTime": "06:02",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/018/679/201901231146_New_TV_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/018/679/201901231146_699004_dszn_V23_720.webp",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/018/679/201901231146_New_TV_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/018/679/201901231146_699004_dszn_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/018/679/201901231146_New_TV_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/018/679/201901231146_699004_dszn_HSJ720V.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/018/679/201901231146_New_TV_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/018/679/201901231146_699004_dszn_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60688913920191103021",
+		"startTime": "05:10",
+		"endTime": "06:02",
+		"playName": "四季味道-175",
+		"ranking": "21",
+		"sequence": "220001867920191103021",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60688913920191103022",
+		"startTime": "06:02",
+		"endTime": "06:18",
+		"playName": "我喜欢我推荐-米小圈2019-5",
+		"ranking": "22",
+		"sequence": "220001867920191103022",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV风云剧场",
+	"pID": "606891659",
+	"assetID": "2200019164",
+	"videoType": "LIVE",
+	"nowPlaying": "风云剧场-警犬莱克斯（意大利）（2019）12",
+	"startTime": "23:45",
+	"endTime": "07:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/164/201901231146_201901181205459812_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/164/201901231146_699004_c2_V23_720.webp",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/164/201901231146_201901181205459812_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/164/201901231146_699004_c2_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/164/201901231146_201901181205459812_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/164/201901231146_699004_c2_HSJ720V.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/164/201901231146_201901181205459812_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/164/201901231146_699004_c2_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60689165920191103001",
+		"startTime": "23:45",
+		"endTime": "07:00",
+		"playName": "风云剧场-警犬莱克斯（意大利）（2019）12",
+		"ranking": "1",
+		"sequence": "220001916420191103001",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60689165920191103002",
+		"startTime": "07:00",
+		"endTime": "07:46",
+		"playName": "陪读妈妈--22/46",
+		"ranking": "2",
+		"sequence": "220001916420191103002",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV央视音乐",
+	"pID": "606891660",
+	"assetID": "2200019225",
+	"videoType": "LIVE",
+	"nowPlaying": "地中海风尚",
+	"startTime": "00:39",
+	"endTime": "07:02",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/225/201901231144_New_Music_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/225/201901231144_699004_ysyy_V23_720.webp",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/225/201901231144_New_Music_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/225/201901231144_699004_ysyy_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/225/201901231144_New_Music_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/225/201901231144_699004_ysyy_HSJ720V.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/225/201901231144_New_Music_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/225/201901231144_699004_ysyy_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60689166020191103002",
+		"startTime": "00:39",
+		"endTime": "07:02",
+		"playName": "地中海风尚",
+		"ranking": "2",
+		"sequence": "220001922520191103002",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60689166020191103003",
+		"startTime": "07:02",
+		"endTime": "08:18",
+		"playName": "民歌·中国-超级乐队（3）",
+		"ranking": "3",
+		"sequence": "220001922520191103003",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV风云足球",
+	"pID": "627036451",
+	"assetID": "2202124618",
+	"videoType": "LIVE",
+	"nowPlaying": "国际足球赛场-19-20赛季意甲联赛第9轮 罗马—AC米兰",
+	"startTime": "05:25",
+	"endTime": "06:50",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/618/201901101346_fengyun_h_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/618/201901101346_699004_zq_V23_720.webp",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/618/201901101346_fengyun_h_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/618/201901101346_699004_zq_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/618/201901101346_fengyun_h_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/618/201901101346_699004_zq_HSJ720V.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/618/201901101346_fengyun_h_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/618/201901101346_699004_zq_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "62703645120191103005",
+		"startTime": "05:25",
+		"endTime": "06:50",
+		"playName": "国际足球赛场-19-20赛季意甲联赛第9轮 罗马—AC米兰",
+		"ranking": "5",
+		"sequence": "220212461820191103005",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "62703645120191103006",
+		"startTime": "06:50",
+		"endTime": "08:10",
+		"playName": "国际足球赛场-19-20赛季意甲联赛第9轮 佛罗伦萨—拉齐奥",
+		"ranking": "6",
+		"sequence": "220212461820191103006",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV兵器科技",
+	"pID": "618955013",
+	"assetID": "2200019526",
+	"videoType": "LIVE",
+	"nowPlaying": "影视背景",
+	"startTime": "22:56",
+	"endTime": "08:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/526/201908010939_New_BQ_h169_sc__H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/526/201908010939_New_BQ_V23_720.webp",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/526/201908010939_New_BQ_h169_sc__H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/526/201908010939_New_BQ_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/526/201908010939_New_BQ_h169_sc__H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/526/201908010939_New_BQ_HSJ720V.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/526/201908010939_New_BQ_h169_sc__H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/526/201908010939_New_BQ_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "61895501320191103001",
+		"startTime": "22:56",
+		"endTime": "08:00",
+		"playName": "影视背景",
+		"ranking": "1",
+		"sequence": "220001952620191103001",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "61895501320191103002",
+		"startTime": "08:00",
+		"endTime": "10:01",
+		"playName": "影视背景",
+		"ranking": "2",
+		"sequence": "220001952620191103002",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV怀旧剧场",
+	"pID": "606891661",
+	"assetID": "2200019453",
+	"videoType": "LIVE",
+	"nowPlaying": "金粉世家6/40",
+	"startTime": "01:01",
+	"endTime": "08:03",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/453/201901231145_New_HJ_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/453/201901231145_699004_hjjc_V23_720.webp",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/453/201901231145_New_HJ_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/453/201901231145_699004_hjjc_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/453/201901231145_New_HJ_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/453/201901231145_699004_hjjc_HSJ720V.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/453/201901231145_New_HJ_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/453/201901231145_699004_hjjc_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60689166120191103003",
+		"startTime": "01:01",
+		"endTime": "08:03",
+		"playName": "金粉世家6/40",
+		"ranking": "3",
+		"sequence": "220001945320191103003",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60689166120191103004",
+		"startTime": "08:03",
+		"endTime": "09:38",
+		"playName": "经典重温-海外电影 一个人的遭遇（2019）",
+		"ranking": "4",
+		"sequence": "220001945320191103004",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV世界地理",
+	"pID": "606891675",
+	"assetID": "2200018840",
+	"videoType": "LIVE",
+	"nowPlaying": "世界地理",
+	"startTime": "00:59",
+	"endTime": "07:00",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/018/840/201901231145_shijie_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/018/840/201901231145_699004_sjdl_V23_720.webp",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/018/840/201901231145_shijie_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/018/840/201901231145_699004_sjdl_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/018/840/201901231145_shijie_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/018/840/201901231145_699004_sjdl_HSJ720V.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/018/840/201901231145_shijie_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/018/840/201901231145_699004_sjdl_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60689167520191103003",
+		"startTime": "00:59",
+		"endTime": "07:00",
+		"playName": "世界地理",
+		"ranking": "3",
+		"sequence": "220001884020191103003",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60689167520191103004",
+		"startTime": "07:00",
+		"endTime": "07:01",
+		"playName": "世界地理频道宣传片-1",
+		"ranking": "4",
+		"sequence": "220001884020191103004",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV央视文化精品",
+	"pID": "606891677",
+	"assetID": "2200019507",
+	"videoType": "LIVE",
+	"nowPlaying": "回家吃饭",
+	"startTime": "01:31",
+	"endTime": "08:02",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/507/201901231144_New_JP_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/507/New_JP_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/507/201901231144_New_JP_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/507/201901231144_699004_jpwh_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/507/201901231144_New_JP_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/507/New_JP_H169_sc.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/507/201901231144_New_JP_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2200/019/507/201901231144_699004_jpwh_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "60689167720191103004",
+		"startTime": "01:31",
+		"endTime": "08:02",
+		"playName": "回家吃饭",
+		"ranking": "4",
+		"sequence": "220001950720191103004",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "60689167720191103005",
+		"startTime": "08:02",
+		"endTime": "08:45",
+		"playName": "健康之路",
+		"ranking": "5",
+		"sequence": "220001950720191103005",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV央视台球",
+	"pID": "627036452",
+	"assetID": "2202124653",
+	"videoType": "LIVE",
+	"nowPlaying": "实况录像-2017年斯诺克中国公开赛 决赛",
+	"startTime": "05:20",
+	"endTime": "06:40",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/653/201901231144_New_Tq_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/653/201901231144_699004_tq_V23_720.webp",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/653/201901231144_New_Tq_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/653/201901231144_699004_tq_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/653/201901231144_New_Tq_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/653/201901231144_699004_tq_HSJ720V.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/653/201901231144_New_Tq_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/653/201901231144_699004_tq_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "62703645220191103006",
+		"startTime": "05:20",
+		"endTime": "06:40",
+		"playName": "实况录像-2017年斯诺克中国公开赛 决赛",
+		"ranking": "6",
+		"sequence": "220212465320191103006",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "62703645220191103007",
+		"startTime": "06:40",
+		"endTime": "08:23",
+		"playName": "实况录像-2016/2017赛季斯诺克大师赛第一轮 丁俊晖-威尔逊",
+		"ranking": "7",
+		"sequence": "220212465320191103007",
+		"status": 0
+	},
+	"hdFlag": "0"
+}, {
+	"name": "CCTV高尔夫网球",
+	"pID": "627036453",
+	"assetID": "2202124640",
+	"videoType": "LIVE",
+	"nowPlaying": "赛事集锦-2018-555-2018/2019赛季高尔夫欧巡赛精选2--登喜路锦标赛",
+	"startTime": "05:25",
+	"endTime": "07:20",
+	"pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/640/201901231145_New_WQ_H169_720.webp",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/640/201901231145_699004_gef_V23_720.webp",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/640/201901231145_New_WQ_H169_1080.webp",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/640/201901231145_699004_gef_V34_1080.webp"
+	},
+	"h5pics": {
+		"lowResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/640/201901231145_New_WQ_H169_720.jpg",
+		"lowResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/640/201901231145_699004_gef_HSJ720V.jpg",
+		"highResolutionH": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/640/201901231145_New_WQ_H169_1080.jpg",
+		"highResolutionV": "http://wapx.cmvideo.cn:8080/publish/poms/image/2202/124/640/201901231145_699004_gef_HSJ1080V.jpg"
+	},
+	"now": {
+		"playbillId": "62703645320191103006",
+		"startTime": "05:25",
+		"endTime": "07:20",
+		"playName": "赛事集锦-2018-555-2018/2019赛季高尔夫欧巡赛精选2--登喜路锦标赛",
+		"ranking": "6",
+		"sequence": "220212464020191103006",
+		"status": 0
+	},
+	"next": {
+		"playbillId": "62703645320191103007",
+		"startTime": "07:20",
+		"endTime": "09:05",
+		"playName": "实况录像-2019年美国网球公开赛 男单决赛",
+		"ranking": "7",
+		"sequence": "220212464020191103007",
+		"status": 0
+	},
+	"hdFlag": "0"
+}]
