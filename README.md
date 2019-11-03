@@ -14,13 +14,12 @@
 
 ## HBuilderX
 *<https://www.dcloud.io/docs/HBuilder.json/>
-##HBuilder.9.1.29.windows
-* <https://download.dcloud.net.cn/HBuilder.9.1.29.windows.zip>
-##HBuilderX.2.3.7.20191024
-* <https://download.dcloud.net.cn/HBuilderX.2.3.7.20191024.zip>
-##HBuilderX.2.3.7.20191024.full
-* <https://download.dcloud.net.cn/HBuilderX.2.3.7.20191024.full.zip>
 
+* <https://download.dcloud.net.cn/HBuilder.9.1.29.windows.zip>
+
+* <https://download.dcloud.net.cn/HBuilderX.2.3.7.20191024.zip>
+
+* <https://download.dcloud.net.cn/HBuilderX.2.3.7.20191024.full.zip>
 
 
 
