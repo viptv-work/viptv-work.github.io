@@ -1,9 +1,9 @@
 {
   "name": "vuea-music",
-  "version": "2019.10.22",
+  "version": "2019.11",
   "private": true,
-  "description": "Online music player",
-  "author": "maomao1996 <1714487678@qq.com>",
+  "description": "用VUE 开发音乐程序",
+  "author": "Vuea <2236639958@qq.com>",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
