@@ -13,7 +13,8 @@
 * <https://npm.taobao.org/mirrors/node/latest-v13.x/>
 
 ## HBuilderX
-*<https://www.dcloud.io/docs/HBuilder.json/>
+
+* <https://www.dcloud.io/docs/HBuilder.json/>
 
 * <https://download.dcloud.net.cn/HBuilder.9.1.29.windows.zip>
 
