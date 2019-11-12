@@ -1,5 +1,8 @@
-title: 程序员工具国内镜像
-description: vue框架的开发.
+title: VUE开发工作室
+subtitle:vue-music,vue-tv,vue-api
+description: 程序员工具,VUE插件开发,VUE组件开发
+author: qq2236639958
 show_downloads: true
 google_analytics:
 theme: jekyll-theme-time-machine
+root: / # 网站根目录
