@@ -1,6 +1,6 @@
-# 程序员工具
+# 程序员工具全量镜像国内下载中心
 
->全量镜像国内下载中心
+
 
 ##  为什么要有它
 
@@ -27,7 +27,7 @@
 
 ## HBuilderX
 
-> <https://www.dcloud.io/docs/HBuilder.json/>
+> <https://www.dcloud.io/docs/HBuilder.json>
 
 > <https://download.dcloud.net.cn/HBuilder.9.1.29.windows.zip>
 
