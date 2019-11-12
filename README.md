@@ -1,4 +1,16 @@
-# 国内镜像 下载中心
+---
+layout: default
+---
+
+Text can be **bold**, _italic_, or ~~strikethrough~~.
+
+[Link to another page](./another-page.html).
+
+There should be whitespace between paragraphs.
+
+There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+
+# 程序员工具国内下载中心
 
 ## 阿里云 Composer 全量镜像
 * <https://developer.aliyun.com/composer>
@@ -14,13 +26,13 @@
 
 ## HBuilderX
 
-* <https://www.dcloud.io/docs/HBuilder.json/>
+> <https://www.dcloud.io/docs/HBuilder.json/>
 
-* <https://download.dcloud.net.cn/HBuilder.9.1.29.windows.zip>
+> <https://download.dcloud.net.cn/HBuilder.9.1.29.windows.zip>
 
-* <https://download.dcloud.net.cn/HBuilderX.2.3.7.20191024.zip>
+> <https://download.dcloud.net.cn/HBuilderX.2.3.7.20191024.zip>
 
-* <https://download.dcloud.net.cn/HBuilderX.2.3.7.20191024.full.zip>
+> <https://download.dcloud.net.cn/HBuilderX.2.3.7.20191024.full.zip>
 
 
 
