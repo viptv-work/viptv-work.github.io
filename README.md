@@ -1,16 +1,17 @@
----
-layout: default
----
+# 程序员工具
 
-Text can be **bold**, _italic_, or ~~strikethrough~~.
+>全量镜像国内下载中心
 
-[Link to another page](./another-page.html).
+##  为什么要有它
 
-There should be whitespace between paragraphs.
+好多国外工具在国内下载很慢，这里存储了大量国内镜像工具下载站点
 
-There should be whitespace between paragraphs. We recommend including a README, or a file with information about your project.
+## 淘宝 NPM 镜像
 
-# 程序员工具国内下载中心
+~
+ $ npm install -g cnpm --registry=https://registry.npm.taobao.org
+ $ cnpm install [name]
+~
 
 ## 阿里云 Composer 全量镜像
 * <https://developer.aliyun.com/composer>
@@ -33,7 +34,6 @@ There should be whitespace between paragraphs. We recommend including a README, 
 > <https://download.dcloud.net.cn/HBuilderX.2.3.7.20191024.zip>
 
 > <https://download.dcloud.net.cn/HBuilderX.2.3.7.20191024.full.zip>
-
 
 
 
