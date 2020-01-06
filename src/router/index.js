@@ -1,72 +1,94 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-Vue.use(Router)
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
 
-const routes = [
-  {
+const routes = [{
     path: '/',
-    redirect: '/music'
-  },
-  {
-    path: '/music',
-    component: () => import('pages/music'),
-    redirect: '/music/playlist',
-    children: [
-      {
-        path: '/music/playlist', // 正在播放列表
-        component: () => import('pages/playList/playList'),
-        meta: {
-          keepAlive: true
-        }
+    redirect: '/home',
+    component: () => import('@/views/Main'),
+    children: [{
+        path: '/home',
+        name: 'home',
+        component: () => import('@/views/Home')
       },
       {
-        path: '/music/userlist', // 我的歌单
-        component: () => import('pages/userList/userList'),
-        meta: {
-          title: '我的歌单',
-          keepAlive: true
-        }
+          path: '/about',
+          name: 'about',
+          component: () => import('@/views/About')
+        },
+      {
+        path: '/live',
+        redirect: '/live/home',
+        component: () => import('@/views/live/Main'),
+        children: [{
+            path: '/live/home',
+            name: 'live_home',
+            component: () => import('@/views/live/Home')
+          },
+          {
+            path: '/live/list/:id',
+            name: 'live_list',
+            component: () => import('@/views/live/List')
+          },
+          {
+            path: '/live/play/:id',
+            name: 'live_play',
+            component: () => import('@/views/live/Play')
+          },
+        ]
       },
       {
-        path: '/music/toplist', // 排行榜列表
-        component: () => import('pages/topList/topList'),
-        meta: {
-          title: '排行榜',
-          keepAlive: true
-        }
+        path: '/video',
+        redirect: '/video/home',
+        component: () => import('@/views/video/Main'),
+        children: [{
+            path: '/video/home',
+            name: 'video_home',
+            component: () => import('@/views/video/Home')
+          },
+          {
+            path: '/video/list/:id',
+            name: 'video_list',
+            component: () => import('@/views/video/List')
+          },
+          {
+            path: '/video/play/:id',
+            name: 'video_play',
+            component: () => import('@/views/video/Play')
+          },
+        ]
       },
       {
-        path: '/music/details/:id', // 音乐详情列表
-        component: () => import('pages/details/details')
+        path: '/music',
+        redirect: '/music/home',
+        component: () => import('@/views/music/Main'),
+        children: [{
+            path: '/music/home',
+            name: 'music_home',
+            component: () => import('@/views/music/Home')
+          },
+          {
+            path: '/music/list/:id',
+            name: 'music_list',
+            component: () => import('@/views/music/List')
+          },
+          {
+            path: '/music/play/:id',
+            name: 'music_play',
+            component: () => import('@/views/music/Play')
+          },
+        ]
       },
-      {
-        path: '/music/historylist', // 我听过的列表
-        component: () => import('pages/historyList/historyList'),
-        meta: {
-          title: '我听过的'
-        }
-      },
-      {
-        path: '/music/search', // 搜索
-        component: () => import('pages/search/search'),
-        meta: {
-          title: '搜索',
-          keepAlive: true
-        }
-      },
-      {
-        path: '/music/comment/:id', // 音乐评论
-        component: () => import('pages/comment/comment'),
-        meta: {
-          title: '评论详情'
-        }
-      }
+
     ]
-  }
+  },
+
 ]
 
-export default new Router({
-  linkActiveClass: 'active',
-  linkExactActiveClass: 'active',
+const router = new VueRouter({
+  mode: 'hash',
+  base: process.env.BASE_URL,
   routes
 })
+
+export default router
