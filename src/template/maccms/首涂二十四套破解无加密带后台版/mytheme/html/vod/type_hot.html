@@ -1,0 +1,15 @@
+{if $mytheme.type_hot.is}
+<div class="myui-panel myui-panel-bg clearfix" style="padding: 15px 0;">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_bd col-pd">	
+			<div class="flickity{if condition="$mytheme.type_hot.switch eq dots" } dots{/if} active clearfix" data-align="left" data-{$mytheme.type_hot.switch}="1"{if $mytheme.type_hot.play} data-play="{$mytheme.type_hot.play_time}"{/if}>
+				{maccms:vod num="'.$mytheme['type_hot']['num'].'" type="current" order="desc" by="'.$mytheme['type_hot']['by'].'"}
+				<div class="col-lg-{$mytheme.type_hot.col} col-md-{$mytheme.col.md} col-sm-{$mytheme.col.sm} col-xs-{$mytheme.type_hot.xs}">
+					{include file="block/vod_box_slide"}											
+				</div>
+				{/maccms:vod}
+			</div>	
+    	</div>
+   </div>
+</div>
+{/if}

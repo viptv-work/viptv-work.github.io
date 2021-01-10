@@ -1,0 +1,13 @@
+<?php 
+	$incPath = dirname(APP_PATH); 
+	$incPath .= ''.$maccms[path_tpl].'admin/data/mydata.php'; 
+	require_once($incPath); 
+	$my = parse_ini_file(substr($maccms['path_tpl'], strlen($maccms['path'])).'info.ini');
+	if(!isset($mytheme)){
+		$mytheme = g();
+	}
+	if($mytheme[site][close]){
+		echo ($mytheme[site][close_tips]);
+		exit;
+	}
+?>

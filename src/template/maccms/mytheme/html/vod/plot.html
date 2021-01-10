@@ -1,0 +1,60 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}vod/plot.html-->{/if}
+<!doctype html>
+<html>
+<head>
+    {include file="seo/plot"}  
+    {include file="public/include"}
+</head>
+<body>
+{include file="public/head"}
+<div class="container">
+	<div class="row">
+		<div class="col-md-wide-7 col-xs-1 padding-0">
+			{include file="vod/detail_data2"}<!-- 详细信息-->
+			<div class="myui-panel myui-panel-bg clearfix">
+				<div class="myui-panel-box clearfix">
+					<div class="myui-panel_hd">
+						<div class="myui-panel__head bottom-line active clearfix">
+							{if $mytheme.playlist.sort}<a class="more sort-button pull-right" href="javascript:;"><i class="fa fa-sort-amount-asc"></i> 排序</a>{/if}
+							<h3 class="title">
+								分集剧情
+							</h3>	
+						</div>																		
+					</div>
+					<div class="myui-panel_bd clearfix">
+						<ul class="myui-content__list sort-list clearfix">
+							{volist name="$obj['vod_plot_list']" id="vo"}
+							<li class="col-lg-7 col-md-6 col-sm-4 col-xs-2"><a class="btn{if condition="$key eq 1"} btn-warm{else} btn-default{/if}" href="{:mac_url_plot_detail($obj,['page'=>$key])}">{$vo.name}</a></li>
+							 {/volist}
+						</ul>
+					</div>
+					<div class="myui-panel_bd col-pd clearfix">
+						<div class="myui-article__content mt20">
+							<p>{$obj.vod_name}{$obj['vod_plot_list'][$param['page']]['name']}分集剧情</p>
+							{$obj['vod_plot_list'][$param['page']]['detail']}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-wide-3 col-xs-1 myui-sidebar">
+			{include file="vod/hot"}<!-- 热播-->
+			{if $mytheme.detail.ad && $mytheme.detail.ad8}
+			<div class="myui-panel myui-panel-bg clearfix">
+				<div class="myui-panel-box clearfix">
+					<div class="myui-panel_bd">
+						<div class="col-xs-1">
+							{$mytheme.detail.ad8}
+						</div>
+					</div>
+				</div>				
+			</div>
+			{/if}
+		</div>
+	</div>
+</div>
+
+{include file="public/foot"}
+</body>
+</html>

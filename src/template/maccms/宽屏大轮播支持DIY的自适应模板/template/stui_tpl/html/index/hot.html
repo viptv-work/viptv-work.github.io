@@ -1,0 +1,38 @@
+<div class="stui-pannel stui-pannel-bg clearfix">	
+	<div class="stui-pannel-box clearfix">	
+		<div class="stui-pannel_hd">
+			<div class="stui-pannel__head active bottom-line clearfix">
+				<h3 class="title">
+					<img src="{$maccms.path}statics/icon/icon_12.png"/>
+					热播推荐
+				</h3>
+				<ul class="nav nav-text pull-right">
+					{maccms:type ids="parent" num="10" order="asc" by="sort" id="vo2" key="key2" flag="vod"}
+                    <li>{if condition="$key gt 0"}<span class="split-line"></span>{/if} <a href="{:mac_url_type($vo2,[],'show')}" class="text-muted">{$vo2.type_name}</a></li>
+                    {/maccms:type}
+				</ul>
+			</div>																		
+		</div>
+		<div class="stui-pannel_bd clearfix">
+			<ul class="stui-vodlist clearfix">
+				{maccms:vod num="15" type="all" order="desc" by="hits"}
+				<li class="{if condition="$key eq 1"}col-lg-3{else /}col-lg-6{/if} col-md-4 col-sm-3 col-xs-2{if condition="$key gt 8"} hidden-md hidden-xs{/if}">
+					<div class="stui-vodlist__box stui-vodlist__bg">
+						<a class="stui-vodlist__thumb active lazyload" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" data-original="{:mac_url_img($vo.vod_pic)}">						
+							<span class="play hidden-xs"></span>		
+							<span class="pic-text text-right">{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}</span>
+						</a>									
+						<div class="stui-vodlist__detail active">
+							<h4 class="title text-overflow"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">{$vo.vod_name}</a></h4>
+							{if condition="$key eq 1"}
+								<p class="text text-overflow visible-lg"><span class="text-muted">主演：</span>{$vo.vod_actor|mac_default='内详'}</p>
+								<p class="text text-overflow visible-lg"><span class="text-muted">导演：</span>{$vo.vod_director}</p>
+							{/if}
+						</div>		
+					</div>									
+				</li>
+				{/maccms:vod}
+			</ul>																							
+		</div>		
+	</div>
+</div>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果" />
+<meta name="description" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果" />
+		{include file="block/include"}
+</head>
+<body>
+		{include file="block/head"}
+	<div class="wrap">
+	    <div class="container min">
+	        <div class="row">
+	        	
+			   	<div class="myui-panel myui-panel-bg clearfix">
+					<div class="myui-panel-box clearfix">
+						<div class="myui-panel_hd">
+							<div class="myui-panel__head active bottom-line clearfix">	
+								<h3 class="title">
+									与 <span class="text-red">“{$param.wd}”</span> 相关的明星搜索结果
+								</h3>
+							</div>
+						</div>
+						
+						<div class="myui-panel_bd col-pd clearfix">
+							<ul class="myui-vodlist__media clearfix" id="searchList">			
+									{maccms:actor num="10" paging="yes" type="current" order="desc" by="time"}
+								<li class="active  clearfix">
+									<div class="thumb">									
+										<a class="myui-vodlist__thumb img-lg-150 img-xs-100 lazyload" href="{:mac_url_actor_detail($vo)}" title="{$vo.actor_name}" data-original="{:mac_url_img($vo.actor_pic)}">
+											<span class="play hidden-xs"></span>
+												<span class="pic-tag pic-tag-top" style="background-color: #282727;">{$vo.actor_remarks|mac_default='未知'}</span>
+									<span class="pic-text text-right"> {$obj.actor_birtharea}</span>
+										</a>																												
+									</div>
+									<div class="detail">
+								    	<h4 class="title"><a href="{:mac_url_actor_detail($vo)}">{$vo.actor_name}</a></h4>
+								    	<p>
+									<span class="text-muted hidden-xs">地区：</span>{$vo.actor_area}<span class="split-line"></span>
+									<span class="text-muted hidden-xs">英文名：</span>{$vo.actor_en}</p>		
+									<span class="text-muted">星座：</span>{$vo.actor_starsign}</p>
+										<p><span class="text-muted">代表作：</span>{$vo.actor_works}</p>
+										<p class="hidden-xs"><span class="text-muted">简介：</span>{$vo.actor_content|mac_filter_html|mac_substring=200}...<a href="{$vo|mac_url_actor_detail}#list2">详情 ></a></p>
+										<p class="margin-0">
+											<a class="btn btn-sm btn-warm" href="{$vo|mac_url_actor_detail}"><i class="fa fa-play"></i>更多资料</a>
+
+										</p>												    	    																									
+									</div>
+								</li>
+								{/maccms:actor}
+							</ul>
+						</div>
+				</div>				
+				</div>	          
+				
+				<!-- 翻页 -->
+	        </div>
+	    </div>
+    </div>
+    <script type="text/javascript">var wdkey= /{$param.wd}/g;var wd=$('#searchList');wd[0].innerHTML=wd[0].innerHTML.replace(wdkey, "<font color=red>{$param.wd}</font>");</script>
+	{include file="block/foot"}
+</body>
+</html>

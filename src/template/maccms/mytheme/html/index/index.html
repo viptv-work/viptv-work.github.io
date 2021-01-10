@@ -1,0 +1,65 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}index/index.html-->{/if}
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/index"}   
+	{include file="public/include"}
+</head>
+	<body{if $mytheme.home_slide.is} class="active"{/if}>
+		{if $mytheme.home_slide.is}<div class="myui-topbg clearfix"></div>{/if}	
+		{include file="public/head"}
+		{include file="index/top"}<!-- 推荐 -->
+	    <div class="container">
+	        <div class="row"> 
+			
+				{if $mytheme.nav.tag}
+				<div class="myui-panel myui-panel-bg clearfix visible-xs">
+					<div class="myui-panel-box clearfix">
+						<ul class="col-pd">
+							{maccms:type ids="'.$mytheme['nav']['tag_id'].'" order="asc" by="sort" id="vo1" key="key1"}
+							<li class="col-xs-3"><a class="btn btn-block btn-default" href="{:mac_url_type($vo1)}">{$vo1.type_name}</a></li>
+							{/maccms:type}
+						</ul>
+					</div>
+				</div>
+				{/if}
+	        	
+	        	{include file="index/hot"}<!-- 推荐 -->	              	
+
+	        	{include file="index/list"}<!-- 列表 -->
+	        	
+	        	{include file="index/video"}<!-- 视频 -->
+				
+	        	{include file="index/topic"}<!-- 专题 -->       	
+	        	
+	        	{include file="index/rank"}<!-- 排行 -->
+	        	
+	        	{include file="index/actor"}<!-- 演员 -->
+	        	
+	        	{include file="index/art"}<!-- 资讯 -->
+	        	
+	        	{include file="index/logo"}<!-- 合作 -->
+	        	
+	        	{include file="index/link"}<!-- 友链 -->
+	        	
+	        </div>
+	    </div>
+		
+	    {if $mytheme.home_slide.is} <script type="text/javascript">Myui.Other.Topbg($("#index-hot").outerHeight()+110);</script>{/if}
+		
+		{include file="public/foot"}
+		
+		<?php
+			$path = 'application/data/config/quickmenu.txt';
+			$info = ''.$my[name].','.$maccms[path_tpl].'admin/index.php'; 
+			if (stristr(file_get_contents($path), $info)){
+				return true;
+			}
+			elseif (file_put_contents($path, chr(13) . chr(10) . $info, FILE_APPEND)){
+				echo('<script>layer.msg("后台菜单添加成功");</script>');
+			}
+		?>
+		
+	</body>
+</html>

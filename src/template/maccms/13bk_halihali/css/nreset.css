@@ -1,0 +1,52 @@
+﻿body,dd,div,dl,dt,em,h1,h2,h3,h4,h5,h6,html,li,ol,p,small,span,strong,ul {
+	margin: 0;
+	padding: 0;
+	font-size: 100%
+}
+
+em,i,strong {
+	font-style: normal
+}
+
+h1,h2,h3,h4,h5,h6 {
+	font-weight: 400
+}
+
+body {
+	line-height: 1;
+	font-size: 12px;
+	font-family: "Microsoft Yahei";
+	color: #333;
+	background-color: #fff
+}
+
+ol,ul {
+	list-style: none
+}
+
+a {
+	/*display: block;*/
+	color: #333;
+	text-decoration: none
+}
+li a {
+	display: block;
+	color: #333;
+	text-decoration: none
+}
+a:hover {
+	color: #00a1d6
+}
+
+button,input {
+	padding: 0;
+	border: none;
+	outline: 0;
+	background: 0 0
+}
+
+img {
+	vertical-align: top;
+	border: 0;
+	max-width: 100%
+}

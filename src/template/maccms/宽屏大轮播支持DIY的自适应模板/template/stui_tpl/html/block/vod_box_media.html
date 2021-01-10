@@ -1,0 +1,10 @@
+<li {if condition="$key gt 1"}class="top-line-dot"{/if}>
+	<div class="thumb">
+		<a class="m-thumb stui-vodlist__thumb lazyload" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" data-original="{:mac_url_img($vo.vod_pic)}"></a>
+	</div>
+	<div class="detail detail-side">
+		<h4 class="title"><a href="{:mac_url_vod_detail($vo)}"><i class="icon iconfont icon-more text-muted pull-right"></i> {$vo.vod_name|mac_substring=8}</a></h4>
+		<p class="font-12"><span class="text-muted">类型：</span>{$vo.vod_class}，<span class="text-muted"><span class="text-muted">地区：</span>{$vo.vod_area}</p>		
+		<p class="font-12 margin-0"><span class="text-muted">主演：</span>{$vo.vod_actor|mac_substring=10}</p>
+	</div>																										
+</li>

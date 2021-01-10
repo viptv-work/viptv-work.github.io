@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0,user-scalable=no" />
+	<meta name="renderer" content="webkit" />
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+	<meta charset="utf-8" />
+	<title>正在播放
+		<?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_name');?>
+	</title>
+	<meta name="keywords" content="<?php echo $web_keywords;?>" />
+	<meta name="description" content="<?php echo $web_description;?>" />
+	<link rel="stylesheet" href="<?php echo '/template/'.$web_moban;?>/css/index.css" />
+</head>
+
+<body>
+	<?php  include('./template/'.$web_moban.'/header.html');?>
+	<div class="wrap mt20">
+
+		<div class="box pic_text" style="height:400px">
+			<div class="title">
+				<div style="color:#ffffff; background-color:#008b8b">
+					<h3>本直播为真实国外直播，由咪兔直播提供战略合作服务接口！</b></h3>
+				</div>
+			</div>
+			<div class="video-warp" style="height: 364px;">
+				<video id='myVideo' class="video-js"></video>
+			</div>
+			
+
+
+			<link rel="stylesheet" type="text/css" href="/static/VideoJS/video.min.css?v=3">
+			<script type="text/javascript" src="/static/VideoJS/video.min.js?v=1" charset="utf-8"> </script>
+			<script type="text/javascript" src="/static/VideoJS/video-conrtib-ads.js?v=1" charset="utf-8"> </script>
+			<script type="text/javascript" src="/static/VideoJS/myVideo.js?v=6" charset="utf-8"> </script>
+			<script type="text/javascript">
+				var vPath = '<?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_playurl');?>';
+				var logo = '';
+				var myVideo = initVideo({
+					id: 'myVideo',
+					url: vPath,
+					ad: {
+						pre: {
+							url: '',
+							link: '',
+						},
+					},
+					logo: {
+						url: '/template/800CMSPC/images/logo.png',
+						width: '100px'
+					},
+				});
+			</script>
+
+			<?php	Jccms_json_ad_video('<a href="链接" target="_blank"><img style="width:100%;height:100px;margin-bottom:2px;" src="图片"></a>');?>
+
+		</div>
+
+	</div>
+
+	<div class="wrap mt20">
+		<div class="box movie2_list">
+			<div class="title">
+				<div style="color:#ffffff; background-color:#008b8b">
+					<h3>&nbsp;&nbsp;&nbsp;<b>视频推荐</b></h3>
+				</div>
+			</div>
+
+			<ul>
+				<?php 	include('./lib/datatop.php');$pagesize = 9; $JCCMS_pagecount = floor(count($JCCMS_SQL) / $pagesize)-1;$JCCMS_prev = $JCCMS_pages -1;$JCCMS_next = $JCCMS_pages +1;
+				$JCCMS_SQL=JCCMS_chulis(JCCMS_SQLL($JCCMS_SQL,'0','JCCMS_SQL_type'));for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+
+				<li><a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html" target="_blank"><img src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>" />
+						<h3>
+							<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?>
+						</h3>
+						<div align="center"><span class="movie_date">
+								<!--[if lt IE 9 ]><span class="bg_top"><![endif]-->
+								<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_time');?>
+								<!--[if lt IE 9 ]></span></div><span class="bg_tail"></span><![endif]--></span>
+					</a></li>
+
+				<?php		 }?>
+
+
+
+			</ul>
+		</div>
+	</div>
+
+
+
+
+	<?php  include('./template/'.$web_moban.'/footer.html');?>
+</body>
+
+</html>

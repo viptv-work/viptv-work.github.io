@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+<title>正在播放 <?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_name');?></title>
+<meta name="keywords" content="<?php echo $web_keywords;?>" />
+<meta name="description" content="<?php echo $web_description;?>" />
+<link href="<?php echo '/template/'.$web_moban;?>/font/iconfont.css" rel="stylesheet">
+<link href="<?php echo '/template/'.$web_moban;?>/css/uikit.min.css" rel="stylesheet">
+<link href="<?php echo '/template/'.$web_moban;?>/css/style.css" rel="stylesheet">
+<link href="<?php echo '/template/'.$web_moban;?>/css/common.css" rel="stylesheet">
+<script src="<?php echo '/template/'.$web_moban;?>/js/jquery.js"></script>
+<script src="<?php echo '/template/'.$web_moban;?>/js/uikit.min.js"></script>
+<script src="<?php echo '/template/'.$web_moban;?>/js/home.js"></script>
+
+</head>
+<body>
+<?php  include('./template/'.$web_moban.'/header.html');?>
+<div class='page-with-sidebar' id='page-container'>
+<div class='content'>
+<h1 class='page-header'><i class='fa fa-pagelines'></i><?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_name');?><div class='page-header-menu'></div></h1>
+<div class="row" style="position: relative">
+<div class="m-l-15 m-r-15 alert alert-warning alert-dismissible" role="alert" style="height:400px">
+<video id='myVideo'   class="video-js"></video>                  
+<link rel="stylesheet" type="text/css" href="/static/VideoJS/video.min.css?v=3">
+<script type="text/javascript" src="/static/VideoJS/video.min.js?v=1" charset="utf-8" > </script>
+	<script type="text/javascript" src="/static/VideoJS/video-conrtib-ads.js?v=1" charset="utf-8" > </script>
+	<script type="text/javascript" src="/static/VideoJS/myVideo.js?v=6" charset="utf-8" > </script>
+	<script type="text/javascript">
+	var vPath = '<?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_playurl');?>';
+	var logo = '';
+	var myVideo=initVideo({
+		id:'myVideo',
+		url:vPath,
+		ad:{
+		  pre:{
+			  url:'',
+			  link:'',
+		  },
+		},
+		logo:{
+			url:'/template/800CMSPC/images/logo.png',
+			width:'100px'
+		},
+	});
+</script> 
+
+
+
+</div>
+
+
+</div>
+<?php	Jccms_json_ad_video('<a href="链接" target="_blank"><img style="width:100%;height:100px;margin-bottom:2px;" src="图片"></a>');?>
+
+
+
+
+
+
+
+
+
+
+
+<h1 class='page-header'><i class='fa fa-pagelines'></i>视频推荐<div class='page-header-menu'></div></h1>
+<div class='row' style='position: relative'>
+<?php 	include('./lib/datatop.php');$pagesize = 8; $JCCMS_pagecount = floor(count($JCCMS_SQL) / $pagesize)-1;$JCCMS_prev = $JCCMS_pages -1;$JCCMS_next = $JCCMS_pages +1;
+$JCCMS_SQL=JCCMS_chulis(JCCMS_SQLL($JCCMS_SQL,'0','JCCMS_SQL_type'));for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+	<a class='col-md-3 item-video-container'  href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html">
+	<div class='item-video'>
+	<img src='<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>'>
+	<div class='title'><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></div>
+	</div>
+	</a>
+	<?php } ?>
+</div>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+<?php  include('./template/'.$web_moban.'/footer.html');?>
+</body>
+</html>

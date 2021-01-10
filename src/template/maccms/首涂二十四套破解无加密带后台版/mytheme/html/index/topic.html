@@ -1,0 +1,19 @@
+{if $mytheme.home_topic.is}
+<div class="text-center mb10 clearfix">
+	<a class="more text-muted" href="{:mac_url_topic_index()}">—— {$mytheme.home_topic.title} ——</a>
+</div>
+<ul class="myui-vodlist clearfix">
+	{maccms:topic num="'.$mytheme['home_topic']['num'].'" order="desc" by="'.$mytheme['home_topic']['by'].'" ids="'.$mytheme['home_topic']['id'].'"  id="vo" key="key1"}
+	<li class="col-lg-{$mytheme.home_topic.col}  col-md-{$mytheme.col.md_wide} col-sm-{$mytheme.col.sm_wide} col-xs-{$mytheme.col.xs_wide}{if condition="$key1 gt $mytheme.home_topic.xs"} hidden-xs{/if}{if condition="$key1 gt $mytheme.home_topic.sm"} hidden-sm{/if}">
+		<div class="myui-vodlist__box myui-panel_bg">
+			<a class="myui-vodlist__thumb wide lazyload" href="{:mac_url_topic_detail($vo)}" title="{$vo.topic_name}" data-original="{:mac_url_img($vo.topic_pic)}">						
+				<span class="play hidden-xs"></span>								
+			</a>
+			<div class="myui-vodlist__detail">
+				<h4 class="title text-center text-overflow"><a href="{:mac_url_topic_detail($vo)}" title="{$vo.topic_name}">{$vo.topic_name}</a></h4>
+			</div>												
+		</div>												
+	</li>
+	{/maccms:topic}
+</ul>		
+{/if}

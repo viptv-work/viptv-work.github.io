@@ -1,0 +1,112 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}vod/play.html-->{/if}
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/vod_play"}   
+	{include file="public/include"}
+</head>
+<body>
+
+	{include file="public/head"}
+
+	<div class="myui-player clearfix">
+		<div class="container">
+        	<div class="row">		
+				<div class="myui-player__item clearfix" style="background-color: {$mytheme.player.sidebar_bg};">
+					<div class="{if $mytheme.player.side}col-md-wide-75 {/if} padding-0 relative clearfix" id="player-left">
+						{include file="block/vod_player"}
+						{if $mytheme.player.side}
+						<a class="is-btn hidden-sm hidden-xs" id="player-sidebar-is" href="javascript:;"><i class="fa fa-angle-right"></i></a>
+						{/if}
+					</div>
+					{if $mytheme.player.side}
+					<div class="col-md-wide-25 padding-0" id="player-sidebar">
+						{include file="vod/player_sidebar"}
+					</div>
+					{/if}
+				</div>					
+			</div>
+			{if $mytheme.playpage.ad && $mytheme.playpage.ad1}
+			<div class="myui-panel myui-panel-bg clearfix">
+				<div class="myui-panel-box clearfix">
+					<div class="myui-panel_bd">
+						<div class="col-xs-1">
+							{$mytheme.playpage.ad1}
+						</div>
+					</div>
+				</div>				
+			</div>
+			{/if}
+		</div>
+	</div>
+	
+    <div class="container">
+        <div class="row">
+			<div class="{if $mytheme.playpage.side}col-md-wide-7 {/if}col-xs-1 padding-0">		
+				
+				{if condition="$mytheme.playpage.playlist"}
+				
+				{include file="vod/play_list"}<!-- 播放地址-->
+				
+				{/if}
+				
+				{include file="vod/desc"}<!-- 剧情简介-->
+				
+				{include file="vod/like"}<!-- 猜你喜欢-->
+
+				{include file="vod/look"}<!-- 大家在看-->
+				
+				{if $mytheme.playpage.comment}
+				{include file="vod/comment"}<!-- 评论-->
+				{/if}
+				
+			</div>
+			{if $mytheme.playpage.side}
+			<div class="col-md-wide-3 col-xs-1 myui-sidebar {$mytheme.playpage.side_self}">	
+			
+				{include file="vod/hot"}<!-- 热播-->
+				
+				{include file="block/art_hot"}<!-- 热播-->
+				
+				{if $mytheme.detail.ad && $mytheme.detail.ad4}
+				<div class="myui-panel myui-panel-bg clearfix">
+					<div class="myui-panel-box clearfix">
+						<div class="myui-panel_bd">
+							<div class="col-xs-1">
+								{$mytheme.detail.ad4}
+							</div>
+						</div>
+					</div>				
+				</div>
+				{/if}
+			</div>
+			{/if}
+        </div>
+    </div>
+    
+    {if $mytheme.player.self}
+    <script type="text/javascript">
+    	$(".MacPlayer").addClass("embed-responsive").css({"padding-bottom":"{$mytheme.player.high}%","z-index":"99"});
+		$("#playleft,.dplayer-video-wrap").css({"position":"inherit","overflow":"initial"});
+    </script>
+    {/if}
+	
+	{if $mytheme.player.tips}
+	<script type="text/javascript">
+		MyTheme.Other.Roll('.tips','-30px');
+		$(".tips-close-btn").on("click",function(){
+			$(this).parents(".close-box").remove();
+			MyTheme.Other.Player();
+			Myui.Other.Topbg($("#player-left").outerHeight()+50);
+		});
+	</script>
+	{/if}
+
+	<span class="mac_hits hits hide" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}{$obj.art_id}{$obj.topic_id}" data-type="hits"></span>
+	<span class="mac_ulog_set hide" data-type="4" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+	<span class="vod_history hide" data-name="{$obj.vod_name|mac_substring=10}" data-link="{:mac_url_vod_play($obj,['sid'=>$param['sid'],'nid'=>$param['nid']])}"  data-pic="{$obj.vod_pic|mac_url_img}" data-part="{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}" data-limit="{$mytheme.history.num}"></span>
+    
+	{include file="public/foot"}
+</body>
+</html>

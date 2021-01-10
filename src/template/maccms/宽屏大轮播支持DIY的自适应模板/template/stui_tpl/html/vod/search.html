@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/vod_search"}   
+	{include file="block/include"}
+</head>
+<body>
+	{include file="block/head"}
+    <div class="container">
+        <div class="row">
+        	<div class="col-lg-wide-75 col-xs-1 padding-0">	
+			   	<div class="stui-pannel stui-pannel-bg clearfix">
+					<div class="stui-pannel-box">
+						<div class="stui-pannel_hd">
+							<div class="stui-pannel__head active bottom-line clearfix">	
+								<h3 class="title">
+									<img src="{$maccms.path}statics/icon/icon_27.png"/>
+									{$param.wd}
+								</h3>
+							</div>																		
+						</div>
+						<div class="stui-pannel_bd clearfix">
+							<ul class="stui-vodlist__media col-pd clearfix">
+								<!-- 列表 -->
+								{maccms:vod num="10" paging="yes" pageurl="vod/search" order="desc" by="time"}		
+								<li class="active {if condition="$key gt 1"}top-line-dot{/if} clearfix">
+									<div class="thumb">									
+										<a class="v-thumb stui-vodlist__thumb lazyload" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" data-original="{:mac_url_img($vo.vod_pic)}">
+											<span class="play hidden-xs"></span>
+											<span class="pic-text text-right">{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}</span>
+										</a>																												
+									</div>
+									<div class="detail">
+										<h3 class="title"><a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a></h3>
+										<p><span class="text-muted">导演：</span>{$vo.vod_director}</p>
+										<p><span class="text-muted">主演：</span>{$vo.vod_actor|mac_substring=18}</p>
+										<p><span class="text-muted">类型：</span>{$vo.vod_class}<span class="split-line"></span><span class="text-muted">地区：</span>{$vo.vod_area}<span class="hidden-xs"><span class="split-line"></span><span class="text-muted">年份：</span>{$vo.vod_year}</span></p>		
+										<p class="margin-0 hidden-sm hidden-xs"><span class="text-muted">简介：</span>{$vo.vod_content|mac_filter_html|mac_substring=80}</p>												    	    																									
+									</div>
+								</li>							
+								{/maccms:vod}
+								<!-- end 列表 -->
+							</ul>					
+						</div>
+					</div>				
+				</div>	            
+				{include file="block/page"}<!-- 翻页 -->
+			</div>
+			<div class="col-lg-wide-25 stui-pannel-side hidden-md hidden-sm hidden-xs">	
+				<!-- 热播 -->
+				{maccms:type num="10" order="asc" by="sort" ids="1,2"}
+				<div class="stui-pannel stui-pannel-bg clearfix">						
+					<div class="stui-pannel-box">
+						<div class="stui-pannel_hd">
+							<div class="stui-pannel__head active bottom-line clearfix">
+								<h3 class="title">
+									<img src="{$maccms.path}statics/icon/icon_{$vo.type_id}.png"/>
+									{$vo.type_name}热播榜
+								</h3>																
+							</div>
+						</div>
+						<div class="stui-pannel_bd clearfix">
+							<ul class="stui-vodlist__media active col-pd clearfix">
+								{maccms:vod num="1" paging="no" type="'.$vo['type_id'].'" order="desc" by="hits"}
+								{include file="block/vod_box_media"}
+								{/maccms:vod}
+							</ul>
+							<ul class="stui-vodlist__text active col-pd clearfix">
+								{maccms:vod num="10" paging="no" type="'.$vo['type_id'].'" order="desc" by="hits"}
+								{include file="block/vod_box_rank"}
+								{/maccms:vod}
+							</ul>
+						</div>
+					</div>						
+				</div>	
+				{/maccms:type}
+				<!-- end 热播 -->
+			</div>
+        </div>
+    </div>
+	{include file="block/foot"}
+</body>
+</html>

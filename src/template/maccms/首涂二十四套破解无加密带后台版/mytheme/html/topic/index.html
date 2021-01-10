@@ -1,0 +1,40 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}topic/index.html-->{/if}
+<!DOCTYPE html>
+<html>
+	<head>
+		{include file="seo/topic_index"}   
+		{include file="public/include"}
+	</head>
+	<body>
+		{include file="public/head"}
+		<div class="container">
+			<div class="row">
+				<div class="myui-panel myui-panel-bg clearfix">
+					<div class="myui-panel-box clearfix">
+						<div class="myui-panel_bd">
+							<ul class="myui-vodlist clearfix">								
+								{maccms:topic num="'.$mytheme['topic']['num'].'" paging="yes" order="desc" by="time"}
+								<li class="col-lg-{$mytheme.topic.col} col-md-{$mytheme.col.md_wide} col-sm-{$mytheme.col.sm_wide} col-xs-{$mytheme.col.xs_wide}">
+									<div class="myui-vodlist__box">
+										<a class="myui-vodlist__thumb wide lazyload" href="{:mac_url_topic_detail($vo)}" title="{$vo.topic_name}" data-original="{:mac_url_img($vo.topic_pic)}">						
+											<span class="play hidden-xs"></span>							
+										</a>
+										<div class="myui-vodlist__detail">
+											<h4 class="title text-center text-overflow"><a href="{:mac_url_topic_detail($vo)}" title="{$vo.topic_name}">{$vo.topic_name}</a></h4>
+											<p class="text text-center text-overflow text-muted hidden-xs">—— {$vo.topic_rel_vod|explode=',',###|count}个影片 ——</p>
+										</div>										
+									</div>									
+								</li>
+								{/maccms:topic}
+							</ul>
+						</div>
+					</div>					
+				</div>
+				
+				{include file="public/page"}
+			</div>
+		</div>
+		{include file="public/foot"}
+	</body>
+</html>

@@ -1,0 +1,90 @@
+<div class="head_box">
+    <div class="header">
+      <meta name="referrer" content="never">
+	<div class="head_a">
+		<div class="head_logo">
+			<a class="logo" href="{$maccms.path}"></a>
+		</div>
+		<div class="head_menu_a hidden_xs hidden_mi">
+	        <ul class="top_nav clearfix">
+              					<li {if condition="$maccms.aid eq 1"}class="active"{/if}><a href="{$maccms.path}">首页</a></li>
+		        {maccms:type num="7" order="asc" by="sort" ids="parent"}
+                <li {if condition="($vo.type_id eq $GLOBALS['type_id'] || $vo.type_id eq $GLOBALS['type_pid'])" }class="active"{/if}><a href="{:mac_url_type($vo)}">{$vo.type_name}</a>
+                </li>
+                {/maccms:type}
+            </ul>
+		</div>
+		<div class="head_user">
+		    <ul>
+                <li class="top_ico"> 
+                    <a href="javascript:;" class="history" title="观看历史"><i class="iconfont">&#xe624;</i></a>
+                </li>
+                <li class="top_ico">
+                    <a href="{:mac_url('label/rank')}" title="排行榜"><i class="iconfont">&#xe618;</i></a>
+                </li>
+                <li class="top_ico">
+                    <a href="{:mac_url('gbook/index')}" title="留言反馈"><i class="iconfont">&#xe632;</i></a>
+                </li>
+                <li class="top_ico">
+                    <a class="top_ico btn_wxgzh" href="javascript:void(0)" title="公众号"><i class="iconfont">&#xe614;</i></a>
+                </li>
+           		{if condition="$GLOBALS['config']['user']['status'] eq 1"}
+                <li class="top_ico hidden_xs">
+					{if condition="$user.group.group_id eq 1"}
+					<a class="mac_user" href="javascript:;" title="用户登录"><i class="iconfont">&#xe62b;</i></a>
+					{else/}
+					<a class="face_pic" href="javascript:;"><img class="face" src="{$user.user_portrait|mac_default='static/images/touxiang.png'|mac_url_img}" alt="会员头像"></a>
+					<div class="dropbox user">
+					    <div class="user_list_box">
+					    <div class="user_list">
+						<a class="mac_user_n" href="javascript:;">{$user.user_name}</a>
+						<a class="mac_user_g" href="javascript:;">{if condition="$user.group_id lt 3"}{$user.group.group_name}{else}<i class="iconfont user_vip">&#xe638;</i>{$user.group.group_name}{/if}</a>
+						<a href="{:mac_url('user/index')}" target="_blank"><i class="iconfont">&#xe62b;</i>个人中心</a>
+						<a href="{:mac_url('user/favs')}" target="_blank"><i class="iconfont">&#xe629;</i>我的收藏</a>
+						<a href="{:mac_url('user/logout')}"><i class="iconfont">&#xe646;</i>退出账号</a>
+						</div>
+						</div>
+					</div>
+					{/if}
+                </li>
+                <li class="top_ico hidden_mb">
+                   	{if condition="$user.group.group_id eq 1"}
+					<a class="mac_user" href="javascript:;" title="用户登录"><i class="iconfont">&#xe62b;</i></a>
+					{else/}
+					<a class="face_pic" href="{:mac_url('user/index')}"><img class="face" src="{$user.user_portrait|mac_default='static/images/touxiang.png'|mac_url_img}" alt="会员头像"></a>
+					{/if}
+                </li>
+                {/if}
+            </ul>
+		</div>
+	</div>
+	</div>
+	<div class="header" id="topnav">
+		<div class="head_b">
+		    <a class="bk_btn fl" href="javascript:MAC.GoBack()" title="返回"><i class="iconfont">&#xe625;</i></a>
+		    <a class="se_btn fr open-share" href="javascript:void(0)" title="分享"><i class="iconfont">&#xe615;</i></a>
+		    {if condition="$GLOBALS['config']['comment']['status'] eq 1"}
+		    <a class="se_btn pl_btn fr" href="#pinglun" title="评论"><i class="iconfont">&#xe632;</i></a>
+		    {/if}
+			<div class="head_menu_b">
+			<a class="menu" href="javascript:void(0)" title="全部分类"><i class="iconfont menu_ico">&#xe640;</i><span class="hidden_xs">&nbsp;全部分类</span></a>
+				{include file="block/all_menu"}
+			</div>
+			<div class="head_search">
+				<form id="search" name="search" method="get" action="{:mac_url('vod/search')}" onsubmit="return qrsearch();">
+					<i class="iconfont">&#xe633;</i>
+					<input id="txt" type="text" name="wd" class="mac_wd form_control" value="{$param.wd}" placeholder="{$maccms.search_placeholder|mac_default='输入搜索关键字'}">
+					<button class="submit" id="searchbutton" type="submit" name="submit">搜索</button>
+				</form>
+			</div>
+			<div class="head_hot_search hidden_xs">
+				<ul class="pops_list">
+					<li><span class="hot_search_tit"><i class="iconfont">&#xe631;</i>&nbsp;热门搜索</span></li>
+					{maccms:foreach name=":explode(',',$maccms.search_hot)"}{if condition="$key lt 5"}
+					<li><a href="{:mac_url('vod/search',['wd'=>$vo])}"><span class="hot_name">{$vo}</span></a></li>{/if}
+					{/maccms:foreach}
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

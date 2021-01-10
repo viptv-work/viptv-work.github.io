@@ -1,0 +1,65 @@
+{include file="public/data"}
+<!DOCTYPE html>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>会员中心 - {$mytheme.site.title}</title>
+	<meta name="keywords" content="{$mytheme.site.keywords}"/>
+	<meta name="description" content="{$mytheme.site.description}"/>
+	{include file="public/include"}
+	{include file="user/include" /}
+</head>
+<body>
+{include file="public/head" /}
+<div class="container min">
+    <div class="row"> 
+		{include file="user/head" /}					
+		<div class="myui-panel myui-panel-bg clearfix">
+			<div class="myui-panel-box clearfix">
+				<div class="myui-panel_bd clearfix">
+					<div class="myui-panel_hd">
+						<div class="myui-panel__head active bottom-line clearfix">
+							<h3 class="title">
+								我的资料
+							</h3>
+							<ul class="nav nav-tabs">
+								<li><a href="{:url('user/index')}">基本资料</a></li>
+								<li><a href="{:url('user/info')}">修改信息</a></li>
+								<li class="active"><a href="{:url('user/popedom')}">我的权限</a></li>
+							</ul>
+						</div>																		
+					</div>
+					<div class="myui-pannel_bd clearfix">
+						<ul class="myui-vodlist__text to-color col-pd text-center clearfix">
+							<li class="striped-head clearfix">
+								<span class="col-xs-wide-25">类目</span>
+								<span class="col-xs-wide-15">列表页</span>
+								<span class="col-xs-wide-15">内容页</span>
+								<span class="col-xs-wide-15">播放页</span>
+								<span class="col-xs-wide-15">下载页</span>
+								<span class="col-xs-wide-15">试看</span>
+							</li>
+							{volist name="type_tree" id="vo"}
+							<li class="clearfix">										
+								<span class="col-xs-wide-25">{$vo.type_name}</span>
+								{foreach name="$vo.popedom" id="v2"}
+								<span class="col-xs-wide-15">{if condition="$v2 eq 1"}<i class="fa fa-check"></i>{else}<i class="fa fa-close"></i>{/if}</span>
+								{/foreach}																									
+							</li>
+							{volist name="vo.child" id="child"}
+							<li class="clearfix">										
+								<span class="col-xs-wide-25">{$child.type_name}</span>
+								{foreach name="$child.popedom" id="v2"}
+								<span class="col-xs-wide-15">{if condition="$v2 eq 1"}<i class="fa fa-check"></i>{else}<i class="fa fa-colse"></i>{/if}</span>
+								{/foreach}																									
+							</li>
+							{/volist}
+		  					{/volist}
+						</ul>							
+					</div>		
+				</div>
+			</div>
+		</div>		
+    </div>
+</div>
+{include file="public/foot" /}
+</body>
+</html>

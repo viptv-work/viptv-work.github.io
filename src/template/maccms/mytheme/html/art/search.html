@@ -1,0 +1,53 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}vod/search.html-->{/if}
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/art_search"}   
+	{include file="public/include"}
+</head>
+<body>
+	{include file="public/head"}
+    <div class="container min">
+        <div class="row">
+			<div class="col-md-wide-10 col-xs-1 padding-0">
+				{include file="art/head"}
+			</div>
+			<div class="col-md-wide-6 col-xs-1 myui-sidebar">
+				<div class="myui-panel myui-panel-bg clearfix">
+					<div class="myui-panel-box">
+						{if $param.wd}
+						<div class="myui-panel_hd">
+							<div class="myui-panel__head active bottom-line clearfix">	
+								<h3 class="title">
+									与 <span class="text-red">“{$param.wd}”</span> 相关的搜索结果
+								</h3>
+							</div>
+						</div>
+						{/if}
+						<div class="myui-panel_bd clearfix">
+							<ul class="myui-vodlist__media col-pd clearfix" id="searchList">
+								{maccms:art num="10" paging="yes" pageurl="art/search" order="desc" by="time"}		
+								{include file="block/art_box"}	<!-- 列表 -->																		
+								{/maccms:art}
+							</ul>
+						</div>
+						{empty name="__LIST__"}
+						{include file="block/vod_no"}<!-- 无结果 -->
+						{/empty}
+					</div>				
+				</div>	            
+				
+				{include file="public/page"}<!-- 翻页 -->
+			</div>
+			<div class="col-md-wide-3 col-xs-1 myui-sidebar">
+				{include file="art/code"}
+				{include file="block/vod_hot"}
+				{include file="block/art_hot"}
+			</div>
+        </div>
+    </div>
+	{if $mytheme.search.key}<script type="text/javascript">var wdkey= /{$param.wd}/g;var wd=$('#searchList');wd[0].innerHTML=wd[0].innerHTML.replace(wdkey, "<font color=red>{$param.wd}</font>");</script>{/if}
+	{include file="public/foot"}
+</body>
+</html>

@@ -1,0 +1,30 @@
+{if $mytheme.home_rank.is}
+<div class="myui-panel myui-panel-bg {$mytheme.home_rank.self} clearfix">
+	<div class="myui-panel-box clearfix">														
+		{maccms:type ids="'.$mytheme['home_rank']['id'].'" order="asc" by="sort" id="vo1" key="key1"}													
+		<div class="col-lg-{$mytheme.home_rank.col} col-md-4 col-sm-2 col-xs-1 padding-0">
+			<div class="myui-panel_hd">
+				<div class="myui-panel__head active bottom-line clearfix">
+					<h3 class="title">
+						{$vo1.type_name}{$mytheme.home_rank.title}
+					</h3>		
+					<a class="more text-muted" href="{:mac_url_type($vo1.type_id,['id'=>$vo1['type_id'],'by'=>'hits'],'show')}">更多 <i class="fa fa-angle-right"></i></a>
+				</div>
+			</div>
+			<div class="myui-panel_bd clearfix">
+				<ul class="myui-vodlist__media active col-pd clearfix">
+					{maccms:vod num="1" type="'.$vo1['type_id'].'" order="desc" by="hits"}
+						{include file="block/vod_box_media"}	
+					{/maccms:vod}
+				</ul>
+				<ul class="myui-vodlist__text col-pd clearfix">
+					{maccms:vod num="'.$mytheme['home_rank']['num'].'" type="'.$vo1['type_id'].'" order="desc" by="hits"}
+						{include file="block/vod_box_rank"}
+					{/maccms:vod}
+				</ul>
+			</div>
+		</div>
+		{/maccms:type}
+	</div>
+</div>	
+{/if}

@@ -1,0 +1,123 @@
+<!-- 详细信息-->
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="col-xs-1">
+			<span class="text-muted">当前位置：</span>
+			<a href="{$mytheme.site.url}">首页</a> <i class="fa fa-angle-right text-muted"></i>
+			<a href="{:mac_url_type($obj.type.type_id,['id'=>$obj['type_id']],'show')}">{$obj.type.type_name}</a> <i class="fa fa-angle-right text-muted"></i>
+			<span class="text-muted">{$obj.vod_name}</span>
+		</div>
+		<div class="col-xs-1">	
+			<div class="myui-content__thumb">									
+				<a class="myui-vodlist__thumb picture" href="{:mac_url_vod_play($obj)}" title="{$obj.vod_name}">
+					<img class="lazyload" src="{$mytheme.pic.load1}" data-original="{$obj.vod_pic|mac_url_img}"/>
+					<span class="play hidden-xs"></span>
+				</a>
+				{if $mytheme.bdshare.is}
+				<div class="bdshare bdsharebuttonbox text-center hidden-sm hidden-xs" style="margin-top: 10px; width: 220px;">
+					<span class="bds_shere"></span>
+					{maccms:foreach name=":explode(',',''.$mytheme['bdshare']['btn'].'')" id="vo" key="key"}
+					<a class="bds_{$vo}" data-cmd="{$vo}"></a>
+					{/maccms:foreach}
+				</div>
+				{/if}
+			</div>
+			<div class="myui-content__detail">
+				{if $mytheme.player.code && $mytheme.qrcode.is}
+				<a class="btn btn-default dropdown-hover pull-right visible-lg" href="javascript:;">
+					<div class="dropdown-box bottom fadeInDown clearfix" style="display: block;">
+						<div class="item text-center" style="padding: 15px 10px;">
+							{if $mytheme.qrcode.img}
+							<div class="qrcode-box">
+								<img class="img-responsive" src="{$mytheme.qrcode.img}" />
+							</div>
+							{else}
+							<div class="qrcode-box" style="background-color: {$mytheme.qrcode.light};">
+								<img class="icon" src="{$mytheme.site.ico}" width="25" height="25" />
+								<span id="qrcode" data-link="0" data-dark="{$mytheme.qrcode.dark}" data-light="{$mytheme.qrcode.light}"></span>
+							</div>
+							{/if}
+							<p class="margin-0">{$mytheme.qrcode.text}</p>
+						</div>
+					</div>
+					<i class="fa fa-mobile" style="font-size: 24px; vertical-align: -4px;"></i> 手机观看
+				</a>
+				{/if}
+				<h1 class="title">{$obj.vod_name}</h1>		
+				<!-- 评分 -->
+			    <div id="rating" class="score" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-score="{$obj.vod_score/2|ceil}">
+			    	<span class="left text-muted">评分：</span>
+			    	<ul class="rating">
+				        <li title="很差" val="1"><i class="fa fa-star{if condition="$obj.vod_score lt 0"}-o{/if}"></i></li>
+				        <li title="较差" val="2"><i class="fa fa-star{if condition="$obj.vod_score lt 2"}-o{/if}"></i></li>
+				        <li title="还行" val="3"><i class="fa fa-star{if condition="$obj.vod_score lt 4"}-o{/if}"></i></li>
+				        <li title="推荐" val="4"><i class="fa fa-star{if condition="$obj.vod_score lt 6"}-o{/if}"></i></li>
+				        <li title="力荐" val="5"><i class="fa fa-star{if condition="$obj.vod_score lt 8"}-o{/if}"></i></li>
+				    </ul>
+				    <span class="branch">{$obj.vod_score}</span>
+				    <span class="text-muted" id="ratewords">
+					    {if condition="$obj.vod_score gt 8"}力荐{elseif condition="$obj.vod_score gt 6"/}推荐{elseif condition="$obj.vod_score gt 4"/}还行{elseif condition="$obj.vod_score gt 2"/}较差{else /}很差{/if}
+				    </span>
+				</div>
+				<p class="data">
+					<span class="text-muted">分类：</span><a href="{:mac_url_type($obj.type.type_id,['id'=>$obj['type_id']],'show')}">{$obj.type.type_name}</a>
+					<span class="split-line"></span>
+					<span class="text-muted hidden-xs">地区：</span><a href="{:mac_url_type($obj.type.type_id,['id'=>$obj['type_id'],'area'=>$obj['vod_area']],'show')}">{$obj.vod_area|mac_default='未知'}</a>
+					<span class="split-line"></span>
+					<span class="text-muted hidden-xs">年份：</span><a href="{:mac_url_type($obj.type.type_id,['id'=>$obj['type_id'],'year'=>$obj['vod_year']],'show')}">{$obj.vod_year|mac_default='未知'}	</a>				
+				</p>
+				<p class="data"><span class="text-muted">更新：</span><span class="text-red">{if condition="$obj.vod_remarks neq ''"}{$obj.vod_remarks}/{/if}{$obj.vod_time|date='Y-m-d H:i:s',###}</span></p>		
+				<p class="data"><span class="text-muted">主演：</span>{$obj.vod_actor|mac_substring=25|mac_url_create='actor'|mac_default='未知'}</p>
+				<p class="data"><span class="text-muted">导演：</span>{$obj.vod_director|mac_url_create='director'|mac_default='未知'}</p>
+																
+				<p class="data hidden-xs">
+					<span class="text-muted">简介：</span>{$obj.vod_content|mac_filter_html|mac_substring=40}...<a class="text-link" href="#desc">详情 <i class="fa fa-angle-right"></i></a>
+				</p>	
+			</div>
+			<div class="myui-content__operate">
+				{notempty name="obj.vod_play_list"}
+				{php}$count=1;{/php}
+				{maccms:foreach name="obj.vod_play_list" key="play"}
+				{if $count==1}
+				<a class="btn btn-warm" href="{:mac_url_vod_play($obj)}"><i class="fa fa-play"></i> 立即播放</a>
+				{/if}{php}$count++;{/php}
+				{/maccms:foreach}
+				{/notempty}
+				
+				{if $mytheme.downlist.is}
+				{notempty name="obj.vod_down_list"}
+				<a class="btn btn-primary hidden-xs" href="{:mac_url_vod_down($obj)}"><i class="fa fa-download"></i> 立即下载</a>
+				{/notempty}
+				{/if}
+
+				{if $mytheme.reward.is}
+				<a class="btn btn-info" href="javascript:;" onclick="MyTheme.Layer.Img('打赏','{$mytheme.reward.code}','{$mytheme.reward.text}')"><i class="fa fa-cny"></i> 打赏</a>					
+				{/if}
+				
+				{if condition="$maccms.user_status eq 1"}
+				{if condition="$user.group.group_id eq 1"}
+				<a class="btn btn-danger" href="javascript:;" onclick="Myui.User.Login();"><i class="fa fa-star"></i> 收藏</a>
+				{else}
+				<a href="javascript:void(0);" class="btn btn-danger favorite" data-type="2" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}"><i class="fa fa-star"></i> 收藏</a>
+				{/if}
+				{/if}				
+			</div>
+		</div>
+	</div>
+</div>
+
+{if $mytheme.detail.score}<script type="text/javascript"> Myui.Score();</script>{/if}
+	
+{if $mytheme.detail.ad && $mytheme.detail.ad2}
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_bd">
+			<div class="col-xs-1">
+				{$mytheme.detail.ad2}
+			</div>
+		</div>
+	</div>				
+</div>
+{/if}
+
+<!-- end 详细信息-->

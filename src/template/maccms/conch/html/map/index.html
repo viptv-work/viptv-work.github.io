@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{$conch['theme']['map']['title']|mac_default='最新'} - {$maccms.site_name}</title> 
+    <meta name="keywords" content="{$maccms.site_keywords}" />
+    <meta name="description" content="{$maccms.site_description}" />
+	{include file="public/include"}
+</head>
+<body>
+  {include file="public/head"}
+  <div class="container ">
+        {include file="ads/ads_all"}
+        <div class="row">
+	        <div class="pannel clearfix">
+                <div class="pannel_head clearfix">
+                <a class="text_muted pull_right" href="{:mac_url_type($obj,['id'=>'1'],'show')}"><i class="iconfont shaixuan_i">&#xe61d;</i>&nbsp;筛选</a>
+					<h2 class="title">{$conch['theme']['map']['title']|mac_default='最新'}</h2>
+	            </div>
+				<!-- 列表 -->			
+                <div class="vodlist_smt clearfix">
+					<ul>
+						{maccms:vod num="120" type="'.$conch['theme']['map']['id'].'" order="desc" by="time"}
+                           {include file="widget/vod_box_sm"}
+						{/maccms:vod}
+					</ul>
+                </div>				
+				<!-- end 列表 -->	
+			</div>
+        </div>
+    </div>
+	{include file="public/foot"}
+</body>
+</html>

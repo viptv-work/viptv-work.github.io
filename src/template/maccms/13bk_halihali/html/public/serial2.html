@@ -1,0 +1,67 @@
+{switch name="obj.type_id"}
+{case value="1"}
+{if condition="empty($obj.vod_state) eq true"}
+{$obj.vod_remarks}
+{else/}
+{$obj.vod_state}
+{/if}
+{/case}
+{case value="2"}
+{eq name="obj.vod_isend" value="1"}
+{gt name="obj.vod_total" value="0"}
+{$obj.vod_total}集全
+{else/}
+{$obj.vod_serial|mac_default='全'}集
+{/gt}
+{else/}
+{if condition="$obj.vod_serial eq $obj.vod_total"}
+{gt name="obj.vod_total" value="0"}
+{$obj.vod_total}集全
+{else/}
+{$obj.vod_serial|mac_default='全'}集
+{/gt}
+{elseif condition="$obj.vod_serial lt $obj.vod_total"}
+{gt name="obj.vod_serial" value="0"}
+更新至{$obj.vod_serial}集
+{else/}
+{$obj.vod_serial|mac_default='全'}集
+{/gt}
+{elseif condition="$obj.vod_serial gt $obj.vod_total"}
+全{$obj.vod_serial|mac_default=''}集
+{/if}
+{/eq}
+{/case}
+{case value="3"}
+{if condition="strlen($obj.vod_serial) gt 6"}
+{$obj.vod_serial|strtotime|date='Y-m-d',###}期
+{else/}
+{$obj.vod_serial}期
+{/if}
+{/case}
+{case value="4"}
+{eq name="obj.vod_isend" value="1"}
+{gt name="obj.vod_total" value="0"}
+{$obj.vod_total}集全
+{else/}
+{$obj.vod_serial|mac_default='全'}集
+{/gt}
+{else/}
+{if condition="$obj.vod_serial eq $obj.vod_total"}
+{gt name="obj.vod_total" value="0"}
+{$obj.vod_total}集全
+{else/}
+{$obj.vod_serial|mac_default='全'}集
+{/gt}
+{elseif condition="$obj.vod_serial lt $obj.vod_total"}
+{gt name="obj.vod_serial" value="0"}
+更新至{$obj.vod_serial}集
+{else/}
+{$obj.vod_serial|mac_default='全'}集
+{/gt}
+{elseif condition="$obj.vod_serial gt $obj.vod_total"}
+全{$obj.vod_serial|mac_default=''}集
+{/if}
+{/eq}
+{/case}
+{default /}
+{/switch}

@@ -1,0 +1,86 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3c.org/TR/1999/REC-html401-19991224/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<title>播放器加载提示</title>
+<meta content="text/html; charset=utf8" http-equiv=Content-Type>
+<style type=text/css>body {
+	text-align:center; background-color: #000000; margin-top: 0px
+}
+#loading {
+	margin-top: 50px; margin-bottom:20px;
+}
+#ad {
+	padding-bottom: 20px; padding-left: 0px; WIDTH: 100%; padding-right: 0px; color: #ffffff; clear: both; font-size: 18px; padding-top: 20px
+}
+#love {
+	margin-top: 20px; clear: both
+}
+a:link {
+	color: #ffffff
+}
+a:visited {
+	color: #ffffff
+}
+a:hover {
+	color: #ff0000; TEXT-DECORATION: none
+}
+a.a1 {
+	color: #ff0000
+}
+a.a1:visited {
+	color: #ff0000
+}
+a.a2 {
+	color: #006600
+}
+a.a2:visited {
+	color: #006600
+}
+.aiwei img {
+    max-width: 300px;
+    width: expression(this.width > 300 && this.height < this.width ? 300:true);
+    height: auto;
+    margin: 10px auto;
+    display: block;
+    padding: 1px;
+}
+@media (max-width:767px){
+.aiwei img{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 10px auto;
+}
+}
+</style>
+
+<meta name=GENERATOR content="MSHTML 8.00.7601.17514">
+</head>
+<body>
+<div id=loading>
+<script language=JavaScript>
+var ctext = "请稍后 . 播放器加载中 . 各位客官请耐心等候...";
+var x = 0;
+var color=new Array("#4C4C4C", "#FFFFFF", "#4C4C4C", "#FFFFFF");
+document.write('<div id="TempDiv"><center>'+ctext+'</center></div>');
+function chcolor()
+	{ 
+	 document.all.TempDiv.style.color = color[x];
+		if(x<color.length-1)
+		{
+			x++;
+		}
+		else
+		{
+			x=0;
+		}
+	}
+setInterval("chcolor()",200);
+</script>
+</div>
+
+<!--广告位首 -->
+<!-- 播放加载 开始 -->
+<!-- 播放加载 结束 -->
+
+</body></html>

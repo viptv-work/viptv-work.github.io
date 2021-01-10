@@ -1,0 +1,89 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>找回密码 - {$maccms.site_name} </title>
+	<meta name="keywords" content="{$maccms.site_keywords}"/>
+	<meta name="description" content="{$maccms.site_description}"/>
+	{include file="user/include" /}
+</head>
+<body id="reg">
+	<div class="reg-w">
+	    <div class="reg-logo">
+			<a title="{$maccms.site_name}" style="background-image: url({$conch['theme']['logo']['bpic']|mac_default=substr($maccms['path_tpl'], strlen($maccms['path'])).'asset/img/logo_black.png'|mac_url_img});" href="{$maccms.path}"></a>
+		</div>
+		<form method="post" id="fm" action="">
+			<h4>密保找回密码</h4>
+			<div class="reg-group">
+				<label class="bd-r" style="letter-spacing: normal;">账号</label><input type="text" id="user_name" name="user_name" class="reg-control" placeholder="请输入您的登录账号">
+			</div>
+			<div class="reg-group">
+				<label>密保问题</label><input type="text" id="user_question" name="user_question" class="reg-control" placeholder="请输入您的密保问题">
+			</div>
+			<div class="reg-group">
+				<label>密保答案</label><input type="text" id="user_answer" name="user_answer" class="reg-control" placeholder="请输入您的密保答案">
+			</div>
+			<div class="reg-group">
+				<label>新的密码</label><input type="password" id="user_pwd" name="user_pwd" class="reg-control" placeholder="请输入您的新密码">
+			</div>
+			<div class="reg-group">
+				<label>确认密码</label><input type="password" id="user_pwd2" name="user_pwd2" class="reg-control" placeholder="请输入您的确认密码">
+			</div>
+			<div class="reg-group">
+				<label>验证码</label><input type="text" class="reg-control w150" id="verify" name="verify" placeholder="请输入验证码">
+				<img class="fr m-hi" src="{:url('verify/index')}" onClick="this.src=this.src+'?'"  alt="单击刷新" />
+			</div>
+			<input type="button" id="btn_submit" class="btn-brand btn-sub" value="立即找回">
+		</form>
+    <div class="reg-ts">
+    	<a href="{:url('user/login')}">登录账号</a><a href="{:url('user/findpass_msg')}?ac=email">用邮箱找回</a><a href="{:url('user/findpass_msg')}?ac=phone">用手机找回</a>
+    </div>
+	</div>
+
+<!-- // sign-box#regbox end -->
+<script type="text/javascript">
+
+	$(function(){
+		$("body").bind('keyup',function(event) {
+			if(event.keyCode==13){ $('#btnLogin').click(); }
+		});
+		$('#btn_submit').click(function() {
+			if ($('#user_name').val()  == '') { alert('请输入用户！'); $("#user_name").focus(); return false; }
+			if ($('#user_pwd').val()  == '') { alert('请输入密码！'); $("#user_pwd").focus(); return false; }
+			if ($('#verify').val()  == '') { alert('请输入验证码！'); $("#verify").focus(); return false; }
+
+			$.ajax({
+				url: "{:url('user/findpass')}",
+				type: "post",
+				dataType: "json",
+				data: $('#fm').serialize(),
+				beforeSend: function () {
+					$("#btn_submit").css("background","#fd6a6a").val("loading...");
+				},
+				success: function (r) {
+					if(r.code==1){
+						location.href="{:url('user/index')}";
+					}
+					else{
+						alert(r.msg);
+					}
+				},
+				complete: function () {
+					$('#verify').click();
+					$("#btn_submit").css("background","#fa4646").val("立即找回");
+				}
+			});
+
+		});
+	});
+
+</script>
+<div class="footer">
+	<div class="layout">
+		<div class="copyright">
+			<p>&copy; {:date('Y')} <a class="color" href="//{$maccms.site_url}">{$maccms.site_url}</a>  All Rights Reserved.</p>
+		</div>
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+<link rel="shortcut icon" href="{$mytheme.site.ico}" type="image/x-icon" />					
+<link rel="stylesheet" href="{$mytheme.site.static|mac_default=''.$maccms.path_tpl.''}statics/css/mytheme-font.css?v={$my['version']}" type="text/css" />
+<link rel="stylesheet" href="{$mytheme.site.static|mac_default=''.$maccms.path_tpl.''}statics/css/mytheme-ui.css?v={$my['version']}" type="text/css" />
+<link rel="stylesheet" href="{$mytheme.site.static|mac_default=''.$maccms.path_tpl.''}statics/css/mytheme-site.css?v={$my['version']}" type="text/css" />
+<link rel="stylesheet" href="{$mytheme.site.static|mac_default=''.$maccms.path_tpl.''}statics/css/{$mytheme.style.default}.css?v={$my['version']}" type="text/css" name="default" />
+{if $mytheme.style.skin && !$mytheme.color.is}{maccms:foreach name=":explode(',',''.$mytheme['style']['skin_style'].'')" id="vo" key="key"}
+<link rel="stylesheet" href="{$mytheme.site.static|mac_default=''.$maccms.path_tpl.''}statics/css/{$vo}.css?v={$my['version']}" type="text/css" name="skin" disabled/>
+{/maccms:foreach}{/if}
+<script> 
+	var maccms={"path":"__ROOT__","mid":"{$maccms['mid']}","url":"{$maccms['site_url']}","wapurl":"{$maccms['site_wapurl']}","mob_status":"{$maccms['mob_status']}"};
+	var myui={"tpl":"{$maccms['path_tpl']}","short":"{$mytheme['short']['is']}","shortapi":"{$mytheme['short']['api']}","bdapi":"{$mytheme['bdshare']['api']}","thunderurl":"{$mytheme['downlist']['api']}","topfixed":"{$mytheme['nav']['fixed']}"};
+</script>
+<script type="text/javascript" src="{$mytheme.site.static|mac_default=''.$maccms.path_tpl.''}statics/js/jquery.min.js?v=3.3.1"></script>
+<script type="text/javascript" src="{$mytheme.site.static|mac_default=''.$maccms.path_tpl.''}statics/js/layer/layer.js?v3.1.1"></script>
+<script type="text/javascript" src="{$mytheme.site.static|mac_default=''.$maccms.path_tpl.''}statics/js/mytheme-site.js?v={$my['version']}"></script>
+<script type="text/javascript" src="{$mytheme.site.static|mac_default=''.$maccms.path_tpl.''}statics/js/mytheme-ui.js?v={$my['version']}"></script>
+<script type="text/javascript" src="{$mytheme.site.static|mac_default=''.$maccms.path_tpl.''}statics/js/mytheme-cms.js?v={$my['version']}"></script>
+{$mytheme.site.sub_static}
+{include file="public/style"}
+{if $mytheme.site.bodystyle}<style type="text/css">{$mytheme.site.bodystyle}</style>{/if}
+{if $mytheme.color.is}{include file="diy/style"}{/if}
+<!--[if lt IE 9]>
+<script src="https://cdn.ceshifile.org/html5shiv/r29/html5.min.js"></script>
+<script src="https://cdn.ceshifile.org/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+

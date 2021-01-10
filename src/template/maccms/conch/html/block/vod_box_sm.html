@@ -1,0 +1,22 @@
+<li class="ranklist_item">
+    <a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">
+	<div class="ranklist_img">
+		 <div class="ranklist_thumb lazyload" data-original="{$vo.vod_pic|mac_url_img}">						
+            {if condition="$vo['type_id_1']==1"}
+            {if condition="$vo.vod_score eq 0"}
+            {else/}
+            <span class="pic_text text_right text_dy">{$vo.vod_score}</span>
+            {/if}
+            {/if}
+	     </div>
+	</div>	
+    <div class="ranklist_txt">
+	     <div class="pannel_head clearfix">
+              <span class="vod_tname text_muted pull_right">{$vo.type.type_name}</span>
+              <h4 class="title">{$vo.vod_name}</h4>	
+         </div>
+	     <p class="vodlist_sub">{$vo.vod_sub|mac_default=$vo.vod_actor|mac_default='未知'}</p>
+	     <p><span class="vodlist_sub">状态：{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}</span></p>
+    </div>
+    </a>  		
+</li>

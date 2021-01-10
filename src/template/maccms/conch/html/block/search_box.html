@@ -1,0 +1,39 @@
+{if condition="$vo['type_id_1']==28"}
+<li class="searchlist_item zbsearchlist">
+    <div class="searchlist_img">
+	<a class="zbvodlist_thumb lazyload" href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}" title="{$vo.vod_name}" data-original="{:mac_url_img($vo.vod_pic)}">						
+	</a></div>
+	<div class="searchlist_titbox">									
+		<h4 class="vodlist_title"><a href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}" title="{$vo.vod_name}"><span class="info_right">{if condition="$vo.type_1.type_id neq '' "}{$vo.type_1.type_name}{else/}{$vo.type.type_name}{/if}</span>{$vo.vod_name}</a></h4>
+		<p class="vodlist_sub hidden_xs"><span>简介：</span>{$vo.vod_content|mac_filter_html|mac_default='暂无简介'}</p>
+        <div class="seebtn">
+			<a href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}">立即播放&nbsp;<i class="iconfont">&#xe623;</i></a>
+		</div>
+	</div>
+</li>
+{else/}
+<li class="searchlist_item">
+    <div class="searchlist_img">
+	<a class="vodlist_thumb lazyload" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" data-original="{:mac_url_img($vo.vod_pic)}">						
+		<span class="play hidden_xs"></span>
+        {if condition="$vo['type_id_1']==1"}
+        {if condition="$vo.vod_score eq 0"}
+        <span class="pic_text text_right">{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}</span>
+        {else/}
+        <span class="pic_text text_right text_dy">{$vo.vod_score}</span>
+        {/if}
+        {else/}
+		<span class="pic_text text_right">{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}</span>
+		{/if}
+	</a></div>
+	<div class="searchlist_titbox">									
+		<h4 class="vodlist_title"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}"><span class="info_right">{if condition="$vo.type_1.type_id neq '' "}{$vo.type_1.type_name}{else/}{$vo.type.type_name}{/if}</span>{$vo.vod_name}</a></h4>
+		<p class="vodlist_sub"><span>主演：</span>{$vo.vod_actor|mac_url_create='actor'|mac_default='未知'}</p>
+		<p class="vodlist_sub"><span>导演：</span>{$vo.vod_director|mac_url_create='director'|mac_default='未知'}</p>
+		<p class="vodlist_sub hidden_xs"><span>简介：</span>{$vo.vod_content|mac_filter_html|mac_default='暂无简介'}</p>
+		<div class="seebtn">
+			<a href="{:mac_url_vod_detail($vo)}">查看详情&nbsp;<i class="iconfont">&#xe623;</i></a>
+		</div>
+	</div>
+</li>
+{/if}

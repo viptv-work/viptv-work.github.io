@@ -1,0 +1,45 @@
+<div class="myui-panel active clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="col-pd clearfix">
+			<div class="myui-panel__head active clearfix">
+				<h3 class="title text-fff">
+					{$obj.vod_name}
+				</h3>	
+			</div>
+			<div class="text-muted">
+				<ul class="nav nav-tabs pull-right">										
+					<li class="dropdown pb10 margin-0">
+						<a href="javascript:;" class="padding-0 text-fff" data-toggle="dropdown">换线路 <i class="fa fa-angle-down"></i></a>
+						<div class="dropdown-box bottom">
+							<ul class="item">
+								{maccms:foreach name="obj.vod_play_list" id="vo1" by="sort"}
+								<li><a href="#player{$key}" tabindex="-1" data-toggle="tab">{$vo1.player_info.show}</a></li>
+								{/maccms:foreach}
+							</ul>
+						</div>
+					</li>
+				</ul>
+				{$obj.vod_score}分 / <a class="text-muted" href="{:mac_url_type($obj.type.type_id,['id'=>$obj['type_id']],'show')}">{$obj.type.type_name}</a> / <a class="text-muted" href="{:mac_url_type($obj.type.type_id,['id'=>$obj['type_id'],'area'=>$obj['vod_area']],'show')}">{$obj.vod_area|mac_default='未知'}</a>
+			</div>
+		</div>
+		<div class="tab-content mb10">
+			{maccms:foreach name="obj.vod_play_list" id="vo"}
+			<div id="player{$key}" class="tab-pane fade in{if condition="$param.sid eq $vo.sid"} active{/if} clearfix">
+				<ul class="myui-content__list playlist clearfix" id="playlist">
+					{maccms:foreach name="vo.urls" id="vo2"}
+	                <li class="{if $obj.type_1.type_name=='电影'||$obj.type.type_name=='电影'||$obj.type_1.type_name=='综艺'||$obj.type.type_name=='综艺'}col-md-2 col-sm-5 col-xs-3{else}col-md-3 col-sm-5 col-xs-4{/if}{if condition="$param.sid eq $vo.sid && $param.nid eq $vo2.nid"} active{/if}"><a class="btn btn-min{if condition="$param.sid eq $vo.sid && $param.nid eq $vo2.nid"} btn-warm{else} btn-gray{/if}" href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}">
+	                	{$vo2.name}
+	                </a>
+	                </li>
+	                {/maccms:foreach}
+				</ul>
+			</div>
+			{/maccms:foreach}
+		</div>
+		{if $mytheme.player.ad}
+		<div class="col-pd mb10">
+			{$mytheme.player.ad}
+		</div>
+		{/if}
+	</div>
+</div>

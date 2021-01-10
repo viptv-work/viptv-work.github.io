@@ -1,0 +1,122 @@
+{include file="public/data"}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>修改资料 - 会员中心 - {$mytheme.site.title}</title>
+	<meta name="keywords" content="{$mytheme.site.keywords}"/>
+	<meta name="description" content="{$mytheme.site.description}"/>
+	{include file="public/include"}
+	{include file="user/include" /}
+</head>
+<body>
+{include file="public/head" /}
+<div class="container min">
+    <div class="row"> 
+		{include file="user/head" /}					
+		<div class="myui-panel myui-panel-bg clearfix">
+			<div class="myui-panel-box clearfix">
+				<div class="myui-panel_bd clearfix">
+					<div class="myui-panel_hd">
+						<div class="myui-panel__head active bottom-line clearfix">
+							<h3 class="title">
+								我的资料
+							</h3>
+							<ul class="nav nav-tabs">
+								<li><a href="{:url('user/index')}">基本资料</a></li>
+								<li class="active"><a href="{:url('user/info')}">修改信息</a></li>
+								<li><a href="{:url('user/popedom')}">我的权限</a></li>
+							</ul>
+						</div>																		
+					</div>
+					<div class="myui-pannel_bd clearfix">
+						<div class="myui-user__form col-pd clearfix">
+							<form id="fm" name="fm" method="post" action="" >
+								<p><span class="xiang active">用户名：</span>{$obj.user_name}</p>
+								<p class="top-line-dot"><span class="xiang hidden-xs">原始密码：</span><input type="password" name="user_pwd" class="form-control" placeholder="原始密码"></p>
+								<p class="top-line-dot"><span class="xiang hidden-xs">新密码：</span><input type="password" name="user_pwd1" class="form-control" placeholder="新密码/不修改请留空"></p>
+								<p class="top-line-dot"><span class="xiang hidden-xs">重复密码：</span><input type="password" name="user_pwd2" class="form-control" placeholder="重复密码"></p>
+								<p class="top-line-dot"><span class="xiang hidden-xs">QQ号码：</span><input type="text" name="user_qq" class="form-control" value="{$obj.user_qq}" placeholder="QQ号码"></p>
+								{if condition="$obj.user_email neq ''"}
+									<p class="top-line-dot"><span class="xiang hidden-xs">邮箱：</span><input type="text" name="user_email" class="form-control active" readonly="readonly" value="{$obj.user_email}"><a class="btn btn-sm btn-warm btn_unbind" ac="email" href="javascript:;">解绑</a></p>
+								{else/}
+									<p class="top-line-dot"><span class="xiang hidden-xs">邮箱：</span><input type="text" name="user_email" class="form-control active" value="" placeholder="邮箱"><a class="btn btn-sm btn-warm" href="{:url('user/bind')}?ac=email">绑定</a></p>
+								{/if}
+								{if condition="$obj.user_phone neq ''"}
+								<p class="top-line-dot"><span class="xiang hidden-xs">手机：</span><input type="text" name="user_phone" class="form-control active" readonly="readonly" value="{$obj.user_phone}"><a class="btn btn-sm btn-warm btn_unbind" ac="phone" href="javascript:;">解绑</a></p>
+								{else/}
+								<p class="top-line-dot"><span class="xiang hidden-xs">手机：</span><input type="text" name="user_phone" class="form-control active" value="" placeholder="手机号"><a class="btn btn-sm btn-warm" href="{:url('user/bind')}?ac=phone">绑定</a></p>
+								{/if}
+			
+								<p class="top-line-dot"><span class="xiang hidden-xs">找回密码问题：</span><input type="text" name="user_question" class="form-control" value="{$obj.user_question}" placeholder="找回密码问题"></p>
+								<p class="top-line-dot"><span class="xiang hidden-xs">找回密码答案：</span><input type="text" name="user_answer" class="form-control" value="{$obj.user_answer}" placeholder="找回密码答案"></p>
+								<p class="top-line-dot"><span class="xiang hidden-xs"></span>
+									<input type="button" id="btn_submit" class="btn btn-primary" value="保存修改">
+								</p>
+							</form>
+						</div>																							
+					</div>		
+				</div>
+			</div>	
+    	</div>
+    </div>
+</div>
+{include file="public/foot" /}
+<script type="text/javascript">
+
+	$('.btn_unbind').click(function(){
+		var ac = $(this).attr('ac');
+		if(ac!='email' && ac!='phone'){
+			alert('参数错误');
+		}
+		if(confirm('确认解除绑定吗？此操作不可恢复？')) {
+			$.ajax({
+				url: "{:url('user/unbind')}",
+				type: "post",
+				dataType: "json",
+				data: {ac: ac},
+				beforeSend: function () {
+					//开启loading
+				},
+				success: function (r) {
+					alert(r.msg);
+					if(r.code==1){
+						location.href="{:url('user/info')}";
+					}
+				},
+				complete: function () {
+					//结束loading
+				}
+			});
+		}
+	});
+	
+	$("#btn_submit").click(function() {
+		var data = $("#fm").serialize();
+		$.ajax({
+			url: "{:url('user/info')}",
+			type: "post",
+			dataType: "json",
+			data: data,
+			beforeSend: function () {
+				//开启loading
+				//$(".loading_box").css("display","block");
+				$("#btn_submit").css("background","#fd6a6a").val("loading...");
+			},
+			success: function (r) {
+				alert(r.msg);
+				if(r.code==1){
+					location.href="{:url('user/info')}";
+				}
+			},
+			complete: function () {
+				//结束loading
+				//$(".loading_box").css("display","none");
+				$("#btn_submit").css("background","#fa4646").val("提交");
+			}
+		});
+	});
+
+</script>
+</body>
+</html>

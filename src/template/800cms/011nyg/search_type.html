@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<?php  
+$pagesize = 15; //设置记录显示条数; 
+ $JCCMS_pagecount = floor(count($JCCMS_SQL) / $pagesize)-1;//计算数组所得到记录总数
+  $JCCMS_prev = $JCCMS_page -1; //初始化上一页
+ $JCCMS_next = $JCCMS_page +1; //初始化下一页
+?>
+<html>
+<head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0,user-scalable=no" />
+  <meta name="renderer" content="webkit" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />	
+	<title><?php echo $web_title;?></title>
+	<meta name="keywords" content="<?php echo $web_keywords;?>" />
+	<meta name="description" content="<?php echo $web_description;?>" />
+    <link rel="stylesheet" href="<?php echo '/template/'.$web_moban;?>/css/index.css" />
+</head>
+<body>
+ <?php  include('./template/'.$web_moban.'/header.html');?>
+  <main class="main" style="padding: 10px 8px 8px 8px;"> 
+   <div id="propagandaInsert" class="flex-row cross_line"></div> 
+   <div id="propagandaBottom"></div>
+    <section class="videos"> 
+    <h1 class="h1">搜索：<?php echo $C_T_2;?></h1> 
+    <div class="flex-row"> 
+     <div id="propagandaLeft"></div> 
+     <div class="content"> 
+		<?php if( $JCCMS_SQL ==null){echo"没有查询到你要查找的数据";}else{ for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+      <div class="grid_item"> 
+       <a class="link" href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html"> 
+        <div class="img_post icont icon_kiss"> 
+         <span class="info_lable"> <i class="info-item">HD</i> </span> 
+         <img class="img" src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>" data-reload="3"  /> 
+        </div> 
+		<p class="description"><span class="span"><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></span><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></p> 
+        <div class="inform"> 
+         <span class="num"><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_time');?></span> 
+         <span class="iconfont icon-praisefill"><?php  echo rand(5, 10000); ?></span> 
+        </div> </a> 
+      </div> 
+		<?php	}	 }?>	 
+	 
+	 
+
+ 
+     </div> 
+     <div id="propagandaRight"></div> 
+    </div> 
+   </section>  
+<div class="pagenote flex-row">
+			<?php	if($JCCMS_page >=1){ ?>
+			<a class="prev link" href="/?m=search-type-<?php echo $JCCMS_type_id; ?>-<?php JCCMS_page($JCCMS_prev);?>.html">上一页</a>
+			<?php } ?>
+            <div class="flex-row pageindex">
+		<a class="link">共<?php JCCMS_page($JCCMS_pagecount);?>页</a>
+		<a class="link">当前<?php JCCMS_page($JCCMS_page);?>页</a>
+		<?php if($JCCMS_page < $JCCMS_pagecount-5){ ?>
+		<a class="link" href="/?m=search-type-<?php echo $JCCMS_type_id; ?>-<?php echo  $JCCMS_page+1;?>.html"><?php echo  $JCCMS_page+1;?></a>
+		<a class="link" href="/?m=search-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+2;?>.html"><?php echo   $JCCMS_page+2;?></a>
+		<a class="link" href="/?m=search-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+3;?>.html"><?php echo   $JCCMS_page+3;?></a>
+		<a class="link" href="/?m=search-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+4;?>.html"><?php echo   $JCCMS_page+4;?></a>
+		<a class="link" href="/?m=search-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+5;?>.html"><?php echo   $JCCMS_page+5;?></a>
+		<?php } ?>				
+				
+				
+            </div>
+			<?php if($JCCMS_page < $JCCMS_pagecount){
+			?>
+			<a class="next link" href="/?m=search-type-<?php echo $JCCMS_type_id; ?>-<?php JCCMS_page($JCCMS_next);?>.html">下一页</a>
+			<?php
+			}
+			?>				
+			
+        </div>
+   
+  </main>  
+ 
+
+<?php  include('./template/'.$web_moban.'/footer.html');?>
+</body>
+</html>		

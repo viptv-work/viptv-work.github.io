@@ -1,0 +1,54 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}art/detail.html-->{/if}
+<!DOCTYPE html>
+<html>
+	<head>
+		{include file="seo/art_detail"}   
+		{include file="public/include"}
+	</head>
+	<body>
+		{include file="public/head"}	
+	    <div class="container min">
+	        <div class="row">
+	        	<div class="col-md-wide-10 col-xs-1 padding-0">
+	        		{include file="art/head"}
+	        	</div>
+				<div class="col-md-wide-6 col-xs-1 myui-sidebar">
+					<div class="myui-panel myui-panel-bg clearfix">					
+						<div class="myui-panel-box clearfix">
+							<div class="myui-panel_bd col-pd clearfix">	
+								<h1 class="myui-article__title">{$obj.art_name}</h1>				
+								<p class="myui-article__sub bottom-line"><span class="text-muted hidden-xs">作者：</span>{$obj.art_author|mac_default='佚名'}<span class="split-line"></span><span class="text-muted hidden-xs">分类：</span>{$obj.type.type_name}<span class="split-line"></span><span class="text-muted">人气：</span>{$obj.art_hits}<span class="split-line"></span><span class="text-muted">时间：</span>{$obj.art_time|date='Y-m-d H:i:s',###}</p>
+								<div class="myui-article__content mt20">
+									{$obj.art_page_list[$param['page']]['content']} 
+								</div>							
+							</div>
+						</div>
+					</div>	
+					
+					{if $mytheme.art_ad && $mytheme.art_ad1}
+					<div class="myui-panel myui-panel-bg clearfix">
+						<div class="myui-panel-box clearfix">
+							<div class="myui-panel_bd">
+								<div class="col-xs-1">
+									{$mytheme.art_ad1}
+								</div>
+							</div>
+						</div>				
+					</div>
+					{/if}
+					
+					{include file="public/page"}	
+				</div>
+				<div class="col-md-wide-3 col-xs-1 myui-sidebar">
+					{include file="art/code"}
+					{include file="block/vod_hot"}
+					{include file="block/art_hot"}
+				</div>
+	        </div>
+	    </div>
+		<span class="mac_hits hits hide" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}{$obj.art_id}{$obj.topic_id}" data-type="hits"></span>
+    	<span class="mac_ulog_set hide" data-type="1" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+		{include file="public/foot"}
+	</body>
+</html>

@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>热播排行榜 - {$maccms.site_name}</title>
+	<meta name="keywords" content="电影排行榜,电视剧排行榜,综艺排行榜,动漫排行榜,热播影视排行榜" />
+	<meta name="description" content="本站提供最新最全热播影视排行榜数据" />  
+	{include file="public/include"}
+</head>
+<body id="graypage">
+  {include file="public/head"}
+  <div class="container white_pal ">
+      {include file="ads/ads_all"}
+      <div class="row">
+       <div class="pannel rankpage clearfix">
+         <div class="tabs">
+		  <input type="radio" id="tab1" name="tab-control" checked>
+		  <input type="radio" id="tab2" name="tab-control">
+		  <input type="radio" id="tab3" name="tab-control">  
+		  <ul class="title_nav">
+		    <li class="tab_rank" title="周榜"><label for="tab1" role="button"><span>周榜</span></label></li>
+		    <li class="tab_rank" title="月榜"><label for="tab2" role="button"><span>月榜</span></label></li>
+		    <li class="tab_rank" title="总榜"><label for="tab3" role="button"><span>总榜</span></label></li>
+		  </ul>
+		  
+		  <div class="content">
+		    <section>
+		      <h2>周榜</h2>
+	        	<!-- 列表 -->
+				{maccms:type num="'.$conch['theme']['rank']['num'].'" ids="'.$conch['theme']['rank']['id'].'" order="asc" by="sort" flag="vod" id=""}
+				<div class="rank_info">
+					<div class="list_info">
+						<div class="pannel_head clearfix">
+							<span class="text_muted pull_right">
+								<a href="{:mac_url_type($vo)}">更多<i class="iconfont more_i">&#xe623;</i></a>
+							</span>
+							<h3 class="title">
+								{$vo.type_name}
+							</h3>	
+						</div>
+						<ul class="part_rows">
+							{maccms:vod num="1" type="'.$vo['type_id'].'" order="desc" by="hits_week"}
+								{include file="widget/rank_box_week"}	
+							{/maccms:vod}
+							{maccms:vod num="19" type="'.$vo['type_id'].'" start="2" order="desc" by="hits_week"}
+							<li class="part_eone">
+							    {if condition="$vo['type_id_1']==$conch['theme']['type']['zb']"}
+								<a href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}">
+								{else}
+								{in name="vo.type_id" value="$conch['theme']['type']['hb']"}
+								<a href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}">
+								{else}
+								<a {if condition="$conch['theme']['playlink']['btn'] eq 1"}href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}"{else/}href="{:mac_url_vod_detail($vo)}"{/if}>
+								{/in}
+								{/if}
+								<span class="part_nums part_num{$key+1}">{$key+1}</span><span class="text_muted pull_right renqi"><i class="iconfont">&#xe631;</i>&nbsp;{$vo.vod_hits_week}</span>
+								{$vo.vod_name}</a>
+							</li>	
+							{/maccms:vod}
+						</ul>
+					</div>
+				</div>
+				{/maccms:type}
+				<!-- end 列表 -->
+			</section>
+		    <section>
+		      <h2>月榜</h2>
+		        <!-- 列表 -->
+				{maccms:type num="'.$conch['theme']['rank']['num'].'" ids="'.$conch['theme']['rank']['id'].'" order="asc" by="sort" flag="vod" id="vo"}
+				<div class="rank_info">
+					<div class="list_info">
+						<div class="pannel_head clearfix">
+							<span class="text_muted pull_right">
+								<a href="{:mac_url_type($vo)}">更多<i class="iconfont more_i">&#xe623;</i></a>
+							</span>
+							<h3 class="title">
+								{$vo.type_name}
+							</h3>	
+						</div>
+						<ul class="part_rows">
+							{maccms:vod num="1" type="'.$vo['type_id'].'" order="desc" by="hits_month"}
+								{include file="widget/rank_box_month"}	
+							{/maccms:vod}
+							{maccms:vod num="19" type="'.$vo['type_id'].'" start="2" order="desc" by="hits_month"}
+							<li class="part_eone">
+							    {if condition="$vo['type_id_1']==$conch['theme']['type']['zb']"}
+								<a href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}">
+								{else}
+								{in name="vo.type_id" value="$conch['theme']['type']['hb']"}
+								<a href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}">
+								{else}
+								<a {if condition="$conch['theme']['playlink']['btn'] eq 1"}href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}"{else/}href="{:mac_url_vod_detail($vo)}"{/if}>
+								{/in}
+								{/if}
+								<span class="part_nums part_num{$key+1}">{$key+1}</span><span class="text_muted pull_right renqi"><i class="iconfont">&#xe631;</i>&nbsp;{$vo.vod_hits_month}</span>
+								{$vo.vod_name}</a>
+							</li>		
+							{/maccms:vod}
+						</ul>
+					</div>
+				</div>
+				{/maccms:type}
+				<!-- end 列表 -->
+	        </section>
+		    <section>
+		      <h2>总榜</h2>
+		      	<!-- 列表 -->
+				{maccms:type num="'.$conch['theme']['rank']['num'].'" ids="'.$conch['theme']['rank']['id'].'" order="asc" by="sort" flag="vod" id="vo"}
+				<div class="rank_info">
+					<div class="list_info">
+						<div class="pannel_head clearfix">
+							<span class="text_muted pull_right">
+								<a href="{:mac_url_type($vo)}">更多<i class="iconfont more_i">&#xe623;</i></a>
+							</span>
+							<h3 class="title">
+								{$vo.type_name}
+							</h3>	
+						</div>
+						<ul class="part_rows">
+							{maccms:vod num="1" type="'.$vo['type_id'].'" order="desc" by="hits"}
+								{include file="widget/rank_box_all"}	
+							{/maccms:vod}
+							{maccms:vod num="19" type="'.$vo['type_id'].'" start="2" order="desc" by="hits"}
+							<li class="part_eone">
+							    {if condition="$vo['type_id_1']==$conch['theme']['type']['zb']"}
+								<a href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}">
+								{else}
+								{in name="vo.type_id" value="$conch['theme']['type']['hb']"}
+								<a href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}">
+								{else}
+								<a {if condition="$conch['theme']['playlink']['btn'] eq 1"}href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}"{else/}href="{:mac_url_vod_detail($vo)}"{/if}>
+								{/in}
+								{/if}
+								<span class="part_nums part_num{$key+1}">{$key+1}</span><span class="text_muted pull_right renqi"><i class="iconfont">&#xe631;</i>&nbsp;{$vo.vod_hits}</span>
+								{$vo.vod_name}</a>
+							</li>		
+							{/maccms:vod}
+						</ul>
+					</div>
+				</div>
+				{/maccms:type}
+				<!-- end 列表 -->
+			</section>
+		  </div>
+	     </div>
+       </div>
+      </div>
+    </div>
+{include file="public/foot"}
+</body>
+</html>

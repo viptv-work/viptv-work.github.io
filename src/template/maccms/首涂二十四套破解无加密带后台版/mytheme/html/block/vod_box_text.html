@@ -1,0 +1,18 @@
+<li class="{if condition="$key gt 1"}top-line-dot{/if}">
+	<a class="text-overflow"{if $mytheme.site.link} href="{:mac_url_vod_play($vo,['sid'=>1,'nid'=>1])}"{else} href="{:mac_url_vod_detail($vo)}"{/if} title="{$vo.vod_name}">
+		{if $mytheme.col.rank}
+		<span class="pull-right hidden-md" style="color: {$mytheme.rank_list_color};">
+			{if  condition="$mytheme.col.rank_data eq remarks"}
+			{$vo.vod_remarks}
+			{elseif condition="$mytheme.col.rank_data eq hits"}
+			{$vo.vod_hits}°
+			{elseif condition="$mytheme.col.rank_data eq type"}
+			{$vo.type.type_name}
+			{elseif condition="$mytheme.col.rank_data eq year"}
+			{$vo.vod_year}
+			{/if}
+		</span>
+		{/if}
+		<em class="text-red">{$key} . </em>{$vo.vod_name|mac_substring=12}
+	</a>
+</li>

@@ -1,0 +1,15 @@
+<div class="text-center" style="padding: 50px;">
+	<p><img src="{$maccms.path_tpl}statics/img/no.png"/></p>
+	<h4>没有找到您想要的结果哦！您可以 <a class="text-color" href="{:mac_url('gbook/index')}">“留言反馈”</a> 给我们</h4>
+</div>
+{if $mytheme.empty.is}
+<div class="myui-pannel_bd clearfix">
+	<ul class="myui-vodlist clearfix">										
+		{maccms:vod num="'.$mytheme['empty']['num'].'" type="'.$mytheme['empty']['type'].'" order="desc" by="'.$mytheme['empty']['by'].'"}		
+		<li class="col-md-{$mytheme.col.md} col-sm-{$mytheme.col.sm} col-xs-{$mytheme.col.xs}">
+			{include file="block/vod_box"}<!-- 列表-->															
+		</li>			
+		{/maccms:vod}
+	</ul>
+</div>
+{/if}

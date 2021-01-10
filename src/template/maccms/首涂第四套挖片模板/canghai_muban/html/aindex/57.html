@@ -1,0 +1,76 @@
+<!-- D057 by v.shoutu.cn -->
+<div class="stui-pannel stui-pannel-bg clearfix">
+	<div class="stui-pannel-box clearfix">	
+		<div class="col-lg-wide-3 col-md-wide-3 col-xs-1">
+			<div class="stui-pannel__head active bottom-line clearfix">
+				<a class="more text-muted pull-right" href="">更多 <i class="icon iconfont icon-more"></i></a>
+				<h3 class="title">
+					<img src="{$maccms.path}statics/icon/icon_19.png"/>
+					最新资讯
+				</h3>									
+			</div>	
+			<div class="stui-pannel_bd">
+				<ul class="stui-vodlist__text clearfix">
+					{maccms:art num="14" type="all" order="desc" by="time"}
+					<li class="{if condition="$key gt 1"} top-line-dot{/if}{if condition="$key gt 10"} visible-md{end/if}">
+						<a class="text-overflow" href="{:mac_url_art_detail($vo)}">{$vo.art_name}</a>								
+					</li>
+					{/maccms:art}
+				</ul>
+			</div>									
+		</div>
+		<div class="col-lg-wide-4 col-md-wide-7 col-xs-1 padding-0">																																				
+			
+			<ul class="stui-vodlist clearfix">
+				{maccms:art num="8" type="all" order="desc" by="time" level="5"}
+				<li class="col-md-2 col-xs-2">
+					<a class="stui-vodlist__thumb active lazyload" href="{:mac_url_art_detail($vo)}" title="{$vo.art_name}" data-original="{:mac_url_img($vo.art_pic)}">																			
+						<span class="pic-title-b">{$vo.art_name}</span>						
+					</a>																													
+				</li>
+				{/maccms:art}
+			</ul>
+		</div>																					
+		<div class="col-lg-wide-3 col-xs-1 hidden-md">
+			<div class="stui-pannel__head active bottom-line clearfix">								
+				<h3 class="title">
+					热门资讯
+				</h3>
+				<ul class="nav nav-tabs pull-right">										
+					<li class="active"><a href="#text1" data-toggle="tab">日榜</a></li>
+					<li><a href="#text2" data-toggle="tab">周榜</a></li>
+					<li><a href="#text3" data-toggle="tab">月榜</a></li>								
+				</ul>
+			</div>	
+			<div class="tab-content stui-pannel_bd">
+				<div id="text1"  class="tab-pane fade in active clearfix">																			
+					<ul class="stui-vodlist__text clearfix">
+						{maccms:art num="14" type="all" order="desc" by="hitsday"}
+						<li{if condition="$key gt 1"} class="top-line-dot"{/if}>
+							<a class="text-overflow" href="{:mac_url_art_detail($vo)}" title="{$vo.art_name}"><span class="badge badge-radius{if condition="$key eq 1"} badge-first{/if}{if condition="$key eq 2"} badge-second{/if}{if condition="$key eq 3"} badge-third{/if}">{$key}</span>{$vo.art_name}</a>								
+						</li>
+						{/maccms:art}
+					</ul>
+				</div>
+				<div id="text2"  class="tab-pane fade in clearfix">																			
+					<ul class="stui-vodlist__text clearfix">
+						{maccms:art num="12" type="all" order="desc" by="hitsweek"}
+						<li{if condition="$key gt 1"} class="top-line-dot"{/if}>
+							<a class="text-overflow" href="{:mac_url_art_detail($vo)}" title="{$vo.art_name}"><span class="badge badge-radius{if condition="$key eq 1"} badge-first{/if}{if condition="$key eq 2"} badge-second{/if}{if condition="$key eq 3"} badge-third{/if}">{$key}</span>{$vo.art_name}</a>								
+						</li>
+						{/maccms:art}
+					</ul>
+				</div>
+				<div id="text3"  class="tab-pane fade in clearfix">																			
+					<ul class="stui-vodlist__text clearfix">
+						{maccms:art num="12" type="all" order="desc" by="hitsmonth"}
+						<li{if condition="$key gt 1"} class="top-line-dot"{/if}>
+							<a class="text-overflow" href="{:mac_url_art_detail($vo)}" title="{$vo.art_name}"><span class="badge badge-radius{if condition="$key eq 1"} badge-first{/if}{if condition="$key eq 2"} badge-second{/if}{if condition="$key eq 3"} badge-third{/if}">{$key}</span>{$vo.art_name}</a>								
+						</li>
+						{/maccms:art}
+					</ul>
+				</div>
+			</div>									
+		</div>
+	</div>
+</div>

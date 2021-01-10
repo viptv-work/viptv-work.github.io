@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>订单记录 - 会员中心 -{$maccms.site_name}</title>
+<meta name="keywords" content="{$maccms.site_keywords}"/>
+<meta name="description" content="{$maccms.site_description}"/>
+{include file="user/include" /}
+</head>
+<body>
+{include file="user/head" /}
+<!-- 会员中心 -->
+<div id="member" class="fn-clear">
+	<div id="left">
+        <div class="m-nav">
+			<a href="javascript:MAC.GoBack()" class="btn-left"><i class="iconfont ico-right">&#xe625;</i></a>
+			<a href="{$maccms.path}" class="btn-right"><i class="iconfont ico-right">&#xe634;</i></a>
+			<span class="mb-title">个人中心</span>
+	    </div>
+        {include file="user/left_nav" /}
+	</div>
+    <div id="right">
+		<div class="m-nav">
+			<a href="javascript:MAC.GoBack()" class="btn-left"><i class="iconfont ico-right">&#xe625;</i></a>
+			<span class="mb-title">在线充值记录</span>
+	    </div>
+	    <div class="co-right co-right-bg">
+		<h2>充值记录</h2>
+		<div id="tab">
+			<div class="list">
+				<ul class="fn-clear">
+					<li class="cur w50">在线充值记录</li>
+					<li class="w50"><a href="{:url('user/cards')}">充值卡记录</a></li>
+				</ul>
+			</div>
+		</div>
+
+		<ul class="order__list clearfix">
+		{volist name="list" id="vo"}
+			<li class="order__item">
+                <div class="order__txt">								
+	                <h4 class="order__title">
+	                <span>单号：</span>{$vo.order_code}
+	                </h4>
+	                <p>{if condition="$vo.order_status eq 1"}已支付 ¥{$vo.order_price}<span class="split-line"></span>积分<span class="jg-tz">+{$vo.order_points}</span>{else}待支付：<span class="jg-tz">¥{$vo.order_price}</span>{/if}</p>
+	                <p>时间：{$vo.order_time|date='Y-m-d H:i',###}</p>
+                </div>
+                {if condition="$vo.order_status eq 0"}
+				<div class="order__del clearfix">
+					<a class="btn-order btn-del" href="{:url('user/pay')}?order_code={$vo.order_code}">支付</a>
+			    </div>
+                {/if}   		
+            </li>
+	    {/volist}
+	    	{if $__PAGING__.record_total==0}
+            <li class="no-tips text-center"><img class="no-cont" src="{$maccms.path_tpl}asset/img/no-cont.png" alt="没有内容">抱歉！没有内容哦</li>
+            {/if}
+	    </ul>
+		<div class="member-page">
+		{if$__PAGING__.page_total>1}
+			<ul class="page text-center cleafix">
+				<li><a href="{$__PAGING__.page_url|mac_url_page=1}"{if$__PAGING__['page_current']==1} class="btns-disad"{/if}>首页</a></li>
+				<li><a href="{$__PAGING__.page_url|mac_url_page=$__PAGING__.page_prev}"{if$__PAGING__['page_current']==1} class="btns-disad"{/if}>上一页</a></li>							
+				{maccms:foreach name="$__PAGING__.page_num" id="num"}
+				<li class="hidden-xs {if condition="$__PAGING__['page_current'] eq $num"}active{/if}"><a href="{$__PAGING__.page_url|mac_url_page=$num}">{$num}</a></li>
+				{/maccms:foreach}
+				<li class="hidden-xs active"><span class="num btns-disad">{$__PAGING__.page_current}/{$__PAGING__.page_total}</span></li>
+				<li><a href="{$__PAGING__.page_url|mac_url_page=$__PAGING__.page_next}"{if$__PAGING__['page_current']==$__PAGING__.page_total} class="btns-disad"{/if}>下一页</a></li>
+				<li><a href="{$__PAGING__.page_url|mac_url_page=$__PAGING__.page_total}"{if$__PAGING__['page_current']==$__PAGING__.page_total} class="btns-disad"{/if}>尾页</a></li>							
+			</ul>
+			<div class="page-tips visible-xs">当前<span>第{$__PAGING__.page_current}页</span>&nbsp;/&nbsp;共有{$__PAGING__.page_total}页</div>
+		{/if}
+		</div>
+    </div>
+    </div>
+</div>
+<script>
+
+</script>
+{include file="user/foot" /}
+</body>
+</html>

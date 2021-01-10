@@ -1,0 +1,67 @@
+@charset "UTF-8";
+/*!
+ * Email 362695000@qq.com
+ * 暗黑模式
+ */
+
+body{background: #222;color: #999;}
+a, h1, h2, h3, h4, h5, h6,input,textarea,.bstem .head_menu_a a, .bstem .head_user a, .bstem .head_menu_b a.menu, .bstem .head_hot_search a, .bstem .hot_search_tit,.head_user li a,.tabs ul li label,.screen_list.sx_tz li a,.comm_content,.conch_history_title span,.mac_pop .pop_top h2,.bstem .head_user li .user a.mac_user_n,.bstem .head_box.nav_top a,.bstem .head_box.nav_top .head_search .form_control,.bstem .head_box.nav_top .top_ico a,.artbanner_title,.head_user li .user a.mac_user_n,.themecolor p{color: #ddd;}
+.nav_list li.active a{color: #ddd!important;}
+.head_logo .logo_w,.bstem .head_box.nav_top .head_logo .logo_w{display: block!important;}
+.head_logo .logo_b,.bstem .head_box.nav_top .head_logo .logo_b{display: none!important;}
+#graypage,.head_box,.hot_banner,.content_desc .show_btn, .content_desc .hidden_btn,.play_boxbg,#graypage .head_box,.page li .num, .page li a,.gbook_form textarea,.remaining_w, .msg_code input,.rank_hom .rank_info,.qrcode_text,.mac_report .remaining-r,.bstem .head_box.nav_top,.listnow.nav_fixed,.foot_mnav,#play_page .hot_banner,.mac_results{background: #222;}
+.header::after,.bstem .head_box.nav_top .header::after,.mac_results li{border-bottom: 1px solid #2e2e2e;}
+.all_menu_box::after {border-color: transparent transparent #292929 transparent;}
+.head_menu_b a.menu,.rankpage .tab_rank::after,.bstem .head_box.nav_top .head_menu_b a.menu{border-right: 1px solid #2e2e2e;}
+.head_search form:hover .form_control,.head_search form .form_control:focus,.bstem .head_box.nav_top .head_search form:hover .form_control{background: rgba(255, 255, 255, 0.1);}
+.split_line,.player .split_line,.list_m a.text_muted:after{background-color: #444;}
+.foot,.hom_sm_list .smlist_box,.all_menu_box,.rank_hom .list_info,.detail_list,.content_playlist li a,.input_wrap .comment_content,.vod_all,.show_no, .msg_code input:focus,.play_box_right::-webkit-scrollbar-thumb,.msg_code input:focus,.input_wrap .verify,.actor_part,#graypage .vod_all,.rank_info,.rankpage .tab_rank,.commlist_row .pannel,.input_row .pannel,.hongbo_tips,.dropdown,.conch_history_title,.conch_history_bg.hfixed,.thunder_url,.mac_pop,.hl_content,.head_user li .user .user_list,.zbvodlist_box,#rating.rating-list,.am-share-url,.am-share-footer .share_btn, .am-share-footer .copy_btn,.art_navlist,.topic_fm,.listshow span,.plot_title{background: #292929;}
+.extra li .sideslip,.sideslip .qrcode img,.dropdown,.mac_results .ac_over{background: #343434;}
+.zbvodlist_box{border: 1px solid #292929;}
+.dropdown{box-shadow: 0 1px 0.2rem rgba(0,0,0,.2);}
+.artlist_thumb,.art_relates .artlr_pic{border: 0;}
+.rank_hom .ranklist_item, .rank_hom .part_eone,.art_navlist .wx_ewm{border-top: 1px solid #363636;}
+.ranklist_item,.part_eone,.wrapper_fl,.searchlist_item,#graypage .wrapper_fl{border-top: 1px solid #2e2e2e;}
+.hl_content_ft:after,.ranklist_r,.artlist_item,.art_sider_row .art_relates li,.am-share-footer .share_btn, .am-share-footer .copy_btn,.art_relates li,.foot_mnav{border-top: 1px solid #323232;}
+.nav_list li,.comm_list .comm_each,.down_list ul li,.conch_history_title,.head_user li .user a.mac_user_g,.topiclist_text .title,#downlist{border-bottom: 1px solid #323232;}
+.hl_content_ft a:after,.am-share-footer .copy_btn{border-left: 1px solid #323232;}
+.hl_content_bd .info_img{margin-bottom: 0.25rem;}
+.nav_list li{border-right: 1px solid #323232;}
+.content_playlist li a,.input_wrap .comment_content,.zbvodlist_play a,.gbook_form textarea, .msg_code input:focus,.remaining_w,.msg_code input:focus, .msg_code input,.mac_report .msg_code input:focus, .mac_report .msg_code input,.input_wrap .verify,.actor_part,.hongbo_tips,.thunder_url,.mac_report .remaining-r,.zbbox .zbvodlist_box,.zbsearchlist .searchlist_img,.listshow span,.plot_title{border: 1px solid #323232;}
+.show_btn .line_bg{background: -webkit-linear-gradient(top,hsla(0,0%,13%,.3),#222);}
+.play_but,.play_box_right,.play_namebox,.player .data a,.play_box_right::-webkit-scrollbar {background: #191919;}
+.play_namebox{border-bottom: 1px solid #282828;}
+.actor_hom .vodlist_thumb{border:1px solid #222;}
+.tabs .wrapper_fl.xl,.article_box .article_header,.play_source_tab{border-bottom: 1px solid #363636;}
+.screen_list span.text_muted,.sx_title,.art_share i{background: #4c4c4c;}
+.screen_list li.hl a,.sx_txt li,.sx_title2{background-color: #343434;}
+.listnow.nav_fixed .sx_txt li, .listnow.nav_fixed .sx_title2,.listnow.nav_fixed .sx_title,.searchlist_item .vodlist_sub,.hl_content_bd,.dropdown .share_tips,.dropdown .share_link,.content_desc .actor_text,.bstem .head_box.nav_fixed .hot_search_tit{color:#999;}
+.list_type_title span a, .sx_txt em,.content_desc{color:#666;}
+.page li .num, .page li a,.dropdown .share_link,.am-share-url .url_span,.themecolor li{border: 1px solid #444;}
+.style-input{border: 1px solid #666;}
+.page li .num.btns_disad, .page li a.btns_disad {background-color: #292929!important;color: #555!important;}
+.article_box .article_content p{color:#a1a1a1;}
+.role_info{background-color: #292929!important;}
+.back_ashen {background-color: #222!important;}
+.role_starlist li{border-top: 1px solid #2e2e2e!important;}
+.actor_text{border-bottom: 1px solid #282828!important;}
+.reg-w form .reg-group{border-bottom: 1px solid #323232!important;}
+.mac_history_box li a .vodlist_title {color: #999!important;}
+.mac_pop_bg {background: rgba(0,0,0,.7);}
+.vodlist_thumb,.balist_thumb,.ranklist_thumb,.artlist_thumb,.topiclist_thumb,.artbanner_thumb,.art_relates .artlr_pic,.play_vlist_thumb{background:#303030;background-position: 50% 50%;background-size: cover;}
+.zbo .play_vlist_thumb {background: url(../img/load_tv.gif) no-repeat #303030;background-position: 50% 50%;background-size: 60%;}
+
+@media (max-width: 820px){
+	a:focus,a:hover,a:active,.vodlist_item:hover a,.topiclist_item:hover a,.artlist_item:hover a,.arthom_item:hover a,.gw_action a:hover,.nav_list li.active a,.all_menu_inner .menu_top,.player .title,.play_vlist_title,#play_page .bk_btn, #play_page .se_btn, #topic_page .bk_btn, #topic_page .se_btn, #artcon_page .bk_btn, #artcon_page .se_btn,.head_menu_b a.menu,#play_page .nav_fixed .hd_tit, #topic_page .nav_fixed .hd_tit, #artcon_page .nav_fixed .hd_tit{color: #ddd;}
+	.nav_list li,.head_menu_b a.menu, .bstem .head_box.nav_top .head_menu_b a.menu,.header::after, .bstem .head_box.nav_top .header::after,.zbvodlist_box,.play_vlist_thumb, .zbo .play_vlist_thumb.zboad,.rankpage .tab_rank::after{border: 0;}
+	.all_menu_inner .menu_top,.gbook_form textarea,.remaining_w,.msg_code input{background: #292929;}
+	.all_menu_inner .menu_top,.zbvodlist_wi,.rankpage .title_nav,.zbvodlist_hom,.play_but.bline{border-bottom: 1px solid #323232;}
+	.zbvodlist_item,.zbvodlist_item, .zbvodlist_hom .zbvodlist_item{border-top: 1px solid #323232;}
+	.zbvodlist_item::after{border-right: 1px solid #323232;}
+	.head_search .form_control,.bstem .head_box.nav_top .head_search .form_control{background: rgba(255, 255, 255, 0.1);}
+	#graypage .vod_all,.pannel.vod_all,.zbvodlist_box,.rankpage .tab_rank,.rank_info,.commlist_row .pannel,.input_row .pannel,.detail_list,.art_navlist,.topic_fm{background: #222;}
+	.play_but a, .player a, .player span,.down_context a{color:#888;}
+	.play_but .btns_disad, .play_but .btns_disad:hover {color: #4c4c4c!important;}
+	.play_boxbg, .play_but{background: none;}
+	.back_ashen {background-color: #292929!important;}
+}

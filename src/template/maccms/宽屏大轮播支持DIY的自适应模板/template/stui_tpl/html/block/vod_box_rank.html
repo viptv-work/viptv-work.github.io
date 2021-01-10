@@ -1,0 +1,7 @@
+<li>
+	<a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">
+		<span class="text-muted pull-right hidden-md">
+			{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks|mac_substring=8}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}
+		</span>
+		<span class="badge{if condition="$key eq 1"} badge-first{/if}{if condition="$key eq 2"} badge-second{/if}{if condition="$key eq 3"} badge-third{/if}">{$key}</span>{$vo.vod_name|mac_substring=8}</a>
+</li>

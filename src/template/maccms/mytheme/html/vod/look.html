@@ -1,0 +1,33 @@
+{if $mytheme.look.is}
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_hd">
+			<div class="myui-panel__head clearfix">
+				<h3 class="title">
+					{$mytheme.look.title}
+				</h3>		
+			</div>													
+		</div>
+		<div class="myui-panel_bd">
+			<ul class="myui-vodlist__bd clearfix">
+				{maccms:vod num="'.$mytheme['look']['num'].'" type="'.$mytheme['look']['type'].'" order="desc" by="'.$mytheme['look']['by'].'"}
+				<li class="col-md-{$mytheme.look.col} col-sm-{$mytheme.col.sm_wide} col-xs-{$mytheme.col.xs_wide}{if condition="$key gt $mytheme.look.xs"} hidden-xs{/if}{if condition="$key gt $mytheme.look.sm"} hidden-sm{/if}">
+					{include file="block/vod_box_active"}		
+				</li>
+				{/maccms:vod}
+			</ul>	
+		</div>		
+	</div>	
+</div>
+{if $mytheme.detail.ad && $mytheme.detail.ad3}
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_bd">
+			<div class="col-xs-1">
+				{$mytheme.detail.ad3}
+			</div>
+		</div>
+	</div>				
+</div>
+{/if}
+{/if}

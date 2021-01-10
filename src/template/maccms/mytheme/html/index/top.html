@@ -1,0 +1,19 @@
+{if $mytheme.home_slide.is}
+<div class="myui-panel radius-0 clearfix" id="index-hot" style="padding: 15px 0;">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_bd col-pd">	
+			<div class="container">
+			    <div class="row">
+					<div class="flickity{if condition="$mytheme.home_slide.switch eq dots" } dots{/if} active clearfix" data-align="left" data-{$mytheme.home_slide.switch}="1"{if $mytheme.home_slide.play} data-play="{$mytheme.home_slide.play_time}"{/if}>
+						{maccms:vod num="'.$mytheme['home_slide']['num'].'" type="'.$mytheme['home_slide']['id'].'" order="desc" by="'.$mytheme['home_slide']['by'].'" level="'.$mytheme['home_slide']['level'].'"}
+						<div class="col-lg-{$mytheme.home_slide.col} col-md-{$mytheme.col.md} col-sm-{$mytheme.col.sm} col-xs-{$mytheme.home_slide.xs}">
+							{include file="block/vod_box_slide"}											
+						</div>
+						{/maccms:vod}
+					</div>	
+				</div>
+			</div>
+    	</div>
+   </div>
+</div>
+{/if}

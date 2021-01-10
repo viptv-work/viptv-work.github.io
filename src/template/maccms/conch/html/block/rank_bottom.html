@@ -1,0 +1,8 @@
+              </span>
+              <h4 class="title">{$vo.vod_name}</h4>	
+         </div>
+	     <p class="vodlist_sub">{$vo.vod_sub|mac_default=$vo.vod_actor|mac_default='未知'}</p>
+	     <p><span class="vodlist_sub">状态：{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}</span></p>
+    </div>
+    </a>  		
+</li>

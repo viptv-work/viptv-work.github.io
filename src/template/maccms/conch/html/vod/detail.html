@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>     
+	{include file="public/include"}
+</head>
+<body class="bstem">
+    {include file="public/head"}
+    <div class="hot_banner ">
+    <div class="bgi_box">
+    	<span class="bgi" style="background-image:url({:mac_url_img($obj.vod_pic)}"></span>
+    	<span class="bgfd"></span>
+    </div>
+    <div class="detail_list_box">
+         <div class="detail_list">
+				<div class="content_box clearfix">
+					<div class="content_thumb fl">											
+						<a class="vodlist_thumb lazyload" href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>1])}" title="{$obj.vod_name}" data-original="{:mac_url_img($obj.vod_pic)}"><span class="play hidden_xs"></span>
+						</a>								
+					</div>
+					<div class="content_detail content_top fl">
+						<div class="pannel_head clearfix">
+							<span class="text_muted pull_right hidden_xs">
+								&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0);" style="cursor:hand" onclick="MAC.Fav(location.href,document.name);">保存到浏览器</a>
+							</span>
+					        {if condition="$GLOBALS['config']['user']['status'] eq 1"}
+						    <span class="text_muted pull_right hidden_xs">
+								<a href="javascript:void(0);" style="cursor:hand" class="mac_ulog" data-type="2" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}">我要收藏</a>
+							</span>
+							{/if}
+							<span class="text_muted pull_right hidden_mb author@qq3626-95000">
+								<a href="javascript:;" class="open-share"><i class="iconfont shaixuan_i">&#xe615;</i>&nbsp;分享</a>
+							</span>
+							<h2 class="title">
+								{$obj.vod_name}
+							</h2>
+						</div>
+						<div id="detail_rating" class="fn-clear">
+                             {include file="widget/star"}
+                        </div>
+                    </div>
+                    <div class="content_detail content_min fl">
+                        <ul>	
+						<li class="data">
+							<span class="text_muted hidden_xs">年份：</span>{$obj.vod_year|mac_url_create='year'}
+							<span class="split_line"></span>
+							<span class="text_muted hidden_xs">地区：</span>{$obj.vod_area|mac_url_create='area'}
+							<span class="split_line"></span>
+							<span class="text_muted hidden_xs">类型：</span>{$obj.vod_class|mac_url_create='class'}			
+						</li>
+						<li class="data"><span>状态：</span><span class="data_style">{if condition="$obj.vod_remarks neq ''"}{$obj.vod_remarks}{elseif condition="$obj.vod_serial gt 0"}第{$obj.vod_serial}集{else /}已完结{/if}</span>&nbsp;/&nbsp;<em>{$obj.vod_time|date='m-d',###}</em></li>
+						<li class="data"><span>主演：</span>{$obj.vod_actor|mac_url_create='actor'|mac_default='未知'}</li>
+						<li class="data"><span>导演：</span>{$obj.vod_director|mac_url_create='director'|mac_default='未知'}</li>
+						<li class="desc hidden_xs">
+							<span class="left text_muted">简介：</span>{$obj.vod_content|mac_filter_html|mac_substring=55|mac_default='暂无简介'}&nbsp;<a href="#desc">详细&nbsp;></a>
+						</li>
+						</ul>
+					</div>
+					<div class="content_detail content_min content_btn fl">
+                        {if condition="$obj.vod_copyright eq 1 && $GLOBALS['config']['app']['copyright_status'] eq 1 "}
+                        <div class="det_tips">{$GLOBALS['config']['app']['copyright_notice']|mac_default='应版权方要求！本片相关资源已关闭！'}</div>{else}
+                        {include file="widget/detail_button"}
+                        <div class="playbtn o_share hidden_xs">
+						<a class="btn btn_share" href="javascript:;"><i class="iconfont">&#xe615;</i>&nbsp;分享</a>
+						{include file="widget/share"}
+						</div>
+						{/if}
+					</div>
+				</div>
+         </div>
+    </div>
+    </div>
+    <div class="container ">
+        {include file="ads/ads_all"}
+        <div class="left_row fl">
+			<div class="pannel clearfix">
+				<div class="tabs">
+				  <input type="radio" id="tab1" name="tab-control" checked>
+				  <input type="radio" id="tab2" name="tab-control"> 
+				  <ul  class="title_nav">
+					<li class="tab-det" title="剧情介绍" id="desc"><label for="tab1" role="button"><span>剧情介绍</span></label></li>
+					<li class="tab-det" title="我要评分"><label for="tab2" role="button"><span>我要评分</span></label></li>
+				  </ul>
+				  <div class="content">
+					<section>
+					  <h2>剧情介绍</h2>
+						<div class="content_desc context clearfix">
+							<span>{$obj.vod_content|mac_filter_html|mac_default='暂无'}</span>
+							<a href="javascript:void(0);" class="show_btn" onclick="showdiv(this);"><i class="line_bg"></i><i class="iconfont">&#xe63a;</i><em class="hidden_xs">&nbsp;展开全部</em></a>
+						</div>
+						<div class="content_desc full_text clearfix" style="display:none;">
+							<span>{$obj.vod_content|mac_filter_html|mac_default='暂无'}</span>
+							<a href="javascript:void(0);" class="hidden_btn" onclick="hidediv(this);"><i class="iconfont">&#xe628;</i><em class="hidden_xs">&nbsp;收起全部</em></a>
+						</div>
+					</section>
+					<section>
+					  <h2>我要评分</h2>
+						<div class="content_desc clearfix">
+							{include file="widget/star2"}
+						</div>
+					</section>
+				  </div>
+				 </div>
+			</div>
+			{if condition="$obj.vod_copyright eq 1 && $GLOBALS['config']['app']['copyright_status'] eq 1 "}{else}
+			<!-- 播放地址 -->			
+			<div class="pannel clearfix" id="bofy">
+			    <div class="pannel_head clearfix">
+                    <div class="text_muted pull_right">
+                    <a href="javascript:;" class="sort_btn"><i class="iconfont">&#xe658;</i>&nbsp;排序</a>
+                    </div>
+                    <div class="showbtn" style="display:none;">
+						<span class="playlist_notfull text_muted pull_right">
+						<a href="javascript:;" onclick="showlist(this);" class=""><i class="iconfont">&#xe63a;</i>&nbsp;展开全部剧集</a><span class="split_line"></span>
+						</span>
+						<span class="playlist_full text_muted pull_right" style="display:none;">
+						<a href="javascript:;" onclick="hidelist(this);" class=""><i class="iconfont">&#xe628;</i>&nbsp;收起全部剧集</a><span class="split_line"></span>
+						</span>
+                    </div>
+					<h3 class="title">播放列表</h3>
+				</div>
+				<div class="play_source">
+				    <div class="play_source_tab list_scroll clearfix" id="NumTab">
+				        {maccms:foreach name="obj.vod_play_list" id="vo"}
+						<a href="javascript:void(0);" {if condition="$key eq 1"}class="active"{/if} alt="{$vo.player_info.show}"><i class="iconfont">&#xe62f;</i>&nbsp;{$vo.player_info.show}</a>{/maccms:foreach}
+					</div>
+                    {maccms:foreach name="obj.vod_play_list" id="vo"}
+                    <div class="play_list_box hide {if condition="$key eq 1"}show{/if}">
+                        <div class="player_infotip"><i class="iconfont">&#xe62d;</i>&nbsp;当前资源由{$vo.player_info.show}提供&nbsp;-&nbsp;{$vo.player_info.tip|mac_substring=20|mac_default='在线播放,无需安装播放器'}</div>
+                        <div id="playlistbox" class="playlist_notfull">
+							<ul class="content_playlist list_scroll clearfix">
+								{maccms:foreach name="vo.urls" id="vo2" key="key2"}
+								<li><a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}">{$vo2.name}</a></li>
+								{/maccms:foreach}
+							</ul>
+                            <a href="javascript:;" onclick="showlist(this);" class="listshow hidden_xs"><span><i class="iconfont">&#xe63a;</i>&nbsp;展开全部</span></a>
+                        </div>
+                        <div class="playlist_full" style="display:none;">
+							<ul class="content_playlist clearfix">
+								{maccms:foreach name="vo.urls" id="vo2" key="key2"}
+								<li><a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}">{$vo2.name}</a></li>
+								{/maccms:foreach}
+							</ul>
+                        </div>
+                    </div>
+                    {/maccms:foreach}
+                </div>
+			</div>
+			{include file="ads/ads_vodw"}
+			{/if}
+			{if condition="$conch['theme']['plot']['btn'] eq 1"}
+			{if$obj.vod_plot}
+			<div class="pannel clearfix">
+				<div class="pannel_head clearfix">
+					<a class="text_muted pull_right" href="{:mac_url_plot_detail($obj,['page'=>1])}">查看详情<i class="iconfont more_i">&#xe623;</i></a>
+					<h3 class="title">分集剧情</h3>						
+				</div>
+				<div class="plot_list_box">
+				{volist name="$obj['vod_plot_list']" id="vo"}{if condition="$key lt 4"}
+				<div class="plot_list">
+					<div class="plot_title">
+						<a class="page_link" href="{:mac_url_plot_detail($obj,['page'=>$key])}" title="{$vo.name}">{$vo.name}</a> - {$vo.detail|mac_substring=55|mac_filter_html}
+						<a href="{:mac_url_plot_detail($obj,['page'=>$key])}" title="{$vo.name}">[详情...]</a>
+					</div>
+				</div>
+				{/if}{/volist}
+				</div>
+            </div>
+			{/if}{/if}
+			<!-- 猜你喜欢 -->
+			<div class="pannel clearfix">
+				<div class="pannel_head clearfix">
+					<h3 class="title">
+						猜你喜欢
+					</h3>						
+				</div>
+				<ul class="vodlist vodlist_sh list_scroll clearfix">
+					{maccms:vod num="8" type="'.$obj['type_id'].'" paging="false" order="desc" by="rnd"}
+					{include file="widget/vod_box"}		
+					{/maccms:vod}
+				</ul>
+			</div>
+			<!-- end 猜你喜欢 -->
+			<!-- 相关推荐 -->
+			<div class="pannel clearfix">
+				<div class="pannel_head clearfix">
+					<h3 class="title">
+						相关推荐
+					</h3>						
+				</div>
+				<ul class="vodlist vodlist_sh list_scroll clearfix">
+					{maccms:vod num="8" type="current" order="desc" by="time"}
+					{include file="widget/vod_box"}		
+					{/maccms:vod}
+				</ul>
+			</div>
+			<!-- end 相关推荐 -->
+            {include file="module/vod_art"}
+        </div>
+        <div class="right_row fr pa_left hidden_xs hidden_mi">
+      	    {include file="ads/ads_vodr"}
+            {include file="module/vod_rank"}
+        </div>
+    </div>
+    <!--统计数据-->
+    <span style="display:none" class="mac_ulog_set" data-type="1" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+	<script type="text/javascript">               
+	if ($('#NumTab').length) {
+		var $a = $('#NumTab a');
+		var $ul = $('.play_list_box');
+		var $tp = $('.play_source_tips span');
+
+		$a.click(function(){
+			var $this = $(this);
+			var $t = $this.index();
+			$a.removeClass();
+			$this.addClass('active');
+			$ul.addClass('hide').removeClass('show');
+			$ul.eq($t).addClass('show');
+			$tp.addClass('hide').removeClass('show');
+			$tp.eq($t).addClass('show');
+		})
+	}
+	</script>
+	{include file="public/foot"}
+</body>
+</html>

@@ -1,0 +1,40 @@
+{if $mytheme.actor.is}
+{maccms:actor name="'.$obj['vod_actor'].'"}{/maccms:actor}
+{notempty name="__LIST__"}
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_hd">
+			<div class="myui-panel__head clearfix">
+				<h3 class="title">
+					{$mytheme.actor.title}
+				</h3>
+				<a class="more text-muted" href="{:mac_url('actor/index')}">更多 <i class="fa fa-angle-right"></i></a>
+			</div>
+		</div>
+		<div class="myui-panel_bd">
+			<ul class="myui-vodlist clearfix">
+				{maccms:vod num="'.$mytheme['actor']['num'].'" actor="'.$obj['vod_actor'].'" order="desc" by="'.$mytheme['actor']['by'].'"}	
+				<li class="col-lg-{$mytheme.actor.col} col-md-{$mytheme.col.md} col-sm-{$mytheme.col.sm} col-xs-{$mytheme.col.xs}">
+					{include file="block/vod_box_tab"}
+				</li>
+				{/maccms:vod}
+			</ul>
+		</div>
+	</div>						
+</div>
+
+{if $mytheme.detail.ad && $mytheme.detail.ad4}
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_bd">
+			<div class="col-xs-1">
+				{$mytheme.detail.ad4}
+			</div>
+		</div>
+	</div>				
+</div>
+{/if}
+
+{/notempty}
+{/if}
+

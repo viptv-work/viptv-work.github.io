@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<title>正在播放 <?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_name');?></title>
+<meta name="keywords" content="<?php echo $web_keywords;?>" />
+<meta name="description" content="<?php echo $web_description;?>" />
+<link href="<?php echo '/template/'.$web_moban;?>/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+<?php  include('./template/'.$web_moban.'/header.html');?>
+<div class="player uk-padding-remove container">
+    <!--视频播放区域-->
+    <div class="player-area margin-bottom-10 clearfix">
+        <!--播放器区域-->
+        <div class="player-l uk-float-left uk-position-relative text-white">
+
+                                <div class="player-player" id="player" style="background-color: rgb(0, 0, 0); width: 800px; height: 450px; cursor: pointer;">
+									  <video id='myVideo'   class="video-js"></video>                  
+									<link rel="stylesheet" type="text/css" href="/static/VideoJS/video.min.css?v=3">
+									<script type="text/javascript" src="/static/VideoJS/video.min.js?v=1" charset="utf-8" > </script>
+										<script type="text/javascript" src="/static/VideoJS/video-conrtib-ads.js?v=1" charset="utf-8" > </script>
+										<script type="text/javascript" src="/static/VideoJS/myVideo.js?v=6" charset="utf-8" > </script>
+										<script type="text/javascript">
+										var vPath = '<?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_playurl');?>';
+										var logo = '';
+										var myVideo=initVideo({
+											id:'myVideo',
+											url:vPath,
+											ad:{
+											  pre:{
+												  url:'',
+												  link:'',
+											  },
+											},
+											logo:{
+												url:'/template/800CMSPC/images/logo.png',
+												width:'100px'
+											},
+										});
+									</script>
+								</div>
+                        <div class="player-favorite clearfix">
+                <a href="javascript:void(0);" class="uk-display-block uk-float-left uk-margin-top uk-margin-left btn-video-favorite clearfix"><span class="uk-display-block uk-float-left"></span>
+                    <p class="uk-margin-remove">收藏影片</p></a>
+                
+                <a href="javascript:void(0);" class="uk-display-block uk-float-left uk-margin-top uk-margin-left btn-video-likes clearfix current-btn-video-likes"><span class="uk-display-block uk-float-left"></span>
+                    <p class="likes-video uk-float-left"><?php  echo rand(5, 500); ?></p></a>
+                <p class="uk-float-right uk-float-left player-num">播放：<span><?php  echo rand(5, 10000); ?></span></p>
+            </div>
+        </div>
+        <!--相关视频-->
+                    <div class="player-r uk-float-right">
+                <h3>相关视频</h3>
+                <div class="video-list scrollbar" id="style-3">
+                    <!--相关视频一-->
+	<?php 	include('./lib/datatop.php');$pagesize = 8; $JCCMS_pagecount = floor(count($JCCMS_SQL) / $pagesize)-1;$JCCMS_prev = $JCCMS_pages -1;$JCCMS_next = $JCCMS_pages +1;
+	$JCCMS_SQL=JCCMS_chulis(JCCMS_SQLL($JCCMS_SQL,'0','JCCMS_SQL_type'));for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+                            <div class="video-item margin-bottom-10 clearfix">
+                                <a class="video-img uk-float-left uk-margin-right" href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html">
+                                    <img src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>">
+                                </a>
+                                <div class="video-info uk-float-left">
+                                    <a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html" class="video-title" ><h4 class="title-truncate"><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></h4></a>
+                                    <p>播放：<span><?php  echo rand(5, 10000); ?></span></p>
+                                    <a href="javascript:void(0);" onclick="clickVideoLikes(this,23575)" class="video-likes uk-display-block btn-video-likes">
+                                        <span class="icon-video-likes uk-display-block uk-float-left"></span>
+                                        <span class="num-video-likes uk-display-block uk-float-left likes-video">推荐</span>
+                                    </a>
+                                </div>
+                            </div>
+	<?php } ?>                                                                        
+                            
+     
+                        
+                                    </div>
+            </div>
+			
+			
+			
+  <?php	Jccms_json_ad_video('<a href="链接" target="_blank"><img style="width:100%;height:100px;margin-bottom:2px;" src="图片"></a>');?>
+ 			
+            </div>
+    <!--视频信息-->
+    
+</div>
+
+
+<?php  include('./template/'.$web_moban.'/footer.html');?>
+</body>
+</html>

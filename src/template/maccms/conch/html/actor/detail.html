@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{include file="public/include"}
+	<link rel="stylesheet" href="{$maccms.path_tpl}asset/css/hlactor.css" type="text/css" />
+</head>
+<body class="bstem">
+    {include file="public/head"}
+    <div class="hot_banner actor_ber ">
+         <div class="actor_list">
+        	<!-- 详细信息 -->
+				<div class="content_actor clearfix">
+					<div class="actor_thumb">											
+						<a class="vodlist_thumb lazyload" href="javascript:;" title="{$obj.actor_name}" data-original="{$obj.actor_pic|mac_url_img}"></a>									
+					</div>
+					<div class="actor_detail">
+						<span class="text_muted pull_right">
+							<a class="digg_link" data-id="{$obj.actor_id}" data-mid="{$maccms.mid}" data-type="up" href="javascript:;" title="喜欢{$obj.actor_name}"><i class="iconfont">&#xe655;</i>&nbsp;<em class="digg_num">{$obj.actor_up}</em></a>
+						</span>
+						<h3 class="title">{$obj.actor_name}</h3>
+                        <ul>
+                        <li class="data">
+							<span class="text_muted hidden_xs">出生地：</span>{$obj.actor_birtharea|mac_default='未知'}
+							<span class="split_line"></span>
+							<span class="text_muted hidden_xs">生日：</span>{$obj.actor_birthday|mac_default='未知'}
+							</li>	
+						<li class="desc hidden_xs">
+							<span class="left text_muted">简 介：</span>{$obj.actor_blurb|mac_default='暂无简介'}
+						</li>
+						</ul>
+					</div>
+				</div>				
+			<!-- end 详细信息 -->
+         </div>
+    </div>
+   <div class="container ">
+        
+        <div class="row">         	
+			<div class="pannel actor_vod clearfix">
+				<div class="tabs">
+				  <input type="radio" id="tab1" name="tab-control" checked>
+				  <input type="radio" id="tab2" name="tab-control">
+				  <input type="radio" id="tab3" name="tab-control">
+				  <ul class="title_nav">
+					<li class="tab-det" title="个人资料"><label for="tab1" role="button"><span>个人资料</span></label></li>
+					<li class="tab-det" title="相关作品"><label for="tab2" role="button"><span>相关作品</span></label></li>
+					{if condition="$conch['theme']['role']['btn'] eq 1"}
+					<li class="tab-det" title="参演角色"><label for="tab3" role="button"><span>参演角色</span></label></li>
+					{/if}
+				  </ul>
+				  {include file="ads/ads_all"}
+				  <div class="content">
+					<section>
+					  <h2>个人介绍</h2>
+						<div class="content_desc clearfix">
+						<ul class="actor_text clearfix">
+						   <li><span class="sTit">中文名：</span>{$obj.actor_name}</li>
+						   <li><span class="sTit">别名：</span>{$obj.actor_alias|mac_default='未知'}</li>
+						   <li><span class="sTit">性别：</span>{$obj.actor_sex|mac_default='未知'}</li>
+						   <li><span class="sTit">身高：</span>{$obj.actor_height|mac_default='未知'}</li>
+						   <li><span class="sTit">体重：</span>{$obj.actor_weight|mac_default='未知'}</li>
+						   <li><span class="sTit">地区：</span>{$obj.actor_area|mac_default='未知'}</li>
+						   <li><span class="sTit">星座：</span>{$obj.actor_starsign|mac_default='未知'}</li>
+						   <li><span class="sTit">血型：</span>{$obj.actor_blood|mac_default='未知'}</li>
+						   <li><span class="sTit">生日：</span>{$obj.actor_birthday|mac_default='未知'}</li>
+						   <li><span class="sTit">出生地：</span>{$obj.actor_birtharea|mac_default='未知'}</li>
+						   <li><span class="sTit">职业：</span>{$obj.actor_remarks|mac_default='未知'}</li>
+						   <li><span class="sTit">毕业院校：</span>{$obj.actor_school|mac_default='未知'}</li>
+						   <li class="all"><span class="sTit">代表作品：</span>{$obj.actor_works|mac_url_create='wd'|mac_default='未知'}</li>
+						 </ul>
+						 {$obj.actor_content|mac_default='暂无'}
+						</div>
+					</section>
+					<section>
+					  <h2>相关作品</h2>
+						<div class="content_desc clearfix">
+						    <h3 class="vod_tit1">电影</h3>
+							<ul id="vod_actor1" class="vodlist vodlist_wi list_scroll clearfix">
+								{maccms:vod type="1" actor="'.$obj['actor_name'].'" order="desc" by="time"}
+								{include file="widget/vod_box"}		
+								{/maccms:vod}
+							</ul>
+							<h3 class="vod_tit2">电视剧</h3>
+							<ul id="vod_actor2" class="vodlist vodlist_wi list_scroll clearfix">
+								{maccms:vod type="2" actor="'.$obj['actor_name'].'" order="desc" by="time"}
+								{include file="widget/vod_box"}		
+								{/maccms:vod}
+							</ul>
+							<h3 class="vod_tit3">综艺</h3>
+							<ul id="vod_actor3" class="vodlist vodlist_wi list_scroll clearfix">
+								{maccms:vod type="3" actor="'.$obj['actor_name'].'" order="desc" by="time"}
+								{include file="widget/vod_box"}		
+								{/maccms:vod}
+							</ul>
+						</div>
+					</section>
+					{if condition="$conch['theme']['role']['btn'] eq 1"}
+					<section>
+					  <h2>参演角色</h2>
+						<div class="clearfix">
+                   <div class="vodlist_smt clearfix">
+					<ul>
+						{maccms:role num="120" paging="no" actor="'.$obj['actor_name'].'" order="desc" by="time"}
+						<li class="ranklist_item">
+							<a href="{$vo|mac_url_role_detail}" title="{$vo.data.vod_name}">
+							<div class="ranklist_img">
+								 <div class="ranklist_thumb lazyload" data-original="{$vo.role_pic|mac_url_img}">
+								 </div>
+							</div>	
+							<div class="ranklist_txt">
+								 <div class="pannel_head clearfix">
+									 <span class="vod_tname text_muted pull_right">演员：{$obj.actor_name}</span>
+									  <h4 class="title">{$vo.role_name}</h4>	
+								 </div>
+								 <p class="vodlist_sub">简介：{$vo.role_content|mac_filter_html|mac_default='暂无'}</p>
+								 <p><span class="vodlist_sub">片名：《{$vo.data.vod_name}》</span></p>
+							</div>
+							</a>  		
+						</li>
+						{/maccms:role}
+					</ul>
+                </div>	
+						</div>	
+					</section>{/if}
+				  </div>
+				 </div>
+			</div>
+
+        </div>
+
+    </div>
+    <script type="text/javascript">
+		var linum1 = document.getElementById('vod_actor1').getElementsByTagName("li").length;
+        if (linum1 < 1){$(".vod_tit1").css("display","none");}
+		var linum2 = document.getElementById('vod_actor2').getElementsByTagName("li").length;
+        if (linum2 < 1){$(".vod_tit2").css("display","none");}
+		var linum3 = document.getElementById('vod_actor3').getElementsByTagName("li").length;
+        if (linum3 < 1){$(".vod_tit3").css("display","none");}
+	</script>
+	{include file="public/foot"}
+</body>
+</html>

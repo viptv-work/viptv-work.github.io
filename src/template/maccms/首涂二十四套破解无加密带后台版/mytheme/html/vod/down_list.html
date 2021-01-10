@@ -1,0 +1,38 @@
+{maccms:foreach name="obj.vod_down_list" id="vo"}
+{if condition="$vo.from eq $mytheme.downlist.from"}
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box">
+		<div class="myui-panel_hd">
+			<div class="myui-panel__head bottom-line active clearfix">
+				{if $mytheme.downlist.sort}<a class="more sort-button pull-right" href="javascript:;"><i class="fa fa-sort-amount-asc"></i> 排序</a>{/if}
+				<h3 class="title">
+					{$vo.player_info.show}
+				</h3>	
+				{if $mytheme.downlist.tip}<span class="more text-muted">{$vo.player_info.tip} </span>{/if}
+			</div>																		
+		</div>					
+		<div class="myui-panel_bd  downlist clearfix">
+			<ul class="myui-down__list scrollbar sort-list col-pd clearfix" {if condition="$mytheme.downlist.high gt 0"}style="max-height: {$mytheme.downlist.high}px; overflow: auto;"{/if}>
+				{maccms:foreach name="vo.urls" id="vo2"}
+				<li class="bottom-line clearfix">
+					<span class="text"><input type="checkbox" name="down_url_list_{$key}" value="{$vo2.url}" class="down_url"/> <a class="common_down" href="javascript:;">{$vo2.name}</a><input class="hide" type="text" name="" value="{$vo2.url}" /></span>
+					<span class="operate">
+						<a class="thunder btn common_down" href="javascript:;"><img src="{$maccms.path_tpl}statics/img/icon_xunlei.png"/> 迅雷下载</a>
+						<a class="btn bendi" href="{$vo2.url}"><img src="{$maccms.path_tpl}statics/img/icon_down.png"/> 本地下载</a>
+						<a class="btn copy Codyurl" href="javascript:;" data-text="{$vo2.url}"><img src="{$maccms.path_tpl}statics/img/icon_url.png"/> 复制地址</a>
+						<a class="thunderkk btn hidden-sm hidden-xs" href="javascript:;"><img src="{$maccms.path_tpl}statics/img/icon_video.png"/> 看看播放</a>
+					</span>
+				</li>
+				{/maccms:foreach}
+			</ul>
+			<ul class="myui-down__list col-pd clearfix">
+				<li class="clearfix">
+					<span class="text"><input type="checkbox" name="checkall" /> 全选  &nbsp;&nbsp;<a class="text-red thunder_down_all" href="javascript:;" >迅雷下载选中文件</a></span>
+					<span class="operate text-muted hidden-xs">没有安装迅雷？<a target="_blank" href="http://dl.xunlei.com/">点击这里下载最新版迅雷 &gt;</a></span>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+{/if}
+{/maccms:foreach}

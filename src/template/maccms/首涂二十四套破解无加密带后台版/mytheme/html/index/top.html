@@ -1,0 +1,11 @@
+{if $mytheme.home_slide.is}
+	<div class="mb20">
+		<div class="flickity center clearfix" data-align="left" data-{$mytheme.home_slide.switch}="1"{if $mytheme.home_slide.play} data-play="{$mytheme.home_slide.play_time}"{/if}>
+			{maccms:vod num="'.$mytheme['home_slide']['num'].'" type="'.$mytheme['home_slide']['id'].'" order="desc" by="'.$mytheme['home_slide']['by'].'" level="'.$mytheme['home_slide']['level'].'"}
+			<div class="col-xs-1 padding-0">
+				<a{if $mytheme.site.link} href="{:mac_url_vod_play($vo,['sid'=>1,'nid'=>1])}"{else} href="{:mac_url_vod_detail($vo)}"{/if}><img class="img-responsive" src="{$vo.vod_pic_slide|mac_url_img}" ></a>											
+			</div>
+			{/maccms:vod}
+		</div>	
+	</div>		
+{/if}

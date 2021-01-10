@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{$obj.actor_name}个人资料_{$obj.actor_name}演过的电视剧_{$obj.actor_name}电影全集-{$maccms.site_name}</title>
+    <meta name="keywords" content="{$obj.actor_name}个人资料,{$obj.actor_name}演过的电视剧,{$obj.actor_name}电影全集,{$obj.actor_name}最新电影,{$obj.actor_name}最新电视剧">
+    <meta name="description" content="{$maccms.site_name}演示站为你收集了{$obj.actor_name}个人资料包括了{$obj.actor_name}最新演过的电视剧,{$obj.actor_name}电影全集,以及{$obj.actor_name}图片剧照最近动态等信息希望你能喜欢。">
+    {include file="block/include"}
+</head>
+<body>
+{include file="block/head"}
+<div class="container">
+	<div class="row">
+		<!-- 详细信息-->
+    	<div class="myui-panel active myui-panel-bg2 clearfix">
+			<div class="myui-panel-box clearfix">
+				<div class="col-pd">	
+					<div class="myui-content__actor">
+						<div class="myui-content__thumb hidden-xs">									
+							<div class="myui-vodlist__thumb img-lg-190 lazyload" data-original="{:mac_url_img($obj.actor_pic)}"></div>				
+						</div>
+						<div class="myui-content__detail">
+							<h1 class="title">{$obj.actor_name} <small class="text-muted">{$obj.actor_sex}</small></h1>	
+							<ul class="clearfix">	
+								<li class="data col-lg-3 col-xs-2"><span class="text-muted">性别：</span>{$obj.actor_sex|mac_default='未知'}</li>
+								<li class="data col-lg-3 col-xs-2"><span class="text-muted">职业：</span>{$obj.actor_remarks|mac_default='未知'}</li>
+								<li class="data col-lg-3 col-xs-2"><span class="text-muted">星座：</span>{$obj.actor_starsign|mac_default='未知'}</li>
+								<li class="data col-lg-3 col-xs-2"><span class="text-muted">血型：</span>{$obj.actor_blood|mac_default='未知'}</li>
+								<li class="data col-lg-3 col-xs-2"><span class="text-muted">身高：</span>{$obj.actor_height|mac_default='未知'}</li>
+								<li class="data col-lg-3 col-xs-2"><span class="text-muted">体重：</span>{$obj.actor_weight|mac_default='未知'}</li>
+								<li class="data col-lg-3 col-xs-2"><span class="text-muted">地区：</span>{$obj.actor_area|mac_default='未知'}</li>
+								<li class="data col-lg-3 col-xs-2"><span class="text-muted">生日：</span>{$obj.actor_birthday|mac_default='未知'}</li>	
+								<li class="data col-lg-3 col-xs-2"><span class="text-muted">出生地：</span>{$obj.actor_birtharea|mac_default='未知'}</li>
+								<li class="data col-xs-1"><span class="text-muted">毕业院校：</span>{$obj.actor_school|mac_default='未知'}</li>
+								<li class="data col-xs-1"><span class="left text-muted">代表作：</span>{$obj.actor_works|mac_default='未知'}</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end 详细信息-->
+
+		<div class="myui-panel myui-panel-bg clearfix">
+			<div class="myui-panel-box clearfix">
+				<div class="myui-panel_hd">
+					<div class="myui-panel__head active bottom-line clearfix">		
+						<h3 class="title">
+							{$obj.actor_name}
+						</h3>
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="#list1" data-toggle="tab">主演的影片</a></li>
+							<li><a href="#list2" data-toggle="tab">详细资料</a></li>
+						</ul>
+					</div>																	
+				</div>
+				<div class="tab-content myui-panel_bd">
+					<ul id="list1" class="myui-vodlist tab-pane fade in active clearfix">
+						 {maccms:vod num="40" type="all" actor="'.$obj['actor_name'].'" order="desc" by="time"}
+												<li class="col-lg-8 col-md-6 col-sm-4 col-xs-3">
+							<div class="myui-vodlist__box">
+			<a class="myui-vodlist__thumb lazyload" href="{$vo|mac_url_vod_detail}" title="{$vo.vod_name}" data-original="{$vo.vod_pic|mac_url_img}">
+				<span class="play hidden-xs"></span>
+			<span class="pic-tag pic-tag-top" style="background-color: #282727;">
+				{$vo.vod_score}分
+			</span>
+<span class="pic-text text-right">
+		{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}高清{/if}</span>
+	</a>									
+	<div class="myui-vodlist__detail">
+		<h4 class="title text-overflow"><a href="{$vo|mac_url_vod_detail}" title="{$vo.vod_name}">{$vo.vod_name}</a></h4>
+		<p class="text text-overflow text-muted hidden-xs">
+		{$vo.vod_year}/{$vo.vod_area}/{$vo.vod_class}</p>
+	</div>										
+</div>
+						</li>
+						    {/maccms:vod}
+					</ul>
+	{include file="block/page"}
+					<div id="list2" class="tab-pane fade in clearfix">
+						<div class="content col-pd">
+							{$obj.actor_content|mac_filter_html}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{include file="block/foot"}
+</body>
+</html>

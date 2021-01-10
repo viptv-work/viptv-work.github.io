@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+       
+	{include file="public/include"}
+</head>
+<body>
+    {include file="public/head"}	
+    <div class="container ">
+      {include file="ads/ads_all"}
+      <div class="vod_row topic_row">
+       <div class="pannel clearfix">
+            <!-- 列表 -->
+            <div class="pannel_head clearfix">
+                <h2 class="title">{$conch['theme']['topic']['title']|mac_default='专题'}</h2>								
+			</div>			
+			<ul class="topiclist clearfix">
+				{maccms:topic num="40" paging="yes" half="3" order="desc" by="time"}
+				{include file="widget/topic_box"}
+				{/maccms:topic}	 
+			</ul>
+			<!-- end 列表 -->
+         {include file="widget/page"}<!-- 翻页-->
+       </div>
+      </div>
+    </div>   
+{include file="public/foot"}
+</body>
+</html>

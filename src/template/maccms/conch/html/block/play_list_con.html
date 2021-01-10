@@ -1,0 +1,16 @@
+{if condition="$GLOBALS['config']['site']['vod_playads'] eq 1"}
+<div class="play_list_adbox">
+     {include file="ads/play_list_ad"}
+</div>
+{/if}
+{maccms:vod num="6" type="current" paging="false" order="desc" by="rnd"}
+<div class="play_vlist cblock">
+     <a href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}" title="{$vo.vod_name}">
+		<div class="play_vlist_thumb lazyload" data-original="{:mac_url_img($vo.vod_pic)}"></div>
+		<div class="play_vlist_text">
+			<p class="play_vlist_title">{$vo.vod_name}</p>
+			<p class="play_vlist_now">{if condition="$vo['type_id_1']==28"}{$vo.vod_area}{else}{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}{/if}</p>
+		</div>
+	 </a>
+</div>
+{/maccms:vod}

@@ -1,0 +1,114 @@
+<div class="myui-player__box{if $mytheme.player.fixed} player-fixed{/if}">
+	{if $mytheme.player.tips}
+	<div class="tips close-box" style="background-color: {$mytheme.player.tips_bg};">
+		<a class="tips-close-btn pull-right" href="javascript:;"><i class="fa fa-close"></i></a>
+		<ul>
+			<li>正在播放：{$obj.vod_name}-{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}</li>
+			{maccms:foreach name=":explode(',',''.$mytheme['player']['tips_text'].'')" id="vo" key="key"}
+			<li>{$vo}</li>
+			{/maccms:foreach}
+		</ul>
+	</div>
+	{/if}
+	{if $mytheme.player.fixed}<a class="player-fixed-off" href="javascript:;" style="display: none;"><i class="fa fa-close"></i></a>{/if}
+	<div class="myui-player__video{if $mytheme.player.self} embed-responsive{/if} clearfix">
+		{if $mytheme.player.frame}
+		<iframe src="{$mytheme.player.frame_api}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['url']}" width="100%" id="myiframe" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
+		{elseif condition="$obj.vod_copyright eq 1"}
+		<div class="{if $mytheme.player.self}embed-responsive {/if}clearfix" style="background-color: #000;">
+			<div class="myui-player__notice player_showtry">
+				<div class="col-pd text-center">
+					<h3 class="mb20">温馨提示！</h3>
+			        <h5 class="mb20">{$GLOBALS['config']['app']['copyright_notice']}</h5>
+			        <p>
+			        	<a class="btn btn-primary" href="{:mac_url_vod_detail($obj)}">返回详情</a> &nbsp; &nbsp;
+			        	<a class="btn btn-warm" href="{$maccms.path}">回到首页</a> 
+			        </p>
+				</div>
+			</div>
+		</div>
+		{else}
+		{$player_data}{$player_js}
+		{/if}
+	</div>
+</div>
+<ul class="myui-player__operate" style="background-color: {$mytheme.player.operate_bg};">	
+	{if $maccms.user_status && $mytheme.player.star}
+	<li>
+		<a class="favorite" href="javascript:void(0);" data-type="2" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}"><i class="fa fa-star"></i> 收藏</a>										
+	</li>
+	{/if}
+	
+	{if $mytheme.player.close}
+	<li>
+		<a href="{:mac_url('gbook/index')}?id={$obj.vod_id}&name=【{$obj.vod_name}】不能观看请检查修复，页面地址{$mytheme.site.url}{:mac_url_vod_detail($obj)}"><i class="fa fa-close"></i> 报错</a>
+	</li>
+	{/if}
+	
+	{if $mytheme.player.spinner}
+	<li>
+		<a href="javascript:;" onclick="window.location.reload()"><i class="fa fa-spinner"></i> 刷新</a>
+	</li>
+	{/if}
+
+	{if $mytheme.player.digg}
+	<li>
+		<a class="digg_link" data-id="{$obj.vod_id}{$obj.art_id}{$obj.topic_id}" data-mid="{$maccms.mid}" data-type="up" href="javascript:;">
+			<i class="fa fa-thumbs-up"></i>
+			<span class="digg_num">{$obj.vod_up}{$obj.art_up}{$obj.topic_up}</span>
+		</a>
+	</li>
+	<li>
+		<a class="digg_link" data-id="{$obj.vod_id}{$obj.art_id}{$obj.topic_id}" data-mid="{$maccms.mid}" data-type="down" href="javascript:;">
+			<i class="fa fa-thumbs-down"></i>
+			<span class="digg_num">{$obj.vod_down}{$obj.art_down}{$obj.topic_down}</span>
+		</a>
+	</li>
+	{/if}
+	
+	{if $mytheme.reward.is}
+	<li class="dropdown-hover hidden-xs">
+		<a href="javascript:;"><i class="fa fa-cny"></i> 打赏</a>
+		<div class="dropdown-box top fadeInDown clearfix">
+			<div class="item text-center">
+				<p>{$mytheme.reward.text}</p>
+				<div class="qrcode-box">
+					<img class="img-responsive" src="{$mytheme.reward.code}" />
+				</div>
+			</div>
+		</div>
+	</li>
+	{/if}
+	
+	{if $mytheme.share.is}
+	<li class="playshare dropdown-hover">
+		<a href="javascript:;"><i class="fa fa-share font14"></i> 分享</a>
+		<div class="dropdown-box bottom fadeInDown clearfix" style="margin-left: -130px;">
+			<div class="item text-center" style=" width: 260px;">
+				<div class="col-pd" class="">
+					<p>复制下方内容粘贴给好友</p>
+					{if $mytheme.share.url}
+					<p><textarea class="form-control content" rows="4">我正在观看{$obj.vod_name}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}，地址：{$mytheme.site.url}{:mac_url_vod_play($obj,['sid'=>$param['sid'],'nid'=>$param['nid']])}</textarea></p>
+					{else}
+					<p><textarea class="form-control content" rows="2">{$mytheme.share.text}</textarea></p>
+					{/if}
+					<a class="btn btn-xs btn-primary myui-copy-html" href="javascript:;">复制到剪贴板</a>
+				</div>
+			</div>
+		</div>
+	</li>
+	{/if}
+	
+	{if $mytheme.player.code && $mytheme.qrcode.is}
+	<li class="dropdown-hover hidden-xs">
+		<a href="javascript:;"><i class="fa fa-qrcode font14"></i> 手机</a>
+		{include file="block/qrcode_box"}
+	</li>
+	{/if}
+
+	{if $mytheme.player.nid}
+	<li><a{if condition="$param.nid eq 1"} class="disabled"{/if} href="{$obj.player_info.link_pre}"><i class="fa fa-caret-up"></i> 上集</a></li>
+	<li><a{if condition="$param.nid eq $obj['vod_play_list'][$param['sid']]['url_count']"} class="disabled"{/if} href="{$obj.player_info.link_next}"><i class="fa fa-caret-down"></i> 下集</a></li>
+	{/if}
+</ul>
+<style type="text/css"> .embed-responsive{ padding-bottom: {$mytheme.player.high}%;} </style>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+       
+	{include file="public/include"}
+</head>
+<body>
+<div id="show_page">
+   {include file="public/head"}
+     <div class="container ">
+       {include file="ads/ads_all"}
+        <div class="row">  
+           {include file="module/filter"}     	
+				<div class="pannel clearfix">
+				<!-- 列表 -->
+				<div class="wrapper_fl wrapper_tm" style="border-top: 0;">
+				<ul class="screen_list sx_tz clearfix" style="float: left;">
+					<li {if condition="$param.by eq '' || $param.by eq 'time'"} class="hl_fl"{/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'time' ],'show')}">按最新</a></li>
+			        <li {if condition="$param.by eq 'hits'"} class="hl_fl"{/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'hits' ],'show')}">按最热</a></li>
+			        {if condition="($obj['type_id']==$conch['theme']['type']['zb']) OR ($obj['parent']['type_id']== $conch['theme']['type']['zb'])"}{else}
+			        <li {if condition="$param.by eq 'score'"} class="hl_fl"{/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'score' ],'show')}">按评分</a></li>{/if}
+				</ul>
+				<span class="sx_total">共有<em class="mac_total"></em>个{if condition="($obj['type_id']==$conch['theme']['type']['zb']) OR ($obj['parent']['type_id']== $conch['theme']['type']['zb'])"}影片{else}频道{/if}</span>
+				</div>
+				{if condition="($obj['type_id']==$conch['theme']['type']['zb']) OR ($obj['parent']['type_id']== $conch['theme']['type']['zb'])"}
+				<ul class="vodlist vodlist_wi zbvodlist_wi clearfix">
+					{maccms:vod num="60" paging="yes" half="3" pageurl="vod/show" type="current" order="desc" by="time"}
+					{include file="widget/zbvod_box"}
+					{/maccms:vod}	 
+				</ul>	
+				{else}
+				<ul class="vodlist {in name="obj.type_id" value="$conch['theme']['type']['hb']"}vodlist_hb{else/}vodlist_wi{/in} author*qq3626/95/000 clearfix">
+					{maccms:vod num="60" paging="yes" half="3" pageurl="vod/show" type="current" order="desc" by="time"}
+					{include file="widget/vod_box"}
+					{/maccms:vod}	 
+				</ul>
+				{/if}
+				<!-- end 列表 -->
+				
+				{include file="widget/page"}<!-- 翻页-->
+				{empty name="$__PAGING__.record_total"}
+				<div class="show_no">暂无数据</div>
+				{/empty}
+			</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('.mac_total').html('{$__PAGING__.record_total}');
+    </script>
+	{include file="public/foot"}
+</div>
+</body>
+</html>

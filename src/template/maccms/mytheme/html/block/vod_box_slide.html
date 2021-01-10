@@ -1,0 +1,11 @@
+<div class="myui-vodlist__box">
+	<a{if $mytheme.site.link} href="{:mac_url_vod_play($vo,['sid'=>1,'nid'=>1])}"{else} href="{:mac_url_vod_detail($vo)}"{/if} class="myui-vodlist__thumb" title="{$vo.vod_name}" style="background: url({$vo.vod_pic|mac_url_img});">	
+		<span class="play hidden-xs"></span>
+		{if $mytheme.pic.tag}<span class="pic-tag pic-tag-{$mytheme.pic.tag_seat}" style="background-color: {$mytheme.pic.tag_bg};">{$vo[''.$mytheme.pic.tag_data.'']}{$mytheme.pic.tag_text}</span>{/if}
+		{if $mytheme.pic.text}<span class="pic-text text-{$mytheme.pic.text_face}">{$vo[''.$mytheme.pic.text_data.'']}</span>{/if}
+	</a>	
+	<div class="myui-vodlist__detail">
+		<h4 class="title text-overflow"><a class="text-fff"{if $mytheme.site.link} href="{:mac_url_vod_play($vo,['sid'=>1,'nid'=>1])}"{else} href="{:mac_url_vod_detail($vo)}"{/if} title="{$vo.vod_name}">{$vo.vod_name}</a></h4>
+		{if $mytheme.pic.sub}<p class="text text-overflow text-muted {$mytheme.pic.sub_self}">{$mytheme.pic.sub_text}{$vo[''.$mytheme.pic.sub_data.'']}</p>{/if}
+	</div>
+</div>	

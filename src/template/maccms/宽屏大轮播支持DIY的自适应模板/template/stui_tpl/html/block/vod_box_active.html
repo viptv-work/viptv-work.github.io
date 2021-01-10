@@ -1,0 +1,11 @@
+<div class="stui-vodlist__box stui-vodlist__bg">
+	<a class="stui-vodlist__thumb active lazyload" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" data-original="{:mac_url_img($vo.vod_pic)}">						
+		<span class="play hidden-xs"></span>		
+		<span class="pic-text text-right">{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}</span>
+	</a>									
+	<div class="stui-vodlist__detail active">
+		<h4 class="title text-overflow"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">{$vo.vod_name}</a></h4>
+		<p class="text text-overflow text-muted hidden-xs">{$vo.vod_actor|mac_default='内详'}</p>
+	</div>		
+</div>
+	

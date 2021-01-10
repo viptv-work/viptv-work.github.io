@@ -1,0 +1,115 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}actor/detail.html-->{/if}
+<!doctype html>
+<html>
+<head>
+    {include file="seo/actor_detail"}
+    {include file="public/include"}
+</head>
+<body>
+{include file="public/head"}
+<div class="container">
+	<div class="row">
+		<!-- 详细信息-->
+		<!-- 详细信息-->
+		<div class="myui-panel myui-panel-bg clearfix">
+			<div class="myui-panel-box clearfix">
+		    	
+				<div class="col-xs-1">	
+					<div class="myui-content__thumb active">									
+						<div class="myui-vodlist__thumb picture">
+							<img class="lazyload" src="{$mytheme.pic.load1}" data-original="{:mac_url_img($obj.actor_pic)}"/>
+						</div>
+					</div>
+					<div class="myui-content__detail active">
+						{if $mytheme.bdshare.is}
+						<div class="bdshare bdsharebuttonbox pull-right visible-lg" style="margin-top: 10px;">
+							<span class="bds_shere"></span>
+							{maccms:foreach name=":explode(',',''.$mytheme['bdshare']['btn'].'')" id="vo" key="key"}
+							<a class="bds_{$vo}" data-cmd="{$vo}"></a>
+							{/maccms:foreach}
+						</div>
+						{/if}
+						<h1 class="title">{$obj.actor_name}</h1>		
+
+						<p class="data">
+							<span class="text-muted">性别：</span>{$obj.actor_sex|mac_default='未知'}
+							<span class="split-line"></span>
+							<span class="text-muted">身高：</span>{$obj.actor_height|mac_default='未知'}
+							<span class="split-line"></span>
+							<span class="text-muted">血型：</span>{$obj.actor_blood|mac_default='未知'}
+						</p>
+						<p class="data hidden-xs">
+							<span class="text-muted">星座：</span>{$obj.actor_starsign|mac_default='未知'}
+							<span class="split-line"></span>
+							<span class="text-muted">职业：</span>{$obj.actor_remarks|mac_default='未知'}
+							<span class="split-line"></span>
+							<span class="text-muted">体重：</span>{$obj.actor_weight|mac_default='未知'}
+						</p>
+						<p class="data hidden-xs">
+							<span class="text-muted">地区：</span>{$obj.actor_area|mac_default='未知'}
+							<span class="split-line"></span>
+							<span class="text-muted">生日：</span>{$obj.actor_birthday|mac_default='未知'}
+							<span class="split-line"></span>
+							<span class="text-muted">出生地：</span>{$obj.actor_birtharea|mac_default='未知'}
+						</p>
+						<p class="data">
+							<span class="text-muted">毕业院校：</span>
+							{$obj.actor_school|mac_default='未知'}
+						</p>
+						<p class="data">
+							<span class="text-muted">代表作：</span>
+							{$obj.actor_works|mac_default='未知'}
+						</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end 详细信息-->
+
+		<div class="myui-panel myui-panel-bg clearfix">
+			<div class="myui-panel-box clearfix">
+				<div class="myui-panel_hd">
+					<div class="myui-panel__head active bottom-line clearfix">		
+						<h3 class="title">
+							{$obj.actor_name}
+						</h3>
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="#list1" data-toggle="tab">主演的影片</a></li>
+							<li><a href="#list2" data-toggle="tab">详细资料</a></li>
+						</ul>
+					</div>																	
+				</div>
+				<div class="tab-content myui-panel_bd">
+					<ul id="list1" class="myui-vodlist tab-pane fade in active clearfix">
+						{maccms:vod num="99" actor="'.$obj['actor_name'].'" order="desc" by="time"}
+						<li class="col-lg-{$mytheme.col.lg} col-md-{$mytheme.col.md} col-sm-{$mytheme.col.sm} col-xs-{$mytheme.col.xs}">
+							{include file="block/vod_box"}
+						</li>
+						{/maccms:vod}
+					</ul>
+					<div id="list2" class="tab-pane fade in clearfix">
+						<div class="content col-pd">
+							{$obj.actor_content|mac_filter_html}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		{if $mytheme.star.ad && $mytheme.star.ad1}
+		<div class="myui-panel myui-panel-bg clearfix">
+			<div class="myui-panel-box clearfix">
+				<div class="myui-panel_bd">
+					<div class="col-xs-1">
+						{$mytheme.star.ad1}
+					</div>
+				</div>
+			</div>				
+		</div>
+		{/if}
+	</div>
+</div>
+{include file="public/foot"}
+</body>
+</html>

@@ -1,0 +1,6 @@
+{if condition="$GLOBALS['config']['site']['vod_rads_style'] eq 1"}
+<a target="_blank" rel="nofollow" href="{$maccms.vod_rads_link}"><img src="{:mac_url_img($maccms.vod_rads_img)}"/></a>
+{/if}
+{if condition="$GLOBALS['config']['site']['vod_rads_style'] eq 2"}
+{$maccms.vod_rads_content}
+{/if}

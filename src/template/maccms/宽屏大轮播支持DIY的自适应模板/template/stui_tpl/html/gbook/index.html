@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width = device-width ,initial-scale = 1,minimum-scale = 1,maximum-scale = 1,user-scalable =no,"/>
+    <title>留言板 - {$maccms.site_name}</title>
+    {include file="block/include"}
+    <script>
+        $(function(){
+            MAC.Gbook.Login = {$gbook.login};
+            MAC.Gbook.Verify = {$gbook.verify};
+            MAC.Gbook.Init();
+        });
+    </script>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+    	{include file="block/head"} 
+    	<div class="stui-pannel-left clearfix">   	
+     		<div class="stui-pannel clearfix"> 
+     			<div class="col-pd clearfix">
+     				<form class="gbook_form">   	     					
+     				<ul class="stui-gbook-form">	
+						<li>
+							<textarea class="form-control" name="gbook_content" rows="5" placeholder="请输入留言内容..."></textarea>
+						</li>													
+						<li>
+							<button class="submit gbook_submit pull-right" type="button">提交留言</button>
+							{if condition="$gbook.verify eq 1"}<input type="text" name="verify" class="mac_verify form-control" placeholder="验证码" style="width: 80px; display: inline-block; margin-right: 10px;">{/if}
+						</li>
+     				</ul>
+     				</form>
+     			</div>
+				<div class="stui-pannel__head clearfix">
+					<h3 class="title">
+						网友留言
+					</h3>						
+				</div>	
+				<div class="col-pd clearfix">
+					{maccms:gbook num="10" paging="yes" order="desc" by="id"}	    	
+	    			<ul class="stui-gbook__item clearfix">
+	    				<li class="name">
+	    					<span class="text-red pull-right">{$vo.gbook_ip|mac_long2ip}</span>
+	    					<h4>{$vo.gbook_name}</h4>
+	    				</li>
+	    				<li class="cont">
+	    					{$vo.gbook_content}
+	    					{if condition="$vo.gbook_reply_time gt 0"}
+							<p class="margin-0 text-red">管理员回复：{$vo.gbook_reply}</p>
+							{/if}
+	    				</li>	    				
+	    				<li class="foot">{$vo.gbook_time|date='Y-m-d H:i:s',###}</li>													
+	    			</ul>   	    			  	    				    		
+	    			{/maccms:gbook}		
+    				{include file="block/page"}
+    			</div>
+    		</div>
+    	</div>
+    	<div class="stui-pannel-side clearfix">
+    		<div class="stui-pannel clearfix">						
+				{maccms:type ids="1,2" order="asc" by="sort" id="vo1" key="key1"}															
+				<div class="stui-pannel__head clearfix">
+					<a class="text-muted pull-right" href="{:mac_url_type($vo1,[],'show')}">更多 <i class="iconfont icon-more"></i></a>
+					<h3 class="title">
+						热门{$vo1.type_name}
+					</h3>								
+				</div>																																	
+				<ul class="stui-vodlist clearfix" style="margin-bottom: 15px;">
+					{maccms:vod num="10" type="'.$vo1['type_id'].'" order="desc" by="time"}	
+					<li class="stui-vodlist__text">
+						<a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">
+							<i class="iconfont icon-more text-ccc pull-right"></i>
+							{$vo.vod_name}
+						</a>
+					</li>
+					{/maccms:vod}	
+				</ul>					
+				{/maccms:type}
+			</div>
+    	</div>
+    </div>
+</div>
+<style type="text/css">
+	.stui-gbook-form{ padding-bottom: 20px; border-bottom: 1px solid #eee;}
+	.stui-gbook-form .form-control{ width: 100%; height: 32px; padding: 10px; border: 1px solid #eee; border-radius: 4px;}
+	.stui-gbook-form textarea.form-control{ height: auto;}
+	.stui-gbook-form li{ margin-top: 15px;}
+	.stui-gbook-form li:first-child{ margin-top: 0;}
+	.stui-gbook-form li .submit{ padding: 0 15px; height: 32px; line-height: 32px; border: 0; border-radius: 4px; cursor: pointer;}
+	.stui-gbook__item{ padding: 10px 0; border-top: 1px dotted #eee;}
+	.stui-gbook__item .name{ color: #333;}
+	.stui-gbook__item .cont{ position: relative; margin: 10px 0; padding: 10px; border-radius: 2px; background-color: #f5f5f5;}
+	.stui-gbook__item .cont:before{ content:" "; width:10px; height:10px; -webkit-transform:rotate(-45deg); -ms-transform:rotate(-45deg); transform:rotate(-45deg); border-width:1px 1px 0 0; position: absolute; top:-5px; left: 10px; border-style: solid; background-color: #f5f5f5; border-color: #eee;}
+	.stui-gbook__item .foot{ font-size: 12px;}
+</style>
+{include file="block/foot"}
+</body>
+</html>

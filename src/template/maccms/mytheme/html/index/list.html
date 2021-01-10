@@ -1,0 +1,50 @@
+{if $mytheme.home_list.is}
+{maccms:foreach name=":explode(',',''.$mytheme['home_list']['id'].'')" id="vo" key="key"}
+{maccms:type order="asc" by="sort" ids="'.$vo.'" id="vo1" key="key1" flag="vod"}
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">		
+		<div class="myui-panel_bd clearfix">
+			<div class="myui-panel_hd">
+				<div class="myui-panel__head clearfix">				
+					<h3 class="title">
+						{$mytheme.home_list.title}{$vo1.type_name}
+					</h3>	
+					<a class="more text-muted" href="{:mac_url_type($vo1)}">更多 <i class="fa fa-angle-right"></i></a>
+				</div>																			
+			</div>	
+			<ul class="myui-vodlist clearfix">
+				{maccms:vod num="'.$mytheme['home_list']['num'].'" type="'.$vo1['type_id'].'" order="desc" by="'.$mytheme['home_list']['by'].'" year="'.$mytheme['home_list']['year'].'" area="'.$mytheme['home_list']['area'].'" start="'.$mytheme['home_list']['start'].'"}
+				<li class="col-lg-{$mytheme['home_list']['col']} col-md-{$mytheme.col.md} col-sm-{$mytheme.col.sm} col-xs-{$mytheme.col.xs}{if condition="$key gt $mytheme.home_list.xs"} hidden-xs{/if}{if condition="$key gt $mytheme.home_list.sm"} hidden-sm{/if}">
+					{include file="block/vod_box"}								
+				</li>
+				{/maccms:vod} 
+			</ul>
+			{if $mytheme.home_list.text}
+			<ul class="myui-vodlist__text col-pd clearfix">
+				{maccms:vod num="'.$mytheme['home_list']['num2'].'" type="'.$vo1['type_id'].'" order="desc" by="'.$mytheme['home_list']['by2'].'" year="'.$mytheme['home_list']['year'].'" area="'.$mytheme['home_list']['area'].'" start="'.$mytheme['home_list']['start'].'"}
+				<li class="col-lg-{$mytheme['home_list']['col']} col-md-{$mytheme.col.md} col-sm-{$mytheme.col.sm} col-xs-2 padding-0">
+					<a class="top-line-dot text-overflow"{if $mytheme.site.link} href="{:mac_url_vod_play($vo,['sid'=>1,'nid'=>1])}"{else} href="{:mac_url_vod_detail($vo)}"{/if} title="{$vo.vod_name}">					
+						{if $mytheme.home_list.nonum}<span class="badge{if condition="$key eq 1"} badge-first{/if}{if condition="$key eq 2"} badge-second{/if}{if condition="$key eq 3"} badge-third{/if}">{$key}</span>{/if}
+						{$vo.vod_name|mac_substring=10}
+					</a>
+				</li>
+				{/maccms:vod} 
+			</ul>		
+			{/if}
+		</div>						
+	</div>
+</div>
+{/maccms:type}
+{/maccms:foreach}
+{if $mytheme.home.ad && $mytheme.home.ad2}
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_bd">
+			<div class="col-xs-1">
+				{$mytheme.home.ad2}
+			</div>
+		</div>
+	</div>				
+</div>
+{/if}
+{/if}

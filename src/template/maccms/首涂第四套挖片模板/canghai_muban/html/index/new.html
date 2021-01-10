@@ -1,0 +1,36 @@
+<!-- NO:D002 by v.shoutu.cn -->
+<div class="stui-pannel stui-pannel-bg clearfix">
+	<div class="stui-pannel-box">
+		<div class="stui-pannel_hd">
+			<div class="stui-pannel__head clearfix">
+				<!--<a class="more text-muted pull-right" href="#">更多 <i class="icon iconfont icon-more"></i></a>-->
+				<h3 class="title">
+					<img src="{$maccms.path}statics/icon/icon_24.png"/>
+					最近更新
+				</h3>						
+			</div>																		
+		</div>
+		<div class="stui-pannel_bd clearfix">
+			<ul class="stui-vodlist clearfix">
+				{maccms:vod num="8" type="all" order="desc" by="time"}
+				<li class="col-md-6 col-sm-4 col-xs-3 {if condition="$key gt 6"} visible-sm{/if}">
+					{include file="block/vod_box"}								
+				</li>
+				{/maccms:vod}	
+			</ul>
+			<ul class="stui-vodlist__text col-pd hidden-xs clearfix">
+				{maccms:vod num="12" type="all" order="desc" by="time" start="9"}
+				<li class="col-md-6 col-xs-4 padding-0">
+
+					<a class="top-line-dot text-overflow" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}"><i class="icon iconfont icon-more pull-right  text-muted"></i>{$vo.vod_name}</a>								
+				</li>
+				{/maccms:vod}	
+			</ul>
+		</div>
+		<!--
+		<div class="stui-pannel_ft top-line visible-xs clearfix">
+			<a class="text-muted" href="#">查看更多最近更新 <i class="icon iconfont icon-more"></i></a>		
+		</div>
+		-->
+	</div>
+</div>	

@@ -1,0 +1,7 @@
+{if condition="$GLOBALS['config']['site']['vod_wads_style'] eq 1"}
+<a class="hidden_xs" href="{$maccms.vod_wads_link}" target="_blank" rel="nofollow"><img src="{:mac_url_img($maccms.vod_wads_imgpc)}"></a>
+<a class="hidden_mb" href="{$maccms.vod_wads_link}" target="_blank" rel="nofollow"><img src="{:mac_url_img($maccms.vod_wads_imgmo)}"></a>
+{/if}
+{if condition="$GLOBALS['config']['site']['vod_wads_style'] eq 2"}
+{$maccms.vod_wads_content}
+{/if}

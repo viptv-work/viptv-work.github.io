@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>会员中心 - {$maccms.site_name}</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	{include file="user/include" /}
+</head>
+<body>
+{include file="user/head" /}
+<!-- 会员中心 -->
+<div id="member" class="fn-clear">
+	<div id="left">
+        <div class="m-nav">
+			<a href="javascript:MAC.GoBack()" class="btn-left"><i class="iconfont ico-right">&#xe625;</i></a>
+			<a href="{$maccms.path}" class="btn-right"><i class="iconfont ico-right">&#xe634;</i></a>
+			<span class="mb-title">个人中心</span>
+	    </div>
+        {include file="user/left_nav" /}
+	</div>
+	<div id="right">
+		<div class="m-nav">
+			<a href="javascript:MAC.GoBack()" class="btn-left"><i class="iconfont ico-right">&#xe625;</i></a>
+			<span class="mb-title">我的权限</span>
+	    </div>
+	    <div class="co-right co-right-bg">
+		<h2>我的资料</h2>
+		<div id="tab">
+			<div class="list">
+				<ul class="fn-clear">
+					<li><a href="{:url('user/ajax_info')}">基本资料</a></li>
+					<li><a href="{:url('user/info')}">修改信息</a></li>
+					<li class="cur">我的权限</li>
+				</ul>
+			</div>
+			<div id="listCon">
+				<!-- 基本资料 -->
+				<div class="cur">
+					<p><span class="xiang">用户名</span>{$obj.user_name}</p>
+					<p><span class="xiang">用户组</span><span>{if condition="$obj.group_id lt 3"}{$user.group.group_name}{else}<i class="iconfont user_vip">&#xe638;</i>{$obj.group.group_name}{/if}</span></p>
+					<p><span class="xiang">期限</span><span class="fen">{if condition="$obj.group_id lt 3"}永久有效{else}{$obj.user_end_time|mac_day}{/if}</span></p>
+					<p class="hui"><i class="iconfont i-you i-sm">&#xe65b;</i>表示用户有访问权限，<i class="iconfont i-wu i-sm">&#xe65a;</i>表示无访问权限，若你想要提升访问权限可选择升级会员组</p>
+					{volist name="type_tree" id="vo"}
+						<p>
+						<span class="quanxian">{$vo.type_name}</span>
+						<span class="qx-ico"><i class="iconfont qx-right">&#xe623;</i></span></p>
+						<p>
+						{foreach name="$vo.popedom" id="v2"}
+						{if condition="$v2 eq 1"}<span class="you">{$key}<i class="iconfont i-you">&#xe65b;</i></span>{else}<span class="wu">{$key}<i class="iconfont i-wu">&#xe65a;</i></span>{/if}
+						{/foreach}
+						</p>
+						
+						
+						{volist name="vo.child" id="child"}
+						<p><span class="quanxian">{$child.type_name}</span>
+						<span class="qx-ico"><i class="iconfont qx-right">&#xe623;</i></span></p>
+						<p>
+						{foreach name="$child.popedom" id="v2"}
+						{if condition="$v2 eq 1"}<span class="you">{$key}<i class="iconfont i-you">&#xe65b;</i></span>{else}<span class="wu">{$key}<i class="iconfont i-wu">&#xe65a;</i></span>{/if}
+						{/foreach}
+						</p>
+						{/volist}
+					{/volist}
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</div>
+{include file="user/foot" /}
+</body>
+</html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<?php  
+$pagesize = 15; //设置记录显示条数; 
+ $JCCMS_pagecount = floor(count($JCCMS_SQL) / $pagesize)-1;//计算数组所得到记录总数
+  $JCCMS_prev = $JCCMS_page -1; //初始化上一页
+ $JCCMS_next = $JCCMS_page +1; //初始化下一页
+?>
+<html>
+<head>
+    <meta charset="utf-8" />
+	<title><?php echo $web_title;?></title>
+	<meta name="keywords" content="<?php echo $web_keywords;?>" />
+	<meta name="description" content="<?php echo $web_description;?>" />
+  <link href="<?php echo '/template/'.$web_moban;?>/css/app.css" rel="stylesheet" type="text/css" />
+  <link href="<?php echo '/template/'.$web_moban;?>/css/iconfont.css" rel="stylesheet" type="text/css" />
+  <script src="<?php echo '/template/'.$web_moban;?>/js/jquery.js"></script>
+  <script src="<?php echo '/template/'.$web_moban;?>/js/jquery.lazyload.js"></script>
+  <script>var maccms={"path":"","mid":"","url":"localhost","wapurl":"www.tutuhot.com","mob_status":"2"};</script>
+  <script src="<?php echo '/template/'.$web_moban;?>/js/home.js"></script>
+</head>
+<body>
+ <?php  include('./template/'.$web_moban.'/header.html');?>
+ 
+    <div class="toped"></div>
+   
+  <div class="icon">
+   <div class="container">
+    <section class="iselect clearfix">
+     <h2><em>搜索：<?php echo $C_T_2;?></em><i class="i_arrow"></i></h2>
+    </section>
+    <section class="select_con">
+
+     <div class="v-bd clearfix">
+      <div class="v_con_box">
+       <ul class="tv-list clearfix">
+		<?php if( $JCCMS_SQL ==null){echo"没有查询到你要查找的数据";}else{ for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+        <li>
+         <div class="v-pic">
+          <img src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>" class="thumb" alt="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?>" original="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>" />
+          <div class="v-tips">
+           <span class="fl"><?php  echo rand(5, 10000); ?></span>
+           <span class="fr"><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_time');?></span>
+          </div>
+          <a class="v-playBtn" href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html" title="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?>"><i></i></a>
+         </div>
+         <div class="v-txt">
+          <p class="v-tit"><a title="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?>" href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html"><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></a></p>
+         </div></li>
+		 <?php } } ?>		   
+	   
+
+
+
+       </ul>
+       <div class="v-page clearfix">
+		<a href="#">共<?php JCCMS_page($JCCMS_pagecount);?>页</a>
+		<a href="#">当前<?php JCCMS_page($JCCMS_page);?>页</a>					
+		<?php	if($JCCMS_page >=1){ ?>
+		<a href="/?m=search-type-<?php echo $JCCMS_type_id; ?>-<?php JCCMS_page($JCCMS_prev);?>.html">上一页</a>
+		<?php }if($JCCMS_page < $JCCMS_pagecount-10){ ?>
+		<a href="/?m=search-type-<?php echo $JCCMS_type_id; ?>-<?php echo  $JCCMS_page+1;?>.html"><?php echo  $JCCMS_page+1;?></a>
+		<a href="/?m=search-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+2;?>.html"><?php echo   $JCCMS_page+2;?></a>
+		<a href="/?m=search-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+3;?>.html"><?php echo   $JCCMS_page+3;?></a>
+		<a href="/?m=search-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+4;?>.html"><?php echo   $JCCMS_page+4;?></a>
+		<a href="/?m=search-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+5;?>.html"><?php echo   $JCCMS_page+5;?></a>
+		<a href="/?m=search-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+6;?>.html"><?php echo   $JCCMS_page+6;?></a>
+		<a href="/?m=search-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+7;?>.html"><?php echo   $JCCMS_page+7;?></a>
+		<a href="/?m=search-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+8;?>.html"><?php echo   $JCCMS_page+8;?></a>
+		<a href="/?m=search-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+9;?>.html"><?php echo   $JCCMS_page+9;?></a>
+		<a href="/?m=search-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+10;?>.html"><?php echo   $JCCMS_page+10;?></a>
+		<?php }if($JCCMS_page < $JCCMS_pagecount){
+		?>
+		<a href="/?m=search-type-<?php echo $JCCMS_type_id; ?>-<?php JCCMS_page($JCCMS_next);?>.html">下一页</a>
+		<?php
+		}
+		?>	
+       </div>
+      </div>
+     </div>
+    </section>
+    <div class="mided mided1 mt20"></div>
+    <div class="mided mided2 mt0"></div>
+    <div class="mided mided3 mt0"></div>
+   </div>
+  </div> 
+ 
+ 
+<?php  include('./template/'.$web_moban.'/footer.html');?>
+</body>
+</html>		
+

@@ -1,0 +1,91 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/chc-hd.png" group-title="高清影视",高清电影
+http://61.189.255.139/live.aishang.ctlcdn.com/00000110240325_1/encoder/0/playlist.m3u8?CONTENTID=00000110240325_1#rtmp://ivi.bupt.edu.cn:1935/livetv/chchd
+## http://39.134.19.76:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226463/index.m3u8
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/chc-dzdy.png" group-title="高清影视",动作电影
+http://61.189.255.139/live.aishang.ctlcdn.com/00000110240324_1/encoder/0/playlist.m3u8?CONTENTID=00000110240324_1#rtmp://ivi.bupt.edu.cn:1935/livetv/chcatv
+## http://39.134.19.68:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226465/index.m3u8
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/chc-jtyy.png" group-title="高清影视",家庭影院
+http://61.189.255.139/live.aishang.ctlcdn.com/00000110240323_1/encoder/0/playlist.m3u8?CONTENTID=00000110240323_1#rtmp://ivi.bupt.edu.cn:1935/livetv/chctv
+## http://39.134.19.153:80/dbiptv.sn.chinamobile.com/PLTV/88888888/224/3221226462/index.m3u8
+
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/icon/hmdy.png" group-title="高清影视",黑莓电影
+http://39.134.66.66/PLTV/88888888/224/3221225523/index.m3u8
+## http://125.73.209.19/cache.ott.ystenlive.itv.cmvideo.cn:80/000000001000/8785669936177902664/1.m3u8?stbId=0000019901080866836D73828EA0366836&Contentid=8785669936177902664&mos=52live&livemode=1&channel-id=ystenlive&version=1.0&owaccmark=8785669936177902664&owchid=ystenlive&owsid=7104871599213018997&AuthInfo=99HQzfLkvKmUX1bvDK8pxibV%2BHp90qC55b2Fv%2Ba8ahNL9rsQ47%2FVPQ5I1mk1Euevu4ww4P7XntfNX2WiTOL8Ndvf6BV%2B2zKclmpoXZ7t90oK%2B2FmGgVhOPi8JUqoFyt9
+#EXTINF:-1 tvg-logo="https://gitee.com/viptv/viptv/raw/master/src/icon/doxhy.png" group-title="高清影视",Dox环映
+http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226020/1/index.m3u8?fmt=ts2hls
+#EXTINF:-1 tvg-logo="https://gitee.com/viptv/viptv/raw/master/src/icon/doxjc.png" group-title="高清影视",Dox剧场
+http://39.135.10.66/gz.ucdn.10086.cn/PLTV/88888888/224/3221226013/1/index.m3u8?fmt=ts2hls
+
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/icon/ytv.png" group-title="高清影视",Y+影视
+http://112.17.40.137/wh7f454c46tw2431502278_-1330208715/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221229999/index.m3u8?fmt=ts2hls&icpid=88888888&from=30&RTS=1592889837&ocs=2_112.17.40.15_80&hms_devid=1457&online=1592889837&vqe=1
+## http://live.aikan.miguvideo.com/PLTV/88888888/224/3221230226/index.m3u8
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/ssdy.png" group-title="高清影视",邵氏电影
+http://42.56.91.136/live-bvc/164219/live_97065163_17925468.m3u8
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/wasu.png" group-title="高清影视",亚洲影院
+http://112.17.40.210/wh7f454c46tw2723754360_1011858318/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228365/index.m3u8?fmt=ts2hls&icpid=88888888&from=30&RTS=1592890129&hms_devid=1461&online=1592890129&vqe=1
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/wasu.png" group-title="高清影视",欧美影院
+http://112.17.40.199/wh7f454c46tw2819951733_-141826655/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221228384/index.m3u8?fmt=ts2hls&icpid=88888888&from=30&RTS=1592890225&hms_devid=1460&online=1592890225&vqe=1
+
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/movies.png" group-title="高清影视",大片高清
+http://112.17.40.140/PLTV/88888888/224/3221226751/index.m3u8
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/movies.png" group-title="高清影视",收视冠军
+http://baiducdncmn-gd.inter.ptqy.gitv.tv/tslive/c16_lb_shoushiguanjun_720p_t5/c16_lb_shoushiguanjun_720p_t5.m3u8
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/movies.png" group-title="高清影视",豆瓣高分
+http://baiducdncmn-gd.inter.ptqy.gitv.tv/tslive/c15_lb_wuxingyingyuan_720p_t5/c15_lb_wuxingyingyuan_720p_t5.m3u8
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/movies.png" group-title="高清影视",经典港片
+http://120.233.49.41/r/baiducdncmn-gd.inter.ptqy.gitv.tv/tslive/c18_lb_jingdianguangpian_720p_t5/c18_lb_jingdianguangpian_720p_t5.m3u8
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/movies.png" group-title="高清影视",惊悚午夜
+http://120.241.39.41/r/baiducdncmn-gd.inter.ptqy.gitv.tv/tslive/c16_lb_jingnawuyechang_720p_t5/c16_lb_jingnawuyechang_720p_t5.m3u8
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/movies.png" group-title="高清影视",动作电影
+http://120.241.39.41/r/baiducdncmn-gd.inter.ptqy.gitv.tv/tslive/c15_lb_dongzuodianying_720p_t5/c15_lb_dongzuodianying_720p_t5.m3u8
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/movies.png" group-title="高清影视",周末影院
+http://120.233.49.41/r/baiducdncmn-gd.inter.ptqy.gitv.tv/tslive/c15_lb_fengxiaogang_720p_t5/c15_lb_fengxiaogang_720p_t5.m3u8
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/movies.png" group-title="高清影视",电影大片
+http://120.241.39.41/r/baiducdncmn-gd.inter.ptqy.gitv.tv/tslive/c19_lb_dianyingjingxuan_720p_t5/c19_lb_dianyingjingxuan_720p_t5.m3u8
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/movies.png" group-title="高清影视",票房收割机
+http://120.232.170.41/r/baiducdncmn-gd.inter.ptqy.gitv.tv/tslive/c19_lb_heibangdianying_720p_t5/c19_lb_heibangdianying_720p_t5.m3u8
+
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/icon/gaoqing2.png" group-title="高清影视",家庭影院
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/icon/gaoqing3.png" group-title="高清影视",大众影视
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/icon/gaoqing1.png" group-title="高清影视",家庭剧场
+
+## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/%E9%87%87%E6%98%8C%E5%BD%B1%E5%89%A7.png" group-title="高清影视",采昌影剧
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/icon/foxaction.png" group-title="高清影视",FOX Action Movies
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/movies.png" group-title="高清影视",环宇电影
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/hcys.jpeg" group-title="高清影视",CHC-华诚影视
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/icon/hmdj.png" group-title="高清影视",黑莓电竞
+## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/HMC.png" group-title="高清影视",好莱坞
+## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/WarnerTV.png" group-title="高清影视",Warner TV
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/movies.png" group-title="高清影视",IPTV高清院线
+## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/HBOHD.png" group-title="高清影视",HBO
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/icon/axn.png" group-title="高清影视",AXN
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/icon/weishidianying.png" group-title="高清影视",卫视国际电影
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/tv.png" group-title="高清影视",电影F
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/iqiyi.png" group-title="高清影视",周末影院
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/iqiyi.png" group-title="高清影视",仙侠玄幻
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/iqiyi.png" group-title="高清影视",老剧超清修复
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/iqiyi.png" group-title="高清影视",黑帮电影
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/iqiyi.png" group-title="高清影视",电影大片
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/iqiyi.png" group-title="高清影视",惊悚午夜场
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/iqiyi.png" group-title="高清影视",怀旧剧场
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/iqiyi.png" group-title="高清影视",五星影院
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/iqiyi.png" group-title="高清影视",华语院线
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/iqiyi.png" group-title="高清影视",婚姻剧场
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/iqiyi.png" group-title="高清影视",谍战剧场
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/iqiyi.png" group-title="高清影视",青春剧场
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/iqiyi.png" group-title="高清影视",经典港片
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/tv.png" group-title="高清影视",动作影院
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/icon/xxdy.png" group-title="高清影视",潇湘电影
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/icon/dfys.png" group-title="高清影视",东方影视
+## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/EBCWesternMovies.png" group-title="高清影视",东森洋片台
+## #EXTINF:-1 tvg-logo="http://epg.51zmt.top:8000/tb1/gt/EBCMovies.png" group-title="高清影视",东森电影台
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/bilibili.png" group-title="高清影视",海爷TV动作
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/bilibili.png" group-title="高清影视",海爷TV 2
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/bilibili.png" group-title="高清影视",海爷TV 3
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/bilibili.png" group-title="高清影视",海爷TV 4
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/bilibili.png" group-title="高清影视",海爷TV 5
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/bilibili.png" group-title="高清影视",海爷TV 6
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/bilibili.png" group-title="高清影视",海爷TV 7
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/bilibili.png" group-title="高清影视",海爷TV 8
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/bilibili.png" group-title="高清影视",海爷TV 9

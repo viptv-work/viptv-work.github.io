@@ -1,0 +1,44 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}label/hot.html-->{/if}
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>排行榜-{$mytheme.site.title}</title>
+	<meta name="keywords" content="{$mytheme.site.keywords}" />
+	<meta name="description" content="{$mytheme.site.description}" />
+    {include file="public/include"}
+</head>
+<body>
+{include file="public/head"}
+<div class="container">
+    <div class="row">
+    	<div class="myui-panel myui-panel-bg {$mytheme.home_rank.self} clearfix">
+    		<div class="myui-panel-box clearfix">														
+    			{maccms:type ids="'.$mytheme['label']['new_id'].'" order="asc" by="sort" id="vo1" key="key1"}													
+    			<div class="col-lg-{$mytheme.label.new_col} col-md-4 col-sm-2 col-xs-1 padding-0">
+    				<div class="myui-panel_hd">
+    					<div class="myui-panel__head clearfix">
+    						<h3 class="title">
+    							{$vo1.type_name}{$mytheme.label.new_title}
+    						</h3>		
+    						<a class="more text-muted" href="{:mac_url_type($vo1.type_id,['id'=>$vo1['type_id'],'by'=>'time'],'show')}">更多 <i class="fa fa-angle-right"></i></a>
+    					</div>
+    				</div>
+    				<div class="myui-panel_bd clearfix">
+						<ul class="myui-vodlist__media active col-pd clearfix">
+							{maccms:vod num="'.$mytheme['label']['new_num'].'" type="'.$vo1['type_id'].'" order="desc" by="'.$mytheme['label']['new_by'].'"}
+								{include file="block/vod_box_media"}	
+							{/maccms:vod}
+						</ul>
+
+    				</div>
+    			</div>
+    			{/maccms:type}
+    		</div>
+    	</div>	
+    </div>
+</div>
+{include file="public/foot"}
+</body>
+</html>

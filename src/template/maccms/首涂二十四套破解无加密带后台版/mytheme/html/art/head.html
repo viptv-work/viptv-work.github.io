@@ -1,0 +1,12 @@
+<div class="myui-panel myui-panel-bg2 clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_bd col-pd clearfix">		
+			<p class="text-muted text-center hidden-md hidden-xs">资讯分类</p>
+			<ul class="myui-art__nav nav-slide text-center clearfix">	
+				{maccms:type ids="'.$mytheme['nav_art']['id'].'" order="asc" by="sort" id="vo1" key="key1" flag="art"}	
+				<li class="{if condition="($vo1.type_id eq $GLOBALS['type_id'])"}active{/if}"><a href="{:mac_url_type($vo1)}">{$vo1.type_name}</a></li>
+				{/maccms:type}
+			</ul>
+		</div>
+	</div>
+</div>

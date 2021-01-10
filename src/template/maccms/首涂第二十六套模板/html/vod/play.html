@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>正在播放{$obj.vod_name}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}-{$obj.vod_name}详情介绍-{$obj.vod_name}在线观看-{$obj.vod_name}迅雷下载 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.vod_name}在线收看,{$obj.vod_name}迅雷下载" />
+<meta name="description" content="{$obj.vod_name}剧情:{$obj.vod_blurb}" />
+{include file="block/include"}
+</head>
+<body class="active">
+		{include file="block/head"}
+	<div class="myui-container-bg padding-0">
+		<div class="container">
+        	<div class="row">
+        		<div class="myui-player__item clearfix" style="background-color: #1f1f1f;">
+        		<div class="col-md-wide-75  padding-0 relative clearfix" id="player-left">
+				<div class="myui-player__box player-fixed">
+	<div id="tips" class="tips close-box" style="background-color:#181515;">
+		<a class="tips-close-btn pull-right" onclick="closeTips()"><i class="fa fa-close"></i></a>
+		<ul>
+			<li id="Marquee" style="height: 38px">
+			<div>正在播放：{$obj.vod_name}-{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}</div>
+			<div>温馨提示：如果播放卡顿，请切换线路播放</div>
+			<div>温馨提示：请勿相信视频中的非法广告</div>
+			</li>
+		</ul>
+	</div>
+	<a class="player-fixed-off" href="javascript:;" style="display: none;"><i class="fa fa-close"></i></a>
+<div class="embed-responsive clearfix">
+		{if condition="$obj.vod_copyright eq 1"}
+		<div class="{if $mytheme.player.self}embed-responsive {/if}clearfix" style="background-color: #000;">
+			<div class="myui-player__notice player_showtry">
+				<div class="col-pd text-center">
+					<h3 class="mb20">温馨提示！</h3>
+			        <h5 class="mb20">{$GLOBALS['config']['app']['copyright_notice']}</h5>
+			        <p>	            	
+			        	<a class="btn btn-primary" href="{:mac_url_vod_detail($obj)}">返回详情</a> &nbsp; &nbsp;
+			        	<a class="btn btn-warm" href="{$maccms.path}">回到首页</a> 
+			        </p>	            			        
+				</div>          
+			</div>
+		</div>
+		{else}
+		{$player_data}{$player_js}
+		{/if}
+	</div>
+</div>
+<ul class="myui-player__operate" style="background-color: #1b1a25;">	
+		<li>
+		<a href="#pl" ><i class="fa fa-star"></i> 评论</a>							
+	</li>
+		<li>
+		<a href="{:mac_url('gbook/index')}?id={$obj.vod_id}&name=【{$obj.vod_name}】不能观看请检查修复，页面地址：http://{$maccms.site_url}{:mac_url_vod_detail($obj)}"><i class="fa fa-close"></i> 报错</a>
+	</li>
+		<li>
+		<a href="javascript:;" onclick="window.location.reload()"><i class="fa fa-spinner"></i> 刷新</a>
+	</li>
+		<li>
+		<a class="digg_link" data-id="{$obj.vod_id}{$obj.art_id}{$obj.topic_id}" data-mid="{$maccms.mid}" data-type="up" href="javascript:;">
+		    <i class="fa fa-thumbs-up"></i>
+		    <span class="digg_num">{$obj.vod_up}{$obj.art_up}{$obj.topic_up}</span>
+		</a>
+	</li>
+	<li>
+		<a class="digg_link" data-id="" data-mid="1" data-type="down" href="javascript:;">
+	    	<i class="fa fa-thumbs-down"></i>
+		    <span class="digg_num">{$obj.vod_down}{$obj.art_down}{$obj.topic_down}</span>
+		</a>
+	</li>
+		
+	<li class="playshare dropdown-hover">
+		<a class="myui-copy-html" href="javascript:;" data-url="我正在观看{$obj.vod_name}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}，地址：{$maccms.http_type}{$maccms.site_url}{:mac_url_vod_play($obj,['sid'=>$param['sid'],'nid'=>$param['nid']])}"><i class="fa fa-share font14 "></i> 分享</a>
+	</li>
+	<li class="hidden-xs">
+		<a href="javascript:;" onclick="MyTheme.Layer.Img('打赏','{$maccms.path_tpl}images/shoukuan.png','感谢打赏')"><i class="fa fa-cny"></i> 打赏</a>
+	</li>
+	<li class="dropdown-hover hidden-xs">
+		<a href="javascript:;"><i class="fa fa-qrcode font14"></i> 手机</a>
+		<div class="dropdown-box bottom fadeInDown clearfix">
+	<div class="item text-center" style="padding: 15px 10px;">
+		<div class="qrcode-box" style="background-color: #ffffff;">
+			<img class="icon" src="{$maccms.path_tpl}images/play.png" width="25" height="25" />
+			<span id="qrcode" data-link="0" data-dark="#000000" data-light="#ffffff"></span>
+		</div>
+		<p class="margin-0">扫一扫用手机观看</p>
+	</div>
+</div>
+	</li>
+		<li><a{if condition="$param.nid eq 1"} class="disabled"{/if} href="{$obj.player_info.link_pre}"><i class="fa fa-caret-up"></i> 上集</a></li>
+		<li><a{if condition="$param.nid eq $obj['vod_play_list'][$param['sid']]['url_count']"} class="disabled"{/if} href="{$obj.player_info.link_next}"><i class="fa fa-caret-down"></i> 下集</a></li>
+</ul>
+	</div>
+	<div class="col-md-wide-25 padding-0" id="player-sidebar" >
+	<div class="myui-panel active clearfix">
+	<div class="myui-panel-box clearfix" style="padding: 10px;">
+	<div class="tips close-box" style="background-color:#0090CE;border-radius: 5px;margin-bottom: 10px;text-shadow: #1f1f1f 2px 2px 2px;font-size:15px;">
+		<span class="tips-close-btn pull-right">
+		<span style="font-weight: bold;">播放卡顿请点下方切换线路</span>&nbsp;
+		<i style="font-size:20px" class="fa fa-hand-o-down"></i></span>
+	</div>
+	{include file="vod/vplaylist"}
+			</div>
+			</div>
+		</div>
+	</div>
+			</div>
+		</div>
+	</div>
+
+    <div class="container">
+        <div class="row">
+				<div class="myui-player__data hidden-xs clearfix">
+					<h3>
+						<a  href="{:mac_url_vod_detail($obj)}">{$obj.vod_name}</a>
+						<small class="text-muted">{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}</small>
+					</h3>
+					<p class="text-muted margin-0">
+						{$obj.vod_time|date='Y-m-d',###}更新 / <span class="text-red">{$obj.vod_score}分</span> / <a class="text-muted" >{$obj.vod_class}</a> / <a class="text-muted">{$obj.vod_area}</a> / <a class="text-muted">{$obj.vod_year}</a>
+					</p>
+				</div>
+				{include file="vod/like"}<!-- 猜你喜欢-->
+				{include file="vod/pinglun"}<!-- 评论-->
+        </div>
+    </div>
+    {include file="block/foot"}	
+
+<style type="text/css">.embed-responsive{ padding-bottom: 56.25%;}</style>
+	<span class="mac_hits hits hide" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-type="hits"></span>
+	<span class="mac_ulog_set hide" data-type="4" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+    <span class="vod_history hide" data-name="{$obj.vod_name}" data-link=""{:mac_url_vod_play($obj,['sid'=>$param['sid'],'nid'=>$param['nid']])}" data-pic="{:mac_url_img($obj.vod_pic)}" data-part="{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}" data-limit="10"></span>
+		
+	
+<style type="text/css"> .embed-responsive{ padding-bottom: {56.25%;} </style>	
+    <script type="text/javascript">
+    	$(".MacPlayer").addClass("embed-responsive").css({"padding-bottom":"56.25%","z-index":"99"});
+		$("#playleft,.dplayer-video-wrap").css({"position":"inherit","overflow":"initial"});
+    </script>
+	<script type="text/javascript">
+		MyTheme.Other.Roll('.tips','-30px');
+		$(".tips-close-btn").on("click",function(){
+			$(this).parents(".close-box").hide();
+			MyTheme.Other.Player();
+		});
+	</script>
+<script type="text/javascript">
+	var url = $(".myui-copy-html").attr("data-url");	
+	var clipboard = new Clipboard('.myui-copy-html', {
+		text: function() {									
+			return url;
+		}
+	});
+	clipboard.on('success', function(e) {
+		layer.msg("地址复制成功，赶快分享给小伙伴吧！");
+	});
+</script>
+	<script>
+	function closeTips() {
+  $("#tips").remove();
+}
+	</script>
+	 <script> 
+        var Mar = document.getElementById("Marquee"); 
+        var child_div=Mar.getElementsByTagName("div") 
+        var picH = 40;//移动高度 
+        var scrollstep=3;//移动步幅,越大越快 
+        var scrolltime=20;//移动频度(毫秒)越大越慢 
+        var stoptime=3000;//间断时间(毫秒) 
+        var tmpH = 0; 
+        Mar.innerHTML += Mar.innerHTML; 
+        function start(){ 
+            if(tmpH < picH){ 
+                tmpH += scrollstep; 
+                if(tmpH > picH )tmpH = picH ; 
+                Mar.scrollTop = tmpH; 
+                setTimeout(start,scrolltime); 
+            }else{ 
+                tmpH = 0; 
+                Mar.appendChild(child_div[0]); 
+                Mar.scrollTop = 0; 
+                setTimeout(start,stoptime); 
+            } 
+        } 
+        onload=function(){setTimeout(start,stoptime)}; 
+    </script>
+</body>
+</html>
+
+ 

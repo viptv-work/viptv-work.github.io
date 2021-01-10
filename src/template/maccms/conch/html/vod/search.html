@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+       
+	{include file="public/include"}
+</head>
+<body>     	
+    {include file="public/head"}
+    <div class="container ">
+        {include file="ads/ads_all"}
+        <div class="left_row fl">        	
+        	<div class="pannel search_box clearfix">  
+				<div class="pannel_head clearfix">	
+					<h3 class="title">									
+						搜索到与“<em>{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}</em>”相关的<em class="mac_total"></em>条结果
+					</h3>
+				</div>	
+                
+				<!-- 列表 -->	
+				<ul class="vodlist clearfix">
+			        {php}$count=1;{/php}
+			        {maccms:vod num="36" paging="yes" half="3" pageurl="vod/search" order="desc" by="time"}
+			        {if$count==1}
+			            {if$conch['theme']['ads']['btn']==1||$conch['theme']['ads']['btn']==2&&$user.group_id lt 3}
+						{if condition="$conch['theme']['ads']['search_v']['btn'] eq 1"}
+							<li class="searchlist_item">
+								{include file="ads/ads_searchlist"}		
+							</li>
+						{/if}{/if}
+                    {/if}
+                    {php}$count++;{/php}																
+					{include file="widget/search_box"}					
+					{/maccms:vod}
+				</ul>		
+				<!-- end 列表 -->	
+				
+				{include file="widget/page"}<!-- 翻页-->
+				
+
+				{empty name="$__PAGING__.record_total"}
+	            <div class="search_tips"><p>很抱歉，暂无相关视频！如需提醒管理员添加该视频请点击&nbsp;&nbsp;<a href="javascript:void(0)" onclick="MAC.Gbook.Noinfo('请管理员添加《{$param.wd}》，谢谢！')"><i class="iconfont">&#xe632;</i>&nbsp;留言</a>&nbsp;，谢谢！</p><p>提示（如果搜索词错误也将无法搜到，可尝试简化搜索词）</p></div>
+	            {/empty}
+			</div>
+			{include file="ads/ads_vodw"} 
+			{empty name="$__PAGING__.record_total"}
+			<div class="pannel clearfix">
+				<div class="pannel_head clearfix">
+			        {if condition="$conch['theme']['map']['btn'] eq 1"}
+				    <a class="text_muted pull_right" href="{:mac_url('map/index')}">更多<i class="iconfont more_i">&#xe623;</i></a>{/if}
+					<h3 class="title">
+						{$conch['theme']['map']['title']|mac_default='最新'}
+					</h3>						
+				</div>
+				<ul class="vodlist clearfix">
+					{maccms:vod num="6" type="'.$conch['theme']['map']['id'].'" order="desc" by="time"}
+					{include file="widget/search_box"}		
+					{/maccms:vod}
+				</ul>
+			</div>
+            {/empty}	      
+        </div>
+        <div class="right_row fr pa_left hidden_xs hidden_mi">
+            {include file="ads/ads_vodr"}
+            <!-- 侧边栏 -->
+			<div class="pannel clearfix">
+				<div class="pannel_head clearfix">
+					<h3 class="title">
+						热播影视
+					</h3>						
+				</div>
+				<ul class="ranklist_r clearfix">
+					{maccms:vod num="10" type="'.$conch['theme']['map']['id'].'" order="desc" by="hits_week"}
+					{include file="widget/rank_box_text"}		
+					{/maccms:vod}
+				</ul>
+			</div>
+			<!-- end 侧边栏 -->
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('.mac_total').html('{$__PAGING__.record_total}');
+    </script>
+	{include file="public/foot"}
+</body>
+</html>

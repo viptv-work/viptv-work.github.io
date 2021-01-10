@@ -1,0 +1,249 @@
+<body>
+	<div id="play_page" class="zbo">
+    <div class="hot_banner www.kv321.com">
+    {include file="block/head"}
+    </div>
+		<div class="play_boxbg">	
+			<div class="play_box play_video">
+			<!-- 播放器  -->
+				<div class="left_row fl">
+					<div class="player_video embed-responsive embed-responsive-16by9 clearfix">
+					{if condition="$obj.vod_copyright eq 1 && $GLOBALS['config']['app']['copyright_status'] eq 1 "}
+					<div class="play_tips"><h3>{$GLOBALS['config']['app']['copyright_notice']}</h3></div>
+		            {elseif$obj.vod_lock}
+	                <div class="lock_tipe_box" style="background-image: url({:mac_url_img($obj.vod_pic)})"></div>
+					<div class="play_tips lock_tips">
+						<h3>因特殊原因，该视频{if condition="$GLOBALS['config']['site']['site_apps'] eq 1"}请使用APP观看{else}暂时无法观看{/if}</h3>
+						<p>给您带来不便非常抱歉</p>
+						{if condition="$GLOBALS['config']['site']['site_apps'] eq 1"}
+						<p class="hidden_xs"><img src="{:mac_url_img($maccms.site_apps_img)}"></p>
+						<p class="hidden_xs">用手机扫二维码下载APP</p>
+						<p class="hidden_mb">{include file="system/app_link"}</p>
+						{/if}
+					</div>
+			        {else}
+		                {maccms:foreach name="obj.vod_play_list" id="vo" by="num"}
+		                {empty name="$vo.urls"}
+						<div class="play_tips"><h3>抱歉，暂无信号源</h3></div>
+					    {/empty}
+		                {/maccms:foreach}              
+			            <div id="fd_tips" class="fodong_box">
+			            <div id="mq" class="fodong_tips">
+							<ul>
+							    <li>当前播放：{$obj.vod_name} - {$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}</li>
+								<li>部分线路仅支持移动端，或仅支持PC端。</li>
+								<li>如果无法播放请重新刷新页面，或者<i class="iconfont">&#xe62a;</i>切换信号。</li>
+							</ul>
+						</div>
+			            <a class="close_tips" href="javascript:void(0)"><i class="iconfont">&#xe616;</i></a>
+			            </div>
+				        {$player_data}{$player_js}
+				    {/if}							
+					</div>
+					<div class="play_but">
+					  <ul>
+					    <li>
+					     {if condition="$GLOBALS['config']['comment']['status'] eq 1"}
+					     <a class="play_pl hidden_xs" href="#pinglun"><i class="iconfont">&#xe632;</i>评论</a>
+					     {/if}
+					     <a href="#bofy"><i class="iconfont">&#xe62a;</i>信号</a>
+						 <a href="javascript:void(0)" onclick="MAC.Gbook.Report('ID:{$obj.vod_id} -【名称：{$obj.vod_name} - {$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}】无法观看请检查修复')"><i class="iconfont">&#xe612;</i>报错</a>
+                         <a href="javascript:;" onclick="location.reload()"><i class="iconfont">&#xe621;</i>刷新</a>
+                         <div class="play_share hidden_xs" style="width: 100%;position: relative;">
+                         <a href="javascript:;" style="width: 100%;"><i class="iconfont">&#xe615;</i>分享</a>
+							{include file="block/share"}
+                         </div>
+                         {if condition="$GLOBALS['config']['user']['status'] eq 1"}
+					     <a href="javascript:;" class="mac_ulog" data-type="2" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}"><i class="iconfont">&#xe629;</i>收藏</a>
+					     {/if}
+                        </li>
+                       </ul>
+					</div>
+				</div>
+				<div class="right_row fr hidden_xs hidden_mi" style="position: relative;">
+					 <div class="play_box_right">
+						 <div class="play_namebox">
+						     <h3 class="title">{$obj.vod_name}</h3>
+				             <span class="fenlei">{$obj.type.type_name}</span>
+						 </div>
+						 <div class="play_infobox">
+						     <div class="play_vlist cblock">
+								 <div class="play_vlist_thumb vnow lazyload" data-original="{:mac_url_img($obj.vod_pic)}"></div>
+								 <div class="play_vlist_text vnow">
+									 <p class="play_vlist_title">{$obj.vod_name}</p>
+									 <p class="play_vlist_now">{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}<a class="pull_right" href="#bofy"><i class="iconfont">&#xe62a;</i>&nbsp;切换信号</a></p>
+								 </div>
+							 </div>
+							 <div class="cans"></div>
+							 <div class="play_vlist m_qrcode cblock">
+								 <div class="qrcode code_box"></div>
+								 <div class="qrcode_text">
+									 <p class="qrcode_tips">扫码手机观看更方便</p>
+									 <p style="font-size: 12px;">部分信号不支持PC端或移动端</p>
+								 </div>
+							 </div>
+                            <div class="play_clike">猜你喜欢</div>
+                            {include file="block/play_list_con"}
+                         </div>
+					 </div>
+				</div>
+				<!-- end 播放器  -->
+            </div>
+            <div class="play_box">
+            	<div class="left_row fl">
+            	    {if$obj.vod_lock}
+            	    {else}
+					<div class="playbtn wx_but hidden_mb">
+						<a class="btn_wxgzh" href="javascript:void(0)" title="关注公众号">关注爱看影院，精彩福利看不停</a>
+					</div>
+					{/if}
+					<div class="pannel play_pan clearfix">
+						<div class="player">
+							<div class="player_detail detail play_text margin_0">
+							   <div class="video_title fl">
+								  <h2 class="title margin_0">{$obj.vod_name}</h2>
+							   </div>
+							   <div class="play_now">
+								  <a class="flip" href="javascript:void(0)">简介&nbsp;<span class="xs1"><i class="iconfont">&#xe623;</i></span><span class="xs2" style="display:none;"><i class="iconfont">&#xe63a;</i></span></a>
+							   </div>
+							</div>
+							<div class="panel play_content" style="display:none;">
+		            			{$obj.vod_content|mac_filter_html|mac_default='暂无'}
+				    		</div>
+						</div>																					
+					</div>
+                </div>	
+             </div>
+          </div>
+     <div class="container www.kv321.com">
+        <div class="left_row fl"> 
+            {if condition="$GLOBALS['config']['site']['vod_page_wads'] eq 1"}
+            <div class="pannel ads_box clearfix">
+				<div id="1001" class="ads ads_w">
+					{include file="ads/vod_adw"}
+				</div>
+		    </div>
+			{/if}
+			<!-- 播放地址 -->			
+			<div class="pannel clearfix" id="bofy">
+			    <div class="pannel_head clearfix">
+					<h3 class="title">信号列表</h3>
+				</div>
+				<div class="tabs">
+				  <div class="content">
+						 <ul class="content_playlist clearfix">
+						    {maccms:foreach name="obj.vod_play_list" id="vo" by="num"}
+							{maccms:foreach name="vo.urls" id="vo2"}							
+							<li {if condition="$param.sid eq $vo.sid && $param.nid eq $vo2.nid"}class="active"{/if}><a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}">{$vo2.name}</a></li>
+							{/maccms:foreach}
+							{empty name="vo.urls"}
+							<li><a href="javascript:void(0)">暂无信号</a></li>
+							{/empty}
+							{/maccms:foreach}
+						 </ul> 
+				  </div>
+				</div>
+				{if condition="$GLOBALS['config']['site']['site_zans'] eq 1"}
+				{include file="system/zans_btn"}
+				{/if}
+			</div>
+			<!-- end 播放地址 -->
+			<div class="pannel hidden_mb clearfix">
+				<div class="pannel_head clearfix">
+					<h3 class="title">
+						猜你喜欢
+					</h3>						
+				</div>
+		        <div class="play_vlist_box">
+			    {include file="block/play_list_con"}
+			    </div>
+			</div>
+			
+			<!-- 猜你喜欢 -->
+			<div class="pannel clearfix">
+				<div class="pannel_head clearfix">
+					<h3 class="title">
+						相关推荐
+					</h3>						
+				</div>
+				<ul class="vodlist zbo clearfix">
+					{maccms:vod num="12" type="current" order="desc" by="time"}
+					<li class="zbvodlist_play">
+					<a href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}" title="{$vo.vod_name}">{$vo.vod_name}</a>
+					</li>	
+					{/maccms:vod}
+				</ul>
+			</div>
+			<!-- end 猜你喜欢 -->
+            <!-- 推荐阅读 -->
+			<div class="pannel clearfix">
+				<div class="pannel_head clearfix">
+			        {maccms:type order="asc" by="sort" mid="2" ids="5"}
+				    <a class="text_muted pull_right" href="{:mac_url_type($vo)}">更多<i class="iconfont more_i">&#xe623;</i></a>
+				    {/maccms:type}
+					<h3 class="title">
+						推荐阅读
+					</h3>						
+				</div>
+                <ul class="art_relates clearfix">
+                    {maccms:art num="6" ids="'.$obj['vod_rel_art'].'" order="desc" by="hits_week"}
+						{include file="block/art_box_right"}
+                    {/maccms:art}
+				</ul>
+			</div>
+			<!-- end 推荐阅读 -->
+            {if condition="$GLOBALS['config']['comment']['status'] eq 1"}
+            <!-- 评论 -->
+			<div class="pannel clearfix" id="pinglun" >
+				<div class="pannel_head clearfix">
+				    <span class="pull_right">共&nbsp;<font color="#ff5f00"><em class="mac_total"></em></font>&nbsp;条评论</span>
+					<h3 class="title">评论</h3>
+				</div>
+				<div class="mac_comment comm_list comm_list_box" data-id="{$obj.vod_id}" data-mid="{$maccms.mid}" ></div>
+				<script>
+					$(function(){
+						MAC.Comment.Login = {$comment.login};
+						MAC.Comment.Verify = {$comment.verify};
+						MAC.Comment.Init();
+						MAC.Comment.Show(1);
+					});
+				</script>
+			</div>
+            <!-- end 评论 -->
+            {/if}
+        </div>
+        <div class="right_row pa_left fr hidden_xs hidden_mi">
+            <!-- 侧边栏 -->
+			<div class="pannel clearfix">
+				<div class="pannel_head clearfix">
+					<h3 class="title">
+						热门电视台
+					</h3>						
+				</div>
+				<ul class="ranklist_r clearfix">
+					{maccms:vod num="10" type="28" order="desc" by="hits_week"}
+	                    {include file="block/rank_box_text"}
+					{/maccms:vod}
+				</ul>
+			</div>
+			<!-- end 侧边栏 -->
+        </div>
+    </div>
+	<script type="text/javascript">
+		function autoScroll(obj){
+			$(obj).find("ul").animate({
+				marginTop : "-0.8rem"
+			},500,function(){
+				$(this).css({marginTop : "0px"}).find("li:first").appendTo(this);
+			})
+		}
+		$(function(){
+			setInterval('autoScroll(".fodong_tips")',3000);
+		})
+	</script>
+    <script type="text/javascript">$(".MacPlayer").addClass("embed-responsive").css("padding-bottom","56.25%");</script>
+    <span class="mac_hits hits hide" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-type="hits"></span>
+    <span style="display:none" class="mac_ulog_set" alt="设置视频播放记录" data-type="4" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+	{include file="block/foot"}
+	</div>
+</body>

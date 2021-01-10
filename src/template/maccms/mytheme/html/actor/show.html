@@ -1,0 +1,93 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}actor/show.html-->{/if}
+<!doctype html>
+<html>
+<head>
+    {include file="seo/actor_show"}
+    {include file="public/include"}
+</head>
+<body>
+{include file="public/head"}
+<div class="container">
+    <div class="row">
+    	<!-- 筛选 -->
+    	<div class="myui-panel active myui-panel-bg2 clearfix">
+			<div class="myui-panel-box clearfix">
+				<div class="myui-panel_hd">
+					<div class="myui-panel__head active bottom-line clearfix">
+						<h3 class="title">
+							明星筛选
+						</h3>	
+					</div>																			
+				</div>
+				<div class="myui-panel_bd">
+					<ul class="myui-screen__list type-slide clearfix">
+						<li>
+							<a class="btn text-muted">性别</a>
+						</li>
+						<li><a class="btn{if condition="$param['sex'] eq ''"} btn-warm{/if}" href="{:mac_url('actor/show',['area'=>$param['area'],'blood'=>$param['blood'],'starsign'=>$param['starsign'],'letter'=>$param['letter']])}">全部</a></li>
+				        {maccms:foreach name=":explode(',','男,女,变性')" id="vo1" key="key1"}
+				        <li><a class="btn{if condition="$param['sex'] eq $vo1"} btn-warm{/if}" href="{:mac_url('actor/show',['area'=>$param['area'],'sex'=>$vo1,'blood'=>$param['blood'],'starsign'=>$param['starsign'],'letter'=>$param['letter']])}" >{$vo1}</a></li>
+				        {/maccms:foreach}	
+					</ul>
+					<ul class="myui-screen__list type-slide clearfix">
+						<li>
+							<a class="btn text-muted">地区</a>
+						</li>
+						<li><a class="btn{if condition="$param['area'] eq ''"} btn-warm{/if}" href="{:mac_url('actor/show',['sex'=>$param['sex'],'blood'=>$param['blood'],'starsign'=>$param['starsign'],'letter'=>$param['letter']])}" >全部</a></li>
+				        {maccms:foreach name=":explode(',','内地,香港,日本,美国')" id="vo2" key="key2"}
+				        <li><a class="btn{if condition="$param['area'] eq $vo2"} btn-warm{/if}" href="{:mac_url('actor/show',['area'=>$vo2,'sex'=>$param['sex'],'blood'=>$param['blood'],'starsign'=>$param['starsign'],'letter'=>$param['letter']])}">{$vo2}</a></li>
+				        {/maccms:foreach}	  	
+					</ul>
+					<ul class="myui-screen__list type-slide clearfix">
+						<li>
+							<a class="btn text-muted">血型</a>
+						</li>
+						<li><a class="btn{if condition="$param['blood'] eq ''"} btn-warm{/if}" href="{:mac_url('actor/show',['area'=>$param['area'],'sex'=>$param['sex'],'starsign'=>$param['starsign'],'letter'=>$param['letter']])}">全部</a></li>
+				        {maccms:foreach name=":explode(',','A型,B型,AB型,O型')" id="vo3" key="key3"}
+				        <li><a class="btn{if condition="$param['blood'] eq $vo3"} btn-warm{/if}" href="{:mac_url('actor/show',['area'=>$param['area'],'sex'=>$param['sex'],'blood'=>$vo3,'starsign'=>$param['starsign'],'letter'=>$param['letter']])}">{$vo3}</a></li>
+				        {/maccms:foreach}	  	
+					</ul>
+					<ul class="myui-screen__list type-slide clearfix">
+						<li>
+							<a class="btn text-muted">星座</a>
+						</li>
+						<li><a class="btn{if condition="$param['starsign'] eq ''"} btn-warm{/if}" href="{:mac_url('actor/show',['area'=>$param['area'],'sex'=>$param['sex'],'blood'=>$param['blood'],'letter'=>$param['letter']])}">全部</a></li>
+				        {maccms:foreach name=":explode(',','白羊座,金牛座,双子座,巨蟹座,狮子座,处女座,天枰座,天蝎座,射手座,摩羯座,水瓶座,双鱼座')" id="vo4" key="key4"}
+				        <li><a class="btn{if condition="$param['starsign'] eq $vo4"} btn-warm{/if}" href="{:mac_url('actor/show',['area'=>$param['area'],'sex'=>$param['sex'],'blood'=>$param['blood'],'starsign'=>$vo4,'letter'=>$param['letter']])}">{$vo4}</a></li>
+				        {/maccms:foreach}
+					</ul>	
+					<ul class="myui-screen__list type-slide clearfix">
+						<li>
+							<a class="btn text-muted">排序</a>
+						</li>
+						<li><a class="btn{if condition="$param['by'] eq '' || $param.by eq 'time'"} btn-warm{/if}" href="{:mac_url('actor/show',['area'=>$param['area'],'sex'=>$param['sex'],'blood'=>$param['blood'],'starsign'=>$param['starsign'],'letter'=>$param['letter'],'order'=>$param['order'],'by'=>'time'])}">时间</a></li>
+						<li><a class="btn{if condition="$param['by'] eq 'hits'"} btn-warm{/if}" href="{:mac_url('actor/show',['area'=>$param['area'],'sex'=>$param['sex'],'blood'=>$param['blood'],'starsign'=>$param['starsign'],'letter'=>$param['letter'],'order'=>$param['order'],'by'=>'hits'])}">人气</a></li>			  	
+					</ul>
+				</div>	
+			</div>
+		</div>
+        <div class="myui-panel myui-panel-bg clearfix">
+			<div class="myui-panel-box clearfix">
+				<div class="myui-panel_bd">
+					<ul class="myui-vodlist clearfix">
+						{maccms:actor num="'.$mytheme['star']['num'].'" paging="yes" pageurl="actor/show" order="desc" by="time"}
+						<li class="col-lg-{$mytheme.star.col} col-md-{$mytheme.col.md} col-sm-{$mytheme.col.sm} col-xs-{$mytheme.col.xs}">
+							{include file="block/actor_box"}<!-- 列表-->															
+						</li>
+						{/maccms:actor}
+					</ul>	
+				</div>
+				{empty name="__LIST__"}
+				{include file="block/vod_no"}<!-- 无结果 -->
+				{/empty}
+			</div>	
+		</div>
+		{include file="public/page"}<!-- 翻页-->		
+		
+	</div>				
+</div>
+
+{include file="public/foot"}
+</body>
+</html>

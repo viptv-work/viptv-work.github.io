@@ -1,0 +1,171 @@
+{include file="public/data"}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>用户注册 - {$mytheme.site.title}</title>
+	<meta name="keywords" content="{$mytheme.site.keywords}"/>
+	<meta name="description" content="{$mytheme.site.description}"/>
+	{include file="public/include"}
+	{include file="user/include" /}
+</head>
+<body>
+{include file="public/head"}
+<div class="myui-login__form clearfix">
+	<div class="myui-panel myui-panel-bg clearfix">
+		<div class="myui-panel-box clearfix">		
+			<div class="myui-panel_bd">
+				<div class="head text-center">
+					<a href="{$maccms.path}"><img class="img-responsive" src="{$mytheme['site']['logo']}"/></a>
+					<h5>注册新账号</h5>
+				</div>
+				<ul class="input-list">				
+					<form method="post" id="fm" action="">					
+						<li>
+							<input type="text" id="user_name" name="user_name" class="form-control" placeholder="请输入您的登录账号">
+						</li>
+						<li>
+							<input type="password" id="user_pwd" name="user_pwd" class="form-control" placeholder="请输入您的登录密码">
+						</li>
+						<li>
+							<input type="password" id="user_pwd2" name="user_pwd2" class="form-control" placeholder="请输入您的确认密码">
+						</li>
+						{if condition="$user_config.reg_phone_sms neq 0"}
+						<input type="hidden" name="ac" value="phone">
+						<li>							
+							<input type="text" class="form-control" id="to" name="to" placeholder="请输入手机号">							
+						</li>
+						<li>
+							<input type="button" class="btn btn-lg btn-default pull-right" id="btn_send_sms" value="获取验证码"/>
+							<input type="text" class="form-control" id="code" name="code" placeholder="请输入手机验证码" style="width: 120px;">							
+						</li>
+						{elseif condition="$user_config.reg_email_sms neq 0"}
+						<input type="hidden" name="ac" value="email">
+						<li>						
+							<input type="text" class="form-control" id="to" name="to" placeholder="请输入邮箱">
+						</li>
+						<li>
+							<input type="button" class="btn btn-lg btn-default pull-right" id="btn_send_sms" value="获取验证码"/>
+							<input type="text" class="form-control" id="code" name="code" placeholder="请输入邮箱验证码" style="width: 120px;">
+						</li>
+						{/if}
+			
+						{if condition="$user_config.reg_verify neq 0"}
+						<li>
+							<img class="pull-right" id="verify_img" src="{:url('verify/index')}" onClick="this.src=this.src+'?'"  alt="单击刷新" />
+							<input type="text" class="form-control" id="verify" name="verify" placeholder="请输入验证码" style="width: 120px;">						
+						</li>
+						{/if}					
+						<li>
+							<a type="button" id="btn_submit" class="btn btn-lg btn-block btn-primary">立即注册</a>
+						</li>
+						<li class="text-center">
+							<a href="{$maccms.path}">返回首页</a><span class="split-line"></span><a href="{:url('user/login')}">登录账号</a><span class="split-line"></span><a href="{:url('user/findpass')}">找回密码</a>
+						</li>
+					</form>
+				</ul>			
+			</div>
+		</div>
+	</div>
+</div>
+{include file="public/foot" /}
+<script type="text/javascript">
+
+    var countdown=60;
+    function settime(val) {
+        if (countdown == 0) {
+            val.removeAttribute("disabled");
+            val.value="获取验证码";
+            countdown = 60;
+            return true;
+        } else {
+            val.setAttribute("disabled", true);
+            val.value="重新发送(" + countdown + ")";
+            countdown--;
+        }
+        setTimeout(function() {settime(val) },1000)
+    }
+
+
+		$("body").bind('keyup',function(event) {
+			if(event.keyCode==13){ $('#btn_submit').click(); }
+		});
+
+        $('#btn_send_sms').click(function(){
+            var ac = $('input[name="ac"]').val();
+            var to = $('input[name="to"]').val();
+            if(ac=='email') {
+                var pattern = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
+                var ex = pattern.test(to);
+                if (!ex) {
+                    layer.msg('邮箱格式不正确');
+                    return;
+                }
+            }
+            else if(ac=='phone') {
+                var pattern=/^[1][0-9]{10}$/;
+                var ex = pattern.test(to);
+                if (!ex) {
+                    layer.msg('手机号格式不正确');
+                    return;
+                }
+            }
+            else{
+                layer.msg('参数错误');
+                return;
+            }
+
+
+            settime(this);
+            var data = $("#fm").serialize();
+
+            $.ajax({
+                url: "{:url('user/reg_msg')}",
+                type: "post",
+                dataType: "json",
+                data: data,
+                beforeSend: function () {
+                    //开启loading
+                },
+                success: function (r) {
+                    layer.msg(r.msg);
+                },
+                complete: function () {
+                    //结束loading
+                }
+            });
+        });
+
+		$('#btn_submit').click(function() {
+			if ($('#user_name').val()  == '') { layer.msg('请输入用户！'); $("#user_name").focus(); return false; }
+			if ($('#user_pwd').val()  == '') { layer.msg('请输入密码！'); $("#user_pwd").focus(); return false; }
+			if ($('#verify').val()  == '') { layer.msg('请输入验证码！'); $("#verify").focus(); return false; }
+
+			$.ajax({
+				url: "{:url('user/reg')}",
+				type: "post",
+				dataType: "json",
+				data: $('#fm').serialize(),
+				beforeSend: function () {
+					$("#btn_submit").css("background","#fd6a6a").val("loading...");
+				},
+				success: function (r) {
+					alert(r.msg);
+					if(r.code==1){
+						location.href="{:url('user/login')}";
+					}
+					else{
+						$('#verify_img').click();
+					}
+				},
+				complete: function () {
+					$("#btn_submit").css("background","#fa4646").val("立即注册");
+				}
+			});
+
+		});
+
+</script>
+
+</body>
+</html>

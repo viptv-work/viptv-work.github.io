@@ -1,0 +1,61 @@
+	    <div class="tou">
+			<div class="tou-left">
+				<img class="face" src="{$obj.user_portrait|mac_default='static/images/touxiang.png'|mac_url_img}" alt="会员头像">
+			</div>
+			<div class="tou-right">
+				<span class="name-tit">{$obj.user_name}</span>
+			</div>
+		</div>
+		<div class="menber-info">
+		  <div class="info-box"><p class="m-points">{$obj.user_points}</p><p class="text-small">我的积分</p></div>
+		  <div class="info-box"><a href="{:url('user/popedom')}"><p>{if condition="$obj.group_id lt 3"}{$user.group.group_name}{else}<i class="iconfont user_vip">&#xe638;</i>{$obj.group.group_name}{/if}</p><p class="text-small">{if condition="$obj.group_id lt 3"}永久有效{else}{$obj.user_end_time|date='Y-m-d',###}到期{/if}</p></a></div>
+		</div>
+		<ul>
+			<li><a class="flip" href="javascript:void(0)"><span class="xs1"><i class="iconfont huiyuan ver_none">&#xe661;</i>推荐有礼<i class="iconfont ico-right">&#xe623;</i></span><span class="xs2" style="display:none;"><i class="iconfont huiyuan ver_none">&#xe661;</i>推荐有礼<i class="iconfont ico-right">&#xe63a;</i></span><span class="user-time">推荐好友赚现金</span></a>
+				<div class="panel" style="display:none;">
+		        {if condition="$GLOBALS['config']['user']['reward_status'] eq 1"}
+			            <div class="tuijian-ad">
+			                {include file="ads/ads_user"}
+					    </div>
+				        <p class="hui">说明：推荐访问一次获得{$GLOBALS['config']['user']['invite_visit_points']}积分，推荐注册一次获得{$GLOBALS['config']['user']['invite_reg_points']}积分，{$GLOBALS['config']['user']['cash_ratio']}积分等于1元。</p>
+					{if $GLOBALS['config']['user']['invite_reg_points'] gt 0}
+						<p><span class="xiang"><i class="iconfont">&#xe63a;</i>推荐注册链接</span>
+							<a id="btn" class="bind-a" data-clipboard-text="{$maccms.http_type}{$maccms.site_url}{:mac_url('user/reg')}?uid={$obj.user_id}" href="javascript:void(0)">复制注册链接</a>
+						</p>
+						<p><input id="url" class="member-input wt-input" value="{$maccms.http_type}{$maccms.site_url}{:mac_url('user/reg')}?uid={$obj.user_id}" size="70">
+						</p>
+					{/if}
+					{if $GLOBALS['config']['user']['invite_visit_points'] gt 0}
+						<p><span class="xiang"><i class="iconfont">&#xe63a;</i>推荐访问链接</span>
+							<a id="btn2" class="bind-a" data-clipboard-text="{$maccms.http_type}{$maccms.site_url}{:mac_url('user/visit')}?uid={$obj.user_id}" href="javascript:void(0)">复制访问链接</a>
+						</p>
+						<p><input id="url2" class="member-input wt-input" value="{$maccms.http_type}{$maccms.site_url}{:mac_url('user/visit')}?uid={$obj.user_id}" size="70"></p>
+					{/if}
+				{else}
+				    <p class="hui">抱歉，推荐有礼活动暂未开放</p>
+				{/if}
+				</div>
+			</li>
+		</ul>
+		<ul>
+			<li><a href="{:url('user/ajax_info')}"><i class="iconfont yonghu">&#xe62b;</i>我的资料<i class="iconfont ico-right">&#xe623;</i></a></li>
+			<li><a href="{:url('user/info')}"><i class="iconfont xiugai">&#xe65e;</i>修改资料<i class="iconfont ico-right">&#xe623;</i></a></li>
+		</ul>
+		<ul>
+			<li><a href="{:url('user/favs')}"><i class="iconfont lishi">&#xe629;</i>我的收藏<i class="iconfont ico-right">&#xe623;</i></a></li>
+			<li><a href="{:url('user/plays')}"><i class="iconfont lishi">&#xe624;</i>观看记录<i class="iconfont ico-right">&#xe623;</i></a></li>
+			<li><a href="{:url('user/downs')}"><i class="iconfont lishi">&#xe63c;</i>下载记录<i class="iconfont ico-right">&#xe623;</i></a></li>
+		</ul>
+		<ul>
+			<li><a href="{:url('user/upgrade')}"><i class="iconfont huiyuan">&#xe638;</i>升级会员<i class="iconfont ico-right">&#xe623;</i></a></li>
+			<li><a href="{:url('user/buy')}"><i class="iconfont xiazai">&#xe65c;</i>充值中心<i class="iconfont ico-right">&#xe623;</i></a></li>
+			<li><a href="{:url('user/orders')}"><i class="iconfont xiazai">&#xe660;</i>充值记录<i class="iconfont ico-right">&#xe623;</i></a></li>
+			<li><a href="{:url('user/cash')}"><i class="iconfont xiazai">&#xe65f;</i>我要提现<i class="iconfont ico-right">&#xe623;</i></a></li>
+		</ul>
+		<ul>
+            <li><a href="{:url('user/plog')}"><i class="iconfont congzhi">&#xe662;</i>积分记录<i class="iconfont ico-right">&#xe623;</i></a></li>
+			<li><a href="{:url('user/reward')}"><i class="iconfont congzhi">&#xe65d;</i>推荐记录<i class="iconfont ico-right">&#xe623;</i></a></li>
+		</ul>
+		<ul class="logout-ul">
+			<li class="logout-item" ><a class="logout-link" href="{:url('user/logout')}" >退出账号</a></li>
+		</ul>

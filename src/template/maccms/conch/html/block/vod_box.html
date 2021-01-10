@@ -1,0 +1,21 @@
+<li class="vodlist_item">
+	<a class="vodlist_thumb lazyload" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" data-original="{:mac_url_img($vo.vod_pic)}">						
+		<span class="play hidden_xs"></span>
+		{if condition="($maccms.aid eq 2) OR ($maccms.aid eq 13)"}
+		<span class="vodlist_top">{$vo.type.type_name}</span>
+        {/if}
+        {if condition="$vo['type_id_1']==1"}
+        {if condition="$vo.vod_score eq 0"}
+        <span class="pic_text text_right">{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}</span>
+        {else/}
+        <span class="pic_text text_right text_dy">{$vo.vod_score}</span>
+        {/if}
+        {else/}
+		<span class="pic_text text_right">{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}</span>
+		{/if}
+	</a>
+	<div class="vodlist_titbox">									
+		<p class="vodlist_title"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">{$vo.vod_name}</a></p>
+		<p class="vodlist_sub">{$vo.vod_sub|mac_default=$vo.vod_actor|mac_default='未知'}</p>
+	</div>
+</li>

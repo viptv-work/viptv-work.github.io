@@ -1,0 +1,141 @@
+<div class="myui-foot clearfix">
+	
+	<div class="container min">
+		<div class="row">
+			
+			{include file="index/logo"}<!-- 合作 -->
+			{if condition="$maccms.aid eq 1"}
+			{include file="index/link"}<!-- 友链 -->
+			{/if}
+			
+			<div class="col-pd text-center">
+				<p>{$mytheme.site.foot_tips}</p>	
+				<p class="hidden-xs">
+					<a target="_blank" href="{:mac_url('map/index')}">网站地图</a><span class="split-line"></span>
+					<a target="_blank" href="{:mac_url('rss/index')}">RSS订阅</a><span class="split-line"></span>
+					<a target="_blank" href="{:mac_url('rss/baidu')}">百度蜘蛛</a><span class="split-line"></span>
+					<a target="_blank" href="{:mac_url('rss/google')}">谷歌地图</a><span class="split-line"></span>
+					<a target="_blank" href="{:mac_url('rss/bing')}">必应地图</a><span class="split-line"></span>
+					<a target="_blank" href="{:mac_url('rss/so')}">360地图</a><span class="split-line"></span>
+					<a target="_blank" href="{:mac_url('rss/sogou')}">搜狗地图</a>
+				</p>	
+				<p class="margin-0">
+					{$mytheme.site.copyright}
+				</p>
+				<div class="tongji">{$mytheme.site.stats_code}</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+{include file="user/ajax_login"}
+
+{if $mytheme.tabbar.is}
+<div class="myui-nav__tabbar">
+	{maccms:for start="1" end="6" }
+	{if $mytheme['tabbar']['url'.$i.'']}
+	<a class="item" href="{$mytheme['tabbar']['url'.$i.'']}">
+		<img class="icon-img" src="{$maccms[path_tpl]}statics/icon/{$mytheme['tabbar']['img'.$i.'']}{if condition="$GLOBALS['type_id'] eq $mytheme['tabbar']['id'.$i.''] || $maccms.aid eq $mytheme['tabbar']['id'.$i.'']"}_on{/if}.png"/><p class="title">{$mytheme['tabbar']['title'.$i.'']}</p>
+		</a>
+	{/if}
+	{/maccms:for}
+</div>
+{/if}
+
+{if $mytheme.nav2.is}
+<ul class="myui-extra clearfix">
+	<li>
+		<a class="backtop" href="javascript:scroll(0,0)" title="返回顶部" style="display: none;"><i class="fa fa-angle-up"></i></a>
+	</li>
+	{if $mytheme.style.skin && !$mytheme.color.is}
+	<li>
+		<a class="btnskin" href="javascript:;" title="切换皮肤"><i class="fa fa-windows"></i></a>
+	</li>
+	{/if}
+
+	<li class="visible-xs">
+		<a class="open-share" href="javascript:;" title="分享给朋友"><i class="fa fa-share-alt"></i></a>
+	</li>
+
+	{if $mytheme.site.weixin_img}
+	<li class="dropdown-hover hidden-xs">
+		<a href="javascript:;" title="关注我们" onclick="MyTheme.Layer.Img('关注我们','{$mytheme.site.weixin_img}','扫一扫关注我们')"><i class="fa fa-wechat"></i></a>
+		<div class="dropdown-box right fadeInDown clearfix">
+			<div class="item text-center">
+				<div class="qrcode-box">
+					<img class="img-responsive" src="{$mytheme.site.weixin_img}" />
+				</div>
+				<p>扫一扫关注我们</p>
+			</div>
+		</div>
+	</li>
+	{/if}
+	{if $mytheme.nav2.sub}{maccms:for start="1" end="3"} {if $mytheme['nav2']['url'.$i.'']}<li><a href="{$mytheme['nav2']['url'.$i.'']}" title="{$mytheme['nav2']['text'.$i.'']}"><i class="fa {$mytheme['nav2']['icon'.$i.'']}"></i></a></li>{/if} {/maccms:for} {/if}
+</ul>
+{/if}
+
+{if $mytheme.ad.float}{$mytheme.ad.float_html}{/if}
+
+{if $mytheme.notice.is}<div class="noticetext hide">{$mytheme.notice.html}</div>{/if}
+<script type="text/javascript">
+	{if $mytheme.qrcode.is}MyTheme.Images.Qrcode.Init();{/if}
+	{if $mytheme.style.skin && !$mytheme.color.is}MyTheme.Other.Skin();{/if}
+	{if $mytheme.bdshare.is}MyTheme.Other.Share();{/if}
+	{if $mytheme.notice.is}MyTheme.Layer.Popbody('allpop','{$mytheme.notice.title}','.noticetext',{$mytheme.notice.day},'{$mytheme.notice.wide}','{$mytheme.notice.high}');{/if}
+</script>
+
+{if $mytheme.click.is}
+<script type="text/javascript">
+	{maccms:foreach name=":explode(',',''.$mytheme['click']['url'].'')" id="vo" key="key"}
+	MyTheme.Ajax('{$vo}','get','json','',function(){});
+	{/maccms:foreach}
+</script>
+{/if}
+
+{if $mytheme.safe.is}
+<script type="text/javascript">
+	document.onkeydown=function(){
+		var e = window.event||arguments[0];
+		{if $mytheme.safe.f12}
+			if(e.keyCode==123){
+				alert('{$mytheme.safe.tips}');
+				return false;
+			}
+		{/if}
+		{if $mytheme.safe.ctrl}
+		if((e.ctrlKey)&&(e.shiftKey)&&(e.keyCode==73)){
+			alert('{$mytheme.safe.tips}');
+			return false;
+		}
+		if((e.ctrlKey)&&(e.keyCode==85)){
+			alert('{$mytheme.safe.tips}');
+			return false;
+		}
+		if((e.ctrlKey)&&(e.keyCode==83)){
+		   alert('{$mytheme.safe.tips}');
+		   return false;
+		}
+		{/if}
+	}
+	{if $mytheme.safe.right}
+	document.oncontextmenu=function(){
+		alert('{$mytheme.safe.tips}');
+		return false;
+	}
+	{/if}
+	{if $mytheme.safe.mode}
+	var threshold = 160;
+	window.setInterval(function() {  
+	    if (window.outerWidth - window.innerWidth > threshold ||   
+	    window.outerHeight - window.innerHeight > threshold) {  
+			function disableDebugger() {
+				debugger;
+			}
+			$(document).ready(function () {
+				disableDebugger();
+			});
+	    }  
+	}, 1e3);  
+	{/if}
+</script>
+{/if}

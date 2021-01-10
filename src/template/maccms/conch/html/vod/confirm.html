@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" />
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>使用积分购买权限</title>
+	<link rel="stylesheet" href="{$maccms.path_tpl}asset/css/hlstyle.css">
+	<style>
+		body{background:#fff;}
+	</style>
+	<script src="{$maccms.path}static/js/jquery.js"></script>
+	<script type="text/javascript" src="{$maccms.path_tpl}asset/js/hlhtml.js"></script>
+	<script>var maccms={"path":"__ROOT__","mid":"{$maccms['mid']}","url":"{$maccms['site_url']}","wapurl":"{$maccms['site_wapurl']}","mob_status":"{$maccms['mob_status']}"};</script>
+	<script src="{$maccms.path}static/js/home.js"></script>
+</head>
+<body>
+
+<div class="weui_msg_jump">
+    <div class="weui_icon"><i class="iconfont weui_icon_msg">&#xe636;</i></div>
+    <div class="weui_text">
+        <h4 class="weui_msg_title">系统提示</h4>
+        <p class="weui_xtts">{$popedom.msg}</p>
+        <p class="weui_tips">说明：一次支付永久观看，不重复扣费，谢谢支持</p>
+        <div class="weui-btn">
+        {if condition="$user.group.group_id eq 1"}
+		<p class="weui-p"><a href="javascript:;" class="mac_user" target="_blank">马上登录</a></p>
+        {else/}
+		<p class="weui-p"><a href="javascript:;" onclick="MAC.User.BuyPopedom(this)" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}" data-mid="1" data-type="{if condition="$obj.player_info.flag eq 'play'"}4{else/}5{/if}">确认购买</a></p>
+        <p class="weui-p"><a class="weui-a" href="{:url('user/buy')}" target="_blank">马上充值</a></p>
+        {/if}
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+
+

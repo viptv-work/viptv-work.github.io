@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/vod_detail"}   
+	{include file="block/include"}
+</head>
+<body>
+	{include file="block/head"}
+    <div class="container">
+        <div class="row">     
+            <div class="col-lg-wide-75 col-xs-1">	
+            	<!-- 详细信息-->
+            	<div class="stui-pannel stui-pannel-bg clearfix">
+					<div class="stui-pannel-box">
+						<div class="stui-content__thumb">									
+							<a class="stui-vodlist__thumb picture v-thumb" href="{:mac_url_vod_play($obj,['sid'=>1,'nid'=>1])}" title="{$obj.vod_name}">
+								<img class="lazyload" src="{$maccms.path}statics/img/load.gif" data-original="{:mac_url_img($obj.vod_pic)}"/>
+								<span class="play active hidden-xs"></span>
+								<span class="pic-text text-right">{if condition="$obj.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$obj.vod_serial gt 0"}第{$obj.vod_serial}集{else /}已完结{/if}</span>
+							</a>										
+						</div>
+						<div class="stui-content__detail">
+							<h1 class="title">{$obj.vod_name}<span class="score text-red">{$obj.vod_score}</span></h1>	
+							<p class="data">
+								<span class="text-muted">类型：</span>{$obj.vod_class|mac_url_create='class'}
+								<span class="split-line"></span>
+								<span class="text-muted hidden-xs">地区：</span>{$obj.vod_area|mac_url_create='area'}
+								<span class="split-line"></span>
+								<span class="text-muted hidden-xs">年份：</span>{$obj.vod_year|mac_url_create='year'}								
+							</p>
+							<p class="data"><span class="text-muted">主演：</span>{$obj.vod_actor|mac_substring=60|mac_url_create='actor'}</p>
+							<p class="data"><span class="text-muted">导演：</span>{$obj.vod_director|mac_url_create='director'}</p>
+							<p class="data hidden-sm"><span class="text-muted">更新：</span>{$obj.vod_time|date='Y-m-d',###}</p>														
+							<p class="desc detail hidden-xs">
+								<span class="left text-muted">简介：</span>
+								<span class="detail-sketch">{$obj.vod_content|mac_filter_html|mac_substring=100}</span>
+								<span class="detail-content" style="display: none;">{$obj.vod_content|mac_filter_html}</span>
+								<a class="detail-more" href="javascript:;">详情 <i class="icon iconfont icon-moreunfold"></i></a>
+							</p>							    
+							<div class="play-btn clearfix">
+								<div class="share bdsharebuttonbox hidden-sm hidden-xs pull-right"></div>
+								<a class="btn btn-primary" href="{:mac_url_vod_play($obj,['sid'=>1,'nid'=>1])}">立即播放</a>
+								{if condition="$maccms.user_status eq 1"}
+								<a href="javascript:void(0);" class="mac_ulog btn btn-default" data-type="2" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}">收藏</a>
+								{/if}
+							</div>
+						</div>
+					</div>
+				</div>	
+				<!-- end 详细信息-->
+				
+				{include file="vod/playlist"}<!-- 播放地址-->		
+				{include file="vod/like"}<!-- 猜你喜欢-->
+			</div>				
+			<div class="col-lg-wide-25 col-xs-1 stui-pannel-side hidden-sm hidden-xs">	
+				{include file="vod/code"}<!-- 扫码-->
+				{include file="vod/hot"}<!-- 热播-->
+				<!-- 广告-->
+				<div class="stui-pannel stui-pannel-bg clearfix">
+					<div class="stui-pannel-box clearfix">
+						<div class="col-pd text-center">
+							<a target="_blank" href=""><img class="img-responsive" src="http://v.shoutu.cn/html/video/img/ad4.jpg" /></a>				
+						</div>
+					</div>
+				</div>
+				<!-- end 广告-->
+			</div>
+        </div>
+    </div>
+    <span class="mac_ulog_set hide" alt="浏览记录" data-type="1" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+    <span class="mac_history_set hide" alt="历史记录" data-name="[{$obj.type.type_name}]{$obj.vod_name}" data-pic="{$obj.vod_pic|mac_url_img}"></span>
+	{include file="block/foot"}
+</body>
+</html>

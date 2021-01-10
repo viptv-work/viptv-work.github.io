@@ -1,0 +1,25 @@
+{if $mytheme.home_video.is}
+{maccms:type order="asc" by="sort" ids="'.$mytheme['home_video']['type'].'" id="vo1" key="key1" flag="vod"}
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_hd">
+			<div class="myui-panel__head clearfix">				
+				<h3 class="title">
+					{$mytheme.home_video.title}{$vo1.type_name}
+				</h3>	
+				<a class="more text-muted" href="{:mac_url_type($vo1)}">更多 <i class="fa fa-angle-right"></i></a>
+			</div>																			
+		</div>
+		<div class="myui-panel_bd clearfix">
+			<ul class="myui-vodlist clearfix">
+				{maccms:vod num="'.$mytheme['home_video']['num'].'" type="'.$vo1['type_id'].'" order="desc" by="'.$mytheme['home_video']['by'].'"}
+				<li class="col-md-{$mytheme.home_video.col} col-sm-{$mytheme.col.sm_wide} col-xs-{$mytheme.col.xs_wide}{if condition="$key gt $mytheme.home_video.xs"} hidden-xs{/if}{if condition="$key gt $mytheme.home_video.sm"} hidden-sm{/if}">
+					{include file="block/vod_box_active"}								
+				</li>
+				{/maccms:vod} 
+			</ul>															
+		</div>
+	</div>						
+</div>
+{/maccms:type}
+{/if}

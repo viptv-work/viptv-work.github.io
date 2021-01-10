@@ -1,0 +1,12 @@
+
+<div class="detail{if $vo.art_pic} detail-left{/if}">
+	<h5 class="title"><a href="{:mac_url_art_detail($vo)}" title="{$vo.art_name}">{$vo.art_name|mac_substring=20}</a></h5>										
+	<p class="margin-0 text-muted font-12">{$vo.type.type_name}<span class="split-line"></span>{$vo.art_time|date='Y-m-d',###}</p>
+</div>
+{if $vo.art_pic}
+<div class="thumb">
+	<a class="myui-vodlist__thumb wide img-xs-110 lazyload" href="{:mac_url_art_detail($vo)}" title="{$vo.art_name}" data-original="{:mac_url_img($vo.art_pic)}">
+		<span class="play-v"></span>
+	</a>
+</div>
+{/if}

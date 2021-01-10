@@ -1,0 +1,68 @@
+{if $mytheme.like.is}
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_hd">
+			<div class="myui-panel__head active bottom-line clearfix">
+				<h3 class="title">
+					{$mytheme.like.title}
+				</h3>		
+				<ul class="nav nav-tabs active">	
+					<li class="active"><a href="#type" data-toggle="tab">同类型</a></li>
+					{if $mytheme.like.actor}<li><a href="#actor" data-toggle="tab">同主演</a></li>{/if}
+					{if $mytheme.like.year}<li><a href="#year" data-toggle="tab">同年份</a></li>{/if}
+					{if $obj.vod_tag}<li><a href="#tag" data-toggle="tab">同TAG</a></li>{/if}
+				</ul>
+			</div>																		
+		</div>
+		<div class="tab-content myui-panel_bd">
+			<ul id="type" class="myui-vodlist__bd tab-pane fade in active clearfix">
+				{maccms:vod num="'.$mytheme['like']['num'].'" type="'.$mytheme['like']['type'].'" order="desc" by="'.$mytheme['like']['by'].'"}
+				<li class="col-lg-{$mytheme.like.col} col-md-{$mytheme.col.md} col-sm-{$mytheme.col.sm} col-xs-{$mytheme.col.xs}{if condition="$key gt $mytheme.like.xs"} hidden-xs{/if}{if condition="$key gt $mytheme.like.sm"} hidden-sm{/if}">
+					{include file="block/vod_box_tab"}										
+				</li>
+				{/maccms:vod}
+			</ul>
+			{if $mytheme.like.actor}
+			<ul id="actor" class="myui-vodlist__bd tab-pane fade in clearfix">
+				{maccms:vod num="'.$mytheme['like']['num'].'" actor="'.$obj['vod_actor'].'" order="desc" by="time"}
+				<li class="col-lg-{$mytheme.like.col} col-md-{$mytheme.col.md} col-sm-{$mytheme.col.sm} col-xs-{$mytheme.col.xs}{if condition="$key gt $mytheme.like.xs"} hidden-xs{/if}{if condition="$key gt $mytheme.like.sm"} hidden-sm{/if}">
+					{include file="block/vod_box_tab"}	
+				</li>
+				{/maccms:vod}
+			</ul>
+			{/if}
+			{if $mytheme.like.year}
+			<ul id="year" class="myui-vodlist__bd tab-pane fade in clearfix">
+				{maccms:vod num="'.$mytheme['like']['num'].'" type="'.$mytheme['like']['type'].'" order="desc" by="'.$mytheme['like']['by'].'" year="'.$obj['vod_year'].'"}
+				<li class="col-lg-{$mytheme.like.col} col-md-{$mytheme.col.md} col-sm-{$mytheme.col.sm} col-xs-{$mytheme.col.xs}{if condition="$key gt $mytheme.like.xs"} hidden-xs{/if}{if condition="$key gt $mytheme.like.sm"} hidden-sm{/if}">
+					{include file="block/vod_box_tab"}										
+				</li>
+				{/maccms:vod}
+			</ul>
+			{/if}
+			{if $obj.vod_tag}
+			<ul id="tag" class="myui-vodlist__bd tab-pane fade in clearfix">
+				{maccms:vod num="'.$mytheme['like']['num'].'" type="all" tag="'.$obj['vod_tag'].'" order="desc" by="'.$mytheme['like']['by'].'"}
+				<li class="col-lg-{$mytheme.like.col} col-md-{$mytheme.col.md} col-sm-{$mytheme.col.sm} col-xs-{$mytheme.col.xs}{if condition="$key gt $mytheme.like.xs"} hidden-xs{/if}{if condition="$key gt $mytheme.like.sm"} hidden-sm{/if}">
+					{include file="block/vod_box_tab"}										
+				</li>
+				{/maccms:vod}
+			</ul>
+			{/if}
+		</div>		
+	</div>						
+</div>
+{if $mytheme.detail.ad && $mytheme.detail.ad2}
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_bd">
+			<div class="col-xs-1">
+				{$mytheme.detail.ad2}
+			</div>
+		</div>
+	</div>				
+</div>
+{/if}
+{/if}
+
+

@@ -1,0 +1,25 @@
+
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_bd">
+			<div class="myui-panel_hd">
+				<div class="myui-panel__head clearfix">
+					<h3 class="title">
+						影片评论
+					</h3>						
+				</div>																		
+			</div>
+			<div class="myui-panel_bd">
+				
+				<script>
+			        $(function(){
+			            MAC.Comment.Login = {$comment.login};
+			           	MAC.Comment.Verify = {$comment.verify};
+			            Myui.Comment.Show(1);
+				    });
+			    </script>
+			    <div class="myui_comment" data-id="{$obj.vod_id}" data-mid="{$maccms.mid}" ></div>
+			</div>
+		</div>
+	</div>					
+</div>		

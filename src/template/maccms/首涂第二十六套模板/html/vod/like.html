@@ -1,0 +1,61 @@
+	<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_hd">
+			<div class="myui-panel__head active bottom-line clearfix">
+				<h3 class="title">猜你喜欢</h3>		
+				<ul class="nav nav-tabs active">	
+					<li class="active"><a href="#type" data-toggle="tab">同类型</a></li>
+					<li><a href="#actor" data-toggle="tab">同主演</a></li>
+					<li><a href="#year" data-toggle="tab">同年份</a></li>
+					</ul>
+			</div>																		
+		</div>
+		<div class="tab-content myui-panel_bd">
+			<ul id="type" class="myui-vodlist__bd tab-pane fade in active clearfix">
+			{maccms:vod num="12" type="current" order="desc" by="time"}
+					<li class="col-lg-6 col-md-6 col-sm-4 col-xs-3{if condition="$key gt 8"} hidden-sm{/if}{if condition="$key gt 9"} hidden-xs{/if}">
+					<div class="myui-vodlist__box">
+			<a class="myui-vodlist__thumb" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" style="background: url({:mac_url_img($vo.vod_pic)});">
+				<span class="play hidden-xs"></span>
+			<span class="pic-tag pic-tag-top" style="background-color: #282727;">{$vo.vod_score}分</span>
+			<span class="pic-text text-right">{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}高清{/if}</span>	</a>									
+			<div class="myui-vodlist__detail">
+			<h4 class="title text-overflow"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">{$vo.vod_name}</a></h4>
+			<p class="text text-overflow text-muted hidden-xs">主演：{$vo.vod_actor|mac_default='内详'}</p>	</div>
+			</div>										
+			</li>
+			{/maccms:vod}
+		</ul>
+		<ul id="actor" class="myui-vodlist__bd tab-pane fade in clearfix">
+			{maccms:vod num="12" actor="'.$obj['vod_actor'].'" order="desc" by="time"}
+				<li class="col-lg-6 col-md-6 col-sm-4 col-xs-3{if condition="$key gt 8"} hidden-sm{/if}{if condition="$key gt 9"} hidden-xs{/if}">
+					<div class="myui-vodlist__box">
+			<a class="myui-vodlist__thumb" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" style="background: url({:mac_url_img($vo.vod_pic)});">
+				<span class="play hidden-xs"></span>
+			<span class="pic-tag pic-tag-top" style="background-color: #282727;">{$vo.vod_score}分</span>
+			<span class="pic-text text-right">{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}高清{/if}</span>	</a>									
+			<div class="myui-vodlist__detail">
+			<h4 class="title text-overflow"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">{$vo.vod_name}</a></h4>
+			<p class="text text-overflow text-muted hidden-xs">主演：{$vo.vod_actor|mac_default='内详'}</p>	</div>
+			</div>										
+			</li>
+			{/maccms:vod}
+			</ul>
+			<ul id="year" class="myui-vodlist__bd tab-pane fade in clearfix">
+			{maccms:vod num="12" order="desc" by="time" year="'.$obj['vod_year'].'"}
+				<li class="col-lg-6 col-md-6 col-sm-4 col-xs-3{if condition="$key gt 8"} hidden-sm{/if}{if condition="$key gt 9"} hidden-xs{/if}">
+					<div class="myui-vodlist__box">
+			<a class="myui-vodlist__thumb" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" style="background: url({:mac_url_img($vo.vod_pic)});">
+				<span class="play hidden-xs"></span>
+			<span class="pic-tag pic-tag-top" style="background-color: #282727;">{$vo.vod_score}分</span>
+			<span class="pic-text text-right">{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}高清{/if}</span>	</a>									
+			<div class="myui-vodlist__detail">
+			<h4 class="title text-overflow"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">{$vo.vod_name}</a></h4>
+			<p class="text text-overflow text-muted hidden-xs">主演：{$vo.vod_actor|mac_default='内详'}</p>	</div>
+			</div>										
+			</li>
+				{/maccms:vod}
+			</ul>
+	</div>	
+	</div>						
+</div>

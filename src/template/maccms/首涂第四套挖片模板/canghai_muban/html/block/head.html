@@ -1,0 +1,47 @@
+<header class="stui-header__top clearfix" id="header-top">
+	<div class="container">	
+		<div class="row">
+			<div class="stui-header_bd clearfix">					
+			    <div class="stui-header__logo">
+					<a class="logo" href="{$maccms.path}"></a>										  
+				</div>
+				<div class="stui-header__side">					
+					<ul class="stui-header__user">
+						<li class="visible-xs"><a class="open-popup" href="javascript:;"><i class="icon iconfont icon-viewgallery"></i></a></li>
+					</ul>
+					<script type="text/javascript" src="{$maccms.path}statics/js/jquery.autocomplete.js"></script>
+					<div class="stui-header__search"> 
+				        <form id="search" name="search" method="POST" action="{:mac_url('vod/search')}" onSubmit="return qrsearch();">
+        					<input type="text" id="wd" name="wd" class="mac_wd form-control" value="{$param.wd}" placeholder="请输入关键词..."/>
+							<button class="submit" id="searchbutton" type="submit" name="submit"><i class="icon iconfont icon-search"></i></button>							
+						</form>
+				  	</div>				   
+				</div>									
+				<ul class="stui-header__menu type-slide">
+					<li {if condition="$maccms.aid eq 1"}class="active"{/if}><a href="{$maccms.path}">首页</a></li>
+					{maccms:type num="10" order="asc" by="sort" ids="parent"}
+                    <li {if condition="($vo.type_id eq MAC_TYPE_ID || $vo.type_id eq MAC_TYPE_PID)"}class="active"{/if}><a href="{:mac_url_type($vo)}">{$vo.type_name}</a></li>
+                    {/maccms:type}
+                    <li {if condition="$maccms.aid eq 30"}class="active"{/if}><a href="{:mac_url_topic_index()}">专题</a></li>
+					<li {if condition="$maccms.aid eq 31"}class="active"{/if}><a href="{:mac_url('gbook/index')}" >留言</a></li>
+<li {if condition="$maccms.aid eq 32"}class="active"{/if}><a href="http://app.365dog.cc/" >手机APP</a></li>
+				</ul>				
+		  	</div>		
+		</div>	  							    
+	</div>
+</header>
+<div class="popup clearfix">
+	<div class="popup-head bottom-line">
+		<h5 class="title pull-right">全部分类</h5>
+		<a href="javascript:;" class="close-popup">
+			<i class="icon iconfont icon-back"></i>
+		</a>		
+	</div>
+	<div class="popup-body col-pd">		
+		<ul class="tag tag-type">
+			{maccms:type ids="" order="asc" by="sort" flag="vod"}
+            <li {if condition="($vo.type_id eq MAC_TYPE_ID || $vo.type_id eq MAC_TYPE_PID)"}class="active"{/if}><a href="{:mac_url_type($vo,[],'show')}">{$vo.type_name}</a></li>
+            {/maccms:type}
+		</ul>
+	</div>
+</div>

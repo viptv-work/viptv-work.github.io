@@ -1,0 +1,173 @@
+<?php  
+$pagesize = 8; //设置记录显示条数; 
+ $JCCMS_pagecount = floor(count($JCCMS_SQL) / $pagesize)-1;//计算数组所得到记录总数
+  $JCCMS_prev = $JCCMS_page -1; //初始化上一页
+ $JCCMS_next = $JCCMS_page +1; //初始化下一页
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>
+            <?php echo $web_title;?>
+      </title>
+      <meta name="keywords" content="<?php echo $web_keywords;?>" />
+      <meta name="description" content="<?php echo $web_description;?>" />
+      <link href="<?php echo '/template/'.$web_moban;?>/css/style.css" rel="stylesheet">
+      <script src="<?php echo '/template/'.$web_moban;?>/js/home.js"></script>
+</head>
+
+<body>
+      <div class="main">
+            <?php  include('./template/'.$web_moban.'/header.html');?>
+            <section>
+                  <div class="container">
+                        <div class="home-img-box">
+
+                              <div class="category-count">
+                                    <h3 class="title">
+                                          <?php JCCMS_type('5'); ?>
+                                    </h3>
+                                    <a><span class="home-link"></span></a>
+                              </div>
+                              <div class="post-list">
+                                    <?php $JCCMS_SQL=JCCMS_chuli('5');for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+                                    <div class="col-md-3 col-sm-6 col-xs-6">
+                                          <div class="video-item">
+                                                <div class="featured-content-image">
+                                                      <a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html"
+                                                            rel="bookmark">
+                                                            <img class="lazy" src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>" />
+                                                            <div class="link-overlay"></div>
+                                                      </a>
+                                                      <span class="model-view">
+                                                            <?php JCCMS_type('5'); ?></span>
+                                                </div>
+                                          </div>
+                                          <div class="entry-title">
+                                                <a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html"
+                                                      rel="bookmark">
+                                                      <?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></a>
+                                                <?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_time');?>
+                                          </div>
+                                    </div>
+                                    <?php } ?>
+
+                              </div>
+
+                              <div class="clearfix"></div>
+                        </div>
+
+
+
+                        <div class="home-img-box">
+                              <div class="category-count">
+                                    <h3 class="title">
+                                          <?php JCCMS_type('10'); ?>
+                                    </h3>
+                                    <a><span class="home-link"></span></a>
+                              </div>
+                              <div class="post-list">
+                                    <?php $JCCMS_SQL=JCCMS_chuli('10');for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+                                    <div class="col-md-3 col-sm-6 col-xs-6">
+                                          <div class="video-item">
+                                                <div class="featured-content-image">
+                                                      <a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html"
+                                                            rel="bookmark">
+                                                            <img class="lazy" src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>" />
+                                                            <div class="link-overlay"></div>
+                                                      </a>
+                                                      <span class="model-view">
+                                                            <?php JCCMS_type('10'); ?></span>
+                                                </div>
+                                          </div>
+                                          <div class="entry-title">
+                                                <a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html"
+                                                      rel="bookmark">
+                                                      <?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></a>
+                                                <?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_time');?>
+                                          </div>
+                                    </div>
+                                    <?php } ?>
+
+                              </div>
+
+                              <div class="clearfix"></div>
+                        </div>
+
+                        <div class="home-img-box">
+                              <div class="category-count">
+                                    <h3 class="title">直播推荐</h3>
+                                    <a><span class="home-link"></span></a>
+                              </div>
+                              <div class="post-list">
+                                    <?php
+$json_string = file_get_contents($zhibourl);
+$data = json_decode($json_string, true);$datas = $data['fileinfo'];$pageresult = $data['pageresult'];$page = $data['page'];$datass =NULL;
+for ($x=0; $x<=7; $x++) {
+$val=$datas[$x];$address=$val['m3u8'];$img=$val['pic'];$title=$val['name'];
+
+?>
+                                    <div class="col-md-3 col-sm-6 col-xs-6">
+                                          <div class="video-item">
+                                                <div class="featured-content-image">
+                                                      <a href="/?m=zhibo-neiron-id-<?php echo base64_encode($address)?>.html"
+                                                            rel="bookmark">
+                                                            <img class="lazy" src="<?php echo $img;?>" />
+                                                            <div class="link-overlay"></div>
+                                                      </a>
+                                                      <span class="model-view">时时直播</span>
+                                                </div>
+                                          </div>
+                                          <div class="entry-title">
+                                                <a href="/?m=zhibo-neiron-id-<?php echo base64_encode($address)?>.html"
+                                                      rel="bookmark">
+                                                      <?php echo $title ?></a>
+                                          </div>
+                                    </div>
+
+                                    <?php		 }?>
+
+
+
+                              </div>
+
+                              <div class="clearfix"></div>
+                        </div>
+
+
+
+
+                  </div>
+            </section>
+
+            <footer>
+                  <div class="footer-menu">
+                        <div class="container">
+                        </div>
+                  </div>
+                  <div class="footer">
+                        <div class="container">
+                              <div class="col-md-12">
+                                    <div class="footer-item newest-keyword">
+                                          <b style="color: #F99A16;">友情链接</b>
+                                    </div>
+                                    <div class="footer-item feature-list" style="border-top:1px solid #333333;">
+                                          <div class="row" style="margin-top: 10px;">
+                                                <?php echo  Jccms_json_connection('<div class="col-md-2"> <a style="color:#636363;" href="链接" target="_blank">标题</a> </div> ',JCCMS_ROOT);?>
+
+                                          </div>
+                                    </div>
+                                    <?php  include('./template/'.$web_moban.'/footer.html');?>
+                              </div>
+                              <div class="col-md-3"></div>
+                        </div>
+                  </div>
+            </footer>
+      </div>
+</body>
+
+</html>

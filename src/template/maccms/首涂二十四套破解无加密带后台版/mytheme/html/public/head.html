@@ -1,0 +1,196 @@
+<header class="myui-header__bar transition-5 clearfix">
+	<ul class="myui-header__user">
+		<li class="visible-xs">
+			<a class="open-search" href="javascript:;"><i class="fa fa-search"></i></a>
+		</li>
+		{if condition="$mytheme.history.style eq pic"}
+		<li>
+			<a href="javascript:;" onclick="MyTheme.Other.Popup('#history')"><i class="fa fa-clock-o"></i></a>
+		</li>
+		{else if condition="$mytheme.history.style eq font"}
+		<li class="hist dropdown-hover">
+			<a href="javascript:;" title="播放记录"> <i class="fa fa-clock-o"></i></a>
+			<div class="dropdown-box fadeInDown">
+				<div class="item clearfix">					
+					<p class="text-muted">
+						<a class="text-red pull-right" href="javascript:;" onclick="MyTheme.Cookie.Del('history','您确定要清除记录吗？');">[清空]</a>
+						播放记录 
+					</p>
+					<div class="history-list clearfix">
+						<script type="text/javascript">
+							var history_get = MyTheme.Cookie.Get("history");
+							if(history_get){
+								var json=eval("("+history_get+")");
+								for(i=0;i<json.length;i++){
+									document.write("<p><a class='text-333' href='"+json[i].link+"' title='"+json[i].name+"'><span class='pull-right text-red'>"+json[i].part+"</span>"+json[i].name+"</a></p>");
+								}
+							} else {
+								document.write("<p style='padding: 80px 0; text-align: center'>您还没有看过影片哦</p>");
+							}
+						</script>
+					</div>
+				</div>
+			</div>	
+		</li>
+		{/if}
+		{if $mytheme.nav1.is}{maccms:for start="1" end="3"}
+		{if $mytheme['nav1']['url'.$i.'']}<li><a href="{$mytheme['nav1']['url'.$i.'']}" title="{$mytheme['nav1']['text'.$i.'']}"><i class="fa {$mytheme['nav1']['icon'.$i.'']}"></i></a></li>{/if}
+		{/maccms:for}{/if}
+		{if condition="$maccms.user_status eq 1"}
+		{if condition="$user.group.group_id eq 1"}
+		<li>
+			<a href="javascript:;" onclick="Myui.User.Login();"><i class="fa fa-user"></i></a>
+		</li>
+		{else}
+		<li class="menu dropdown-hover">
+			<a href="javascript:;"><i class="fa fa-user"></i></a>
+			<div class="dropdown-box fadeInDown">
+				<ul class="item clearfix">		
+					<li><a class="text-333" href="{:mac_url('user/index')}">会员中心</a></li>
+					<li><a class="text-333" href="{:mac_url('user/favs')}">我的收藏</a></li>
+					<li><a class="text-333" href="{:mac_url('user/plays')}">播放记录</a></li>
+					<li><a class="text-333" href="{:mac_url('user/reward')}">我的分销</a></li>
+					<li><a class="text-333" href="{:mac_url('user/logout')}">退出</a></li>
+				</ul>
+			</div>
+		</li>
+		{/if}
+		{/if}
+	</ul>
+	
+	{if $mytheme.search.auto}<script type="text/javascript" src="{$mytheme.site.static|mac_default=''.$maccms.path_tpl.''}statics/js/jquery.autocomplete.js"></script>{/if}		
+	<div class="myui-header__ul">
+		<li>
+			<a class="open-menu text-333" href="javascript:;"><i class="fa fa-dedent"></i></a>
+		</li>
+	</div>
+	<ul class="myui-header__search search-box">
+		
+		{if $mytheme.search.is}
+		{if $mytheme.search.select}
+		<li class="search-select dropdown-hover" href="javascript:;">
+			<span class="text">视频</span> <i class="fa fa-caret-down text-333"></i>
+			<div class="dropdown-box bottom fadeInDown">
+				<div class="item">
+					<p class="vod" data-action="{:mac_url('vod/search')}">视频</p>
+					{if $mytheme.search.art}<p class="news" data-action="{:mac_url('art/search')}">资讯</p>{/if}
+					{if $mytheme.search.actor}<p class="actor" data-action="{:mac_url('actor/search')}">明星</p>{/if}
+				</div>
+			</div>
+		</li>
+		{/if}
+		<li class="box dropdown-hover" href="javascript:;">
+			<form id="search" name="search" method="get" action="{:mac_url('vod/search')}" onSubmit="return qrsearch();">
+				<input type="text" id="wd" name="wd" class="search_wd form-control" value="{$param.wd}" placeholder="{$mytheme.search.text}" autocomplete="off"/>
+				<button class="submit search_submit" id="searchbutton" type="submit" name="submit"><i class="fa fa-search"></i></button>							
+			</form>
+			
+			{if $mytheme.search.hot}
+			<div class="search-dropdown-hot dropdown-box bottom fadeInDown">
+				<div class="item">
+					<p class="text-muted">
+						热门搜索
+					</p>
+					{maccms:foreach name=":explode(',',''.$mytheme['search'][hot].'')" id="vo" key="key"}
+					<p><a class="text-333" href="{:mac_url('vod/search',['wd'=>$vo])}" title=""><span class="badge{if condition="$key+1 eq 1"} badge-first{/if}{if condition="$key+1 eq 2"} badge-second{/if}{if condition="$key+1 eq 3"} badge-third{/if}">{$key+1}</span> {$vo}</a></p>
+					{/maccms:foreach}
+				</div>
+			</div>
+			{/if}
+		</li>
+		<a class="search-close visible-xs" href="javascript:;"><i class="fa fa-close"></i></a>
+		{/if}
+	</ul>
+
+	{if condition="$mytheme.history.style eq pic"}
+	<div class="popup {$mytheme.history.face}" id="history" style="width: {$mytheme.history.wide}px; height: 100%;">
+		<div class="popup-head">
+			<a class="pull-right close-popup" href="javascript:;"><i class="fa fa-close"></i></a>
+			<h5 class="title">播放记录 <small><a class="text-muted" href="javascript:;" onclick="MyTheme.Cookie.Del('history','您确定要清除记录吗？');">清空</a></small></h5>
+		</div>
+		<div class="popup-body">
+			<div class="myui-panel clearfix">
+				<div class="myui-panel-box clearfix">
+					<ul class="myui-vodlist__media history-list">
+						<script type="text/javascript">
+							var history_get = MyTheme.Cookie.Get("history");
+							if(history_get){
+							    var json=eval("("+history_get+")");
+							    for(i=0;i<json.length;i++){
+							        document.write("<li><div class='thumb'><a class='myui-vodlist__thumb img-xs-80' href='"+json[i].link+"' style='background: url("+json[i].pic+");'></a></div><div class='detail'><h5 class='title'><a href='"+json[i].link+"'>"+json[i].name+"</a></h5><p class='font-12'>播放至：<span class='text-red'>"+json[i].part+"<span></p><p><a class='btn btn-xs btn-primary' href='"+json[i].link+"'>继续观看</a></p></div></li>");
+							    }
+							}
+							else
+							{
+								document.write("<p style='padding: 80px 0; text-align: center'>您还没有看过影片哦</p>");
+						    }
+							
+						</script>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	{/if}
+</header>
+
+<nav class="myui-header__top scrollbar clearfix" style="background-color: {$mytheme.nav.bg};">			
+	<div class="myui-header__logo">			    	
+		<a class="logo" href="{$maccms.path}">
+			<img class="img-responsive hidden-xs" src="{$mytheme.site.logo}"/>
+			<img class="img-responsive visible-inline-xs" src="{$mytheme.site.wap_logo}"/>
+		</a>					
+	</div>
+	<ul class="myui-header__menu">
+		<li class="{if condition="$maccms.aid eq 1"} active{/if}">
+			<a href="{$maccms.path}">
+				<span class="pull-right"> <i class="fa fa-angle-right"></i></span> 首页
+			</a>
+		</li>
+		{maccms:type num="all" order="asc" by="sort" ids="'.$mytheme['nav']['id'].'"}
+		<li class="{if condition="($vo.type_id eq $GLOBALS['type_id'])"} active{/if}">
+			<a href="{:mac_url_type($vo)}">
+				{if $mytheme.nav.num}
+				<span class="count pull-right">共{:mac_data_count($vo.type_id,'all')}条</span>
+				{else}
+				<span class="pull-right"> <i class="fa fa-angle-right"></i></span>
+				{/if}
+				{$vo.type_name}
+			</a>
+		</li>
+		{/maccms:type}
+		{if $mytheme.subnav.is}
+		{maccms:for start="1" end="5"}
+		{if $mytheme['subnav']['url'.$i.'']}
+		<li class="{if condition="$GLOBALS['type_id'] eq $mytheme['subnav']['id'.$i.''] || $maccms.aid eq $mytheme['subnav']['id'.$i.'']"}active{/if}">
+			<a href="{$mytheme['subnav']['url'.$i.'']}">
+				<span class="pull-right"> <i class="fa fa-angle-right"></i></span>{$mytheme['subnav']['text'.$i.'']}
+			</a>
+		</li>
+		{/if}
+		{/maccms:for}
+		{/if}
+	</ul>
+</nav>
+<script type="text/javascript">
+	$(".open-menu").click(function() {
+		var display = $(".myui-header__top").css('display');
+		if(display == 'block'){
+			$(".myui-header__top").hide();
+			$(this).html('<i class="fa fa-indent"></i>');
+			$("body").addClass("left");
+			$(".myui-header__bar").css("padding-left","0");
+			if($(window).width()<768){
+				$(".myui-header__user,.myui-header__search .search-box,.myui-header__search .search-select").show();
+			}
+		}else{
+			$(".myui-header__top").show();
+			$(this).html('<i class="fa fa-dedent"></i>');
+			$("body").removeClass("left");
+			$(".myui-header__bar").css("padding-left","240px");
+			if($(window).width()<768){
+				$(".myui-header__user,.myui-header__search .search-box,.myui-header__search .search-select").hide();
+			}
+		}
+	});
+</script>

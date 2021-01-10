@@ -1,0 +1,77 @@
+{if$maccms.aid==1}<!-- 首页 -->
+<title>{$conch['theme']['seos']['index_name']|mac_default=$maccms.site_name}</title>
+<meta name="keywords" content="{$conch['theme']['seos']['index_key']|mac_default=$maccms.site_keywords}" />
+<meta name="description" content="{$conch['theme']['seos']['index_des']|mac_default=$maccms.site_description}" />
+{elseif$maccms.aid==4}<!-- 留言本 -->
+<title>求片留言 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$maccms.site_keywords}" />
+<meta name="description" content="{$maccms.site_description}" />
+{elseif$maccms.aid==11}<!--  视频分类页 -->
+<title>{$obj.type_title|mac_default=$obj.type_name|mac_filter_html}-第{$param['page']}页 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.type_key|mac_default=$obj.type_name|mac_filter_html},{$maccms.site_name}" />
+<meta name="description" content="{$obj.type_des|mac_default=$maccms.site_description}" />
+{elseif$maccms.aid==12}<!-- 视频分类筛选 -->
+<title>最新{$obj.type_name}-推荐{$obj.type_name}-第{$param['page']}页 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.type_key}" />
+<meta name="description" content="{$obj.type_des}" />
+{elseif$maccms.aid==13}<!-- 视频搜索 -->
+<title>搜索{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class},免费在线视频网站,在线观看,电影,电视剧,综艺,最新电影,最新电视剧" />
+<meta name="description" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索结果,{$maccms.site_name}" />
+{elseif$maccms.aid==14}<!-- 视频详情 -->
+<title>{$obj.vod_name|mac_filter_html|mac_default='404'}_{$obj.type.type_name|mac_filter_html}_{$obj.type_1.type_name|mac_filter_html}_{$conch['theme']['seos']['detail_name']|mac_default='高清资源在线播放_高清资源下载'} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.vod_name|mac_filter_html},{$obj.type.type_name|mac_filter_html},{$obj.type_1.type_name|mac_filter_html},{$conch['theme']['seos']['detail_key']|mac_default='高清资源,在线播放,迅雷下载,百度网盘'},{$obj.vod_actor},{$obj.vod_director},{$maccms.site_name}" />
+<meta name="description" content="{$conch['theme']['seos']['detail_des']}{$obj.vod_name}剧情:{$obj.vod_blurb}" />
+{elseif$maccms.aid==15}<!-- 视频播放 -->
+<title>{$obj.vod_name|mac_filter_html|mac_default='404'}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}{$conch['theme']['seos']['play_name']|mac_default='高清资源在线播放'}_{$obj.type.type_name|mac_filter_html} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.vod_name|mac_filter_html},{$obj.type.type_name|mac_filter_html},{$obj.type_1.type_name|mac_filter_html},{$conch['theme']['seos']['play_key']|mac_default='高清资源,在线播放'},{$obj.vod_actor},{$obj.vod_director},{$maccms.site_name}" />
+<meta name="description" content="{$conch['theme']['seos']['play_des']|mac_default='高清资源在线播放'}{$obj.vod_blurb}" />
+{elseif$maccms.aid==16}<!-- 视频下载 -->
+<title>{$obj.vod_name|mac_filter_html|mac_default='404'}{$obj['vod_play_list'][$param['sid']]['urls'][$param['nid']]['name']}{$conch['theme']['seos']['down_name']|mac_default='迅雷下载_百度网盘_高清资源'}_{$obj.type.type_name|mac_filter_html} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.vod_name|mac_filter_html},{$obj.type.type_name|mac_filter_html},{$obj.type_1.type_name|mac_filter_html},{$conch['theme']['seos']['down_key']|mac_default='迅雷下载,百度网盘,高清资源'},{$obj.vod_actor},{$obj.vod_director},{$maccms.site_name}" />
+<meta name="description" content="{$conch['theme']['seos']['down_des']|mac_default='迅雷下载_百度网盘_高清资源'}{$obj.vod_blurb}" />
+{elseif$maccms.aid==21}<!-- 文章分类 -->
+<title>{$conch['theme']['seos']['arti_name']|mac_default=$obj.type_title|mac_filter_html}-第{$param['page']}页 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$conch['theme']['seos']['arti_key']|mac_default=$obj.type_key|mac_filter_html} - {$maccms.site_name}" />
+<meta name="description" content="{$conch['theme']['seos']['arti_des']|mac_default=$obj.type_des|mac_filter_html} - {$maccms.site_name}" />
+{elseif$maccms.aid==24}<!-- 文章详情 -->
+<title>{$obj.art_name|mac_filter_html|mac_default='404'}_{$conch['theme']['seos']['artd_name']|mac_default=$obj.type.type_name|mac_filter_html} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.art_tag|mac_default=$obj.type.type_name|mac_filter_html},{$conch['theme']['seos']['artd_key']|mac_default='资讯,热点新闻,社会热点'},{$maccms.site_name}" />
+<meta name="description" content="{$conch['theme']['seos']['artd_des']|mac_default='资讯,热点新闻,社会热点'},{$obj.art_blurb},{$maccms.site_name}" />
+{elseif$maccms.aid==30}<!-- 专题首页 -->
+<title>{$conch['theme']['seos']['topic_name']|mac_default='专题首页 - 精品专题'} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$conch['theme']['seos']['topic_key']|mac_default='电影专题,电视剧专题,综艺专题,动漫专题,推荐专题,专题收录'}" />
+<meta name="description" content="{$conch['theme']['seos']['topic_des']|mac_default='本站提供最新最全精品专题数据'}" />
+{elseif$maccms.aid==34}<!-- 专题详情 -->
+<title>{$obj.topic_title|mac_default=$obj.topic_name}_{$conch['theme']['seos']['topicd_name']|mac_default='专题详情'} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.topic_key|mac_default=$obj.topic_name},{$conch['theme']['seos']['topicd_key']|mac_default='精品专题'},{$maccms.site_name}" />
+<meta name="description" content="{$conch['theme']['seos']['topicd_des']|mac_default='精品专题'},{$obj.topic_des|mac_default=$obj.topic_blurb}" />
+{elseif$maccms.aid==80}<!-- 明星首页 -->
+<title>{$maccms.seo.actor.name} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$maccms.seo.actor.key}" />
+<meta name="description" content="{$maccms.seo.actor.des}" />
+{elseif$maccms.aid==82}<!-- 明星筛选 -->
+<title>明星库-明星档案-高级搜索-第{$param['page']}页 - {$maccms.site_name}</title>
+<meta name="keywords" content="明星,娱乐明星,电影明星,电视剧明星,明星大全" />
+<meta name="description" content="{$maccms.site_name}为您提供各国男女明星的详细资料、近况以及最新电影，电视剧在线观看。" />
+{elseif$maccms.aid==84}<!-- 明星详情 -->
+<title>{$obj.actor_name}个人资料_{$obj.actor_name}演过的电视剧_{$obj.actor_name}电影全集-{$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.actor_name}个人资料,{$obj.actor_name}演过的电视剧,{$obj.actor_name}电影全集,{$obj.actor_name}最新电影,{$obj.actor_name}最新电视剧">
+<meta name="description" content="{$maccms.site_name}为你收集了{$obj.actor_name}个人资料包括了{$obj.actor_name}最新演过的电视剧,{$obj.actor_name}电影全集,以及{$obj.actor_name}图片剧照最近动态等信息希望你能喜欢。"> 
+{elseif$maccms.aid==90}<!-- 角色首页 -->
+<title>{$maccms.seo.role.name}-第{$param['page']}页 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$maccms.seo.role.key}" />
+<meta name="description" content="{$maccms.seo.role.des}" />
+{elseif$maccms.aid==94}<!-- 角色详情 -->
+<title>{$obj.data.vod_name}的角色{$obj.role_name}扮演者是{$obj.role_actor} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.data.vod_name},{$obj.role_actor}饰{$obj.role_name}" />
+<meta name="description" content="{$maccms.site_name}为你收集了{$obj.data.vod_name}的参演角色，及{$obj.data.vod_name}的角色{$obj.role_name}扮演者{$obj.role_actor}近期的电影作品，电视剧作品，综艺作品等动态信息。" />
+{elseif$maccms.aid==100}<!-- 剧情首页 -->
+<title>{$maccms.seo.plot.name}-第{$param['page']}页 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$maccms.seo.plot.key}" />
+<meta name="description" content="{$maccms.seo.plot.des}" />
+{elseif$maccms.aid==104}<!-- 剧情详情 -->
+<title>{$obj.vod_name}分集剧情 - {$obj['vod_plot_list'][$param['page']]['name']} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.vod_name},分集剧情" />
+<meta name="description" content="{$obj.vod_name}分集剧情，{$obj['vod_plot_list'][$param['page']]['name']}，{$obj['vod_plot_list'][$param['page']]['detail']|mac_substring=55|mac_filter_html}" />
+{/if}

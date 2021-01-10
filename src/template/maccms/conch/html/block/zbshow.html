@@ -1,0 +1,113 @@
+<body id="graypage">
+<div id="show_page">
+   {include file="block/head"}
+     <div class="container www.kv321.com">
+        <div class="row">       	
+            <div class="pannel vod_all clearfix">
+				<!-- 筛选 -->
+			<div class="listnow">
+				<div class="list_type_title box">
+					<div class="sx_title hidden_xs">已选</div>
+					<div class="sx_title2">{$obj.type_name}</div>
+					<ul class="sx_txt">
+						{notempty name="$param['class']"}<li><em>+</em>{$param['class']}</li>{/notempty}
+						{notempty name="$param['area']"}<li><em>+</em>{$param['area']}</li>{/notempty}
+						{notempty name="$param['letter']"}<li><em>+</em>{$param['letter']}</li>{/notempty}
+					</ul>
+					<span><a href="{:mac_url_type($obj,[],'show')}"><i class="iconfont">&#xe621;</i>&nbsp;重<em class="hidden_xs">新筛</em>选</a></span>
+				</div>
+			</div>
+				<div class="wrapper_fl" id="ik01">
+				<div class="scroller">
+				<ul class="screen_list clearfix">
+					<li class="text hidden_xs"><span class="text_muted">分类</span></li>
+					<li></li>
+					<li {if condition="$obj['type_id']==28"}class="ik ik-n-01"{/if}><a {if condition="$obj['type_id']!=1"} href="{:mac_url_type($obj['parent'],['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}"{/if}>全部</a></li>
+					{maccms:type ids="child" parent="28" by="sort" order="asc"}
+					<li {if condition="$vo['type_id'] == $obj['type_id']"}class="ik ik-n-01"{/if}><a href="{:mac_url_type($vo,[],'show')}">{$vo.type_name}</a></li>{/maccms:type}
+				</ul>
+				</div></div>
+				<div class="wrapper_fl" id="ik03">	
+				<div class="scroller">
+				<ul class="screen_list clearfix">
+					<li class="text hidden_xs">
+						<span class="text_muted">类型</span>
+					</li>
+					<li></li>
+					<li {if condition="$param['class'] eq ''"} class="ik ik-n-03"{/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>'','order'=>$param['order'],'by'=>$param['by'] ],'show')}">全部</a></li>
+	                {empty name="$obj.type_extend.area"}
+	                {maccms:foreach name=":explode(',',$obj.parent.type_extend.class)" id="vo2" key="key2"}
+	                <li {if condition="$param['class'] eq $vo2"} class="ik ik-n-03" {/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$vo2,'order'=>$param['order'],'by'=>$param['by'] ],'show')}">{$vo2}</a></li>
+	                {/maccms:foreach}
+	                {else /}
+	                {maccms:foreach name=":explode(',',$obj.type_extend.class)" id="vo2" key="key2"}
+	                <li {if condition="$param['class'] eq $vo2"} class="ik ik-n-03" {/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$vo2,'order'=>$param['order'],'by'=>$param['by'] ],'show')}">{$vo2}</a></li>
+	                {/maccms:foreach}
+	                {/empty}							
+				</ul>
+				</div></div>
+				<div class="wrapper_fl" id="ik04">
+				<div class="scroller">
+				<ul class="screen_list clearfix">
+					<li class="text hidden_xs">
+						<span class="text_muted">地区</span>
+					</li>
+					<li></li>
+					<li {if condition="$param['area'] eq ''"} class="ik ik-n-04" {/if}><a href="{:mac_url_type($obj,['area'=>'','lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">全部</a></li>
+	                {empty name="$obj.type_extend.area"}
+	                    {maccms:foreach name=":explode(',',$obj.parent.type_extend.area)" id="vo2" key="key2"}
+	                    <li {if condition="$param['area'] eq $vo2"} class="ik ik-n-04" {/if}><a href="{:mac_url_type($obj,['area'=>$vo2,'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">{$vo2}</a></li>
+	                    {/maccms:foreach}
+	                {else /}
+	                    {maccms:foreach name=":explode(',',$obj.type_extend.area)" id="vo2" key="key2"}
+	                    <li {if condition="$param['area'] eq $vo2"} class="ik ik-n-04" {/if}><a href="{:mac_url_type($obj,['area'=>$vo2,'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">{$vo2}</a></li>
+	                    {/maccms:foreach}
+	                {/empty}
+				</ul>
+				</div></div>
+				<div class="wrapper_fl" id="ik06">
+				<div class="scroller">
+				<ul class="screen_list clearfix">
+					<li class="text hidden_xs">
+						<span class="text_muted">字母</span>
+					</li>
+					<li></li>
+					<li {if condition="$param['letter'] eq ''"} class="ik ik-n-06"{/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>'','state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">全部</a></li>
+				{maccms:foreach name=":explode(',','A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,0-9')" id="vo2" key="key2"}
+					<li {if condition="$param['letter'] eq $vo2"} class="ik ik-n-06"{/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$vo2,'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">{$vo2}</a></li>
+				{/maccms:foreach}				
+                </ul>
+				</div></div>
+
+				<!-- end 筛选 -->
+				</div>
+				
+				<div class="pannel clearfix">
+				<!-- 列表 -->
+				<div class="wrapper_fl wrapper_tm" style="border-top: 0;">
+				<ul class="screen_list sx_tz clearfix" style="float: left;">
+					<li {if condition="$param.by eq '' || $param.by eq 'time'"} class="ik_fl"{/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'time' ],'show')}">全部</a></li>
+			        <li {if condition="$param.by eq 'hits'"} class="ik_fl"{/if}><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'hits' ],'show')}">最热</a></li>
+				</ul>
+				<span class="sx_total">共有<em class="mac_total"></em>个频道</span>
+				</div>
+				<ul class="vodlist vodlist_wi zbvodlist_wi clearfix">
+					{maccms:vod num="60" paging="yes" half="3" pageurl="vod/show" type="current" order="desc" by="time"}
+					{include file="block/zbvod_box"}
+					{/maccms:vod}	 
+				</ul>	
+				<!-- end 列表 -->
+				
+				{include file="block/page"}<!-- 翻页-->
+				{empty name="$__PAGING__.record_total"}
+				<div class="show_no">暂无数据</div>
+				{/empty}
+			</div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('.mac_total').html('{$__PAGING__.record_total}');
+    </script>
+	{include file="block/foot"}
+</div>
+</body>

@@ -1,0 +1,58 @@
+{include file="public/data"}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>会员中心 - {$mytheme.site.title}</title>
+	<meta name="keywords" content="{$mytheme.site.keywords}"/>
+	<meta name="description" content="{$mytheme.site.description}"/>
+	{include file="public/include"}
+	{include file="user/include"}
+</head>
+<body>
+{include file="public/head" /}
+<div class="container min">
+    <div class="row">   	
+		{include file="user/head" /}						 		
+		<div class="myui-panel myui-panel-bg clearfix">
+			<div class="myui-panel-box clearfix">
+				<div class="myui-panel_hd">
+					<div class="myui-panel__head active bottom-line clearfix">
+						<h3 class="title">
+							我的资料
+						</h3>
+						<ul class="nav nav-tabs">
+							<li class="active"><a href="{:url('user/index')}">基本资料</a></li>
+							<li><a href="{:url('user/info')}">修改信息</a></li>
+							<li><a href="{:url('user/popedom')}">我的权限</a></li>
+						</ul>
+					</div>																		
+				</div>
+				<div class="myui-pannel_bd clearfix">
+					<ul class="myui-user__form col-pd clearfix">
+						<p><span class="xiang">用户名：</span>{$obj.user_name}</p>
+						<p class="top-line-dot"><span class="xiang">QQ号码：</span>{$obj.user_qq|mac_default='未填写'}</p>
+						<p class="top-line-dot"><span class="xiang">Email地址：</span>{$obj.user_email}</p>
+						<p class="top-line-dot"><span class="xiang">注册时间：</span>{$obj.user_reg_time|mac_day}</p>
+						<p class="top-line-dot"><span class="xiang">登陆IP：</span>{$obj.user_login_ip|long2ip}</p>
+						<p class="top-line-dot"><span class="xiang">登陆时间：</span>{$obj.user_login_time|mac_day}</p>
+						{if $GLOBALS['config']['user']['invite_reg_points'] gt 0}
+						<p class="top-line-dot hidden-xs"><span class="xiang">推广注册链接：</span>
+							<a target="_blank" href="{$maccms.http_type}{$maccms.site_url}{:mac_url('user/reg')}?uid={$obj.user_id}">{$maccms.http_type}{$maccms.site_url}{:mac_url('user/reg')}?uid={$obj.user_id}</a>
+						</p>
+						{/if}
+						{if $GLOBALS['config']['user']['invite_visit_points'] gt 0}
+						<p class="top-line-dot hidden-xs"><span class="xiang">推广访问链接：</span>
+							<a target="_blank" href="{$maccms.http_type}{$maccms.site_url}{:mac_url('user/visit')}?uid={$obj.user_id}">{$maccms.http_type}{$maccms.site_url}{:mac_url('user/visit')}?uid={$obj.user_id}</a>
+						</p>
+						{/if}
+						</p>
+					</ul>																							
+				</div>		
+			</div>
+		</div>	
+    </div>
+</div>
+{include file="public/foot" /}
+</body>
+</html>

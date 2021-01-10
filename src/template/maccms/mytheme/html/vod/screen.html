@@ -1,0 +1,138 @@
+{if $mytheme.type.screen}
+<div class="myui-panel active myui-panel-bg2 clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_hd">
+			<div class="myui-panel__head active bottom-line clearfix">
+				<a class="slideDown-btn more pull-right" href="javascript:;">{if $mytheme.type.screen_on}收起 <i class="fa fa-angle-up"></i>{else}展开 <i class="fa fa-angle-down"></i>{/if}</a>
+				<h3 class="title">
+					{$obj.type_name}
+				</h3>	
+				<a class="more text-muted" href="{:mac_url_type($obj,[],'show')}">{if condition="$maccms.aid eq 12"}重置{/if}筛选</a>
+			</div>																			
+		</div>
+
+		<div class="myui-panel_bd">
+			
+			<div class="slideDown-box"{if !$mytheme.type.screen_on} style="display: none;"{/if}> 
+				{if $obj.childids||$obj.parent.childids}
+				<ul class="myui-screen__list{if $mytheme.type.screen_on} nav-slide{/if} clearfix" data-align="left">
+					<li>
+						<a class="text-muted btn">类型</a>
+					</li>
+					{if condition="$obj.type_pid eq 0"}
+						{if condition="$maccms.aid eq 11"}
+						<li><a class="btn{if condition="$obj.type_pid eq ''"} btn-warm{/if}" href="{:mac_url_type($obj,[],'show')}">全部</a></li>
+						{else /}
+						<li><a class="btn{if condition="$obj.type_pid eq ''"} btn-warm{/if}" href="{:mac_url_type($obj.type_id,['id'=>$obj['type_id']],'show')}">全部</a></li>
+						{/if}
+						{maccms:type ids="current" order="asc" by="sort" id="vo2" key="key2"}
+				    	<li ><a class="btn{if condition="$obj.type_pid eq $vo2.type_id"} btn-warm{/if}" href="{:mac_url_type($vo2,[],'show')}">{$vo2.type_name}</a></li>
+				    	{/maccms:type}								
+				    {else /}
+				    	{if condition="$maccms.aid eq 11"}
+				    	<li><a class="btn{if condition="$obj.type_pid eq ''"} btn-warm{/if}" href="{:mac_url_type($obj,[],'show')}">全部</a></li>
+				    	{else /}
+				    	<li><a class="btn{if condition="$obj.type_pid eq ''"} btn-warm{/if}" href="{:mac_url_type($obj.type_pid,['id'=>$obj['type_pid']],'show')}">全部</a></li>
+				    	{/if}
+				    	{maccms:type parent="'.$obj['type_pid'].'" order="asc" by="sort" id="vo2" key="key2"}
+				    	<li><a class="btn{if condition="$obj.type_id eq $vo2.type_id"} btn-warm{/if}" href="{:mac_url_type($vo2,[],'show')}">{$vo2.type_name}</a></li>
+				    	{/maccms:type}
+				    {/if}
+				</ul>
+				{/if}
+				
+				{if $obj.type_extend.class||$obj.parent.type_extend.class}
+				<ul class="myui-screen__list{if $mytheme.type.screen_on} nav-slide{/if} clearfix" data-align="left">
+					<li>
+						<a class="btn text-muted">剧情</a>
+					</li>
+					<li><a class="btn{if condition="$param['class'] eq ''"} btn-warm{/if}" href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>'','order'=>$param['order'],'by'=>$param['by'] ],'show')}">全部</a></li>
+				    {empty name="$obj.type_extend.class"}
+				    {maccms:foreach name=":explode(',',$obj.parent.type_extend.class)" id="vo2" key="key2"}
+				    <li><a class="btn{if condition="$param['class'] eq $vo2"} btn-warm{/if}" href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$vo2,'order'=>$param['order'],'by'=>$param['by'] ],'show')}">{$vo2}</a></li>
+				    {/maccms:foreach}
+				    {else /}
+				    {maccms:foreach name=":explode(',',$obj.type_extend.class)" id="vo2" key="key2"}
+				    <li><a class="btn{if condition="$param['class'] eq $vo2"} btn-warm{/if}" href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$vo2,'order'=>$param['order'],'by'=>$param['by'] ],'show')}">{$vo2}</a></li>
+				    {/maccms:foreach}
+				    {/empty}							
+				</ul>	
+				{/if}
+				
+				{if $obj.type_extend.area||$obj.parent.type_extend.area}
+				<ul class="myui-screen__list{if $mytheme.type.screen_on} nav-slide{/if} clearfix" data-align="left">
+					<li>
+						<a class="btn text-muted">地区</a>
+					</li>
+					<li><a class="btn{if condition="$param['area'] eq ''"} btn-warm{/if}" href="{:mac_url_type($obj,['area'=>'','lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">全部</a></li>
+				    {empty name="$obj.type_extend.area"}
+				        {maccms:foreach name=":explode(',',$obj.parent.type_extend.area)" id="vo2" key="key2"}
+				        <li><a class="btn{if condition="$param['area'] eq $vo2"} btn-warm{/if}" href="{:mac_url_type($obj,['area'=>$vo2,'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">{$vo2}</a></li>
+				        {/maccms:foreach}
+				    {else /}
+				        {maccms:foreach name=":explode(',',$obj.type_extend.area)" id="vo2" key="key2"}
+				        <li><a class="btn{if condition="$param['area'] eq $vo2"} btn-warm{/if}" href="{:mac_url_type($obj,['area'=>$vo2,'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">{$vo2}</a></li>
+				        {/maccms:foreach}
+				    {/empty}
+				</ul>
+				{/if}
+				
+				{if $obj.type_extend.year||$obj.parent.type_extend.year}
+				<ul class="myui-screen__list{if $mytheme.type.screen_on} nav-slide{/if} clearfix" data-align="left">
+					<li>
+						<a class="btn text-muted">年份</a>
+					</li>
+					<li><a class="btn{if condition="$param['year'] eq ''"} btn-warm{/if}" href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>'','level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">全部</a></li>
+				    {empty name="$obj.type_extend.year"}
+				        {maccms:foreach name=":explode(',',$obj.parent.type_extend.year)" id="vo2" key="key2"}
+				        <li><a class="btn{if condition="$param['year'] eq $vo2"} btn-warm{/if}" href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$vo2,'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">{$vo2}</a></li>
+				        {/maccms:foreach}
+				    {else /}
+				        {maccms:foreach name=":explode(',',$obj.type_extend.year)" id="vo2" key="key2"}
+				        <li><a class="btn{if condition="$param['year'] eq $vo2"} btn-warm{/if}" href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$vo2,'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">{$vo2}</a></li>
+				        {/maccms:foreach}
+				    {/empty}							
+				</ul>
+				{/if}
+				
+				{if $obj.type_extend.lang||$obj.parent.type_extend.lang}
+				<ul class="myui-screen__list{if $mytheme.type.screen_on} nav-slide{/if} clearfix" data-align="left">
+					<li>
+						<a class="btn text-muted">语言</a>
+					</li>
+					<li><a class="btn{if condition="$param['lang'] eq ''"} btn-warm{/if}" href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>'','year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">全部</a></li>
+				    {empty name="$obj.type_extend.lang"}
+				        {maccms:foreach name=":explode(',',$obj.parent.type_extend.lang)" id="vo2" key="key2"}
+				        <li><a class="btn{if condition="$param['lang'] eq $vo2"} btn-warm{/if}" href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$vo2,'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">{$vo2}</a></li>
+				        {/maccms:foreach}
+				    {else /}
+				        {maccms:foreach name=":explode(',',$obj.type_extend.lang)" id="vo2" key="key2"}
+				        <li><a class="btn{if condition="$param['lang'] eq $vo2"} btn-warm{/if}" href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$vo2,'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">{$vo2}</a></li>
+				        {/maccms:foreach}
+				    {/empty}							
+				</ul>
+				{/if}
+
+				<ul class="myui-screen__list{if $mytheme.type.screen_on} nav-slide{/if} clearfix" data-align="left">
+					<li>
+						<a class="btn text-muted">字母</a>
+					</li>
+					<li><a class="btn{if condition="$param['letter'] eq ''"} btn-warm{/if}" href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>'','state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">全部</a></li>
+				    {maccms:foreach name=":explode(',','A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,0-9')" id="vo2" key="key2"}
+				    <li><a class="btn{if condition="$param['letter'] eq $vo2"} btn-warm{/if}" href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$vo2,'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>$param['by'] ],'show')}">{$vo2}</a></li>
+				    {/maccms:foreach}							
+				</ul>	
+			</div>
+			
+			<ul class="myui-screen__list nav-slide clearfix" data-align="left">
+				<li>
+					<a class="btn text-muted">排序</a>
+				</li>
+				<li><a class="btn{if condition="$param.by eq '' || $param.by eq 'time'"} btn-warm{/if}" href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'time' ],'show')}">时间</a></li>
+			    <li><a class="btn{if condition="$param.by eq 'hits'"} btn-warm{/if}" href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'hits' ],'show')}">人气</a></li>
+			    <li><a class="btn{if condition="$param.by eq 'score'"} btn-warm{/if}" href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'score' ],'show')}">评分</a></li>				  	
+			</ul>
+		</div>
+	</div>				
+</div>
+{/if}

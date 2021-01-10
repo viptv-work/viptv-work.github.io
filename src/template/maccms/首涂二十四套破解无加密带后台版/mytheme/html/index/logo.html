@@ -1,0 +1,24 @@
+{if $mytheme.home_partner.is}
+<div class="myui-panel clearfix {$mytheme.home_partner.self}">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_hd">
+			<div class="myui-panel__head clearfix">
+				<h3 class="title">
+					合作伙伴
+				</h3>								
+			</div>																		
+		</div>
+		<div class="myui-panel_bd clearfix">
+			<ul class="myui-link__pic clearfix">
+				{maccms:foreach name=":explode(',',''.$mytheme['home_partner']['name'].'')" id="vo" key="key"}
+				{if condition="$key lt $mytheme.home_partner.num"}
+				<li class="col-md-{$mytheme.home_partner.col} col-sm-4 col-xs-3">
+					<a href="#"><img class="img-responsive" src="{$mytheme['home_partner']['path']}{$vo}.png"/></a>
+				</li>
+				{/if}
+				{/maccms:foreach}
+			</ul>											
+		</div>
+	</div>
+</div>
+{/if}

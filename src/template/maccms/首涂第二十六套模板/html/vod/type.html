@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>{$obj.type_title} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.type_key}" />
+<meta name="description" content="{$obj.type_des}" />
+		{include file="block/include"}
+</head>
+<body class="active">
+		{include file="block/head"}
+		<div class="myui-container-bg">
+			<div class="container">
+				<div class="row">
+		{include file="vod/slide"} <!-- 幻灯-->    
+				</div>
+			</div>
+		</div>
+    <div class="container">
+        <div class="row">
+			{if condition="!$obj.childids eq '' "} 	
+       {maccms:type ids="current" order="asc" by="sort" id="vo1" key="key1" flag="vod"}     	
+				<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">		
+		<div class="myui-panel_bd clearfix">
+			<div class="myui-panel_hd">
+				<div class="myui-panel__head clearfix">				
+					<h3 class="title">最新{$vo1.type_name}	</h3>	
+					<a class="more text-muted" href="{:mac_url_type($vo1,[],'show')}">更多 <i class="fa fa-angle-right"></i></a>
+				</div>																			
+			</div>	
+			<ul class="myui-vodlist clearfix">
+			{maccms:vod num="6" type="'.$vo1['type_id'].'" order="desc" by="time"}
+			<li class="col-lg-6 col-md-6 col-sm-4 col-xs-3">
+			<div class="myui-vodlist__box">
+			<a class="myui-vodlist__thumb lazyload" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" data-original="{:mac_url_img($vo.vod_pic)}">
+				<span class="play hidden-xs"></span>
+		<span class="pic-tag pic-tag-top" style="background-color: #282727;">{$vo.vod_score}分</span><span class="pic-text text-right">{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}</span>	</a>									
+	<div class="myui-vodlist__detail">
+		<h4 class="title text-overflow"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">{$vo.vod_name}</a></h4>
+		<p class="text text-overflow text-muted hidden-xs">主演：{$vo.vod_actor|mac_default='内详'}</p>	</div>										
+</div>								
+			</li>
+				{/maccms:vod}				
+				 
+			</ul>
+				<ul class="myui-vodlist__text col-pd clearfix">
+				{maccms:vod num="12" type="'.$vo1['type_id'].'" order="desc" by="time" start="13"}
+				<li class="col-lg-6 col-md-6 col-sm-4 col-xs-2 padding-0">
+				<a class="top-line-dot text-overflow" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">					
+				<span class="badge badge-radius{if condition="$key eq 1"} badge-first{/if}{if condition="$key eq 2"} badge-second{/if}{if condition="$key eq 3"} badge-third{/if}">{$key}</span>{$vo.vod_name}</a>
+				</li>
+			{/maccms:vod}	
+			</ul>		
+</div>						
+	</div>
+</div>
+{/maccms:type}  <!-- 列表 -->   
+{else /}
+    	{include file="vod/shaixuan"}
+            <div class="myui-panel myui-panel-bg clearfix">
+				<div class="myui-panel-box clearfix">
+					<div class="myui-panel_bd">
+						<ul class="myui-vodlist clearfix">
+						{maccms:vod num="48" paging="yes" pageurl="vod/type" type="current" order="desc" by="time"}
+					<li class="col-lg-6 col-md-6 col-sm-4 col-xs-3">
+								<div class="myui-vodlist__box">
+			<a class="myui-vodlist__thumb lazyload" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" data-original="{:mac_url_img($vo.vod_pic)}">
+				<span class="play hidden-xs"></span>
+			<span class="pic-tag pic-tag-top" style="background-color: #282727;">
+				{$vo.vod_score}分
+			</span>
+		<span class="pic-text text-right">
+		{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}高清{/if}</span>
+	</a>									
+	<div class="myui-vodlist__detail">
+		<h4 class="title text-overflow"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">{$vo.vod_name}</a></h4>
+		<p class="text text-overflow text-muted hidden-xs">
+			{$vo.vod_year}/{$vo.vod_area}/{$vo.vod_class}</p>
+		</div>										
+	</div><!-- 列表-->														
+	</li>
+	{/maccms:vod}					
+		</ul>	
+		</div>
+	</div>				
+	</div>
+		{include file="block/page"}
+		  {/if}
+<!-- 翻页-->		
+        </div>
+    </div>
+		{include file="block/foot"}
+</body>
+</html>

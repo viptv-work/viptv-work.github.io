@@ -1,0 +1,27 @@
+{if $mytheme.home_topic}
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_hd">
+			<div class="myui-panel__head clearfix">
+				<h3 class="title">
+					热门专题
+				</h3>	
+				<a class="more text-muted" href="{:mac_url_topic_index()}">更多 <i class="fa fa-angle-right"></i></a>
+			</div>																		
+		</div>
+		<div class="myui-panel_bd clearfix">															
+			<div class="flickity clearfix" data-align="left" data-next="1" data-dots="1">
+				{maccms:topic num="'.$mytheme['home_topic_num'].'" order="desc" by="'.$mytheme['home_topic_by'].'" ids="'.$mytheme['home_topic_id'].'"  id="vo" key="key1"}
+				<div class="col-xs-1">
+					<div class="myui-vodlist__box myui-panel_bg">
+						<a class="myui-vodlist__thumb wide" href="{:mac_url_topic_detail($vo)}" title="{$vo.topic_name}" style=" background: url({:mac_url_img($vo.topic_pic)});" >						
+							<span class="play hidden-xs"></span>								
+						</a>												
+					</div>												
+				</div>
+				{/maccms:topic}
+			</div>	
+		</div>	
+	</div>
+</div>
+{/if}

@@ -1,0 +1,55 @@
+  <nav class="menu flex-column"> 
+   <div class="top flex-row"> 
+    <a class="logo" href="/"><img class="img" src="<?php echo $web_logo;?>" /></a> 
+    <form class="search" method="get"  id="search_form"> 
+	 <input type="text" style="display:none" name="m" value="search-type-so-0.html" />
+     <input class="input_text" type="text" name="TXT" placeholder="搜索视频" autocomplete="off" onsubmit="return InputCheck(this)" />  
+		
+      <a href="javascript:document:search_form.submit();" class="search_submit icont icon_search"></a>
+
+    </form> 
+	
+	
+
+	
+	
+	
+	
+   </div> 
+   <div class="nav icont icon_slide" id="nav"> 
+    <a class="link active" href="/">首页</a>  
+    <a class="link nav_parent" href="javascript:;">在线一区</a> 
+    <div class="sub_nav"> 
+		<a class="link "  href="/?m=vod-type-5-0.html">日韩有码</a>                                                               
+		<a class="link "  href="/?m=vod-type-6-0.html">日韩无码</a>                                                                 
+		<a class="link "  href="/?m=vod-type-7-0.html">欧美视频</a>                                                              
+		<a class="link "  href="/?m=vod-type-8-0.html">国产视频</a>                                                                
+		<a class="link "  href="/?m=vod-type-9-0.html">偷拍自拍</a>                                                              
+		<a  class="link " href="/?m=vod-type-10-0.html">成人动漫</a>
+		<a  class="link " href="/?m=vod-type-11-0.html">经典三级</a>
+		<a  class="link " href="/?m=vod-type-15-0.html">美熟少妇</a>
+		<a  class="link " href="/?m=vod-type-16-0.html">变态另类</a>		
+    </div> 
+  
+    <a class="link nav_parent" href="javascript:;">直播专区</a> 
+    <div class="sub_nav"> 
+		<a class="link"  href="/?m=zhibo-type-24-1.html">精选直播</a>
+		<a class="link"  href="/?m=zhibo-type-25-1.html">女性直播</a>
+		<a class="link"  href="/?m=zhibo-type-26-1.html">男性直播</a>
+		<a class="link " href="/?m=zhibo-type-27-1.html">男女直播</a>
+		<a class="link " href="/?m=zhibo-type-28-1.html">人妖直播</a>
+		<a class="link " >预留位置</a>
+    </div>
+    <a class="link nav_parent" href="javascript:;">发布地址</a> 
+    <div class="sub_nav"> 
+		<a class="link" href="<?php echo $dizhi1;?>"  target="_blank" >发布地址一</a>
+		<a class="link" href="<?php echo $dizhi2;?>"  target="_blank" >发布地址二</a>
+
+    </div>	
+   </div> 
+  </nav> 
+  <main class="main left_spare right_spare">
+        <div id="propagandaInsert" class="flex-row cross_line" style="display: flex;">
+<?php	Jccms_json_ad_top('<a class="link" target="_blank" href="链接"><span class="img_wapper"><img class="img" src="图片"></span></a>');?>
+		</div>
+  </main>

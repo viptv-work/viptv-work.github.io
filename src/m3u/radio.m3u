@@ -1,0 +1,45 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/jd946.png" group-title="成都",成都经典946 FM94.6
+http://lhttp.qingting.fm/live/4892/64k.mp3
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/cdjj.png" group-title="成都",成都经济 FM105.6
+http://lhttp.qingting.fm/live/1121/64k.mp3
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/cdjt.png" group-title="成都",成都交通文艺 FM91.4
+https://lhttp.qingting.fm/live/4891/64k.mp3
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/cdsjc.png" group-title="成都",成都私家车 FM105.1
+http://lhttp.qingting.fm/live/5012/64k.mp3
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/cdom.png" group-title="成都",成都欧美音乐 FM88.7
+http://lhttp.qingting.fm/live/386/64k.mp3
+## #EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/cdxw.png" group-title="成都",成都新闻 FM99.8
+## http://lhttp.qingting.fm/live/4897/64k.mp3
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/mjyy.png" group-title="四川",岷江音乐 FM95.5
+http://lhttp.qingting.fm/live/1110/64k.mp3
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/cszy.png" group-title="四川",城市之音 FM102.6
+http://lhttp.qingting.fm/live/1111/64k.mp3
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/scjj.png" group-title="四川",经济频率财富 FM94.0
+http://lhttp.qingting.fm/live/4927/64k.mp3
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/scsjc.png" group-title="四川",四川私家车 FM92.5
+http://lhttp.qingting.fm/live/4939/64k.mp3
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/scxw.png" group-title="四川",四川新闻 FM106.1
+http://lhttp.qingting.fm/live/4906/64k.mp3
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/scjt.png" group-title="四川",四川交通 FM101.7
+http://lhttp.qingting.fm/live/4886/64k.mp3
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/scwy.png" group-title="四川",四川文艺广播 FM90.0
+http://lhttp.qingting.fm/live/4887/64k.mp3
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/sczs.png" group-title="四川",四川之声 FM98.1
+http://lhttp.qingting.fm/live/20207767/64k.mp3 
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/njzh.png" group-title="内江",内江综合 FM93.4
+http://lhttp.qingting.fm/live/20207740/64k.mp3
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/njjt.png" group-title="内江",内江交通 FM102.7
+http://lhttp.qingting.fm/live/5021907/64k.mp3
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/hitfm.png" group-title="CRI",CRI HitFM
+http://lhttp.qingting.fm/live/15318703/64k.mp3
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/yymt.png" group-title="CRI",CRI 英语漫听 
+http://sk.cri.cn/am1008.m3u8
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/hqgb.png" group-title="CRI",CRI 中文环球 
+http://ls.qingting.fm/live/4995.m3u8
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/hqzx.jpg" group-title="CRI",CRI 环球资讯 
+http://live.xmcdn.com/live/1040/64.m3u8
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/zgzs.png" group-title="CNR",中国之声 FM106.1
+http://lhttp.qingting.fm/live/386/64k.mp3
+#EXTINF:-1 tvg-logo="http://gitee.com/viptv/viptv/raw/master/src/logo/radio/yyzs.png" group-title="CNR",音乐之声 FM90.0
+http://lhttp.qingting.fm/live/388/64k.mp3

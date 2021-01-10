@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+       
+	{include file="public/include"}
+</head>
+<body class="ostem">
+<div id="artcon_page">
+   {include file="public/head"}
+   <div class="container ">
+       {include file="ads/ads_all"}
+        <div class="art_nav_row hidden_xs">
+        <!-- 筛选 -->
+			<div class="art_navlist">
+		    	<ul class="clearfix">
+		    	    {maccms:type order="asc" by="sort" mid="2" ids="5"}
+		    		<li {if condition="($vo.type_id eq $GLOBALS['type_id'])"}class="active"{/if}><a href="{:mac_url_type($vo)}">{$vo.type_name}首页</a></li>
+		    		{/maccms:type}	
+					{maccms:type parent="'.$vo['type_id'].'" order="asc" by="sort"}						 
+					<li {if condition="($vo.type_id eq $GLOBALS['type_id'] || $vo.type_id eq $GLOBALS['type_pid'])"}class="active"{/if}><a href="{:mac_url_type($vo)}" class="text_muted">{$vo.type_name}</a></li>
+					{/maccms:type}
+		    	</ul>
+		    	{if condition="$conch['theme']['weixin']['btn'] eq 1"}
+		    	<div class="wx_ewm hidden_xs">
+                	<p>关注我们</p>
+                	<p><img class="wx_img" src="{$conch['theme']['weixin']['qrcode']|mac_url_img}"></p>
+                </div>
+                {/if}
+		    </div>
+		<!-- end 筛选 -->
+		</div>
+		<div class="art_list_row">
+             <div class="pannel article_box">
+                  <header class="article_header">
+                      <h1 class="article_title">{$obj.art_name}</h1>
+                      <div class="article_meta">
+                           <span class="item">{$obj.art_from|mac_default='网络'}</span>
+                           <span class="item">{$obj.art_time|date='Y-m-d H:i',###}</span>
+                           <span class="item hidden_xs">{$obj.type.type_name}</span>
+                           <span class="item hidden_xs">阅读 {$obj.art_hits}</span>
+                      </div>
+                  </header>
+                  {include file="ads/ads_artw"}
+                  <article class="article_content"> 
+					  <div>{$obj.art_page_list[$param['page']]['content']|mac_url_content_img}</div> 
+                  </article>
+                  <div class="art_zan_box">
+                  {if condition="$obj.type.type_id neq 17"}
+                  <div class="digg_zan">
+                      <a class="digg_link" data-id="{$obj.vod_id}{$obj.art_id}{$obj.topic_id}" data-mid="{$maccms.mid}" data-type="up" href="javascript:;">
+						  赞<em class="digg_num">{$obj.vod_up}{$obj.art_up}{$obj.topic_up}</em>
+                      </a>
+                  </div>
+                  {/if}
+                  {include file="widget/page"}
+                  {if condition="$obj.type.type_id neq 17"}
+                  <div class="art_tbsm_m">
+					  <span class="art_share fr hidden_xs">
+					  <a class="btn btn_share" href="javascript:;"><i class="iconfont">&#xe615;</i>&nbsp;分享</a>
+					  {include file="widget/share"}
+                      </span>
+                      <p>本文由网络整理 © 版权归原作者所有</p>
+                  </div>
+                  {/if}
+                  </div>
+              </div>
+              {if condition="$obj.type.type_id neq 17"}
+              <div class="pannel art_pren_list clearfix">
+				  {assign name="Prev" value="$obj.art_id+1"; /}
+				  {assign name="next" value="$obj.art_id-1"; /}
+				  {maccms:art num="1" ids="'.$Prev.'"}<a class="art_prev" href="{:mac_url_art_detail($vo)}"><span>上一篇</span><div class="art_name_prev">{$vo.art_name}</div></a>{/maccms:art}
+				  {maccms:art num="1" ids="'.$next.'"}<a class="art_next" href="{:mac_url_art_detail($vo)}"><span>下一篇</span><div class="art_name_next">{$vo.art_name}</div></a>{/maccms:art}
+		      </div>
+              {if condition="$GLOBALS['config']['comment']['status'] eq 1"}
+              <!-- 评论 -->
+              <div class="pannel clearfix" id="pinglun" >
+				<div class="pannel_head clearfix">
+				    <span class="pull_right">共&nbsp;<font color="#ff5f00"><em class="mac_total"></em></font>&nbsp;条评论</span>
+					<h3 class="title">评论</h3>
+				</div>
+				<div class="mac_comment comm_list comm_list_box" data-id="{$obj.art_id}" data-mid="{$maccms.mid}" ></div>
+				<script>
+					$(function(){
+						MAC.Comment.Login = {$comment.login};
+						MAC.Comment.Verify = {$comment.verify};
+						MAC.Comment.Init();
+						MAC.Comment.Show(1);
+					});
+				</script>
+			  </div>
+             <!-- end 评论 -->
+             {/if}
+             {/if}
+		</div>
+		<div class="art_sider_row">
+			{include file="ads/ads_artr"}
+			<div class="pannel clearfix">
+				<div class="pannel_head clearfix">
+					<h3 class="title">
+						推荐阅读
+					</h3>						
+				</div>
+				<ul class="art_relates clearfix">
+				        {include file="ads/ads_artlist"}
+					{maccms:art num="6" ids="'.$obj['art_rel_art'].'" order="desc" by="hits"}
+					    {include file="widget/art_box_right"}
+                    {/maccms:art}
+				</ul>
+			</div>
+		</div>
+   </div>
+    <!--统计数据-->
+	<span style="display: none" class="mac_hits hits" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}{$obj.art_id}{$obj.topic_id}" "="" data-type="hits"></span>
+	<span style="display: none" class="mac_hits hits_day" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}{$obj.art_id}{$obj.topic_id}" "="" data-type="hits_day"></span>
+	<span style="display: none" class="mac_hits hits_week" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}{$obj.art_id}{$obj.topic_id}" "="" data-type="hits_week"></span>
+	<span style="display: none" class="mac_hits hits_month" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}{$obj.art_id}{$obj.topic_id}" "="" data-type="hits_month"></span>  
+   {include file="public/foot"}
+</div>
+</body>
+</html>

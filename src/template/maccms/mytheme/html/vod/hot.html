@@ -1,0 +1,30 @@
+
+{if $mytheme.side.hot_is}
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_hd">
+			<div class="myui-panel__head active bottom-line clearfix">
+				<h3 class="title">
+					{$obj.type.type_name}{$mytheme.side.hot_title}
+				</h3>	
+				<a class="more text-muted" href="{:mac_url_type($obj.type_id,['id'=>$obj['type_id'],'by'=>'hits'],'show')}">更多  <i class="fa fa-angle-right"></i></a>
+			</div>																		
+		</div>
+		<div class="myui-panel_bd">
+			<ul class="myui-vodlist__media active col-pd clearfix">
+				{maccms:vod num="1" type="'.$mytheme['side']['hot_id'].'" order="desc" by="'.$mytheme['side']['hot_by'].'"}
+					{include file="block/vod_box_media"}	
+				{/maccms:vod}
+			</ul>
+			<ul class="myui-vodlist__text col-pd clearfix">
+				{maccms:vod num="'.$mytheme['side']['hot_num'].'" type="'.$mytheme['side']['hot_id'].'" order="desc" by="'.$mytheme['side']['hot_by'].'"}
+					{include file="block/vod_box_rank"}
+				{/maccms:vod}
+			</ul>	
+		</div>
+	</div>
+</div>
+{/if}
+
+
+

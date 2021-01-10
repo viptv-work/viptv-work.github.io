@@ -1,0 +1,122 @@
+{include file="public/data"}
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>充值卡充值 - 会员中心 -{$mytheme.site.title}</title>
+	<meta name="keywords" content="{$mytheme.site.keywords}"/>
+	<meta name="description" content="{$mytheme.site.description}"/>
+	{include file="public/include"}
+	{include file="user/include" /}
+</head>
+<body>
+{include file="public/head" /}
+<div class="container min">
+    <div class="row"> 
+    		{include file="user/head" /}					
+    		<div class="myui-panel myui-pannel-bg clearfix">
+				<div class="myui-panel-box clearfix">
+					<div class="myui-panel_bd clearfix">
+						<div class="myui-panel_hd">
+							<div class="myui-panel__head active bottom-line clearfix">
+								<h3 class="title">
+									我要充值
+								</h3>
+								<ul class="nav nav-tabs">
+									<li class="active"><a href="#tab1" data-toggle="tab">在线充值</a></li>
+									<li><a href="#tab2" data-toggle="tab"> 充值卡充值</a></li>
+								</ul>
+							</div>																		
+						</div>
+						<div class="tab-content myui-panel_bd">
+							<div id="tab1" class="tab-pane fade in active clearfix">								
+								<div class="myui-user__form col-pd clearfix">
+									<p><span class="xiang active">剩余积分：</span><span class="text-red">{$obj.user_points}</span></p>
+									<p class="top-line-dot"><span class="xiang hidden-xs">充值的金额：</span><input type="text" name="price" value="{$config.min}" class="form-control" placeholder="充值金额"></p>
+									<p><span class="xiang hidden-xs"></span>最小充值金额为{$config.min}元，1元可以兑换{$config.scale}个积分</p>
+									<p class="top-line-dot"><span class="xiang hidden-xs"></span><input type="button" id="btn_submit_pay" class="btn btn-primary" value="确认充值"></p>
+								</div>																							
+							</div>
+							<div id="tab2" class="tab-pane fade in clearfix">
+								<div class="myui-user__form col-pd clearfix">
+									<p><span class="xiang hidden-xs">充值卡号：</span><input type="text" name="card_no" value="" class="form-control" placeholder="充值卡号"></p>
+									<p class="top-line-dot"><span class="xiang hidden-xs">充值密码：</span><input type="text" name="card_pwd" value="" class="form-control" placeholder="充值密码"></p>
+									{if condition="$GLOBALS['config']['pay']['card']['url'] neq ''"}
+									<p><span class="xiang hidden-xs"></span>友情提示：您需要现购买卡密，<a class="text-link" target="_blank" href="{$GLOBALS['config']['pay']['card']['url']}">点击购买</a></p>
+									{/if}
+									<p class="top-line-dot"><span class="xiang hidden-xs"></span><input type="button" id="btn_submit_card" class="btn btn-primary" value="确认充值"></p>
+								</div>																							
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>				
+    	</div>
+    </div>
+</div>
+{include file="public/foot" /}
+<script>
+
+	$(".go-back").click(function () {
+		var ref = document.referrer;
+		location.href=ref;
+	});
+
+	$('#btn_submit_pay').click(function(){
+		var that=$(this);
+		var price = $("input[name='price']").val();
+		if(Number(price)<1){
+			return;
+		}
+		if(confirm('确定要在线充值吗')) {
+			$.ajax({
+				url: "{:url('user/buy')}",
+				type: "post",
+				dataType: "json",
+				data: {price: price,flag:'pay'},
+				beforeSend: function () {
+					$("#btn_submit_pay").css("background","#fd6a6a").val("loading...");
+				},
+				success: function (r) {
+					if (r.code == 1) {
+						location.href="{:url('user/pay')}?order_code=" + r.data.order_code;
+					}
+					else{
+						alert(r.msg);
+					}
+				},
+				complete: function () {
+					$("#btn_submit_pay").css("background","#fa4646").val("提交");
+				}
+			});
+		}
+	});
+
+	$('#btn_submit_card').click(function(){
+		var that=$(this);
+		var no = $('input[name="card_no"]').val();
+		var pwd = $('input[name="card_pwd"]').val();
+		if(no=='' || pwd==''){
+			alert('请输入充值卡号和密码');
+			return;
+		}
+		if(confirm('确定要使用充值卡充值吗')) {
+			$.ajax({
+				url: "{:url('user/buy')}",
+				type: "post",
+				dataType: "json",
+				data: {card_no: no,card_pwd:pwd,flag:'card'},
+				beforeSend: function () {
+					$("#btn_submit_card").css("background","#fd6a6a").val("loading...");
+				},
+				success: function (r) {
+					alert(r.msg);
+				},
+				complete: function () {
+					$("#btn_submit_card").css("background","#fa4646").val("提交");
+				}
+			});
+		}
+	});
+</script>
+</body>
+</html>

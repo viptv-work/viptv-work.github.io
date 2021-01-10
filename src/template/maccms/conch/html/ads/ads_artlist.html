@@ -1,0 +1,13 @@
+{if$conch['theme']['ads']['btn']==1||$conch['theme']['ads']['btn']==2&&$user.group_id lt 3}
+{if condition="$conch['theme']['ads']['artlist']['btn'] eq 1"}
+<li>
+   <a target="_blank" rel="nofollow" href="{$conch['theme']['ads']['artlist']['link']}" title="{$conch['theme']['ads']['artlist']['title']}">
+   <div class="artlr_tit"><p class="artlr_b">{$conch['theme']['ads']['artlist']['title']}</p><p class="artlr_name">随便看看</p></div>
+   <div class="artlr_pic lazyload" data-original="{:mac_url_img($conch['theme']['ads']['artlist']['pic'])}">
+   {if condition="$conch['theme']['ads']['artlist']['tbtn'] eq 1"}
+       <span class="ad_tips">广告</span>
+   {/if}
+   </div>
+   </a>
+</li>
+{/if}{/if}

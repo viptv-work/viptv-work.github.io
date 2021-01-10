@@ -1,0 +1,44 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}vod/search.html-->{/if}
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/actor_search"}   
+	{include file="public/include"}
+</head>
+<body>
+	{include file="public/head"}
+    <div class="container min">
+        <div class="row">
+		   	<div class="myui-panel myui-panel-bg clearfix">
+				<div class="myui-panel-box clearfix">
+					{if $param.wd}
+					<div class="myui-panel_hd">
+						<div class="myui-panel__head active bottom-line clearfix">	
+							<h3 class="title">
+								与 <span class="text-red">“{$param.wd}”</span> 相关的搜索结果
+							</h3>
+						</div>
+					</div>
+					{/if}
+					<div class="myui-panel_bd clearfix">
+						<ul class="myui-vodlist clearfix">			
+							{maccms:actor num="12" paging="yes" pageurl="actor/search" order="desc" by="time"}		
+							<li class="col-md-{$mytheme.col.md} col-sm-{$mytheme.col.sm} col-xs-{$mytheme.col.xs}">
+								{include file="block/actor_box"}<!-- 列表-->															
+							</li>		
+							{/maccms:actor}
+						</ul>
+					</div>
+					{empty name="__LIST__"}
+					{include file="block/vod_no"}<!-- 无结果 -->
+					{/empty}
+				</div>				
+			</div>	            
+			
+			{include file="public/page"}<!-- 翻页 -->
+        </div>
+    </div>
+	{include file="public/foot"}
+</body>
+</html>

@@ -1,0 +1,66 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}label/hot.html-->{/if}
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>排行榜-{$mytheme.site.title}</title>
+	<meta name="keywords" content="{$mytheme.site.keywords}" />
+	<meta name="description" content="{$mytheme.site.description}" />
+    {include file="public/include"}
+</head>
+<body>
+{include file="public/head"}
+<div class="container">
+    <div class="row">
+    	<div class="myui-panel myui-panel-bg clearfix">
+    		<div class="myui-panel-box clearfix">														
+    			{maccms:type ids="'.$mytheme['label']['hot_id'].'" order="asc" by="sort" id="vo1" key="key1"}													
+    			<div class="col-lg-{$mytheme.label.hot_col} col-md-4 col-sm-2 col-xs-1 padding-0">
+    				<div class="myui-panel_hd">
+    					<div class="myui-panel__head active bottom-line clearfix">
+    						<h3 class="title">
+    							{$vo1.type_name}{$mytheme.label.hot_title}
+    						</h3>		
+    						<a class="more text-muted" href="{:mac_url_type($vo1.type_id,['id'=>$vo1['type_id'],'by'=>'hits'],'show')}">更多 <i class="fa fa-angle-right"></i></a>
+    					</div>
+    				</div>
+    				<div class="myui-panel_bd clearfix">
+    					<ul class="myui-vodlist__media col-pd clearfix">
+    						{maccms:vod num="3" type="'.$vo1['type_id'].'" order="desc" by="'.$mytheme['label']['hot_by'].'"}
+    							<li>
+    								<div class="thumb">
+    									<a class="myui-vodlist__thumb img-xs-70" style="background: url({$vo.vod_pic|mac_url_img});" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">
+											<span class="badge{if condition="$key eq 1"} badge-first{/if}{if condition="$key eq 2"} badge-second{/if}{if condition="$key eq 3"} badge-third{/if}">{$key}</span>
+										</a>
+    								</div>
+    								<div class="detail detail-side">
+    									<h4 class="title"><a href="{:mac_url_vod_detail($vo)}"><i class="fa fa-angle-right text-muted pull-right"></i> {$vo.vod_name|mac_substring=8}</a></h4>
+    									<p class="font-12"><span class="text-muted">类型：</span>{$vo.type.type_name}，<span class="text-muted">地区：</span>{$vo.vod_area}</p>		
+    									<p class="font-12 margin-0"><span class="text-muted">主演：</span>{$vo.vod_actor|mac_substring=12}</p>
+    								</div>																										
+    							</li>
+    						{/maccms:vod}
+    					</ul>
+    					<ul class="myui-vodlist__text col-pd clearfix">
+    						{maccms:vod num="'.$mytheme['label']['hot_num'].'" type="'.$vo1['type_id'].'" order="desc" by="'.$mytheme['label']['hot_by'].'" start="4"}
+								{if condition="$key gt 3"}
+    							<li class="top-line-dot">
+    								<a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}">
+    									{if $mytheme.rank.is}<span class="pull-right {if !$mytheme.rank.color} text-muted{/if} visible-lg" style="color: red;">°{$vo.vod_hits}</span>{/if}
+    									<span class="badge">{$key}</span>{$vo.vod_name|mac_substring=8}
+    								</a>
+    							</li>
+								{/if}
+    						{/maccms:vod}
+    					</ul>
+    				</div>
+    			</div>
+    			{/maccms:type}
+    		</div>
+    	</div>	
+    </div>
+</div>
+{include file="public/foot"}
+</body>
+</html>

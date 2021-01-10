@@ -1,0 +1,138 @@
+<div id="banstem" class="hot_banner">
+{if condition="$conch['theme']['banner']['btn'] eq 1"}
+    {if condition="$conch['theme']['banner']['ms'] eq 'small'"}
+    <div class="bgi_box">
+        <span id="bgimage" class="bgi"></span>
+        <span class="bgfd"></span>
+    </div>
+    <div class="hot_list">
+        <div class="hot_banner_box">
+            <div class="banner-top">
+                <ul class="swiper-wrapper vodlist clearfix">
+                    {if$maccms.aid==1}
+                    {if condition="$conch['theme']['ads']['banner']['btn'] eq 1"}
+                    <li class="balist_item swiper-slide">
+						<a class="balist_thumb swiper-lazy" href="{$conch['theme']['ads']['banner']['link']}" title="{$conch['theme']['ads']['banner']['title']}" data-background="{$conch['theme']['ads']['banner']['pic']|mac_url_img}">
+							<span class="play hidden_xs"></span>
+							{if condition="$conch['theme']['ads']['banner']['tbtn'] eq 1"}
+							<div class="tagtip tagb adtip">广告</div>
+							{/if}
+							<div class="balist_titbox pic_text">
+							   <p class="vodlist_title">{$conch['theme']['ads']['banner']['title']}</p>
+							   <p class="vodlist_sub">{$conch['theme']['ads']['banner']['sub']}</p>
+							</div>
+							<span class="balist_bg"></span>
+						</a>
+					</li>
+                    {/if}
+                    {if condition="$conch['theme']['topic']['btn'] eq 1"}
+                    {maccms:topic num="3" paging="no" type="all" level="9" order="desc" by="sort"}
+					<li class="balist_item swiper-slide">
+						<a class="balist_thumb swiper-lazy" href="{:mac_url_topic_detail($vo)}" title="{$vo.topic_name}" data-background="{$vo.topic_pic_slide|mac_default=$vo.topic_pic|mac_url_img}">
+							<span class="play hidden_xs"></span>
+							<div class="tagtip tagb">{$conch['theme']['topic']['title']|mac_default='专题'}</div>
+							<div class="balist_titbox pic_text">
+							   <p class="vodlist_title">{$vo.topic_name}</p>
+							   <p class="vodlist_sub">{$vo.topic_sub|mac_default=$vo.topic_remarks|mac_filter_html}</p>
+							</div>
+							<span class="balist_bg"></span>
+						</a>
+					</li>
+					{/maccms:topic}{/if}
+                    {/if}
+                    {maccms:vod num="9" paging="no" type="current" level="9" order="desc" by="sort"} {include file="widget/vod_box_banner"} {/maccms:vod}
+                </ul>
+            </div>
+            <div class="banner-arrow">
+                <a class="swiper-button-prev" href="javascript:;"><i class="iconfont">&#xe625;</i></a>
+                <a class="swiper-button-next" href="javascript:;"><i class="iconfont">&#xe623;</i></a>
+            </div>
+        </div>
+    </div>{/if} {if condition="$conch['theme']['banner']['ms'] eq 'big'"}
+    <div class="hot_wlist">
+        <div class="hot_banner_box">
+            <div class="bg_wtop"></div>
+            <div class="banner-wtop">
+                <ul class="swiper-wrapper clearfix">
+                    {if$maccms.aid==1}
+                    {if condition="$conch['theme']['ads']['banner']['btn'] eq 1"}
+                    <li class="wbalist_item swiper-slide">
+                        <a class="wbalist_thumb" href="{$conch['theme']['ads']['banner']['link']}" title="{$conch['theme']['ads']['banner']['title']}" style="background-image:url({$conch['theme']['ads']['banner']['pic']|mac_url_img})" data-adaptive-background data-ab-css-background>
+                            <div class="bg_wtop_banner"></div>
+                            <div class="wbalist_titbox pic_text">
+                                <div class="wbalist_con adb">
+                                    {if condition="$conch['theme']['ads']['banner']['tbtn'] eq 1"}
+                                    <div class="tagtip tagb adtip">广告</div>{/if}
+                                    <p class="vodlist_title">{$conch['theme']['ads']['banner']['title']}</p>
+                                    <p class="vodlist_sub">{$conch['theme']['ads']['banner']['sub']}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    {/if}
+                    {if condition="$conch['theme']['topic']['btn'] eq 1"}
+                    {maccms:topic num="3" paging="no" type="all" level="9" order="desc" by="sort"}
+                    <li class="wbalist_item swiper-slide">
+                        <a class="wbalist_thumb" href="{:mac_url_topic_detail($vo)}" title="{$vo.topic_name}" style="background-image:url({$vo.topic_pic_slide|mac_default=$vo.topic_pic|mac_url_img})" data-adaptive-background data-ab-css-background>
+                            <div class="bg_wtop_banner"></div>
+                            <div class="wbalist_titbox pic_text">
+                                <div class="wbalist_con">
+                                    <i class="wba_ico hidden_xs"></i>
+                                    <p class="vodlist_title">{$vo.topic_name}</p>
+                                    <p class="vodlist_sub">[{$conch['theme']['topic']['title']|mac_default='专题'}]&nbsp;{$vo.topic_sub|mac_default=$vo.topic_remarks|mac_filter_html}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+					{/maccms:topic}{/if}
+                    {/if}
+                    {maccms:vod num="9" paging="no" type="current" level="9" order="desc" by="sort"}
+                    <li class="wbalist_item swiper-slide">
+                        <a class="wbalist_thumb" {if condition="$conch['theme']['playlink']['btn'] eq 1"}href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}"{else/}href="{:mac_url_vod_detail($vo)}"{/if} title="{$vo.vod_name}" style="background-image:url({$vo.vod_pic_slide|mac_default=$vo.vod_pic|mac_url_img})" data-adaptive-background data-ab-css-background>
+                            <div class="bg_wtop_banner"></div>
+                            <div class="wbalist_titbox pic_text">
+                                <div class="wbalist_con">
+                                    <i class="wba_ico hidden_xs"></i>
+                                    <p class="vodlist_title">{$vo.vod_name}</p>
+                                    <p class="vodlist_sub">[{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}]&nbsp;{$vo.vod_sub|mac_default=$vo.vod_actor|mac_default='吐血推荐'}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                    {/maccms:vod}
+                </ul>
+                <div class="swiper-pagination"></div>
+                <div class="banner-arrow">
+                    <a class="swiper-button-prev" href="javascript:;"><i class="iconfont">&#xe625;</i></a>
+                    <a class="swiper-button-next" href="javascript:;"><i class="iconfont">&#xe623;</i></a>
+                </div>
+            </div>
+        </div>
+    </div>{/if}
+{/if}
+</div>
+{if condition="$conch['theme']['banner']['btn'] eq 0"}
+<script type="text/javascript">
+        $("#banstem").remove();
+        $("body").removeClass("bstem");
+</script>
+{elseif condition="$conch['theme']['banner']['btn'] eq 1"}
+	{if condition="$conch['theme']['banner']['ms'] eq 'small'"}
+	<script type="text/javascript">
+		var bannum = document.getElementById('banstem').getElementsByTagName("li").length;
+		if (bannum < 3) {
+			$("#banstem").remove();
+			$("body").removeClass("bstem");
+		}
+	</script>
+	{/if}
+	{if condition="$conch['theme']['banner']['ms'] eq 'big'"}
+	<script type="text/javascript">
+		var bannum = document.getElementById('banstem').getElementsByTagName("li").length;
+		if (bannum < 1) {
+			$("#banstem").remove();
+			$("body").removeClass("bstem");
+		}
+	</script>
+	{/if}
+{/if}

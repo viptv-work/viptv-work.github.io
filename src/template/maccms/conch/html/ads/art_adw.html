@@ -1,0 +1,7 @@
+{if condition="$GLOBALS['config']['site']['art_wads_style'] eq 1"}
+<a class="hidden_xs" href="{$maccms.art_wads_link}" rel="nofollow" target="_blank"><img src="{:mac_url_img($maccms.art_wads_imgpc)}"></a>
+<a class="hidden_mb" href="{$maccms.art_wads_link}" rel="nofollow" target="_blank"><img src="{:mac_url_img($maccms.art_wads_imgmo)}"></a>
+{/if}
+{if condition="$GLOBALS['config']['site']['art_wads_style'] eq 2"}
+{$maccms.art_wads_content}
+{/if}

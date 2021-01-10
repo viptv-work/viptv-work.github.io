@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{$obj.vod_name}详情介绍-{$obj.vod_name}在线观看-{$obj.vod_name}迅雷下载 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.vod_name}在线收看,{$obj.vod_name}迅雷下载" />
+<meta name="description" content="{$obj.vod_name}剧情:{$obj.vod_blurb}" />
+{include file="public/include"}
+</head>
+<body>
+{include file="public/head"}
+<section class="wrapper">
+<div class="detail_bg">
+<div class="detail_bg_info" style="background-image:url({$obj.vod_pic|mac_url_img});">
+</div>
+</div>
+<div class="detail_top">
+<div class="detail_top_con">
+<div class="v_path clearfix">
+	<a href="{$maccms.path}" title="{$maccms.site_name}">首页</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a href="{:mac_url_type($obj.type)}" title="{$obj.type.type_name}" target="_blank">{$obj.type.type_name}</a>&nbsp;&nbsp;&gt;&nbsp;&nbsp;<a class="current" title="{$obj.vod_name}" href="{:mac_url_vod_detail($obj)}">{$obj.vod_name}</a>
+</div>
+<div class="row">
+	<div class="poster_placeholder">
+		<div class="v_pic">
+			<img class="loading" src="{$maccms.path_tpl}images/220x307.jpg" data-original="{$obj.vod_pic|mac_url_img}" alt="{$obj.vod_name}"/>
+		</div>
+	</div>
+	<div class="txt_intro_con">
+		<div class="tit">
+			<h1>{$obj.vod_name}</h1>
+		</div>
+		<ul class="txt_list clearfix">
+			<li class="clearfix"><em class="em_tit">状态：</em>{include file="public/serial2"}</li>
+			<li class="clearfix"><em class="em_tit">主演：</em><storng>{$obj.vod_actor|mac_url_create='actor'}</storng></li>
+			<li class="clearfix fn-left"><em class="em_tit">类型：</em>{$obj.vod_class|mac_url_create='class'}</li>
+			<li class="clearfix fn-right"><em class="em_tit">导演：</em><storng>{$obj.vod_director|mac_url_create='director'}</storng></li>
+			<li class="clearfix fn-left"><em class="em_tit">上映：</em>{$obj.vod_pubdate}</li>
+			<li class="clearfix fn-right"><em class="em_tit">年分：</em>{$obj.vod_year}</li>
+			<li class="clearfix fn-left"><em class="em_tit">地区：</em>{$obj.vod_area|mac_url_create='area'}</li>
+			<li class="clearfix fn-right"><em class="em_tit">语言：</em>{$obj.vod_lang}</li>
+			<li class="clearfix fn-left"><em class="em_tit">评论：</em><a rel="nofollow" href="#mac_comment"><span>当前有<strong style="color:#ed3f14">{$__PAGING__.record_total|intval}</strong>条评论</span><i class="icocm"></i></a></li>
+			<li class="clearfix fn-right"><em class="em_tit">更新：</em>{$obj.vod_time|date='Y-m-d',###}</li>
+			<li class="li_intro clearfix"><em class="em_tit">简介：</em>
+			<p class="p_intro" id="synopsis_txt"><span>{$obj.vod_content|mac_substring=190}</span></p>
+			</li>
+		</ul>
+	</div>
+</div>
+</div>
+</div>
+<div class="main">
+<div class="detail_js">
+{maccms:foreach name="obj.vod_play_list" id="vo"}
+<div class="js_bt">
+<div class="p_tab">
+	<span class="p_smart">{$vo.player_info.show}</span>
+</div>
+</div>
+<div class="play_box" id="m3u8-pl-list" style="display:block">
+<ul class="player_list">{maccms:foreach name="vo.urls" id="vo2" key="key2"}
+	<a target="_blank" href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}" title="{$vo2.name}">{$vo2.name}</a>{/maccms:foreach}
+</ul>
+</div>
+{/maccms:foreach}
+<div class="js_bt clear">
+<div class="p_tab">
+<span class="p_smart">剧集简介：</span>
+</div>
+</div>
+<div class="vod-jianjie">{$obj.vod_content}</div>
+<div class="js_bt clear">
+<div class="p_tab">
+<span class="p_smart">除了"<strong>{$obj.vod_name}</strong>"你也可能喜欢：</span>
+</div>
+</div>
+<div class="love-det">
+<ul class="drama-module clearfix tab-cont">
+{maccms:vod num="6" type="current" order="desc" by="hits_day"}
+<li class="item"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" target="_blank" class="img"><img class="loading" src="{$maccms.path_tpl}images/180x239.jpg" data-original="{$vo.vod_pic|mac_url_img}" alt="{$vo.vod_name}"><span class="mask"><i class="iconfont icon-play"></i></span></a>
+<div class="info">
+<a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a>
+<p><span class="fl">{include file="public/serial1"}</span><em class="fr">{$vo.vod_hits}人看了</em></p>
+</div>
+</li>
+{/maccms:vod}
+</ul>
+</div>
+<div class="tab-comment tab-a cmt">
+<div class="com-title vod-title">
+<h2>{$obj.vod_name}<em>当前共有<strong>{$__PAGING__.record_total|intval}</strong>条评论</em></h2>
+</div>
+	<div class="mac_comment" id="mac_comment" data-id="{$obj.vod_id}" data-mid="{$maccms.mid}" ></div>
+    <script>
+        $(function(){
+            MAC.Comment.Login = {$comment.login};
+            MAC.Comment.Verify = {$comment.verify};
+            MAC.Comment.Init();
+            MAC.Comment.Show(1);
+        });
+    </script>
+</div>
+</div>
+</div>
+</section>
+{include file="public/foot"}
+<script type="text/javascript" src="{$maccms.path_tpl}js/read.js"></script>
+<div class="index-top" id="index-top">
+<a class="top"></a>
+</div>
+<span style="display:none" class="mac_ulog_set" alt="设置内容页浏览记录" data-type="1" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+<span style="display:none" class="mac_history_set" alt="设置History历史记录" data-name="[{$obj.type.type_name}]{$obj.vod_name}" data-pic="{$obj.vod_pic|mac_url_img|mac_url_img}"></span>
+</body>
+</html>

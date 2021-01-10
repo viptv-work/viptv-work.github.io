@@ -1,0 +1,72 @@
+{if condition="$conch['theme']['rank']['hby'] eq 'week'"}
+<div class="rank_info">
+    <div class="list_info">
+        <div class="pannel_head clearfix">
+            <h3 class="title">{$vo.type_name}周{$conch['theme']['rank']['title']|mac_default='排行榜'}</h3>	
+        </div>
+        <ul class="part_rows">
+            {maccms:vod num="1" type="'.$vo['type_id'].'" order="desc" by="hits_week"} {include file="widget/rank_box_week"} {/maccms:vod} {maccms:vod num="4" type="'.$vo['type_id'].'" start="2" order="desc" by="hits_week"}
+            <li class="part_eone">
+                {if condition="$vo['type_id_1']==$conch['theme']['type']['zb']"}
+                <a href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}">
+				{else}
+				{in name="vo.type_id" value="$conch['theme']['type']['hb']"}
+				<a href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}">
+				{else}
+				<a {if condition="$conch['theme']['playlink']['btn'] eq 1"}href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}"{else/}href="{:mac_url_vod_detail($vo)}"{/if}>
+				{/in}
+				{/if}
+				<span class="part_nums part_num{$key+1}">{$key+1}</span><span class="text_muted pull_right renqi"><i class="iconfont">&#xe631;</i>&nbsp;{$vo.vod_hits_week}</span>{$vo.vod_name}</a>
+            </li>
+            {/maccms:vod}
+        </ul>
+    </div>
+</div>{/if}
+{if condition="$conch['theme']['rank']['hby'] eq 'month'"}
+<div class="rank_info">
+    <div class="list_info">
+        <div class="pannel_head clearfix">
+            <h3 class="title">{$vo.type_name}月{$conch['theme']['rank']['title']|mac_default='排行榜'}</h3>	
+        </div>
+        <ul class="part_rows">
+            {maccms:vod num="1" type="'.$vo['type_id'].'" order="desc" by="hits_month"} {include file="widget/rank_box_month"} {/maccms:vod} {maccms:vod num="4" type="'.$vo['type_id'].'" start="2" order="desc" by="hits_month"}
+            <li class="part_eone">
+                {if condition="$vo['type_id_1']==$conch['theme']['type']['zb']"}
+                <a href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}">
+				{else}
+				{in name="vo.type_id" value="$conch['theme']['type']['hb']"}
+				<a href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}">
+				{else}
+				<a {if condition="$conch['theme']['playlink']['btn'] eq 1"}href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}"{else/}href="{:mac_url_vod_detail($vo)}"{/if}>
+				{/in}
+				{/if}
+				<span class="part_nums part_num{$key+1}">{$key+1}</span><span class="text_muted pull_right renqi"><i class="iconfont">&#xe631;</i>&nbsp;{$vo.vod_hits_month}</span>{$vo.vod_name}</a>
+            </li>
+            {/maccms:vod}
+        </ul>
+    </div>
+</div>{/if}
+{if condition="$conch['theme']['rank']['hby'] eq 'all'"}
+<div class="rank_info">
+    <div class="list_info">
+        <div class="pannel_head clearfix">
+            <h3 class="title">{$vo.type_name}{$conch['theme']['rank']['title']|mac_default='排行榜'}</h3>	
+        </div>
+        <ul class="part_rows">
+            {maccms:vod num="1" type="'.$vo['type_id'].'" order="desc" by="hits"} {include file="widget/rank_box_all"} {/maccms:vod} {maccms:vod num="4" type="'.$vo['type_id'].'" start="2" order="desc" by="hits"}
+            <li class="part_eone">
+                {if condition="$vo['type_id_1']==$conch['theme']['type']['zb']"}
+                <a href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}">
+				{else}
+				{in name="vo.type_id" value="$conch['theme']['type']['hb']"}
+				<a href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}">
+				{else}
+				<a {if condition="$conch['theme']['playlink']['btn'] eq 1"}href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}"{else/}href="{:mac_url_vod_detail($vo)}"{/if}>
+				{/in}
+				{/if}
+				<span class="part_nums part_num{$key+1}">{$key+1}</span><span class="text_muted pull_right renqi"><i class="iconfont">&#xe631;</i>&nbsp;{$vo.vod_hits}</span>{$vo.vod_name}</a>
+            </li>
+            {/maccms:vod}
+        </ul>
+    </div>
+</div>{/if}

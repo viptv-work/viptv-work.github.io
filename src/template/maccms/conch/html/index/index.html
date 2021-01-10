@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="public/include"}
+	<script type="text/javascript" src="{$maccms.path_tpl}asset/js/parts/loading.js"></script>
+	<script src="{$maccms.path_tpl}asset/js/parts/jquery.adaptive.js"></script>
+</head>
+<body class="bstem">
+{include file="public/head"}
+{include file="module/banner"}
+    <div class="container ">
+        {include file="module/home_menu"}
+        {if condition="$conch['theme']['hotvod']['btn'] eq 1"}
+        <div class="vod_row tit_up">
+            <div class="pannel">
+                <div class="pannel_head clearfix">
+                   <a class="text_muted pull_right v_change" href="javascript:;"><i class="iconfont">&#xe62a;</i>&nbsp;换一换</a>
+                    <h2 class="title"><i class="iconfont">&#xe631;</i>{$conch['theme']['hotvod']['title']|mac_default='热播推荐'}</h2>
+                    <span class="text_muted pull_left">
+						<a href="{if condition="$conch['theme']['map']['btn'] eq 1"}{:mac_url('map/index')}{else}javascript:;{/if}">{$conch['theme']['map']['title']|mac_default='最新'}<em class="new_date">{:mac_data_count(0,'today','vod')}</em></a>
+                    </span>
+                </div>
+                <div class="cbox_list">
+                <div class="cbox1">
+                <ul class="vodlist vodlist_wi {if$conch['theme']['hotvod']['num']=='6'}list_v6{elseif$conch['theme']['hotvod']['num']=='12'}list_v12{/if} clearfix">
+                    {maccms:vod num="'.($conch['theme']['hotvod']['num']).'" paging="no" type="all" level="1" order="desc" by="sort"}
+					   {include file="widget/vod_box"}
+					{/maccms:vod}
+                </ul>
+                </div>
+                <div class="cbox2 hide">
+                <ul class="vodlist vodlist_wi {if$conch['theme']['hotvod']['num']=='6'}list_v6{elseif$conch['theme']['hotvod']['num']=='12'}list_v12{/if} clearfix">
+                    {maccms:vod num="'.($conch['theme']['hotvod']['num']).'" paging="no" type="all" level="1" start="'.($conch['theme']['hotvod']['num']+1).'" order="desc" by="sort"}
+					   {include file="widget/vod_box"}
+					{/maccms:vod}
+                </ul>
+                </div>
+                <div class="cbox3 hide">
+                <ul class="vodlist vodlist_wi {if$conch['theme']['hotvod']['num']=='6'}list_v6{elseif$conch['theme']['hotvod']['num']=='12'}list_v12{/if} clearfix">
+                    {maccms:vod num="'.($conch['theme']['hotvod']['num']).'" paging="no" type="all" level="1" start="'.($conch['theme']['hotvod']['num']*2+1).'" order="desc" by="sort"}
+					   {include file="widget/vod_box"}
+					{/maccms:vod}
+                </ul>
+                </div>
+                </div>
+            </div>
+        </div>
+        {/if}
+        {include file="ads/ads_all"}
+        {if condition="$conch['theme']['art']['hbtn'] eq 1"}
+        <div class="row tit_up">
+            {maccms:type ids="5" order="asc" by="sort" id="vo1" key="key1"}
+            <div class="pannel">
+                <div class="pannel_head clearfix">
+                    <a class="text_muted pull_right v_change" href="javascript:;"><i class="iconfont">&#xe62a;</i>&nbsp;换一换</a>
+                    <h2 class="title"><i class="iconfont">&#xe630;</i>{$conch['theme']['art']['htitle']|mac_default=$vo1.type_name}</h2>
+                    <a class="text_muted pull_left" href="{:mac_url_type($vo1)}">更多<i class="iconfont more_i">&#xe623;</i></a>
+                    <span class="hidden_xs pull_left">
+						{maccms:type num="5" parent="'.$vo1['type_id'].'" order="asc" by="sort" id="vo2" key="key2"}
+                        <span class="split_line"></span><a href="{:mac_url_type($vo2)}" class="text_muted">{$vo2.type_name}</a>
+                        {/maccms:type}
+                    </span>
+                </div>
+                <div class="cbox_list">
+                <div class="cbox1">
+                <ul class="arthom_list {if$conch['theme']['art']['hnum']=='6'}list_v5{elseif$conch['theme']['art']['hnum']=='12'}list_v10{/if} clearfix">
+                    {maccms:art num="'.($conch['theme']['art']['hnum']).'" type="'.$vo1['type_id'].'" order="desc" by="time"}
+					   {include file="widget/art_box_home"}
+					{/maccms:art}
+                </ul>
+                </div>
+                <div class="cbox2 hide">
+                <ul class="arthom_list {if$conch['theme']['art']['hnum']=='6'}list_v5{elseif$conch['theme']['art']['hnum']=='12'}list_v10{/if} clearfix">
+                    {maccms:art num="'.($conch['theme']['art']['hnum']).'" type="'.$vo1['type_id'].'" start="'.($conch['theme']['art']['hnum']+1).'" order="desc" by="time"}
+					   {include file="widget/art_box_home"}
+					{/maccms:art}
+                </ul>
+                </div>
+                <div class="cbox3 hide">
+                <ul class="arthom_list {if$conch['theme']['art']['hnum']=='6'}list_v5{elseif$conch['theme']['art']['hnum']=='12'}list_v10{/if} clearfix">
+                    {maccms:art num="'.($conch['theme']['art']['hnum']).'" type="'.$vo1['type_id'].'" start="'.($conch['theme']['art']['hnum']*2+1).'" order="desc" by="time"}
+					   {include file="widget/art_box_home"}
+					{/maccms:art}
+                </ul>
+                </div>
+                </div>
+            </div>
+            {/maccms:type}
+        </div>{/if}
+        <div class="vod_row tit_up">
+           {maccms:type ids="'.$conch['theme']['type']['hom'].'" order="asc" by="sort" id="vo1" key="key1"}
+           {if condition="$vo1['type_id'] neq 5"}
+           <div class="pannel">
+                <div class="pannel_head clearfix">
+                    <a class="text_muted pull_right v_change" href="javascript:;"><i class="iconfont">&#xe62a;</i>&nbsp;换一换</a>
+                    <h2 class="title">{include file="widget/icon"}{$vo1.type_name}</h2>
+                    <a class="text_muted pull_left" href="{:mac_url_type($vo1)}">更多<i class="iconfont more_i">&#xe623;</i></a>
+                    <span class="hidden_xs pull_left">
+						{maccms:vod num="3" paging="no" type="'.$vo1['type_id'].'" order="dasc" by="hits" id="vo2" key="key2"}
+                        {in name="vo1.type_id" value="$conch['theme']['type']['hb']"}
+                        <span class="split_line"></span><a href="{:mac_url_vod_play($vo2,['sid'=>$vo2.sid,'nid'=>1])}" title="{$vo2.vod_name}" class="text_muted">{$vo2.vod_name|mac_substring=16}</a>
+                        {else}
+                        <span class="split_line"></span><a {if condition="$conch['theme']['playlink']['btn'] eq 1"}href="{:mac_url_vod_play($vo2,['sid'=>$vo2.sid,'nid'=>1])}"{else/}href="{:mac_url_vod_detail($vo2)}"{/if} title="{$vo2.vod_name}" class="text_muted">{$vo2.vod_name|mac_substring=16}</a>
+                        {/in}
+                        {/maccms:vod}
+                    </span>
+                </div>
+                {if condition="$vo1['type_id']==$conch['theme']['type']['zb']"}
+                <div class="cbox_list">
+					<div class="cbox1">
+                	<ul class="vodlist vodlist_wi zbvodlist_hom {if$conch['theme']['vod']['hnum']=='6'}list_v5{elseif$conch['theme']['vod']['hnum']=='12'}list_v10{/if} clearfix">
+						{maccms:vod num="'.($conch['theme']['vod']['hnum']).'" paging="no" type="'.$vo1['type_id'].'" order="desc" by="time"}
+						   {include file="widget/zbvod_box"}
+						{/maccms:vod}
+					</ul>
+                    </div>
+                    <div class="cbox2 hide">
+                	<ul class="vodlist vodlist_wi zbvodlist_hom {if$conch['theme']['vod']['hnum']=='6'}list_v5{elseif$conch['theme']['vod']['hnum']=='12'}list_v10{/if} clearfix">
+						{maccms:vod num="'.($conch['theme']['vod']['hnum']).'" paging="no" type="'.$vo1['type_id'].'" start="'.($conch['theme']['vod']['hnum']+1).'" order="desc" by="time"}
+						   {include file="widget/zbvod_box"}
+						{/maccms:vod}
+					</ul>
+                    </div>
+                    <div class="cbox3 hide">
+                	<ul class="vodlist vodlist_wi zbvodlist_hom {if$conch['theme']['vod']['hnum']=='6'}list_v5{elseif$conch['theme']['vod']['hnum']=='12'}list_v10{/if} clearfix">
+						{maccms:vod num="'.($conch['theme']['vod']['hnum']).'" paging="no" type="'.$vo1['type_id'].'" start="'.($conch['theme']['vod']['hnum']*2+1).'" order="desc" by="time"}
+						   {include file="widget/zbvod_box"}
+						{/maccms:vod}
+					</ul>
+                    </div>
+                </div>
+                {else}
+                <div class="cbox_list">
+					<div class="cbox1">
+					<ul class="vodlist {in name="vo1.type_id" value="$conch['theme']['type']['hb']"}vodlist_hb {if$conch['theme']['vod']['hnum']=='6'}list_v5{elseif$conch['theme']['vod']['hnum']=='12'}list_v10{/if}{else}vodlist_wi {if$conch['theme']['vod']['hnum']=='6'}list_v6{elseif$conch['theme']['vod']['hnum']=='12'}list_v12{/if}{/in} clearfix">
+						{maccms:vod num="'.($conch['theme']['vod']['hnum']).'" paging="no" type="'.$vo1['type_id'].'" order="desc" by="time"}
+						   {include file="widget/vod_box"}
+						{/maccms:vod}
+					</ul>
+					</div>
+					<div class="cbox2 hide">
+					<ul class="vodlist {in name="vo1.type_id" value="$conch['theme']['type']['hb']"}vodlist_hb {if$conch['theme']['vod']['hnum']=='6'}list_v5{elseif$conch['theme']['vod']['hnum']=='12'}list_v10{/if}{else}vodlist_wi {if$conch['theme']['vod']['hnum']=='6'}list_v6{elseif$conch['theme']['vod']['hnum']=='12'}list_v12{/if}{/in} clearfix">
+						{maccms:vod num="'.($conch['theme']['vod']['hnum']).'" paging="no" type="'.$vo1['type_id'].'" start="'.($conch['theme']['vod']['hnum']+1).'" order="desc" by="time"}
+						   {include file="widget/vod_box"}
+						{/maccms:vod}
+					</ul>
+					</div>
+					<div class="cbox3 hide">
+					<ul class="vodlist {in name="vo1.type_id" value="$conch['theme']['type']['hb']"}vodlist_hb {if$conch['theme']['vod']['hnum']=='6'}list_v5{elseif$conch['theme']['vod']['hnum']=='12'}list_v10{/if}{else}vodlist_wi {if$conch['theme']['vod']['hnum']=='6'}list_v6{elseif$conch['theme']['vod']['hnum']=='12'}list_v12{/if}{/in} clearfix">
+						{maccms:vod num="'.($conch['theme']['vod']['hnum']).'" paging="no" type="'.$vo1['type_id'].'" start="'.($conch['theme']['vod']['hnum']*2+1).'" order="desc" by="time"}
+						   {include file="widget/vod_box"}
+						{/maccms:vod}
+					</ul>
+					</div>
+                </div>
+                {/if}
+            </div>{/if}
+            {/maccms:type}
+        </div>
+        {if condition="$conch['theme']['actor']['btn'] eq 1"}
+        {if condition="$conch['theme']['actor']['hbtn'] eq 1"}
+        <div class="row tit_up">
+            <div class="pannel">
+                <div class="pannel_head clearfix">
+                    <h2 class="title"><i class="iconfont">&#xe629;</i>{$conch['theme']['actor']['htitle']|mac_default='荧幕热星'}</h2>
+                    <a class="text_muted pull_left" href="{:mac_url('actor/index')}">更多<i class="iconfont more_i">&#xe623;</i></a>
+                </div>
+                <ul class="actor_hom vodlist_sh list_scroll clearfix">
+				{maccms:actor num="8" level="1" order="desc" by="time"}
+				<li class="actorlist_item">
+				  <div class="actorlist_box">
+					<a class="vodlist_thumb lazyload" href="{:mac_url_actor_detail($vo)}" title="{$vo.actor_name}" data-original="{$vo.actor_pic|mac_url_img}"></a>
+					<div class="actorlist_tit">									
+						<a href="{:mac_url_actor_detail($vo)}" title="{$vo.actor_name}">{$vo.actor_name}</a>
+					</div>
+				  </div>
+				</li>
+				{/maccms:actor}
+                </ul>
+            </div>
+        </div>
+        {/if}{/if}
+        {if condition="$conch['theme']['topic']['btn'] eq 1"}
+        {if condition="$conch['theme']['topic']['hbtn'] eq 1"}
+        <div class="row tit_up">
+            <div class="pannel">
+                <div class="pannel_head clearfix">
+                    <h2 class="title"><i class="iconfont">&#xe64c;</i>{$conch['theme']['topic']['title']|mac_default='专题'}</h2>
+                    <a class="text_muted pull_left" href="{:mac_url_topic_index()}">更多<i class="iconfont more_i">&#xe623;</i></a>
+                </div>
+                <ul class="topiclist topic_hom {if$conch['theme']['topic']['hnum']=='6'}list_v5{elseif$conch['theme']['topic']['hnum']=='12'}list_v10{/if} clearfix">
+                    {maccms:topic num="'.($conch['theme']['topic']['hnum']).'" order="desc" by="time"}
+					   {include file="widget/topic_box"}
+					{/maccms:topic}
+                </ul>
+            </div>
+        </div>{/if}
+        {/if}
+        {if condition="$conch['theme']['rank']['hbtn'] eq 1"}
+       	<div class="row tit_up">
+            <div class="pannel">
+            <div class="pannel_head clearfix">
+                    <h2 class="title"><i class="iconfont">&#xe618;</i>{$conch['theme']['rank']['title']|mac_default='排行榜'}</h2>
+                    {if condition="$conch['theme']['rank']['btn'] eq 1"}
+                    <a class="text_muted pull_left" href="{:mac_url('label/rank')}">更多<i class="iconfont more_i">&#xe623;</i></a>
+                    {/if}
+                </div>
+            <div class="rank_hom list_scroll">
+        		<!-- 排行榜列表 -->
+				{maccms:type num="4" ids="'.$conch['theme']['rank']['hid'].'" order="asc" by="sort" flag="vod"}
+				{include file="module/hom_rank"}
+				{/maccms:type}
+				<!-- end 排行榜列表 -->
+           </div>
+           </div>
+        </div>{/if}
+        {include file="module/links"}
+    </div>
+    {include file="public/foot"}
+</body>
+</html>

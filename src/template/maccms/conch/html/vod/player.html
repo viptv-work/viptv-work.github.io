@@ -1,0 +1,68 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>iframe播放器</title>
+    <style>*{word-wrap:break-word;outline:none} html,body{width:100%;height:100%;background:#000;color:#fff;}
+    .player_popeom{width: 90%;text-align: center;position: absolute;top: 50%;left: 50%;z-index: 99999;transform: translate(-50%, -50%);}
+    .player_popeom a{display: inline-block;padding: 8px 32px;font-size: 16px;line-height: 20px;border-radius: 32px; color: #623A0C;  background: #E2C078;margin: 10px;text-decoration: none;background-image: linear-gradient(-135deg, #FBE8A8 0%, #F8E7AC 15%, #E2C078 100%);}
+	.player_popeom p {line-height: 10px;}
+	.player_popeom .sk-time {font-size: 18px;padding-bottom: 2px;}
+	.player_popeom .user-wbg {background: #fff;color: #333;}
+	.player_popeom .mscz {background: #ff5f00;color: #fff;border: 1px solid #ff5f00;}
+	.player_popeom .qrgm {background: none;color: #ff5f00;border: 1px solid #ff5f00;}
+	.player_popeom small {color: #999;}
+	
+	@media (max-width: 767px){
+		.player_popeom a{display: inline-block;padding: 6px 28px;font-size: 14px;margin: 5px 5px 0;}
+		.player_popeom p {line-height: 6px;}
+		.player_popeom .sk-smm {font-size: 13px;}
+		}
+    </style>
+    <script src="{$maccms.path}static/js/jquery.js"></script>
+    <script>var maccms={"path":"__ROOT__","mid":"{$maccms['mid']}","url":"{$maccms['site_url']}","wapurl":"{$maccms['site_wapurl']}","mob_status":"{$maccms['mob_status']}"};</script>
+</head>
+<body topmargin="0" leftmargin="0" marginheight="0" marginwidth="0">
+{$player_data}
+{$player_js}
+{if condition="$popedom.code gt 1"/}
+<div class="player_showtry" style="display:none;">
+    <div class="player_box">
+        <div class="player_popeom">
+            {if condition="$obj.vod_points_play eq 0"}
+            <p class="sk-time">试看{$popedom.trysee}分钟结束</p>
+			<p class="sk-smm">完整观看本影片需要升级会员组，请升级后观看</p>
+            <small>提示：购买VIP会员组，享受超级权限，谢谢支持</small>
+            <p><a href="{:url('user/upgrade')}" target="_blank">马上升级</a><a class="user-wbg" href="{:url('user/index')}" target="_blank">会员中心</a></p>
+            {else/}
+            <p class="sk-time">试看{$popedom.trysee}分钟结束</p>
+			<p class="sk-smm">完整观看本影片需要花费{$obj.vod_points_play}积分，请支付后观看</p>
+            <small>提示：一次支付，永久观看，不重复扣费，谢谢支持</small>
+
+            {if condition="$user.group.group_id eq 1"}
+                <p><a class="mscz" href="{:url('user/login')}" target="_blank">马上登录</a></p>
+            {else/}
+                <p><a class="qrgm" href="{:url('user/buy')}" target="_blank">马上充值</a>
+				   <a class="mscz" href="javascript:;" onclick="window.parents.MAC.User.BuyPopedom(this)" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}" data-type="4">确认购买</a></p>
+            {/if}
+            {/if}
+
+        </div>
+    </div>
+</div>
+<script>
+    //方式一本页面计算
+     window.setTimeout(function(){
+     $('.MacPlayer').html( $('.player_showtry').html() );
+     },1000*60*{$popedom.trysee});
+
+    //方式二调用父页面公共函数库
+    //window.parent.MAC.User.PopedomCallBack({$popedom.trysee},$('.player_showtry').html() );
+</script>
+{/if}
+
+
+</body>
+</html>
+

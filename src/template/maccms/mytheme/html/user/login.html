@@ -1,0 +1,100 @@
+{include file="public/data"}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>用户登录 - {$mytheme.site.title}</title>
+	<meta name="keywords" content="{$mytheme.site.keywords}"/>
+	<meta name="description" content="{$mytheme.site.description}"/>
+	{include file="public/include"}
+	{include file="user/include" /}
+</head>
+<body>
+{include file="public/head"}
+<div class=" clearfix">
+	<div class="myui-panel myui-panel-bg myui-login__form clearfix">
+		<div class="myui-panel-box clearfix">		
+			<div class="myui-panel_bd">
+				<div class="head text-center">
+					<a href="{$maccms.path}"><img class="img-responsive" src="{$mytheme['site']['logo']}"/></a>
+					<h5>登录账号</h5>
+				</div>
+				<ul class="input-list">				
+					<form method="post" id="fm" action="">					
+						<li>
+							<input type="text" id="user_name" name="user_name" class="form-control" placeholder="请输入您的登录账号">
+						</li>
+						<li>
+							<input type="password" id="user_pwd" name="user_pwd" class="form-control" placeholder="请输入您的登录密码">
+						</li>
+						{if condition="$GLOBALS['config']['user']['login_verify'] eq 1"}
+						<li>
+							<img class="pull-right" id="verify_img" src="{:url('verify/index')}" onClick="this.src=this.src+'?'"  alt="单击刷新" />
+							<input type="text" class="form-control" id="verify" name="verify" placeholder="请输入验证码" style="width: 120px;">					
+						</li>
+						{/if}
+						<li>
+							<a id="btn_submit" class="btn btn-lg btn-block btn-primary">立即登录</a>
+						</li>
+						<li class="text-center">
+							<a href="{$maccms.path}">返回首页</a><span class="split-line"></span><a href="{:url('user/reg')}">注册账号</a><span class="split-line"></span><a href="{:url('user/findpass')}">找回密码</a>
+						</li>
+					</form>
+				</ul>
+				{if condition="$GLOBALS['config']['connect']['qq']['status'] eq 1 || $GLOBALS['config']['connect']['weixin']['status'] eq 1" }
+				<div class="text-center top-line">
+					<p class="text-muted pt10">第三方快捷登录</p>
+					{if condition="$GLOBALS['config']['connect']['qq']['status'] eq 1"}
+					<a href="{:url('user/oauth')}?type=qq"><img src="{$maccms.path_tpl}statics/img/qq.png" width="35" alt="QQ登录"/></a>&nbsp;&nbsp;
+					{/if}
+					{if condition="$GLOBALS['config']['connect']['weixin']['status'] eq 1"}
+					<a href="{:url('user/oauth')}?type=weixin"><img src="{$maccms.path_tpl}statics/img/weixin.png" width="35" alt="微信登录"/></a>
+					{/if}
+				</div>
+				{/if}
+			</div>
+		</div>
+	</div>
+</div>
+{include file="public/foot" /}
+<!-- // sign-box#regbox end -->
+<script type="text/javascript">
+
+	$(function(){
+		$("body").bind('keyup',function(event) {
+			if(event.keyCode==13){ $('#btn_submit').click(); }
+		});
+		$('#btn_submit').click(function() {
+			if ($('#user_name').val()  == '') { alert('请输入用户！'); $("#user_name").focus(); return false; }
+			if ($('#user_pwd').val()  == '') { alert('请输入密码！'); $("#user_pwd").focus(); return false; }
+			if ($('#verify').length> 0 && $('#verify').val()  == '') { alert('请输入验证码！'); $("#verify").focus(); return false; }
+
+			$.ajax({
+				url: "{:url('user/login')}",
+				type: "post",
+				dataType: "json",
+				data: $('#fm').serialize(),
+				beforeSend: function () {
+					$("#btn_submit").css("background","#fd6a6a").val("loading...");
+				},
+				success: function (r) {
+					if(r.code==1){
+						location.href="{:url('user/index')}";
+					}
+					else{
+						alert(r.msg);
+						$('#verify_img').click();
+					}
+				},
+				complete: function () {
+					$("#btn_submit").css("background","#fa4646").val("立即登录");
+				}
+			});
+
+		});
+	});
+
+</script>
+
+</body>
+</html>

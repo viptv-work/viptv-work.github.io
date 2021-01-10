@@ -1,0 +1,26 @@
+{if $mytheme.playpage.desc}
+<div class="myui-panel myui-panel-bg clearfix" id="desc">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_hd">
+			<div class="myui-panel__head active bottom-line clearfix">
+				<h3 class="title">
+					剧情简介
+				</h3>	
+				{if condition="$obj.vod_plot eq 1"}<a class="more text-muted" href="{:mac_url_vod_plot($obj)}">查看分集剧情  <i class="fa fa-angle-right"></i></a>{/if}
+			</div>																		
+		</div>
+		<div class="myui-panel_bd">
+			<div class="col-pd text-collapse content">
+				{if condition="$maccms.aid eq 15"}
+				<p><span class="text-muted">导演：</span>{$obj.vod_director|mac_url_create='director'|mac_default='未知'}</p>
+				<p><span class="text-muted">主演：</span>{$obj.vod_actor|mac_url_create='actor'|mac_default='未知'}</p>
+				{/if}
+				{if $obj.vod_tag}<p class="myui-content__tag">关键词：{$obj.vod_tag|mac_url_create='tag'}</p>{/if}
+				<span class="sketch content">{$obj.vod_content|mac_default='暂无简介'|mac_filter_html|mac_substring=80}</span>
+				<span class="data" style="display: none;">{$obj.vod_content|mac_default='暂无简介'}</span>
+				<a class="details" href="javascript:;">详情 <i class="fa fa-angle-down"></i></a>
+			</div>			
+		</div>			
+	</div>						
+</div>
+{/if}

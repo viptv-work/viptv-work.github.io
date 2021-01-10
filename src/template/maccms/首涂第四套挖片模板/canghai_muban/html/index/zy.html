@@ -1,0 +1,60 @@
+{maccms:type ids="3" order="asc" by="sort" id="vo1" key="key1"}
+<div class="stui-pannel stui-pannel-bg clearfix">
+	<div class="stui-pannel-box">
+		<div class="stui-pannel_hd">
+			<div class="stui-pannel__head clearfix">
+				<a class="more text-muted pull-right" href="{:mac_url_type($vo1,[],'show')}">更多 <i class="icon iconfont icon-more"></i></a>
+				<h3 class="title">
+					<img src="{$maccms.path}statics/icon/icon_{$vo1.type_id}.png"/>
+					<a href="{:mac_url_type($vo1,[],'show')}">{$vo1.type_name}</a>
+				</h3>	
+				<ul class="nav nav-text pull-right hidden-sm hidden-xs">
+					{maccms:type parent="'.$vo1['type_id'].'" order="asc" by="sort" id="vo2" key="key2"}
+                    <li><a href="{:mac_url_type($vo2,[],'show')}" class="text-muted">{$vo2.type_name}</a> <span class="split-line"></span></li>
+                    {/maccms:type}
+				</ul>
+			</div>																		
+		</div>
+		<div class="stui-pannel_bd clearfix">
+			<div class="col-md-wide-4 col-xs-1 padding-0">
+				<div class="carousel carousel_default col-pd">
+					{maccms:vod num="3" type="'.$vo1['type_id'].'" order="desc" by="time" level="4"}
+			    	<div class="wide">
+						<a href="{:mac_url_vod_detail($vo)}" class="stui-vodlist__thumb active" title="{$vo.vod_name}" style="background: url({:mac_url_img($vo.vod_pic_slide)}) no-repeat; background-position:50% 50%; background-size: cover; padding-top: 62%;">	
+							<span class="play hidden-xs"></span>
+							<span class="pic-tag pic-tag-h">推荐</span>
+							<span class="pic-text pic-text-silde text-center">{$vo.vod_name}</span>
+						</a>	            					
+					</div>	
+					{/maccms:vod}	
+				</div>																	    	
+			</div>															
+			<div class="col-md-wide-6 col-xs-1 padding-0">
+				<ul class="stui-vodlist clearfix">
+					{maccms:vod num="6" type="'.$vo1['type_id'].'" order="desc" by="time" level="3"}
+					<li class="col-md-3 col-sm-3 col-xs-2">
+						<div class="stui-vodlist__box">
+							<a class="stui-vodlist__thumb active lazyload" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" data-original="{:mac_url_img($vo.vod_pic)}">						
+								<span class="play hidden-xs"></span>	
+								{if condition="$vo.vod_state lt 1"}<span class="pic-text text-right">{$vo.vod_remarks}</span>{elseif condition="($vo.vod_state lt 1000) OR ($vo.vod_state gt 0)"/}<span class="pic-text text-right">第{$vo.vod_state}集</span>{elseif condition="$vo.vod_state lt 1000"/}<span class="pic-text text-right">{$vo.vod_state}期</span>{elseif condition="($vo.vod_state eq 0) OR ($vo.vod_remarks eq '')"/}<span class="pic-text text-right">大结局</span>{else /}{/if}
+								<span class="pic-text text-center">{$vo.vod_name}</span>						
+							</a>																				
+						</div>									
+					</li>
+					{/maccms:vod}
+				</ul>	
+			</div>
+		</div>
+		<ul class="stui-vodlist__text col-pd hidden-xs clearfix">
+			{maccms:vod num="18" type="'.$vo1['type_id'].'" order="desc" by="time"}
+			<li class="col-xs-6 padding-0">
+				<a class="top-line-dot text-overflow" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}"><i class="icon iconfont icon-more pull-right  text-muted"></i>{$vo.vod_name}</a>								
+			</li>
+			{/maccms:vod}
+		</ul>
+		<div class="stui-pannel_ft top-line visible-xs clearfix">
+			<a class="text-muted" href="{:mac_url_type($vo1,[],'show')}">查看更多{$vo1.type_name} <i class="icon iconfont icon-more"></i></a>		
+		</div>
+	</div>
+</div>
+{/maccms:type}

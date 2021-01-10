@@ -1,0 +1,12 @@
+{if condition="$GLOBALS['config']['site']['art_rads_list'] eq 1"}
+<li>
+   <a target="_blank" rel="nofollow" href="{$maccms.art_rads_list_link}" title="{$maccms.art_rads_list_title}">
+   <div class="artlr_tit"><p class="artlr_b">{$maccms.art_rads_list_title}</p><p class="artlr_name">随便看看</p></div>
+   <div class="artlr_pic lazyload" data-original="{:mac_url_img($maccms.art_rads_list_img)}">
+   {if condition="$GLOBALS['config']['site']['art_rads_list_tips'] eq 1"}
+       <span class="ad_tips">广告</span>
+   {/if}
+   </div>
+   </a>
+</li>
+{/if}

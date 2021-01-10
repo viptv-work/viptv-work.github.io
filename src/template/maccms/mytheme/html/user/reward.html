@@ -1,0 +1,66 @@
+{include file="public/data"}
+<!DOCTYPE html>
+	<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>分销记录 - 会员中心 - {$mytheme.site.title}</title>
+	<meta name="keywords" content="{$mytheme.site.keywords}"/>
+	<meta name="description" content="{$mytheme.site.description}"/>
+	{include file="public/include"}
+	{include file="user/include"}
+</head>
+<body>
+{include file="public/head" /}
+<div class="container min">
+    <div class="row">   	
+    	{include file="user/head" /}					
+		<div class="myui-panel myui-panel-bg clearfix">
+			<div class="myui-panel-box clearfix">
+				<div class="myui-panel_hd">
+					<div class="myui-panel__head active bottom-line clearfix">
+						<h3 class="title">
+							我的分销
+						</h3>
+						<ul class="nav nav-tabs">
+							{if condition="$param.level eq ''"}
+							<li class="active"><a href="javascript:;">一级下线</a></li>
+							{else/}
+							<li><a href="{:url('user/reward')}">一级下线</a></li>
+							{/if}
+							{if condition="$param.level eq '2'"}
+							<li class="active"><a href="javascript:;">二级下线</a></li>
+							{else/}
+							<li><a href="{:url('user/reward')}?level=2">二级下线</a></li>
+							{/if}
+							{if condition="$param.level eq '3'"}
+							<li class="active"><a href="javascript:;">三级下线</a></li>
+							{else/}
+							<li><a href="{:url('user/reward')}?level=3">三级下线</a></li>
+							{/if}
+						</ul>
+					</div>																		
+				</div>
+				<div class="myui-panel_bd clearfix">
+					<ul class="myui-vodlist__text striped to-color col-pd clearfix">
+						<li class="striped-head clearfix">
+							<span class="col-md-wide-15 col-sm-wide-10 hidden-xs">编号</span>
+							<span class="col-md-wide-55 col-sm-wide-45 col-xs-wide-6">会员</span>
+							<span class="col-md-wide-3 col-sm-wide-15 col-xs-wide-4">时间</span>
+						</li>
+						{volist name="list" id="vo"}
+						<li class="clearfix">					
+							<span class="col-md-wide-15 col-sm-wide-15 hidden-xs">{$vo.user_id}</span>
+							<span class="col-md-wide-55 col-sm-wide-7 col-xs-wide-6">{$vo.user_name}</span>
+							<span class="col-md-wide-3 col-sm-wide-15 col-xs-wide-4">{$vo.user_reg_time|mac_day}</span>																	
+						</li>
+	  					{/volist}
+					</ul>																						
+				</div>		
+			</div>
+		</div>
+		{include file="public/page"}<!-- 翻页-->		
+    </div>
+</div>
+
+{include file="public/foot" /}
+</body>
+</html>

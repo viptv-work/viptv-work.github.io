@@ -1,0 +1,45 @@
+<!--登录弹窗开始-->
+<div class="myui-msg__form ajax_login" style="display: none; width: 290px; padding: 50px 30px 20px; margin: 0; box-shadow: none;">
+	<div class="myui-panel clearfix">
+		<div class="myui-panel-box clearfix">		
+			<div class="myui-panel_bd">
+				<div class="myui-msg__head text-center">
+					<p>登录账号</p>
+				</div>
+				<form class="mac_login_form">
+					<p>
+						<input type="text" class="form-control" name="user_name" placeholder="手机/登录账号">
+					</p>
+					<p>
+						<input type="password" class="form-control" name="user_pwd" placeholder="登录密码">
+					</p>
+					{if condition="$GLOBALS['config']['user']['login_verify'] eq 1"}
+					<p>
+						<img class="mac_verify_img pull-right" src="{:mac_url('verify/index')}" height="35" onclick="this.src = this.src+'?'">
+						<input type="text" class="form-control" name="verify" placeholder="验证码" style="display: inline-block; width: 100px;">
+					</p>
+					{/if}
+					<p>
+						<a href="javascript:;" class="btn btn-block btn-primary login_form_submit">登录</a>
+					</p>
+					<p>
+						<a class="pull-right" href="{:mac_url('user/reg')}">注册</a>
+						<a href="{:mac_url('user/findpass')}">忘记密码</a>
+					</p>
+				</form>
+				{if condition="$GLOBALS['config']['connect']['qq']['status'] eq 1 || $GLOBALS['config']['connect']['weixin']['status'] eq 1" }
+				<div class="text-center top-line">
+					<p class="text-muted pt10">第三方快捷登录</p>
+					{if condition="$GLOBALS['config']['connect']['qq']['status'] eq 1"}
+					<a href="{:mac_url('user/oauth')}?type=qq"><img src="{$maccms.path_tpl}statics/img/qq.png" width="35" alt="QQ登录"/></a>&nbsp;&nbsp;
+					{/if}
+					{if condition="$GLOBALS['config']['connect']['weixin']['status'] eq 1"}
+					<a href="{:mac_url('user/oauth')}?type=weixin"><img src="{$maccms.path_tpl}statics/img/weixin.png" width="35" alt="微信登录"/></a>
+					{/if}
+				</div>
+				{/if}
+			</div>
+		</div>
+	</div>
+</div>
+<!--登录弹窗结束-->

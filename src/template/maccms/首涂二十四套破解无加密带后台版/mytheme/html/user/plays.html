@@ -1,0 +1,99 @@
+{include file="public/data"}
+<!DOCTYPE html>
+<head>
+	<title>播放记录 - 会员中心 -{$mytheme.site.title}</title>
+	<meta name="keywords" content="{$mytheme.site.keywords}"/>
+	<meta name="description" content="{$mytheme.site.description}"/>
+	{include file="public/include"}
+	{include file="user/include" /}
+</head>
+<body>
+{include file="public/head" /}
+<div class="container min">
+    <div class="row"> 
+    	{include file="user/head" /}					
+		<div class="myui-panel myui-panel-bg clearfix">
+			<div class="myui-panel-box clearfix">
+				<div class="myui-panel_bd clearfix">
+					<div class="myui-panel_hd">
+						<div class="myui-panel__head active bottom-line clearfix">								
+							<h3 class="title">
+								播放记录
+							</h3>
+							<a class="more text-red" href="javascript:;" id="btnClear">清空记录</a>
+						</div>																		
+					</div>
+					<div class="myui-panel_bd clearfix">
+						 <form id="form1" name="form1" method="post">
+						 	<ul class="myui-vodlist__text to-color col-pd clearfix">
+								<li class="striped-head clearfix">
+									<span class="col-md-wide-10 col-sm-wide-10 col-xs-wide-7">选择</span>
+									<span class="col-md-wide-2 col-sm-wide-10 hidden-xs">编号</span>
+									<span class="col-md-wide-3 col-sm-wide-5 hidden-xs">名称</span>
+									<span class="col-md-wide-2 col-sm-wide-15 hidden-xs text-center">消耗积分</span>
+									<span class="col-md-wide-2 col-sm-wide-15 col-xs-wide-3 text-right">操作</span>
+								</li>
+								{volist name="list" id="vo"}
+			  					{if condition="$vo.ulog_mid eq 1"}
+								<li class="top-line-dot clearfix">										
+									<span class="col-md-wide-10 col-sm-wide-10 hidden-xs"><input type="checkbox" name="ids[]" id="checkbox" value="{$vo.ulog_id}"/></span>
+									<span class="col-md-wide-2 col-sm-wide-10 hidden-xs text-muted">{$vo.ulog_id}</span>
+									<span class="col-md-wide-3 col-sm-wide-5 col-xs-wide-7">
+										<a target="_blank" href="{$vo.data.link}">[{$vo.data.type.type_name}][{$vo.ulog_nid}] {$vo.data.name}</a>
+									</span>
+									<span class="col-md-wide-2 col-sm-wide-15 hidden-xs text-center">
+										{$vo.ulog_points}
+									</span>
+									<span class="col-md-wide-2 col-sm-wide-15 col-xs-wide-3 text-right">
+										<a class="text-red" href="javascript:;" onclick="delData({$vo.ulog_id},0)" class="delete">删除</a>
+									</span>																			
+								</li>
+								{/if}
+			  					{/volist}
+							</ul>
+							<p class="pt10 col-pd clearfix hidden-xs">
+	  							<a href="javascript:;" onClick="MAC.CheckBox.All('ids[]');">全选</a>&nbsp;&nbsp;
+								<a href="javascript:;" onClick="MAC.CheckBox.Other('ids[]');">反选</a>&nbsp;&nbsp;
+								<a class="text-red" href="javascript:;" id="btnDel">删除</a>							
+							</p>								
+						</form>																						
+					</div>		
+				</div>
+			</div>
+		</div>
+		{include file="public/page"}<!-- 翻页-->	
+    </div>
+</div>
+{include file="public/foot" /}
+<script>
+	function delData(ids,all){
+		var msg ='删除';
+		if(all==1){
+			msg='清空';
+		}
+		if(confirm('确定要'+msg+'记录吗')){
+			$.post("{:url('user/ulog_del')}",{ids:ids,type:4,all:all},function(data) {
+				if (data.code == '1') {
+					layer.msg('删除成功',{anim:5},function(){
+					    location.reload();
+					});
+				}else {
+					layer.msg('删除失败'+ data.msg);
+				}
+			}, 'json')
+		}
+	}
+	$("#btnClear").click(function(){
+		delData('',1);
+	});
+	$("#btnDel").click(function(){
+		var ids = MAC.CheckBox.Ids('ids[]');
+		if(ids==''){
+			layer.msg('请至少选择一个数据');
+			return;
+		}
+		delData(ids,0);
+	});
+</script>
+</body>
+</html>

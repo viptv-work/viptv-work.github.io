@@ -1,0 +1,154 @@
+<?php  
+$pagesize = 10; //设置记录显示条数; 
+ $JCCMS_pagecount = floor(count($JCCMS_SQL) / $pagesize)-1;//计算数组所得到记录总数
+  $JCCMS_prev = $JCCMS_page -1; //初始化上一页
+ $JCCMS_next = $JCCMS_page +1; //初始化下一页
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+	<title>
+		<?php echo $web_title;?>
+	</title>
+	<meta name="keywords" content="<?php echo $web_keywords;?>" />
+	<meta name="description" content="<?php echo $web_description;?>" />
+	<link rel="stylesheet" href="<?php echo '/template/'.$web_moban;?>/css/index.css" />
+	
+</head>
+
+<body>
+	﻿
+	<?php  include('./template/'.$web_moban.'/header.html');?>
+	<div id="container">
+		<div id="content">
+			<div class="clear">
+				<div class="span-755">
+					<div class="clear">
+						<div style="margin-top:10px;margin-bottom:10px;">
+							<!-- new videos -->
+							<div class="box">
+								<div class="bmenu">
+									<div class="bmenul" style="width:300px;">
+										<h2 style="float:left;">
+											<?php JCCMS_type('5'); ?>
+										</h2>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div style="margin-left:14px;">
+
+									<?php $JCCMS_SQL=JCCMS_chuli('5');for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+									<div class="video_box">
+										<a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html" target="_blank"><img src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>"
+											 width="160" height="120"><br>
+											<span class="font-13 ">
+												<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></span><br></a>
+
+										<div class="clear_right"></div>
+										<div class="box_left">时间：
+											<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_time');?>
+										</div>
+									</div>
+									<?php		 }?>
+
+									<div class="clear_left"></div>
+								</div>
+							</div>
+							<div class="box">
+								<div class="bmenu">
+									<div class="bmenul" style="width:300px;">
+										<h2 style="float:left;">
+											<?php JCCMS_type('10'); ?>
+										</h2>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div style="margin-left:14px;">
+
+									<?php $JCCMS_SQL=JCCMS_chuli('10');for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+									<div class="video_box">
+										<a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html" target="_blank"><img src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>"
+											 width="160" height="120"><br>
+											<span class="font-13 ">
+												<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></span><br></a>
+
+										<div class="clear_right"></div>
+										<div class="box_left">时间：
+											<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_time');?>
+										</div>
+									</div>
+									<?php		 }?>
+
+									<div class="clear_left"></div>
+								</div>
+							</div>
+							<div class="box">
+								<div class="bmenu">
+									<div class="bmenul" style="width:300px;">
+										<h2 style="float:left;">直播频道</h2>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div style="margin-left:14px;">
+									<?php
+			 $json_string = file_get_contents($zhibourl);
+			 $data = json_decode($json_string, true);$datas = $data['fileinfo'];$pageresult = $data['pageresult'];$page = $data['page'];$datass =NULL;
+			for ($x=0; $x<=9; $x++) {
+			  $val=$datas[$x];$address=$val['m3u8'];$img=$val['pic'];$title=$val['name'];
+
+			?>
+									<div class="video_box">
+										<a href="/?m=zhibo-neiron-id-<?php echo base64_encode($address)?>.html" target="_blank"><img src="<?php echo $img;?>"
+											 width="160" height="120"><br>
+											<span class="font-13 ">
+												<?php echo $title ?></span><br></a>
+
+										<div class="clear_right"></div>
+										<div class="box_left">时时直播</div>
+									</div>
+									<?php		 }?>
+
+
+									<div class="clear_left"></div>
+								</div>
+							</div>
+
+
+
+							<div align="center"></div>
+
+
+							<div class="box">
+								<div class="bmenu">
+									<div class="bmenul" style="width:300px;">
+										<h2 style="float:left;">友情链接</h2>
+									</div>
+									<div class="clear"></div>
+								</div>
+								<div style="margin-left:14px;">
+									<?php echo  Jccms_json_connection('<a class="text-sub-title mx-2 text-small" href="链接" target="_blank">标题</a>',JCCMS_ROOT);?>
+									<div class="clear_left"></div>
+								</div>
+							</div>
+							
+						</div>
+
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<?php  include('./template/'.$web_moban.'/footer.html');?>
+
+</body>
+
+</html>

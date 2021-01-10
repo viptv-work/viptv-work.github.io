@@ -1,0 +1,90 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}vod/search.html-->{/if}
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/vod_search"}   
+	{include file="public/include"}
+</head>
+<body>
+	{include file="public/head"}
+	<div class="container min">
+		<div class="row">
+			<div class="{if $mytheme.searchpage.side}col-md-wide-7 {/if}col-xs-1">
+			   	<div class="myui-panel myui-panel-bg clearfix">
+					<div class="myui-panel-box clearfix">
+						<div class="myui-panel_hd">
+							<div class="myui-panel__head active bottom-line clearfix">	
+								<h3 class="title">
+									与 <span class="text-red">“{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}”</span> 相关的搜索结果
+								</h3>
+							</div>
+						</div>
+
+						<div class="myui-panel_bd col-pd clearfix">
+							<ul class="myui-vodlist__media clearfix" id="searchList">		
+								{maccms:vod num="'.$mytheme['searchpage']['num'].'" paging="yes" pageurl="vod/search" order="desc" by="time"}		
+								<li class="clearfix">
+									<div class="thumb">									
+										<a class="myui-vodlist__thumb img-lg-150 img-md-150 img-sm-150 img-xs-100 lazyload" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" data-original="{:mac_url_img($vo.vod_pic)}">
+											<span class="play hidden-xs"></span>
+											{if $mytheme.pic.tag}<span class="pic-tag pic-tag-{$mytheme.pic.tag_seat}" style="background-color: {$mytheme.pic.tag_bg};">{$vo[''.$mytheme.pic.tag_data.'']}{$mytheme.pic.tag_text}</span>{/if}
+											{if $mytheme.pic.text}<span class="pic-text text-{$mytheme.pic.text_face}">{$vo[''.$mytheme.pic.text_data.'']}</span>{/if}
+										</a>																												
+									</div>
+									<div class="detail">
+								    	<h4 class="title"><a class="searchkey" href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a></h4>
+								    	<p><span class="text-muted">导演：</span>{$vo.vod_director|mac_default='内详'}</p>
+										<p><span class="text-muted">主演：</span>{$vo.vod_actor|mac_substring=18|mac_default='内详'}</p>
+										<p><span class="text-muted">分类：</span>{$vo.type.type_name}<span class="split-line"></span><span class="text-muted hidden-xs">地区：</span>{$vo.vod_area|mac_default='内详'}<span class="split-line"></span><span class="text-muted hidden-xs">年份：</span>{$vo.vod_year|mac_default='内详'}</p>		
+										<p class="hidden-xs"><span class="text-muted">简介：</span>{$vo.vod_content|mac_filter_html|mac_substring=50}...<a href="{:mac_url_vod_detail($vo)}">详情 &gt;</a></p>
+										<p class="margin-0">
+											<a class="btn btn-sm btn-warm" href="{:mac_url_vod_play($vo,['sid'=>1,'nid'=>1])}"><i class="fa fa-play"></i> 立即播放</a>&nbsp;&nbsp;
+											<a class="btn btn-sm btn-default hidden-xs" href="{:mac_url_vod_detail($vo)}">查看详情 <i class="fa fa-angle-right"></i></a>
+										</p>												    	    																									
+									</div>
+								</li>
+								{/maccms:vod}
+							</ul>
+						</div>
+						{empty name="__LIST__"}
+						{include file="block/vod_no"}<!-- 无结果 -->
+    					{/empty}
+					</div>				
+				</div>	          
+				
+				{if $mytheme.search_ad && $mytheme.search_ad1}
+				<div class="myui-panel myui-panel-bg clearfix">
+					<div class="myui-panel-box clearfix">
+						<div class="myui-panel_bd">
+							<div class="col-xs-1">
+								{$mytheme.search_ad1}
+							</div>
+						</div>
+					</div>
+				</div>
+				{/if}
+				
+				{include file="public/page"}<!-- 翻页 -->
+	        </div>
+			{if $mytheme.searchpage.side}
+			<div class="col-md-wide-3 col-xs-1 {$mytheme.searchpage.side_self} myui-sidebar">
+				{include file="block/vod_hot"}
+				{include file="block/art_hot"}
+			</div>
+			{/if}
+	    </div>
+    </div>
+    {if $mytheme.search.key}
+    <script type="text/javascript">
+    	var wdkey= /{$param.wd}/g;
+    	$('.searchkey').each(function(){
+    		var wd=$(this).html();
+    		wd = wd.replace(wdkey, '<font color=red>{$param.wd}</font>');
+    		$(this).html(wd);
+    	});
+    </script>
+    {/if}
+	{include file="public/foot"}
+</body>
+</html>

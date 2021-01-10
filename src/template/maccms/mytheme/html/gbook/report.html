@@ -1,0 +1,16 @@
+<form class="gbook_form" id="myform">
+ 	<div class="pb20 clearfix">
+ 		<textarea class="form-control gbook_data" name="gbook_content" rows="5" placeholder="请输入留言内容">{$param.name}</textarea>
+ 	</div>
+ 	<div class="clearfix">
+ 		<span class="gbook_remaining text-muted hidden-xs">最多可以输入200字符</span>
+ 		<span class="pull-right">
+ 			{if condition="$gbook.verify eq 1"}
+			<img id="verify_img" src="{:mac_url('verify/index')}" onClick="this.src=this.src+'?r={:time()}'"  alt="单击刷新" style="width: 98px;" />&nbsp;&nbsp;
+			<input type="text" class="form-control verify"  id="verify" name="verify" placeholder="验证码" autocomplete="off">
+			{/if}
+			<a href="javascript:;" class="btn btn-warm gbook_submit">确认提交</a>
+ 		</span>
+ 		
+    </div>	     				
+</form>

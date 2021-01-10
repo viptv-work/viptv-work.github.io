@@ -1,0 +1,31 @@
+<!-- D086 by v.shoutu.cn -->
+<div class="stui-pannel stui-pannel-bg clearfix">
+	<div class="stui-pannel-box">
+		<div class="stui-pannel_hd">
+			<div class="stui-pannel__head active bottom-line clearfix">
+				<h3 class="title">
+					播放地址
+				</h3>						
+				<ul class="nav nav-tabs pull-right">
+					{maccms:foreach name="obj.vod_play_list" id="vo"}	
+					<li{if condition="$key eq 1"} class="active"{/if}><a href="#playlist{$key}" data-toggle="tab">{$vo.player_info.show}</a></li>
+					{/maccms:foreach}								
+				</ul>
+			</div>																		
+		</div>
+		<div class="tab-content stui-pannel_bd col-pd">
+			{maccms:foreach name="obj.vod_play_list" id="vo"}	
+			<div id="playlist{$key}" class="tab-pane fade in{if condition="$key eq 1"} active{/if} clearfix">
+				<p class="text-muted">		
+					{$vo.player_info.tip}
+				</p>
+				<ul class="stui-content__playlist clearfix">
+					{maccms:foreach name="vo.urls" id="vo2"}						
+	                <li {if condition="$param.sid eq $vo.sid && $param.nid eq $vo2.nid"}class="active"{/if}><a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}">{$vo2.name}</a></li>
+	                {/maccms:foreach}	
+				</ul>
+			</div>															
+			{/maccms:foreach}	
+		</div>
+	</div>
+</div>	

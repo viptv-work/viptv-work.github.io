@@ -1,0 +1,114 @@
+{include file="public/data"}
+<!DOCTYPE html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<title>找回密码 - {$mytheme.site.title}</title>
+	<meta name="keywords" content="{$mytheme.site.keywords}"/>
+	<meta name="description" content="{$mytheme.site.description}"/>
+	{include file="public/include"}
+	{include file="user/include" /}
+</head>
+<body>
+{include file="public/head" /}
+<div class="myui-login__form clearfix">
+	<div class="myui-panel myui-panel-bg clearfix">
+		<div class="myui-panel-box clearfix">		
+			<div class="myui-panel_bd">
+				<div class="head text-center">
+					<a href="{$maccms.path}"><img class="img-responsive" src="{$mytheme['site']['logo']}"/></a>
+					<h5>{$param['ac_text']}找回密码</h5>
+				</div>
+				<ul class="input-list">				
+					<form method="post" id="fm" action="">		
+						<input type="hidden" name="ac" value="{$param['ac']}">
+						<li>
+							<input type="text" id="to" name="to" class="form-control" placeholder="请输入您绑定的{$param['ac_text']}">
+						</li>
+						<li>
+							<img class="pull-right" src="{:url('verify/index')}" onClick="this.src=this.src+'?'"  alt="单击刷新" />
+							<input type="text" class="form-control w150" id="verify" name="verify" placeholder="请输入验证码" style="width: 120px;">
+						</li>
+						<li>
+							<button type="button" id="btn_send" class="btn btn-lg btn-block btn-warm">获取验证码</button>
+						</li>						
+					</form>
+					<form method="post" id="fm2" action="">
+						<input type="hidden" name="ac" value="email">
+						<li>
+							<input type="text" id="code" name="code" class="form-control" placeholder="请输入验证码">
+						</li>
+						<li>
+							<input type="password" class="form-control w150" id="user_pwd" name="user_pwd" placeholder="请输入新密码">
+						</li>
+						<li>
+							<input type="password" class="form-control w150" id="user_pwd2" name="user_pwd2" placeholder="请输入确认密码">
+						</li>
+						<li>
+							<button type="button" id="btn_submit" class="btn btn-lg btn-block btn-primary">重置密码</button>
+						</li>
+					</form>
+					<li class="text-center">
+						<a href="{:url('user/findpass')}">用问题找回</a><span class="split-line"></span><a href="{:url('user/findpass_msg')}?ac=email">用邮箱找回</a><span class="split-line"></span><a href="{:url('user/findpass_msg')}?ac=phone">用手机找回</a>
+					</li>
+				</ul>			
+			</div>
+		</div>
+	</div>
+</div>
+{include file="public/foot" /}
+<script type="text/javascript">
+
+	$(function(){
+		$("body").bind('keyup',function(event) {
+			if(event.keyCode==13){ $('#btn_submit').click(); }
+		});
+		$('#btn_send').click(function() {
+			if ($('#to').val()  == '') { alert('请输入{$param["ac_text"]}！'); $("#to").focus(); return false; }
+
+			$.ajax({
+				url: "{:url('user/findpass_msg')}",
+				type: "post",
+				dataType: "json",
+				data: $('#fm').serialize(),
+				beforeSend: function () {
+					$("#btn_send").css("background","#fd6a6a").val("loading...");
+				},
+				success: function (r) {
+					alert(r.msg);
+				},
+				complete: function () {
+					$('#verify').click();
+					$("#btn_send").css("background","#fa4646").val("发送邮件");
+				}
+			});
+		});
+
+		$('#btn_submit').click(function() {
+			if ($('#to').val()  == '') { alert('请输入{$param["ac_text"]}'); $("#to").focus(); return false; }
+			if ($('#code').val()  == '') { alert('请输入验证码！'); $("#code").focus(); return false; }
+			if ($('#user_pwd').val()  == '') { alert('请输入新密码！'); $("#user_pwd").focus(); return false; }
+			if ($('#user_pwd2').val()  == '') { alert('请输入确认密码！'); $("#user_pwd2").focus(); return false; }
+			if ($('#user_pwd').val()  != $('#user_pwd2').val() ) { alert('二次密码不一致！'); $("#user_pwd2").focus(); return false; }
+
+			var data= {ac:'{$param["ac"]}',to:$('#to').val(),code:$('#code').val(),user_pwd:$('#user_pwd').val(),user_pwd2:$('#user_pwd2').val()};
+			$.ajax({
+				url: "{:url('user/findpass_reset')}",
+				type: "post",
+				dataType: "json",
+				data: data,
+				beforeSend: function () {
+					$("#btn_submit").css("background","#fd6a6a").val("loading...");
+				},
+				success: function (r) {
+					alert(r.msg);
+				},
+				complete: function () {
+					$("#btn_submit").css("background","#fa4646").val("重置密码");
+				}
+			});
+		});
+	});
+
+</script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+{if $mytheme.home_topic.is}
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_hd">
+			<div class="myui-panel__head clearfix">
+				<h3 class="title">
+					{$mytheme.home_topic.title}
+				</h3>	
+				<a class="more text-muted" href="{:mac_url_topic_index()}">更多 <i class="fa fa-angle-right"></i></a>
+			</div>																		
+		</div>
+		<div class="myui-panel_bd clearfix">															
+			<ul class="myui-vodlist clearfix">
+				{maccms:topic num="'.$mytheme['home_topic']['num'].'" order="desc" by="'.$mytheme['home_topic']['by'].'" ids="'.$mytheme['home_topic']['id'].'"  id="vo" key="key1"}
+				<li class="col-lg-{$mytheme.home_topic.col}  col-md-{$mytheme.col.md_wide} col-sm-{$mytheme.col.sm_wide} col-xs-{$mytheme.col.xs_wide}{if condition="$key1 gt $mytheme.home_topic.xs"} hidden-xs{/if}{if condition="$key1 gt $mytheme.home_topic.sm"} hidden-sm{/if}">
+					<div class="myui-vodlist__box myui-panel_bg">
+						<a class="myui-vodlist__thumb wide lazyload" href="{:mac_url_topic_detail($vo)}" title="{$vo.topic_name}" data-original="{:mac_url_img($vo.topic_pic)}">						
+							<span class="play hidden-xs"></span>								
+						</a>
+						<div class="myui-vodlist__detail">
+							<h4 class="title text-center text-overflow"><a href="{:mac_url_topic_detail($vo)}" title="{$vo.topic_name}">{$vo.topic_name}</a></h4>
+							<p class="text text-center text-overflow text-muted">—— 收录{$vo.topic_rel_vod|explode=',',###|count}个影片 ——</p>
+						</div>												
+					</div>												
+				</li>
+				{/maccms:topic}
+			</ul>	
+		</div>	
+	</div>
+</div>
+{/if}

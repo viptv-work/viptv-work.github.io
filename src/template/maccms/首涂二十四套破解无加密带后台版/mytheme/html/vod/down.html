@@ -1,0 +1,42 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}vod/down.html-->{/if}
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/vod_down"}   
+	{include file="public/include"}
+</head>
+<body>
+	{include file="public/head"}
+	<div class="container">
+        <div class="row"> 
+			<div class="col-md-wide-7 col-xs-1 padding-0">
+				<div class="myui-panel myui-panel-bg clearfix">
+					{include file="vod/detail_data2"}<!-- 详细信息-->									
+				</div>
+				{include file="vod/down_list"}<!-- 下载地址-->
+				{include file="vod/like"}<!-- 猜你喜欢-->
+			</div>
+			<div class="col-md-wide-3 col-xs-1 myui-sidebar">
+				{include file="vod/hot"}<!-- 热播-->
+				{if $mytheme.detail.ad && $mytheme.detail.ad4}
+				<div class="myui-panel myui-panel-bg clearfix">
+					<div class="myui-panel-box clearfix">
+						<div class="myui-panel_bd">
+							<div class="col-xs-1">
+								{$mytheme.detail.ad4}
+							</div>
+						</div>
+					</div>				
+				</div>
+				{/if}
+			</div>
+			
+        </div>
+ 	</div>
+    <span class="mac_hits hits hide" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}{$obj.art_id}{$obj.topic_id}" data-type="hits"></span>
+    <span class="mac_ulog_set hide" data-type="5" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+	{include file="public/foot"}
+</body>
+</html>
+

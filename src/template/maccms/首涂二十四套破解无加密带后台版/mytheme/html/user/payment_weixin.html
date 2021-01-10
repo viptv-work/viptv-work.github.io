@@ -1,0 +1,64 @@
+{include file="public/data"}
+<!DOCTYPE html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>微信充值 - 会员中心 - {$mytheme.site.title}</title>
+	<meta name="keywords" content="{$mytheme.site.keywords}"/>
+	<meta name="description" content="{$mytheme.site.description}"/>
+	{include file="public/include"}
+	{include file="user/include" /}
+</head>
+<body>
+{include file="public/head" /}
+<div class="container min">
+    <div class="row"> 
+		{include file="user/head" /}					
+		<div class="myui-panel myui-panel-bg clearfix">
+			<div class="myui-panel-box clearfix">
+				<div class="myui-panel_bd clearfix">
+					<div class="myui-panel_hd">
+						<div class="myui-panel__head active bottom-line clearfix">
+							<h3 class="title">
+								在线充值
+							</h3>
+						</div>																		
+					</div>
+					<div class="myui-panel_bd clearfix">
+						<form method="post" target="_blank" action="{:url('user/gopay')}">
+							<input type="hidden" name="order_id" value="{$info.order_id}">
+							<input type="hidden" name="order_code" value="{$info.order_code}">
+							<div class="myui-user__form col-pd clearfix">
+								<p><span class="xiang">订单编号：</span>
+									{$order.order_code}
+								</p>
+								<p class="top-line-dot"><span class="xiang">订单金额：</span>
+									<b class="text-red">{$order.order_price}元</b>
+								</p>
+								<p class="top-line-dot"><span class="xiang">扫码支付：</span>
+									<img src="{:url('user/qrcode')}?data={$payment.code_url|urlencode}" width="150" height="150"/>
+								</p>
+							</div>	
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+{include file="public/foot" /}
+<script>
+	function check(){
+		$.get("{:url('user/order_info')}" + '?order_id={$order.order_id}', function(data){
+			if(data.info.order_status == 1){
+				alert('支付完成，即将跳转到会员中心');
+				window.location.href = "{:url('user/index')}";
+			}
+		});
+	}
+	$(function(){
+		setInterval(function(){check()}, 5000);  //5秒查询一次支付是否成功
+	})
+</script>
+
+</body>
+</html>

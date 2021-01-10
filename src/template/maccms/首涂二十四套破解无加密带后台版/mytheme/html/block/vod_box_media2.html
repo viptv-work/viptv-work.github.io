@@ -1,0 +1,9 @@
+<li>
+	<div class="thumb">
+		<a class="myui-vodlist__thumb wide img-lg-120 img-md-90 img-xs-120" style="background: url({$vo.vod_pic|mac_url_img});" href="{:mac_url_vod_play($vo)}" title="{$vo.vod_name}"></a>
+	</div>
+	<div class="detail detail-side">
+		<h5 class="title" style="margin-top: 0;"><a href="{:mac_url_vod_play($vo)}">{$vo.vod_name}</a></h5>
+		<p class="font-12 text-muted"><i class="fa fa-youtube-play"></i> {$vo.vod_hits}次点播</p>
+	</div>																				
+</li>

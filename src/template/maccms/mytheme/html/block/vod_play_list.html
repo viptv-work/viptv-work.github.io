@@ -1,0 +1,5 @@
+<ul class="myui-content__list sort-list clearfix" {if condition="$mytheme.playlist.high gt 0"}style="max-height: {$mytheme.playlist.high}px; overflow: auto;"{/if}>
+	{maccms:foreach name="vo.urls" id="vo2"}
+	<li class="{if $obj.type_1.type_name=='电影'||$obj.type.type_name=='电影'||$obj.type_1.type_name=='综艺'||$obj.type.type_name=='综艺'}col-lg-6 col-md-5 col-sm-4  col-xs-2{else}col-lg-8 col-md-7 col-sm-6 col-xs-4{/if}"><a class="btn {if condition="$param.sid eq $vo.sid && $param.nid eq $vo2.nid"}btn-warm{else}btn-default{/if}" href="{if $mytheme.playlist.link}{$vo2.url}{else}{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}{/if}">{$vo2.name}</a></li>
+    {/maccms:foreach}
+</ul>

@@ -1,0 +1,124 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}label/zhibo.html-->{/if}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>电视直播-{$mytheme.site.title}</title>
+    <meta name="keywords" content="{$mytheme.site.keywords}" />
+    <meta name="description" content="{$mytheme.site.description}" />  
+	{include file="public/include"}
+	<script type="text/javascript">
+		var MacPlayer = {"PlayUrl":"http://ivi.bupt.edu.cn/hls/cctv1hd.m3u8"};
+	</script>
+	
+</head>
+<body>
+
+	{include file="public/head"}
+
+	<div class="myui-player clearfix">
+		<div class="container">
+        	<div class="row">		
+				<div class="myui-player__item clearfix" style="background-color: {$mytheme.player.sidebar_bg};">
+					<div class="col-md-wide-75 padding-0 relative clearfix" id="player-left">
+						<div class="myui-player__box{if $mytheme.player.fixed} player-fixed{/if}">
+							{if $mytheme.player.fixed}<a class="player-fixed-off" href="javascript:;" style="display: none;"><i class="fa fa-close"></i></a>{/if}
+							<div class="myui-player__video{if $mytheme.player.self} embed-responsive{/if} clearfix">
+								<iframe src="http://ivi.bupt.edu.cn/player.html?channel=cctv1hd" width="100%" id="myiframe" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
+							</div>
+						</div>
+						<ul class="myui-player__operate" style="background-color: {$mytheme.player.operate_bg};">	
+							
+							{if $mytheme.player.spinner}
+							<li>
+								<a href="javascript:;" onclick="window.location.reload()"><i class="fa fa-spinner"></i> 刷新重试</a>
+							</li>
+							{/if}
+							
+							{if $mytheme.reward.is}
+							<li class="dropdown-hover hidden-xs">
+								<a href="javascript:;"><i class="fa fa-cny"></i> 打赏站长</a>
+								<div class="dropdown-box top fadeInDown clearfix">
+									<div class="item text-center">
+										<p>{$mytheme.reward.text}</p>
+										<div class="qrcode-box">
+											<img class="img-responsive" src="{$mytheme.reward.code}" />
+										</div>
+									</div>
+								</div>
+							</li>
+							{/if}
+							
+							{if $mytheme.player.share_text}
+							<li class="dropdown-hover">
+								<a href="javascript:;"><i class="fa fa-share font14"></i> 复制分享</a>
+								<div class="dropdown-box bottom fadeInDown clearfix" style="margin-left: -130px;">
+									<div class="item text-center" style="width: 260px;">
+										<div class="col-pd" class="">
+											<p>复制下方内容粘贴给好友</p>
+											<p><textarea class="form-control content" rows="2">{$mytheme.player.share_text}</textarea></p>
+											<a class="btn btn-xs btn-primary myui-copy-html" href="javascript:;">复制到剪切板</a>
+										</div>
+									</div>
+								</div>
+							</li>
+							{/if}
+							
+							{if $mytheme.player.code && $mytheme.qrcode.is}
+							<li class="dropdown-hover hidden-xs">
+								<a href="javascript:;"><i class="fa fa-qrcode font14"></i> 手机观看</a>
+								{include file="block/qrcode_box"}
+							</li>
+							{/if}
+							
+						</ul>
+						<style type="text/css"> .embed-responsive{ padding-bottom: {$mytheme.player.high}%;} </style>
+					</div>
+					<div class="col-md-wide-25 padding-0" id="player-sidebar">
+						<div class="myui-panel active clearfix">
+							<div class="myui-panel-box clearfix">
+								<div class="col-pd clearfix">
+									<div class="myui-panel__head active clearfix">
+										<h3 class="title text-fff">
+											电视直播频道
+										</h3>	
+									</div>
+								</div>
+								<div class="myui-panel-bd">
+									<ul class="myui-content__list playlist clearfix" id="playlist">
+										<li class="col-md-2 col-sm-5 col-xs-3 active">
+											<a class="btn btn-min btn-warm btnplay" href="javascript:;" data-url="http://ivi.bupt.edu.cn/player.html?channel=cctv1hd">
+												CCTV-1高清
+											</a>
+										</li>
+										<li class="col-md-2 col-sm-5 col-xs-3">
+											<a class="btn btn-min btn-gray btnplay" href="javascript:;" data-url="http://ivi.bupt.edu.cn/player.html?channel=cctv3hd">
+												CCTV-3高清
+											</a>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>					
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(".btnplay").each(function(){
+			$(this).click(function() {
+				var url=$(this).attr("data-url");
+				$("#myiframe").attr("src",url);
+				$(this).addClass("btn-warm").removeClass("btn-gray");
+				$(this).parent().addClass("active");
+				$(this).parent().siblings().removeClass("active");
+				$(this).parent().siblings().find("a").removeClass("btn-warm").addClass("btn-gray");
+				MyTheme.Other.Player();
+			});
+		});
+	</script>
+	{include file="public/foot"}
+</body>
+</html>

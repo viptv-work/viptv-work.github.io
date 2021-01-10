@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>我的收藏 - 会员中心 - {$maccms.site_name}</title>
+<meta name="keywords" content="">
+<meta name="description" content="">
+{include file="user/include" /}
+</head>
+<body>
+{include file="user/head" /}
+<!-- 会员中心 -->
+<div id="member" class="fn-clear">
+	<div id="left">
+        <div class="m-nav">
+			<a href="javascript:MAC.GoBack()" class="btn-left"><i class="iconfont ico-right">&#xe625;</i></a>
+			<a href="{$maccms.path}" class="btn-right"><i class="iconfont ico-right">&#xe634;</i></a>
+			<span class="mb-title">个人中心</span>
+	    </div>
+        {include file="user/left_nav" /}
+	</div>
+    <div id="right">
+		<div class="m-nav">
+			<a href="javascript:MAC.GoBack()" class="btn-left"><i class="iconfont ico-right">&#xe625;</i></a>
+			<a href="javascript:;" id="btnClear" class="btn-right">清空</a>
+			<span class="mb-title">我的收藏</span>
+	    </div>
+	    <div class="co-right co-right-bg">
+		<h2>我的收藏</h2>
+		<div class="gong">
+		<a href="javascript:;" onClick="MAC.CheckBox.All('ids[]');">全选</a>
+		<a href="javascript:;" onClick="MAC.CheckBox.Other('ids[]');">反选</a>
+		<a href="javascript:;" id="btnDel">删除</a>
+		<a href="javascript:;" id="btnClear2">清空</a>
+		</div>
+		<ul class="data__list clearfix">
+		{volist name="list" id="vo"}
+		{if condition="$vo.ulog_mid eq 1"}
+			<li class="data__item">
+                <div class="xz-box">
+                    <input name="ids[]" type="checkbox" value="{$vo.ulog_id}">
+                </div>
+	            <div class="data__img">
+		            <a class="data__thumb lazyload" href="{$vo.data.link}" title="{$vo.data.name}" data-original="{$vo.data.pic}">						
+	                </a>
+	            </div>	
+                <div class="data__txt">								
+	                <h4 class="data__title">
+	                <a href="{$vo.data.link}" title="{$vo.data.name}">{$vo.data.name}</a>
+	                </h4>
+	                <p>类型：{$vo.data.type.type_name}</p>
+	                <p>编号：{$vo.ulog_id}</p>
+	                <p>时间：{$vo.ulog_time|date='Y-m-d H:i',###}</p>
+                </div>
+				<div class="data__del clearfix">
+					<a class="btn-brand btn-del" href="javascript:void(0)" onclick="delData({$vo.ulog_id})">删除</a>
+			    </div>   		
+            </li>
+           {/if}
+	    {/volist}
+	    	{if $__PAGING__.record_total==0}
+            <li class="no-tips text-center"><img class="no-cont" src="{$maccms.path_tpl}asset/img/no-cont.png" alt="没有内容">抱歉！没有内容哦</li>
+            {/if}
+	    </ul>
+		<div class="member-page">
+		{if$__PAGING__.page_total>1}
+			<ul class="page text-center cleafix">
+				<li><a href="{$__PAGING__.page_url|mac_url_page=1}"{if$__PAGING__['page_current']==1} class="btns-disad"{/if}>首页</a></li>
+				<li><a href="{$__PAGING__.page_url|mac_url_page=$__PAGING__.page_prev}"{if$__PAGING__['page_current']==1} class="btns-disad"{/if}>上一页</a></li>							
+				{maccms:foreach name="$__PAGING__.page_num" id="num"}
+				<li class="hidden-xs {if condition="$__PAGING__['page_current'] eq $num"}active{/if}"><a href="{$__PAGING__.page_url|mac_url_page=$num}">{$num}</a></li>
+				{/maccms:foreach}
+				<li class="hidden-xs active"><span class="num btns-disad">{$__PAGING__.page_current}/{$__PAGING__.page_total}</span></li>
+				<li><a href="{$__PAGING__.page_url|mac_url_page=$__PAGING__.page_next}"{if$__PAGING__['page_current']==$__PAGING__.page_total} class="btns-disad"{/if}>下一页</a></li>
+				<li><a href="{$__PAGING__.page_url|mac_url_page=$__PAGING__.page_total}"{if$__PAGING__['page_current']==$__PAGING__.page_total} class="btns-disad"{/if}>尾页</a></li>							
+			</ul>
+			<div class="page-tips visible-xs">当前<span>第{$__PAGING__.page_current}页</span>&nbsp;/&nbsp;共有{$__PAGING__.page_total}页</div>
+		{/if}
+		</div>
+    </div>
+    </div>
+</div>
+<script>
+	function delData(ids,all){
+		var msg ='删除';
+		if(all==1){
+			msg='清空';
+		}
+		if(confirm('确定要'+msg+'记录吗')){
+			$.post("{:url('user/ulog_del')}",{ids:ids,type:2,all:all},function(data) {
+				if (data.code == '1') {
+					alert('删除成功');
+					location.reload();
+				}else {
+					alert('删除失败：' + data.msg);
+				}
+			}, 'json')
+		}
+	}
+	$("#btnClear,#btnClear2").click(function(){
+		delData('',1);
+	});
+	$("#btnDel").click(function(){
+		var ids = MAC.CheckBox.Ids('ids[]');
+		if(ids==''){
+			alert("请至少选择一个数据");
+			return;
+		}
+		delData(ids,0);
+	});
+</script>
+{include file="user/foot" /}
+</body>
+</html>

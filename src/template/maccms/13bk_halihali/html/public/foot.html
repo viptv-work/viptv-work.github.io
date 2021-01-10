@@ -1,0 +1,24 @@
+<div class="footer">
+<div class="ftBox">
+{if condition="$maccms.aid eq 1"}<!--友情连接开始-->
+<div class="area ftLink">
+	<ul>
+		<span class="ftQQ">友链QQ:{$maccms.site_qq}</span><span class="ftYQ">友情连接：</span>{maccms:link num="10" type="all" order="desc" by="id"}
+		<li><a href="{$vo.link_url}" target="_blank">{$vo.link_name}</a></li>{/maccms:link}
+	</ul>
+</div>
+{/if}<!--友情连接结束-->
+<div class="footer_nav">{maccms:type ids="1,2,3,4" order="asc" by="sort"}
+	<a href="{:mac_url_type($vo)}" title="{$vo.type_name}">{$vo.type_name}</a>-{/maccms:type}<a rel="nofollow" href="{:mac_url('gbook/index')}" title="给我留言" target="_blank">给我留言</a>-{$maccms.site_tj}
+</div>
+<p>
+	本网站提供新影视资源均系收集各大网站，本网站只提供web页面浏览服务，并不提供影片资源存储，也不参与任何视频录制、上传
+</p>
+<p>
+	若本站收集的影视资源无意侵犯了贵司版权，请给 <a class="yumi" href="mailto:{$maccms.site_email}">{$maccms.site_email}</a> 邮箱地址来信，我们将在第一时间删除相应资源
+</p>
+<p>
+	Copyright &#169; 2018-2019 <a class="yumi" href="http://{$maccms.site_url}">{$maccms.site_url}</a>. All Rights Reserved .
+</p>
+</div>
+</div>

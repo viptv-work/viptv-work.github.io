@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/vod_type"}   
+	{include file="block/include"}
+</head>
+<body>
+	{include file="block/head"}
+    <div class="container">
+        <div class="row">
+            <div class="stui-pannel stui-pannel-bg clearfix">
+				<div class="stui-pannel-box">
+					<div class="stui-pannel_hd">
+						<div class="stui-pannel__head active bottom-line clearfix">
+							<span class="more text-muted pull-right hidden-xs">共有“{:mac_data_count(1,'all')}”部影片</span>
+							<h3 class="title">
+								<img src="{$maccms.path}statics/icon/icon_27.png"/>
+								{$obj.type_name}
+							</h3>															
+						</div>
+						<!-- 筛选 -->
+						<ul class="stui-screen__list type-slide bottom-line-dot clearfix">
+							<li>
+								<span class="text-muted">按类型</span>
+							</li>
+							{if condition="$obj.type_pid eq 0"}
+								{maccms:type parent="'.$obj['type_id'].'" order="asc" by="sort" id="vo2" key="key2"}
+	                        	<li><a href="{:mac_url_type($vo2,[],'show')}" class="text-muted">{$vo2.type_name}</a></li>
+	                        	{/maccms:type}								
+	                        {else /}
+	                        	{maccms:type parent="'.$obj['type_pid'].'" order="asc" by="sort" id="vo2" key="key2"}
+	                        	<li><a href="{:mac_url_type($vo2,[],'show')}" class="text-muted">{$vo2.type_name}</a></li>
+	                        	{/maccms:type}		
+	                        {/if}
+						</ul>
+						<!--<ul class="stui-screen__list type-slide bottom-line-dot clearfix">
+							<li>
+								<span class="text-muted">按剧情</span>
+							</li>
+						  	{empty name="$obj.type_extend.class"}
+						        {maccms:foreach name=":explode(',',$obj.parent.type_extend.class)"}
+						        <li><a {if condition="$key gt 12"}class="hide"{/if} href="{:mac_url_type($obj,['class'=>$vo],'show')}">{$vo}</a></li>
+						        {/maccms:foreach}
+						    {else /}
+						        {maccms:foreach name=":explode(',',$obj.type_extend.class)"}
+						       	<li><a {if condition="$key gt 12"}class="hide"{/if} href="{:mac_url_type($obj,['class'=>$vo],'show')}">{$vo}</a></li>
+						        {/maccms:foreach}
+						    {/empty}								
+						</ul>-->
+						<ul class="stui-screen__list type-slide bottom-line-dot clearfix">
+							<li>
+								<span class="text-muted">按地区</span>
+							</li>
+							{empty name="$obj.type_extend.area"}
+						        {maccms:foreach name=":explode(',',$obj.parent.type_extend.area)"}
+						        <li><a {if condition="$key gt 12"}class="hide"{/if} href="{:mac_url_type($obj,['area'=>$vo],'show')}">{$vo}</a></li>
+						        {/maccms:foreach}
+						    {else /}
+						        {maccms:foreach name=":explode(',',$obj.type_extend.area)"}
+						        <li><a {if condition="$key gt 12"}class="hide"{/if} href="{:mac_url_type($obj,['area'=>$vo],'show')}">{$vo}</a></li>
+						        {/maccms:foreach}
+						    {/empty}
+						</ul>
+						<ul class="stui-screen__list type-slide clearfix">
+							<li>
+								<span class="text-muted">按年份</span>
+							</li>
+							{empty name="$obj.type_extend.year"}
+						        {maccms:foreach name=":explode(',',$obj.parent.type_extend.year)"}
+						        <li><a {if condition="$key gt 11"}class="hide"{/if} href="{:mac_url_type($obj,['year'=>$vo],'show')}">{$vo}</a></li>
+						        {/maccms:foreach}
+						    {else /}
+						        {maccms:foreach name=":explode(',',$obj.type_extend.year)"}
+						        <li><a {if condition="$key gt 11"}class="hide"{/if} href="{:mac_url_type($obj,['year'=>$vo],'show')}">{$vo}</a></li>
+						        {/maccms:foreach}
+						    {/empty}						
+						</ul>	
+						<!-- end 筛选 -->
+					</div>
+					<div class="stui-pannel_bd">
+						<ul class="stui-vodlist clearfix">
+							{maccms:vod num="42" paging="yes" type="current" order="desc" by="sort"}
+							<li class="col-md-7 col-sm-4 col-xs-3">
+								{include file="block/vod_box2"}<!-- 列表-->															
+							</li>
+							{/maccms:vod}
+						</ul>	
+					</div>
+				</div>				
+			</div>
+			{include file="block/page"}<!-- 翻页-->		
+        </div>
+    </div>
+	{include file="block/foot"}
+</body>
+</html>

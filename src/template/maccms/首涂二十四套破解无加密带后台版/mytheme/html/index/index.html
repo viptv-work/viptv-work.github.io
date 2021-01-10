@@ -1,0 +1,55 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}index/index.html-->{/if}
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/index"}   
+	{include file="public/include"}
+</head>
+	<body>		
+		{include file="public/head"}
+		
+	    <div class="container">
+	        <div class="row"> 
+				{include file="index/top"}<!-- 推荐 -->
+
+	        	{include file="index/hot"}<!-- 推荐 -->	
+				
+				{include file="index/list"}<!-- 列表 -->
+				
+				{include file="index/video"}<!-- 视频 -->
+				
+				{if $mytheme.home.ad && $mytheme.home.ad2}
+				<div class="myui-panel myui-panel-bg clearfix">
+					<div class="myui-panel-box clearfix">
+						<div class="myui-panel_bd">
+							<div class="col-xs-1">
+								{$mytheme.home.ad2}
+							</div>
+						</div>
+					</div>				
+				</div>
+				{/if}
+				
+				{include file="index/rank"}<!-- 排行 -->
+				
+	        	{include file="index/art"}<!-- 资讯 -->
+
+	        </div>
+	    </div>
+		
+		{include file="public/foot"}
+		
+		<?php
+			$path = 'application/data/config/quickmenu.txt';
+			$info = ''.$my[name].','.$maccms[path_tpl].'admin/index.php'; 
+			if (stristr(file_get_contents($path), $info)){
+				return true;
+			}
+			elseif (file_put_contents($path, chr(13) . chr(10) . $info, FILE_APPEND)){
+				echo('<script>layer.msg("后台菜单添加成功");</script>');
+			}
+		?>
+		
+	</body>
+</html>

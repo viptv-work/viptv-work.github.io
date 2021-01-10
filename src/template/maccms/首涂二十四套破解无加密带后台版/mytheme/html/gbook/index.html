@@ -1,0 +1,82 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}gbook/index.html-->{/if}
+<!doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>留言板 - {$maccms.site_name}</title>
+    {include file="public/include"}
+    <script>
+        $(function(){
+            MAC.Gbook.Login = {$gbook.login};
+            MAC.Gbook.Verify = {$gbook.verify};
+        });
+    </script>
+</head>
+<body>
+{include file="public/head"} 
+<div class="container min">
+    <div class="row">
+     	<div class="myui-panel myui-panel-bg clearfix">
+     		<div class="myui-panel-box clearfix"> 
+     			<div class="myui-panel_hd">
+					<div class="myui-panel__head clearfix">
+						<h3 class="title">
+							我要留言
+						</h3>						
+					</div>																		
+				</div>
+     			<div class="myui-panel-bd col-pd clearfix">
+     				{include file="gbook/report"} 
+     			</div>
+     		</div>
+     	</div>
+
+    	<div class="myui-panel myui-panel-bg clearfix">
+    		<div class="myui-panel-box clearfix">
+    			<div class="myui-panel_hd">
+					<div class="myui-panel__head clearfix">
+						<h3 class="title">
+							网友留言
+						</h3>						
+					</div>																		
+				</div>
+
+    			<div class="myui-panel_bd col-pd">
+    				{maccms:gbook num="'.$mytheme['gbook']['num'].'" paging="yes" order="desc" by="id"}
+    				<div class="styu-message__list top-line-dot clearfix">
+    					<div class="avatar">
+    						<a href="javascript:;"><img class="face" src="__STATIC__/images/home/duface.png" width="45" height="45" /></a> 
+    					</div>
+    					<div class="data">
+    						<span class="text-muted pull-right">{$vo.gbook_time|date='Y-m-d H:i:s',###}</span>
+    						<h5 class="name"><a class="font-bold" href="javascript:;">{$vo.gbook_name}</a></h5>
+    						<p class="content">{$vo.gbook_content}</p>
+    						{if condition="$vo.gbook_reply_time gt 0"}
+							<p class="text-red admin">管理员回复：{$vo.gbook_reply}（{$vo.gbook_reply_time|date='Y-m-d H:i:s',###}）</p>
+							{/if}
+    					</div>
+    				</div>
+    				{/maccms:gbook}	
+    			</div> 
+    		</div>		
+    		
+    		{if $mytheme.gbook.ad && $mytheme.gbook.ad1}
+			<div class="myui-panel myui-panel-bg clearfix">
+				<div class="myui-panel-box clearfix">
+					<div class="myui-panel_bd">
+						<div class="col-xs-1">
+							{$mytheme.gbook.ad1}
+						</div>
+					</div>
+				</div>				
+			</div>
+			{/if}
+			
+	    	{include file="public/page"}
+	    </div>
+    </div>
+</div>
+{include file="public/foot"}
+</body>
+</html>

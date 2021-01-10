@@ -1,0 +1,43 @@
+<div class="all_menu">
+  <div class="all_menu_inner">
+     <div class="menu_top hidden_mb"><a class="close_menu" href="javascript:void(0)"><i class="iconfont">&#xe616;</i></a>全部分类</div>
+     <!-- 分类 -->
+     <div class="all_menu_box">
+		 <ul class="nav_list clearfix">
+			 <li {if condition="$maccms.aid eq 1" }class="active"{/if}>
+				 <a class="mob_btn mob_btnc" href="{$maccms.path}" title="首页"><i class="iconfont hidden_mb">&#xe634;</i><span>首页</span></a>
+			 </li>
+			 {if condition="$GLOBALS['config']['site']['nav_remd'] eq 1"}
+			 <li>
+				 <a class="mob_btn mob_btnc" href="{$maccms.nav_remd_link}" title="{$maccms.nav_remd_name}"><i class="iconimg hidden_mb" style="background-image: url({:mac_url_img($maccms.nav_remd_img)}"></i><span>{$maccms.nav_remd_name}</span></a>
+			 </li>
+			 {/if}
+			 {maccms:type ids="parent" order="asc" by="sort" id="vo" key="key"}
+			 <li {if condition="($vo.type_id eq $GLOBALS['type_id'] || $vo.type_id eq $GLOBALS['type_pid'])"} class="active"{/if}>
+				 <a class="mob_btn mob_btn{$vo.type_id}" href="{:mac_url_type($vo)}" title="{$vo.type_name}">
+				 <i class="iconfont hidden_mb">{switch name="vo.type_id"}{case value="1"}&#xe64a;{/case}{case value="2"}&#xe649;{/case}{case value="3"}&#xe64b;{/case}{case value="4"}&#xe648;{/case}{case value="5"}&#xe630;{/case}{case value="28"}&#xe650;{/case}{case value="23"}&#xe651;{/case}{default/}&#xe629;{/switch}</i><span>{$vo.type_name}</span>
+				 </a>
+			 </li>
+			 {/maccms:type}
+			 <li {if condition="$maccms.mid eq 3"}class="active"{/if}>
+				 <a class="mob_btn mob_btn1" href="{:mac_url_topic_index()}" title="影视专题"><i class="iconfont hidden_mb">&#xe64c;</i><span>影视专题</span></a>
+			 </li>
+			 <li {if condition="$maccms.aid eq 4"}class="active"{/if}>
+				 <a class="mob_btn mob_btn3" href="{:mac_url('gbook/index')}" title="留言反馈"><i class="iconfont hidden_mb">&#xe632;</i><span>留言反馈</span></a>
+			 </li>
+			 <li {if condition="$maccms.aid eq 2"}class="active"{/if}>
+				 <a class="mob_btn mob_btnc" href="{:mac_url('map/index')}" title="最近更新"><i class="iconfont hidden_mb">&#xe652;</i><span>最近更新</span></a>
+			 </li>
+			 <li {if condition="$maccms.aid eq 7"}class="active"{/if}>
+				 <a class="mob_btn mob_btn2" href="{:mac_url('label/rank')}" title="排行榜"><i class="iconfont hidden_mb">&#xe618;</i><span>排行榜</span></a>
+			 </li>
+			 {if condition="$GLOBALS['config']['site']['site_apps'] eq 1"}
+			 <li>
+				 <a class="mob_btn mob_btn4 mob_btnapp" href="{$maccms.site_apps_link}" title="下载APP"><i class="iconfont hidden_mb">&#xe653;</i><span>下载APP</span></a>
+			 </li>
+			 {/if}
+		 </ul>
+     <!-- 分类end -->
+     </div>
+  </div>
+</div>

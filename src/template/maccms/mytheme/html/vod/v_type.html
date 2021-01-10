@@ -1,0 +1,35 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}vod/v_type.html-->{/if}
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/vod_type"}   
+	{include file="public/include"}
+</head>
+<body>
+	{include file="public/head"}
+
+    <div class="container">
+        <div class="row">
+            <div class="myui-panel myui-panel-bg clearfix">
+				<div class="myui-panel-box clearfix">
+					
+					<div class="myui-panel_bd">
+						<ul class="myui-vodlist clearfix">
+							{maccms:vod num="'.$mytheme['type']['v_num'].'" paging="yes" type="current" pageurl="vod/type" order="desc" by="sort"}
+							<li class="col-lg-{$mytheme.col.lg_wide} col-md-{$mytheme.col.md_wide} col-sm-{$mytheme.col.sm_wide} col-xs-{$mytheme.col.xs_wide}">
+								{include file="block/vod_box_active"}<!-- 列表-->															
+							</li>
+							{/maccms:vod}
+						</ul>	
+					</div>
+				</div>				
+			</div>
+			
+			{include file="public/page"}<!-- 翻页-->		
+			
+        </div>
+    </div>
+	{include file="public/foot"}
+</body>
+</html>

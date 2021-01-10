@@ -1,0 +1,23 @@
+{if $mytheme.star_hot.is}
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_hd">
+			<div class="myui-panel__head clearfix">
+				<h3 class="title">
+					荧屏巨星
+				</h3>	
+				{if condition="$maccms.aid eq 1"}<a class="more text-muted" href="{:mac_url('actor/index')}">更多 <i class="fa fa-angle-right"></i></a>{/if}
+			</div>
+		</div>
+		<div class="myui-panel_bd">
+			<ul class="myui-vodlist__bd clearfix">
+				{maccms:actor name="'.$mytheme['star_hot']['name'].'" order="desc" by="time" id="vo" key="key"}				
+				<li class="col-md-{$mytheme.star_hot.col} col-sm-{$mytheme.col.sm} col-xs-{$mytheme.col.xs}{if condition="$key gt $mytheme.star_hot.xs"} hidden-xs{/if}{if condition="$key gt $mytheme.star_hot.sm"} hidden-sm{/if}">
+				{include file="block/actor_box"}
+				</li>
+				{/maccms:actor}
+			</ul>
+		</div>	
+	</div>						
+</div>
+{/if}

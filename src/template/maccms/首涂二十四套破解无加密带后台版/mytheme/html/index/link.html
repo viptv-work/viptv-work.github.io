@@ -1,0 +1,22 @@
+{if $mytheme.home_link.is}
+<div class="myui-panel {$mytheme.home_link.self} clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_hd">
+			<div class="myui-panel__head clearfix">                                                                                                                                                                                                                                                       
+				<h3 class="title">
+					友情链接
+				</h3>								
+			</div>																		
+		</div>
+		<div class="myui-panel_bd clearfix">
+			<div class="col-xs-1">
+				<ul class="myui-link__text clearfix">
+					{maccms:link num="'.$mytheme['home_link']['num'].'" type="font"}
+					<li><a class="text-muted" href="{$vo.link_url}" title="{$vo.link_name}" target="_blank">{$vo.link_name}</a></li>								
+					{/maccms:link}
+				</ul>								
+			</div>																		
+		</div>
+	</div>
+</div>
+{/if}

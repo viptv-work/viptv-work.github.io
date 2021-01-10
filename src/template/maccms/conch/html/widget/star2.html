@@ -1,0 +1,16 @@
+<div id="rating" class="rating-list" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-score="{$obj.vod_score/2|ceil}">
+    <span class="label">给【<strong>{$obj.vod_name}</strong>】打分</span>
+    <ul class="rating rating-star">
+        <li class="big-star one" title="很差" val="1">很差</li>
+        <li class="big-star two" title="较差" val="2">较差</li>
+        <li class="big-star three" title="还行" val="3">还行</li>
+        <li class="big-star four" title="推荐" val="4">推荐</li>
+        <li class="big-star five" title="力荐" val="5">力荐</li>
+    </ul>
+    <span id="ratewords" class="label-list">
+		{if condition="$obj.vod_score eq 0"}暂无评分
+		{/if}
+    </span>
+</div>
+<script type="text/javascript" src="{$maccms.path_tpl}asset/js/parts/qireobj.js"></script>
+<script type="text/javascript" src="{$maccms.path_tpl}asset/js/parts/gold.js"></script>

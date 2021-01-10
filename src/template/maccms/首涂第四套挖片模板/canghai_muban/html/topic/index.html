@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{include file="seo/topic_index"}   
+		{include file="block/include"}
+	</head>
+	<body>
+		{include file="block/head"}
+		<div class="container">
+			<div class="row">
+				<div class="stui-pannel stui-pannel-bg clearfix">
+					<div class="stui-pannel-box">
+						<div class="stui-pannel_hd">
+							<div class="stui-pannel__head clearfix">
+								<h3 class="title">
+									<img src="{$maccms.path}statics/icon/icon_5.png"/> 热门专题
+								</h3>														
+							</div>
+						</div>
+						<div class="stui-pannel_bd">
+							<ul class="stui-vodlist clearfix">								
+								{maccms:topic num="24" paging="yes" order="desc" by="time"}
+								<li class="col-md-3 col-sm-2 col-xs-1">
+									<div class="stui-vodlist__box">
+										<a class="stui-vodlist__thumb active lazyload" href="{:mac_url_topic_detail($vo)}" title="{$vo.topic_name}" data-original="{$vo.topic_pic|mac_url_img}" style=" padding-top: 50%;" >						
+											<span class="play hidden-xs"></span>								
+										</a>
+										<div class="stui-vodlist__detail">
+											<h4 class="title text-center text-overflow"><a href="{:mac_url_topic_detail($vo)}" title="{$vo.topic_name}">{$vo.topic_name}</a></h4>
+											<p class="text text-center tex
+												t-overflow text-muted hidden-xs">—— {$vo.topic_rel_vod|explode=',',###|count}个影片 ——</p>
+										</div>												
+									</div>												
+								</li>
+								{/maccms:topic}
+							</ul>	
+						</div>
+					</div>					
+				</div>						
+				{include file="block/page"}
+			</div>
+		</div>
+		{include file="block/foot"}
+	</body>
+</html>

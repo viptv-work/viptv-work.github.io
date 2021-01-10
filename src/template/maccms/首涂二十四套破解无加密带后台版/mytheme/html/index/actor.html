@@ -1,0 +1,19 @@
+{if $mytheme.star_hot.is}
+<div class="text-center mt10 mb10 clearfix">
+	<a class="more text-muted" href="{:mac_url('actor/index')}">—— {$mytheme.star_hot.title} ——</a>
+</div>
+<ul class="myui-vodlist__bd clearfix">
+	{maccms:actor name="'.$mytheme['star_hot']['name'].'" order="desc" by="time" id="vo" key="key"}				
+	<li class="col-md-{$mytheme.star_hot.col} col-sm-{$mytheme.col.sm} col-xs-5{if condition="$key gt $mytheme.star_hot.xs"} hidden-xs{/if}{if condition="$key gt $mytheme.star_hot.sm"} hidden-sm{/if}">
+	<div class="myui-vodlist__box">
+		<a class="myui-vodlist__thumb actor lazyload" href="{:mac_url_actor_detail($vo)}" title="{$vo.actor_name}" data-original="{:mac_url_img($vo.actor_pic)}" style="padding-top: 100%; border-radius: 50%;">
+			<span class="play-v"></span>
+		</a>									
+		<div class="myui-vodlist__detail">
+			<h4 class="title text-overflow text-center"><a href="{:mac_url_actor_detail($vo)}" title="{$vo.actor_name}">{$vo.actor_name}</a></h4>
+		</div>										
+	</div>
+	</li>
+	{/maccms:actor}
+</ul>
+{/if}

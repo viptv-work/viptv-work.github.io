@@ -1,0 +1,35 @@
+{
+  "name": "VipTv 网络工作室",
+  "short_name": "VipTv 网络工作室",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#3eaf7c",
+  "description": "VIPTV 网络工作室",
+  "icons": [
+    {
+      "src": "images/icons/viptv-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+     {
+      "src": "images/icons/viptv-70x70.png",
+      "sizes": "70x70",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/viptv-180x180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/viptv-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icons/viptv-270x270.png",
+      "sizes": "270x270",
+      "type": "image/png"
+    },
+  ]
+}

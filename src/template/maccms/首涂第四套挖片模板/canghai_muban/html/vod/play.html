@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/vod_play"}   
+	{include file="block/include"}
+</head>
+<body>
+	{include file="block/head"}
+    <div class="container">
+        <div class="row">
+        	<div class="col-lg-wide-75 col-xs-1 padding-0">	
+        		<!-- 播放器 -->
+	            <div class="stui-pannel stui-pannel-bg clearfix">
+					<div class="stui-pannel-box">
+						<div class="stui-pannel-bd">												
+							<div class="stui-player col-pd">
+								<div class="stui-player__video embed-responsive embed-responsive-16by9 clearfix">
+									{$player_data}{$player_js}								
+								</div>							
+								<div class="stui-player__detail detail">
+									<div class="setnumber">
+										<a class="btn btn-default" href="{$obj.player_info.link_pre}"><i class="iconfont icon-back"></i> 上一集</a>
+										<a class="btn btn-default" href="{$obj.player_info.link_next}">下一集 <i class="iconfont icon-more"></i></a>
+									</div>
+									<h4 class="title">{$obj.vod_name}</h4>
+									<p class="data margin-0">
+										<span class="text-muted">类型：</span>{$obj.vod_class}
+										<span class="split-line"></span>
+										<span class="text-muted">地区：</span>{$obj.vod_area}
+										<span class="split-line"></span>
+										<span class="text-muted">年份：</span>{$obj.vod_year}
+									</p>															
+								</div>
+							</div>
+						</div>
+					</div>					
+				</div>
+				<!-- end 播放器 -->
+				
+				<!-- 手机分享-->
+				<div class="visible-xs" style=" padding:0 20px 10px;">
+					<a class="open-share btn btn-block btn-lg btn-primary" href="javascript:;"><i class="icon iconfont icon-share"></i> 分享给朋友观看</a>
+				</div>
+				<!-- 手机分享 -->
+				
+				{include file="vod/playlist"}<!-- 播放地址-->	
+				{include file="vod/desc"}<!-- 剧情简介-->	
+				{include file="vod/like"}<!-- 猜你喜欢-->
+			</div>				
+			<div class="col-lg-wide-25 col-xs-1 stui-pannel-side visible-lg">
+				{include file="vod/code"}<!-- 二维码-->
+				{include file="vod/hot"}<!-- 分类排行-->
+				{include file="vod/topic"}<!-- 专题-->	
+			</div>
+        </div>
+    </div>
+    <script type="text/javascript">$(".MacPlayer").addClass("embed-responsive").css("padding-bottom","56.25%");</script>
+    <span class="mac_ulog_set hide" alt="设置播放页浏览记录" data-type="4" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+	{include file="block/foot"}
+</body>
+</html>

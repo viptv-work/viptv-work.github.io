@@ -1,0 +1,115 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>升级会员组 - 会员中心 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$maccms.site_keywords}"/>
+<meta name="description" content="{$maccms.site_description}"/>
+{include file="user/include" /}
+</head>
+<body>
+{include file="user/head" /}
+<!-- 会员中心 -->
+<div id="member" class="fn-clear">
+	<div id="left">
+        <div class="m-nav">
+			<a href="javascript:MAC.GoBack()" class="btn-left"><i class="iconfont ico-right">&#xe625;</i></a>
+			<a href="{$maccms.path}" class="btn-right"><i class="iconfont ico-right">&#xe634;</i></a>
+			<span class="mb-title">个人中心</span>
+	    </div>
+        {include file="user/left_nav" /}
+	</div>
+
+    <div id="right">
+		<div class="m-nav">
+			<a href="javascript:MAC.GoBack()" class="btn-left"><i class="iconfont ico-right">&#xe625;</i></a>
+			<span class="mb-title">升级会员组</span>
+	    </div>
+	    <div class="co-right co-hi">
+		<h2>升级会员</h2>
+		<div id="listCon">
+	      <div class="cur">
+		    <form id="fm" name="fm" method="post" action="" >
+			<p><span class="xiang">所属会员组</span><span>{if condition="$obj.group_id lt 3"}{$user.group.group_name}{else}<i class="iconfont user_vip">&#xe638;</i>{$obj.group.group_name}{/if}</span></p>
+			<p><span class="xiang">剩余积分</span>{$obj.user_points}</p>
+			<p><span class="xiang">到期时间</span><span class="fen">{if condition="$obj.group_id lt 3"}永久有效{else}{$obj.user_end_time|mac_day}{/if}</span></p>
+			</form>
+			</div>
+		</div>
+		</div>
+		<div class="co-right co-hi co-bottom">
+		<form action="" method="post" name="form3" id="form3">
+		<div class="sjhy-ts">
+		<p><span class="fen">点击需要的会员组和时长进行购买升级</span></p>
+		</div>
+		<div class="shengji">
+		 <!-- BEGIN row -->
+		 <ul>
+		{volist name="group_list" id="vo"}
+			 {if condition="$vo.group_id gt 2 && $vo.group_status eq 1"}
+			 <li><a class="grade" data-id="{$vo.group_id}" data-name="{$vo.group_name}" data-points="{$vo.group_points_day}" data-long="day">
+			     <i class="iconfont huang">&#xe638;</i>
+				 {$vo.group_name}-包天-<span class="fen">{$vo.group_points_day}</span>积分
+				 <i class="iconfont hyico-right">&#xe623;</i>
+				 <span class="sj-right">升级</span>
+			 </a></li>
+			<li><a class="grade" data-id="{$vo.group_id}" data-name="{$vo.group_name}" data-points="{$vo.group_points_week}" data-long="week">
+			    <i class="iconfont lan">&#xe638;</i>
+				{$vo.group_name}-包周-<span class="fen">{$vo.group_points_week}</span>积分
+				 <i class="iconfont hyico-right">&#xe623;</i>
+				 <span class="sj-right">升级</span>
+			</a></li>
+			<li><a class="grade" data-id="{$vo.group_id}" data-name="{$vo.group_name}" data-points="{$vo.group_points_month}" data-long="month">
+			    <i class="iconfont hong">&#xe638;</i>
+				{$vo.group_name}-包月-<span class="fen">{$vo.group_points_month}</span>积分
+				 <i class="iconfont hyico-right">&#xe623;</i>
+				 <span class="sj-right">升级</span>
+			</a></li>
+			<li><a class="grade" data-id="{$vo.group_id}" data-name="{$vo.group_name}" data-points="{$vo.group_points_year}" data-long="year">
+			    <i class="iconfont zi">&#xe638;</i>
+				{$vo.group_name}-包年-<span class="fen">{$vo.group_points_year}</span>积分
+				 <i class="iconfont hyico-right">&#xe623;</i>
+				 <span class="sj-right">升级</span>
+			</a></li>
+			 {/if}
+		 {/volist}
+		 </ul>
+		 <!-- END row -->
+		</div>
+	</form>
+   </div>
+    </div>
+    </div>
+<script>
+	
+		$('.grade').click(function(){
+			var that=$(this);
+			var group_id = that.attr('data-id');
+			var group_name = that.attr('data-name');
+			var long = that.attr('data-long');
+			var points = that.attr('data-points');
+	
+			if(confirm('确定要升级到【'+group_name+'】吗,需要花费【'+points+'】积分')) {
+				$.ajax({
+					url: "{:url('user/upgrade')}",
+					type: "post",
+					dataType: "json",
+					data: {group_id: group_id,long:long },
+					beforeSend: function () {
+						$("#btn_submit").css("background","#fd6a6a").val("loading...");
+					},
+					success: function (r) {
+						alert(r.msg);
+						if (r.code == 1) {
+							location.reload();
+						}
+					},
+					complete: function () {
+						$("#btn_submit").css("background","#fa4646").val("提交");
+					}
+				});
+			}
+		});
+</script>
+{include file="user/foot" /}
+</body>
+</html>

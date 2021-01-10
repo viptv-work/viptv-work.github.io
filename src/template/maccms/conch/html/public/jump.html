@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE10" />
+	<meta name="renderer" content="webkit|ie-comp|ie-stand">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>系统提示......</title>
+    <link rel="stylesheet" href="{$maccms.path_tpl}asset/css/hlstyle.css">
+    <script src="{$maccms.path_tpl}asset/js/hlhtml.js"></script>
+    <style>
+        body{background:#fff;}
+    </style>
+</head>
+<body>
+
+<div class="weui_msg_jump">
+    <div class="weui_icon"><i class="iconfont weui_icon_msg">&#xe636;</i></div>
+    <div class="weui_text">
+        <h4 class="weui_msg_title">系统提示</h4>
+        <p class="weui_xtts">亲爱的：{$msg}</p>
+        <p class="weui_tzt">页面自动 <a id="href" href="<?php echo($url);?>">跳转</a> 等待时间：<b id="wait"><?php echo($wait);?></b></p>
+    </div>
+</div>
+
+<script type="text/javascript">
+    (function(){
+        var wait = document.getElementById('wait'),
+                href = document.getElementById('href').href;
+        var interval = setInterval(function(){
+            var time = --wait.innerHTML;
+            if(time <= 0) {
+                location.href = href;
+                clearInterval(interval);
+            };
+        }, 1000);
+    })();
+</script>
+</body>
+</html>

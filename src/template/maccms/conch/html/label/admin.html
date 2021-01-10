@@ -1,0 +1,934 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>vfed主题设置</title>
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="__STATIC__/layui/css/layui.css" rel="stylesheet" type="text/css" />
+
+
+<script type="text/javascript">var vfed = {'path': '{$maccms.path}','tpls': '{$maccms.path_tpl}','name': '{$_COOKIE["admin_name"]}'};</script>
+<script src="__STATIC__/layui/layui.js" type="text/javascript" charset="utf-8"></script>
+<script src="{$maccms.path_tpl}js/admin.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+<div class="page-container">
+<div class="fed-admin-picture" style="display:none;position:absolute;z-index:1;background:#fff;"><img class="fed-admin-images" width="120" height="auto"></div>
+<form class="layui-form layui-form-pane" action="{$maccms.path_tpl}asset/fed/create.php?id=opt&name={$_COOKIE['admin_name']}">
+<div class="layui-tab">
+<ul class="layui-tab-title">
+<li class="layui-this">主题设置</li>
+<li>基本设置</li>
+<li>首页设置</li>
+<li>播放设置</li>
+<li>SEO设置</li>
+<li>导航设置</li>
+<li>其他设置</li>
+<li>广告设置</li>
+</ul>
+<div class="layui-tab-content">
+<div class="layui-tab-item layui-show">
+<blockquote class="layui-elem-quote layui-quote-nm">
+<p>欢迎使用大橙影视模板 {$versio['name']}，修改前请备份相关文件！以免数据丢失！</p>
+<p>当前主题版本：<span class="fed-admin-version">{$versio['version']}</span><span class="fed-admin-newset"><font color="green" style="margin:0 10px">已经是最新版啦！</font></span></p>
+</blockquote>
+<table class="layui-table">
+<colgroup>
+<col width="100">
+<col width="150">
+<col>
+</colgroup>
+<thead>
+<tr>
+<th colspan="2" scope="col">主题简介</th>
+<th colspan="1" scope="col">使用说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>名称</td>
+<td><a href="{$versio['website']}" target="_blank">{$versio['name']}</a></td>
+<td>1. PHP版本≥5.6</td>
+</tr>
+<tr>
+<td>作者</td>
+<td><a href="{$versio['website']}" target="_blank">{$versio['author']}</a></td>
+<td>2. 主题文件读写权限755</td>
+</tr>
+<tr>
+<td>官方网站</td>
+<td><a href="{$versio['website']}" target="_blank">{$versio['website']}</a></td>
+<td>3. 不支持IE8及以下浏览器</td>
+</tr>
+<tr>
+<td>使用教程</td>
+<td><a href="{$versio['tutorial']}" target="_blank">{$versio['tutorial']}</a></td>
+<td>4. 使用盗版主题遇到任何问题本人概不负责</td>
+</tr>
+<tr>
+<td>作者QQ</td>
+<td><a href="https://wpa.qq.com/msgrd?v=3&uin={$versio['qqnumber']}&site=qq&menu=yes" target="_blank">{$versio['qqnumber']}</a></td>
+<td>5. 旧版主题不予维护，如有bug请使用最新版</td>
+</tr>
+<tr>
+<td>交流群</td>
+<td><a href="https://jq.qq.com/?_wv=1027&k={$versio['qqjoin']}" target="_blank">{$versio['qqgroup']}</a></td>
+<td>6. 因主题是可复制的商品，售出后一律不予退款</td>
+</tr>
+<tr>
+<td>更新时间</td>
+<td><a href="{$versio['website']}" target="_blank">{$versio['lastdate']}</a></td>
+<td>7. 退出售后群即视为放弃使用本主题</td>
+</tr>
+<tr>
+<td>版本号</td>
+<td><a href="{$versio['website']}" target="_blank">{$versio['version']}</a></td>
+<td>8. 不提供免费个性化修改服务</td>
+</tr>
+<tr>
+<td colspan="3">授权者务必尊重知识产权，严格保证不恶意传播产品源码、不得直接对授权的产品本身进行二次转售或倒卖等。否则我们有权利收回产品授权。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="layui-tab-item">
+<div class="layui-form-item">
+<label class="layui-form-label">网页图标</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[main][icon]" placeholder="图片地址或路径" value="{$vfedcc['main']['icon']}" class="layui-input upload-input">
+</div>
+<div class="layui-input-inline">
+<button type="button" class="layui-btn layui-btn-primary layui-upload" lay-data="{data:{thumb:0,thumb_class:'site[site_logo]'}}">上传图片</button>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">懒加载图</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[main][lazy]" placeholder="图片地址或路径" value="{$vfedcc['main']['lazy']}" class="layui-input upload-input">
+</div>
+<div class="layui-input-inline">
+<button type="button" class="layui-btn layui-btn-primary layui-upload" lay-data="{data:{thumb:0,thumb_class:'site[site_logo]'}}">上传图片</button>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">大轮播图</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[main][bigs]" placeholder="图片地址或路径" value="{$vfedcc['main']['bigs']}" class="layui-input upload-input">
+</div>
+<div class="layui-input-inline">
+<button type="button" class="layui-btn layui-btn-primary layui-upload" lay-data="{data:{thumb:0,thumb_class:'site[site_logo]'}}">上传图片</button>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">网页背景</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[main][back]" placeholder="图片地址或路径" value="{$vfedcc['main']['back']}" class="layui-input upload-input">
+</div>
+<div class="layui-input-inline">
+<button type="button" class="layui-btn layui-btn-primary layui-upload" lay-data="{data:{thumb:0,thumb_class:'site[site_logo]'}}">上传图片</button>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">图片圆角</label>
+<div class="layui-input-inline">
+<select name="vfed[main][wane][state]" lay-verify="required">
+<option value="1" {if$vfedcc['main']['wane']['state']==1} selected{ if}>开启</option>
+<option value="0" {if$vfedcc['main']['wane']['state']==0} selected{ if}>关闭</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[main][wane][value]" placeholder="5px" value="{$vfedcc['main']['wane']['value']}" class="layui-input">
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">主题版权</label>
+<div class="layui-input-block">
+<input type="text" name="vfed[main][copy]" placeholder="vfed 3.1" value="{$vfedcc['main']['copy']}" class="layui-input">
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">头部代码</label>
+<div class="layui-input-block">
+<textarea name="vfed[main][meta]" class="layui-textarea" placeholder="HTML标签验证代码，CSS样式代码">{$vfedcc['main']['meta']}</textarea>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">底部提示</label>
+<div class="layui-input-block">
+<textarea name="vfed[main][foot]" class="layui-textarea" placeholder="免责声明">{$vfedcc['main']['foot']}</textarea>
+</div>
+</div>
+</div>
+<div class="layui-tab-item">
+<div class="layui-form-item">
+<label class="layui-form-label">大图轮播</label>
+<div class="layui-input-inline">
+<select name="vfed[home][slide][value]" lay-verify="required">
+<option value="6" {if$vfedcc['home']['slide']['value']==6} selected{ if}>6个</option>
+<option value="9" {if$vfedcc['home']['slide']['value']==9} selected{ if}>9个</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[home][slide][state]" value="1" title="显示" {if$vfedcc['home']['slide']['state']==1} checked{ if}>
+<input type="radio" name="vfed[home][slide][state]" value="0" title="隐藏" {if$vfedcc['home']['slide']['state']==0} checked{ if}>
+</div>
+<div class="layui-form-mid layui-word-aux">视频/文章/专题推荐5</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">分类菜单</label>
+<div class="layui-input-inline">
+<select name="vfed[home][menu][value]" lay-verify="required">
+<option value="1" {if$vfedcc['home']['menu']['value']==1} selected{ if}>4个</option>
+<option value="2" {if$vfedcc['home']['menu']['value']==2} selected{ if}>8个</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[home][menu][state]" value="1" title="显示" {if$vfedcc['home']['menu']['state']==1} checked{ if}>
+<input type="radio" name="vfed[home][menu][state]" value="0" title="隐藏" {if$vfedcc['home']['menu']['state']==0} checked{ if}>
+</div>
+<div class="layui-form-mid layui-word-aux">移动端轮播下方分类菜单设置</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">站点公告</label>
+<div class="layui-input-inline">
+<select name="vfed[home][note][value]" lay-verify="required">
+<option value="1" {if$vfedcc['home']['note']['value']==1} selected{ if}>静态</option>
+<option value="0" {if$vfedcc['home']['note']['value']==0} selected{ if}>滚动</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[home][note][state]" value="1" title="显示" {if$vfedcc['home']['note']['state']==1} checked{ if}>
+<input type="radio" name="vfed[home][note][state]" value="0" title="隐藏" {if$vfedcc['home']['note']['state']==0} checked{ if}>
+</div>
+<div class="layui-form-mid layui-word-aux">文章推荐1/留言板公告文章推荐2</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">小图轮播</label>
+<div class="layui-input-inline">
+<select name="vfed[home][small][value]" lay-verify="required">
+<option value="3" {if$vfedcc['home']['small']['value']==3} selected{ if}>3个</option>
+<option value="5" {if$vfedcc['home']['small']['value']==5} selected{ if}>5个</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[home][small][state]" value="1" title="显示" {if$vfedcc['home']['small']['state']==1} checked{ if}>
+<input type="radio" name="vfed[home][small][state]" value="0" title="隐藏" {if$vfedcc['home']['small']['state']==0} checked{ if}>
+</div>
+<div class="layui-form-mid layui-word-aux">轮播视频推荐5/右侧视频推荐3</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">吐血推荐</label>
+<div class="layui-input-inline">
+<select name="vfed[home][shop][value]" lay-verify="required">
+<option value="3" {if$vfedcc['home']['shop']['value']==3} selected{ if}>3个</option>
+<option value="6" {if$vfedcc['home']['shop']['value']==6} selected{ if}>6个</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[home][shop][state]" value="1" title="显示" {if$vfedcc['home']['shop']['state']==1} checked{ if}>
+<input type="radio" name="vfed[home][shop][state]" value="0" title="隐藏" {if$vfedcc['home']['shop']['state']==0} checked{ if}>
+</div>
+<div class="layui-form-mid layui-word-aux">文章推荐6</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">影院热映</label>
+<div class="layui-input-inline">
+<select name="vfed[home][hots][value]" lay-verify="required">
+<option value="6" {if$vfedcc['home']['hots']['value']==6} selected{ if}>6个</option>
+<option value="12" {if$vfedcc['home']['hots']['value']==12} selected{ if}>12个</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[home][hots][title]" placeholder="请输入标题" value="{$vfedcc['home']['hots']['title']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[home][hots][state]" value="1" title="显示" {if$vfedcc['home']['hots']['state']==1} checked{ if}>
+<input type="radio" name="vfed[home][hots][state]" value="0" title="隐藏" {if$vfedcc['home']['hots']['state']==0} checked{ if}>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">本周更新</label>
+<div class="layui-input-inline">
+<select name="vfed[home][week][value]" lay-verify="required">
+<option value="6" {if$vfedcc['home']['week']['value']==6} selected{ if}>6个</option>
+<option value="12" {if$vfedcc['home']['week']['value']==12} selected{ if}>12个</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[home][week][title]" placeholder="请输入标题" value="{$vfedcc['home']['week']['title']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[home][week][state]" value="1" title="显示" {if$vfedcc['home']['week']['state']==1} checked{ if}>
+<input type="radio" name="vfed[home][week][state]" value="0" title="隐藏" {if$vfedcc['home']['week']['state']==0} checked{ if}>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">最新视频</label>
+<div class="layui-input-inline">
+<select name="vfed[home][video][value]" lay-verify="required">
+<option value="6" {if$vfedcc['home']['video']['value']==6} selected{ if}>6个</option>
+<option value="12" {if$vfedcc['home']['video']['value']==12} selected{ if}>12个</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[home][video][title]" placeholder="请输入标题" value="{$vfedcc['home']['video']['title']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[home][video][state]" value="1" title="显示" {if$vfedcc['home']['video']['state']==1} checked{ if}>
+<input type="radio" name="vfed[home][video][state]" value="0" title="隐藏" {if$vfedcc['home']['video']['state']==0} checked{ if}>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">精品推荐</label>
+<div class="layui-input-inline">
+<select name="vfed[home][taoke][value]" lay-verify="required">
+<option value="6" {if$vfedcc['home']['taoke']['value']==6} selected{ if}>6个</option>
+<option value="12" {if$vfedcc['home']['taoke']['value']==12} selected{ if}>12个</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[home][taoke][title]" placeholder="请输入标题" value="{$vfedcc['home']['taoke']['title']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[home][taoke][state]" value="1" title="显示" {if$vfedcc['home']['taoke']['state']==1} checked{ if}>
+<input type="radio" name="vfed[home][taoke][state]" value="0" title="隐藏" {if$vfedcc['home']['taoke']['state']==0} checked{ if}>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">最新资讯</label>
+<div class="layui-input-inline">
+<select name="vfed[home][news][value]" lay-verify="required">
+<option value="4" {if$vfedcc['home']['news']['value']==4} selected{ if}>4个</option>
+<option value="8" {if$vfedcc['home']['news']['value']==8} selected{ if}>8个</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[home][news][title]" placeholder="请输入标题" value="{$vfedcc['home']['news']['title']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[home][news][state]" value="1" title="显示" {if$vfedcc['home']['news']['state']==1} checked{ if}>
+<input type="radio" name="vfed[home][news][state]" value="0" title="隐藏" {if$vfedcc['home']['news']['state']==0} checked{ if}>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">分类列表</label>
+<div class="layui-input-inline">
+<select name="vfed[home][class][value]" lay-verify="required">
+<option value="6" {if$vfedcc['home']['class']['value']==6} selected{ if}>6个</option>
+<option value="12" {if$vfedcc['home']['class']['value']==12} selected{ if}>12个</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<select name="vfed[home][class][class]" lay-verify="required">
+<option value="4" {if$vfedcc['home']['class']['class']==4} selected{ if}>4个分类</option>
+<option value="6" {if$vfedcc['home']['class']['class']==6} selected{ if}>6个分类</option>
+<option value="8" {if$vfedcc['home']['class']['class']==8} selected{ if}>8个分类</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[home][class][state]" value="1" title="显示" {if$vfedcc['home']['class']['state']==1} checked{ if}>
+<input type="radio" name="vfed[home][class][state]" value="0" title="隐藏" {if$vfedcc['home']['class']['state']==0} checked{ if}>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">明星列表</label>
+<div class="layui-input-inline">
+<select name="vfed[home][actor][value]" lay-verify="required">
+<option value="6" {if$vfedcc['home']['actor']['value']==6} selected{ if}>6个</option>
+<option value="12" {if$vfedcc['home']['actor']['value']==12} selected{ if}>12个</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[home][actor][title]" placeholder="请输入标题" value="{$vfedcc['home']['actor']['title']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[home][actor][state]" value="1" title="显示" {if$vfedcc['home']['actor']['state']==1} checked{ if}>
+<input type="radio" name="vfed[home][actor][state]" value="0" title="隐藏" {if$vfedcc['home']['actor']['state']==0} checked{ if}>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">专题列表</label>
+<div class="layui-input-inline">
+<select name="vfed[home][topic][value]" lay-verify="required">
+<option value="3" {if$vfedcc['home']['topic']['value']==3} selected{ if}>3个</option>
+<option value="6" {if$vfedcc['home']['topic']['value']==6} selected{ if}>6个</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[home][topic][title]" placeholder="请输入标题" value="{$vfedcc['home']['topic']['title']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[home][topic][state]" value="1" title="显示" {if$vfedcc['home']['topic']['state']==1} checked{ if}>
+<input type="radio" name="vfed[home][topic][state]" value="0" title="隐藏" {if$vfedcc['home']['topic']['state']==0} checked{ if}>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">友情链接</label>
+<div class="layui-input-inline">
+<select name="vfed[home][link][value]" lay-verify="required">
+<option value="20" {if$vfedcc['home']['link']['value']==20} selected{ if}>20个</option>
+<option value="40" {if$vfedcc['home']['link']['value']==40} selected{ if}>40个</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[home][link][title]" placeholder="请输入标题" value="{$vfedcc['home']['link']['title']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[home][link][state]" value="1" title="显示" {if$vfedcc['home']['link']['state']==1} checked{ if}>
+<input type="radio" name="vfed[home][link][state]" value="0" title="隐藏" {if$vfedcc['home']['link']['state']==0} checked{ if}>
+</div>
+</div>
+</div>
+<div class="layui-tab-item">
+<div class="layui-form-item">
+<label class="layui-form-label">播放配置</label>
+<div class="layui-input-inline">
+<div class="layui-btn-group">
+<a class="layui-btn layui-btn-primary fed-admin-player" href="javascript:;" data-href="application/extra/vodserver.php" data-copy="../../asset/fed/server.php">&nbsp;一键配置视频播放解析&nbsp;&nbsp;</a>
+</div>
+</div>
+<label class="layui-form-label">默认解析</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[play][parse]" placeholder="默认解析接口" value="{$vfedcc['play']['parse']}" class="layui-input">
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">视频加密</label>
+<div class="layui-input-inline">
+<select name="vfed[play][pass]" lay-verify="required">
+<option value="1" {if$vfedcc['play']['pass']==1} selected{ if}>开启</option>
+<option value="0" {if$vfedcc['play']['pass']==0} selected{ if}>关闭</option>
+</select>
+</div>
+<label class="layui-form-label">视频弹幕</label>
+<div class="layui-input-inline">
+<select name="vfed[play][danmu]" lay-verify="required">
+<option value="1" {if$vfedcc['play']['danmu']==1} selected{ if}>开启</option>
+<option value="0" {if$vfedcc['play']['danmu']==0} selected{ if}>关闭</option>
+</select>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">自动播放</label>
+<div class="layui-input-inline">
+<select name="vfed[play][auto]" lay-verify="required">
+<option value="1" {if$vfedcc['play']['auto']==1} selected{ if}>开启</option>
+<option value="0" {if$vfedcc['play']['auto']==0} selected{ if}>关闭</option>
+</select>
+</div>
+<label class="layui-form-label">切换接口</label>
+<div class="layui-input-inline">
+<select name="vfed[play][apis]" lay-verify="required">
+<option value="1" {if$vfedcc['play']['apis']==1} selected{ if}>开启</option>
+<option value="0" {if$vfedcc['play']['apis']==0} selected{ if}>关闭</option>
+</select>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">桌面端高度</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[play][high][pgao]" placeholder="PC端高度" value="{$vfedcc['play']['high']['pgao']}" class="layui-input">
+</div>
+<label class="layui-form-label">移动端高度</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[play][high][wgao]" placeholder="WAP端高度" value="{$vfedcc['play']['high']['wgao']}" class="layui-input">
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">加载提示</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[play][tips]" placeholder="请输入加载提示" value="{$vfedcc['play']['tips']}" class="layui-input">
+</div>
+<label class="layui-form-label">侵权提示</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[play][copy]" placeholder="请输入侵权提示" value="{$vfedcc['play']['copy']}" class="layui-input">
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">广告设置</label>
+<div class="layui-input-inline">
+<select name="vfed[play][advs][state]" lay-verify="required">
+<option value="2" {if$vfedcc['play']['advs']['state']==2} selected{ if}>会员隐藏</option>
+<option value="1" {if$vfedcc['play']['advs']['state']==1} selected{ if}>显示广告</option>
+<option value="0" {if$vfedcc['play']['advs']['state']==0} selected{ if}>关闭广告</option>
+</select>
+</div>
+<label class="layui-form-label">广告时间</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[play][advs][time]" placeholder="请输入广告时间" value="{$vfedcc['play']['advs']['time']}" class="layui-input">
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">广告链接</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[play][advs][link]" placeholder="请输入广告链接" value="{$vfedcc['play']['advs']['link']}" class="layui-input">
+</div>
+<label class="layui-form-label">广告提示</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[play][advs][tips]" placeholder="广告倒计时提示" value="{$vfedcc['play']['advs']['tips']}" class="layui-input">
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">视频LOGO</label>
+<div class="layui-input-inline">
+<select name="vfed[play][logo][state]" lay-verify="required">
+<option value="1" {if$vfedcc['play']['logo']['state']==1} selected{ if}>开启</option>
+<option value="0" {if$vfedcc['play']['logo']['state']==0} selected{ if}>关闭</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[play][logo][value]" placeholder="图片地址或路径" value="{$vfedcc['play']['logo']['value']}" class="layui-input upload-input">
+</div>
+<div class="layui-input-inline">
+<button type="button" class="layui-btn layui-btn-primary layui-upload" lay-data="{data:{thumb:0,thumb_class:'site[site_logo]'}}">上传图片</button>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">视频封面</label>
+<div class="layui-input-inline">
+<select name="vfed[play][pics][state]" lay-verify="required">
+<option value="1" {if$vfedcc['play']['pics']['state']==1} selected{ if}>开启</option>
+<option value="0" {if$vfedcc['play']['pics']['state']==0} selected{ if}>关闭</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[play][pics][value]" placeholder="图片地址或路径" value="{$vfedcc['play']['pics']['value']}" class="layui-input upload-input">
+</div>
+<div class="layui-input-inline">
+<button type="button" class="layui-btn layui-btn-primary layui-upload" lay-data="{data:{thumb:0,thumb_class:'site[site_logo]'}}">上传图片</button>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">扫码观看</label>
+<div class="layui-input-inline">
+<select name="vfed[play][code][state]" lay-verify="required">
+<option value="1" {if$vfedcc['play']['code']['state']==1} selected{ if}>开启</option>
+<option value="0" {if$vfedcc['play']['code']['state']==0} selected{ if}>关闭</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[play][code][value]" placeholder="图片地址或路径" value="{$vfedcc['play']['code']['value']}" class="layui-input upload-input">
+</div>
+<div class="layui-input-inline">
+<button type="button" class="layui-btn layui-btn-primary layui-upload" lay-data="{data:{thumb:0,thumb_class:'site[site_logo]'}}">上传图片</button>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">统计代码</label>
+<div class="layui-input-block">
+<textarea name="vfed[play][stat]" class="layui-textarea" placeholder="统计代码">{$vfedcc['play']['stat']}</textarea>
+</div>
+</div>
+</div>
+<div class="layui-tab-item">
+<div class="layui-form-item">
+<label class="layui-form-label">网站首页</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][index][title]" placeholder="标题" value="{$vfedcc['seos']['index']['title']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][index][word]" placeholder="关键字" value="{$vfedcc['seos']['index']['word']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][index][info]" placeholder="描述" value="{$vfedcc['seos']['index']['info']}" class="layui-input">
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">视频详情</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][vinfo][title]" placeholder="标题" value="{$vfedcc['seos']['vinfo']['title']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][vinfo][word]" placeholder="关键字" value="{$vfedcc['seos']['vinfo']['word']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][vinfo][info]" placeholder="描述" value="{$vfedcc['seos']['vinfo']['info']}" class="layui-input">
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">视频播放</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][vplay][title]" placeholder="标题" value="{$vfedcc['seos']['vplay']['title']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][vplay][word]" placeholder="关键字" value="{$vfedcc['seos']['vplay']['word']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][vplay][info]" placeholder="描述" value="{$vfedcc['seos']['vplay']['info']}" class="layui-input">
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">文章首页</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][artic][title]" placeholder="标题" value="{$vfedcc['seos']['artic']['title']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][artic][word]" placeholder="关键字" value="{$vfedcc['seos']['artic']['word']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][artic][info]" placeholder="描述" value="{$vfedcc['seos']['artic']['info']}" class="layui-input">
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">文章详情</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][rinfo][title]" placeholder="标题" value="{$vfedcc['seos']['rinfo']['title']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][rinfo][word]" placeholder="关键字" value="{$vfedcc['seos']['rinfo']['word']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][rinfo][info]" placeholder="描述" value="{$vfedcc['seos']['rinfo']['info']}" class="layui-input">
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">专题首页</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][topic][title]" placeholder="标题" value="{$vfedcc['seos']['topic']['title']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][topic][word]" placeholder="关键字" value="{$vfedcc['seos']['topic']['word']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][topic][info]" placeholder="描述" value="{$vfedcc['seos']['topic']['info']}" class="layui-input">
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">专题详情</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][tinfo][title]" placeholder="标题" value="{$vfedcc['seos']['tinfo']['title']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][tinfo][word]" placeholder="关键字" value="{$vfedcc['seos']['tinfo']['word']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][tinfo][info]" placeholder="描述" value="{$vfedcc['seos']['tinfo']['info']}" class="layui-input">
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">明星首页</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][actor][title]" placeholder="标题" value="{$vfedcc['seos']['actor']['title']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][actor][word]" placeholder="关键字" value="{$vfedcc['seos']['actor']['word']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][actor][info]" placeholder="描述" value="{$vfedcc['seos']['actor']['info']}" class="layui-input">
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">明星详情</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][ainfo][title]" placeholder="标题" value="{$vfedcc['seos']['ainfo']['title']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][ainfo][word]" placeholder="关键字" value="{$vfedcc['seos']['ainfo']['word']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[seos][ainfo][info]" placeholder="描述" value="{$vfedcc['seos']['ainfo']['info']}" class="layui-input">
+</div>
+</div>
+</div>
+<div class="layui-tab-item">
+<div class="layui-form-item">
+<label class="layui-form-label">资讯菜单</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[navs][arts][name]" placeholder="请输入名称" value="{$vfedcc['navs']['arts']['name']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[navs][arts][link]" placeholder="请输入链接" value="{$vfedcc['navs']['arts']['link']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[navs][arts][state]" value="1" title="显示" {if$vfedcc['navs']['arts']['state']==1} checked{ if}>
+<input type="radio" name="vfed[navs][arts][state]" value="0" title="隐藏" {if$vfedcc['navs']['arts']['state']==0} checked{ if}>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">直播菜单</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[navs][live][name]" placeholder="请输入名称" value="{$vfedcc['navs']['live']['name']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[navs][live][link]" placeholder="请输入链接" value="{$vfedcc['navs']['live']['link']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[navs][live][state]" value="1" title="显示" {if$vfedcc['navs']['live']['state']==1} checked{ if}>
+<input type="radio" name="vfed[navs][live][state]" value="0" title="隐藏" {if$vfedcc['navs']['live']['state']==0} checked{ if}>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">音乐菜单</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[navs][song][name]" placeholder="请输入名称" value="{$vfedcc['navs']['song']['name']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[navs][song][link]" placeholder="请输入链接" value="{$vfedcc['navs']['song']['link']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[navs][song][state]" value="1" title="显示" {if$vfedcc['navs']['song']['state']==1} checked{ if}>
+<input type="radio" name="vfed[navs][song][state]" value="0" title="隐藏" {if$vfedcc['navs']['song']['state']==0} checked{ if}>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">专题菜单</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[navs][topic][name]" placeholder="请输入名称" value="{$vfedcc['navs']['topic']['name']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[navs][topic][link]" placeholder="请输入链接" value="{$vfedcc['navs']['topic']['link']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[navs][topic][state]" value="1" title="显示" {if$vfedcc['navs']['topic']['state']==1} checked{ if}>
+<input type="radio" name="vfed[navs][topic][state]" value="0" title="隐藏" {if$vfedcc['navs']['topic']['state']==0} checked{ if}>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">留言菜单</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[navs][gbook][name]" placeholder="请输入名称" value="{$vfedcc['navs']['gbook']['name']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[navs][gbook][link]" placeholder="请输入链接" value="{$vfedcc['navs']['gbook']['link']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[navs][gbook][state]" value="1" title="显示" {if$vfedcc['navs']['gbook']['state']==1} checked{ if}>
+<input type="radio" name="vfed[navs][gbook][state]" value="0" title="隐藏" {if$vfedcc['navs']['gbook']['state']==0} checked{ if}>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">导航菜单</label>
+<div class="layui-input-inline">
+<select name="vfed[navs][head][value]" lay-verify="required">
+<option value="2" {if$vfedcc['navs']['head']['value']==2} selected{ if}>2个</option>
+<option value="3" {if$vfedcc['navs']['head']['value']==3} selected{ if}>3个</option>
+<option value="4" {if$vfedcc['navs']['head']['value']==4} selected{ if}>4个</option>
+<option value="5" {if$vfedcc['navs']['head']['value']==5} selected{ if}>5个</option>
+<option value="6" {if$vfedcc['navs']['head']['value']==6} selected{ if}>6个</option>
+<option value="7" {if$vfedcc['navs']['head']['value']==7} selected{ if}>7个</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[navs][head][state]" value="1" title="显示" {if$vfedcc['navs']['head']['state']==1} checked{ if}>
+<input type="radio" name="vfed[navs][head][state]" value="0" title="隐藏" {if$vfedcc['navs']['head']['state']==0} checked{ if}>
+</div>
+<div class="layui-form-mid layui-word-aux">PC端导航菜单按钮</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">独立搜索框</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[navs][case][value]" placeholder="请输入提示" value="{$vfedcc['navs']['case']['value']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="radio" name="vfed[navs][case][state]" value="1" title="显示" {if$vfedcc['navs']['case']['state']==1} checked{ if}>
+<input type="radio" name="vfed[navs][case][state]" value="0" title="隐藏" {if$vfedcc['navs']['case']['state']==0} checked{ if}>
+</div>
+<div class="layui-form-mid layui-word-aux">移动端搜索框</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">底部导航</label>
+<div class="layui-input-inline">
+<select name="vfed[navs][foot]" lay-verify="required">
+<option value="1" {if$vfedcc['navs']['foot']==1} selected{ if}>显示</option>
+<option value="0" {if$vfedcc['navs']['foot']==0} selected{ if}>隐藏</option>
+</select>
+</div>
+<div class="layui-form-mid layui-word-aux">底部导航默认开启</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">节点显示</label>
+<div class="layui-input-inline">
+<select name="vfed[navs][node]" lay-verify="required">
+<option value="1" {if$vfedcc['navs']['node']==1} selected{ if}>显示</option>
+<option value="0" {if$vfedcc['navs']['node']==0} selected{ if}>隐藏</option>
+</select>
+</div>
+<div class="layui-form-mid layui-word-aux">使用CloudFlare才有效</div>
+</div>
+</div>
+<div class="layui-tab-item">
+<div class="layui-form-item">
+<label class="layui-form-label">无图问题</label>
+<div class="layui-input-inline">
+<div class="layui-btn-group">
+<a class="layui-btn layui-btn-primary fed-admin-player" href="javascript:;" data-href="tu.php" data-copy="../../asset/fed/chains.php">一键添加tu.php到根目录</a>
+</div>
+</div>
+<div class="layui-form-mid layui-word-aux">解决采集TV6没有图片的问题</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">采集资源</label>
+<div class="layui-input-inline">
+<select name="vfed[rest][coll][href]" lay-verify="required">
+<option value="{$maccms.path_tpl}asset/js/collect.js" {if stristr($vfedcc['rest']['coll']['href'],$maccms['path_tpl'])==true} selected{ if}>vfed主题本地资源库</option>
+<option value="https://采集.雅丶涵.eu.org/collect.js" {if stristr($vfedcc['rest']['coll']['href'],'eu.org')==true} selected{ if}>vfed主题远程资源库</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<select name="vfed[rest][coll][state]" lay-verify="required">
+<option value="1" {if$vfedcc['rest']['coll']['state']==1} selected{ if}>开启自动采集</option>
+<option value="0" {if$vfedcc['rest']['coll']['state']==0} selected{ if}>关闭自动采集</option>
+</select>
+</div>
+<div class="layui-form-mid layui-word-aux">用户访问时触发采集</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">主题皮肤</label>
+<div class="layui-input-inline">
+<select name="vfed[rest][theme][skin]" lay-verify="required">
+<option value="0" {if$vfedcc['rest']['theme']['skin']==0} selected{ if}>白色皮肤</option>
+<option value="black" {if$vfedcc['rest']['theme']['skin']=='black'} selected{ if}>黑色皮肤</option>
+<option value="golds" {if$vfedcc['rest']['theme']['skin']=='golds'} selected{ if}>黑金搭配</option>
+<option value="glass" {if$vfedcc['rest']['theme']['skin']=='glass'} selected{ if}>透明皮肤</option>
+<option value="blues" {if$vfedcc['rest']['theme']['skin']=='blues'} selected{ if}>蓝色字体</option>
+<option value="green" {if$vfedcc['rest']['theme']['skin']=='green'} selected{ if}>绿色字体</option>
+<option value="pinks" {if$vfedcc['rest']['theme']['skin']=='pinks'} selected{ if}>粉色字体</option>
+<option value="colou" {if$vfedcc['rest']['theme']['skin']=='colou'} selected{ if}>彩色字体</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<select name="vfed[rest][theme][state]" lay-verify="required">
+<option value="1" {if$vfedcc['rest']['theme']['state']==1} selected{ if}>显示皮肤按钮</option>
+<option value="0" {if$vfedcc['rest']['theme']['state']==0} selected{ if}>隐藏皮肤按钮</option>
+</select>
+</div>
+<div class="layui-form-mid layui-word-aux">主题皮肤设置</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">分享按钮</label>
+<div class="layui-input-inline">
+<select name="vfed[rest][share][state]" lay-verify="required">
+<option value="1" {if$vfedcc['rest']['share']['state']==1} selected{ if}>显示</option>
+<option value="0" {if$vfedcc['rest']['share']['state']==0} selected{ if}>隐藏</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[rest][share][host]" placeholder="自定义域名" value="{$vfedcc['rest']['share']['host']}" class="layui-input">
+</div>
+<div class="layui-form-mid layui-word-aux">例如：https://vfed.eu.org</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">淘客秘钥</label>
+<div class="layui-input-inline">
+<input type="text" name="vfed[rest][taoke][dkey]" placeholder="请输入Key" value="{$vfedcc['rest']['taoke']['dkey']}" class="layui-input">
+</div>
+<div class="layui-input-inline">
+<input type="text" name="vfed[rest][taoke][home]" placeholder="请输入首页地址" value="{$vfedcc['rest']['taoke']['home']}" class="layui-input">
+</div>
+<div class="layui-form-mid layui-word-aux">
+<a href="http://www.dataoke.com/pmc/api-help.html" target="_blank">大淘客Key申请</a>
+<a href="http://www.dataoke.com/qlist/" style="color:#ff5722" target="_blank">选品库</a>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">弹窗公告</label>
+<div class="layui-input-inline">
+<select name="vfed[rest][note][state]" lay-verify="required">
+<option value="1" {if$vfedcc['rest']['note']['state']==1} selected{ if}>开启</option>
+<option value="0" {if$vfedcc['rest']['note']['state']==0} selected{ if}>关闭</option>
+</select>
+</div>
+<div class="layui-input-inline">
+<select name="vfed[rest][note][value]" lay-verify="required">
+<option value="1" {if$vfedcc['rest']['note']['value']==1} selected{ if}>每日1次</option>
+<option value="2" {if$vfedcc['rest']['note']['value']==2} selected{ if}>每日2次</option>
+<option value="3" {if$vfedcc['rest']['note']['value']==3} selected{ if}>每日3次</option>
+</select>
+</div>
+<div class="layui-form-mid layui-word-aux">文章推荐3</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">视频列表</label>
+<div class="layui-input-inline">
+<select name="vfed[rest][play]" lay-verify="required">
+<option value="6" {if$vfedcc['rest']['play']==6} selected{ if}>6个</option>
+<option value="12" {if$vfedcc['rest']['play']==12} selected{ if}>12个</option>
+</select>
+</div>
+<div class="layui-form-mid layui-word-aux">视频列表个数</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">文章列表</label>
+<div class="layui-input-inline">
+<select name="vfed[rest][arts]" lay-verify="required">
+<option value="10" {if$vfedcc['rest']['arts']==10} selected{ if}>10个</option>
+<option value="20" {if$vfedcc['rest']['arts']==20} selected{ if}>20个</option>
+</select>
+</div>
+<div class="layui-form-mid layui-word-aux">文章列表个数</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">字体繁简</label>
+<div class="layui-input-inline">
+<select name="vfed[rest][font]" lay-verify="required">
+<option value="0" {if$vfedcc['rest']['font']==0} selected{ if}>简体</option>
+<option value="1" {if$vfedcc['rest']['font']==1} selected{ if}>繁體</option>
+</select>
+</div>
+<div class="layui-form-mid layui-word-aux">网站繁简设置</div>
+</div>
+</div>
+<div class="layui-tab-item">
+<div class="layui-form-item">
+<label class="layui-form-label">广告开关</label>
+<div class="layui-input-inline">
+<select name="vfed[advs][fits][state]" lay-verify="required">
+<option value="2" {if$vfedcc['advs']['fits']['state']==2} selected{ if}>会员隐藏</option>
+<option value="1" {if$vfedcc['advs']['fits']['state']==1} selected{ if}>开启广告</option>
+<option value="0" {if$vfedcc['advs']['fits']['state']==0} selected{ if}>关闭广告</option>
+</select>
+</div>
+<div class="layui-form-mid layui-word-aux">全站广告设置开关</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">全站顶部</label>
+<div class="layui-input-block">
+<textarea name="vfed[advs][home][head]" class="layui-textarea" placeholder="全站顶部">{$vfedcc['advs']['home']['head']}</textarea>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">全站底飘</label>
+<div class="layui-input-block">
+<textarea name="vfed[advs][home][foot]" class="layui-textarea" placeholder="底飘广告">{$vfedcc['advs']['home']['foot']}</textarea>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">播放器上方</label>
+<div class="layui-input-block">
+<textarea name="vfed[advs][play][head]" class="layui-textarea" placeholder="播放器顶部">{$vfedcc['advs']['play']['head']}</textarea>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">播放器内部</label>
+<div class="layui-input-block">
+<textarea name="vfed[advs][play][inne]" class="layui-textarea" placeholder="某些联盟禁止解析放广告的同样可用,不限制,因为广告不在解析内">{$vfedcc['advs']['play']['inne']}</textarea>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">播放器下方</label>
+<div class="layui-input-block">
+<textarea name="vfed[advs][play][foot]" class="layui-textarea" placeholder="播放器底部">{$vfedcc['advs']['play']['foot']}</textarea>
+</div>
+</div>
+<div class="layui-form-item">
+<label class="layui-form-label">播放列表</label>
+<div class="layui-input-block">
+<textarea name="vfed[advs][play][list]" class="layui-textarea" placeholder="播放列表上方">{$vfedcc['advs']['play']['list']}</textarea>
+</div>
+</div>
+</div>
+<div class="layui-form-item">
+<div class="layui-input-block">
+<button type="submit" class="layui-btn" lay-submit="" lay-filter="formSubmit">立即保存</button>
+<button type="reset" class="layui-btn layui-btn-warm fed-admin-renews">默认设置</button>
+</div>
+</div>
+</div>
+</div>
+</form>
+</div>
+<script type="text/javascript" src="__STATIC__/js/admin_common.js"></script>
+</body>
+</html>

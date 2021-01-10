@@ -1,0 +1,55 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}vod/show.html-->{/if}
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/vod_show"}   
+	{include file="public/include"}
+</head>
+<body>
+	{include file="public/head"}
+    <div class="container">
+        <div class="row">
+        	
+        	{include file="vod/screen"}<!-- 筛选 -->
+
+            <div class="myui-panel active myui-panel-bg clearfix">
+				<div class="myui-panel-box clearfix">
+					<div class="myui-panel_bd">
+						<ul class="myui-vodlist clearfix">
+							{maccms:vod num="'.$mytheme['type']['num'].'" paging="yes" pageurl="vod/show" type="current" order="desc" by="time"}
+							<li class="col-lg-{$mytheme.col.lg} col-md-{$mytheme.col.md} col-sm-{$mytheme.col.sm} col-xs-{$mytheme.col.xs}">
+								{include file="block/vod_box"}<!-- 列表-->													
+							</li>
+							{/maccms:vod}
+						</ul>	
+					</div>
+					{empty name="__LIST__"}
+					<div class="container min">
+        				<div class="row">
+						{include file="block/vod_no"}<!-- 无结果 -->
+						</div>
+					</div>
+    				{/empty}
+				</div>				
+			</div>		
+			
+			{if $mytheme.type_ad && $mytheme.type_ad1}
+			<div class="myui-panel myui-panel-bg clearfix">
+				<div class="myui-panel-box clearfix">
+					<div class="myui-panel_bd">
+						<div class="col-xs-1">
+							{$mytheme.type_ad1}
+						</div>
+					</div>
+				</div>				
+			</div>
+			{/if}
+			
+			{include file="public/page"}<!-- 翻页-->		
+			
+        </div>
+    </div>
+	{include file="public/foot"}
+</body>
+</html>

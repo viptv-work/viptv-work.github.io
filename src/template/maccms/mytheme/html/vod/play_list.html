@@ -1,0 +1,157 @@
+{if $mytheme.playlist.is}
+	{if condition="$mytheme.playlist.style eq 'list'"}
+		{maccms:foreach name="obj.vod_play_list" id="vo"}
+		<div class="myui-panel myui-panel-bg clearfix">
+			<div class="myui-panel-box clearfix">
+				<div class="myui-panel_hd">
+					<div class="myui-panel__head bottom-line active clearfix">
+						{if $mytheme.playlist.sort}<a class="more sort-button pull-right" href="javascript:;"><i class="fa fa-sort-amount-asc"></i> 排序</a>{/if}
+						<h3 class="title">
+							{$vo.player_info.show}
+						</h3>	
+						{if $mytheme.playlist.tip}
+						<span class="more text-muted">{$vo.player_info.tip}</span>
+						{/if}
+					</div>																		
+				</div>
+				<div class="myui-panel_bd clearfix">
+					{include file="block/vod_play_list"}
+				</div>
+			</div>
+		</div>
+		{/maccms:foreach}
+	{elseif condition="$mytheme.playlist.style eq 'btn'"}
+		{notempty name="obj.vod_play_list"}
+		<div class="myui-panel myui-panel-bg clearfix">
+			<div class="myui-panel-box clearfix">
+				<div class="myui-panel_hd">
+					<div class="myui-panel__head active bottom-line clearfix">
+						{if $mytheme.playlist.sort}<a class="more sort-button pull-right" href="javascript:;"><i class="fa fa-sort-amount-asc"></i> 排序</a>{/if}
+						<h3 class="title">
+							{$mytheme.playlist.title}
+						</h3>
+					</div>	
+					<div class="mt15 bottom-line" style="padding: 8px 0;">
+						<ul class="nav nav-btn clearfix">
+							{maccms:foreach name="obj.vod_play_list" id="vo" by="sort"}	
+							<li{if condition="$param.sid eq $vo.sid"} class="active"{/if}><a href="#playlist{$key}" data-toggle="tab">{$vo.player_info.show}</a></li>
+							{/maccms:foreach}								
+						</ul>
+					</div>																	
+				</div>
+				<div class="tab-content myui-panel_bd">
+					{maccms:foreach name="obj.vod_play_list" id="vo" by="sort"}	
+					<div id="playlist{$key}" class="tab-pane fade in{if condition="$param.sid eq $vo.sid"} active{/if} clearfix">
+						{if $mytheme.playlist.tip}
+						<p class="text-muted col-pd">
+							{$vo.player_info.tip} 
+						</p>
+						{/if}
+						{include file="block/vod_play_list"}
+					</div>															
+					{/maccms:foreach}
+				</div>
+			</div>
+		</div>	
+		{if condition="$param.sid eq 0"}
+		<script type="text/javascript">
+			$(".tab-pane:first,.nav-btn li:first").addClass("active");
+		</script>
+		{/if}
+		{/notempty}
+	{elseif condition="$mytheme.playlist.style eq 'tab'"}
+		{notempty name="obj.vod_play_list"}
+		<div class="myui-panel myui-panel-bg clearfix">
+			<div class="myui-panel-box clearfix">
+				<div class="myui-panel_hd">
+					<div class="myui-panel__head active bottom-line clearfix">
+						{if $mytheme.playlist.sort}<a class="more sort-button pull-right" href="javascript:;"><i class="fa fa-sort-amount-asc"></i> 排序</a>{/if}
+						<h3 class="title">
+							{$mytheme.playlist.title}
+						</h3>
+						<ul class="nav nav-tabs active">
+							{maccms:foreach name="obj.vod_play_list" id="vo" by="sort"}	
+							<li{if condition="$param.sid eq $vo.sid"} class="active"{/if}><a href="#playlist{$key}" data-toggle="tab">{$vo.player_info.show}</a></li>
+							{/maccms:foreach}								
+						</ul>
+					</div>																		
+				</div>
+				<div class="tab-content myui-panel_bd">
+					{maccms:foreach name="obj.vod_play_list" id="vo" by="sort"}	
+					<div id="playlist{$key}" class="tab-pane fade in{if condition="$param.sid eq $vo.sid"} active{/if} clearfix">
+						{if $mytheme.playlist.tip}
+						<p class="text-muted col-pd">
+							{$vo.player_info.tip} 
+						</p>
+						{/if}
+						{include file="block/vod_play_list"}
+					</div>															
+					{/maccms:foreach}
+				</div>
+			</div>
+		</div>	
+		{if condition="$param.sid eq 0"}
+		<script type="text/javascript">
+			$(".tab-pane:first,.nav-tabs li:first").addClass("active");
+		</script>
+		{/if}
+		{/notempty}
+	{elseif condition="$mytheme.playlist.style eq 'down'"}
+		{notempty name="obj.vod_play_list"}
+		<div class="myui-panel myui-panel-bg clearfix">
+			<div class="myui-panel-box clearfix">
+				<div class="myui-panel_hd">
+					<div class="myui-panel__head active bottom-line clearfix">
+						{if $mytheme.playlist.sort}<a class="more sort-button pull-right" href="javascript:;"><i class="fa fa-sort-amount-asc"></i> 排序</a>{/if}
+						<h3 class="title">
+							{$mytheme.playlist.title}
+						</h3>
+						<ul class="nav nav-tabs">		
+							<li class="dropdown pb10">
+								<a href="javascript:;" data-toggle="dropdown">切换线路 <i class="fa fa-angle-down"></i></a>
+								<div class="dropdown-box bottom fadeInDown">
+									<ul class="item">
+										{maccms:foreach name="obj.vod_play_list" id="vo1" by="sort"}
+										<li><a href="#play_down{$key}" tabindex="-1" data-toggle="tab">{$vo1.player_info.show}</a></li>
+										{/maccms:foreach}
+									</ul>
+								</div>
+							</li>
+						</ul>
+					</div>																		
+				</div>
+				<div class="tab-content myui-panel_bd">
+					{maccms:foreach name="obj.vod_play_list" id="vo" by="sort"}	
+					<div id="play_down{$key}" class="tab-pane fade in{if condition="$param.sid eq $vo.sid"} active{/if} clearfix">
+						{if $mytheme.playlist.tip}
+						<p class="text-muted col-pd">
+							{$vo.player_info.show}-{$vo.player_info.tip} 
+						</p>
+						{/if}
+						{include file="block/vod_play_list"}
+					</div>															
+					{/maccms:foreach}
+				</div>
+			</div>
+		</div>	
+		{if condition="$param.sid eq 0"}
+		<script type="text/javascript">
+			$(".tab-pane:first").addClass("active");
+		</script>
+		{/if}
+		{/notempty}
+	{/if}
+{/if}
+
+{if $mytheme.detail.ad && $mytheme.detail.ad1}
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_bd">
+			<div class="col-xs-1">
+				{$mytheme.detail.ad1}
+			</div>
+		</div>
+	</div>
+</div>
+{/if}
+

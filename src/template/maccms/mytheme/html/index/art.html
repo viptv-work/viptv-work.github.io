@@ -1,0 +1,25 @@
+{if $mytheme.home_art.is}
+	{maccms:type order="asc" by="sort" ids="parent" id="vo1" key="key1" flag="art"}
+	<div class="myui-panel myui-panel-bg clearfix {$mytheme.home_art.self}">	
+		<div class="myui-panel-box clearfix">
+			<div class="myui-panel_hd">
+				<div class="myui-panel__head active bottom-line clearfix">	
+					<h3 class="title">
+						{$mytheme.home_art.title}
+					</h3>	
+					<a class="more text-muted pull-left" href="{:mac_url_type($vo1,[],'type')}">更多 <i class="fa fa-angle-right"></i></a>
+				</div>																			
+			</div>	
+			<div class="myui-panel_bd clearfix">								
+				<ul class="myui-vodlist__media col clearfix">
+					{maccms:art num="'.$mytheme['home_art']['num'].'" type="'.$vo1['type_id'].'" order="desc" by="'.$mytheme['home_art']['by'].'"}
+					<li class="col-lg-{$mytheme.home_art.col} col-md-{$mytheme.home_art.col} col-sm-2 col-xs-1">
+						{include file="block/art_box2"}	<!-- 列表 -->	
+					</li>
+					{/maccms:art}
+				</ul>															
+			</div>								
+		</div>
+	</div>
+	{/maccms:type}
+{/if}

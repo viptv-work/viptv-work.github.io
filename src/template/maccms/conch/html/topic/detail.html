@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+       
+	{include file="public/include"}
+</head>
+<body class="bstem">
+<div id="topic_page">
+    {include file="public/head"}
+    <div class="hot_banner ">
+        <div class="bgi_box">
+    	<span class="bgi" style="background-image:url({$obj.topic_pic|mac_url_img});"></span>
+    	<span class="bgfd"></span>
+    </div>
+         <div class="hot_list">
+           <div class="topic_fm">
+	             <div class="topiclist_con">
+		            <span class="topiclist_thumb lazyload" title="{$obj.topic_name}" data-original="{$obj.topic_pic|mac_url_img}">						
+	                </span>											
+                 </div>
+				<div class="topiclist_text">
+					<h3 class="title">{$obj.topic_name}</h3>
+					<div class="tpcon_box"><p>{$obj.topic_content}</p></div>
+				</div>
+		   </div>
+         </div>
+    </div>
+    <div class="container ">
+      {include file="ads/ads_all"}
+      <div class="vod_row">
+       <div class="pannel clearfix">
+            <!-- 列表 -->
+            <div class="pannel_head clearfix">
+                <h3 class="title">本专题共收录<strong class="mycol">{$obj.vod_list|count}</strong>部影片</h3>
+            </div>			
+			<ul class="vodlist vodlist_wi clearfix">
+				{maccms:foreach name="$obj.vod_list"}
+				{include file="widget/vod_box"}
+				{/maccms:foreach}	 
+			</ul>
+			<!-- end 列表 -->
+       </div>
+      </div>
+    </div>     
+{include file="public/foot"}
+</div>
+</body>
+</html>

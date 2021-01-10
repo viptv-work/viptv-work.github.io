@@ -1,0 +1,24 @@
+<div class="stui-pannel stui-pannel-bg clearfix">
+	<div class="stui-pannel-box">
+		<div class="stui-pannel_hd">
+			<div class="stui-pannel__head clearfix">
+				<h3 class="title">
+					<img src="{$maccms.path}statics/icon/icon_12.png"/>
+					{$obj.vod_class|mac_url_create='class'}热播榜
+				</h3>						
+			</div>																		
+		</div>
+		<div class="stui-pannel_bd">
+			<ul class="stui-vodlist__media active col-pd clearfix">
+				{maccms:vod num="1" type="current" order="desc" by="hits"}
+				{include file="block/vod_box_media"}
+				{/maccms:vod}
+			</ul>
+			<ul class="stui-vodlist__rank col-pd clearfix">
+				{maccms:vod num="9" type="current" order="desc" by="hits" start="2"}
+				{include file="block/vod_box_rank"}		
+				{/maccms:vod}
+			</ul>	
+		</div>
+	</div>
+</div>

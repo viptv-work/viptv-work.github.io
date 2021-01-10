@@ -1,0 +1,72 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}art/type.html-->{/if}
+<!DOCTYPE html>
+<html>
+	<head>
+		{include file="seo/art_type"}  
+		{include file="public/include"}
+	</head>
+	<body>
+
+		{include file="public/head"}
+
+	    <div class="container min">
+	        <div class="row">	
+				{if $mytheme.nav_art.is}
+				<div class="col-md-wide-10 col-xs-1 padding-0">
+					{include file="art/head"}
+				</div>
+				{/if}
+				<div class="{if $mytheme.nav_art.is}{if $mytheme.art.side}col-md-wide-6 {else /}col-md-wide-9 {/if}{else /}{if $mytheme.art.side}col-md-wide-7 {/if}{/if}col-xs-1 myui-sidebar">
+					{if $mytheme.art_slide.is}
+					<div class="myui-panel myui-panel-bg clearfix">
+						<div class="myui-panel-box clearfix">
+							<div class="myui-panel_bd">	
+								<div class="flickity center{if condition="$mytheme.art_slide.switch eq dots"} dots{/if} clearfix" data-align="center" data-{$mytheme.art_slide.switch}="1"{if $mytheme.art_slide.play} data-play="{$mytheme.art_slide.play_time}"{/if}>
+									{maccms:art num="'.$mytheme['art_slide']['num'].'" type="'.$mytheme['art_slide']['id'].'" order="desc" by="'.$mytheme['art_slide']['by'].'"}
+									<div class="col-lg-{$mytheme.art_slide.col} col-md-2 col-sm-2 col-xs-1">
+										<div class="myui-vodlist__box">
+											<a class="myui-vodlist__thumb wide lazyload" href="{:mac_url_art_detail($vo)}" title="{$vo.art_name}" data-original="{$vo.art_pic|mac_url_img}">
+												<span class="pic-text text-center">{$vo.art_name}</span>
+											</a>															
+										</div>									
+									</div>
+									{/maccms:art}										
+								</div>	
+							</div>
+					   </div>
+					</div>
+					{/if}
+					<div class="myui-panel myui-panel-bg clearfix">					
+						<div class="myui-panel-box clearfix">
+							<div class="myui-panel_hd">
+								<div class="myui-panel__head active bottom-line clearfix">
+									<h3 class="title">
+										最新资讯
+									</h3>	
+								</div>																		
+							</div>
+							<div class="myui-panel_bd clearfix">											
+								<ul class="myui-vodlist__media col-pd clearfix">
+									{maccms:art num="10" paging="yes" type="current" order="desc" by="time"}
+										{include file="block/art_box"}	<!-- 列表 -->																	
+									{/maccms:art}
+								</ul>
+							</div>
+						</div>
+					</div>
+					{include file="public/page"}
+				</div>
+				{if $mytheme.art.side}
+				<div class="col-md-wide-3 col-xs-1 myui-sidebar {$mytheme.art.side_self}">
+					{include file="art/code"}
+					{include file="block/vod_hot"}
+					{include file="block/art_hot"}
+				</div>
+				{/if}
+			</div>
+	    </div>
+
+		{include file="public/foot"}
+	</body>
+</html>

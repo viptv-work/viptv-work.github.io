@@ -1,0 +1,87 @@
+<div class="foot {if condition="$conch['theme']['fnav']['btn'] eq 1"}foot_nav{/if} clearfix">
+<div class="container">
+	<ul class="extra clearfix">
+		<li id="backtop-ico">
+			<a class="backtop" href="javascript:scroll(0,0)" title="返回顶部"><span class="top_ico"><i class="iconfont">&#xe628;</i></span></a>
+		</li>
+		{if condition="$conch['theme']['qq']['btn'] eq 1"}
+    	<li>
+			<a href="{$conch['theme']['qq']['link']}" title="{$conch['theme']['qq']['title']|mac_default='QQ联系'}" target="_blank"><span class="m_ico"><i class="iconfont">&#xe66a;</i></span></a>
+	    </li>
+	    {/if}
+	    {if condition="$conch['theme']['color']['mbtn'] eq 1"}
+		<li>
+		<a id="black" class="mycolor {if condition="$conch['theme']['color']['ms'] eq 'black'"}hide{/if}" href="javascript:void(0)" title="暗夜模式"><span class="m_ico theme_ico"><i class="iconfont">&#xe656;</i></span></a>
+	    <a id="white" class="mycolor {if condition="$conch['theme']['color']['ms'] eq 'white'"}hide{/if}" href="javascript:void(0)" title="白昼模式"><span class="m_ico theme_ico"><i class="iconfont">&#xe657;</i></span></a>
+ 	    </li>
+ 	    {/if}
+ 	    {if condition="$conch['theme']['color']['sbtn'] eq 1"}
+  	    <li>
+			<a class="btn_theme" href="javascript:void(0)" title="主题颜色"><span class="m_ico"><i class="iconfont">&#xe665;</i></span></a>
+    		<div class="sideslip">
+				<div class="themecolor">
+				  <p class="text_center"><i class="iconfont">&#xe665;</i>&nbsp;主题颜色</p>
+					<ul id="themes"> 
+						<li id="default" class="color_default">橘色</li>
+						<li id="green" class="color_green">绿色</li>
+						<li id="blue" class="color_blue">蓝色</li> 
+						<li id="pink" class="color_pink">粉色</li>
+						<li id="red" class="color_red">红色</li>
+						<li id="gold" class="color_gold">金色</li>
+					</ul>
+				</div>
+			</div>
+	    </li>
+	    {/if}
+	    <li class="hidden_xs">
+			<a class="mobil_q" href="javascript:void(0)" title="手机访问"><span class="m_ico"><i class="iconfont">&#xe620;</i></span></a>
+			<div class="sideslip">
+				<div class="cans"></div>
+				<div class="col_pd">
+				  <p class="qrcode"></p>
+				  <p class="text_center">扫码用手机访问</p>
+				</div>
+			</div>
+	    </li>
+	</ul>
+	<div class="fo_t">
+        {$conch['theme']['foot']['text']}
+        <p>&copy;&nbsp;{:date('Y')}&nbsp;{$maccms.site_url}&nbsp;&nbsp;E-Mail：{$maccms.site_email}&nbsp;&nbsp;<span {if condition="$conch['theme']['tj']['btn'] eq 0"}class="hide"{/if}>{$maccms.site_tj}</span></p>
+    </div>						
+    <div class="map_nav">
+		<a href="{:mac_url('rss/index')}" target="_blank">RSS订阅</a>
+		<span class="split_line"></span>
+		<a href="{:mac_url('rss/baidu')}" target="_blank">百度蜘蛛</a>
+		<span class="split_line"></span>
+		<a href="{:mac_url('rss/sm')}" target="_blank">神马爬虫</a>
+		<span class="split_line"></span>
+		<a href="{:mac_url('rss/sogou')}" target="_blank">搜狗蜘蛛</a>
+		<span class="split_line"></span>
+		<a href="{:mac_url('rss/so')}" target="_blank">奇虎地图</a>
+		<span class="split_line hidden_xs"></span>
+		<a class="hidden_xs" href="{:mac_url('rss/google')}" target="_blank">谷歌地图</a>
+		<span class="split_line hidden_xs"></span>
+		<a class="hidden_xs" href="{:mac_url('rss/bing')}" target="_blank">必应爬虫</a>
+	</div>
+</div>
+{include file="widget/foot_nav"}
+{include file="ads/ads_bottom"}
+{include file="widget/infobox"}
+{include file="widget/copy"}
+</div>
+<div class="conch_history_pop {if condition="$GLOBALS['config']['user']['status'] eq 1"}user_log{/if}">
+	<div class="conch_history_bg">
+		<div class="conch_history_title"><span>观看记录</span><a id="close_history" target="_self" href="javascript:void(0)"><i class="iconfont">&#xe616;</i></a></div>
+		<div class="conch_history_box">
+			<ul class="vodlist" id="conch_history"></ul>
+		</div>
+	</div>
+</div>
+<div style="display: none;" class="mac_timming" data-file="" ></div>
+<script type="text/javascript" src="{$maccms.path_tpl}asset/js/hlstem.js?v={$version}"></script>
+<script type="text/javascript" src="{$maccms.path_tpl}asset/js/hlexpand.js?v={$version}"></script>
+<script type="text/javascript" src="{$maccms.path_tpl}asset/js/home.js"></script>
+{if condition="$conch['theme']['search']['lxbtn'] eq 1"}
+<script type="text/javascript" src="{$maccms.path_tpl}asset/js/jquery.ac.js"></script>
+{/if}{if condition="$conch['theme']['font'] eq 1"}
+<script type="text/javascript" src="{$maccms.path_tpl}asset/js/strantext.js"></script>{/if}

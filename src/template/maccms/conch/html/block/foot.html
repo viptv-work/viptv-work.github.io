@@ -1,0 +1,67 @@
+<div class="foot clearfix">
+	<ul class="extra clearfix">
+		<li>
+			<a class="backtop" href="javascript:scroll(0,0)" title="返回顶部"><span class="top_ico"><i class="iconfont">&#xe628;</i></span></a>
+		</li>
+		<li style="display: none;">
+			<a class="open-share" href="javascript:void(0)" title="分享"><span class="share_ico"><i class="iconfont">&#xe615;</i></span></a>
+		</li>
+		{if condition="$GLOBALS['config']['site']['site_apps'] eq 1"}
+		<li>
+			<a class="mobil_q hidden_xs" href="javascript:void(0)" title="下载APP"><span class="m_ico app_ico"><i class="iconfont">&#xe653;</i></span></a>
+			<div class="sideslip hidden_xs">
+				<div class="cans"></div>
+				<div class="col_pd">
+				  <p class="app_qrcode"><img src="{$maccms.site_apps_img|mac_default='http://www.kv321.com/upload/img/app.png'|mac_url_img}"></p>
+				  <p class="text_center">扫码下载APP观看</p>
+				</div>
+			</div>
+			<a class="mobil_q hidden_mb" href="{$maccms.site_apps_link}" title="下载APP"><span class="m_ico app_ico"><i class="iconfont">&#xe653;</i></span></a>
+	   </li>
+	   {else}
+	   <li class="hidden_xs">
+			<a class="mobil_q" href="javascript:void(0)" title="手机访问"><span class="m_ico"><i class="iconfont">&#xe620;</i></span></a>
+			<div class="sideslip">
+				<div class="cans"></div>
+				<div class="col_pd">
+				  <p class="qrcode"></p>
+				  <p class="text_center">扫码用手机访问</p>
+				</div>
+			</div>
+	   </li>
+	   {/if}
+	</ul>
+	<div><a href="{$maccms.path}">返回首页</a>&nbsp;<span class="split_line"></span>&nbsp;<a href="{:mac_url('gbook/index')}">留言反馈</a>{if condition="$GLOBALS['config']['site']['site_apps'] eq 1"}&nbsp;<span class="split_line"></span>&nbsp;{include file="system/app_link"}{/if}</div>
+	<div class="hidden_xs fo_t">
+		<p><i class="iconfont">&#xe635;</i>本站只提供WEB页面服务，本站不存储、不制作任何视频，不承担任何由于内容的合法性及健康性所引起的争议和法律责任。</p>
+		<p>若本站收录内容侵犯了您的权益，请附说明联系底部邮箱，我们将第一时间处理。</p>
+        <p>{$maccms.site_url}&nbsp;联系邮箱：{$maccms.site_email}</p></div>						
+	<div class="hidden_mb fo_t">
+		<p><i class="iconfont">&#xe635;</i>本站只提供WEB页面服务，本站不存储、不制作任何视频</p>
+        <p>不承担任何由于内容的合法性及健康性所引起的争议和法律责任</p>
+        <p>若本站收录内容侵犯了您的权益，说明具体情况。</p>
+        <p>联系邮箱：{$maccms.site_email}&nbsp;我们将第一时间处理。</p>
+    </div>
+    <div class="map_nav">
+	<a href="{:mac_url('rss/index')}" target="_blank">RSS订阅</a>
+	<span class="split_line"></span>
+	<a href="{:mac_url('rss/baidu')}" target="_blank">百度蜘蛛</a>
+	<span class="split_line"></span>
+	<a href="{:mac_url('rss/google')}" target="_blank">谷歌地图</a>
+	<span class="split_line"></span>
+	<a href="{:mac_url('rss/sm')}" target="_blank">神马爬虫</a>
+	<span class="split_line hidden_xs"></span>
+	<a class="hidden_xs" href="{:mac_url('rss/sogou')}" target="_blank">搜狗蜘蛛</a>
+	<span class="split_line hidden_xs"></span>
+	<a class="hidden_xs" href="{:mac_url('rss/so')}" target="_blank">奇虎地图</a>
+	<span class="split_line hidden_xs"></span>
+	<a class="hidden_xs" href="{:mac_url('rss/bing')}" target="_blank">必应爬虫</a>
+	</div>
+</div>
+<div class="history_pop {if condition="$GLOBALS['config']['user']['status'] eq 1"}user_log{/if}"></div>
+{include file="system/copy"}
+{include file="system/jq_content"}
+{include file="ads/bottom_ads"}
+<script type="text/javascript" src="{$maccms.path_tpl}js/scroll.stem.js"></script>
+<script type="text/javascript" src="{$maccms.path_tpl}js/jquery.stem.js"></script>
+<script type="text/javascript" src="{$maccms.path_tpl}js/home.js"></script>

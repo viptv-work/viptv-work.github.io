@@ -1,0 +1,8 @@
+<li class="part_eone">
+    {if condition="$vo['type_id_1']==28"}
+    <a href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}">
+    {else/}
+    <a href="{:mac_url_vod_detail($vo)}">
+    {/if}
+    <span class="part_nums part_num{$key}">{$key}</span><span class="info_right">{$vo.type.type_name}</span>{$vo.vod_name}</a>
+</li>

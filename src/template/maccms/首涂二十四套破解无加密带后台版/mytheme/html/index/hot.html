@@ -1,0 +1,37 @@
+{if $mytheme.home_hot.is}
+<div class="myui-panel myui-panel-bg clearfix">	
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_hd">
+			<div class="myui-panel__head clearfix">			
+				<span class="text-muted more pull-right">今日更新“{:mac_data_count(0,'today','vod')}”{if $mytheme.label.new}<span class="split-line"></span><a href="{:mac_url('label/new')}">最近更新</a>{/if}</span>
+				<h3 class="title">
+					{$mytheme.home_hot.title}
+				</h3>	
+				
+			</div>																			
+		</div>	
+		<div class="myui-panel_bd clearfix">								
+			<ul class="myui-vodlist clearfix">
+				{maccms:vod num="'.$mytheme['home_hot']['num'].'" type="'.$mytheme['home_hot']['type'].'" order="desc" by="'.$mytheme['home_hot']['by'].'" year="'.$mytheme['home_hot']['year'].'" area="'.$mytheme['home_hot']['area'].'" start="'.$mytheme['home_hot']['start'].'" level="'.$mytheme['home_hot']['level'].'"}
+				<li class="col-lg-{$mytheme.home_hot.col}  col-md-{$mytheme.home_hot.col} col-sm-{$mytheme.col.sm} col-xs-{$mytheme.col.xs}{if condition="$key gt $mytheme.home_hot.xs"} hidden-xs{/if}{if condition="$key gt $mytheme.home_hot.sm"} hidden-sm{/if}">
+					{include file="block/vod_box"}
+				</li>
+				{/maccms:vod}
+			</ul>
+			{include file="index/actor"}<!-- 演员 -->
+			
+		</div>
+	</div>
+</div>
+{if $mytheme.home.ad && $mytheme.home.ad1}
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_bd">
+			<div class="col-xs-1">
+				{$mytheme.home.ad1}
+			</div>
+		</div>
+	</div>				
+</div>
+{/if}
+{/if}

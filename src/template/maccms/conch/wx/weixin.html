@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="https://cdn.bootcss.com/clipboard.js/1.7.1/clipboard.min.js"></script>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<title>关注公众号永久免费看vip电影电视剧</title>
+<style>
+p {margin: 0}
+a, a:focus, a:hover {text-decoration: none;}
+div {display: block;box-sizing: border-box;}
+body {
+	  background-color: #fff;
+	  margin: 0px;
+	  padding: 0px;
+	  font: 14px PingFangSC-Regular,Helvetica,Arial,Microsoft Yahei,sans-serif;
+	  color: #fff
+	 }
+.tips {
+	  width: 100px;
+      height: 42px;
+      line-height: 42px;
+      color: #fff;
+      text-indent: 1em
+      }
+    
+.row {
+     width: 100%;
+     margin: 10px 0px;
+     padding: 0px;
+     }
+    
+.text-center {text-align: center}
+.user_notice{padding-top: 16px;width: 360px;margin: 0 auto;}
+.back{float: left;margin: 0 auto;}
+.back a{color: #FFFFFF;font-size: 16px;}
+.title_pic_link{position: relative;display: inline-block;padding-left: 36px;vertical-align: top;}
+.back-s{position: absolute;left: 14px;top: 12px;width: 16px;height: 16px;overflow: hidden;}
+.back-s img{position: absolute;width: 100%;}
+	
+.wrapper {position: relative;}
+.co-pp{display: block;font-size: 20px;width: 228px;margin: 0 auto;margin-top: 6px;background-color: #f1f1f1;padding: 7px 14px;border-radius: 100px;-moz-border-radius: 100px;-webkit-border-radius: 100px;border: 0;color: #101010;}
+.co-cg{color: #fff;position: fixed;top: 36%;left: 15%;z-index: 999;width: 70%;overflow: hidden;background-color: rgba(25, 25, 25, 0.95);border-radius: 3px;padding: 32px 20px;font-size: 15px;line-height: 24px;}
+</style>
+</head>
+
+<body>
+    <div style="background: #222;padding: 6px 0;line-height: 40px;position: relative;">
+     <div class="back">
+    	<a class="title_pic_link" href="javascript:window.history.back(-1)"><span class="back-s"><img src="../img/back.png"></span>返回</a></div>
+    	<div class="text-center" style="font-size:20px;color:#fff;line-height:40px;margin: 0px 18%;">HOT爱看</div>
+    </div>
+    <div class="user_notice">
+        <font color='#00be06'>
+            <marquee scrollamount="4" behavior="right">微信号:dty1****已免费获得VIP永久资格 微信号:1564****已免费获得VIP永久资格 微信号:a887****已免费获得VIP永久资格 微信号:lxy1****已免费获得VIP永久资格 微信号:onem****已免费获得VIP永久资格 微信号:ok68****已免费获得VIP永久资格 微信号:wxid****已免费获得VIP永久资格 微信号:magi****已免费获得VIP永久资格 微信号:3626****已免费获得VIP永久资格 微信号:twlz****已免费获得VIP永久资格 微信号:1819****已免费获得VIP永久资格 微信号:qq25****已免费获得VIP永久资格 微信号:4072****已免费获得VIP永久资格 微信号:w520****已免费获得VIP永久资格 微信号:zzw_****已免费获得VIP永久资格 </marquee>
+        </font>
+    </div>
+    <div class="row text-center">
+        <div style="font-size:20px;color:#101010;line-height:28px;">"微信公众号：HOT爱看"</div>
+    </div>
+    <div style="font-size:17px;line-height:32px;color:#101010;">
+        <center>扫描下方二维码即可关注公众号</center>
+    </div>
+    <div class="text-center"><img src="../img/ewm.jpg" width="200"></div>
+    <div class="text-center">
+        <div style="font-size:16px;color:#101010;line-height:40px;">"或长按图片，识别图中二维码"</div>
+        <div class="wrapper">
+			<span id="btn" data-clipboard-text="HOT爱看" class="co-pp">HOT爱看</span>
+        </div>
+        <div style="line-height: 24px;color:#666;padding: 16px 0">
+			<p>如长按图片无效，请点击上方微信名拷贝</p>
+			<p>到微信搜索公众号关注即可</p>
+        </div>
+    </div>
+    <div id="show" style="display: none;"><div class="co-cg">复制成功，赶紧去微信粘贴搜索公众号，关注吧！爱你呦！</div></div>
+
+
+
+<script>
+	var btn=document.getElementById('btn');
+	var clipboard=new Clipboard(btn);
+	clipboard.on('success', function(e){
+		$('#show').slideDown().delay(3000).slideUp(300);
+		console.log(e);
+	});
+	clipboard.on('error', function(e){
+		$('#show').slideDown().delay(1500).slideUp(300);
+		console.log(e);
+	});
+</script>
+
+</body>
+</html>

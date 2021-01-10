@@ -1,0 +1,7 @@
+<div class="myui-vodlist__box">
+	<a class="myui-vodlist__thumb lazyload"{if $mytheme.site.link} href="{:mac_url_vod_play($vo,['sid'=>1,'nid'=>1])}"{else} href="{:mac_url_vod_detail($vo)}"{/if} title="{$vo.vod_name}" data-original="{$vo.vod_pic|mac_url_img}">
+		<span class="play hidden-xs"></span>
+		{if $mytheme.pic.tag}<span class="pic-tag pic-tag-{$mytheme.pic.tag_seat}" style="background-color: {$mytheme.pic.tag_bg};">{$vo[''.$mytheme.pic.tag_data.'']}{$mytheme.pic.tag_text}</span>{/if}
+		<span class="pic-title-bottom text-center">{$vo.vod_name}</span>
+	</a>															
+</div>

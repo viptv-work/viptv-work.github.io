@@ -1,0 +1,58 @@
+{include file="public/data"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>系统提示......</title>
+    {include file="public/include"}
+    {include file="user/include" /}
+	<style type="text/css">
+		body{ padding: 0;}
+		.myui-msg__form{ margin-top: 20px;}
+		@media (max-width: 768px){	
+			.myui-msg__form{ padding-top: 0; margin-top: 0; box-shadow: none;}
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+	    <div class="row">
+			<div class="myui-msg__form clearfix">
+				<div class="myui-panel clearfix">
+					<div class="myui-panel-box clearfix">
+						<div class="myui-panel_bd">
+							<div class="myui-msg__head text-center hidden-xs">
+								<p><i class="fa fa-warning"></i></p>
+								<p>亲爱的访问此数据需要密码哦!</p>
+								<p class="text-red">密码：{if condition="$obj.vod_pwd_play_url neq ''"}<a target="_blank" href="{$obj.vod_pwd_play_url}">点击获取密码</a>{else/}{$obj.vod_pwd_play}{/if}</p>
+							</div>
+							<form id="form1" name="form1" action="" method="post">
+							<div class="myui-msg__body">	
+								<p>
+									<input type="password" name="pwd" class="form-control" placeholder="请输入密码">
+								</p>								
+								<p class="margin-0">
+									<a class="btn btn-md btn-block btn-primary submit_btn" href="javascript:;" data-mid="1" data-id="{$obj.vod_id}" data-type="4">确认密码</a>
+								</p>
+							</ul>	
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$('body').on('click', '.submit_btn', function(e){
+			var $that = $(this);
+			MyTheme.Ajax(maccms.path + '/index.php/ajax/pwd.html?id=' + $that.attr("data-id") + '&mid=' + $that.attr("data-mid") + '&type=' + $that.attr("data-type") + '&pwd='+ $that.parents('form').find('input[name="pwd"]').val() ,'get','json','',function(r){
+				layer.msg(r.msg);
+				if (r.code == 1) {
+					location.reload();
+				}
+			});
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_hd">
+			<div class="myui-panel__head clearfix">
+				<h3 class="title">
+					荧屏巨星
+				</h3>	
+				{if condition="$maccms.aid eq 1"}<a class="more text-muted" href="{:mac_url('actor/index')}">更多 <i class="fa fa-angle-right"></i></a>{/if}
+			</div>
+		</div>
+		<div class="myui-panel_bd">
+			<ul class="myui-vodlist__bd clearfix">
+				{maccms:actor num="10" order="desc" by="time" id="vo" key="key" level="1"}
+				<li class="col-lg-10 col-md-6 col-sm-4 col-xs-3">
+				{include file="actor/actor_box"}
+				</li>
+				{/maccms:actor}
+			</ul>
+		</div>	
+		
+	</div>						
+</div>

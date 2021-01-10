@@ -1,0 +1,117 @@
+{if condition="$conch['theme']['fnav']['btn'] eq 1"}
+<div class="foot_mnav hidden_mb">
+	<ul class="foot_rows">
+	    {if condition="strpos($conch['theme']['fnav']['ym'],'h') !==false"}
+		<li class="foot_text">
+			<a {if condition="$maccms.aid eq 1" }class="active" {/if}href="{$maccms.path}">
+				{if condition="$maccms.aid eq 1" }<i class="iconfont">&#xe678;</i>{else}<i class="iconfont">&#xe634;</i>{/if}
+				<span class="foot_font">首页</span>
+			</a>
+		</li>
+		{/if}
+		{maccms:type num="5" order="asc" by="sort" ids="'.$conch['theme']['fnav']['id'].'" id="vo1" key="key1"}
+		<li class="foot_text">
+			<a {if condition="($vo1.type_id eq $GLOBALS['type_id'] || $vo1.type_id eq $GLOBALS['type_pid'])"}class="active"{/if} href="{:mac_url_type($vo1)}">	
+				{if condition="($vo1.type_id eq $GLOBALS['type_id'] || $vo1.type_id eq $GLOBALS['type_pid'])" }{include file="widget/icon2"}{else}{include file="widget/icon"}{/if}
+				<span class="foot_font">{$vo1.type_name}</span>
+			</a>
+		</li>
+		{/maccms:type}
+		{if condition="$conch['theme']['fnav']['zdybtn1'] eq 1"}
+		<li class="foot_text">
+			<a href="{$conch['theme']['fnav']['zdylink1']}" target="_blank">		
+				<i class="iconfont">&#xe666;</i>
+				<span class="foot_font">{$conch['theme']['fnav']['zdyname1']}</span>
+			</a>
+		</li>
+		{/if}
+		{if condition="$conch['theme']['fnav']['zdybtn2'] eq 1"}
+		<li class="foot_text">
+			<a href="{$conch['theme']['fnav']['zdylink2']}" target="_blank">		
+				<i class="iconfont">&#xe668;</i>
+				<span class="foot_font">{$conch['theme']['fnav']['zdyname2']}</span>
+			</a>
+		</li>
+		{/if}
+		{if condition="$conch['theme']['topic']['btn'] eq 1"}
+		{if condition="strpos($conch['theme']['fnav']['ym'],'a') !==false"}
+		<li class="foot_text">
+			<a {if condition="$maccms.mid eq 3" }class="active" {/if}href="{:mac_url_topic_index()}">		
+				{if condition="$maccms.mid eq 3" }<i class="iconfont">&#xe67c;</i>{else}<i class="iconfont">&#xe64c;</i>{/if}
+				<span class="foot_font">{$conch['theme']['topic']['title']|mac_default='专题'}</span>
+			</a>
+		</li>
+		{/if}
+		{/if}
+		{if condition="$GLOBALS['config']['gbook']['status'] eq 1"}
+		{if condition="strpos($conch['theme']['fnav']['ym'],'b') !==false"}
+		<li class="foot_text">
+			<a {if condition="$maccms.aid eq 4" }class="active" {/if}href="{:mac_url('gbook/index')}">		
+				{if condition="$maccms.aid eq 4" }<i class="iconfont">&#xe66d;</i>{else}<i class="iconfont">&#xe632;</i>{/if}
+				<span class="foot_font">{$conch['theme']['gbook']['title']|mac_default='留言'}</span>
+			</a>
+		</li>
+		{/if}
+		{/if}
+		{if condition="$conch['theme']['map']['btn'] eq 1"}
+		{if condition="strpos($conch['theme']['fnav']['ym'],'c') !==false"}
+		<li class="foot_text">
+			<a {if condition="$maccms.aid eq 2" }class="active" {/if}href="{:mac_url('map/index')}">		
+				{if condition="$maccms.aid eq 2" }<i class="iconfont">&#xe66e;</i>{else}<i class="iconfont">&#xe652;</i>{/if}
+				<span class="foot_font">{$conch['theme']['map']['title']|mac_default='最新'}</span>
+			</a>
+		</li>
+		{/if}
+		{/if}
+		{if condition="$conch['theme']['rank']['btn'] eq 1"}
+		{if condition="strpos($conch['theme']['fnav']['ym'],'d') !==false"}
+		<li class="foot_text">
+			<a {if condition="$maccms.aid eq 7" }class="active" {/if}href="{:mac_url('label/rank')}">		
+				<i class="iconfont">&#xe618;</i>
+				<span class="foot_font">{$conch['theme']['rank']['title']|mac_default='排行榜'}</span>
+			</a>
+		</li>
+		{/if}
+		{/if}
+		{if condition="$conch['theme']['actor']['btn'] eq 1"}
+		{if condition="strpos($conch['theme']['fnav']['ym'],'e') !==false"}
+		<li class="foot_text">
+			<a {if condition="$maccms.mid eq 8" }class="active" {/if}href="{:mac_url('actor/index')}">		
+				{if condition="$maccms.mid eq 8" }<i class="iconfont">&#xe670;</i>{else}<i class="iconfont">&#xe629;</i>{/if}
+				<span class="foot_font">{$conch['theme']['actor']['title']|mac_default='明星'}</span>
+			</a>
+		</li>
+		{/if}
+		{/if}
+		{if condition="$conch['theme']['role']['btn'] eq 1"}
+		{if condition="strpos($conch['theme']['fnav']['ym'],'f') !==false"}
+		<li class="foot_text">
+			<a {if condition="$maccms.mid eq 9" }class="active" {/if}href="{:mac_url('role/index')}">		
+				{if condition="$maccms.mid eq 9" }<i class="iconfont">&#xe674;</i>{else}<i class="iconfont">&#xe654;</i>{/if}
+				<span class="foot_font">{$conch['theme']['role']['title']|mac_default='角色'}</span>
+			</a>
+		</li>
+		{/if}
+		{/if}
+		{if condition="$conch['theme']['plot']['btn'] eq 1"}
+		{if condition="strpos($conch['theme']['fnav']['ym'],'h') !==false"}
+		<li class="foot_text">
+			<a {if condition="$maccms.mid eq 10" }class="active" {/if}href="{:mac_url('plot/index')}">		
+				{if condition="$maccms.mid eq 10" }<i class="iconfont">&#xe67d;</i>{else}<i class="iconfont">&#xe630;</i>{/if}
+				<span class="foot_font">{$conch['theme']['plot']['title']|mac_default='剧情'}</span>
+			</a>
+		</li>
+		{/if}
+		{/if}
+		{if condition="$GLOBALS['config']['user']['status'] eq 1"}
+		{if condition="strpos($conch['theme']['fnav']['ym'],'g') !==false"}
+		<li class="foot_text">
+			<a {if condition="$maccms.aid eq 6" }class="active"{/if} href="{if$user.user_id}{:mac_url('user/index')}{else}{:mac_url('user/login')}{/if}">	
+				{if condition="$maccms.aid eq 6" }<i class="iconfont">&#xe67a;</i>{else}<i class="iconfont">&#xe62b;</i>{/if}
+				<span class="foot_font">{$conch['theme']['user']['title']|mac_default='会员'}</span>
+			</a>
+		</li>
+		{/if}{/if}
+	</ul>
+</div>
+{/if}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>{$obj.vod_name}详情介绍-{$obj.vod_name}在线观看-{$obj.vod_name}迅雷下载 - {$maccms.site_name}</title>
+    <meta name="keywords" content="{$obj.vod_name}在线收看,{$obj.vod_name}迅雷下载" />
+    <meta name="description" content="{$obj.vod_name}剧情:{$obj.vod_blurb}" /> 
+	{include file="block/include"}
+</head>
+<body class="active">
+	{include file="block/head"}
+	<div class="myui-container-bg">
+		<div class="container">
+			<div class="row">
+			{include file="vod/detail_data"}<!-- 详细信息-->
+			</div>
+		</div>
+	</div>
+    <div class="container">
+        <div class="row">
+		{include file="vod/desc"}<!-- 剧情简介-->
+		{include file="vod/playlist"}<!-- 播放地址-->
+		{include file="vod/downlist"}<!-- 下载地址-->
+		{include file="vod/like"}
+        </div>
+    </div>
+	<span class="mac_hits hits hide" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}{$obj.art_id}{$obj.topic_id}" data-type="hits"></span>
+	<span class="mac_ulog_set hide" data-type="4" data-mid="{$maccms.mid}" data-id="{:mac_url_vod_play($obj,['sid'=>1,'nid'=>1])}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+		{include file="block/foot"}
+
+</body>
+</html>
+

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		{include file="seo/art_type"}   
+		{include file="block/include"}
+	</head>
+	<body>
+		{include file="block/head"}
+	    <div class="container">
+	        <div class="row">
+	           <div class="col-lg-wide-15 col-md-wide-2 col-xs-1 padding-0">	
+					{include file="art/head"}	
+				</div>
+				<div class="col-lg-wide-6 col-md-wide-8 col-xs-1 stui-pannel-side">			
+					<div class="stui-pannel stui-pannel-bg clearfix">					
+						<div class="stui-pannel-box clearfix">
+							<div class="stui-pannel_hd">
+								<div class="stui-pannel__head active bottom-line clearfix">
+									<span class="more text-muted pull-right hidden-xs"></span>
+									<h3 class="title">
+										{$obj.type_name}
+									</h3>																
+								</div>
+							</div>
+							<div class="stui-pannel_bd clearfix">											
+								<ul class="stui-vodlist__media active col-pd clearfix">
+									{maccms:art num="30" paging="yes" type="current" order="desc" by="time"}
+									<li {if condition="$key gt 1"}class="top-line-dot"{/if}>
+										<div class="thumb">
+											<a class="w-thumb stui-vodlist__thumb active lazyload" href="{:mac_url_art_detail($vo)}" title="{$vo.art_name}" data-original="{$vo.art_pic}">											
+											</a>
+										</div>	
+										<div class="detail">
+											<h4 class="title"><a href="{:mac_url_art_detail($vo)}">{$vo.art_name}</a></h4>										
+											<p class="hidden-sm hidden-xs">{$vo.art_content|mac_filter_html|mac_substring=60}...</p>
+											<p class="margin-0 font-12"><span class="hidden-xs"><span class="text-muted">分类：</span>{$vo.art_class}<span class="split-line"></span></span><span class="text-muted">时间：</span>{$vo.art_time|date='Y-m-d',###}</p>
+										</div>																		
+									</li>
+									{/maccms:art}
+								</ul>
+							</div>							
+						</div>
+					</div>
+					{include file="block/page"}							 	
+				</div>
+				<div class="col-lg-wide-25 stui-pannel-side hidden-md hidden-sm hidden-xs">	
+					{include file="art/sidecode"}<!-- 二维码-->
+					{include file="art/indexhot"}<!-- 热门资讯 -->								
+				</div>
+	        </div>
+	    </div>
+		{include file="block/foot"}
+	</body>
+</html>

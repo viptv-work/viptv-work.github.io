@@ -1,0 +1,59 @@
+<div class="myui-panel myui-panel-bg clearfix">
+	<div class="myui-panel-box clearfix">
+		<div class="myui-panel_bd clearfix">
+			<div class="col-pd">
+				<div class="myui-user__name clearfix">
+					<a class="logout text-fff" href="{:url('user/logout')}"><i class="fa fa-power-off"></i> 退出</a>
+					<dl class="clearfix">
+						<dt><img class="face" width="60" height="60" src="{$obj.user_portrait|mac_default='static/images/touxiang.png'|mac_url_img}"></dt>
+						<dd>
+							<h3 class="text-fff">{$obj.user_name}</h3>				
+							<p class="margin-0 text-fff">剩余{$obj.user_points}积分/{$obj.group.group_name}{if condition="$obj.group_id gt 2"}-{$obj.user_end_time|mac_day}{/if}</p>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<div class="myui-panel_bd clearfix">
+			<ul class="myui-user__head">
+				<li class="col-md-6 col-xs-3"><a class="btn btn-block btn-default" href="{:url('user/index')}"><i class="fa fa-file-text-o"></i> 我的资料</a></li>
+				<li class="col-md-6 col-xs-3"><a class="btn btn-block btn-default" href="{:url('user/info')}"><i class="fa fa-edit"></i> 修改资料</a></li>
+				<li class="col-md-6 col-xs-3"><a class="btn btn-block btn-default" href="{:url('user/favs')}"><i class="fa fa-star-o"></i> 我的收藏</a></li>
+				<li class="col-md-6 col-xs-3"><a class="btn btn-block btn-default" href="{:url('user/plays')}"><i class="fa fa-step-forward"></i> 播放记录</a></li>
+				<li class="col-md-6 col-xs-3"><a class="btn btn-block btn-default" href="{:url('user/downs')}"><i class="fa fa-file-o"></i> 下载记录</a></li>
+				<li class="col-md-6 col-xs-3"><a class="btn btn-block btn-default" href="{:url('user/buy')}"><i class="fa fa-credit-card"></i> 在线充值</a></li>
+				<li class="col-md-6 col-xs-3"><a class="btn btn-block btn-default" href="{:url('user/upgrade')}"><i class="fa fa-user-o"></i> 升级会员</a></li>
+				<li class="col-md-6 col-xs-3"><a class="btn btn-block btn-default" href="{:url('user/orders')}"><i class="fa fa-credit-card"></i> 充值记录</a></li>
+				<li class="col-md-6 col-xs-3"><a class="btn btn-block btn-default" href="{:url('user/plog')}"><i class="fa fa-bar-chart-o"></i> 积分记录</a></li>
+				<li class="col-md-6 col-xs-3"><a class="btn btn-block btn-default" href="{:url('user/cash')}"><i class="fa fa-cny"></i> 提现记录</a></li>
+				<li class="col-md-6 col-xs-3"><a class="btn btn-block btn-default" href="{:url('user/reward')}"><i class="fa fa-line-chart"></i> 我的分销</a></li>
+				<li class="col-md-6 col-xs-3"><a class="btn btn-block btn-default myui-copy-link" href="javascript:;" data-url="{$maccms.http_type}{$maccms.site_url}{:mac_url('user/reg')}?uid={$obj.user_id}"><i class="fa fa-paperclip"></i> 推广注册</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+	var url = $(".userurl").attr("data-url");	
+	var clipboard = new Clipboard('.userurl', {
+		text: function() {									
+			return url;
+		}
+	});
+	clipboard.on('success', function(e) {
+		layer.msg("地址复制成功，赶快分享给小伙伴吧！");
+	});
+</script>
+<script>
+	$(".face").imageUpload({
+		formAction: "{:url('user/portrait')}",
+		inputFileName:'file',
+		browseButtonValue: '修改',
+		browseButtonClass:'btn btn-xs',
+		automaticUpload: true,
+		hideDeleteButton: true,
+		hover:true
+	});
+	$(".face").on("imageUpload.uploadFailed", function (ev, err) {
+		layer.msg(err);
+	});
+</script>

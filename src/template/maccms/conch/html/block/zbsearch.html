@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/vod_search"}   
+	{include file="block/include"}
+</head>
+<body class="report_title_none">     	
+    {include file="block/head"}
+    <div class="container">
+        <div class="row">        	
+        	<div class="pannel clearfix">  
+				<div class="pannel__head clearfix">	
+					<h3 class="title">									
+						搜索到与“<em>{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}</em>”相关的<em class="mac_total"></em>条结果
+					</h3>
+				</div>	
+                
+				<!-- 列表 -->	
+				<ul class="vodlist clearfix">
+			        {php}$count=1;{/php}
+			        {maccms:vod num="35" paging="yes" pageurl="vod/search" order="desc" by="time"}
+			        {if$count==1}	
+				    <li class="vodlist__item">
+	                    {include file="ads/hongbao"}		
+                    </li>
+                    {/if}
+                    {php}$count++;{/php}																
+					{include file="block/vod_box"}					
+					{/maccms:vod}
+				</ul>		
+				<!-- end 列表 -->	
+				
+				{include file="block/page"}<!-- 翻页-->
+				
+
+				{empty name="$__PAGING__.record_total"}
+	            <div class="search-tips">很抱歉，暂无相关视频！如需提醒管理员添加该视频请点击&nbsp;&nbsp;<a href="javascript:void(0)" onclick="MAC.Gbook.Report('请管理员添加《{$param.wd}》，谢谢！')"><i class="iconfont">&#xe632;</i>&nbsp;留言</a>&nbsp;，谢谢！</div>
+	            {/empty}	
+			</div>
+			{empty name="$__PAGING__.record_total"}
+			<div class="pannel long3-list clearfix">
+				<div class="pannel__head clearfix">
+				    <a class="text-muted pull-right" href="{:mac_url('map/index')}">更多<i class="iconfont more-i">&#xe623;</i></a>
+					<h3 class="title">
+						最近更新
+					</h3>						
+				</div>
+				<ul class="vodlist list-num list-num4 clearfix">
+					{maccms:vod num="6" order="desc" by="time"}
+					{include file="block/vod_box"}		
+					{/maccms:vod}
+				</ul>
+			</div>
+            {/empty}	      
+        </div>
+    </div>
+    <script type="text/javascript">
+        $('.mac_total').html('{$__PAGING__.record_total}');
+    </script>
+	{include file="block/foot"}
+</body>
+</html>

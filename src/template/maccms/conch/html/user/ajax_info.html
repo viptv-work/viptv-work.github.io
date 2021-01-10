@@ -1,0 +1,69 @@
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>我的资料-会员中心 - {$maccms.site_name}</title>
+	<meta name="keywords" content="我的资料-会员中心">
+	<meta name="description" content="我的资料-会员中心">
+	{include file="user/include" /}
+</head>
+<body>
+{include file="user/head" /}
+<!-- 会员中心 -->
+<div id="member" class="fn-clear">
+	<div id="left">
+	    <div class="m-nav">
+			<a href="javascript:MAC.GoBack()" class="btn-left"><i class="iconfont ico-right">&#xe625;</i></a>
+			<a href="{$maccms.path}" class="btn-right"><i class="iconfont ico-right">&#xe634;</i></a>
+			<span class="mb-title">个人中心</span>
+	    </div>
+        {include file="user/left_nav" /}
+	</div>
+	<div id="right">
+		<div class="m-nav">
+			<a href="javascript:MAC.GoBack()" class="btn-left"><i class="iconfont ico-right">&#xe625;</i></a>
+			<a href="{:url('user/info')}" class="btn-right">修改</a>
+			<span class="mb-title">基本资料</span>
+	    </div>
+	    <div class="co-right co-right-bg">
+		<h2>我的资料</h2>
+		<div id="tab">
+			<div class="list">
+				<ul class="fn-clear">
+					<li class="cur">基本资料</li>
+					<li><a href="{:url('user/info')}">修改信息</a></li>
+					<li><a href="{:url('user/popedom')}">我的权限</a></li>
+				</ul>
+			</div>
+			<div id="listCon">
+				<!-- 基本资料 -->
+				<div class="cur">
+					<p><span class="xiang">用户名</span>{$obj.user_name}</p>
+					<p><span class="xiang">所属会员组</span>{if condition="$obj.group_id lt 3"}{$user.group.group_name}{else}<i class="iconfont user_vip">&#xe638;</i>{$obj.group.group_name}{/if}</p>
+					<p><span class="xiang">账户积分</span>{$obj.user_points}</p>
+					<p><span class="xiang">会员期限</span>{if condition="$obj.group_id lt 3"}永久有效{else}{$obj.user_end_time|mac_day}{/if}</p>
+					<p><span class="xiang">QQ号码</span>{$obj.user_qq|mac_default='未填写'}</p>
+					<p><span class="xiang">Email地址</span>{$obj.user_email|mac_default='未填写'}</p>
+					<p><span class="xiang">注册时间</span>{$obj.user_reg_time|mac_day}</p>
+					<p><span class="xiang">上次登录</span>{$obj.user_last_login_time|mac_day=color}</p>
+					<p><span class="xiang">登录次数</span>{$obj.user_login_num}</p>
+					<p><span class="xiang">登陆IP</span>{$obj.user_login_ip|long2ip}</p>
+					<p><span class="xiang">登陆时间</span>{$obj.user_login_time|mac_day}</p>
+				</div>
+			</div>
+		</div>
+	 </div>
+	 </div>
+</div>
+<script type="text/javascript">
+    function copyText() {
+      var text = document.getElementById("text").innerText;
+      var input = document.getElementById("input");
+      input.value = text; // 修改文本框的内容
+      input.select(); // 选中文本
+      document.execCommand("copy"); // 执行浏览器复制命令
+      alert("复制成功");
+    }
+</script>
+
+{include file="user/foot" /}
+</body>
+</html>

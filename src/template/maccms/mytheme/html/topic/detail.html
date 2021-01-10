@@ -1,0 +1,71 @@
+{include file="public/data"}
+{if $mytheme.site.debug}<!--当前文件路径（仅主题调试模式下可见）{$maccms[path_tpl]}topic/detail.html-->{/if}
+<!DOCTYPE html>
+<html>
+	<head>
+		{include file="seo/topic_detail"}   
+		{include file="public/include"}
+	</head>
+	<body>
+		{include file="public/head"}	
+		<div class="container">
+			<div class="row">		
+				<div class="myui-panel myui-panel-bg clearfix">
+					<div class="myui-panel-box clearfix">
+						<div class="col-md-wide-3 col-xs-1">
+							<div class="myui-vodlist__thumb wide" style="background: url({:mac_url_img($obj.topic_pic)});"></div>																					
+						</div>
+					    <div class="col-md-wide-7 col-xs-1">
+					    	<h1 class="myui-article__title">{$obj.topic_name}</h1>
+					        <p class="myui-article__content mt10">{$obj.topic_content|mac_filter_html}</p>	
+					        {if $is_pc && $mytheme.bdshare.is}
+							<div class="bdshare bdsharebuttonbox hidden-sm hidden-xs">
+								<span class="bds_shere"></span>
+								{maccms:foreach name=":explode(',',''.$mytheme['bdshare']['btn'].'')" id="vo" key="key"}
+								<a class="bds_{$vo}" data-cmd="{$vo}"></a>
+								{/maccms:foreach}
+							</div>
+							{/if}
+					    </div>
+					</div>
+				</div>
+
+				<div class="myui-panel myui-panel-bg clearfix">
+					<div class="myui-panel-box clearfix">
+						<div class="myui-panel_hd">
+							<div class="myui-panel__head clearfix">
+								<span class="more text-muted pull-right hidden-xs">本专题共“{$obj.vod_list|count}”部影片</span>
+								<h3 class="title">
+									该专题包含的影片
+								</h3>									
+							</div>								
+						</div>
+						<div class="myui-panel_bd clearfix">
+							<ul class="myui-vodlist clearfix">
+								{maccms:foreach name="$obj.vod_list"}
+								<li class="col-lg-{$mytheme.col.lg} col-md-{$mytheme.col.md} col-sm-{$mytheme.col.sm} col-xs-{$mytheme.col.xs}">
+									{include file="block/vod_box"}										
+								</li>
+								{/maccms:foreach}
+							</ul>	
+						</div>
+					</div>
+				</div>
+				
+				{if $mytheme.topic.ad && $mytheme.topic.ad1}
+				<div class="myui-panel myui-panel-bg clearfix">
+					<div class="myui-panel-box clearfix">
+						<div class="myui-panel_bd">
+							<div class="col-xs-1">
+								{$mytheme.topic.ad1}
+							</div>
+						</div>
+					</div>				
+				</div>
+				{/if}
+				
+			</div>
+		</div>
+		{include file="public/foot"}
+	</body>
+</html>

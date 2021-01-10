@@ -1,0 +1,21 @@
+{maccms:foreach name="obj.vod_play_list" id="vo"}
+<div class="stui-pannel stui-pannel-bg clearfix">
+	<div class="stui-pannel-box b playlist mb">
+		<div class="stui-pannel_hd">
+			<div class="stui-pannel__head bottom-line active clearfix">
+				<span class="more text-muted pull-right">{$vo.player_info.tip}</span>
+				<h3 class="title">
+					{$vo.player_info.show}
+				</h3>						
+			</div>																		
+		</div>
+		<div class="stui-pannel_bd col-pd clearfix">
+			<ul class="stui-content__playlist column8 clearfix">
+				{maccms:foreach name="vo.urls" id="vo2"}
+                <li {if condition="$param.sid eq $vo.sid && $param.nid eq $vo2.nid"}class="active"{/if}><a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}">{$vo2.name}</a></li>
+                 {/maccms:foreach}	
+			</ul>
+		</div>
+	</div>
+</div>
+{/maccms:foreach}

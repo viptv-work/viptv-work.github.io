@@ -1,0 +1,54 @@
+{include file="public/data"}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no">
+    <title>系统提示......</title>
+    {include file="public/include"}
+    {include file="user/include" /}
+</head>
+<body class="left">
+	<div class="container">
+	    <div class="row">
+			<div class="myui-msg__form clearfix">
+				<div class="myui-panel myui-panel-bg clearfix">
+					<div class="myui-panel-box clearfix">		
+						<div class="myui-panel_bd">
+							<div class="myui-msg__head text-center">
+								<p><i class="fa fa-warning"></i></p>
+								<p class="text-red">{if condition="$obj.vod_pwd_url neq ''"}<a target="_blank" href="{$obj.vod_pwd_url}">点击获取密码</a>{else/}{$obj.vod_pwd}{/if}</p>
+							</div>
+							<form id="form1" name="form1" action="" method="post">
+							<div class="myui-msg__body">	
+								<p>
+									<input type="password" name="pwd" class="form-control" placeholder="请输入密码">
+								</p>								
+								<p>
+									<a class="btn btn-md btn-block btn-primary submit_btn" href="javascript:;" data-mid="1" data-id="{$obj.vod_id}" data-type="5">确认密码</a>
+								</p>
+								<p class="margin-0">
+									<a class="pull-right" href="{$maccms.path}">[返回首页]</a>
+									<a href="javascript:;" onclick="javascript:history.back(-1);">[返回上一层]</a>
+								</p>
+							</div>	
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$('body').on('click', '.submit_btn', function(e){
+			var $that = $(this);
+			MyTheme.Ajax(maccms.path + '/index.php/ajax/pwd.html?id=' + $that.attr("data-id") + '&mid=' + $that.attr("data-mid") + '&type=' + $that.attr("data-type") + '&pwd='+ $that.parents('form').find('input[name="pwd"]').val() ,'get','json','',function(r){
+				layer.msg(r.msg);
+				if (r.code == 1) {
+					location.reload();
+				}
+			});
+		});
+	</script>
+</body>
+</html>

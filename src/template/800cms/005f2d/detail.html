@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>正在播放 <?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_name');?></title>
+	<meta name="keywords" content="<?php echo $web_keywords;?>" />
+	<meta name="description" content="<?php echo $web_description;?>" />
+	<meta name="keywords" content="<?php echo $web_keywords;?>" />
+	<meta name="description" content="<?php echo $web_description;?>" />
+	<link rel="stylesheet" type="text/css" href="<?php echo '/template/'.$web_moban;?>/css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo '/template/'.$web_moban;?>/css/base.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo '/template/'.$web_moban;?>/css/main.css"/>
+	<script type="text/javascript" src="<?php echo '/template/'.$web_moban;?>/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="<?php echo '/template/'.$web_moban;?>/js/main.js"></script>	
+</head>
+<body>
+<?php  include('./template/'.$web_moban.'/header.html');?>
+<div class="detail_right" style="overflow: hidden; background: #fff; margin-top:20px; padding-left:10px;">
+                <div class="gc_vidoe_nav">
+                    <i class="icon iconfont icon-home"></i>
+                                <span>您当前位置：</span>
+                                <a href="#"><?php echo $web_title;?></a>
+                                <i class="icon iconfont icon-right"></i>
+                                <a href="#" class="">视频播放</a>
+                                <i class="icon iconfont icon-right"></i>
+                                <span class="right"><?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_name');?></span>
+                </div>
+
+                <div class="gc_video_content">
+                    <div class="gc_vodeo_left">
+								<div style="height:400px;width:100%">
+										<video id='myVideo'  class="video-js" ></video>
+											<link rel="stylesheet" type="text/css" href="/static/VideoJS/video.min.css?v=3">
+											<script type="text/javascript" src="/static/VideoJS/video.min.js?v=1" charset="utf-8" > </script>
+												<script type="text/javascript" src="/static/VideoJS/video-conrtib-ads.js?v=1" charset="utf-8" > </script>
+												<script type="text/javascript" src="/static/VideoJS/myVideo.js?v=6" charset="utf-8" > </script>
+												<script type="text/javascript">
+												var vPath = '<?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_playurl');?>';
+												var logo = '';
+												var myVideo=initVideo({
+                                                    id:'myVideo',
+                                                    url:vPath,
+													ad:{
+                                                      pre:{
+                                                          url:'',
+                                                          link:'',
+                                                      },
+												  	},
+                                                  	logo:{
+                                                        url:'/template/800CMSPC/images/logo.png',
+                                                        width:'100px'
+                                                    },
+												});
+												</script>
+								</div>				
+                        <div class="watch" style="width:initial">
+                            <span class="title"> <?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_name');?></span>
+                            <span class="people"><em><?php  echo rand(5, 10000); ?></em>次观看</span>
+
+                            <span id="likes_msg" style="color:red;"></span>
+                        </div>
+                        <div class="watch" style="width:initial">
+                            <span class="title">如果无法播放请刷新或者更换其他视频</span>
+
+                        </div>
+                    </div>
+
+
+
+							                     <div class="gc_vodeo_right">
+                         <div class="ps_3" style="margin-top: 0"></div>
+                         <p class="moreVideo">相关视频</p>
+                         <div class="videoMore">
+                            <ul>
+							
+
+                        	    <li><p class="img"><img class="lazy" src="<?php echo '/template/'.$web_moban;?>/images/1.jpg"/></p><p><?php echo $web_title;?></p></li>
+								<li><p class="img"><img class="lazy" src="<?php echo '/template/'.$web_moban;?>/images/2.jpg"/></p><p><?php echo $web_title;?></p></li>
+								<li><p class="img"><img class="lazy" src="<?php echo '/template/'.$web_moban;?>/images/3.jpg"/></p><p><?php echo $web_title;?></p></li> 
+							
+							</ul>
+                         </div>
+                                              </div>
+
+
+                </div>
+
+				
+				
+
+
+
+            </div>
+			
+					<div class="detail_right">
+            <div class="ps_2">
+				<?php	Jccms_json_ad_video('<a style="display:block;margin:0 0 0 0 ;" href="链接" target="_blank"><img src="图片"></a>');?>	
+			</div>
+		</div>
+			
+
+			
+			
+			
+			
+			
+			<div class="detail_right">
+				<div class="detail_tab detail_tab2">
+					<div class="detail_right_div">
+						<h3> <span class="detail_right_span">相关视频|公告： <?php echo $dizhigongao;?></span></h3>
+						<ul>
+						<?php  
+						include('./lib/datatop.php');
+						 $pagesize = 9; //设置记录显示条数; 
+						 $JCCMS_pagecount = floor(count($JCCMS_SQL) / $pagesize)-1;//计算数组所得到记录总数
+						  $JCCMS_prev = $JCCMS_pages -1; //初始化上一页
+						 $JCCMS_next = $JCCMS_pages +1; //初始化下一页
+						
+						?>
+						<?php   $JCCMS_SQL=JCCMS_chulis(JCCMS_SQLL($JCCMS_SQL,'0','JCCMS_SQL_type'));for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+							<li>
+							<p class="img">
+								<img class="lazy" src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>"  alt="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?>" title="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?>" onerror="this.src='<?php echo '/template/'.$web_moban;?>/img/backlogo.png'"/>
+								<a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html"></a>
+							</p>
+							<p><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></p>
+
+							<p>
+								<i><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_time');?></i>
+								<strong><?php  echo rand(5, 10000); ?>观看</strong>
+							</p>
+						</li>
+						<?php		 }							 ?>								
+								   
+						</ul>
+					</div>
+				</div>
+			</div>
+
+        </div>
+    </div>
+</div>
+<!-- 正文 -->
+
+
+
+
+
+
+
+
+
+
+
+<?php  include('./template/'.$web_moban.'/footer.html');?>
+ 
+</body>
+</html>

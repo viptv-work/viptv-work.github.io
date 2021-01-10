@@ -1,0 +1,124 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>充值卡充值 - 会员中心 -{$maccms.site_name}</title>
+<meta name="keywords" content="{$maccms.site_keywords}"/>
+<meta name="description" content="{$maccms.site_description}"/>
+{include file="user/include" /}
+</head>
+<body>
+{include file="user/head" /}
+<!-- 会员中心 -->
+<div id="member" class="fn-clear">
+	<div id="left">
+        <div class="m-nav">
+			<a href="javascript:MAC.GoBack()" class="btn-left"><i class="iconfont ico-right">&#xe625;</i></a>
+			<a href="{$maccms.path}" class="btn-right"><i class="iconfont ico-right">&#xe634;</i></a>
+			<span class="mb-title">个人中心</span>
+	    </div>
+        {include file="user/left_nav" /}
+	</div>
+    <div id="right">
+		<div class="m-nav">
+			<a href="javascript:MAC.GoBack()" class="btn-left"><i class="iconfont ico-right">&#xe625;</i></a>
+			<span class="mb-title">在线充值</span>
+	    </div>
+	    <div class="co-right co-hi">
+	    <h2 class="m-tit">在线充值</h2>
+		<div id="listCon">
+	      <div class="cur">
+		    <form id="fm" name="fm" method="post" action="" >
+			<p><span class="xiang">剩余积分</span>{$obj.user_points}</p>
+			<p><span class="xiang">充值的金额</span><input type="text" name="price" value="{$config.min}" class="member-input"></p>
+			<p class="hui">友情提示：最小充值金额为{$config.min}元，1元可以兑换{$config.scale}个积分</p>
+			<p><input type="button" id="btn_submit_pay" class="search-button" value="确认"></p>
+			</form>
+		  </div>
+		</div>
+		</div>
+		<div class="co-right co-hi co-bottom">
+	    <h2 class="m-tit">充值卡充值</h2>
+		<div id="listCon2">
+	      <div class="cur">
+		    <form id="fm2" name="fm" method="post" action="" >			
+			<p><span class="xiang">充值卡号</span><input type="text" name="card_no" value="" placeholder="请输入充值卡号" class="member-input wt-input">
+				{if condition="$GLOBALS['config']['pay']['card']['url'] neq ''"}
+				<a class="bind-a" target="_blank" href="{$GLOBALS['config']['pay']['card']['url']}">购买卡密</a>
+				{/if}
+			</p>
+			<p><span class="xiang">充值密码</span><input type="text" name="card_pwd" value="" placeholder="请输入充值卡密码" class="member-input"></p>
+			<p class="hui">友情提示：请到卡密平台购买充值卡</p>
+			<p><input type="button" id="btn_submit_card" class="search-button" value="确认"></p>
+   			</form>
+		  </div>
+		</div>
+        </div>
+    </div>
+</div>
+<script>
+
+	$(".go-back").click(function () {
+		var ref = document.referrer;
+		location.href=ref;
+	});
+
+	$('#btn_submit_pay').click(function(){
+		var that=$(this);
+		var price = $("input[name='price']").val();
+		if(Number(price)<1){
+			return;
+		}
+		if(confirm('确定要在线充值吗')) {
+			$.ajax({
+				url: "{:url('user/buy')}",
+				type: "post",
+				dataType: "json",
+				data: {price: price,flag:'pay'},
+				beforeSend: function () {
+					$("#btn_submit_pay").css("background","#fd6a6a").val("loading...");
+				},
+				success: function (r) {
+					if (r.code == 1) {
+						location.href="{:url('user/pay')}?order_code=" + r.data.order_code;
+					}
+					else{
+						alert(r.msg);
+					}
+				},
+				complete: function () {
+					$("#btn_submit_pay").css("background","#fa4646").val("提交");
+				}
+			});
+		}
+	});
+
+	$('#btn_submit_card').click(function(){
+		var that=$(this);
+		var no = $('input[name="card_no"]').val();
+		var pwd = $('input[name="card_pwd"]').val();
+		if(no=='' || pwd==''){
+			alert('请输入充值卡号和密码');
+			return;
+		}
+		if(confirm('确定要使用充值卡充值吗')) {
+			$.ajax({
+				url: "{:url('user/buy')}",
+				type: "post",
+				dataType: "json",
+				data: {card_no: no,card_pwd:pwd,flag:'card'},
+				beforeSend: function () {
+					$("#btn_submit_card").css("background","#fd6a6a").val("loading...");
+				},
+				success: function (r) {
+					alert(r.msg);
+				},
+				complete: function () {
+					$("#btn_submit_card").css("background","#fa4646").val("提交");
+				}
+			});
+		}
+	});
+</script>
+{include file="user/foot" /}
+</body>
+</html>

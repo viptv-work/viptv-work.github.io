@@ -1,0 +1,58 @@
+{if condition="$vo['type_id_1']==$conch['theme']['type']['zb']"}
+<li class="ranklist_item">
+    <a title="{$vo.vod_name}" href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}">
+	<div class="ranklist_img">
+		 <div class="ranklist_thumb zbpic lazyload" data-original="{$vo.vod_pic|mac_url_img}"></div>
+	</div>	
+    <div class="ranklist_txt">
+	     <div class="pannel_head clearfix">
+              <span class="vod_tname text_muted pull_right">{$vo.type.type_name}&nbsp;/&nbsp;<em>{$vo.vod_time|date='m-d',###}</em></span>
+              <h4 class="title">{$vo.vod_name}</h4>	
+         </div>
+	     <p class="vodlist_sub">简介：{$vo.vod_content|mac_filter_html|mac_default='暂无简介'}</p>
+	     <p><span class="vodlist_sub">类型：{$vo.vod_class}</span></p>
+    </div>
+    </a>  		
+</li>
+{else/}
+{in name="vo.type_id" value="$conch['theme']['type']['hb']"}
+<li class="ranklist_item">
+    <a title="{$vo.vod_name}" href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}">
+	<div class="ranklist_img">
+		 <div class="ranklist_thumb lazyload" data-original="{$vo.vod_pic|mac_url_img}"></div>
+	</div>	
+    <div class="ranklist_txt">
+	     <div class="pannel_head clearfix">
+              <span class="vod_tname text_muted pull_right">{$vo.type.type_name}&nbsp;/&nbsp;<em>{$vo.vod_time|date='m-d',###}</em></span>
+              <h4 class="title">{$vo.vod_name}</h4>	
+         </div>
+	     <p class="vodlist_sub">{$vo.vod_year}&nbsp;/&nbsp;{$vo.vod_area}&nbsp;/&nbsp;{$vo.vod_class}</p>
+	     <p><span class="vodlist_sub">状态：{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}</span></p>
+    </div>
+    </a>  		
+</li>
+{else/}
+<li class="ranklist_item">
+    <a title="{$vo.vod_name}" {if condition="$conch['theme']['playlink']['btn'] eq 1"}href="{:mac_url_vod_play($vo,['sid'=>$vo.sid,'nid'=>1])}"{else/}href="{:mac_url_vod_detail($vo)}"{/if}>
+	<div class="ranklist_img">
+		 <div class="ranklist_thumb lazyload" data-original="{$vo.vod_pic|mac_url_img}">						
+            {if condition="$vo['type_id_1']==1"}
+            {if condition="$vo.vod_score eq 0"}
+            {else/}
+            <span class="pic_text text_right text_dy">{$vo.vod_score}</span>
+            {/if}
+            {/if}
+	     </div>
+	</div>	
+    <div class="ranklist_txt">
+	     <div class="pannel_head clearfix">
+              <span class="vod_tname text_muted pull_right">{$vo.type.type_name}&nbsp;/&nbsp;<em>{$vo.vod_time|date='m-d',###}</em></span>
+              <h4 class="title">{$vo.vod_name}</h4>	
+         </div>
+	     <p class="vodlist_sub">{$vo.vod_sub|mac_default=$vo.vod_actor|mac_url_create='actor'|mac_filter_html|mac_default='未知'}</p>
+	     <p><span class="vodlist_sub">状态：{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}</span></p>
+    </div>
+    </a>  		
+</li>
+{/in}
+{/if}

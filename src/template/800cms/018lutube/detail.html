@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+<title>正在播放 <?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_name');?></title>
+<meta name="keywords" content="<?php echo $web_keywords;?>" />
+<meta name="description" content="<?php echo $web_description;?>" />
+<link href="<?php echo '/template/'.$web_moban;?>/css/style.css" rel="stylesheet">
+<meta name="theme-color" content="#ffffff">
+</head>
+<body  data-host="221" class="list hd" data-uid="">
+<?php  include('./template/'.$web_moban.'/header.html');?>
+<div class="alert alert-default text-center " style="margin:10px 4px 0 4px;padding:0" id="domaintip">  <div class="dropdown"><?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_name');?></div></div>
+<div  style="height:400px">
+<video id='myVideo'   class="video-js"></video>                  
+<link rel="stylesheet" type="text/css" href="/static/VideoJS/video.min.css?v=3">
+<script type="text/javascript" src="/static/VideoJS/video.min.js?v=1" charset="utf-8" > </script>
+	<script type="text/javascript" src="/static/VideoJS/video-conrtib-ads.js?v=1" charset="utf-8" > </script>
+	<script type="text/javascript" src="/static/VideoJS/myVideo.js?v=6" charset="utf-8" > </script>
+	<script type="text/javascript">
+	var vPath = '<?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_playurl');?>';
+	var logo = '';
+	var myVideo=initVideo({
+		id:'myVideo',
+		url:vPath,
+		ad:{
+		  pre:{
+			  url:'',
+			  link:'',
+		  },
+		},
+		logo:{
+			url:'/template/800CMSPC/images/logo.png',
+			width:'100px'
+		},
+	});
+</script>   
+</div>
+<?php	Jccms_json_ad_video('<a href="链接" target="_blank"><img style="width:100%;height:100px;margin-bottom:2px;" src="图片"></a>');?>	
+<div class="alert alert-default text-center " style="margin:10px 4px 0 4px;padding:0" id="domaintip">  <div class="dropdown">推荐视频</div></div>
+<?php 	include('./lib/datatop.php');$pagesize = 5; $JCCMS_pagecount = floor(count($JCCMS_SQL) / $pagesize)-1;$JCCMS_prev = $JCCMS_pages -1;$JCCMS_next = $JCCMS_pages +1;
+$JCCMS_SQL=JCCMS_chulis(JCCMS_SQLL($JCCMS_SQL,'0','JCCMS_SQL_type'));for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+
+<div class="video" id="v_VuHKbdWnH2">
+    <a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html">
+        <div class="vimg">
+            <img src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>">
+            <span class="vlen">上架时间：<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_time');?></span><span class="icon_promote icon_promote_right" style="width:100%;height:100%"><span>推荐视频</span></span>
+        </div>
+        <p class="title"><span class="glyphicon glyphicon-hd-video" style="color:#337ab7"></span><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></p>
+    </a>
+</div>
+<?php		 }?>
+
+
+<?php  include('./template/'.$web_moban.'/footer.html');?>
+</body>
+</html>

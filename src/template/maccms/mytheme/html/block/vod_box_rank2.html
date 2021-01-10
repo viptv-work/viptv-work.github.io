@@ -1,0 +1,7 @@
+<li class="{if condition="$key gt 1"}top-line-dot{/if}">
+	<a{if $mytheme.site.link} href="{:mac_url_vod_play($vo,['sid'=>1,'nid'=>1])}"{else} href="{:mac_url_vod_detail($vo)}"{/if} title="{$vo.vod_name}">
+		{if $mytheme.rank.is}<span class="pull-right {if !$mytheme.rank.color} text-muted{/if} visible-lg" style="color: {$mytheme.rank.color};">{$vo[''.$mytheme.rank.data.'']|mac_substring=8}</span>{/if}
+		<span class="badge{if condition="$key eq 1"} badge-first{/if}{if condition="$key eq 2"} badge-second{/if}{if condition="$key eq 3"} badge-third{/if}">{$key}</span>		
+		{$vo.vod_name|mac_substring=8}
+	</a>
+</li>

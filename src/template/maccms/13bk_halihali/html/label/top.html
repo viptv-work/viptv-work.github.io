@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>电视剧排行榜 电影排行榜 热门综艺 动漫排行榜 热播榜 - {$maccms.site_name}</title>
+<meta name="keywords" content="{$maccms.site_name} - {$maccms.site_keywords}" />
+<meta name="description" content="{$maccms.site_name} - {$maccms.site_description}" />
+{include file="public/include"}
+</head>
+<body>
+{include file="public/head"}
+<div class="tab-a navs w1214">
+<div class="wz fn-left">
+<span>您所在的位置：</span><a href="{$maccms.path}" title="{$maccms.site_name}">首页</a><em>&gt;&gt;</em><a class="current">排行榜</a>
+</div>
+</div>
+<div class="new-list">
+<div class="tab-a list-all w1214">
+<div class="top-r">{maccms:type ids="1,2,3,4" order="asc" by="sort"}
+	<div class="top-item aleft">
+		<div class="top-title">
+			<span><a href="{:mac_url_type($vo,[],'show')}" title="{$vo.type_name}排行榜" target="_blank">更多&gt;&gt;</a></span>
+			<h2><a href="{:mac_url_type($vo,[],'show')}" title="{$vo.type_name}排行榜" target="_blank">{$vo.type_name}排行榜</a></h2>
+		</div>
+		<ul class="top-list">{maccms:vod num="10" type="'.$vo['type_id'].'" order="desc" by="hits" id="vo2" key="key2"}
+			<li>
+			<h3><a href="{:mac_url_vod_detail($vo2)}" title="{$vo2.vod_name}" target="_blank"><span class="num stress">{$key2}.</span><span class="tit">{$vo2.vod_name}({include file="public/serial"})</span><span class="score">{$vo2.vod_hits}</span></a></h3>
+			</li>{/maccms:vod}
+		</ul>
+	</div>{/maccms:type}
+	{maccms:type ids="1,2,3,4" order="asc" by="sort"}
+	<div class="top-item aright">
+		<div class="top-title">
+			<span><a href="{:mac_url_type($vo,[],'show')}" title="{$vo.type_name}评分榜" target="_blank">更多&gt;&gt;</a></span>
+			<h2><a href="{:mac_url_type($vo,[],'show')}" title="{$vo.type_name}评分榜" target="_blank">{$vo.type_name}评分榜</a></h2>
+		</div>
+		<ul class="top-list">{maccms:vod num="10" type="'.$vo['type_id'].'" order="desc" by="scor" id="vo2" key="key2"}
+			<li>
+			<h3><a href="{:mac_url_vod_detail($vo2)}" title="{$vo2.vod_name}" target="_blank"><span class="num stress">{$key2}.</span><span class="tit">{$vo2.vod_name}({include file="public/serial"})</span><span class="score">{$vo2.vod_score}分</span></a></h3>
+			</li>{/maccms:vod}
+		</ul>
+	</div>{/maccms:type}
+</div>
+</div>
+</div>
+<!--底部开始-->
+{include file="public/foot"}
+<script type="text/javascript" src="{$maccms.path_tpl}js/read.js"></script>
+<div class="index-top" id="index-top">
+<a class="top"></a>
+</div>
+<!--底部结束-->
+</body>
+</html>

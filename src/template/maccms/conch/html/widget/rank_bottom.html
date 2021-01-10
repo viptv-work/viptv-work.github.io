@@ -1,0 +1,13 @@
+              </span>
+              <h4 class="title">{$vo.vod_name}</h4>	
+         </div>
+         {if condition="$vo['type_id_1']==$conch['theme']['type']['zb']"}
+         <p class="vodlist_sub">简介：{$vo.vod_content|mac_filter_html|mac_default='暂无简介'}</p>
+	     <p><span class="vodlist_sub">类型：{$vo.vod_class}</span></p>
+         {else}
+	     <p class="vodlist_sub">{$vo.vod_year|mac_default='未知'}&nbsp;/&nbsp;{$vo.vod_area|mac_default='未知'}&nbsp;/&nbsp;{$vo.vod_class|mac_default='未知'}</p>
+	     <p><span class="vodlist_sub">状态：{if condition="$vo.vod_remarks neq ''"}{$vo.vod_remarks}{elseif condition="$vo.vod_serial gt 0"}第{$vo.vod_serial}集{else /}已完结{/if}</span></p>
+	     {/if}
+    </div>
+    </a>  		
+</li>

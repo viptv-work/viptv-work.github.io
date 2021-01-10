@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>内容声明 -{$maccms.site_name}</title>
+<meta name="keywords" content="{$maccms.site_keywords}"/>
+<meta name="description" content="{$maccms.site_description}"/>
+{include file="user/include" /}
+<style>
+	#member .co-right .mac_history_box{display: block!important;}
+	dt,dd{display: block;overflow: hidden;width: 100%;}
+	#member .co-right .mac_history_box dt a{display: none!important;}
+	#member .co-right .mac_history_box dd a{padding: 0.25rem 0;overflow: hidden;display: block;overflow: hidden;text-overflow: ellipsis;white-space: nowrap;}
+	#member .co-right .mac_history_box dd a span{color: #ff5f00;float: right;}
+	dd.hide,li.hx_clear{position: absolute;top: 50%;left: 50%;padding: 0;transform: translate(-50%,-50%);width: 100%;border: 0!important;text-align: center;}
+</style>
+</head>
+<body>
+<div class="header">
+	<div class="layout fn-clear">
+		<div class="logo">
+			<a href="{$maccms.path}"><img width="120" height="34" src="{$maccms.path_tpl}img/member/logo_m.png" alt=""/></a>
+		</div>
+		<div class="user-n"><span>内容声明</span></div>
+		<ul class="nav">
+		    <li class="nav-item"><a class="nav-link" href="javascript:MAC.GoBack()">返回</a></li>
+			<li class="nav-item"><a class="nav-link" href="{$maccms.path}">返回首页</a></li>
+		</ul>
+	</div>
+</div>
+<!-- 会员中心 -->
+<div id="member" class="fn-clear">
+    <div id="right" style="width: 100%;">
+		<div class="m-nav">
+			<a href="javascript:MAC.GoBack()" class="btn-left"><i class="iconfont ico-right">&#xe635;</i></a>
+			<span class="mb-title">内容声明</span>
+	    </div>
+	    <div class="co-right co-right-bg">
+        <p style="line-height: 0.75rem;">爱看影视通过链接的方式提供相关内容。所有内容（以下简称“内容”）均为第三方内容提供方（以下简称“第三方”）提供。 爱看影视自身不存储、控制编辑或修改被链接的第三方网页上的信息内容或其表现形式，对提供链接的内容不拥有任何权利，也不负任何责任，不提供任何明示或暗示的担保，不承担用户因使用这些内容资源对自己和他人造成任何形式的损失或伤害。 爱看影视承诺遵守并尊重中国现行法律法规及其他规范性文件对著作权人的保护，并依照规定制定了保护权利人权利的处理流程。作为权利人，当您发现在爱看影视的链接所指向的第三方网页的内容侵犯了您的合法权益时，您应当按照处理流程首先向我们发送“权利通知”，我们将根据中国法律法规和政府规范性文件采取措施断开相关链接。联系邮箱：{$maccms.site_email}</p>
+        </div>
+    </div>
+</div>
+<div class="foot-m-nav">
+	<ul class="foot-rows">
+		<li class="foot-text">
+			<a href="{$maccms.path}"><i class="iconfont">&#xe63a;</i><span class="foot-font">首页</span></a>
+		</li>
+		<li class="foot-text">
+		{maccms:type order="asc" by="sort" mid="1" ids="1"}
+		<a href="{:mac_url_type($vo)}"><i class="iconfont">&#xe642;</i><span class="foot-font">{$vo.type_name}</span></a>
+		{/maccms:type}
+		</li>
+		<li class="foot-text">
+		{maccms:type order="asc" by="sort" mid="2" ids="5"}
+		<a href="{:mac_url_type($vo)}"><i class="iconfont">&#xe644;</i><span class="foot-font">{$vo.type_name}</span></a>
+		{/maccms:type}	
+		</li>
+		<li class="foot-text">
+			<a href="{:mac_url('gbook/index')}"><i class="iconfont">&#xe643;</i><span class="foot-font">留言</span></a>
+		</li>
+		<li class="foot-text">
+		    {if condition="$user.group.group_id eq 1"}
+		    <a id="mb_pd" href="{:mac_url('label/member')}"><i class="iconfont">&#xe636;</i><span class="foot-font">我的</span></a>
+		    {else/}
+			<a {if condition="$maccms.aid eq 6" }class="active"{/if} href="{:mac_url('user/index')}"><i class="iconfont">&#xe636;</i><span class="foot-font">我的</span></a>
+			{/if}
+		</li>
+	</ul>
+</div>
+<!-- // sign-content end -->
+<div class="footer">
+	<div class="layout">
+		<div class="copyright">
+			<p>
+				Copyright &copy; 2016-2019 <a class="color" href="http://{$maccms.site_url}">{$maccms.site_url}</a>
+			</p>
+		</div>
+		<!-- // maxBox End -->
+	</div>
+</div>
+</body>
+</html>

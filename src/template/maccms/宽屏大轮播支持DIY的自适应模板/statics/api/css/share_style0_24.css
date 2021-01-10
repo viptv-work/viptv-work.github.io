@@ -1,0 +1,27 @@
+/* share */
+.bdsharebuttonbox{line-height:30px;height:30px;overflow:hidden;vertical-align:top}
+.bdsharebuttonbox a,.bdsharebuttonbox span{width:24px;height:24px;display:inline-block;margin-right:5px;background:url(../img/share.png) no-repeat;cursor:pointer;margin-bottom:0;opacity:.8}
+.bdsharebuttonbox a:hover{opacity:1}
+.bdsharebuttonbox a.bds_tsina{background-position:0 0}
+.bdsharebuttonbox a.bds_weixin{background-position:0 -33px}
+.bdsharebuttonbox a.bds_qzone{background-position:0 -65px}
+.bdsharebuttonbox a.bds_sqq{background-position:0 -98px}
+.bdsharebuttonbox a.bds_renren{background-position:0 -131px}
+.bdsharebuttonbox a.bds_tqq{background-position:0 -163px}
+.bdsharebuttonbox a.bds_diandian{background-position:0 -356px}
+.bdsharebuttonbox a.bds_youdao{background-position:0 -388px}
+.bdsharebuttonbox a.bds_ty{background-position:0 -420px}
+.bdsharebuttonbox a.bds_fbook{background-position:0 -452px}
+.bdsharebuttonbox a.bds_twi{background-position:0 -484px}
+.bdsharebuttonbox a.bds_kaixin001{background-position:0 -228px}
+.bdsharebuttonbox a.bds_taobao{background-position:0 -196px}
+.bdsharebuttonbox a.bds_douban{background-position:0 -324px}
+.bdsharebuttonbox a.bds_mail{background-position:0 -548px}
+.bdsharebuttonbox a.bds_copy{background-position:0 -516px}
+.bdsharebuttonbox a.bds_bdhome{background-position:0 -292px}
+.bdsharebuttonbox a.bds_tqf{background-position:0 -260px}
+.bdsharebuttonbox a.bds_more{background-position:0 -577px}
+.bdsharebuttonbox span.bds_shere{background-position:0 -606px}
+.bdsharebuttonbox a.bds_count{background:0 0;width:auto;height:auto;position:relative;top:-6px}
+.bdsharebuttonbox a.bds_count{margin:0 2px}
+.bdsharebuttonbox a.bds_btn{ line-height: initial; width: auto; height: auto; margin: 0; background: #f5f5f5; opacity: 1;}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+       
+	{include file="public/include"}
+	<script>
+        $(function(){
+            MAC.Gbook.Login = {$gbook.login};
+            MAC.Gbook.Verify = {$gbook.verify};
+            MAC.Gbook.Init();
+        });
+    </script>
+</head>
+<body id="graypage">
+ {include file="public/head"}
+ <div class="container white_pal">
+     {include file="ads/ads_all"}
+      <div class="input_row">
+       <div class="pannel clearfix">
+        <!--留言开始-->
+        <div class="mac_msg_r">
+              <form class="gbook_form gbook_font">
+                <textarea class="gbook_content" name="gbook_content" placeholder="输入留言内容"></textarea>
+                <div class="msg_code">
+                    <div class="remaining_w">提示：还可输入<span class="gbook_remaining remaining">200</span>字</div>
+                    {if condition="$gbook.verify eq 1"}
+                    <input type="text" name="verify" placeholder="验证码" class="verify"><img class="comm-code" src="{:mac_url('verify/index')}" data-role="{:mac_url('verify/index')}" title="看不清楚? 换一张！" onClick="this.src=this.src+'?v={:time()}'" />
+                    {/if}
+                    <input type="button" class="gbook_submit submit_btn" value="提交留言">
+                </div>
+            </form>
+        </div>
+        <!--留言结束-->
+        {maccms:gbook paging="yes" order="desc" by="id"}
+        {/maccms:gbook}		
+	   </div>
+    </div>
+	<div class="commlist_row">
+	    <div class="comm_list pannel clearfix">
+			{include file="gbook/ajax"}
+		</div>
+	</div>
+</div>
+{include file="public/foot"}
+</body>
+</html>
