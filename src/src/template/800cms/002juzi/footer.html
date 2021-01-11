@@ -1,0 +1,44 @@
+<div class="footer-item">
+  <p style="margin-top:10px;">所有的影片皆从外部来源于网络收集。没有视频托管本服务器上。如果您有任何法律问题，请联系合适的视频所有者或主机的网站.你还可以与我们联系。</p>
+</div>
+<div class="footer-item copyright">
+  广告联系方式
+  <?php echo $web_email;?>
+  <br />
+  <br />
+  <br />
+  <br />
+</div>
+
+<script>
+$(function(){
+  var timer=null;
+  $("#nav li").on({
+    mouseenter : function () {
+      var navIndex = $(this).index();
+      //clearTimeout(timer);
+      console.log(navIndex);
+      $("#sub_nav ul").eq(navIndex).css({
+        "height":"48px",
+        "transition":"all .3s",
+        "-webkit-transition":"all .3s",
+      });
+    },
+    mouseleave : function () {
+      var navIndex = $(this).index();
+      timer = setTimeout(() => {
+        $("#sub_nav ul").eq(navIndex).css({"height":"0px"})
+      }, 20);
+    }
+  });
+
+  $("#sub_nav ul").on({
+    mouseenter : function () {
+      clearTimeout(timer);
+    },
+    mouseleave : function () {
+      $("#sub_nav ul").css({"height":"0px"})
+    }
+  })
+})
+</script>

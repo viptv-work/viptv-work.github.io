@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{$obj.type_title} - {$maccms.site_name}</title>
+<meta name="keywords" content="{$obj.type_key} - {$maccms.site_keywords}" />
+<meta name="description" content="{$obj.type_des} - {$maccms.site_description}" />
+{include file="public/include"}
+</head>
+<body>
+<!--头部开始-->{include file="public/head"}
+<section class="wrapper">
+<div class="main">
+<ul class="selcet_list">
+<li><span class="fl_tit">类型</span>
+<p class="p_sel">
+	<span><a rel="nofollow" class="current" href="#">全部</a></span>{maccms:foreach name=":explode(',',$obj.type_extend.class)"}<span><a href="{:mac_url_type($obj,['class'=>$vo],'show')}">{$vo}</a></span>{/maccms:foreach}
+</p>
+</li>
+<li><span class="fl_tit">地区</span>
+<p class="p_sel">
+	<span><a rel="nofollow" class="current" href="#">全部</a></span>{maccms:foreach name=":explode(',',$obj.type_extend.area)"}<span><a href="{:mac_url_type($obj,['area'=>$vo],'show')}">{$vo}</a></span>{/maccms:foreach}
+</p>
+</li>
+<li><span class="fl_tit">年代</span>
+<p class="p_sel">
+	<span><a rel="nofollow" class="current" href="#">全部</a></span>{maccms:foreach name=":explode(',',$obj.type_extend.year)"}<span><a href="{:mac_url_type($obj,['year'=>$vo],'show')}">{$vo}</a></span>{/maccms:foreach}
+</p>
+</li>
+<li><span class="fl_tit">字母</span>
+<p class="p_sel">
+	<span><a rel="nofollow" class="current" href="#">全部</a></span>{maccms:foreach name=":explode(',','A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z,0-9')"}<span><a rel="nofollow" href="{:mac_url_type($obj,['letter'=>$vo],'show')}">{$vo}</a></span>{/maccms:foreach}
+</p>
+</li>
+</ul>
+<div class="v_mod">
+<div class="v_th">
+	<p class="p_tab">
+		<a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'time' ],'show')}" class='newico {if condition="$param.by eq '' || $param.by eq 'time'"}curr{/if}'>最新</a><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'hits' ],'show')}" class='hotico {if condition="$param.by eq 'hits'"}curr{/if}'>最热</a><a href="{:mac_url_type($obj,['area'=>$param['area'],'lang'=>$param['lang'],'year'=>$param['year'],'level'=>$param['level'],'letter'=>$param['letter'],'state'=>$param['state'],'tag'=>$param['tag'],'class'=>$param['class'],'order'=>$param['order'],'by'=>'score' ],'show')}" class='gode {if condition="$param.by eq 'score'"}curr{/if}'>评分</a>
+	</p>
+	<span class="v_num">共有<em class="mac_total"></em>部{$obj.type_name}。</span>
+</div>
+<div class="v_tb">
+	<ul class="drama-module clearfix tab-cont">
+{maccms:vod num="36" paging="yes" type="current" pageurl="vod/type" order="desc" by="time"}
+		<li class="item"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" target="_blank" class="img"><img class="loading" src="{$maccms.path_tpl}images/180x239.jpg" data-original="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}"><span class="mask">
+		<p>导演：{$vo.vod_director}</p>
+		<i class="iconfont icon-play"></i></span></a>
+		<div class="info">
+			<a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a>
+			<p>
+				<span class="fl">{include file="public/serial1"}</span><em class="fr">{$vo.vod_hits}人看了</em>
+			</p>
+		</div>
+		</li>
+{/maccms:vod}
+	</ul>
+{include file="public/paging"}
+</div>
+</div>
+</div>
+</section><!--底部开始-->
+{include file="public/foot"}
+    <script>
+        $('.mac_total').html('{$__PAGING__.record_total}');
+    </script>
+<script type="text/javascript" src="{$maccms.path_tpl}js/read.js"></script>
+<div class="index-top" id="index-top">
+<a class="top"></a>
+</div>
+</body>
+</html>

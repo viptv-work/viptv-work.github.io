@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/vod_type"}   
+	{include file="block/include"}
+</head>
+<body>
+	
+    <div class="container">
+        <div class="row">
+        	{include file="block/head"}
+        	       	
+			<div class="stui-pannel clearfix">		
+				<!-- 筛选 -->
+				<ul class="stui-screen__list clearfix">
+					<li>
+						<span class="text-muted">按类型</span>
+					</li>
+				  	{empty name="$obj.type_extend.class"}
+				        {maccms:foreach name=":explode(',',$obj.parent.type_extend.class)"}
+				        <li><a href="{:mac_url_type($obj,['class'=>$vo],'show')}">{$vo}</a></li>
+				        {/maccms:foreach}
+				    {else /}
+				        {maccms:foreach name=":explode(',',$obj.type_extend.class)"}
+				       	<li><a href="{:mac_url_type($obj,['class'=>$vo],'show')}">{$vo}</a></li>
+				        {/maccms:foreach}
+				    {/empty}								
+				</ul>
+				<ul class="stui-screen__list clearfix">
+					<li>
+						<span class="text-muted">按地区</span>
+					</li>
+					{empty name="$obj.type_extend.area"}
+				        {maccms:foreach name=":explode(',',$obj.parent.type_extend.area)"}
+				        <li><a href="{:mac_url_type($obj,['class'=>$vo],'show')}">{$vo}</a></li>
+				        {/maccms:foreach}
+				    {else /}
+				        {maccms:foreach name=":explode(',',$obj.type_extend.area)"}
+				        <li><a href="{:mac_url_type($obj,['area'=>$vo],'show')}">{$vo}</a></li>
+				        {/maccms:foreach}
+				    {/empty}
+				</ul>
+				<ul class="stui-screen__list clearfix">
+					<li>
+						<span class="text-muted">按年份</span>
+					</li>
+					{empty name="$obj.type_extend.year"}
+				        {maccms:foreach name=":explode(',',$obj.parent.type_extend.year)"}
+				        <li><a href="{:mac_url_type($obj,['class'=>$vo],'show')}">{$vo}</a></li>
+				        {/maccms:foreach}
+				    {else /}
+				        {maccms:foreach name=":explode(',',$obj.type_extend.year)"}
+				        <li><a href="{:mac_url_type($obj,['year'=>$vo],'show')}">{$vo}</a></li>
+				        {/maccms:foreach}
+				    {/empty}						
+				</ul>
+				<!-- end 筛选 -->
+	
+				<!-- 列表 -->			
+				<ul class="stui-vodlist clearfix">
+					{maccms:vod num="36" paging="yes" type="current" order="desc" by="sort"}
+					{include file="block/vod_box"}
+					{/maccms:vod}	 
+				</ul>
+				<!-- end 列表 -->
+				
+				{include file="block/page"}<!-- 翻页-->		
+			</div>							
+        </div>
+    </div>
+	{include file="block/foot"}
+</body>
+</html>

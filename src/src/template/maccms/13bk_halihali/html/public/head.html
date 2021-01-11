@@ -1,0 +1,56 @@
+<header id="header">
+<div id="page_top">
+	<div class="bg-wrap">
+		<div class="bg">
+		</div>
+		<div class="mask">
+		</div>
+	</div>
+	<div class="header-top">
+		<div class="page-width clearfix">
+			<div class="header-top__nav">
+				<ul>
+					<li class="item item-home"><a href="{$maccms.path}">首页</a></li>
+			</ul>
+		</div>
+		<div class="header-top__user">
+			<div class="login-box">
+				<a href="javascript:;" class="mac_user">会员</a>
+			</div>
+	</div>
+</div>
+</div>
+</div>
+<div class="header-c">
+<div class="page-width">
+<a href="{$maccms.path}" id="header_logo"></a>
+<p id="header_title">
+</p>
+<div id="search" class="clearfix">
+	<a class="ainline" href="{:mac_url('label/top')}">
+	<div class="search-rank">
+		排行榜
+	</div>
+	</a>
+	<div class="search-box">
+		<form id="ffsearch" name="ffsearch" method="post" action="{:mac_url('vod/search')}">
+			<input type="text" name="wd" class="text" placeholder="请在此处输入影片名或演员名称。"><input type="submit" id="searchbutton" class="btn" value="">
+		</form>
+	</div>
+</div>
+</div>
+</div>
+</header>
+<div class="nav-area">
+<div class="nav">
+<div class="wrapper">
+	<ul>
+		<li><a {if condition="$maccms.aid eq 1"}class="cur"{/if} href="{$maccms.path}" title="首页" style="border: 0px;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-shouye"></use></svg>首页</a></li>
+		{maccms:type ids="1,2,3,4" order="asc" by="sort"}
+		<li id="n_{$key}"><a {if condition="$obj.type_id eq $vo.type_id"}class="cur"{/if} href="{:mac_url_type($vo)}"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-{$vo.type_en}"></use></svg>{$vo.type_name}</a>
+		</li>
+		{/maccms:type}
+	</ul>
+</div>
+</div>
+</div>

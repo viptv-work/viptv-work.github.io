@@ -1,0 +1,91 @@
+<header>
+    <div class="container uk-padding-remove border-red clearfix">
+        <!--头部左侧 logo 搜索框-->
+        <div class="head-l uk-float-left clearfix">
+            <!--logo-->
+            <div class="uk-padding-remove uk-float-left">
+                <a href="/"><img src="<?php echo $web_logo;?>" alt="logo" style="width:250px" /></a>
+            </div>
+            <!--slogan-->
+            <div class="slogan uk-float-left"></div>
+            <!--search-->
+            <div class="uk-float-left uk-padding-remove uk-margin-top head-search-box">
+                <form class="clearfix" method="GET" id="searchSubmit">
+				<input type="text" style="display:none" name="m" value="search-type-so-0.html" />
+                    <div class="uk-padding-remove uk-float-left">
+                        <!--输入框-->
+                        <div><input type="search" name="TXT" class="form-control head-search" placeholder="请输入关键字"value="" maxlength="20"></div>
+
+                    </div>
+                    <div class=" uk-padding-remove uk-float-left">
+                        <input type='submit' class="submit-search" value="搜索"/>
+                    </div>
+                </form>
+            </div>
+            <div class="uk-float-left girl">
+                <a href="/" ><img src="<?php echo '/template/'.$web_moban;?>/images/nl.png" /></a>
+            </div>
+        </div>
+        <!--头部右侧 登录状态-->
+    </div>
+</header>
+<!--导航-->
+<nav id="nav">
+    <div class="container uk-padding-remove">
+        <ul class="nav nav-pills" >
+            <li class="active-nav"><a href="/">视频一区</a></li>    
+			<li><a  href="/?m=vod-type-5-0.html"><span>日韩有码</span></a></li>
+			<li><a  href="/?m=vod-type-6-0.html"><span>日韩无码</span></a></li>
+			<li><a  href="/?m=vod-type-7-0.html"><span>欧美视频</span></a></li>
+			<li><a  href="/?m=vod-type-8-0.html"><span>国产视频</span></a></li>
+			<li><a  href="/?m=vod-type-9-0.html"><span>偷拍自拍</span></a></li>
+            <li><a  href="/?m=vod-type-10-0.html"><span>成人动漫</span></a></li>
+            <li><a href="<?php echo $dizhi1;?>" target="_blank"><span>发布地址一</span></a></li>
+			<li><a href="<?php echo $dizhi2;?>" target="_blank"><span>发布地址二</span></a></li>
+		</ul>
+        <!--鼠标移入 显示 最新条目-->
+    </div>
+</nav>
+
+<nav class="sub_nav">
+    <div class="container uk-padding-remove ">
+        <ul class="nav nav-pills" >
+            <li class="active-nav"><a href="javascript:;">视频二区</a></li>
+            <li><a  href="/?m=vod-type-11-0.html"><span>经典三级</span></a></li>
+			<li><a  href="/?m=vod-type-15-0.html"><span>美熟少妇</span></a></li>
+			<li><a  href="/?m=vod-type-16-0.html"><span>变态另类</span></a></li>
+    
+        </ul>
+
+        <ul class="nav nav-pills" >  
+            <li class="active-nav"><a href="javascript:;"><span>直播专区</span></a></li>
+            <li><a href="/?m=zhibo-type-24-1.html"><span>精选直播</span></a></li>
+            <li><a href="/?m=zhibo-type-25-1.html"><span>女性直播</span></a></li>
+            <li><a href="/?m=zhibo-type-26-1.html"><span>男性直播</span></a></li>
+            <li><a href="/?m=zhibo-type-27-1.html"><span>男女直播</span></a></li>
+            <li><a href="/?m=zhibo-type-28-1.html"><span>人妖直播</span></a></li>
+        </ul>
+        <!--鼠标移入 显示 最新条目-->
+        
+    </div>
+</nav>
+<!--公告 开始-->
+<div class="message uk-margin-bottom">
+    <div class="container uk-padding-remove">
+        <!--滚动文字-->
+        <div class="message-box uk-float-left clearfix">
+            <span class="uk-display-block uk-float-left icon-message"></span>
+            <span class="uk-display-block uk-float-left">公告：</span>
+        </div>
+        <!--滚动内容-->
+        <div class="uk-float-left message-content">
+            <marquee  direction="left" behavior="scroll">
+               公告：<?php echo $dizhigongao;?>
+            </marquee>
+        </div>
+    </div>
+</div>
+<!--公告 结束-->
+<div class="container uk-padding-remove">
+<?php	Jccms_json_ad_top('<a href="链接"  target="_blank"  ><img style="width:100%;height:100px;margin-bottom:2px;" src="图片"></a>');?>
+</div>

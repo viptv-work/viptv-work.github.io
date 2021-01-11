@@ -1,0 +1,251 @@
+@charset "utf-8";
+/* CSS Document */
+.plead{
+	width:1150px;
+	height:638px;
+	margin-left:-575px;
+	margin-top:-319px;
+	overflow:hidden;	
+}
+.plead p{
+	color:#333;
+	font-size:18px;	
+}
+.plead .content{
+	
+	overflow:hidden;	
+}
+.plead .content img{
+	width:auto;	
+}
+.plead  .swiper-slide{
+	width:100%;
+	display:block;
+	height:640px;
+}
+
+.plead .title{
+	text-align:left;
+	position:relative;
+	z-index:1;
+
+}
+.plead .title h1{
+	color:#333333;
+	font-size:26px;
+	height:30px;
+	line-height:30px;
+	position:relative;
+}
+.plead .title h1 b{
+	color:#cccccc;
+	font-size:36px;
+	display:inline-block;
+	margin-right:20px;
+	font-family:"zzgflh","造字工房力黑（非商用）常规体","黑体","microsoft yahei";
+	display:inline-block;
+	width:62px;
+	vertical-align:top;
+	position:relative;
+	top:0px;
+	height:40px;
+	line-height:40px;
+}
+.plead .title h1 i{
+	width:60px;
+	height:0px;
+	display:block;
+	border-bottom:2px solid #13a6da;
+	position:absolute;
+	bottom:-6px;
+	left:83px;	
+}
+
+.plead .p1 .img{
+	position:relative;
+	top:0px;
+	
+}
+.plead .p1 p{
+	position:absolute;
+	left:50%;
+	bottom:80px;	
+	margin-left:-8px;
+}
+
+.plead .p2 .img{
+	width:60%;
+	display:inline-block;
+	text-align:center;
+	top:70px;
+	position:relative;
+	vertical-align:baseline;
+}
+.plead .p2 .img.wp35{
+	width:35%;	
+}
+.plead .p2 p{
+	text-align:center;
+	margin-top:36px;
+}
+.plead .p3,.plead .p3 p{
+	text-align:center;	
+}
+.plead .p3 .content h1{
+	font-size:20px;
+	height:30px;
+	line-height:30px;
+	margin-top:118px;
+}
+.plead .p3 .content h1 .red{
+	font-size:23px;
+	display:inline-block;
+	margin:0px 5px;
+}
+.plead .p3 .txt .red_bg{
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	-khtml-border-radius:4px;
+	border-radius: 4px;
+    display: inline-block;
+    padding: 10px 4px;
+    width: 30px;
+	font-size:18px;
+	vertical-align:top;
+	font-weight:bold;
+	margin-right:30px;
+	line-height:22px;
+	position:relative;
+}
+.plead .p3 .txt .red_bg .itrangle{
+	border-width:6px 0px 6px 6px;
+	border-color:transparent transparent transparent #df1336 ;	
+    position: absolute;
+    right: -6px;
+    top: 16px;
+}
+.plead .p3 .txt{
+	margin-top:40px;
+}
+.plead .p3 .txt .txt_line{
+	display:inline-block;
+	vertical-align:top;	
+}
+.plead .p3 .txt .txt_line h2{
+	display:block;
+	height:30px;
+	font-size:18px;
+	line-height:30px;
+	margin:4px 0px;
+	color:#333333;
+	font-weight:bold;
+}
+.plead .p3  p.red{
+	color:red;
+	font-size:18px;
+	margin-top:50px;
+}
+.plead .p3  p.gray{
+	color:#999999;
+	font-size:16px;
+	margin-top:38px;
+}
+.plead .p3  p.gray img{
+	vertical-align:top;
+	position:relative;
+	top:-7px;
+	margin-left:15px;
+}
+.plead .p3 .img{
+	position:absolute;
+	right:0px;
+	bottom:0px;	
+}
+.plead .p3 .content{
+	position:relative;
+	left:-40px;	
+}
+
+
+.pvip{
+	width:426px;
+	height:265px;
+	margin-left:-213px;
+	margin-top:-134px;
+	-moz-border-radius:4px;
+	-webkit-border-radius:4px;
+	-khtml-border-radius:4px;
+	border-radius: 4px;
+	overflow:hidden;
+	display:none;
+}
+.pvip .title{
+	height:50px;
+	background:#ff5970;
+	font-size:16px;
+	text-align:center;
+	line-height:50px;
+	color:#fff;
+	position:relative;
+}
+.pvip .btn_blue{
+	background:#05a7ff;
+}
+.pvip .line{
+	display:block;
+	width:50px;
+	border-bottom:2px solid #333;
+	height:0px;	
+	margin-top:10px;
+	margin-bottom:5px;
+}
+.ivip{
+	background: url("../img/a1.png")/*tpa=http://www.jiucaokzy.com/templates/frontend/frontend-jiucao/img/a1.png*/ no-repeat center center;
+	width:22px;
+	height:22px;
+}
+.iwclose{
+	background: url("../img/iwclose.png")/*tpa=http://www.jiucaokzy.com/templates/frontend/frontend-jiucao/img/iwclose.png*/ no-repeat center center;
+	width:14px;
+	height:14px;
+}
+.pvip .title .iwclose{
+	position:absolute;
+	right:20px;
+	top:20px;
+}
+.pvip .ivip{
+	margin-right:5px;	
+}
+.pvip .padding{
+	padding:10px 20px;	
+}
+.pvip  p{
+	font-size:14px;
+	line-height:22px;	
+}
+.pvip p b{
+	display:inline-block;
+	font-size:18px;
+	font-weight:bold;	
+	margin:0px 4px;
+}
+.pvip .btn_group{
+	position:absolute;
+	bottom:0px;
+	left:50%;
+	width:388px;
+	margin-left:-199px;
+	background:#ffedc5;
+	z-index:-1;	
+}
+.pvip .btn_group .padding{
+	padding:25px 30px;
+}
+.pvip .btn_group img{
+	position:absolute;
+	bottom:0px;
+	right:-20px;
+	width:173px;
+	height:214px;
+}

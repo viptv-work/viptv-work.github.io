@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<?php  
+$pagesize = 15; //设置记录显示条数; 
+ $JCCMS_pagecount = floor(count($JCCMS_SQL) / $pagesize)-1;//计算数组所得到记录总数
+  $JCCMS_prev = $JCCMS_page -1; //初始化上一页
+ $JCCMS_next = $JCCMS_page +1; //初始化下一页
+?>
+<html>
+<head>
+    <meta charset="utf-8" />
+	<title><?php echo $web_title;?></title>
+	<meta name="keywords" content="<?php echo $web_keywords;?>" />
+	<meta name="description" content="<?php echo $web_description;?>" />
+    <link rel="stylesheet" href="<?php echo '/template/'.$web_moban;?>/css/style.css" />
+</head>
+<body>
+ <?php  include('./template/'.$web_moban.'/header.html');?>
+  
+ <div class="maxbox" style="margin-top:5px;">
+  <div class="vodbox">
+    <div class="indexbox">
+      <div class="title">视频分类：<?php echo $C_T_2_name;?>|公告： <?php echo $dizhigongao;?></div>
+		<?php for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+            <ul>
+				<a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html"target="_blank"><img src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>" width="217" height="134"/>
+				<h3><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></h3>
+				<span class="time"><font color="red"><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_time');?></font></span></a>
+			</ul>
+		<?php		 }?>		  
+
+            </div>
+    <div class="indexright">
+      <div class="title"><?php echo $C_T_2_name;?>-文字推荐</div>
+	  
+	 		<?php for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+    <ul>
+        <li class="num">文</li>
+        <li class="tit"><a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html"  target="_blank"><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></a></li>
+
+    </ul>
+		<?php		 }?> 
+	  
+    <ul><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li></ul>
+    <ul><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li></ul>
+    <ul><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li></ul>
+    <ul><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li></ul>	
+    <ul><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li></ul>		
+    <ul><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li></ul>
+    <ul><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li></ul>
+    <ul><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li></ul>
+    <ul><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li></ul>	
+
+
+ </div>
+	   
+	   
+<div class="page">
+
+                        <a href="#">共<?php JCCMS_page($JCCMS_pagecount);?>页</a>
+                        <a href="#">当前<?php JCCMS_page($JCCMS_page);?>页</a>					
+<?php
+ 
+if($JCCMS_page >=1){
+?>
+<a href="/?m=vod-type-<?php echo $JCCMS_type_id; ?>-<?php JCCMS_page($JCCMS_prev);?>.html">上一页</a>
+<?php
+}
+?>
+
+
+<?php
+if($JCCMS_page < $JCCMS_pagecount-10){
+?>
+<a href="/?m=vod-type-<?php echo $JCCMS_type_id; ?>-<?php echo  $JCCMS_page+1;?>.html"><?php echo  $JCCMS_page+1;?></a>
+<a href="/?m=vod-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+2;?>.html"><?php echo   $JCCMS_page+2;?></a>
+<a href="/?m=vod-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+3;?>.html"><?php echo   $JCCMS_page+3;?></a>
+<a href="/?m=vod-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+4;?>.html"><?php echo   $JCCMS_page+4;?></a>
+<a href="/?m=vod-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+5;?>.html"><?php echo   $JCCMS_page+5;?></a>
+<a href="/?m=vod-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+6;?>.html"><?php echo   $JCCMS_page+6;?></a>
+<a href="/?m=vod-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+7;?>.html"><?php echo   $JCCMS_page+7;?></a>
+<a href="/?m=vod-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+8;?>.html"><?php echo   $JCCMS_page+8;?></a>
+<a href="/?m=vod-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+9;?>.html"><?php echo   $JCCMS_page+9;?></a>
+<a href="/?m=vod-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+10;?>.html"><?php echo   $JCCMS_page+10;?></a>
+<?php
+
+}
+
+
+?>
+
+
+
+
+
+
+<?php
+if($JCCMS_page < $JCCMS_pagecount){
+?>
+<a href="/?m=vod-type-<?php echo $JCCMS_type_id; ?>-<?php JCCMS_page($JCCMS_next);?>.html">下一页</a>
+
+<?php
+}
+
+
+
+?>			
+	
+
+
+</div>	   
+	   
+  </div>
+  <div style="clear:both"></div>
+
+</div>
+ 
+ 
+ 
+ 
+ 
+ 
+
+<?php  include('./template/'.$web_moban.'/footer.html');?>
+</body>
+</html>		

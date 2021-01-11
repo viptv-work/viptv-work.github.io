@@ -1,0 +1,95 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<link rel="shortcut icon" href="/favicon.ico" />
+<link href="<?php echo '/template/'.$web_moban;?>/css/ionicons.min.css" rel="stylesheet" type="text/css">
+<link href="<?php echo '/template/'.$web_moban;?>/css/mdui.min.css" rel="stylesheet" type="text/css">
+<link href="<?php echo '/template/'.$web_moban;?>/css/css.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]><script src="js/html5shiv.min.js"></script><![endif]-->
+	<title><?php echo $web_title;?></title>
+	<meta name="keywords" content="<?php echo $web_keywords;?>" />
+	<meta name="description" content="<?php echo $web_description;?>" />
+</head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-pink mdui-theme-accent-pink">
+<!--[if lte IE 9]><div class="mdui-text-center mdui-p-a-2 mdui-typo lteie9">您的浏览器版本太低了，为了能更好的体验本站，请升级您的浏览器。下载最新版本的浏览器：<a href="http://ie.microsoft.com" target="_blank">IE</a>、<a href="http://www.google.cn/chrome/" target="_blank">chrome(谷歌浏览器)</a>、<a href="http://www.firefox.com.cn/" target="_blank">Firefox(火狐浏览器)</a>，推荐使用谷歌浏览器</div><![endif]--><!-- 顶部工具栏开始 -->
+ <?php  include('./template/'.$web_moban.'/header.html');?>
+<!-- 通栏广告结束 --><h3 class="column-title"><?php echo $C_T_2_name;?></h3><div class="mdui-typo"><hr></div><!-- 视频列表开始 --><div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-4 mdui-grid-list mdui-typo list-videos"><div class="flex-grid">
+<?php
+
+ $json_string = file_get_contents($zhibourl);
+// 把JSON字符串转成PHP数组
+ $data = json_decode($json_string, true);
+ $datas = $data['fileinfo'];
+ $pageresult = $data['pageresult'];
+  $page = $data['page'];
+
+
+
+
+$i=0;
+
+foreach($datas as $val) {
+
+		 $address=$val['m3u8'];
+		$img=$val['pic'];
+
+		$title=$val['name'];
+?>
+<div class="mdui-col"><a href="/?m=zhibo-neiron-id-<?php echo base64_encode($address)?>.html" target="_blank"><div class="mdui-grid-tile"><img src="<?php echo $img?>" style="height: 200px;"/></div><div class="mdui-m-y-1 clamp2 list-grid-title"><?php echo $title ?></div></a></div>
+<?php	
+			 }
+		 
+	?>	</div></div><!-- 视频列表结束 -->
+	
+	
+	<div class="mdui-clearfix pages"><ul class="mdui-cleafix mdui-p-x-0">
+<?php
+ $page=$JCCMS_page;
+
+
+if($page  >= 1 ){
+  $pages="1";
+}else{
+ $pages= $page-1;	
+}
+
+
+if($page >= $pageresult ){
+$pagex=$pageresult;	
+}else{
+$pagex=$page+1;		
+}
+
+?>					
+                        <li><a href="#">共<?php echo $pageresult;?>页</a></li>
+                        <li><a href="#">当前<?php echo $page;?>页</a></li>	
+						<li><a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo $pages;?>.html">上一页</a></li>
+						
+<?php
+if($JCCMS_page < $pageresult-10){
+?>
+<li><a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo  $JCCMS_page+1;?>.html"><?php echo  $JCCMS_page+1;?></a></li>
+<li><a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+2;?>.html"><?php echo   $JCCMS_page+2;?></a></li>
+<li><a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+3;?>.html"><?php echo   $JCCMS_page+3;?></a></li>
+<li><a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+4;?>.html"><?php echo   $JCCMS_page+4;?></a></li>
+<li><a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+5;?>.html"><?php echo   $JCCMS_page+5;?></a></li>
+<li><a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+6;?>.html"><?php echo   $JCCMS_page+6;?></a></li>
+<li><a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+7;?>.html"><?php echo   $JCCMS_page+7;?></a></li>
+<li><a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+8;?>.html"><?php echo   $JCCMS_page+8;?></a></li>
+<li><a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+9;?>.html"><?php echo   $JCCMS_page+9;?></a></li>
+<li><a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+10;?>.html"><?php echo   $JCCMS_page+10;?></a></li>
+<?php
+
+}
+?>						
+						
+						<li><a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo $pagex;?>.htm">下一页</a></li>
+
+	
+	</ul></div></div><!-- footer开始 -->
+<?php  include('./template/'.$web_moban.'/footer.html');?>
+<!-- footer结束 --><script src="<?php echo '/template/'.$web_moban;?>/js/jquery.min.js"></script><script src="<?php echo '/template/'.$web_moban;?>/js/mdui.min.js"></script></body></html>

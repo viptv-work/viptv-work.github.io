@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+	<title>正在播放 <?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_name');?></title>
+	<meta name="keywords" content="<?php echo $web_keywords;?>" />
+	<meta name="description" content="<?php echo $web_description;?>" />
+    <link rel="stylesheet" href="<?php echo '/template/'.$web_moban;?>/css/style.css" />
+</head>
+<body>
+<?php  include('./template/'.$web_moban.'/header.html');?>
+<div class="maxbox" style="margin-top:5px;">
+  <div class="title">您的位置：视频播放<?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_name');?>|公告： <?php echo $dizhigongao;?></div><br><br><br>
+  <div class="vodbox">
+    <div class="artbody">
+      <div style="clear:both"></div>
+      <div class="cont">
+        <div id="postmessage" class="t_msgfont">
+         			<div  align="center" style="height:400px">
+						<video id='myVideo'  class="video-js"></video>
+						<link rel="stylesheet" type="text/css" href="/static/VideoJS/video.min.css?v=3">
+						<script type="text/javascript" src="/static/VideoJS/video.min.js?v=1" charset="utf-8" > </script>
+							<script type="text/javascript" src="/static/VideoJS/video-conrtib-ads.js?v=1" charset="utf-8" > </script>
+							<script type="text/javascript" src="/static/VideoJS/myVideo.js?v=6" charset="utf-8" > </script>
+							<script type="text/javascript">
+							var vPath = '<?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_playurl');?>';
+							var logo = '';
+							var myVideo=initVideo({
+								id:'myVideo',
+								url:vPath,
+								ad:{
+								  pre:{
+									  url:'',
+									  link:'',
+								  },
+								},
+								logo:{
+									url:'/template/800CMSPC/images/logo.png',
+									width:'100px'
+								},
+							});
+							</script>
+					</div>
+          <br>
+          
+
+ 
+  
+        </div>
+      </div>
+
+
+    </div>
+		<?php	Jccms_json_ad_video('<a href="链接" target="_blank"><img style="width:980px;height:100px;margin-bottom:2px;" src="图片"></a>');?>
+			<div class="indexbox">
+			<div class="title">推荐视频|公告： <?php echo $dizhigongao;?></div>
+			<?php  include('./lib/datatop.php');$pagesize = 9;  $JCCMS_pagecount = floor(count($JCCMS_SQL) / $pagesize)-1;$JCCMS_prev = $JCCMS_pages -1; $JCCMS_next = $JCCMS_pages +1;?>
+			<?php   $JCCMS_SQL=JCCMS_chulis(JCCMS_SQLL($JCCMS_SQL,'0','JCCMS_SQL_type'));for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+				<ul>
+					<a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html"target="_blank"><img src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>" width="217" height="134"/>
+					<h3><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></h3>
+					<span class="time"><font color="red"><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_time');?></font></span></a>
+				</ul>
+			<?php		 }?>		  
+        </div>
+		    <div class="indexright">
+      <div class="title"><?php echo $C_T_2_name;?>-文字推荐</div>
+	  
+	 		<?php for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+    <ul>
+        <li class="num">文</li>
+        <li class="tit"><a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html"  target="_blank"><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></a></li>
+
+    </ul>
+		<?php		 }?> 
+	  
+    <ul><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li></ul>
+    <ul><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li></ul>
+    <ul><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li></ul>
+    <ul><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li></ul>	
+    <ul><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li></ul>		
+    <ul><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li></ul>
+    <ul><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li></ul>
+    <ul><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li></ul>
+    <ul><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li><li class="num">色</li></ul>	
+
+
+ </div>
+  </div>
+
+  <div style="clear:both"></div>
+</div>
+
+
+
+<?php  include('./template/'.$web_moban.'/footer.html');?>
+ 
+</body>
+</html>

@@ -1,0 +1,84 @@
+@charset "utf-8";
+/* html 4.0 & html 5 样式清零*/
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video{
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	font-size: 100%;/*inherit*/
+	/*   vertical-align: baseline;解决表格合并问题*/
+	background: transparent;
+}
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+	font-size: 12px;
+}
+body, html {
+	height: 100%;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
+/* remember to define focus styles! */
+:focus {
+	outline: 0;
+}
+/* remember to highlight inserts somehow! */
+ins {
+	text-decoration: none;
+}
+del {
+	text-decoration: line-through;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+button {
+	border: 0px;
+	cursor: pointer;
+}
+img {
+	border: 0px;
+	max-width: 100%;
+}
+a {
+	cursor: pointer;
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	vertical-align: baseline;
+	background: transparent;
+	text-decoration: none;
+	cursor: pointer;
+}
+input, select, input[type="checkbox"], input[type="radio"] {
+	vertical-align: middle;
+	padding:0px;
+	margin:0px;
+}
+input[type="button"], input[type="reset"], input[type="submit"], button{
+	cursor: pointer;
+}
+input::-ms-clear,input::-ms-reveal{
+	display:none;
+} /*ie9 10以上 input框输入时不带叉*/
+
+em, i {
+	font-style: italic;
+}
+strong, b {
+	font-weight: bold;
+}

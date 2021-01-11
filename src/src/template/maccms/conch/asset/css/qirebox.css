@@ -1,0 +1,10 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.qirebox-overlayBG{position:fixed;top:0;left:0;width:100%;height:100%;z-index:999999998;background-color:#000;filter:alpha(opacity=60);opacity:.6}
+.qirebox{z-index:999999999;padding:0;position:fixed;top:35%;left:50%;transform: translate(-50%,-50%);}
+.qirebox .ui-iframe{width:4.5rem;height:auto;}
+.ui-dialog{overflow:hidden;border-radius:4px;min-width:6rem}
+.ui-dialog-cnt{padding:0.25rem;overflow:hidden;background:#fff}
+.ui-dialog-tip{height:1.25rem;line-height:1.2rem;padding:0 0.5rem;font-size:0.35rem;margin:0 0.125rem;text-align: center;}
+.ui-dialog-close{position:absolute;top:0.3rem;right:0.325rem;display:block;width:0.275rem;height:0.275rem;overflow:hidden}

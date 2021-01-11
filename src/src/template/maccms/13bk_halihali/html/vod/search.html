@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}搜索-{$maccms.site_name}</title>
+<meta name="keywords" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}-{$maccms.site_name},免费在线电影,{$maccms.site_name},视频网站,免VIP,免广告,高清,高清视频,高清视频观看,VIP会员,在线观看,电影,电视剧,综艺,最新电影,最新电视剧" />
+<meta name="description" content="{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}-{$maccms.site_name},{$maccms.site_name}-国内领先的在线视频网站·平台用户可享受免VIP在线观看无广告高清视频,我们致力打造最优秀的最新影视,最新电视剧,最新综艺节目在线观看服务平台" />
+{include file="public/include"}
+</head>
+<body>
+<!--头部开始-->{include file="public/head"}
+<div class="tab-a navs w1214">
+<div class="wz fn-left">
+<span>您所在的位置：</span><a href="http://www.halihali.cc" title="哈哩哈哩">首页</a><em>&gt;&gt;</em><a class="current" href="">搜索1列表</a>
+</div>
+</div>
+<div class="new-list">
+<div class="tab-a w1214">
+<div class="serach-box">
+	<div class="serach-title">
+		<h5>搜索<strong>{$param.wd}{$param.actor}{$param.director}{$param.area}{$param.lang}{$param.year}{$param.class}</strong>共找<strong class="mac_total">123</strong>个相关内容</h5>
+		<div class="ui-pages uipages fn-right" id="short-page">
+		</div>
+	</div>
+	<div id="contents">{maccms:vod num="6" paging="yes" pageurl="vod/search" order="desc" by="time"}
+		<ul class="serach-ul">
+			<li><a class="list-img" href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}"><img class="loading" src="{$maccms.path_tpl}images/180x239.jpg" data-original="{$vo.vod_pic|mac_url_img}"/><label class="score">{$vo.vod_score}</label><label class="title">{include file="public/serial1"}</label></a>
+			<div class="info">
+				<h2><a target="_blank" href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a></h2>
+				<p class="actor"><em>导演:</em>{$vo.vod_director}</p>
+				<p class="actor"><em>主演:</em>{$vo.vod_actor}</p>
+				<p class="type aleft"><em>类型:</em>{$vo.vod_class|mac_url_create='class'}</p>
+				<p class="type aright"><em>地区：</em>{$vo.vod_area}</p>
+				<p class="type aleft"><em>上映:</em>{$vo.vod_year}</p>
+				<p class="type aright"><em>更新:</em>{$vo.vod_time|mac_day}</p>
+				<p class="plot"><em>剧情:</em>{$vo.vod_content|mac_substring=100}</p>
+			</div>
+			</li>
+		</ul>{/maccms:vod}
+					</div>
+{include file="public/paging"}
+				</div>
+			</div>
+		</div>
+<!--底部开始-->
+{include file="public/foot"}
+    <script>
+        $('.mac_total').html('{$__PAGING__.record_total}');
+    </script>
+<script type="text/javascript" src="{$maccms.path_tpl}js/read.js"></script>
+<div class="index-top" id="index-top">
+<a class="top"></a>
+</div>
+</body>
+</html>

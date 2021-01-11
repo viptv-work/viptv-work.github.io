@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+	<title>正在播放 <?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_name');?></title>
+	<meta name="keywords" content="<?php echo $web_keywords;?>" />
+	<meta name="description" content="<?php echo $web_description;?>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="<?php echo '/template/'.$web_moban;?>/css/style.css" />
+</head>
+<body>
+<?php  include('./template/'.$web_moban.'/header.html');?>
+<div id="header_box"></div>
+<div id="top_box"></div>
+<div class="wrap mt10">
+	<div class="box cat_pos clearfix">
+			<span class="cat_pos_l">您的位置：<h1><?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_name');?></h1></span>
+	</div>
+</div>
+<div class="wrap mt10">
+	<div class="box">
+		<div class="film_info clearfix">
+			<dl>
+				<dt><img src="<?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_pic');?>"  style="width:400px; height:260px;"/></dt>
+				<dd class="film_title"><?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_name');?></dd>
+				<dd>类型：<span><?php JCCMS_type(JCCMS_SQLL($JCCMS_SQL,'0','JCCMS_SQL_type'));?></span></dd>
+				<dd>更新时间：<font size="2" color="red"><strong><?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_time');?></strong></font></dd>
+				<dd>重要说明：<font size="2" color="blue"><strong>部分当日更新影片需要完成转码后才能播放，如遇到不能播放的情况建议24小时之后在进行观看。</strong></font><span></dd>
+				<dd>本站公告：<font size="2" color="red"><strong>本站发布地址一：<?php echo $dizhi1;?>请狼友们收藏避免丢失<span></dd>
+			</dl>
+
+		</div>
+
+		<div class="film_bar clearfix"><span>视频播放线路-<font color="#FF0000" size="3">共二线</strong></font>
+			<ul>
+				<li><a href='/?m=vod-neiron-id-<?php echo $shipinid;?>.html' target="_blank">在线播放</a></li>
+				<li><a href='/?m=vod-neiron-id-<?php echo $shipinid;?>.html' target="_blank">备用线路</a></li>
+			</ul>
+		</div>
+		<div class="film_photo"></div>
+	</div>
+</div>
+<div class="wrap mt10">
+	<div class="box movie_list">
+		<div class="title"><b class="sp_pri movie_ico"></b><h2>推荐视频|<strong>公告： <?php echo $dizhigongao;?></strong></h2></div>
+		<ul>
+		
+					<?php  
+					include('./lib/datatop.php');
+					 $pagesize = 8; //设置记录显示条数; 
+					 $JCCMS_pagecount = floor(count($JCCMS_SQL) / $pagesize)-1;//计算数组所得到记录总数
+					  $JCCMS_prev = $JCCMS_pages -1; //初始化上一页
+					 $JCCMS_next = $JCCMS_pages +1; //初始化下一页
+
+					
+					
+					?>
+					<?php   $JCCMS_SQL=JCCMS_chulis(JCCMS_SQLL($JCCMS_SQL,'0','JCCMS_SQL_type'));for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+			<li><a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html" target="_blank"><img src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>" /><h3><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></h3></a></li>
+		<?php		 }?>		
+
+		</ul>
+	</div>
+</div>
+<div id="bottom_box"></div>
+<div id="footer_box"></div>
+
+
+
+
+
+
+
+<?php  include('./template/'.$web_moban.'/footer.html');?>
+ 
+</body>
+</html>

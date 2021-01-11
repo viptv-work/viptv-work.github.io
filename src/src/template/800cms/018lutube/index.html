@@ -1,0 +1,133 @@
+<?php  
+$pagesize = 10; //设置记录显示条数; 
+ $JCCMS_pagecount = floor(count($JCCMS_SQL) / $pagesize)-1;//计算数组所得到记录总数
+  $JCCMS_prev = $JCCMS_page -1; //初始化上一页
+ $JCCMS_next = $JCCMS_page +1; //初始化下一页
+?>
+
+<!DocType html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+    <title>
+        <?php echo $web_title;?>
+    </title>
+    <meta name="keywords" content="<?php echo $web_keywords;?>" />
+    <meta name="description" content="<?php echo $web_description;?>" />
+    <link href="<?php echo '/template/'.$web_moban;?>/css/style.css" rel="stylesheet">
+    <link href="<?php echo '/template/'.$web_moban;?>/css/style2.css" rel="stylesheet">
+    <meta name="theme-color" content="#ffffff">
+    <style>
+        .title {
+            font-size: 20px;
+            color: #222222;
+            margin-bottom: 5px;
+        }
+
+        .title-box {
+            border-bottom: 1px solid #ff8000;
+        }
+
+        .pagenation a {
+            color: black;
+        }
+
+        .pagenation a:hover {
+            color: ff8000;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body data-host="221" class="list hd" data-uid="">
+    <?php  include('./template/'.$web_moban.'/header.html');?>
+
+
+    <div class="alert alert-default text-center " style="margin:10px 4px 0 4px;padding:0" id="domaintip">
+        <div class="dropdown">
+            <?php JCCMS_type('5'); ?>
+        </div>
+    </div>
+    <?php $JCCMS_SQL=JCCMS_chuli('5');for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+    <div class="video" id="v_VuHKbdWnH2">
+        <a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html">
+            <div class="vimg">
+                <img src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>">
+                <span class="vlen">上架时间：
+                    <?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_time');?></span><span class="icon_promote icon_promote_right"
+                    style="width:100%;height:100%"><span>店长推荐</span></span>
+            </div>
+            <p class="title"><span class="glyphicon glyphicon-hd-video" style="color:#337ab7"></span>
+                <?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?>
+            </p>
+        </a>
+    </div>
+
+    <?php		 }?>
+    <div class="alert alert-default text-center " style="margin:10px 4px 0 4px;padding:0" id="domaintip">
+        <div class="dropdown">
+            <?php JCCMS_type('10'); ?>
+        </div>
+    </div>
+    <?php $JCCMS_SQL=JCCMS_chuli('10');for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+    <div class="video" id="v_VuHKbdWnH2">
+        <a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html">
+            <div class="vimg">
+                <img src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>">
+                <span class="vlen">上架时间：
+                    <?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_time');?></span><span class="icon_promote icon_promote_right"
+                    style="width:100%;height:100%"><span>店长推荐</span></span>
+            </div>
+            <p class="title"><span class="glyphicon glyphicon-hd-video" style="color:#337ab7"></span>
+                <?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?>
+            </p>
+        </a>
+    </div>
+
+    <?php		 }?>
+    <div class="alert alert-default text-center " style="margin:10px 4px 0 4px;padding:0" id="domaintip">
+        <div class="dropdown">直播推荐</div>
+    </div>
+    <?php
+$json_string = file_get_contents($zhibourl);
+$data = json_decode($json_string, true);$datas = $data['fileinfo'];$pageresult = $data['pageresult'];$page = $data['page'];$datass =NULL;
+for ($x=0; $x<=9; $x++) {
+$val=$datas[$x];$address=$val['m3u8'];$img=$val['pic'];$title=$val['name'];
+
+?>
+    <div class="video" id="v_VuHKbdWnH2">
+        <a href="/?m=zhibo-neiron-id-<?php echo base64_encode($address)?>.html">
+            <div class="vimg">
+                <img src="<?php echo $img;?>">
+                <span class="vlen">咪兔提供</span><span class="icon_promote icon_promote_right" style="width:100%;height:100%"><span>时时直播</span></span>
+            </div>
+            <p class="title"><span class="glyphicon glyphicon-hd-video" style="color:#337ab7"></span>
+                <?php echo $title ?>
+            </p>
+        </a>
+    </div>
+
+    <?php		 }?>
+
+
+
+    <div class="footer">
+        <div id="flinks">
+            <h5>友情链接</h5>
+            <p>
+                <?php echo  Jccms_json_connection('<a href="链接" target="_blank">标题</a>',JCCMS_ROOT);?>
+            </p>
+
+        </div>
+    </div>
+
+
+
+    <?php  include('./template/'.$web_moban.'/footer.html');?>
+
+</body>
+
+</html>

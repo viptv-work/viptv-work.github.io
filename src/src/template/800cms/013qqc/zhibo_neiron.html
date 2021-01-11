@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8">
+    <title>正在直播中....
+        <?php echo $web_title;?>
+    </title>
+    <meta name="keywords" content="<?php echo $web_title;?>" />
+    <meta name="description" content="<?php echo $web_title;?>" />
+    <link href="<?php echo '/template/'.$web_moban;?>/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <?php  include('./template/'.$web_moban.'/header.html');?>
+    <div class="player uk-padding-remove container">
+        <!--视频播放区域-->
+        <div class="player-area margin-bottom-10 clearfix">
+            <!--播放器区域-->
+            <div class="player-l uk-float-left uk-position-relative text-white">
+                <link rel="stylesheet" href="//g.alicdn.com/de/prismplayer/2.7.2/skins/default/aliplayer-min.css" />
+                <div class="player-player" id="player" style="background-color: rgb(0, 0, 0); width: 800px; height: 450px; cursor: pointer;">
+                    <div class="prism-player" id="J_prismPlayer" style=" height: 450px;"></div>
+
+                    
+                    <script charset="utf-8" type="text/javascript" src="//g.alicdn.com/de/prismplayer/2.7.2/aliplayer-min.js"></script>
+                    <?php  $GG=$PT; $PT = file_get_contents(base64_decode($PT));?>
+                    <script>
+                        var player = new Aliplayer({
+                            id: 'J_prismPlayer',
+                            width: '100%',
+                            autoplay: true,
+                            //支持播放地址播放,此播放优先级最高
+                            source: '<?php echo$PT?>',
+                            liveShiftSource: '<?php echo $PT?>',
+
+                        }, function (player) {
+                            console.log('播放器创建好了。')
+                        });
+
+                    </script>
+                </div>
+                <div class="player-favorite clearfix">
+
+
+                    <a href="javascript:void(0);" class="uk-display-block uk-float-left uk-margin-top uk-margin-left btn-video-likes clearfix current-btn-video-likes"><span
+                            class="uk-display-block uk-float-left"></span>
+                        <p class="likes-video uk-float-left">
+                            <?php  echo rand(5, 500); ?>
+                        </p>
+                    </a>
+                    <p class="uk-float-right uk-float-left player-num">本直播为真实国外直播，由咪兔直播提供战略合作服务接口！</span></p>
+                </div>
+            </div>
+            <!--相关视频-->
+            <div class="player-r uk-float-right">
+                <h3>欢迎光临</h3>
+                <div class="video-list scrollbar" id="style-3">
+                    <!--相关视频一-->
+
+                    <div class="video-item margin-bottom-10 clearfix"><a class="video-img uk-float-left uk-margin-right"><img
+                                src="<?php echo '/template/'.$web_moban;?>/images/zb1.jpg"></a></div>
+                    <div class="video-item margin-bottom-10 clearfix"><a class="video-img uk-float-left uk-margin-right"><img
+                                src="<?php echo '/template/'.$web_moban;?>/images/zb2.jpg"></a></div>
+
+                </div>
+            </div>
+
+            <?php	Jccms_json_ad_video('<a href="链接" target="_blank"><img style="width:100%;height:100px;margin-bottom:2px;" src="图片"></a>');?>
+
+        </div>
+        <!--视频信息-->
+
+    </div>
+
+    <?php  include('./template/'.$web_moban.'/footer.html');?>
+
+</body>
+
+</html>

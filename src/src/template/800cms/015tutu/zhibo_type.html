@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+	<title><?php echo $web_title;?></title>
+	<meta name="keywords" content="<?php echo $web_keywords;?>" />
+	<meta name="description" content="<?php echo $web_description;?>" />
+  <link href="<?php echo '/template/'.$web_moban;?>/css/app.css" rel="stylesheet" type="text/css" />
+  <link href="<?php echo '/template/'.$web_moban;?>/css/iconfont.css" rel="stylesheet" type="text/css" />
+  <script src="<?php echo '/template/'.$web_moban;?>/js/jquery.js"></script>
+  <script src="<?php echo '/template/'.$web_moban;?>/js/jquery.lazyload.js"></script>
+  <script>var maccms={"path":"","mid":"","url":"localhost","wapurl":"www.tutuhot.com","mob_status":"2"};</script>
+  <script src="<?php echo '/template/'.$web_moban;?>/js/home.js"></script>
+</head>
+<body>
+ <?php  include('./template/'.$web_moban.'/header.html');?>
+  <div class="toped"></div>
+   
+  <div class="icon">
+   <div class="container">
+    <section class="iselect clearfix">
+     <h2><em>直播分类：<?php echo $C_T_2_name;?></em><i class="i_arrow"></i></h2>
+    </section>
+    <section class="select_con">
+
+     <div class="v-bd clearfix">
+      <div class="v_con_box">
+       <ul class="tv-list clearfix">
+	   
+		<?php $json_string = file_get_contents($zhibourl);$data = json_decode($json_string, true);$datas = $data['fileinfo'];$pageresult = $data['pageresult'];$page = $data['page'];$i=0;foreach($datas as $val) { $address=$val['m3u8'];$img=$val['pic'];$title=$val['name'];?>
+        <li>
+         <div class="v-pic">
+          <img src="<?php echo $img?>" class="thumb" alt="<?php echo $title ?>" original="<?php echo $img?>" />
+          <div class="v-tips">
+           <span class="fl"><?php  echo rand(5, 10000); ?></span>
+           <span class="fr">时时直播</span>
+          </div>
+          <a class="v-playBtn" href="/?m=zhibo-neiron-id-<?php echo base64_encode($address)?>.html" title="<?php echo $title ?>"><i></i></a>
+         </div>
+         <div class="v-txt">
+          <p class="v-tit"><a title="<?php echo $title ?>" href="/?m=zhibo-neiron-id-<?php echo base64_encode($address)?>.html"><?php echo $title ?></a></p>
+         </div></li>
+		 <?php	}?>	   	   
+	   
+	   
+	   
+ 
+	   
+
+
+
+       </ul>
+       <div class="v-page clearfix">
+		<?php $page=$JCCMS_page;if($page  >= 1 ){ $pages="1";}else{ $pages= $page-1;	}if($page >= $pageresult ){$pagex=$pageresult;	}else{$pagex=$page+1;		}?>					
+		<a href="#">共<?php echo $pageresult;?>页</a>
+		<a href="#">当前<?php echo $page;?>页</a>	
+		<a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo $pages;?>.html">上一页</a>						
+		<?php	if($JCCMS_page < $pageresult-10){	?>
+		<a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo  $JCCMS_page+1;?>.html"><?php echo  $JCCMS_page+1;?></a>
+		<a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+2;?>.html"><?php echo   $JCCMS_page+2;?></a>
+		<a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+3;?>.html"><?php echo   $JCCMS_page+3;?></a>
+		<a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+4;?>.html"><?php echo   $JCCMS_page+4;?></a>
+		<a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+5;?>.html"><?php echo   $JCCMS_page+5;?></a>
+		<a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+6;?>.html"><?php echo   $JCCMS_page+6;?></a>
+		<a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+7;?>.html"><?php echo   $JCCMS_page+7;?></a>
+		<a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+8;?>.html"><?php echo   $JCCMS_page+8;?></a>
+		<a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+9;?>.html"><?php echo   $JCCMS_page+9;?></a>
+		<a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+10;?>.html"><?php echo   $JCCMS_page+10;?></a>
+		<?php	} ?>									
+		<a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo $pagex;?>.html">下一页</a>	
+       </div>
+      </div>
+     </div>
+    </section>
+    <div class="mided mided1 mt20"></div>
+    <div class="mided mided2 mt0"></div>
+    <div class="mided mided3 mt0"></div>
+   </div>
+  </div>  
+
+<?php  include('./template/'.$web_moban.'/footer.html');?>
+</body>
+</html>		

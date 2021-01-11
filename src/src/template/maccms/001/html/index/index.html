@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/index"}   
+	{include file="block/include"}
+</head>
+<body>
+	
+    <div class="container">
+        <div class="row">
+        	{include file="block/head"}
+        	       	
+			<!-- 列表 -->
+			{maccms:type ids="1,2,3,4" order="asc" by="sort" id="vo1" key="key1"}
+			<div class="stui-pannel clearfix">
+				<div class="stui-pannel__head clearfix">
+					<a class="text-muted pull-right" href="{:mac_url_type($vo1,[],'show')}">更多 &gt;</a>
+					<span class="hidden-sm hidden-xs pull-right">
+						{maccms:type parent="'.$vo1['type_id'].'" order="asc" by="sort" id="vo2" key="key2"}
+						{if condition="$key lt 11"}
+                        <a href="{:mac_url_type($vo2,[],'show')}" class="text-muted">{$vo2.type_name}</a> <span class="split-line"></span>
+                        {/if}
+                        {/maccms:type}						
+					</span>
+					<h3 class="title">
+						最新{$vo1.type_name}
+					</h3>								
+				</div>
+				<ul class="stui-vodlist clearfix">
+					{maccms:vod num="12" type="'.$vo1['type_id'].'" order="desc" by="time"}						
+					{include file="block/vod_box"}																		
+					{/maccms:vod}	
+				</ul>			
+			</div>
+			{/maccms:type}
+			<!-- end 列表 -->
+			
+			<!-- 友链 -->
+			<div class="stui-pannel clearfix">				
+				<div class="stui-pannel__head clearfix">                                                                                                                                                                                                                                                       
+					<h3 class="title">								
+						友情链接
+					</h3>								
+				</div>																		
+				<ul class="stui-link__text col-pd clearfix">
+					{maccms:link num="30" type="font"}
+					<li><a class="text-muted" href="{$vo.link_url}" title="{$vo.link_name}" target="_blank">{$vo.link_name}</a></li>								
+					{/maccms:link}
+				</ul>					
+			</div>
+			<!-- end 友链 -->
+			
+			<!-- 广告  -->
+			<div class="stui-pannel clearfix">
+				<div class="col-pd">
+					<a class="hidden-xs" target="_blank" href="http://zhanzhang114.com/">站长114导航</a>
+				
+				</div>	
+			</div>
+			<!-- end 广告  -->
+			
+        </div>
+    </div>
+	{include file="block/foot"}
+</body>
+</html>
