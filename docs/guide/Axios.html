@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>axios 封装 | VIPTV</title>
+    <meta name="generator" content="VuePress 1.8.0">
+    <link href="https://code.bdstatic.com/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="icon" href="/logo.png">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="apple-touch-icon" href="/images/icons/viptv-192x192.png">
+    <meta name="description" content="直播 - 影视 - 音乐 - 小说 - API接口 - 插件模板">
+    <meta name="theme-color" content="#3eaf7c">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="msapplication-TileImage" content="/images/icons/viptv-180x180.png">
+    <meta name="msapplication-TileColor" content="#000000">
+    
+    <link rel="preload" href="/assets/css/0.styles.25932fb8.css" as="style"><link rel="preload" href="/assets/js/app.c6f3d1f3.js" as="script"><link rel="preload" href="/assets/js/2.4be1bcdd.js" as="script"><link rel="preload" href="/assets/js/24.4bf99798.js" as="script"><link rel="preload" href="/assets/js/5.d8713031.js" as="script"><link rel="prefetch" href="/assets/js/10.75cd32e5.js"><link rel="prefetch" href="/assets/js/11.9678958b.js"><link rel="prefetch" href="/assets/js/12.3ac14bd2.js"><link rel="prefetch" href="/assets/js/13.7ae0fd16.js"><link rel="prefetch" href="/assets/js/14.5dc6d4ec.js"><link rel="prefetch" href="/assets/js/15.87e006d1.js"><link rel="prefetch" href="/assets/js/16.db1679af.js"><link rel="prefetch" href="/assets/js/17.c46a3d7e.js"><link rel="prefetch" href="/assets/js/18.7cf01f28.js"><link rel="prefetch" href="/assets/js/19.65ec8a7f.js"><link rel="prefetch" href="/assets/js/20.5a176dbb.js"><link rel="prefetch" href="/assets/js/21.6c61dfe9.js"><link rel="prefetch" href="/assets/js/22.db2e740e.js"><link rel="prefetch" href="/assets/js/23.13886d70.js"><link rel="prefetch" href="/assets/js/25.884eb376.js"><link rel="prefetch" href="/assets/js/26.105f1909.js"><link rel="prefetch" href="/assets/js/27.0eda0750.js"><link rel="prefetch" href="/assets/js/28.10ca83a0.js"><link rel="prefetch" href="/assets/js/29.2cfd5b50.js"><link rel="prefetch" href="/assets/js/3.3eb7c139.js"><link rel="prefetch" href="/assets/js/30.77a9ed46.js"><link rel="prefetch" href="/assets/js/31.78516476.js"><link rel="prefetch" href="/assets/js/32.91a8024d.js"><link rel="prefetch" href="/assets/js/33.1c910330.js"><link rel="prefetch" href="/assets/js/34.e3ec01d5.js"><link rel="prefetch" href="/assets/js/35.f29f81c6.js"><link rel="prefetch" href="/assets/js/36.d5e8411f.js"><link rel="prefetch" href="/assets/js/37.efea62f3.js"><link rel="prefetch" href="/assets/js/38.2a4a7e9b.js"><link rel="prefetch" href="/assets/js/39.2f5f440d.js"><link rel="prefetch" href="/assets/js/4.10168644.js"><link rel="prefetch" href="/assets/js/40.8dd398d9.js"><link rel="prefetch" href="/assets/js/41.783d92be.js"><link rel="prefetch" href="/assets/js/42.69f15da8.js"><link rel="prefetch" href="/assets/js/43.d845eaae.js"><link rel="prefetch" href="/assets/js/44.91a0f995.js"><link rel="prefetch" href="/assets/js/45.b7699a3b.js"><link rel="prefetch" href="/assets/js/46.eba2d93f.js"><link rel="prefetch" href="/assets/js/47.4cfe5ff7.js"><link rel="prefetch" href="/assets/js/48.51e4a154.js"><link rel="prefetch" href="/assets/js/6.d32fd4b6.js"><link rel="prefetch" href="/assets/js/7.31dc2176.js"><link rel="prefetch" href="/assets/js/8.8958e2a8.js"><link rel="prefetch" href="/assets/js/9.f95a97b8.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.25932fb8.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/logo.png" alt="VIPTV" class="logo"> <span class="site-name can-hide">VIPTV</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档菜单" class="dropdown-title"><span class="title">帮助文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/guide/" class="nav-link router-link-active">
+  学习教程
+</a></li><li class="dropdown-item"><!----> <a href="/source/" class="nav-link">
+  资源分享
+</a></li><li class="dropdown-item"><!----> <a href="/template/" class="nav-link">
+  模板主题
+</a></li><li class="dropdown-item"><!----> <a href="/api/" class="nav-link">
+  API接口
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生态系统" class="dropdown-title"><span class="title">生态系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          官方私制
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="http://gitee.com/viptv/pc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VIPTV - PC
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="http://gitee.com/viptv/mob" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VIPTV - MOB
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          官方开源
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="http://gitee.com/viptv/music" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VIPTV - MUSIC
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="http://gitee.com/viptv/lib" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VIPTV - lib
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于我们" class="dropdown-title"><span class="title">关于我们</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/guide/Dash.html" class="nav-link">
+  红包打赏
+</a></li><li class="dropdown-item"><!----> <a href="/guide/About.html" class="nav-link">
+  自我介绍
+</a></li><li class="dropdown-item"><!----> <a href="/guide/Chat.html" class="nav-link">
+  加入团队
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="切换镜像" class="dropdown-title"><span class="title">切换镜像</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="http://viptv.gitee.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  国内镜像
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="http://viptvx.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  国外镜像
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <!----></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="文档菜单" class="dropdown-title"><span class="title">帮助文档</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/guide/" class="nav-link router-link-active">
+  学习教程
+</a></li><li class="dropdown-item"><!----> <a href="/source/" class="nav-link">
+  资源分享
+</a></li><li class="dropdown-item"><!----> <a href="/template/" class="nav-link">
+  模板主题
+</a></li><li class="dropdown-item"><!----> <a href="/api/" class="nav-link">
+  API接口
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生态系统" class="dropdown-title"><span class="title">生态系统</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          官方私制
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="http://gitee.com/viptv/pc" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VIPTV - PC
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="http://gitee.com/viptv/mob" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VIPTV - MOB
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          官方开源
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="http://gitee.com/viptv/music" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VIPTV - MUSIC
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="http://gitee.com/viptv/lib" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  VIPTV - lib
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="关于我们" class="dropdown-title"><span class="title">关于我们</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/guide/Dash.html" class="nav-link">
+  红包打赏
+</a></li><li class="dropdown-item"><!----> <a href="/guide/About.html" class="nav-link">
+  自我介绍
+</a></li><li class="dropdown-item"><!----> <a href="/guide/Chat.html" class="nav-link">
+  加入团队
+</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="切换镜像" class="dropdown-title"><span class="title">切换镜像</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="http://viptv.gitee.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  国内镜像
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="http://viptvx.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  国外镜像
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>基础</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/Jsphp.html" class="sidebar-link">JsPHP 开发前准备</a></li><li><a href="/guide/Design.html" class="sidebar-link">Design学习教程</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>组件</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/Player.html" class="sidebar-link">JS播放器组件代码</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>插件</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/guide/Axios.html" aria-current="page" class="active sidebar-link">axios 封装</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/Axios.html#本人精简封装的-axios-js" class="sidebar-link">本人精简封装的 axios.js</a></li><li class="sidebar-sub-header"><a href="/guide/Axios.html#大神封装-axiostool-js-留存参考" class="sidebar-link">大神封装 axiosTool.js,留存参考</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/guide/Axios.html#main-js-中引入该文件" class="sidebar-link">main.js 中引入该文件</a></li><li class="sidebar-sub-header"><a href="/guide/Axios.html#组件中直接使用即可" class="sidebar-link">组件中直接使用即可</a></li></ul></li></ul></li><li><a href="/guide/Jiexi.html" class="sidebar-link">各类解析封装</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="axios-封装"><a href="#axios-封装" class="header-anchor">#</a> axios 封装</h1> <h2 id="本人精简封装的-axios-js"><a href="#本人精简封装的-axios-js" class="header-anchor">#</a> 本人精简封装的 axios.js</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token string">&quot;use strict&quot;</span><span class="token punctuation">;</span>
+<span class="token keyword">import</span> Axios <span class="token keyword">from</span> <span class="token string">'axios'</span>
+<span class="token keyword">import</span> cheerio <span class="token keyword">from</span> <span class="token string">'cheerio'</span>
+Axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers<span class="token punctuation">.</span>post<span class="token punctuation">[</span><span class="token string">'Content-Type'</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token string">'text/plain; charset=utf-8'</span>
+<span class="token keyword">const</span> isEnv <span class="token operator">=</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">'production'</span>
+<span class="token keyword">const</span> <span class="token function-variable function">isMob</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> navigator<span class="token punctuation">.</span>userAgent<span class="token punctuation">.</span><span class="token function">match</span><span class="token punctuation">(</span><span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">(iPhone|iPod|Android|ios|iPad)</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">const</span> req <span class="token operator">=</span> Axios<span class="token punctuation">.</span><span class="token function">create</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  timeout<span class="token operator">:</span> <span class="token number">15000</span><span class="token punctuation">,</span>
+  headers<span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token string">'Content-Type'</span><span class="token operator">:</span> <span class="token string">'text/plain;application/x-www-form-urlencoded;charset=UTF-8'</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  withCredentials<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  credientials<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+  emulateJSON<span class="token operator">:</span> <span class="token boolean">true</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+req<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token parameter">config</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> config
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token parameter">error</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+req<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token parameter">response</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>response<span class="token punctuation">.</span>data<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+  <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token keyword">const</span> proxy <span class="token operator">=</span> <span class="token string">'https://bird.ioliu.cn/v1/?url='</span><span class="token punctuation">;</span>
+<span class="token keyword">const</span> _storage <span class="token operator">=</span> window<span class="token punctuation">.</span>localStorage
+<span class="token keyword">const</span> storage <span class="token operator">=</span> <span class="token punctuation">{</span>
+  <span class="token function">get</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> data <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>_storage<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      <span class="token keyword">return</span> _storage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span> <span class="token operator">?</span>
+        Array<span class="token punctuation">.</span><span class="token function">isArray</span><span class="token punctuation">(</span>data<span class="token punctuation">)</span> <span class="token operator">?</span>
+        <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">parse</span><span class="token punctuation">(</span>_storage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">:</span>
+        _storage<span class="token punctuation">.</span><span class="token function">getItem</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span> <span class="token operator">:</span>
+        data
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">set</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> val<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>_storage<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      _storage<span class="token punctuation">.</span><span class="token function">setItem</span><span class="token punctuation">(</span>key<span class="token punctuation">,</span> val<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token function">clear</span><span class="token punctuation">(</span><span class="token parameter">key</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>_storage<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+      _storage<span class="token punctuation">.</span><span class="token function">removeItem</span><span class="token punctuation">(</span>key<span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">export</span> <span class="token punctuation">{</span>
+  proxy<span class="token punctuation">,</span>
+  isMob<span class="token punctuation">,</span>
+  isEnv<span class="token punctuation">,</span>
+  req<span class="token punctuation">,</span>
+  storage<span class="token punctuation">,</span>
+  cheerio
+<span class="token punctuation">}</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br></div></div><h2 id="大神封装-axiostool-js-留存参考"><a href="#大神封装-axiostool-js-留存参考" class="header-anchor">#</a> 大神封装 axiosTool.js,留存参考</h2> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> Vue <span class="token keyword">from</span> <span class="token string">'vue'</span>
+<span class="token keyword">import</span> axios <span class="token keyword">from</span> <span class="token string">'axios'</span>
+<span class="token comment">//取消请求</span>
+<span class="token keyword">let</span> CancelToken <span class="token operator">=</span> axios<span class="token punctuation">.</span>CancelToken
+<span class="token comment">//设置默认请求头，如果不需要可以取消这一步</span>
+axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>headers <span class="token operator">=</span> <span class="token punctuation">{</span>
+    <span class="token string">'X-Requested-With'</span><span class="token operator">:</span> <span class="token string">'XMLHttpRequest'</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 请求超时的时间限制</span>
+axios<span class="token punctuation">.</span>defaults<span class="token punctuation">.</span>timeout <span class="token operator">=</span> <span class="token number">20000</span>
+<span class="token comment">// 开始设置请求 发起的拦截处理</span>
+<span class="token comment">// config 代表发起请求的参数的实体</span>
+axios<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>request<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token parameter">config</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 得到参数中的 requestName 字段，用于决定下次发起请求，取消对应的 相同字段的请求</span>
+    <span class="token comment">// 如果没有 requestName 就默认添加一个 不同的时间戳</span>
+    <span class="token keyword">let</span> requestName
+    <span class="token keyword">if</span><span class="token punctuation">(</span>config<span class="token punctuation">.</span>method <span class="token operator">===</span> <span class="token string">'post'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>config<span class="token punctuation">.</span>data <span class="token operator">&amp;&amp;</span> config<span class="token punctuation">.</span>data<span class="token punctuation">.</span>requestName<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            requestName <span class="token operator">=</span> config<span class="token punctuation">.</span>data<span class="token punctuation">.</span>requestName
+        <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+            requestName <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>config<span class="token punctuation">.</span>params <span class="token operator">&amp;&amp;</span> config<span class="token punctuation">.</span>params<span class="token punctuation">.</span>requestName<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            requestName <span class="token operator">=</span> config<span class="token punctuation">.</span>params<span class="token punctuation">.</span>requestName
+        <span class="token punctuation">}</span><span class="token keyword">else</span><span class="token punctuation">{</span>
+            requestName <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">getTime</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+    <span class="token comment">// 判断，如果这里拿到的参数中的 requestName 在上一次请求中已经存在，就取消上一次的请求</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>requestName<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>axios<span class="token punctuation">[</span>requestName<span class="token punctuation">]</span> <span class="token operator">&amp;&amp;</span> axios<span class="token punctuation">[</span>requestName<span class="token punctuation">]</span><span class="token punctuation">.</span>cancel<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            axios<span class="token punctuation">[</span>requestName<span class="token punctuation">]</span><span class="token punctuation">.</span><span class="token function">cancel</span><span class="token punctuation">(</span><span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+        config<span class="token punctuation">.</span>cancelToken <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">CancelToken</span><span class="token punctuation">(</span><span class="token parameter">c</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            axios<span class="token punctuation">[</span>requestName<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
+            axios<span class="token punctuation">[</span>requestName<span class="token punctuation">]</span><span class="token punctuation">.</span>cancel <span class="token operator">=</span> c
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> config
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token parameter">error</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token comment">// 请求到结果的拦截处理</span>
+axios<span class="token punctuation">.</span>interceptors<span class="token punctuation">.</span>response<span class="token punctuation">.</span><span class="token function">use</span><span class="token punctuation">(</span><span class="token parameter">config</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 返回请求正确的结果</span>
+    <span class="token keyword">return</span> config
+<span class="token punctuation">}</span><span class="token punctuation">,</span> <span class="token parameter">error</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 错误的请求结果处理，这里的代码根据后台的状态码来决定错误的输出信息</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>error <span class="token operator">&amp;&amp;</span> error<span class="token punctuation">.</span>response<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">switch</span> <span class="token punctuation">(</span>error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">case</span> <span class="token number">400</span><span class="token operator">:</span>
+                error<span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token string">'错误请求'</span>
+                <span class="token keyword">break</span>
+            <span class="token keyword">case</span> <span class="token number">401</span><span class="token operator">:</span>
+                error<span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token string">'未授权，请重新登录'</span>
+                <span class="token keyword">break</span>
+            <span class="token keyword">case</span> <span class="token number">403</span><span class="token operator">:</span>
+                error<span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token string">'拒绝访问'</span>
+                <span class="token keyword">break</span>
+            <span class="token keyword">case</span> <span class="token number">404</span><span class="token operator">:</span>
+                error<span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token string">'请求错误,未找到该资源'</span>
+                <span class="token keyword">break</span>
+            <span class="token keyword">case</span> <span class="token number">405</span><span class="token operator">:</span>
+                error<span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token string">'请求方法未允许'</span>
+                <span class="token keyword">break</span>
+            <span class="token keyword">case</span> <span class="token number">408</span><span class="token operator">:</span>
+                error<span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token string">'请求超时'</span>
+                <span class="token keyword">break</span>
+            <span class="token keyword">case</span> <span class="token number">500</span><span class="token operator">:</span>
+                error<span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token string">'服务器端出错'</span>
+                <span class="token keyword">break</span>
+            <span class="token keyword">case</span> <span class="token number">501</span><span class="token operator">:</span>
+                error<span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token string">'网络未实现'</span>
+                <span class="token keyword">break</span>
+            <span class="token keyword">case</span> <span class="token number">502</span><span class="token operator">:</span>
+                error<span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token string">'网络错误'</span>
+                <span class="token keyword">break</span>
+            <span class="token keyword">case</span> <span class="token number">503</span><span class="token operator">:</span>
+                error<span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token string">'服务不可用'</span>
+                <span class="token keyword">break</span>
+            <span class="token keyword">case</span> <span class="token number">504</span><span class="token operator">:</span>
+                error<span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token string">'网络超时'</span>
+                <span class="token keyword">break</span>
+            <span class="token keyword">case</span> <span class="token number">505</span><span class="token operator">:</span>
+                error<span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token string">'http版本不支持该请求'</span>
+                <span class="token keyword">break</span>
+            <span class="token keyword">default</span><span class="token operator">:</span>
+                error<span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">连接错误</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>error<span class="token punctuation">.</span>response<span class="token punctuation">.</span>status<span class="token interpolation-punctuation punctuation">}</span></span><span class="token template-punctuation string">`</span></span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+        error<span class="token punctuation">.</span>message <span class="token operator">=</span> <span class="token string">&quot;连接到服务器失败&quot;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> Promise<span class="token punctuation">.</span><span class="token function">reject</span><span class="token punctuation">(</span>error<span class="token punctuation">.</span>message<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token comment">// 将axios 的 post 方法，绑定到 vue 实例上面的 $post</span>
+<span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$post</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">url<span class="token punctuation">,</span> params</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        axios<span class="token punctuation">.</span><span class="token function">post</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> params<span class="token punctuation">)</span>
+            <span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+                <span class="token function">resolve</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+            <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 将axios 的 get 方法，绑定到 vue 实例上面的 $get</span>
+<span class="token class-name">Vue</span><span class="token punctuation">.</span>prototype<span class="token punctuation">.</span><span class="token function-variable function">$get</span> <span class="token operator">=</span> <span class="token keyword">function</span> <span class="token punctuation">(</span><span class="token parameter">url<span class="token punctuation">,</span> params</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token keyword">new</span> <span class="token class-name">Promise</span><span class="token punctuation">(</span><span class="token punctuation">(</span><span class="token parameter">resolve<span class="token punctuation">,</span> reject</span><span class="token punctuation">)</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+        axios<span class="token punctuation">.</span><span class="token function">get</span><span class="token punctuation">(</span>url<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+            params<span class="token operator">:</span> params
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">resolve</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span> <span class="token comment">// 返回请求成功的数据 data</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">catch</span><span class="token punctuation">(</span><span class="token parameter">err</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+            <span class="token function">reject</span><span class="token punctuation">(</span>err<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span><span class="token punctuation">)</span>
+    <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span>
+<span class="token comment">// 请求示例</span>
+<span class="token comment">// requestName 为多余的参数 作为请求的标识，下次发起相同的请求，就会自动取消上一次还没有结束的请求</span>
+<span class="token comment">// 比如正常的请求参数只有一个 name: '123'，但是这里我们需要额外再加上一个 requestName</span>
+<span class="token comment">/**
+    this.$post(url, { name: '123', requestName: 'post_1' })
+        .then(res =&gt; {
+            console.log(`请求成功：${res}`)
+        })
+ */</span>
+
+<span class="token keyword">export</span> <span class="token keyword">default</span> axios
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br><span class="line-number">116</span><br><span class="line-number">117</span><br><span class="line-number">118</span><br><span class="line-number">119</span><br><span class="line-number">120</span><br><span class="line-number">121</span><br><span class="line-number">122</span><br><span class="line-number">123</span><br><span class="line-number">124</span><br><span class="line-number">125</span><br><span class="line-number">126</span><br><span class="line-number">127</span><br><span class="line-number">128</span><br><span class="line-number">129</span><br><span class="line-number">130</span><br></div></div><h3 id="main-js-中引入该文件"><a href="#main-js-中引入该文件" class="header-anchor">#</a> main.js 中引入该文件</h3> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">import</span> <span class="token punctuation">{</span> axios <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'./static/js/axiosTool'</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="组件中直接使用即可"><a href="#组件中直接使用即可" class="header-anchor">#</a> 组件中直接使用即可</h3> <div class="language-js line-numbers-mode"><pre class="language-js"><code><span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$post</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>url2<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;王&quot;</span><span class="token punctuation">,</span>
+    docType<span class="token operator">:</span> <span class="token string">&quot;pson&quot;</span><span class="token punctuation">,</span>
+    requestName<span class="token operator">:</span> <span class="token string">'name02'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+
+<span class="token keyword">this</span><span class="token punctuation">.</span><span class="token function">$get</span><span class="token punctuation">(</span><span class="token keyword">this</span><span class="token punctuation">.</span>url<span class="token punctuation">,</span> <span class="token punctuation">{</span>
+    name<span class="token operator">:</span> <span class="token string">&quot;李&quot;</span><span class="token punctuation">,</span>
+    requestName<span class="token operator">:</span> <span class="token string">'name01'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">then</span><span class="token punctuation">(</span><span class="token parameter">res</span> <span class="token operator">=&gt;</span> <span class="token punctuation">{</span>
+    console<span class="token punctuation">.</span><span class="token function">log</span><span class="token punctuation">(</span>res<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div></div> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/guide/Player.html" class="prev">JS播放器组件代码</a></span> <span class="next"><a href="/guide/Jiexi.html">各类解析封装</a>
+      →
+    </span></p></div> </main></div><div class="global-ui"><!----></div></div>
+    <script src="/assets/js/app.c6f3d1f3.js" defer></script><script src="/assets/js/2.4be1bcdd.js" defer></script><script src="/assets/js/24.4bf99798.js" defer></script><script src="/assets/js/5.d8713031.js" defer></script>
+  </body>
+</html>
