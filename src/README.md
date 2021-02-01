@@ -5,12 +5,12 @@ heroText: VIPTV
 tagline: 前端-后端-小程序<br> JS.VUE.PHP.CMS
 actionButtons: 
   - text: VIPTV - 源码
-    link: /dev/Code/    
+    link: /deve/Code/    
     extraClass: primary 
     icon: fa fa-play-circle
     target: _blank
   - text: VIPTV - 演示
-    link: /dev/Mirrors/  
+    link: /deve/Mirrors/  
     icon: fa fa-play-circle  
     extraClass: primary   
 features:

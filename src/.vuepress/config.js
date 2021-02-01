@@ -23,21 +23,21 @@ const sidebar = {
       ]
     },
   ],
-  dev: [{
+  deve: [{
       title: '体验',
       collapsable: false,
       children: [
-        '/dev/Mirrors',
-        '/dev/Code'
+        '/deve/Mirrors',
+        '/deve/Code'
       ]
     },
     {
       title: '我们',
       collapsable: false,
       children: [
-        '/dev/About',
-        '/dev/Dash',
-        '/dev/Chat'
+        '/deve/About',
+        '/deve/Dash',
+        '/deve/Chat'
       ]
     },
     {
@@ -185,15 +185,15 @@ module.exports = {
         text: '关于我们',
         items: [{
             text: '红包打赏',
-            link: '/dev/Dash'
+            link: '/deve/Dash'
           },
           {
             text: '自我介绍',
-            link: '/dev/About'
+            link: '/deve/About'
           },
           {
             text: '加入团队',
-            link: '/dev/Chat'
+            link: '/deve/Chat'
           },
         ]
       },
@@ -215,7 +215,7 @@ module.exports = {
     sidebar: {
       collapsable: true,
       '/guide/': sidebar.guide,
-      '/dev/': sidebar.dev,
+      '/deve/': sidebar.deve,
       '/api/': sidebar.api,
       '/template/': sidebar.template,
       '/source/': sidebar.source,
