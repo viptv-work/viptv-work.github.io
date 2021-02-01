@@ -1,4 +1,4 @@
-![](../../public/static/viptv/VIPTV-LOGO-LONG-FINAL@1x.png)
+![](../.vuepress/public/images/logo/VIPTV-LOGO-LONG-FINAL@1x.png)
 
 学习教程
 ===============

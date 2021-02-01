@@ -17,4 +17,4 @@
 :::info
 关注微信公众号:viptvx,后发送消息输入:pr,即可获取.
  :::
-![](../../public/static/viptv/VIPTV-LOGO-LONG-FINAL@1x.png)
+![](../.vuepress/public/images/logo/VIPTV-LOGO-LONG-FINAL@1x.png)

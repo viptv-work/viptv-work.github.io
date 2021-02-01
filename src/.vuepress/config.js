@@ -23,13 +23,29 @@ const sidebar = {
       ]
     },
   ],
-  mirrors: [{
-    title: 'VIPTV镜像站',
-    collapsable: false,
-    children: [
-      '/mirrors/README'
-    ]
-  }],
+  dev: [{
+      title: '体验',
+      collapsable: false,
+      children: [
+        '/dev/Mirrors',
+        '/dev/Code'
+      ]
+    },
+    {
+      title: '我们',
+      collapsable: false,
+      children: [
+        '/dev/About',
+        '/dev/Dash',
+        '/dev/Chat'
+      ]
+    },
+    {
+      title: '合作',
+      collapsable: false,
+      children: []
+    }
+  ],
   source: [{
       title: '资源',
       collapsable: false,
@@ -40,7 +56,7 @@ const sidebar = {
       ]
     },
     {
-      title: 'VIP直播源',
+      title: '直播源',
       collapsable: false,
       children: [
         '/source/Org',
@@ -101,7 +117,7 @@ module.exports = {
         href: '/logo.png'
       }
     ],
-   [
+    [
       'link',
       {
         rel: 'manifest',
@@ -166,46 +182,18 @@ module.exports = {
         ]
       },
       {
-        text: '生态系统',
-        items: [{
-            text: '官方私制',
-            items: [{
-                text: 'VIPTV - PC',
-                link: 'http://gitee.com/viptv/pc'
-              },
-              {
-                text: 'VIPTV - MOB',
-                link: 'http://gitee.com/viptv/mob'
-              }
-            ]
-          },
-          {
-            text: '官方开源',
-            items: [{
-                text: 'VIPTV - MUSIC',
-                link: 'http://gitee.com/viptv/music'
-              },
-              {
-                text: 'VIPTV - lib',
-                link: 'http://gitee.com/viptv/lib'
-              }
-            ]
-          }
-        ]
-      },
-      {
         text: '关于我们',
         items: [{
             text: '红包打赏',
-            link: '/guide/Dash'
+            link: '/dev/Dash'
           },
           {
             text: '自我介绍',
-            link: '/guide/About'
+            link: '/dev/About'
           },
           {
             text: '加入团队',
-            link: '/guide/Chat'
+            link: '/dev/Chat'
           },
         ]
       },
@@ -227,6 +215,7 @@ module.exports = {
     sidebar: {
       collapsable: true,
       '/guide/': sidebar.guide,
+      '/dev/': sidebar.dev,
       '/api/': sidebar.api,
       '/template/': sidebar.template,
       '/source/': sidebar.source,

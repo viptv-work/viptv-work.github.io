@@ -4,13 +4,13 @@ heroImage: /logo.png
 heroText: VIPTV
 tagline: 前端-后端-小程序<br> JS.VUE.PHP.CMS
 actionButtons: 
-  - text: VIPTV - 新发版
-    link: http://viptv.gitee.io/pc/   
+  - text: VIPTV - 源码
+    link: /dev/Code/    
     extraClass: primary 
     icon: fa fa-play-circle
     target: _blank
-  - text: VIPTV - 历史版
-    link: /mirrors/  
+  - text: VIPTV - 演示
+    link: /dev/Mirrors/  
     icon: fa fa-play-circle  
     extraClass: primary   
 features:
