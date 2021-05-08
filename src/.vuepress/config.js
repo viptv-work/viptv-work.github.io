@@ -22,6 +22,13 @@ const sidebar = {
         '/guide/Jiexi',
       ]
     },
+    {
+      title: '代理',
+      collapsable: false,
+      children: [
+        '/guide/Phpdaili',        
+      ]
+    },
   ],
   deve: [{
       title: '体验',

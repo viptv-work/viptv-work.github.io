@@ -1,6 +1,6 @@
 # 加入我们
 
-## VipTV（学习开发）群
+## VIPTV（开发、学习交流）群
 
 ![](/images/_media/qqqun.png)
 

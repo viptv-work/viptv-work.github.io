@@ -8,7 +8,7 @@
 
 ## 支付宝
 
-![](/images/_media/alipay.jpg)
+![](/images/_media/alipay.png)
 
 ## 微信
 
