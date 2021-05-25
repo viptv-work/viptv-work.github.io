@@ -1,23 +1,31 @@
 {
+  "name": "viptv",
+  "version": "1.0.0",
+  "description": "直播,点播,云视,音乐,Music,JS,PHP,小程序,前端,后端,流行框架二次开发",
+  "repository": "https://github.com/viptvx/viptvx.github.io",
+  "author": "qq2236639958",
+  "license": "MIT",
+  "private": true,
+  "keywords": [
+    "viptve",
+    "iptv",
+    "cctv"
+  ],
+  "homepage": "https://github.com/viptvx/viptvx.github.io/tree/master/#readme",
+  "bugs": {
+    "url": "https://github.com/viptvx/viptvx.github.io/issues"
+  },
   "devDependencies": {
-    "@vuepress/plugin-pwa": "^1.5.4",
-    "node-sass": "^4.13.1",
-    "patch-package": "^6.2.2",
-    "sass-loader": "^8.0.2",
-    "vuepress": "^1.5.4"
+    "chalk": "^4.1.0",
+    "vitepress": "^0.12.2",
+    "yorkie": "^2.0.0"
   },
   "scripts": {
-    "dev": "yarn serve",
-    "serve": "vuepress dev src",
-    "build": "vuepress build src",
-    "postinstall": "patch-package"
+    "dev": "vitepress dev .",
+    "build": "node ./.vitepress/rewrite-title/ && vitepress build .",
+    "serve": "vitepress serve ."
   },
   "dependencies": {
-    "@docsearch/css": "^1.0.0-alpha.27",
-    "@docsearch/js": "^1.0.0-alpha.27",
-    "algoliasearch": "^4.4.0",
-    "axios": "^0.19.1",
-    "intersection-observer": "^0.11.0",
-    "showdown": "^1.9.1"
+    "lodash": "^4.17.21"
   }
 }

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>
+      PHP 代理教程 | VIPTV 工作室
+    </title>
+    <meta name="description" content="前端-后端-小程序-插件">
+    <link rel="stylesheet" href="/assets/style.abb47a77.css">
+    <link rel="modulepreload" href="/assets/Home.db8c1afd.js">
+    <link rel="modulepreload" href="/assets/app.6008987c.js">
+    <link rel="modulepreload" href="/assets/guide_phpdl.md.f947bc1e.lean.js">
+    <link rel="modulepreload" href="/assets/app.6008987c.js">
+    <link rel="icon" type="image/svg+xml" href="/logo.png">
+    
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme"><header class="nav-bar" data-v-bf1fd106><div class="sidebar-button" data-v-bf1fd106><svg class="icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z" class></path></svg></div><a class="nav-bar-title" href="/" aria-label="VIPTV 工作室, back to home" data-v-bf1fd106 data-v-4c226fdc><img class="logo" src="/logo.png" alt="Logo" data-v-4c226fdc> VIPTV 工作室</a><div class="flex-grow" data-v-bf1fd106></div><div class="nav" data-v-bf1fd106><nav class="nav-links" data-v-bf1fd106 data-v-18e47379><!--[--><div class="item" data-v-18e47379><div class="nav-link" data-v-18e47379 data-v-3cf0180d><a class="item active" href="/guide/" data-v-3cf0180d>指引 <!----></a></div></div><div class="item" data-v-18e47379><div class="nav-link" data-v-18e47379 data-v-3cf0180d><a class="item" href="/about/" data-v-3cf0180d>我们 <!----></a></div></div><div class="item" data-v-18e47379><div class="nav-dropdown-link" data-v-18e47379 data-v-34878268><button class="button" data-v-34878268><span class="button-text" data-v-34878268>相关链接</span><span class="right button-arrow" data-v-34878268></span></button><ul class="dialog" data-v-34878268><!--[--><li class="dialog-item" data-v-34878268><div class="nav-dropdown-link-item" data-v-34878268 data-v-3daac2f6><a class="item isExternal" href="https://github.com/viptvx/viptvx.github.io/discussions" target="_blank" rel="noopener noreferrer" data-v-3daac2f6><span class="arrow" data-v-3daac2f6></span><span class="text" data-v-3daac2f6>VIPTV 社区</span><span class="icon" data-v-3daac2f6><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-3daac2f6><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><!--]--></ul></div></div><div class="item" data-v-18e47379><div class="nav-dropdown-link" data-v-18e47379 data-v-34878268><button class="button" data-v-34878268><span class="button-text" data-v-34878268>切换镜像</span><span class="right button-arrow" data-v-34878268></span></button><ul class="dialog" data-v-34878268><!--[--><li class="dialog-item" data-v-34878268><div class="nav-dropdown-link-item" data-v-34878268 data-v-3daac2f6><a class="item isExternal" href="https://viptv.gitee.io/" target="_blank" rel="noopener noreferrer" data-v-3daac2f6><span class="arrow" data-v-3daac2f6></span><span class="text" data-v-3daac2f6>国内站</span><span class="icon" data-v-3daac2f6><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-3daac2f6><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><li class="dialog-item" data-v-34878268><div class="nav-dropdown-link-item" data-v-34878268 data-v-3daac2f6><a class="item isExternal" href="https://viptvx.github.io/" target="_blank" rel="noopener noreferrer" data-v-3daac2f6><span class="arrow" data-v-3daac2f6></span><span class="text" data-v-3daac2f6>国际站</span><span class="icon" data-v-3daac2f6><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-3daac2f6><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><!--]--></ul></div></div><!--]--><!----><!----></nav></div><!--[--><!--]--></header><aside class="sidebar" data-v-1cb74c72><nav class="nav-links nav" data-v-1cb74c72 data-v-18e47379><!--[--><div class="item" data-v-18e47379><div class="nav-link" data-v-18e47379 data-v-3cf0180d><a class="item active" href="/guide/" data-v-3cf0180d>指引 <!----></a></div></div><div class="item" data-v-18e47379><div class="nav-link" data-v-18e47379 data-v-3cf0180d><a class="item" href="/about/" data-v-3cf0180d>我们 <!----></a></div></div><div class="item" data-v-18e47379><div class="nav-dropdown-link" data-v-18e47379 data-v-34878268><button class="button" data-v-34878268><span class="button-text" data-v-34878268>相关链接</span><span class="right button-arrow" data-v-34878268></span></button><ul class="dialog" data-v-34878268><!--[--><li class="dialog-item" data-v-34878268><div class="nav-dropdown-link-item" data-v-34878268 data-v-3daac2f6><a class="item isExternal" href="https://github.com/viptvx/viptvx.github.io/discussions" target="_blank" rel="noopener noreferrer" data-v-3daac2f6><span class="arrow" data-v-3daac2f6></span><span class="text" data-v-3daac2f6>VIPTV 社区</span><span class="icon" data-v-3daac2f6><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-3daac2f6><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><!--]--></ul></div></div><div class="item" data-v-18e47379><div class="nav-dropdown-link" data-v-18e47379 data-v-34878268><button class="button" data-v-34878268><span class="button-text" data-v-34878268>切换镜像</span><span class="right button-arrow" data-v-34878268></span></button><ul class="dialog" data-v-34878268><!--[--><li class="dialog-item" data-v-34878268><div class="nav-dropdown-link-item" data-v-34878268 data-v-3daac2f6><a class="item isExternal" href="https://viptv.gitee.io/" target="_blank" rel="noopener noreferrer" data-v-3daac2f6><span class="arrow" data-v-3daac2f6></span><span class="text" data-v-3daac2f6>国内站</span><span class="icon" data-v-3daac2f6><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-3daac2f6><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><li class="dialog-item" data-v-34878268><div class="nav-dropdown-link-item" data-v-34878268 data-v-3daac2f6><a class="item isExternal" href="https://viptvx.github.io/" target="_blank" rel="noopener noreferrer" data-v-3daac2f6><span class="arrow" data-v-3daac2f6></span><span class="text" data-v-3daac2f6>国际站</span><span class="icon" data-v-3daac2f6><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15" data-v-3daac2f6><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></span></a></div></li><!--]--></ul></div></div><!--]--><!----><!----></nav><!--[--><!--]--><ul class="sidebar-links" data-v-1cb74c72><!--[--><li class="sidebar-link"><p class="sidebar-link-item">基础</p><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="/guide/index">介绍</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/guide/install">安装</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/guide/tools">工具</a><!----></li></ul></li><li class="sidebar-link"><p class="sidebar-link-item">高阶</p><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="/guide/plays">播放组件</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/guide/jiexi">解析封装</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item active" href="/guide/phpdl">PHP代理</a><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="#奥点（广电）云代理php源码">奥点（广电）云代理php源码</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#韩国kbs直播代理php源码">韩国KBS直播代理php源码</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#txt文本源，批量替换链接，php代码">txt文本源，批量替换链接，php代码</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#掌上南昌php代理源码">掌上南昌PHP代理源码</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#广电云长沙电视台节目源php代理">广电云长沙电视台节目源PHP代理</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#_2021最新湖北电视台节目源php代理源码">2021最新湖北电视台节目源PHP代理源码</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#自建企业微信消息推送通知通道接口php版">自建企业微信消息推送通知通道接口PHP版</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="#tvsou-节目指南-xmltv-格式的-php-源码">tvsou 节目指南 xmltv 格式的 php 源码</a><!----></li></ul></li><li class="sidebar-link"><a class="sidebar-link-item" href="/guide/css">CSS语法</a><!----></li></ul></li><li class="sidebar-link"><p class="sidebar-link-item">接口</p><ul class="sidebar-links"><li class="sidebar-link"><a class="sidebar-link-item" href="/guide/tv">电视</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/guide/live">直播</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/guide/movie">影视</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/guide/video">视频</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/guide/music">音乐</a><!----></li><li class="sidebar-link"><a class="sidebar-link-item" href="/guide/book">小说</a><!----></li></ul></li><!--]--></ul><!--[--><!--[--><div class="sponsors"><a href="http://viptv.gitee.io/dev" target="_blank" rel="VIPTV -云视听【国内镜像站】"><span>VIPTV -云视听【国内镜像站】</span></a><a href="http://viptv.gitee.io/dev" target="_blank" rel="noopener" aria-label="sponsor-img"><img src="/bank.png" alt="VIPTV- 云视听【国内镜像】"></a><a href="http://viptv.gitee.io/mob" target="_blank" rel="noopener" aria-label="sponsor-img"><img src="/bank.png" alt="VIPTV- 云视听【国内镜像】"></a></div><!--]--><!--]--></aside><!-- TODO: make this button accessible --><div class="sidebar-mask"></div><main class="page" data-v-7c281d53><div class="container" data-v-7c281d53><!--[--><!--]--><div class="content" data-v-7c281d53><div data-v-7c281d53><h1 id="php-代理教程"><a class="header-anchor" href="#php-代理教程" aria-hidden="true">#</a> PHP 代理教程</h1><h2 id="奥点（广电）云代理php源码"><a class="header-anchor" href="#奥点（广电）云代理php源码" aria-hidden="true">#</a> 奥点（广电）云代理php源码</h2><div class="language-php"><pre><code><span class="token variable">$id</span><span class="token operator">=</span><span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string double-quoted-string">&quot;id&quot;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$url</span><span class="token operator">=</span><span class="token string double-quoted-string">&quot;http://1812501212048408.cn-hangzhou.fc.aliyuncs.com/2016-08-15/proxy/node-api.online/node-api/tv/channelInfo?id=&quot;</span><span class="token operator">.</span><span class="token variable">$id</span><span class="token operator">.</span><span class="token string double-quoted-string">&quot;&quot;</span><span class="token punctuation">;</span>
+
+<span class="token variable">$result</span> <span class="token operator">=</span> <span class="token function">file_get_contents</span><span class="token punctuation">(</span><span class="token variable">$url</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$json</span> <span class="token operator">=</span> <span class="token function">json_decode</span><span class="token punctuation">(</span><span class="token variable">$result</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$playurl</span> <span class="token operator">=</span> <span class="token variable">$json</span><span class="token operator">-&gt;</span><span class="token property">data</span><span class="token operator">-&gt;</span><span class="token property">hlsUrl</span><span class="token punctuation">;</span>
+
+<span class="token function">header</span><span class="token punctuation">(</span><span class="token string double-quoted-string">&quot;location: &quot;</span><span class="token operator">.</span><span class="token variable">$playurl</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="韩国kbs直播代理php源码"><a class="header-anchor" href="#韩国kbs直播代理php源码" aria-hidden="true">#</a> 韩国KBS直播代理php源码</h2><div class="language-php"><pre><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token variable">$id</span><span class="token operator">=</span><span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&#39;id&#39;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$ids</span> <span class="token operator">=</span> <span class="token keyword">array</span><span class="token punctuation">(</span>
+<span class="token string double-quoted-string">&quot;1&quot;</span><span class="token operator">=&gt;</span><span class="token string double-quoted-string">&quot;11&quot;</span><span class="token punctuation">,</span>
+<span class="token string double-quoted-string">&quot;2&quot;</span><span class="token operator">=&gt;</span><span class="token string double-quoted-string">&quot;12&quot;</span><span class="token punctuation">,</span>
+<span class="token string double-quoted-string">&quot;3&quot;</span><span class="token operator">=&gt;</span><span class="token string double-quoted-string">&quot;14&quot;</span><span class="token punctuation">,</span>
+<span class="token string double-quoted-string">&quot;4&quot;</span><span class="token operator">=&gt;</span><span class="token string double-quoted-string">&quot;81&quot;</span><span class="token punctuation">,</span>
+<span class="token string double-quoted-string">&quot;5&quot;</span><span class="token operator">=&gt;</span><span class="token string double-quoted-string">&quot;N91&quot;</span><span class="token punctuation">,</span>
+<span class="token string double-quoted-string">&quot;6&quot;</span><span class="token operator">=&gt;</span><span class="token string double-quoted-string">&quot;N92&quot;</span><span class="token punctuation">,</span>
+<span class="token string double-quoted-string">&quot;7&quot;</span><span class="token operator">=&gt;</span><span class="token string double-quoted-string">&quot;N93&quot;</span><span class="token punctuation">,</span>
+<span class="token string double-quoted-string">&quot;8&quot;</span><span class="token operator">=&gt;</span><span class="token string double-quoted-string">&quot;N94&quot;</span><span class="token punctuation">,</span>
+<span class="token string double-quoted-string">&quot;9&quot;</span><span class="token operator">=&gt;</span><span class="token string double-quoted-string">&quot;N96&quot;</span><span class="token punctuation">,</span>
+<span class="token string double-quoted-string">&quot;10&quot;</span><span class="token operator">=&gt;</span><span class="token string double-quoted-string">&quot;21&quot;</span><span class="token punctuation">,</span>
+<span class="token string double-quoted-string">&quot;11&quot;</span><span class="token operator">=&gt;</span><span class="token string double-quoted-string">&quot;22&quot;</span><span class="token punctuation">,</span>
+<span class="token string double-quoted-string">&quot;12&quot;</span><span class="token operator">=&gt;</span><span class="token string double-quoted-string">&quot;23&quot;</span><span class="token punctuation">,</span>
+<span class="token string double-quoted-string">&quot;13&quot;</span><span class="token operator">=&gt;</span><span class="token string double-quoted-string">&quot;24&quot;</span><span class="token punctuation">,</span>
+<span class="token string double-quoted-string">&quot;14&quot;</span><span class="token operator">=&gt;</span><span class="token string double-quoted-string">&quot;25&quot;</span><span class="token punctuation">,</span>
+<span class="token string double-quoted-string">&quot;15&quot;</span><span class="token operator">=&gt;</span><span class="token string double-quoted-string">&quot;26&quot;</span><span class="token punctuation">,</span>
+<span class="token string double-quoted-string">&quot;16&quot;</span><span class="token operator">=&gt;</span><span class="token string double-quoted-string">&quot;I92&quot;</span><span class="token punctuation">,</span>
+<span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$url</span> <span class="token operator">=</span> <span class="token string double-quoted-string">&quot;https://cfpwwwapi.kbs.co.kr/api/v1/landing/live/channel_code/&quot;</span><span class="token operator">.</span><span class="token variable">$ids</span><span class="token punctuation">[</span><span class="token variable">$id</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$ch</span> <span class="token operator">=</span> <span class="token function">curl_init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">curl_setopt</span><span class="token punctuation">(</span><span class="token variable">$ch</span><span class="token punctuation">,</span> <span class="token constant">CURLOPT_URL</span><span class="token punctuation">,</span> <span class="token variable">$url</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">curl_setopt</span><span class="token punctuation">(</span><span class="token variable">$ch</span><span class="token punctuation">,</span> <span class="token constant">CURLOPT_SSL_VERIFYPEER</span><span class="token punctuation">,</span> <span class="token constant boolean">FALSE</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token function">curl_setopt</span><span class="token punctuation">(</span><span class="token variable">$ch</span><span class="token punctuation">,</span> <span class="token constant">CURLOPT_SSL_VERIFYHOST</span><span class="token punctuation">,</span> <span class="token constant boolean">FALSE</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">curl_setopt</span><span class="token punctuation">(</span><span class="token variable">$ch</span><span class="token punctuation">,</span> <span class="token constant">CURLOPT_RETURNTRANSFER</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token variable">$re</span> <span class="token operator">=</span> <span class="token function">curl_exec</span><span class="token punctuation">(</span><span class="token variable">$ch</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">curl_close</span><span class="token punctuation">(</span><span class="token variable">$ch</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">preg_match</span><span class="token punctuation">(</span><span class="token string single-quoted-string">&#39;|service_url&quot;:&quot;(.*?)&quot;|i&#39;</span><span class="token punctuation">,</span><span class="token variable">$re</span><span class="token punctuation">,</span><span class="token variable">$play</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">header</span><span class="token punctuation">(</span><span class="token string single-quoted-string">&#39;Location:&#39;</span><span class="token operator">.</span><span class="token variable">$play</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?&gt;</span></span>
+</code></pre></div><h2 id="txt文本源，批量替换链接，php代码"><a class="header-anchor" href="#txt文本源，批量替换链接，php代码" aria-hidden="true">#</a> txt文本源，批量替换链接，php代码</h2><p>有时在网上找的代理ID，需要替换代理链接时，不停的使用鼠标粘贴复制。费时费力，在网上找了下资料。特写了php代码批量替换txt文本里的链接。</p><div class="language-php"><pre><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token comment">//pl.php?url=111.com&amp;url2=222.com&amp;txt=333</span>
+<span class="token comment">//使用方法把111.com换成你123.txt里面的链接，222.com换成需要替换新的链接，333是替换完成后在你服务器生成新的txt名称</span>
+<span class="token variable">$url</span><span class="token operator">=</span><span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&#39;url&#39;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$url2</span><span class="token operator">=</span><span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&#39;url2&#39;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$txt</span><span class="token operator">=</span><span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&#39;txt&#39;</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$info</span><span class="token operator">=</span><span class="token function">file_get_contents</span><span class="token punctuation">(</span><span class="token string single-quoted-string">&#39;./123.txt&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$a</span> <span class="token operator">=</span> <span class="token function">str_replace</span><span class="token punctuation">(</span><span class="token variable">$url</span><span class="token punctuation">,</span><span class="token variable">$url2</span><span class="token punctuation">,</span><span class="token variable">$info</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">echo</span> <span class="token variable">$a</span><span class="token punctuation">;</span>
+	<span class="token variable">$c</span><span class="token operator">=</span> <span class="token string double-quoted-string">&quot;<span class="token interpolation"><span class="token variable">$a</span></span>&quot;</span><span class="token punctuation">;</span>
+	<span class="token variable">$fp</span><span class="token operator">=</span><span class="token function">fopen</span><span class="token punctuation">(</span><span class="token variable">$txt</span><span class="token operator">.</span><span class="token string single-quoted-string">&#39;.txt&#39;</span><span class="token punctuation">,</span><span class="token string double-quoted-string">&quot;a&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">fwrite</span><span class="token punctuation">(</span><span class="token variable">$fp</span><span class="token punctuation">,</span><span class="token variable">$c</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+	<span class="token function">fclose</span><span class="token punctuation">(</span><span class="token variable">$fp</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?&gt;</span></span>
+</code></pre></div><h2 id="掌上南昌php代理源码"><a class="header-anchor" href="#掌上南昌php代理源码" aria-hidden="true">#</a> 掌上南昌PHP代理源码</h2><p>获取所有频道信息：<a href="http://zsnc.nctv.net.cn/api/contents/list?category_id=469&amp;page_size=20&amp;page=1" target="_blank" rel="noopener noreferrer">http://zsnc.nctv.net.cn/api/contents/list?category_id=469&amp;page_size=20&amp;page=1</a> 算法有点复杂。</p><div class="language-php"><pre><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token function">error_reporting</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token variable">$_id</span> <span class="token operator">=</span> <span class="token variable">$_GET</span><span class="token punctuation">[</span><span class="token string single-quoted-string">&#39;id&#39;</span><span class="token punctuation">]</span><span class="token punctuation">;</span> <span class="token comment">// 1 2 3 4 </span>
+<span class="token comment">//http://zsnc.nctv.net.cn/api/contents/list?category_id=469&amp;page_size=20&amp;page=1  获取所有频道信息</span>
+<span class="token comment">//http://zsnc.nctv.net.cn/api/contents/info?id=126786  </span>
+<span class="token variable">$channel_id</span> <span class="token operator">=</span> <span class="token keyword">array</span><span class="token punctuation">(</span><span class="token string single-quoted-string">&#39;jw22cAZ&#39;</span><span class="token punctuation">,</span><span class="token string single-quoted-string">&#39;LfqghkO&#39;</span><span class="token punctuation">,</span><span class="token string single-quoted-string">&#39;an6J0sz&#39;</span><span class="token punctuation">,</span><span class="token string single-quoted-string">&#39;22zqwYf&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 126784  126785 126786 126787 </span>
+<span class="token variable">$_id</span> <span class="token operator">=</span> <span class="token variable">$channel_id</span> <span class="token punctuation">[</span><span class="token function">intval</span><span class="token punctuation">(</span><span class="token variable">$_id</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$md52</span> <span class="token operator">=</span> <span class="token function">md5</span><span class="token punctuation">(</span><span class="token variable">$_id</span><span class="token operator">.</span><span class="token string single-quoted-string">&#39;Tidenctvzsncapp&#39;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$str3</span> <span class="token operator">=</span> <span class="token function">time</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$sb</span> <span class="token operator">=</span> <span class="token string single-quoted-string">&#39;&#39;</span><span class="token punctuation">;</span>
+<span class="token variable">$sb</span> <span class="token operator">=</span> <span class="token variable">$sb</span><span class="token operator">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$md52</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$sb</span> <span class="token operator">=</span> <span class="token variable">$sb</span><span class="token operator">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$md52</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$sb</span> <span class="token operator">=</span> <span class="token variable">$sb</span><span class="token operator">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$md52</span><span class="token punctuation">,</span><span class="token number">14</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$sb</span> <span class="token operator">=</span> <span class="token variable">$sb</span><span class="token operator">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$md52</span><span class="token punctuation">,</span><span class="token number">13</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$sb</span> <span class="token operator">=</span> <span class="token variable">$sb</span><span class="token operator">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$md52</span><span class="token punctuation">,</span><span class="token number">12</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$sb</span> <span class="token operator">=</span> <span class="token variable">$sb</span><span class="token operator">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$md52</span><span class="token punctuation">,</span><span class="token number">25</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$sb</span> <span class="token operator">=</span> <span class="token variable">$sb</span><span class="token operator">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$md52</span><span class="token punctuation">,</span><span class="token number">30</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$sb</span> <span class="token operator">=</span> <span class="token variable">$sb</span><span class="token operator">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$md52</span><span class="token punctuation">,</span><span class="token number">29</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$sb</span> <span class="token operator">=</span> <span class="token variable">$sb</span><span class="token operator">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$md52</span><span class="token punctuation">,</span><span class="token number">28</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$sb</span> <span class="token operator">=</span> <span class="token variable">$sb</span><span class="token operator">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$md52</span><span class="token punctuation">,</span><span class="token number">27</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$sb</span> <span class="token operator">=</span> <span class="token variable">$sb</span><span class="token operator">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$md52</span><span class="token punctuation">,</span><span class="token number">26</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$md53</span> <span class="token operator">=</span> <span class="token function">md5</span><span class="token punctuation">(</span><span class="token string single-quoted-string">&#39;tide&#39;</span><span class="token operator">.</span><span class="token variable">$str3</span><span class="token operator">.</span><span class="token variable">$sb</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$replace</span> <span class="token operator">=</span> <span class="token string single-quoted-string">&#39;t=&#39;</span><span class="token operator">.</span><span class="token variable">$str3</span><span class="token operator">.</span><span class="token string single-quoted-string">&#39;&amp;c=&#39;</span><span class="token operator">.</span><span class="token variable">$_id</span><span class="token operator">.</span><span class="token string single-quoted-string">&#39;&amp;a=nctvzsncapp&#39;</span><span class="token operator">.</span><span class="token string single-quoted-string">&#39;&amp;v=&#39;</span><span class="token operator">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$md53</span><span class="token punctuation">,</span><span class="token number">4</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$md53</span><span class="token punctuation">,</span><span class="token number">16</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$md53</span><span class="token punctuation">,</span><span class="token number">31</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$md53</span><span class="token punctuation">,</span><span class="token number">17</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token operator">.</span><span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$md53</span><span class="token punctuation">,</span><span class="token number">8</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$replace</span> <span class="token operator">=</span> <span class="token function">base64_encode</span><span class="token punctuation">(</span><span class="token variable">$replace</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$replace</span> <span class="token operator">=</span> <span class="token function">str_replace</span><span class="token punctuation">(</span><span class="token string single-quoted-string">&#39;=&#39;</span><span class="token punctuation">,</span><span class="token string single-quoted-string">&#39;|&#39;</span><span class="token punctuation">,</span><span class="token variable">$replace</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">preg_match_all</span><span class="token punctuation">(</span><span class="token string single-quoted-string">&#39;/[1-9]/&#39;</span><span class="token punctuation">,</span><span class="token variable">$replace</span><span class="token punctuation">,</span><span class="token variable">$trim</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+ 
+<span class="token variable">$trim</span> <span class="token operator">=</span> <span class="token function">array_unique</span><span class="token punctuation">(</span><span class="token variable">$trim</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+ <span class="token variable">$str4</span> <span class="token operator">=</span> <span class="token variable">$replace</span><span class="token punctuation">;</span>
+
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token variable">$i</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token variable">$i</span><span class="token operator">&lt;</span><span class="token function">count</span><span class="token punctuation">(</span><span class="token variable">$trim</span><span class="token punctuation">)</span><span class="token punctuation">;</span><span class="token variable">$i</span><span class="token operator">++</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token variable">$intval</span> <span class="token operator">=</span> <span class="token function">intval</span><span class="token punctuation">(</span><span class="token variable">$trim</span><span class="token punctuation">[</span><span class="token variable">$i</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$intval</span> <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">==</span> <span class="token number">0</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+         
+        <span class="token variable">$string2</span> <span class="token operator">=</span> <span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$replace</span><span class="token punctuation">,</span><span class="token variable">$intval</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">stripos</span><span class="token punctuation">(</span><span class="token string single-quoted-string">&#39;abcdefghigklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ&#39;</span><span class="token punctuation">,</span><span class="token variable">$string2</span><span class="token punctuation">)</span><span class="token operator">&gt;=</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token variable">$indexOf</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token function">strpos</span><span class="token punctuation">(</span><span class="token string single-quoted-string">&#39;abcdefghigklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ&#39;</span><span class="token punctuation">,</span><span class="token variable">$string2</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token punctuation">(</span><span class="token variable">$intval</span> <span class="token operator">*</span> <span class="token variable">$intval</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">52</span><span class="token punctuation">;</span>
+             
+ 
+            <span class="token variable">$str4</span> <span class="token operator">=</span> <span class="token function">replaceSomeWhere</span><span class="token punctuation">(</span><span class="token variable">$str4</span><span class="token punctuation">,</span> <span class="token function">substr</span><span class="token punctuation">(</span><span class="token string single-quoted-string">&#39;abcdefghigklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ&#39;</span><span class="token punctuation">,</span><span class="token variable">$indexOf</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token variable">$intval</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+     
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$string3</span> <span class="token operator">=</span> <span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$replace</span><span class="token punctuation">,</span><span class="token variable">$intval</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">stripos</span><span class="token punctuation">(</span><span class="token string single-quoted-string">&#39;abcdefghigklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ&#39;</span><span class="token punctuation">,</span><span class="token variable">$string3</span><span class="token punctuation">)</span><span class="token operator">&gt;=</span><span class="token number">0</span><span class="token punctuation">)</span>
+        <span class="token punctuation">{</span>
+            <span class="token variable">$indexOf2</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token function">strpos</span><span class="token punctuation">(</span><span class="token string single-quoted-string">&#39;abcdefghigklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ&#39;</span><span class="token punctuation">,</span><span class="token variable">$string3</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token variable">$intval</span> <span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">52</span><span class="token punctuation">;</span>
+            <span class="token variable">$str4</span> <span class="token operator">=</span> <span class="token function">replaceSomeWhere</span><span class="token punctuation">(</span><span class="token variable">$str4</span> <span class="token punctuation">,</span> <span class="token function">substr</span><span class="token punctuation">(</span><span class="token string single-quoted-string">&#39;abcdefghigklmnopqrstuvwxyzABCDEFGHIGKLMNOPQRSTUVWXYZ&#39;</span><span class="token punctuation">,</span><span class="token variable">$indexOf2</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">,</span><span class="token variable">$intval</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token punctuation">}</span>
+     
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+ 
+<span class="token variable">$bstrURL</span> <span class="token operator">=</span> <span class="token string single-quoted-string">&#39;http://mediaapi.nctv.net.cn/apiv3.2.3/m3u8.php?token=&#39;</span><span class="token operator">.</span><span class="token variable">$str4</span><span class="token punctuation">;</span>
+<span class="token variable">$ch</span> <span class="token operator">=</span> <span class="token function">curl_init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">curl_setopt</span><span class="token punctuation">(</span><span class="token variable">$ch</span><span class="token punctuation">,</span> <span class="token constant">CURLOPT_URL</span><span class="token punctuation">,</span> <span class="token variable">$bstrURL</span><span class="token punctuation">)</span><span class="token punctuation">;</span>          
+<span class="token function">curl_setopt</span><span class="token punctuation">(</span><span class="token variable">$ch</span><span class="token punctuation">,</span> <span class="token constant">CURLOPT_SSL_VERIFYPEER</span><span class="token punctuation">,</span> <span class="token constant boolean">FALSE</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token function">curl_setopt</span><span class="token punctuation">(</span><span class="token variable">$ch</span><span class="token punctuation">,</span> <span class="token constant">CURLOPT_SSL_VERIFYHOST</span><span class="token punctuation">,</span> <span class="token constant boolean">FALSE</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">curl_setopt</span><span class="token punctuation">(</span><span class="token variable">$ch</span><span class="token punctuation">,</span> <span class="token constant">CURLOPT_RETURNTRANSFER</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span> 
+<span class="token function">curl_setopt</span><span class="token punctuation">(</span><span class="token variable">$ch</span><span class="token punctuation">,</span> <span class="token constant">CURLOPT_USERAGENT</span><span class="token punctuation">,</span> <span class="token string double-quoted-string">&quot;User-Agent: Dalvik/2.1.0 (Linux; U; Android 6.0; 1505-A01 Build/MRA58K)&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$data</span> <span class="token operator">=</span> <span class="token function">curl_exec</span><span class="token punctuation">(</span><span class="token variable">$ch</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">curl_close</span><span class="token punctuation">(</span><span class="token variable">$ch</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$data</span> <span class="token operator">=</span> <span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$data</span><span class="token punctuation">,</span><span class="token number">3</span><span class="token punctuation">,</span><span class="token function">strlen</span><span class="token punctuation">(</span><span class="token variable">$data</span><span class="token punctuation">)</span><span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">;</span> <span class="token comment">// 妈的。这个地方恶心到我了。无敌！！！</span>
+<span class="token variable">$obj</span> <span class="token operator">=</span> <span class="token function">json_decode</span><span class="token punctuation">(</span><span class="token variable">$data</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">if</span><span class="token punctuation">(</span><span class="token variable">$obj</span><span class="token operator">-&gt;</span><span class="token property">status</span> <span class="token operator">==</span> <span class="token number">1</span><span class="token punctuation">)</span>
+<span class="token punctuation">{</span>
+    <span class="token function">header</span><span class="token punctuation">(</span><span class="token string single-quoted-string">&#39;location:&#39;</span><span class="token operator">.</span><span class="token variable">$obj</span><span class="token operator">-&gt;</span><span class="token property">address</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+<span class="token keyword">else</span>
+<span class="token punctuation">{</span>
+    <span class="token function">header</span><span class="token punctuation">(</span><span class="token string double-quoted-string">&quot;Refresh:0&quot;</span><span class="token punctuation">)</span><span class="token punctuation">;</span>    <span class="token comment">// 因为有个特别恶心的点，可能会出现token过期，所以让它刷新再获取。</span>
+<span class="token punctuation">}</span>
+ 
+<span class="token keyword">function</span> <span class="token function">replaceSomeWhere</span><span class="token punctuation">(</span><span class="token variable">$str</span><span class="token punctuation">,</span><span class="token variable">$str2</span><span class="token punctuation">,</span><span class="token variable">$i</span><span class="token punctuation">)</span> <span class="token comment">// What the fuck!</span>
+<span class="token punctuation">{</span>
+    <span class="token variable">$str3</span> <span class="token operator">=</span> <span class="token string single-quoted-string">&#39;&#39;</span><span class="token punctuation">;</span>
+    <span class="token variable">$str4</span> <span class="token operator">=</span> <span class="token string single-quoted-string">&#39;&#39;</span><span class="token punctuation">;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token variable">$i</span> <span class="token operator">!=</span><span class="token number">1</span><span class="token punctuation">)</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$str4</span> <span class="token operator">=</span> <span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$str</span><span class="token punctuation">,</span><span class="token number">0</span><span class="token punctuation">,</span><span class="token variable">$i</span><span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+        <span class="token variable">$str3</span> <span class="token operator">=</span> <span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$str</span><span class="token punctuation">,</span><span class="token variable">$i</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">else</span>
+    <span class="token punctuation">{</span>
+        <span class="token variable">$str4</span> <span class="token operator">=</span> <span class="token string single-quoted-string">&#39;&#39;</span><span class="token punctuation">;</span>
+        <span class="token variable">$str3</span> <span class="token operator">=</span> <span class="token function">substr</span><span class="token punctuation">(</span><span class="token variable">$str</span><span class="token punctuation">,</span><span class="token variable">$i</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+    <span class="token keyword">return</span> <span class="token variable">$str4</span><span class="token operator">.</span><span class="token variable">$str2</span><span class="token operator">.</span><span class="token variable">$str3</span> <span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+ 
+<span class="token delimiter important">?&gt;</span></span>
+</code></pre></div><h2 id="广电云长沙电视台节目源php代理"><a class="header-anchor" href="#广电云长沙电视台节目源php代理" aria-hidden="true">#</a> 广电云长沙电视台节目源PHP代理</h2><p>访问地址格式：<a href="http://xn--zfru1gfr6b388b19n1l0a6gu/hncs.php?id=XXX" target="_blank" rel="noopener noreferrer">http://自己的服务器地址/hncs.php?id=XXX</a> id 频道 346 长沙新闻频道 348 长沙政法频道 349 长沙女性频道 350 长沙影视频道 354 长沙磁浮电视 355 长沙地铁电视 356 长沙嘉丽购物 357 长沙移动电视</p><div class="language-php"><pre><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token variable">$id</span><span class="token operator">=</span><span class="token variable">$_GET</span><span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$url</span> <span class="token operator">=</span> <span class="token string single-quoted-string">&#39;https://1812501212048408.cn-hangzhou.fc.aliyuncs.com/2016-08-15/proxy/node-api.online/node-api/tv/channelInfo?id=&#39;</span><span class="token operator">.</span><span class="token variable">$id</span><span class="token punctuation">;</span>
+<span class="token variable">$data</span> <span class="token operator">=</span> <span class="token function">file_get_contents</span><span class="token punctuation">(</span><span class="token variable">$url</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">preg_match</span><span class="token punctuation">(</span><span class="token string single-quoted-string">&#39;/playUrl&quot;:&quot;(.*?)&quot;/&#39;</span><span class="token punctuation">,</span><span class="token variable">$data</span><span class="token punctuation">,</span><span class="token variable">$m</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">header</span><span class="token punctuation">(</span><span class="token string single-quoted-string">&#39;location:&#39;</span><span class="token operator">.</span><span class="token function">urldecode</span><span class="token punctuation">(</span><span class="token variable">$m</span><span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?&gt;</span></span>
+</code></pre></div><h2 id="_2021最新湖北电视台节目源php代理源码"><a class="header-anchor" href="#_2021最新湖北电视台节目源php代理源码" aria-hidden="true">#</a> 2021最新湖北电视台节目源PHP代理源码</h2><p>强调下这需要要 PHP 服务器来运行代码，奈何世人只爱鱼，不爱渔。自己动手对大部分人还是一个坎。</p><p>id 频道 439 湖北美嘉购物 438 湖北垄上 437 湖北教育 436 湖北生活 435 湖北影视 434 湖北公共新闻 433 湖北综合 432 湖北经视 431 湖北卫视</p><p>代理格式举例：<a href="http://xn--6qq22f55d4wakc062j1xy/hbtv.php?id=XXX" target="_blank" rel="noopener noreferrer">http://你的服务器地址/hbtv.php?id=XXX</a></p><div class="language-php"><pre><code><span class="token php language-php"><span class="token delimiter important">&lt;?php</span>
+<span class="token comment">//id=439湖北美嘉购物 438湖北垄上 437湖北教育 436湖北生活 435湖北影视 434湖北公共新闻 433湖北综合 432湖北经视 431湖北卫视</span>
+<span class="token variable">$id</span><span class="token operator">=</span><span class="token variable">$_GET</span><span class="token punctuation">[</span>id<span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token variable">$url</span> <span class="token operator">=</span> <span class="token string single-quoted-string">&#39;http://app.cjyun.org/video/player/streamlist?site_id=10008&amp;live_type=1&#39;</span><span class="token punctuation">;</span>
+<span class="token variable">$ch</span><span class="token operator">=</span><span class="token function">curl_init</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">curl_setopt</span><span class="token punctuation">(</span><span class="token variable">$ch</span><span class="token punctuation">,</span><span class="token constant">CURLOPT_URL</span><span class="token punctuation">,</span><span class="token variable">$url</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">curl_setopt</span><span class="token punctuation">(</span><span class="token variable">$ch</span><span class="token punctuation">,</span><span class="token constant">CURLOPT_RETURNTRANSFER</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token variable">$data</span><span class="token operator">=</span><span class="token function">curl_exec</span><span class="token punctuation">(</span><span class="token variable">$ch</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token function">curl_close</span><span class="token punctuation">(</span><span class="token variable">$ch</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token keyword">for</span><span class="token punctuation">(</span><span class="token variable">$a</span><span class="token operator">=</span><span class="token number">0</span><span class="token punctuation">;</span><span class="token variable">$a</span><span class="token operator">&lt;</span><span class="token number">100</span><span class="token punctuation">;</span><span class="token variable">$a</span><span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token function">json_decode</span><span class="token punctuation">(</span><span class="token variable">$data</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token property">data</span><span class="token punctuation">[</span><span class="token variable">$a</span><span class="token punctuation">]</span><span class="token operator">-&gt;</span><span class="token property">id</span><span class="token operator">==</span><span class="token variable">$id</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token variable">$json</span><span class="token operator">=</span><span class="token function">json_decode</span><span class="token punctuation">(</span><span class="token variable">$data</span><span class="token punctuation">)</span><span class="token operator">-&gt;</span><span class="token property">data</span><span class="token punctuation">[</span><span class="token variable">$a</span><span class="token punctuation">]</span><span class="token operator">-&gt;</span><span class="token property">play_url</span><span class="token punctuation">;</span>
+        <span class="token keyword">break</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+<span class="token function">header</span><span class="token punctuation">(</span><span class="token string single-quoted-string">&#39;location:&#39;</span><span class="token operator">.</span><span class="token variable">$json</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+<span class="token delimiter important">?&gt;</span></span>
+</code></pre></div><h2 id="自建企业微信消息推送通知通道接口php版"><a class="header-anchor" href="#自建企业微信消息推送通知通道接口php版" aria-hidden="true">#</a> 自建企业微信消息推送通知通道接口PHP版</h2><div class="language-"><pre><code>&lt;?php
+ 
+$corpid = $_REQUEST[&#39;corpid&#39;]; //企业id
+$corpsecret = $_REQUEST[&#39;corpsecret&#39;]; //应用secret
+$agentid = $_REQUEST[&#39;agentid&#39;]; //应用id 
+//如果就自己用，可以把参数写到这里。
+//$corpid = &#39;&#39;;
+//$corpsecret = &#39;&#39;;
+//$agentid = ;
+ 
+$title = $_REQUEST[&#39;title&#39;]; //消息title
+$description = $_REQUEST[&#39;description&#39;]; //消息内容
+$description = str_replace(PHP_EOL, &#39;&lt;br&gt;&#39;, $description);
+$url = $_REQUEST[&#39;url&#39;]; //消息跳转url
+ 
+if(!$corpid or !$corpsecret or !$agentid){
+    exit(&quot;canshu buquan&quot;);
+}
+ 
+//获取access_token
+$response = CurlGet(&quot;https://qyapi.weixin.qq.com/cgi-bin/gettoken?corpid=$corpid&amp;corpsecret=$corpsecret&quot;,&quot;&quot;,&quot;&quot;);
+ 
+$access_token = json_decode($response)-&gt;access_token;
+if(!$access_token){
+    exit(&quot;canshu cuowu&quot;);
+}else{
+ 
+    $json = &#39;{&quot;touser&quot;:&quot;@all&quot;,&quot;msgtype&quot;:&quot;textcard&quot;,&quot;agentid&quot;:&quot;&quot;,&quot;textcard&quot;:{&quot;title&quot;:&quot;&quot;,&quot;description&quot;:&quot;&quot;,&quot;url&quot;:&quot;&quot;,&quot;btntxt&quot;:&quot;更多&quot;},&quot;safe&quot;:1,&quot;enable_id_trans&quot;:0,&quot;enable_duplicate_check&quot;:0}&#39;;
+    $json = json_decode($json);
+ 
+    $json-&gt;agentid = $agentid;
+    $json-&gt;textcard-&gt;title = $title ? $title : &#39;无标题&#39;;
+    $json-&gt;textcard-&gt;description = $description ? $description : &#39;无内容&#39;;
+    
+    $json-&gt;textcard-&gt;url = $url ? $url : &#39;URL&#39;;
+ 
+    echo CurlPost(&quot;https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token=$access_token&quot;,&quot;&quot;, json_encode($json));
+}
+ 
+function CurlGet($url,$cookies = &quot;&quot;,$UserAgent = &quot;&quot;)
+{
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_0);
+        curl_setopt($curl, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4 );
+    curl_setopt($curl, CURLOPT_URL, $url);     
+        curl_setopt($curl, CURLOPT_REFERER, &#39;&#39;);
+        curl_setopt($curl, CURLOPT_COOKIE, $cookies);
+    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+    if ($UserAgent != &quot;&quot;) {
+        curl_setopt($curl, CURLOPT_USERAGENT, $UserAgent);
+    }
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    $response = curl_exec($curl);
+    curl_close($curl);
+    return $response;
+}
+ 
+function CurlPost($url, $cookies=&quot;&quot;, $post_data=&quot;&quot;, $headers=array(), $refer=&quot;&quot;, $UserAgent = &#39;&#39;)
+{
+    $curl = curl_init();
+    curl_setopt($curl, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_1_0);
+        curl_setopt($curl, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4 );
+    curl_setopt($curl, CURLOPT_URL, $url);     
+    curl_setopt($curl, CURLOPT_USERAGENT, $UserAgent);
+        curl_setopt($curl, CURLOPT_COOKIE, $cookies);
+        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+    if ($refer != &#39;&#39;) {
+        curl_setopt($curl, CURLOPT_REFERER, $refer);
+    }
+    curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
+    curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl, CURLOPT_POST, 1);
+    curl_setopt($curl, CURLOPT_POSTFIELDS, $post_data);
+    $response = curl_exec($curl);
+    curl_close($curl);
+    return $response;
+}
+</code></pre></div><h2 id="tvsou-节目指南-xmltv-格式的-php-源码"><a class="header-anchor" href="#tvsou-节目指南-xmltv-格式的-php-源码" aria-hidden="true">#</a> tvsou 节目指南 xmltv 格式的 php 源码</h2><div class="language-"><pre><code>&lt;?php
+if(date_default_timezone_get() != &quot;Asia/Shanghai&quot;) date_default_timezone_set(&quot;Asia/Shanghai&quot;);
+$fp=&quot;epg_tvs.xml&quot;;//压缩版本的扩展名后加.gz
+$id0=100000;//起始节目编号
+ 
+$cid=array(
+    array(&#39;42688016&#39;,&#39;湖南都市&#39;),
+    array(&#39;34d6b6de&#39;,&#39;湖南经视&#39;),
+    );
+ 
+function compress_html($string) {
+    $string = str_replace(&quot;\r&quot;, &#39;&#39;, $string); //清除换行符
+    $string = str_replace(&quot;\n&quot;, &#39;&#39;, $string); //清除换行符
+    $string = str_replace(&quot;\t&quot;, &#39;&#39;, $string); //清除制表符
+    return $string;
+}
+ 
+$dt1=date(&#39;Ymd&#39;);
+$dt2=date(&#39;Ymd&#39;,time()+24*3600);
+$w1=date(&quot;w&quot;);
+if ($w1&lt;&#39;1&#39;) {$w1=7;}
+$w2=$w1+1;
+$url0=&quot;https://www.tvsou.com/epg/&quot;;
+$chn=&quot;&lt;?xml version=\&quot;1.0\&quot; encoding=\&quot;UTF-8\&quot;?&gt;\n&lt;!DOCTYPE tv SYSTEM \&quot;http://api.torrent-tv.ru/xmltv.dtd\&quot;&gt;\n&lt;tv generator-info-name=\&quot;tvsou\&quot; generator-info-url=\&quot;www.tvsou.com/epg\&quot;&gt;\n&quot;;
+ 
+$nid=sizeof($cid);
+ 
+for ($id = 1; $id &lt;= $nid; $id++){
+    $t0=array();
+    $t1=array();
+    $nm=array();
+ 
+    $url=$url0.$cid[$id-1][0].&#39;/w&#39;.$w1;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+    $re = curl_exec($ch);
+    curl_close($ch);
+    $re=compress_html($re);
+    preg_match(&#39;|&lt;table class=&quot;layui-table c_table&quot;(.*?)layui-tab-item|i&#39;,$re,$u);
+    preg_match_all(&#39;|&lt;tr&gt;([\s\S]+?)&lt;\/tr&gt;|&#39;, trim($u[1]), $u);
+    $u=$u[1];
+    $num=sizeof($u);
+    for ($i = 0; $i &lt; $num; $i++) {
+        preg_match_all(&#39;|_blank\&#39;&gt;(.*?)&lt;\/a&gt;|&#39;,$u[$i],$tr);
+        $t0[]=$dt1.str_replace(&#39;:&#39;,&#39;&#39;,$tr[1][0]).&#39;00 +0800&#39;;
+        $nm[]=$tr[1][1];
+    }
+    $url=$url0.$cid[$id-1][0].&#39;/w&#39;.$w2;
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE);
+    curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
+    $re = curl_exec($ch);
+    curl_close($ch);
+    $re=compress_html($re);
+    preg_match(&#39;|&lt;table class=&quot;layui-table c_table&quot;(.*?)layui-tab-item|i&#39;,$re,$u);
+    preg_match_all(&#39;|&lt;tr&gt;([\s\S]+?)&lt;\/tr&gt;|&#39;, trim($u[1]), $u);
+    $u=$u[1];
+    $num=sizeof($u);
+    for ($i = 0; $i &lt; $num; $i++) {
+        preg_match_all(&#39;|_blank\&#39;&gt;(.*?)&lt;\/a&gt;|&#39;,$u[$i],$tr);
+        $t0[]=$dt2.str_replace(&#39;:&#39;,&#39;&#39;,$tr[1][0]).&#39;00 +0800&#39;;
+        $nm[]=$tr[1][1];
+    }               
+ 
+    $num=sizeof($t0);
+    for ($i = 1; $i &lt; $num; $i++) {$t1[]=$t0[$i];}
+    $t1[]=$dt2.&#39;235959 +0800&#39;;
+    $idd=$id0+$id;
+    $chn.=&quot;&lt;channel id=\&quot;&quot;.$idd.&quot;\&quot;&gt;&lt;display-name lang=\&quot;zh\&quot;&gt;&quot;.$cid[$id-1][1].&quot;&lt;/display-name&gt;&lt;/channel&gt;\n&quot;;
+    for ($i = 0; $i &lt; $num; $i++) {
+        $chn.=&quot;&lt;programme start=\&quot;&quot;.$t0[$i].&quot;\&quot; stop=\&quot;&quot;.$t1[$i].&quot;\&quot; channel=\&quot;&quot;.$idd.&quot;\&quot;&gt;\n&lt;title lang=\&quot;zh\&quot;&gt;&quot;.$nm[$i].&quot;&lt;/title&gt;\n&lt;desc lang=\&quot;zh\&quot;&gt; &lt;/desc&gt;\n&lt;/programme&gt;\n&quot;;
+    }
+}
+$chn.=&quot;&lt;/tv&gt;\n&quot;;
+ 
+//写入文件。这里一次性写入，可以自己分次写入操作
+file_put_contents($fp, $chn);
+ 
+//创建压缩版本
+$fn = gzopen ($fp.&#39;.gz&#39;, &#39;w9&#39;);
+gzwrite($fn, file_get_contents($fp));
+gzclose($fn);
+ 
+?&gt;
+</code></pre></div></div></div><footer class="page-footer" data-v-7c281d53 data-v-9b49b0ee><div class="edit" data-v-9b49b0ee><div class="edit-link" data-v-9b49b0ee data-v-6ddc3447><!----></div></div><div class="updated" data-v-9b49b0ee><!----></div></footer><div class="next-and-prev-link" data-v-7c281d53 data-v-23603c1c><div class="container" data-v-23603c1c><div class="prev" data-v-23603c1c><a class="link" href="/guide/jiexi" data-v-23603c1c><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" class="icon icon-prev" data-v-23603c1c><path d="M19,11H7.4l5.3-5.3c0.4-0.4,0.4-1,0-1.4s-1-0.4-1.4,0l-7,7c-0.1,0.1-0.2,0.2-0.2,0.3c-0.1,0.2-0.1,0.5,0,0.8c0.1,0.1,0.1,0.2,0.2,0.3l7,7c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3c0.4-0.4,0.4-1,0-1.4L7.4,13H19c0.6,0,1-0.4,1-1S19.6,11,19,11z"></path></svg><span class="text" data-v-23603c1c>解析封装</span></a></div><div class="next" data-v-23603c1c><a class="link" href="/guide/css" data-v-23603c1c><span class="text" data-v-23603c1c>CSS语法</span><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" class="icon icon-next" data-v-23603c1c><path d="M19.9,12.4c0.1-0.2,0.1-0.5,0-0.8c-0.1-0.1-0.1-0.2-0.2-0.3l-7-7c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l5.3,5.3H5c-0.6,0-1,0.4-1,1s0.4,1,1,1h11.6l-5.3,5.3c-0.4,0.4-0.4,1,0,1.4c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3l7-7C19.8,12.6,19.9,12.5,19.9,12.4z"></path></svg></a></div></div></div><!--[--><!--]--></div></main></div><!----><!--]--></div>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"index.md\":\"c96f0b0b\",\"readme.md\":\"1373c95d\",\"guide_axios.md\":\"3217e90e\",\"guide_book.md\":\"4f25a5b8\",\"guide_css.md\":\"b7564889\",\"guide_index.md\":\"2d5bae96\",\"guide_install.md\":\"f39fa479\",\"guide_jiexi.md\":\"bea2d9cf\",\"guide_kugou.md\":\"d2027f89\",\"guide_live.md\":\"6880526b\",\"guide_movie.md\":\"d55a7672\",\"guide_music.md\":\"065960c2\",\"guide_phpdl.md\":\"f947bc1e\",\"guide_plays.md\":\"ea641a25\",\"guide_tools.md\":\"7614b833\",\"guide_tv.md\":\"f0984e58\",\"guide_video.md\":\"07521741\",\"about_index.md\":\"61a4e2c7\",\"plugins_index.md\":\"0c037bf9\",\"source_byou.md\":\"1417d726\",\"source_free.md\":\"75ea1660\",\"source_migu.md\":\"aa91d389\",\"source_movie.md\":\"c4713ff8\",\"source_org.md\":\"a5c0764c\",\"source_qqyun.md\":\"19b62de6\",\"source_readme.md\":\"3e22ea87\",\"source_tools.md\":\"a0366ad5\",\"source_ttou.md\":\"fca14104\",\"source_xxx.md\":\"263a646d\",\"source_ygd.md\":\"5b72d86a\",\"template_index.md\":\"8051a6a5\",\"template_800cms_base.md\":\"456c54aa\",\"template_maccms_base.md\":\"19ce3c48\"}")</script>
+    <script type="module" async src="/assets/app.6008987c.js"></script>
+  </body>
+</html>
