@@ -1,5 +1,3 @@
-# 全球直播源
-
 ## Playlists by category
 
 <table>

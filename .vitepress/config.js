@@ -9,20 +9,21 @@ module.exports = {
       href: '/logo.png'
     }]
   ],
-  themeConfig: {   
+  themeConfig: {
     logo: '/logo.png',
     docsBranch: 'main',
     editLinks: true,
     editLinkText: '为此页提供修改建议',
-
-    
-
     nav: [{
-        text: '指引',
+        text: '学习指引',
         link: '/guide/'
       },
       {
-        text: '我们',
+        text: '收集资源',
+        link: '/source/'
+      },
+      {
+        text: '关于我们',
         link: '/about/'
       },
       {
@@ -46,7 +47,62 @@ module.exports = {
       }
     ],
     sidebar: {
-      '/about/': 'auto',
+      'about': 'auto',
+      'source': [{
+          text: '电视直播',
+          children: [{
+              text: '北邮直播源',
+              link: '/source/Byou'
+            },
+            {
+              text: '咪咕直播源',
+              link: '/source/Migu'
+            },
+            {
+              text: '影视资源',
+              link: '/source/Movie'
+            },
+            {
+              text: '一锅端系列',
+              link: '/source/Ygd'
+            },
+            {
+              text: '全球直播源',
+              link: '/source/Org'
+            },
+            {
+              text: '腾讯直播源',
+              link: '/source/Qyun'
+            }
+          ]
+        },
+        {
+          text: '电脑软件',
+          children: [{
+            text: '广告设计',
+            link: '/source/ads'
+          },
+          {
+            text: 'windows',
+            link: '/source/windows'
+          }
+          ]
+        },
+        {
+          text: '手机软件',
+          children: [{
+            text: '影视直播',
+            link: '/source/mlive'
+          }]
+        },
+        {
+          text: '电视盒子',
+          children: [{
+            text: '免费破解',
+            link: '/source/tvhezi'
+          }]
+        }
+      ],
       '/': [{
           text: '基础',
           children: [{
@@ -110,11 +166,10 @@ module.exports = {
               link: '/guide/book'
             }
           ]
-        },
+        }
       ]
     }
   },
-
   markdown: {
     anchor: {
       renderPermalink: require('./render-perma-link')

@@ -1,4 +1,3 @@
-# 咪咕直播源
 ## 咪咕直播源播放接口 
 ``` 
 标清接口：https://yk.miguvideo.com/playurl/v1/play/playurlh5?rateType=1&contId=608807420

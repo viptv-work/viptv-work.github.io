@@ -1,1 +1,0 @@
-import{o as t,c as l,b as s}from"./app.6008987c.js";const i='{"title":"收集各类工具","description":"","frontmatter":{},"headers":[{"level":2,"title":"设计软件安装","slug":"设计软件安装"}],"relativePath":"guide/tools.md","lastUpdated":1621961748922}',o={},a=s('',10);o.render=function(s,i,o,c,p,r){return t(),l("div",null,[a])};export default o;export{i as __pageData};

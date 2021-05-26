@@ -1,4 +1,4 @@
-# 影视采资源采集站
+# 影视资源采集站
 ## [高清资源站](http://www.gaoqingzy.com/) 
 ## [麻花资源站](http://www.mahuazy.com/)
 ## [酷云资源网](http://www.kuyunzy1.com/)
