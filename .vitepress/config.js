@@ -36,14 +36,9 @@ module.exports = {
       {
         text: '切换镜像',
         items: [{
-            text: '国内站',
-            link: 'https://viptv.gitee.io/'
-          },
-          {
-            text: '国际站',
-            link: 'https://viptvx.github.io/'
-          },
-        ]
+          text: '国际站',
+          link: 'https://viptvx.github.io/'
+        }]
       }
     ],
     sidebar: {
@@ -79,13 +74,13 @@ module.exports = {
         {
           text: '电脑软件',
           children: [{
-            text: '广告设计',
-            link: '/source/ads'
-          },
-          {
-            text: 'windows',
-            link: '/source/windows'
-          }
+              text: '广告设计',
+              link: '/source/ads'
+            },
+            {
+              text: 'windows',
+              link: '/source/windows'
+            }
           ]
         },
         {

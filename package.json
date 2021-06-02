@@ -1,5 +1,5 @@
 {
-  "name": "viptv",
+  "name": "viptvx",
   "version": "1.0.0",
   "description": "直播,点播,云视,音乐,Music,JS,PHP,小程序,前端,后端,流行框架二次开发",
   "repository": "https://github.com/viptvx/viptvx.github.io",
@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "keywords": [
-    "viptve",
+    "viptvx",
     "iptv",
     "cctv"
   ],
@@ -27,5 +27,8 @@
   },
   "dependencies": {
     "lodash": "^4.17.21"
+  },
+  "gitHooks": {
+    "commit-msg": "node scripts/verifyCommit.js"
   }
 }

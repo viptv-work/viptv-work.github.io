@@ -2,7 +2,7 @@
 home: true
 heroImage: /bank.png
 actionText: 极致体验
-actionLink: http://viptv.gitee.io/dev/#/home  
+actionLink: http://viptvx.github.io/dev/
 actiontarget: _blank  
 altActionText: 了解更多
 altActionLink: /guide/
@@ -30,7 +30,7 @@ footer: |
     <img :src="src" :alt="name">
   </a>
   <br>
-  <a href="https://gitee.com/viptv/viptv/" target="_blank" rel="noopener">在 Gitee 上关注我们</a>
+  <a href="https://github.com/viptvx/viptvx.github.io/" target="_blank" rel="noopener">在 Gitee 上关注我们</a>
 </div>
 
 <script setup>

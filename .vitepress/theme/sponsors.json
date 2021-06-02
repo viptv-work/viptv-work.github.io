@@ -1,12 +1,12 @@
 [
   {
-    "name": "VIPTV- 云视听【国内镜像】",
-    "href": "http://viptv.gitee.io/dev",
+    "name": "VIPTV- 云视听【国际镜像1站】",
+    "href": "http://viptvx.github.io/dev",
     "src": "/bank.png"
   } ,
   {
-    "name": "VIPTV- 云视听【国内镜像】",
-    "href": "http://viptv.gitee.io/mob",
+    "name": "VIPTV- 云视听【国际镜像2站】",
+    "href": "https://mob.viptv.work/#/home",
     "src": "/bank.png"
   }
 ]

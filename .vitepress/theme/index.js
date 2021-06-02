@@ -13,11 +13,11 @@ export default {
           h(
             'a',
             {
-              href: 'http://viptv.gitee.io/dev',
+              href: 'http://viptvx.github.io/dev',
               target: '_blank',
-              rel: 'VIPTV -云视听【国内镜像站】'
+              rel: 'VIPTV -云视听【github镜像站】'
             },
-            [h('span', 'VIPTV -云视听【国内镜像站】')]
+            [h('span', 'VIPTV -云视听【github镜像站】')]
           ),         
           ...sponsors.map(({ href, src, name }) =>
             h(

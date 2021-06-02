@@ -1,4 +1,29 @@
 # PHP 代理教程
+##北斗融媒(辽宁云)PHP
+```php
+<?php
+ $id=$_GET[id];
+ 
+ $ids = array(
+    "cctv1" => "cctv1",//CCTV1
+    "cctv4" => "cctv4",//CCTV4
+    "cctv13" => "cctv13",//CCTV13
+    "lnws" => "lntv",//辽宁卫视
+    "lnty" => "typd",//辽宁体育
+    "lnds" => "dspd",//辽宁都市
+    "lnys" => "yspd",//辽宁影视剧
+    "lnsh" => "shpd",//辽宁生活
+    "lnbf" => "bfpd",//辽北方
+    "lnjyqs" => "qspd",//辽宁教育青少
+    "yjgw" => "yjgw",//宜家购物
+    "yxjj" => "yxjj",//GTV游戏竞技
+    "xdm" => "xdm",//新动漫
+    );
+ $time = time();
+ $m3u8 = "http://bdrmtvzb.lnyun.com.cn/bdrm/".$ids[$id].".m3u8?auth_key=".$time."-0-0-".md5("/bdrm/".$ids[$id].".m3u8-".$time."-0-0-dPBxXGs7yIaSZG5m");
+ header('Location:'.$m3u8);
+ ?>
+ ```
 ## 奥点（广电）云代理php源码
 ```php
 $id=$_GET["id"];
