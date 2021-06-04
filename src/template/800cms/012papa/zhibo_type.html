@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-TW" xmlns="https://www.w3.org/1999/xhtml" xmlns:og="https://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
+ <head> 
+  <meta charset="UTF-8" /> 
+  <meta content="width=device-width, initial-scale=1.0, user-scalable=0" name="viewport" /> 
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" /> 
+<title><?php echo $web_title;?></title>
+<meta name="keywords" content="<?php echo $web_keywords;?>" />
+<meta name="description" content="<?php echo $web_description;?>" />
+<link href="<?php echo '/template/'.$web_moban;?>/css/style.css" rel="stylesheet"> 
+ </head> 
+ <body> 
+<?php  include('./template/'.$web_moban.'/header.html');?>
+<div id="container"> 
+   <section class="sectionContent"> 
+    <div class="videoGroup long newVideo"> 
+     <div class="section-title grayBorder"> 
+      <h2>直播分类：<?php echo $C_T_2_name;?></h2>  
+     </div> 
+     <div id="new_cover" class="video-wrapper showMe">
+	<?php $json_string = file_get_contents($zhibourl);$data = json_decode($json_string, true);$datas = $data['fileinfo'];$pageresult = $data['pageresult'];$page = $data['page'];$i=0;foreach($datas as $val) { $address=$val['m3u8'];$img=$val['pic'];$title=$val['name'];?>
+      <div class="col-style d-5 m-2"> 
+       <a class="videoBox" href="/?m=zhibo-neiron-id-<?php echo base64_encode($address)?>.html"> 
+        <div class="videoBox-content" data-vid="TIKC-031"> 
+         <div class="videoBox-cover lazyLoad" style="background-image: url(<?php echo $img;?>);" ></div> 
+         <div class="collect glyphicon glyphicon-plus"></div> 
+         <div class="videoBox-bottom"> 
+          <div class="videoBox-time">
+           直播频道
+          </div> 
+          <div class="tag_con"> 
+          </div> 
+         </div> 
+        </div> 
+        <div class="videoBox-info">
+         <h4 class="title"><?php echo $title ?></h4>
+        </div> </a>  
+      </div>  
+	<?php } ?>
+     </div> 
+	 
+    </div>
+	
+  </section>
+  <!--分页样式-->
+		<?php $page=$JCCMS_page;if($page  >= 1 ){ $pages="1";}else{ $pages= $page-1;	}if($page >= $pageresult ){$pagex=$pageresult;	}else{$pagex=$page+1;		}?>
+		<a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo $pages;?>.html">上一页</a>
+		<a href="#">共<?php echo $pageresult;?>页</a>
+		<a href="#">当前<?php echo $page;?>页</a>			
+		<?php if($JCCMS_page < $JCCMS_pagecount-10){?>
+		<a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo  $JCCMS_page+1;?>.html"><?php echo  $JCCMS_page+1;?></a>
+		<a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+2;?>.html"><?php echo   $JCCMS_page+2;?></a>
+		<a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+3;?>.html"><?php echo   $JCCMS_page+3;?></a>
+		<a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+4;?>.html"><?php echo   $JCCMS_page+4;?></a>
+		<a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+5;?>.html"><?php echo   $JCCMS_page+5;?></a>
+		<a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+6;?>.html"><?php echo   $JCCMS_page+6;?></a>
+		<a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+7;?>.html"><?php echo   $JCCMS_page+7;?></a>
+		<a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+8;?>.html"><?php echo   $JCCMS_page+8;?></a>
+		<a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+9;?>.html"><?php echo   $JCCMS_page+9;?></a>
+		<a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+10;?>.html"><?php echo   $JCCMS_page+10;?></a>		
+		<?php } ?>
+		<a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo $pagex;?>.html">下一页</a> 
+ <!--分页样式--> 
+</div> 
+
+ 
+<?php  include('./template/'.$web_moban.'/footer.html');?>
+</body>
+</html>		

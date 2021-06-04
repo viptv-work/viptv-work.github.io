@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<script src="https://cdn.bootcss.com/clipboard.js/1.7.1/clipboard.min.js"></script>
+<script src="../js/jquery-3.3.1.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+<title>支付宝-天天领红包</title>
+<style>
+p {margin: 0}
+a, a:focus, a:hover {text-decoration: none;}
+div {display: block;box-sizing: border-box;}
+body {background-color: #108ee9;margin: 0px;padding: 0px;font: 14px PingFangSC-Regular,Helvetica,Arial,Microsoft Yahei,sans-serif;color: #fff}
+.tips {width: 100px;height: 42px;line-height: 42px;color: #fff;text-indent: 1em}
+.row {width: 100%;margin: 10px 0px;padding: 0px;}    
+.text-center {text-align: center}
+.user_notice{padding-top: 10px;width: 360px;margin: 0 auto;}
+.back{float: left;margin: 0 auto;}
+.back a{color: #FFFFFF;font-size: 16px;}
+.title_pic_link{position: relative;display: inline-block;padding-left: 36px;vertical-align: top;}
+.back-s{position: absolute;left: 14px;top: 12px;width: 16px;height: 16px;overflow: hidden;}
+.back-s img{position: absolute;width: 100%;}
+.pc-xs{display: block}
+.ph-xs{display: none}
+.co-pp{width: 210px;margin: 0 auto;margin-top: 8px;background-color: #FFEB3B;border-radius: 100px;-moz-border-radius: 100px;-webkit-border-radius: 100px;padding: 8px 14px;}
+.co-cg{color: #fff;position: fixed;top: 36%;left: 15%;z-index: 999;width: 70%;overflow: hidden;background-color: rgba(25, 25, 25, 0.95);border-radius: 3px;padding: 32px 20px;font-size: 15px;line-height: 24px;}
+@media screen and (max-device-width:480px) and (max-device-height:854px){
+.pc-xs{display: none}
+.ph-xs{display: block}
+}
+</style>
+</head>
+
+<body>
+    <div style="background: #108ee9;padding: 6px 0;line-height: 40px;position: relative;">
+     <div class="back">
+    	<a class="title_pic_link" href="javascript:window.history.back(-1)"><span class="back-s"><img src="../img/back.png"></span>返回</a></div>
+    	<div class="text-center" style="font-size:20px;color:#fff;line-height:40px;margin: 0px 18%;">支付宝-天天领红包</div>
+    </div>
+    <div class="user_notice">
+        <font color='#fff'>
+            <marquee scrollamount="4" behavior="right">*智君 领取了7.16元通用红包 *红 领取了16.08元实体店通用红包 *秀英 领取了1.19元通用红包 *薇薇 领取了5.06元花呗消费红包 *斌 领取了9.05元通用红包 *平 领取了3.15元实体店通用红包 *志强 领取了12.18通用红包 *奇 领取了1.08元通用红包 *迎龙 领取了6.68元通用红包 *伟 领取了12.06元实体店通用红包 *影 领取了8.18元通用红包 *会龙 领取了6.08元花呗消费红包 *涵 领取了8.08元通用红包 *建斌 领取了5.11元实体店通用红包 *金金 领取了7.02余额宝支付红包 *伟和 领取了2.08元通用红包 *金金 领取了10.16余额宝支付红包</marquee>
+        </font>
+    </div>
+    <div class="pc-xs">
+     <div class="row text-center" style="margin-top: 16px"><img src="../ads/zhifubao.png" width="300"></div>
+     <div class="row text-center" style="font-size:16px;color:#fff;line-height:40px;">"手机打开支付宝，扫码上面二维码领红包"</div>
+    </div>
+    <div class="ph-xs text-center" style="background: url(../ads/zhifubao-bg.png) no-repeat;width: 300px;height: 450px;margin: auto;background-position: center;background-size: contain;margin-top: 4px;">
+    <div style="padding-top: 190px;">
+
+    
+        <div style="font-size: 20px;line-height: 32px;color:#fff;padding: 8px 0">
+        <p>打开支付宝首页搜索</p>
+        <p>“ <span style="color:#FFEB3B;font-size: 28px;letter-spacing: 4px;">541306426</span> ”</p>
+        <p>立即领红包</p>
+        </div>
+    <div class="co-pp">
+       <span id="btn" data-clipboard-text="541306426" style="font-size: 18px;color:#F44336">点击复制领取码</span>
+    </div>
+       </div>
+    </div>
+    <div id="show" style="display: none;">
+          <div class="co-cg">
+          <p>耶～～复制成功！</p>
+          <p>赶紧粘贴到支付宝首页搜索框内，领取你的红包！</p>
+          </div></div>
+  
+  <script>
+	var btn=document.getElementById('btn');
+	var clipboard=new Clipboard(btn);
+	clipboard.on('success', function(e){
+		$('#show').slideDown().delay(3000).slideUp(300);
+		console.log(e);
+	});
+	clipboard.on('error', function(e){
+		$('#show').slideDown().delay(1500).slideUp(300);
+		console.log(e);
+	});
+</script>
+
+</body>
+</html>

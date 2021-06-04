@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+	<title>正在播放 <?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_name');?></title>
+	<meta name="keywords" content="<?php echo $web_keywords;?>" />
+	<meta name="description" content="<?php echo $web_description;?>" />
+	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+  <link href="<?php echo '/template/'.$web_moban;?>/css/app.css" rel="stylesheet" type="text/css" />
+  <script src="<?php echo '/template/'.$web_moban;?>/js/jquery.js"></script>
+  <script src="<?php echo '/template/'.$web_moban;?>/js/jquery.lazyload.js"></script>
+  <script>var maccms={"path":"","mid":"","url":"localhost","wapurl":"www.tutuhot.com","mob_status":"2"};</script>
+  <script src="<?php echo '/template/'.$web_moban;?>/js/home.js"></script>
+</head>
+<body>
+<?php  include('./template/'.$web_moban.'/header.html');?>
+  <div class="icon">
+   <div class="container">
+       <section class="iselect clearfix">
+     <h2><em>正在播放：<?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_name');?></em><i class="i_arrow"></i></h2>
+    </section>
+   
+   
+   <section class="iplaytop">
+    <div class="container border0 bgnone shadownone">
+     <div class="col-l">
+      <div class="iplays" style="height: 230px;">
+ 			<video id='myVideo'  class="video-js"></video>
+				<link rel="stylesheet" type="text/css" href="/static/VideoJS/video.min.css?v=3">
+				<script type="text/javascript" src="/static/VideoJS/video.min.js?v=1" charset="utf-8" > </script>
+					<script type="text/javascript" src="/static/VideoJS/video-conrtib-ads.js?v=1" charset="utf-8" > </script>
+					<script type="text/javascript" src="/static/VideoJS/myVideo.js?v=6" charset="utf-8" > </script>
+					<script type="text/javascript">
+					var vPath = '<?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_playurl');?>';
+					var logo = '';
+					var myVideo=initVideo({
+						id:'myVideo',
+						url:vPath,
+						ad:{
+						  pre:{
+							  url:'',
+							  link:'',
+						  },
+						},
+						logo:{
+							url:'/template/800CMSPC/images/logo.png',
+							width:'100px'
+						},
+					});
+					</script>	
+      </div>
+
+     </div>
+
+    </div>
+   </section>
+ 		<center>
+			<?php	Jccms_json_ad_video('<a href="链接" target="_blank"><img style="width:980px;height:100px;margin-bottom:2px;" src="图片"></a>');?>	
+		</center>	  
+        <section class="iselect clearfix">
+   <div class="tv-hd v-border"><h2><span>猜你喜欢</span></h2></div>
+    </section>  
+    <section class="select_con">
+     <div class="v-bd clearfix">
+      <div class="v_con_box">
+       <ul class="tv-list clearfix">
+		<?php 	include('./lib/datatop.php');$pagesize = 15; $JCCMS_pagecount = floor(count($JCCMS_SQL) / $pagesize)-1;$JCCMS_prev = $JCCMS_pages -1;$JCCMS_next = $JCCMS_pages +1;
+				$JCCMS_SQL=JCCMS_chulis(JCCMS_SQLL($JCCMS_SQL,'0','JCCMS_SQL_type'));for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+        <li>
+         <div class="v-pic">
+          <img src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>" class="thumb" alt="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?>" original="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>" />
+          <div class="v-tips">
+           <span class="fl"><?php  echo rand(5, 10000); ?></span>
+           <span class="fr"><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_time');?></span>
+          </div>
+          <a class="v-playBtn" href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html" title="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?>"><i></i></a>
+         </div>
+         <div class="v-txt">
+          <p class="v-tit"><a title="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?>" href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html"><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></a></p>
+         </div></li>
+		 <?php } ?>		   
+       </ul>
+
+      </div>
+     </div>
+    </section>
+	
+    <div class="mided mided1 mt20"></div>
+    <div class="mided mided2 mt0"></div>
+    <div class="mided mided3 mt0"></div>
+  </div>
+  </div>
+
+
+	
+<?php  include('./template/'.$web_moban.'/footer.html');?>
+ 
+</body>
+</html>

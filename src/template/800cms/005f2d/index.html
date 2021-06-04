@@ -1,0 +1,177 @@
+<?php  
+$pagesize = 9; //设置记录显示条数; 
+ $JCCMS_pagecount = floor(count($JCCMS_SQL) / $pagesize)-1;//计算数组所得到记录总数
+  $JCCMS_prev = $JCCMS_page -1; //初始化上一页
+ $JCCMS_next = $JCCMS_page +1; //初始化下一页
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>
+		<?php echo $web_title;?>
+	</title>
+	<meta name="keywords" content="<?php echo $web_keywords;?>" />
+	<meta name="description" content="<?php echo $web_description;?>" />
+	<link rel="stylesheet" type="text/css" href="<?php echo '/template/'.$web_moban;?>/css/reset.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo '/template/'.$web_moban;?>/css/base.css" />
+	<link rel="stylesheet" type="text/css" href="<?php echo '/template/'.$web_moban;?>/css/main.css" />
+	<script type="text/javascript" src="<?php echo '/template/'.$web_moban;?>/js/jquery-1.8.3.min.js"></script>
+	<script type="text/javascript" src="<?php echo '/template/'.$web_moban;?>/js/main.js"></script>
+</head>
+
+<body>
+	<?php  include('./template/'.$web_moban.'/header.html');?>
+	<div class="detail_right">
+		<!-- 首页 -->
+		<div class="detail_tab detail_tab2">
+			<div class="detail_right_div">
+				<h3>
+					<span class="detail_right_span">
+						<?php JCCMS_type('5'); ?>|公告：
+						<?php echo $dizhigongao;?></span>
+				</h3>
+
+				<ul>
+					<?php $JCCMS_SQL=JCCMS_chuli('5');for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+					<li>
+						<p class="img">
+							<img class="lazy" src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>" alt="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?>"
+							 title="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?>" onerror="this.src='<?php echo '/template/'.$web_moban;?>/img/backlogo.png'" />
+							<a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html"></a>
+						</p>
+						<p>
+							<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?>
+						</p>
+
+						<p>
+							<i>
+								<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_time');?></i>
+							<strong>
+								<?php  echo rand(5, 10000); ?>观看</strong>
+						</p>
+					</li>
+					<?php		 }?>
+
+				</ul>
+
+				<h3>
+					<span class="detail_right_span">
+						<?php JCCMS_type('10'); ?>|公告：
+						<?php echo $dizhigongao;?></span>
+				</h3>
+
+				<ul>
+					<?php $JCCMS_SQL=JCCMS_chuli('10');for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+					<li>
+						<p class="img">
+							<img class="lazy" src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>" alt="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?>"
+							 title="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?>" />
+							<a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html"></a>
+						</p>
+						<p>
+							<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?>
+						</p>
+
+						<p>
+							<i>
+								<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_time');?></i>
+							<strong>
+								<?php  echo rand(5, 10000); ?>观看</strong>
+						</p>
+					</li>
+					<?php		 }?>
+
+				</ul>
+
+				<h3>
+					<span class="detail_right_span">时实直播|公告：
+						<?php echo $dizhigongao;?></span>
+				</h3>
+
+				<ul>
+					<?php
+
+ $json_string = file_get_contents($zhibourl);
+// 把JSON字符串转成PHP数组
+ $data = json_decode($json_string, true);
+  $datas = $data['fileinfo'];
+ $pageresult = $data['pageresult'];
+  $page = $data['page'];
+  $datass =NULL;
+for ($x=0; $x<=8; $x++) {
+  $val=$datas[$x];
+ 		 $address=$val['m3u8'];
+		$img=$val['pic'];
+
+		$title=$val['name'];
+
+?>
+
+
+					<li>
+						<p class="img">
+							<img class="lazy" src="<?php echo $img?>" onerror="this.src='<?php echo '/template/'.$web_moban;?>/img/backlogo.png'" />
+							<a href="/?m=zhibo-neiron-id-<?php echo base64_encode($address)?>.html"></a>
+						</p>
+						<p>
+							<?php echo $title ?>
+						</p>
+
+						<p>
+							<i>直播频道</i>
+							<strong>
+								<?php  echo rand(5, 10000); ?>观看</strong>
+						</p>
+					</li>
+					<?php
+
+
+}
+?>
+
+
+
+				</ul>
+
+
+				<h3>
+					<span class="detail_right_span">友情链接</span>
+				</h3>
+
+				<ul class="ylinks">
+					<?php echo  Jccms_json_connection('<li class="uk-float-left uk-margin-right"><a href="链接" target="_blank" class="uk-float-left">标题</a></li>',JCCMS_ROOT);?>
+
+				</ul>
+
+
+
+			</div>
+
+
+
+		</div>
+		<!-- 首页 -->
+	</div>
+
+
+	</div>
+	<div style="clear:both;"></div>
+	</div>
+	</div>
+	<!-- 正文 -->
+
+
+
+
+
+
+
+
+
+
+	<?php  include('./template/'.$web_moban.'/footer.html');?>
+</body>
+
+</html>

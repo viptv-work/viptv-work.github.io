@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+<title><?php echo $web_title;?></title>
+<meta name="keywords" content="<?php echo $web_keywords;?>" />
+<meta name="description" content="<?php echo $web_description;?>" />
+<link href="<?php echo '/template/'.$web_moban;?>/font/iconfont.css" rel="stylesheet">
+<link href="<?php echo '/template/'.$web_moban;?>/css/uikit.min.css" rel="stylesheet">
+<link href="<?php echo '/template/'.$web_moban;?>/css/style.css" rel="stylesheet">
+<link href="<?php echo '/template/'.$web_moban;?>/css/common.css" rel="stylesheet">
+<script src="<?php echo '/template/'.$web_moban;?>/js/jquery.js"></script>
+<script src="<?php echo '/template/'.$web_moban;?>/js/uikit.min.js"></script>
+<script src="<?php echo '/template/'.$web_moban;?>/js/home.js"></script>
+</head>
+<body>
+﻿<?php  include('./template/'.$web_moban.'/header.html');?>
+<div class='page-with-sidebar' id='page-container'>
+<div class='content'>
+<h1 class='page-header'><i class='fa fa-pagelines'></i>直播分类：<?php echo $C_T_2_name;?><div class='page-header-menu'></div></h1>
+<div class='row' style='position: relative'>
+	<?php $json_string = file_get_contents($zhibourl);$data = json_decode($json_string, true);$datas = $data['fileinfo'];$pageresult = $data['pageresult'];$page = $data['page'];$i=0;foreach($datas as $val) { $address=$val['m3u8'];$img=$val['pic'];$title=$val['name'];?>
+	<a class='col-md-4 item-video-container'  href="/?m=zhibo-neiron-id-<?php echo base64_encode($address)?>.html">
+	<div class='item-video'>
+	<img src='<?php echo $img;?>'>
+	<div class='title'><?php echo $title ?></div>
+	</div>
+	</a>
+	<?php } ?>
+</div>
+
+
+<div class='row'>
+<div class='pagination-container text-center'>
+<ul class='pagination'>
+		<?php $page=$JCCMS_page;if($page  >= 1 ){ $pages="1";}else{ $pages= $page-1;	}if($page >= $pageresult ){$pagex=$pageresult;	}else{$pagex=$page+1;		}?>
+		<li><a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo $pages;?>.html">上一页</a></li>
+		<li><a href="#">共<?php echo $pageresult;?>页</a></li>
+		<li><a href="#">当前<?php echo $page;?>页</a></li>			
+		<?php if($JCCMS_page < $JCCMS_pagecount-10){?>
+		<li><a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo  $JCCMS_page+1;?>.html"><?php echo  $JCCMS_page+1;?></a></li>
+		<li><a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+2;?>.html"><?php echo   $JCCMS_page+2;?></a></li>
+		<li><a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+3;?>.html"><?php echo   $JCCMS_page+3;?></a></li>
+		<li><a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+4;?>.html"><?php echo   $JCCMS_page+4;?></a></li>
+		<li><a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+5;?>.html"><?php echo   $JCCMS_page+5;?></a></li>
+		<li><a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+6;?>.html"><?php echo   $JCCMS_page+6;?></a></li>
+		<li><a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+7;?>.html"><?php echo   $JCCMS_page+7;?></a></li>
+		<li><a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+8;?>.html"><?php echo   $JCCMS_page+8;?></a></li>
+		<li><a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+9;?>.html"><?php echo   $JCCMS_page+9;?></a></li>
+		<li><a href="/?m=zhibo-type-<?php echo $JCCMS_type_id; ?>-<?php echo   $JCCMS_page+10;?>.html"><?php echo   $JCCMS_page+10;?></a></li>		
+		<?php } ?>
+		<li><a href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo $pagex;?>.html">下一页</a> </li>
+
+</ul>
+</div>
+
+
+</div>
+</div>
+
+
+
+
+</div>
+
+
+ 
+<?php  include('./template/'.$web_moban.'/footer.html');?>
+</body>
+</html>		

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/vod_play"}   
+	{include file="block/include"}
+</head>
+<body>
+	
+    <div class="container">
+        <div class="row">
+        	{include file="block/head"}
+        	       	
+			<!-- 播放器  -->
+			<div class="stui-pannel clearfix">																
+				<div class="stui-player col-pd">
+					<div class="stui-player__video embed-responsive embed-responsive-16by9 clearfix">
+						{$player_data}{$player_js}							
+					</div>	
+					<div class="stui-player__detail detail">
+						<h4 class="title">{$obj.vod_name}</h4>
+						<p class="data margin-0">
+							<span class="text-muted hidden-xs">类型：</span>{$obj.vod_class|mac_url_create='class'}
+							<span class="split-line"></span>
+							<span class="text-muted hidden-xs">地区：</span>{$obj.vod_area|mac_url_create='area'}
+							<span class="split-line"></span>
+							<span class="text-muted hidden-xs">年份：</span>{$obj.vod_year|mac_url_create='year'}		
+						</p>										
+					</div>																									
+				</div>									
+			</div>	
+			<!-- end 播放器  -->
+			
+			<!-- 播放地址 -->			
+			{maccms:foreach name="obj.vod_play_list" id="vo"}		
+			<div class="stui-pannel clearfix">
+				<div class="stui-pannel__head clearfix">
+					<span class="more text-muted pull-right">{$vo.player_info.tip}</span>
+					<h3 class="title">
+						{$vo.player_info.show}				
+					</h3>						
+				</div>																		
+				<ul class="stui-content__playlist clearfix">
+					{maccms:foreach name="vo.urls" id="vo2"}								
+	                <li {if condition="$param.sid eq $vo.sid && $param.nid eq $vo2.nid"}class="active"{/if}><a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}">{$vo2.name}</a></li>
+	                {/maccms:foreach}
+				</ul>	
+			</div>
+			{/maccms:foreach}
+			<!-- end 播放地址 -->
+			
+			<!-- 剧情介绍 -->
+			<div class="stui-pannel clearfix" id="desc">
+				<div class="stui-pannel__head clearfix">
+					<h3 class="title">
+						剧情介绍
+					</h3>						
+				</div>																		
+				<div class="stui-content__desc col-pd clearfix">
+					{$obj.vod_content|mac_filter_html}
+				</div>				
+			</div>
+			<!-- end 剧情介绍 -->
+			
+			<!-- 猜你喜欢 -->
+			<div class="stui-pannel clearfix">
+				<div class="stui-pannel__head clearfix">
+					<h3 class="title">
+						猜你喜欢
+					</h3>						
+				</div>
+				<ul class="stui-vodlist__bd clearfix">
+					{maccms:vod num="12" type="current" order="desc" by="time"}
+					{include file="block/vod_box"}		
+					{/maccms:vod}
+				</ul>
+			</div>
+			<!-- end 猜你喜欢 -->
+        </div>
+    </div>
+    <script type="text/javascript">$(".MacPlayer").addClass("embed-responsive").css("padding-bottom","56.25%");</script>
+    <span class="mac_hits hits hide" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-type="hits"></span>
+	{include file="block/foot"}
+</body>
+</html>

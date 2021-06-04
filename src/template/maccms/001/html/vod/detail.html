@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {include file="seo/vod_detail"}   
+	{include file="block/include"}
+</head>
+<body>	
+    <div class="container">
+        <div class="row">   
+        	{include file="block/head"}
+        	
+        	<!-- 详细信息 -->
+			<div class="stui-pannel clearfix">
+				<div class="stui-content col-pd clearfix">
+					<div class="stui-content__thumb">											
+						<a class="pic" href="{$obj.vod_playlink}" title="{$obj.vod_name}">
+							<img class="img-responsive lazyload" data-original="{:mac_url_img($obj.vod_pic)}" src="{$maccms.path_tpl}img/load.gif"/>
+						</a>										
+					</div>
+					<div class="stui-content__detail">
+						<h3 class="title">{$obj.vod_name}</h3>	
+						<p class="data">
+							<span class="text-muted hidden-xs">类型：</span>{$obj.vod_class|mac_url_create='class'}
+							<span class="split-line"></span>
+							<span class="text-muted hidden-xs">地区：</span>{$obj.vod_area|mac_url_create='area'}
+							<span class="split-line"></span>
+							<span class="text-muted hidden-xs">年份：</span>{$obj.vod_year|mac_url_create='year'}		
+						</p>
+						<p class="data"><span>主演：</span>{$obj.vod_actor|mac_substring=40}</p>
+						<p class="data"><span>导演：</span>{$obj.vod_director}</p>
+						<p class="desc hidden-xs">
+							<span class="left text-muted">简介：</span>{$obj.vod_content|mac_filter_html|mac_substring=55} <a href="#desc">详细 &gt;</a>
+						</p>							    
+						<div class="playbtn">
+							<a class="btn btn-primary" href="{:mac_url_vod_play($obj,['sid'=>1,'nid'=>1])}">立即播放</a>
+						</div>
+					</div>	
+					<div class="stui-content__ad hidden-sm hidden-xs">
+						<!-- 广告  -->
+						<div class="clearfix" style="padding-left: 20px;">
+							<a target="_blank" href="https://s.click.taobao.com/t?e=m%3D2%26s%3DyRCVpPnz%2BF4cQipKwQzePCperVdZeJviEViQ0P1Vf2kguMN8XjClAkz6japalEHyjiRkxbhwQNwFYsQWImkYft%2Bzj6cG%2FQZt%2FxPEYPazOIf1y4KDTM0%2BFDsGFuxRGRKDjbWOQdzGwNlEiFenDNcIzk9%2FYFgWEAd0lpa1ptKO5BLRDASZ17VUv3T6N01Hh6CoJ7Qo28KjByRIJqIDVuDKOf2%2FLX%2BAjikRfw%2F8dhe%2BNbDGDmntuH4VtA%3D%3D"><img src="http://v.shoutu.cn/html/video/img/ad4.jpg" width="240" /></a>
+						</div>
+						<!-- end 广告  -->
+					</div>
+				</div>				
+			</div>
+			<!-- end 详细信息 -->
+			
+			<!-- 播放地址 -->			
+			{maccms:foreach name="obj.vod_play_list" id="vo"}		
+			<div class="stui-pannel clearfix">
+				<div class="stui-pannel__head clearfix">
+					<span class="more text-muted pull-right">{$vo.player_info.tip}</span>
+					<h3 class="title">
+						{$vo.player_info.show}				
+					</h3>						
+				</div>																		
+				<ul class="stui-content__playlist clearfix">
+					{maccms:foreach name="vo.urls" id="vo2"}								
+	                <li {if condition="$param.sid eq $vo.sid && $param.nid eq $vo2.nid"}class="active"{/if}><a href="{:mac_url_vod_play($obj,['sid'=>$vo.sid,'nid'=>$vo2.nid])}">{$vo2.name}</a></li>
+	                {/maccms:foreach}
+				</ul>	
+			</div>
+			{/maccms:foreach}
+			<!-- end 播放地址 -->
+			
+			<!-- 剧情介绍 -->
+			<div class="stui-pannel clearfix" id="desc">
+				<div class="stui-pannel__head clearfix">
+					<h3 class="title">
+						剧情介绍
+					</h3>						
+				</div>																		
+				<div class="stui-content__desc col-pd clearfix">
+					{$obj.vod_content|mac_filter_html}
+				</div>				
+			</div>
+			<!-- end 剧情介绍 -->
+			
+			<!-- 猜你喜欢 -->
+			<div class="stui-pannel clearfix">
+				<div class="stui-pannel__head clearfix">
+					<h3 class="title">
+						猜你喜欢
+					</h3>						
+				</div>
+				<ul class="stui-vodlist__bd clearfix">
+					{maccms:vod num="12" type="current" order="desc" by="time"}
+					{include file="block/vod_box"}		
+					{/maccms:vod}
+				</ul>
+			</div>
+			<!-- end 猜你喜欢 -->
+        </div>
+    </div>
+    <span class="mac_ulog_set hide" alt="浏览记录" data-type="1" data-mid="{$maccms.mid}" data-id="{$obj.vod_id}" data-sid="{$param.sid}" data-nid="{$param.nid}"></span>
+    <span class="mac_history_set hide" alt="历史记录" data-name="[{$obj.type.type_name}]{$obj.vod_name}" data-pic="{$obj.vod_pic|mac_url_img}"></span>
+	{include file="block/foot"}
+</body>
+</html>

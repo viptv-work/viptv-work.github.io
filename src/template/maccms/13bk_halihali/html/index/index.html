@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<title>{$maccms.site_name}</title>
+<meta name="keywords" content="{$maccms.site_keywords}" />
+<meta name="description" content="{$maccms.site_description}" />
+{include file="public/include"}
+</head>
+<body>
+<!--头部开始-->{include file="public/head"}
+<!-- 幻灯片部分 -->
+<div class="newhd">
+<div class="bk" style="background-image: url({$maccms.path_tpl}images/header_bg.jpg);">
+</div>
+<section class="area clearfix area-slider">
+<div class='banner-box'>
+<ul class='img'>{maccms:vod num="8" paging="no" type="all" level="9" order="desc" by="time"}
+	<li><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" target="_blank" class="item"><img src="{$vo.vod_pic_slide|mac_url_img}" alt="{$vo.vod_name}"/><b class="text-overflow">&nbsp;&nbsp;{$vo.vod_name} &nbsp;{include file="public/serial1"}</b></a></li>{/maccms:vod}
+</ul>
+<ul class='li'>
+</ul>
+<div class='but but-left'>
+	&lt;
+</div>
+<div class='but but-right'>
+	&gt;
+</div>
+<div class='bar'>
+</div>
+</div>
+<ul class="slider-menu fl">{maccms:vod num="6" type="1,2" order="desc" by="hits_day"}
+<li class="slider-menu__item"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" target="_blank" class="item"><img class="loading" src="{$maccms.path_tpl}images/220x146.jpg" data-original="{$vo.vod_pic|mac_url_img}" alt="{$vo.vod_name}"/>
+<div class="mask-gradient">
+	<p>{$vo.vod_name}</p>
+	<div class="text-box">
+		<em>状态: </em><span class="info">{include file="public/serial1"}</span>
+	</div>
+</div>
+</a></li>{/maccms:vod}
+</ul>
+</section>
+</div>
+<section class="area">
+<!-- 今日热播 -->
+<div class="area clearfix area-drama">
+<div class="area-cont">
+<div class="area-main fl" js-tab="true">
+	<div class="area-header">
+		<h2 class="title"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bianjituijian"></use></svg><b>今日热播</b><em>今日热播</em></h2>
+	</div>
+	<ul class="drama-module clearfix tab-cont">{maccms:vod num="6" type="1,2" order="desc" by="hits_day"}
+		<li class="item"><a href="{:mac_url_vod_detail($vo)}" title="{$vo.vod_name}" target="_blank" class="img"><img class="loading" src="{$maccms.path_tpl}images/180x239.jpg" data-original="{:mac_url_img($vo.vod_pic)}" alt="{$vo.vod_name}"><span class="mask"><i class="iconfont icon-play"></i></span></a>
+		<div class="info">
+			<a href="{:mac_url_vod_detail($vo)}">{$vo.vod_name}</a>
+			<p>
+				<span class="fl">{include file="public/serial1"}</span><em class="fr">{$vo.vod_hits}人看了</em>
+			</p>
+		</div>
+		</li>{/maccms:vod}
+	</ul>
+</div>
+</div>
+</div>
+<div class="tuiguang"><首页广告位></div>
+{maccms:type ids="1,2,3,4" order="asc" by="sort"}
+<div class="area clearfix area-drama">
+<div class="area-cont">
+<div class="area-main fl" js-tab="true">
+	<div class="area-header">
+		<h2 class="title"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-{$vo.type_en}"></use></svg><b>{$vo.type_name}</b><em>{$vo.type_name}</em></h2>
+		<a href="{:mac_url_type($vo,[],'show')}" class="more" target="_blank">More ></a>
+	</div>
+	<ul class="drama-module clearfix tab-cont">{maccms:vod num="12" type="'.$vo['type_id'].'" order="desc" by="time" id="vo2" key="key2"}
+		<li class="item"><a href="{:mac_url_vod_detail($vo2)}" title="{$vo2.vod_name}" target="_blank" class="img"><img class="loading" src="{$maccms.path_tpl}images/180x239.jpg" data-original="{$vo2.vod_pic|mac_url_img}" alt="{$vo2.vod_name}"><span class="mask"><i class="iconfont icon-play"></i></span></a>
+		<div class="info">
+			<a href="{:mac_url_vod_detail($vo2)}">{$vo2.vod_name}</a>
+			<p>
+				<span class="fl">{include file="public/serial"}</span><em class="fr">{$vo2.vod_hits}人在追</em>
+			</p>
+		</div>
+		</li>{/maccms:vod}
+	</ul>
+</div>
+</div>
+</div>
+{/maccms:type}
+</section><!--底部开始-->
+{include file="public/foot"}
+<script type="text/javascript" src="{$maccms.path_tpl}js/read.js"></script>
+<div class="index-top" id="index-top">
+<a class="top"></a>
+</div>
+<!--底部结束-->
+</body>
+</html>

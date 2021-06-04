@@ -1,0 +1,36 @@
+<a  href="https://wwa.lanzous.com/iNLDHgc4bfi"style="color:red; font-size: 20px;  display: block;  text-align: center;">点击下载模板</a>
+<div class="stui-header__top clearfix">					
+	<div class="stui-header__logo">
+		<a class="logo" href="{$maccms.path}"></a>										  
+	</div>				
+	<div class="stui-header__search"> 
+		 <form id="search" name="search" method="POST" action="{:mac_url('vod/search')}" onSubmit="return qrsearch();">
+			<input type="text" id="wd" name="wd" class="mac_wd form-control" value="{$param.wd}" placeholder="请输入关键词..."/>
+			<button class="submit" id="searchbutton" type="submit" name="submit"></button>							
+		</form>
+	</div>
+	<ul class="stui-header__user hidden-xs">
+		<!--<li>
+			<a href="{:mac_url('gbook/index')}" title="留言反馈"><img src="{$maccms.path_tpl}img/icon_gbook.png" width="28" /></a>
+		</li>-->
+		<li>
+			<img src="{$maccms.path_tpl}img/icon_code.png" width="28" />
+			<div class="dropdown">
+				<img src="http://tv1080.com:9527/erweima.png" width="120" />
+				<p class="margin-0">关注微信公众号</p>
+			</div>
+		</li>		
+	</ul>
+</div>
+<div class="stui-header__menu clearfix">
+	<span class="more hidden-xs">今日更新“{:mac_data_count(0,'today','vod')}”部影片</span>	  			  	
+	<ul class="clearfix">	  		
+		<li {if condition="$maccms.aid eq 1"}class="active"{/if}><a href="{$maccms.path}">首页</a></li>
+		{maccms:type num="10" order="asc" by="sort" ids="parent"}
+        <li {if condition="($vo.type_id eq MAC_TYPE_ID || $vo.type_id eq MAC_TYPE_PID)"}class="active"{/if}><a href="{:mac_url_type($vo)}">{$vo.type_name}</a></li>
+        {/maccms:type}
+        <!--<li {if condition="$maccms.aid eq 30"}class="active"{/if}><a href="{:mac_url_topic_index()}">专题</a></li>-->
+	</ul>
+</div>
+	
+

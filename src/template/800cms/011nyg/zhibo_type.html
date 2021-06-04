@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+  <meta name="viewport" content="maximum-scale=1.0,minimum-scale=1.0,user-scalable=0,width=device-width,initial-scale=1.0,user-scalable=no" />
+  <meta name="renderer" content="webkit" />
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />	
+	<title><?php echo $web_title;?></title>
+	<meta name="keywords" content="<?php echo $web_keywords;?>" />
+	<meta name="description" content="<?php echo $web_description;?>" />
+    <link rel="stylesheet" href="<?php echo '/template/'.$web_moban;?>/css/index.css" />
+</head>
+<body>
+ <?php  include('./template/'.$web_moban.'/header.html');?>
+  <main class="main" style="padding: 10px 8px 8px 8px;"> 
+   <div id="propagandaInsert" class="flex-row cross_line"></div> 
+   <div id="propagandaBottom"></div>
+    <section class="videos"> 
+    <h1 class="h1">直播分类：<?php echo $C_T_2_name;?></h1> 
+    <div class="flex-row"> 
+     <div id="propagandaLeft"></div> 
+     <div class="content"> 
+		<?php $json_string = file_get_contents($zhibourl);$data = json_decode($json_string, true);$datas = $data['fileinfo'];$pageresult = $data['pageresult'];$page = $data['page'];$i=0;foreach($datas as $val) { $address=$val['m3u8'];$img=$val['pic'];$title=$val['name'];?>
+      <div class="grid_item"> 
+       <a class="link" href="/?m=zhibo-neiron-id-<?php echo base64_encode($address)?>.html"> 
+        <div class="img_post icont icon_kiss"> 
+         <span class="info_lable"> <i class="info-item">HD</i> </span> 
+         <img class="img" src="<?php echo $img;?>" data-reload="3"  /> 
+        </div> 
+		<p class="description"><span class="span"><?php echo $title;?></span><?php echo $title;?></p> 
+        <div class="inform"> 
+         <span class="num">时时直播</span> 
+         <span class="iconfont icon-praisefill"><?php  echo rand(5, 10000); ?></span> 
+        </div> </a> 
+      </div> 
+		<?php		 }?>	 
+	 
+	 
+
+ 
+     </div> 
+     <div id="propagandaRight"></div> 
+    </div> 
+   </section>  
+ <div class="pagenote flex-row">
+ <?php $page=$JCCMS_page;if($page  >= 1 ){ $pages="1";}else{ $pages= $page-1;	}if($page >= $pageresult ){$pagex=$pageresult;	}else{$pagex=$page+1;		}?>	
+ <a class="prev link" href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo $pages;?>.html">上一页</a>
+ 
+ 
+ 
+	
+            <div class="flex-row pageindex">
+				<a class="link" href="#">共<?php echo $pageresult;?>页</a>
+				<a class="link" href="#">当前<?php echo $page;?>页</a>	
+
+		<?php	if($JCCMS_page < $pageresult-5){	?>
+		<a   class="link" href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo  $JCCMS_page+1;?>.html"><?php echo  $JCCMS_page+1;?></a>
+		<a    class="link" href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+2;?>.html"><?php echo   $JCCMS_page+2;?></a>
+		<a    class="link" href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+3;?>.html"><?php echo   $JCCMS_page+3;?></a>
+		<a    class="link" href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+4;?>.html"><?php echo   $JCCMS_page+4;?></a>
+		<a    class="link" href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo   $JCCMS_page+5;?>.html"><?php echo   $JCCMS_page+5;?></a>
+
+		<?php	} ?>			
+				
+				
+            </div>
+			<a  class="next link" href="/?m=zhibo-type-<?php echo $C_T_2_type; ?>-<?php echo $pagex;?>.html">下一页</a>	
+			
+			
+        </div>
+ 
+   </main> 
+ 
+ 
+
+<?php  include('./template/'.$web_moban.'/footer.html');?>
+</body>
+</html>		

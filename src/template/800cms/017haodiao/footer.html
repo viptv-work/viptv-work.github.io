@@ -1,0 +1,37 @@
+<div id="container">
+    <div id="content">
+        <div class="clear">
+            <div class="span-755">
+                <div class="clear">
+                    <div style="margin-top:10px;margin-bottom:10px;">
+                        <p><a>广告合作联系方式：
+                                <?php echo $web_email;?>本网站内容可能令人反感！切不可将本站的内容出售、出租、交给或借予年龄未满18岁的人士或将本网站内容向未满18岁人士出示、播放或放映。如果您发现本站的某些影片内容不合适，或者某些影片侵犯了您的的版权，请联系我们（发信给#，将#修改成@）删除影片。
+                            </a><br><br></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="/template/9CCMSxmb/js/zepto.min.js"> </script>
+
+<script>
+    (function(){
+        // 公告栏 文字滚动
+        var begin2 = 0;
+        var marquee = $('.marquee p');
+        var wideMarquee = parseInt(marquee.width());
+        $('.marquee').append(marquee.clone(true));
+    
+            var roll2 = setInterval(function () {
+            begin2 -= 1;
+            marquee.css({ 'margin-left': begin2 + 'px' })
+            if (-begin2 >= wideMarquee) {
+                begin2 = 0;
+            }
+        }, 20);
+        
+    }());
+    </script>

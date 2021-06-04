@@ -1,0 +1,67 @@
+{switch name="vo2.type_id"}
+{case value="1"}
+{if condition="empty($vo2.vod_state) eq true"}
+{$vo2.vod_remarks}
+{else/}
+{$vo2.vod_state}
+{/if}
+{/case}
+{case value="2"}
+{eq name="vo2.vod_isend" value="1"}
+{gt name="vo2.vod_total" value="0"}
+{$vo2.vod_total}集全
+{else/}
+{$vo2.vod_serial|mac_default='全'}集
+{/gt}
+{else/}
+{if condition="$vo2.vod_serial eq $vo2.vod_total"}
+{gt name="vo2.vod_total" value="0"}
+{$vo2.vod_total}集全
+{else/}
+{$vo2.vod_serial|mac_default='全'}集
+{/gt}
+{elseif condition="$vo2.vod_serial lt $vo2.vod_total"}
+{gt name="vo2.vod_serial" value="0"}
+更新至{$vo2.vod_serial}集
+{else/}
+{$vo2.vod_serial|mac_default='全'}集
+{/gt}
+{elseif condition="$vo2.vod_serial gt $vo2.vod_total"}
+全{$vo2.vod_serial|mac_default=''}集
+{/if}
+{/eq}
+{/case}
+{case value="3"}
+{if condition="strlen($vo2.vod_serial) gt 6"}
+{$vo2.vod_serial|strtotime|date='Y-m-d',###}期
+{else/}
+{$vo2.vod_serial}期
+{/if}
+{/case}
+{case value="4"}
+{eq name="vo2.vod_isend" value="1"}
+{gt name="vo2.vod_total" value="0"}
+{$vo2.vod_total}集全
+{else/}
+{$vo2.vod_serial|mac_default='全'}集
+{/gt}
+{else/}
+{if condition="$vo2.vod_serial eq $vo2.vod_total"}
+{gt name="vo2.vod_total" value="0"}
+{$vo2.vod_total}集全
+{else/}
+{$vo2.vod_serial|mac_default='全'}集
+{/gt}
+{elseif condition="$vo2.vod_serial lt $vo2.vod_total"}
+{gt name="vo2.vod_serial" value="0"}
+更新至{$vo2.vod_serial}集
+{else/}
+{$vo2.vod_serial|mac_default='全'}集
+{/gt}
+{elseif condition="$vo2.vod_serial gt $vo2.vod_total"}
+全{$vo2.vod_serial|mac_default=''}集
+{/if}
+{/eq}
+{/case}
+{default /}
+{/switch}

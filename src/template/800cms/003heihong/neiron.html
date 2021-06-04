@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+	<title>正在播放 <?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_name');?></title>
+	<meta name="keywords" content="<?php echo $web_keywords;?>" />
+	<meta name="description" content="<?php echo $web_description;?>" />
+    <link rel="stylesheet" href="<?php echo '/template/'.$web_moban;?>/css/style.css" />
+</head>
+<body>
+<?php  include('./template/'.$web_moban.'/header.html');?>
+<div id="header_box"></div>
+<div id="top_box"></div>
+<div class="wrap mt10">
+	<div class="box cat_pos clearfix">
+		<span class="cat_pos_l">您的位置：视频播放<h1><?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_name');?></h1></span>
+	</div>
+</div>
+
+<div class="wrap mt10">
+	<div class="box play">
+		<div class="player">
+			<div  align="center" style="height:400px">
+														<video id='myVideo'  class="video-js"></video>
+											<link rel="stylesheet" type="text/css" href="/static/VideoJS/video.min.css?v=3">
+											<script type="text/javascript" src="/static/VideoJS/video.min.js?v=1" charset="utf-8" > </script>
+												<script type="text/javascript" src="/static/VideoJS/video-conrtib-ads.js?v=1" charset="utf-8" > </script>
+												<script type="text/javascript" src="/static/VideoJS/myVideo.js?v=6" charset="utf-8" > </script>
+												<script type="text/javascript">
+												var vPath = '<?php JCCMS_SQL($JCCMS_SQL,'0','JCCMS_SQL_playurl');?>';
+												var logo = '';
+												var myVideo=initVideo({
+                                                    id:'myVideo',
+                                                    url:vPath,
+													ad:{
+                                                      pre:{
+                                                          url:'',
+                                                          link:'',
+                                                      },
+												  	},
+                                                  	logo:{
+                                                        url:'/template/800CMSPC/images/logo.png',
+                                                        width:'100px'
+                                                    },
+												});
+												</script>
+			
+			</div>
+		
+			<div class="clear"></div>
+		</div>
+		<div class="copyright">	
+<font size="3" color="red"><strong>部分当日更新影片需要完成转码后才能播放，如遇到不能播放的情况建议24小时之后在进行观看。</strong></font>
+	</div>
+	<?php	Jccms_json_ad_video('<a href="链接" target="_blank"><img style="width:980px;height:100px;margin-bottom:2px;" src="图片"></a>');?>	
+</div>
+</div>
+<div class="wrap mt10">
+	<div class="box movie_list">
+		<div class="title"><b class="sp_pri movie_ico"></b><h2>推荐视频|<strong>公告： <?php echo $dizhigongao;?></strong></h2></div>
+		<ul>
+		
+					<?php  
+					include('./lib/datatop.php');
+					 $pagesize = 8; //设置记录显示条数; 
+					 $JCCMS_pagecount = floor(count($JCCMS_SQL) / $pagesize)-1;//计算数组所得到记录总数
+					  $JCCMS_prev = $JCCMS_pages -1; //初始化上一页
+					 $JCCMS_next = $JCCMS_pages +1; //初始化下一页
+
+					
+					
+					?>
+					<?php   $JCCMS_SQL=JCCMS_chulis(JCCMS_SQLL($JCCMS_SQL,'0','JCCMS_SQL_type'));for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+			<li><a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html" target="_blank"><img src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>" /><h3><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></h3></a></li>
+		<?php		 }?>		
+
+		</ul>
+	</div>
+</div>
+<div id="bottom_box"></div>
+<div id="footer_box"></div>
+
+
+<?php  include('./template/'.$web_moban.'/footer.html');?>
+ 
+</body>
+</html>

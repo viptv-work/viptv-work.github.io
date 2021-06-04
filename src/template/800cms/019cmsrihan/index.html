@@ -1,0 +1,65 @@
+<?php  
+$pagesize = 12; //设置记录显示条数; 
+ $JCCMS_pagecount = floor(count($JCCMS_SQL) / $pagesize)-1;//计算数组所得到记录总数
+  $JCCMS_prev = $JCCMS_page -1; //初始化上一页
+ $JCCMS_next = $JCCMS_page +1; //初始化下一页
+?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+<meta name="renderer" content="webkit">
+<meta http-equiv="Cache-Control" content="no-siteapp"/>
+<link rel="shortcut icon" href="/favicon.ico" />
+<link href="<?php echo '/template/'.$web_moban;?>/css/ionicons.min.css" rel="stylesheet" type="text/css">
+<link href="<?php echo '/template/'.$web_moban;?>/css/mdui.min.css" rel="stylesheet" type="text/css">
+<link href="<?php echo '/template/'.$web_moban;?>/css/css.css" rel="stylesheet" type="text/css">
+<!--[if lt IE 9]><script src="js/html5shiv.min.js"></script><![endif]-->
+	<title><?php echo $web_title;?></title>
+	<meta name="keywords" content="<?php echo $web_keywords;?>" />
+	<meta name="description" content="<?php echo $web_description;?>" />
+</head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-pink mdui-theme-accent-pink">
+<!--[if lte IE 9]><div class="mdui-text-center mdui-p-a-2 mdui-typo lteie9">您的浏览器版本太低了，为了能更好的体验本站，请升级您的浏览器。下载最新版本的浏览器：<a href="http://ie.microsoft.com" target="_blank">IE</a>、<a href="http://www.google.cn/chrome/" target="_blank">chrome(谷歌浏览器)</a>、<a href="http://www.firefox.com.cn/" target="_blank">Firefox(火狐浏览器)</a>，推荐使用谷歌浏览器</div><![endif]--><!-- 顶部工具栏开始 -->
+ <?php  include('./template/'.$web_moban.'/header.html');?>
+<!-- 通栏广告结束 --><div class="mdui-typo"><hr></div>
+<!-- 最新视频列表开始 -->
+<h3 class="column-title"><?php JCCMS_type('5'); ?></h3>
+<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-4 mdui-grid-list mdui-typo list-videos"><div class="flex-grid">
+<?php $JCCMS_SQL=JCCMS_chuli('5');for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+<div class="mdui-col"><a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html" target="_blank"><div class="mdui-grid-tile"><img src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>" style="height: 200px;"/></div><div class="mdui-m-y-1 clamp2 list-grid-title"><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></div><div class="mdui-m-b-2 attributes-info"><ul class="mdui-m-a-0 mdui-p-a-0 attributes-info-list"><li class="att-info-play"><i class="mdui-icon ion-social-youtube-outline"></i> <?php  echo rand(5, 10000); ?></li><li class="att-info-date"><i class="mdui-icon ion-calendar"></i> <?php  echo rand(5, 10000); ?></li></ul></div></a></div>
+<?php		 }?>
+
+</div></div><!-- 最新视频列表结束 -->
+
+<!-- 最新视频列表开始 -->
+<h3 class="column-title"><?php JCCMS_type('6'); ?></h3>
+<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-4 mdui-grid-list mdui-typo list-videos"><div class="flex-grid">
+<?php $JCCMS_SQL=JCCMS_chuli('6');for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+<div class="mdui-col"><a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html" target="_blank"><div class="mdui-grid-tile"><img src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>" style="height: 200px;"/></div><div class="mdui-m-y-1 clamp2 list-grid-title"><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></div><div class="mdui-m-b-2 attributes-info"><ul class="mdui-m-a-0 mdui-p-a-0 attributes-info-list"><li class="att-info-play"><i class="mdui-icon ion-social-youtube-outline"></i> <?php  echo rand(5, 10000); ?></li><li class="att-info-date"><i class="mdui-icon ion-calendar"></i> <?php  echo rand(5, 10000); ?></li></ul></div></a></div>
+<?php		 }?>
+
+</div></div><!-- 最新视频列表结束 -->
+
+<!-- 最新视频列表开始 -->
+<h3 class="column-title"><?php JCCMS_type('7'); ?></h3>
+<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-4 mdui-grid-list mdui-typo list-videos"><div class="flex-grid">
+<?php $JCCMS_SQL=JCCMS_chuli('7');for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+<div class="mdui-col"><a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html" target="_blank"><div class="mdui-grid-tile"><img src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>" style="height: 200px;"/></div><div class="mdui-m-y-1 clamp2 list-grid-title"><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></div><div class="mdui-m-b-2 attributes-info"><ul class="mdui-m-a-0 mdui-p-a-0 attributes-info-list"><li class="att-info-play"><i class="mdui-icon ion-social-youtube-outline"></i> <?php  echo rand(5, 10000); ?></li><li class="att-info-date"><i class="mdui-icon ion-calendar"></i> <?php  echo rand(5, 10000); ?></li></ul></div></a></div>
+<?php		 }?>
+
+</div></div><!-- 最新视频列表结束 -->
+<!-- 最新视频列表开始 -->
+<h3 class="column-title"><?php JCCMS_type('8'); ?></h3>
+<div class="mdui-row-xs-1 mdui-row-sm-2 mdui-row-md-4 mdui-grid-list mdui-typo list-videos"><div class="flex-grid">
+<?php $JCCMS_SQL=JCCMS_chuli('8');for($x=$JCCMS_page * $pagesize;$x<$JCCMS_page * $pagesize + $pagesize;$x++){ ?>
+<div class="mdui-col"><a href="/?m=vod-detail-id-<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_id');?>.html" target="_blank"><div class="mdui-grid-tile"><img src="<?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_pic');?>" style="height: 200px;"/></div><div class="mdui-m-y-1 clamp2 list-grid-title"><?php JCCMS_SQL($JCCMS_SQL,$x,'JCCMS_SQL_name');?></div><div class="mdui-m-b-2 attributes-info"><ul class="mdui-m-a-0 mdui-p-a-0 attributes-info-list"><li class="att-info-play"><i class="mdui-icon ion-social-youtube-outline"></i> <?php  echo rand(5, 10000); ?></li><li class="att-info-date"><i class="mdui-icon ion-calendar"></i> <?php  echo rand(5, 10000); ?></li></ul></div></a></div>
+<?php		 }?>
+
+</div></div><!-- 最新视频列表结束 -->
+
+<div class="mdui-typo"><hr></div><!--友链--><div class="mdui-typo links"><h5 class="column-title">友情链接</h5><div class="mdui-row-xs-1 mdui-grid-list mdui-typo list-videos"><div class="flex-grid"><div class="mdui-col">
+<?php echo  Jccms_json_connection('<a href="链接" target="_blank" rel="nofollow" class="mdui-m-a-1">标题</a>',JCCMS_ROOT);?>
+</div></div></div></div><!--end 友链 --></div><!-- footer开始 -->
+<?php  include('./template/'.$web_moban.'/footer.html');?>
+<!-- footer结束 --><script src="<?php echo '/template/'.$web_moban;?>/js/jquery.min.js"></script><script src="<?php echo '/template/'.$web_moban;?>/js/mdui.min.js"></script></body></html>

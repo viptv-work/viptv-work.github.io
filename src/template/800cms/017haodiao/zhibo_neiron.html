@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>正在直播中.... <?php echo $web_title;?></title>
+	<meta name="keywords" content="<?php echo $web_title;?>" />
+	<meta name="description" content="<?php echo $web_title;?>" />
+    <link rel="stylesheet" href="<?php echo '/template/'.$web_moban;?>/css/index.css" />
+</head>
+<body>
+<?php  include('./template/'.$web_moban.'/header.html');?>
+<div id="container">
+<div id="content">
+ <div class="clear">
+<div class="span-755">
+  <div class="clear">
+    <div style="margin-top:10px;margin-bottom:10px;">
+	<div class="wrap mt20">
+	<div class="box cat_pos clearfix">
+<span class="cat_pos_l"><font size="4">本直播为真实国外直播，由咪兔直播提供战略合作服务接口！</font></div>
+	<div class="wrap mt20">
+	<div class="box" style="height:300px">
+               		<div  class="prism-player" id="J_prismPlayer" style="height:300px"></div>
+
+                    
+	
+
+											 <link rel="stylesheet" href="//g.alicdn.com/de/prismplayer/2.7.2/skins/default/aliplayer-min.css" />
+										 <script charset="utf-8" type="text/javascript" src="//g.alicdn.com/de/prismplayer/2.7.2/aliplayer-min.js"></script>
+									<?php  $GG=$PT; $PT = file_get_contents(base64_decode($PT));?>        
+											<script>
+												var player = new Aliplayer({
+												id: 'J_prismPlayer',
+												width: '100%',
+												autoplay: true,
+												//支持播放地址播放,此播放优先级最高
+												source : '<?php echo$PT?>',
+												liveShiftSource:'<?php echo $PT?>',
+
+											
+
+
+												},function(player){
+													console.log('播放器创建好了。')
+											   });
+											   
+											</script>   
+	</div>
+	</div>	
+	
+	
+	<?php	Jccms_json_ad_video('<a href="链接" target="_blank"><img style="width:100%;height:100px;margin-bottom:2px;" src="图片"></a>');?>	
+	
+	
+
+
+
+
+<div align="center"></div>
+</div>
+
+
+
+</div></div></div></div></div>
+
+
+
+
+
+
+
+
+
+<?php  include('./template/'.$web_moban.'/footer.html');?>
+ 
+</body>
+</html>

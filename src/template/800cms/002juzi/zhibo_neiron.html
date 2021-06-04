@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+	<title>正在直播中.... <?php echo $web_title;?></title>
+	<meta name="keywords" content="<?php echo $web_title;?>" />
+	<meta name="description" content="<?php echo $web_title;?>" />
+<link href="<?php echo '/template/'.$web_moban;?>/css/style.css" rel="stylesheet">
+<script src="<?php echo '/template/'.$web_moban;?>/js/home.js"></script>
+</head>
+<body>
+
+ <div class="main">
+ <?php  include('./template/'.$web_moban.'/header.html');?>  
+
+   <section> 
+    <div class="container"> 
+     <div class="home-img-box"> 
+
+      <div class="category-count"> 
+       <h3 class="title">本直播为真实国外直播，由咪兔直播提供战略合作服务接口！</h3> 
+       <a><span class="home-link"></span></a>
+      </div> 
+	</div>
+	</div>  
+	<div class="video-box-all container" style="height:400px">
+<div  class="prism-player" id="J_prismPlayer" style="height:400px"></div>
+
+                    
+	
+
+											 <link rel="stylesheet" href="//g.alicdn.com/de/prismplayer/2.7.2/skins/default/aliplayer-min.css" />
+										 <script charset="utf-8" type="text/javascript" src="//g.alicdn.com/de/prismplayer/2.7.2/aliplayer-min.js"></script>
+									<?php  $GG=$PT; $PT = file_get_contents(base64_decode($PT));?>        
+											<script>
+												var player = new Aliplayer({
+												id: 'J_prismPlayer',
+												width: '100%',
+												autoplay: true,
+												//支持播放地址播放,此播放优先级最高
+												source : '<?php echo$PT?>',
+												liveShiftSource:'<?php echo $PT?>',
+
+											
+
+
+												},function(player){
+													console.log('播放器创建好了。')
+											   });
+											   
+											</script>  
+	</div>  
+ <div class="container"> 	
+<?php	Jccms_json_ad_video('<a href="链接" target="_blank"><img style="width:100%;height:100px;margin-bottom:2px;" src="图片"></a>');?>
+</div>    
+   
+
+   </section> 
+
+   <footer> 
+    <div class="footer-menu"> 
+     <div class="container"> 
+     </div> 
+    </div> 
+    <div class="footer"> 
+     <div class="container"> 
+      <div class="col-md-12"> 
+
+ <?php  include('./template/'.$web_moban.'/footer.html');?>
+      </div> 
+      <div class="col-md-3"></div> 
+     </div> 
+    </div> 
+   </footer>  
+  </div>
+
+</body>
+</html>
