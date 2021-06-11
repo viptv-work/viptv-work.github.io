@@ -9,10 +9,11 @@ actionButtons:
     extraClass: vuemastery-trigger primary
     icon: fa fa-play-circle
   - text: MOB端
-    link: /web/      
+    link: http://viptv.work/web/ 
+    target: _blank     
   - text: PC端
-    link: /web/
- 
+    link: http://viptv.work/web/
+    target: _blank 
 features:
   - title: 内容特权
     details: |
@@ -35,10 +36,10 @@ footer: |
 socialIcons:
   - type: GitHub
     link: https://github.com/viptvx/viptvx
-  - type: Twitter
-    link: https://twitter.com/vuejs
-  - type: Medium
-    link: https://medium.com/the-vue-point
+  - type: CodePen
+    link: https://codepen.io/viptvx/
+  - type: Email
+    link: viptvx@qq.com
 ---
 
 <common-vuemastery-video-modal/>
