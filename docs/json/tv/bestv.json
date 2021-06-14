@@ -1,0 +1,517 @@
+[{
+    "name": "神奇公司",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/356/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/356/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/356/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/356/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "童年国漫",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/486/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/486/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/486/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/486/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "云游日本",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/506/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/506/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/506/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/506/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "极限挑战",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/484/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/484/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/484/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/484/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "三十正美丽",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/492/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/492/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/492/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/492/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "宝藏纪录片",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/450/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/450/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/450/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/450/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "不朽的传承",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/437/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/437/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/437/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/437/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "迷案大世界",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/494/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/494/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/494/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/494/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "医护那些事",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/493/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/493/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/493/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/493/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "猫和老鼠",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/319/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/319/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/319/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/319/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "完美的夏天",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/377/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/377/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/377/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/377/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "高能脱口秀",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/462/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/462/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/462/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/462/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "古装神剧",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/468/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/468/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/468/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/468/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "上头历史剧",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/501/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/501/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/501/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/501/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "烈焰青春",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/439/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/439/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/439/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/439/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "奥斯卡佳片",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/485/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/485/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/485/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/485/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "正能量",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/489/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/489/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/489/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/489/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "B+音乐厅",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/469/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/469/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/469/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/469/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "介就是爱",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/480/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/480/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/480/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/480/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "“泰”上头",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/490/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/490/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/490/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/490/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "我们的歌",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/378/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/378/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/378/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/378/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "七彩喜剧",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/250/play.m3u8"
+      },
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/250/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/250/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/250/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "相声有新人",
+    "urls": [{
+        "name": "自适应",
+        "url": "http://bp-caster.bestv.com.cn:80/335/play.m3u8"
+      },      
+      {
+        "name": "标清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/335/1/video.m3u8"
+      },
+      {
+        "name": "高清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/335/2/video.m3u8"
+      },
+      {
+        "name": "超清线路",
+        "url": "http://bp-caster.bestv.com.cn:80/335/3/video.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "东方卫视",
+    "urls": [{
+        "name": "自适应",
+        "url": "https://bp-live.bestv.com.cn:443/live/bestdfws.m3u8?auth_key=1621659605-7b7b06219b8c4fc4bdc63d646862096c-0-b0f2f53614417b8fc6340d93e8f2db4c"
+      } 
+    ]
+  },
+  {
+    "name": "新闻综合",
+    "urls": [{
+        "name": "自适应",
+        "url": "https://bp-live.bestv.com.cn:443/live/bestxwzh.m3u8?auth_key=1621659605-a090e127dfc04659b2d4a75fcc080161-0-4282478c3a327bdcef482913ea458235"
+      } 
+    ]
+  },
+  {
+    "name": "外语频道",
+    "urls": [{
+        "name": "自适应",
+        "url": "https://bp-live.bestv.com.cn:443/live/bestwypd.m3u8?auth_key=1621659604-be2a3aeb4afb4877accb4afbf1516f69-0-7e01828e7be7cccdf02e77931df73c4c"
+      } 
+    ]
+  },
+  {
+    "name": "都市频道",
+    "urls": [{
+        "name": "自适应",
+        "url": "https://bp-live.bestv.com.cn:443/live/bestdspd.m3u8?auth_key=1621659604-958372e0f7214c01bfd6bb357ddd1315-0-5b55e4c07cdadd9f5a7f3898c359de36"
+      } 
+    ]
+  },
+  {
+    "name": "哈哈炫动",
+    "urls": [{
+        "name": "自适应",
+        "url": "https://bp-live.bestv.com.cn:443/live/besthhxd.m3u8?auth_key=1621659604-213c867025b54b6ba7a563a1c8c50475-0-ac04b7466df7a807ec3810d041acb072"
+      } 
+    ]
+  },
+  {
+    "name": "纪实人文",
+    "urls": [{
+        "name": "自适应",
+        "url": "https://bp-live.bestv.com.cn:443/live/bestjsrw.m3u8?auth_key=1621659605-448929b160454c3ebd69b6891516fd24-0-4963e59957df791a021c9b826d1cef7c"
+      } 
+    ]
+  },
+  {
+    "name": "第一财经",
+    "urls": [{
+        "name": "自适应",
+        "url": "https://bp-live.bestv.com.cn:443/live/bestdycj.m3u8?auth_key=1621659605-9bf98ec395f8456685db9ee2aaed4028-0-30aded45b1a1362b9cf4ba4fbf3e100f"
+      } 
+    ]
+  }
+]

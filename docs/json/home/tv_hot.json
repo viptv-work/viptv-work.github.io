@@ -1,0 +1,78 @@
+[
+  {
+      "name": "五星体育 - 超清蓝光",
+      "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/ssty/2300000/mnf.m3u8"
+  },
+  {
+      "name": "新视觉 - 超清蓝光",
+      "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/xsjhd/2300000/mnf.m3u8"
+  },
+  {
+      "name": "劲爆体育 - 超清蓝光",
+      "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/jbtyhd/2300000/mnf.m3u8"
+  },
+  {
+    "name": "足球频道 - 超清蓝光",
+    "url": "http://ivi.bupt.edu.cn:80/hls/zqhd.m3u8"
+  },  
+  {
+    "name": "香港C+ - 蓝光",
+    "url": "http://gslbmeiah.cdn.hk.chinamobile.com/livehls/MOB-U1-NO/03.m3u8"
+  },
+  {
+    "name": "CCTV5 - 体育频道",
+    "url": "http://newvideo.dangtutv.cn:8278/CCTVsports/playlist.m3u8"
+  },
+  {
+    "name": "澳门莲花",
+    "url": "http://live-hls.macaulotustv.com/lotustv/macaulotustv.m3u8"
+  },
+  {
+    "name": "CCTV6 - 影视频道(蓝光)",
+    "url": "https://hlslive.1905.com/live/LIVEQYR8M567KGOXO/index.m3u8?tm=1621076703&sign=128e3432f1defe0bf09e5d40fafe5880"
+  },
+  {
+    "name": "好消息电视台1",
+    "url": "http://live-350k.streamingfast.net/hls-live/goodtv/_definst_/liveevent/live-ch1-1.m3u8"
+  },
+  {
+    "name": "好消息电视台2",
+    "url": "http://live-350k.streamingfast.net/hls-live/goodtv/_definst_/liveevent/live-ch2-1.m3u8"
+  },
+  {
+    "name": "CGTN",
+    "url": "https://livefr.cgtn.com/1000f/prog_index.m3u8"
+  },
+  {
+    "name": "澳亚卫视",
+    "url": "https://live.mastvnet.com/4rlff1m/live.m3u8"
+  },
+  {
+    "name": "hbo 亚洲",
+    "url": "https://liveorigin01.hbogoasia.com:8443/origin/live/main/HBO/index.m3u8"
+  },
+  {
+    "name": "hbo 亚洲",
+    "url": "https://liveorigin01.hbogoasia.com:8443/origin/live/main/HBO/index.m3u8"
+  },
+  {
+    "name": "hbo 强档巨献",
+    "url": "https://liveorigin01.hbogoasia.com:8443/origin/live/main/HITS/index.m3u8"
+  },
+  {
+    "name": "hbo 原创巨献",
+    "url": "https://liveorigin01.hbogoasia.com:8443/origin/live/main/SIG/index.m3u8"
+  },
+  {
+    "name": "hbo 温馨家庭",
+    "url": "https://liveorigin01.hbogoasia.com:8443/origin/live/main/FAMILY/index.m3u8"
+  },
+  {
+    "name": "hbo red 亚洲",
+    "url": "https://liveorigin01.hbogoasia.com:8443/origin/live/main/RED/index.m3u8"
+  },
+  {
+    "name": "cinemax 亚洲",
+    "url": "https://liveorigin01.hbogoasia.com:8443/origin/live/main/MAX/index.m3u8"
+  }
+ ]

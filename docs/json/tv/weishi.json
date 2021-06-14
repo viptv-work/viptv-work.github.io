@@ -1,0 +1,299 @@
+[{
+    "name": "东南卫视 -4M1080(移动专属源)",
+    "urls": [{
+        "name": "百事通线路",
+        "url": "http://112.132.209.46/liveplay-kk.rtxapp.com/live/program/live/dnwshd/4000000/mnf.m3u8"
+      },
+      {
+        "name": "百事通线路",
+        "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/dnwshd/2300000/mnf.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225696/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "东方卫视 -4M1080(移动专属源)",
+    "urls": [{
+        "name": "百事通线路",
+        "url": "http://112.132.209.46/liveplay-kk.rtxapp.com/live/program/live/hddfws/4000000/mnf.m3u8"
+      },
+      {
+        "name": "百事通线路",
+        "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/hddfws/2300000/mnf.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225718/index.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225682/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "北京卫视 -4M1080(移动专属源)",
+    "urls": [{
+        "name": "百事通线路",
+        "url": "http://112.132.209.46/liveplay-kk.rtxapp.com/live/program/live/bjwshd/4000000/mnf.m3u8"
+      }, {
+        "name": "百事通线路",
+        "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/bjwshd/2300000/mnf.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225651/index.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225644/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "天津卫视 -4M1080(移动专属源)",
+    "urls": [{
+        "name": "百事通线路",
+        "url": "http://112.132.209.46/liveplay-kk.rtxapp.com/live/program/live/tjwshd/4000000/mnf.m3u8"
+      }, {
+        "name": "百事通线路",
+        "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/tjwshd/2300000/mnf.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225675/index.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225694/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "安徽卫视 -4M1080(移动专属源)",
+    "urls": [{
+        "name": "百事通线路",
+        "url": "http://112.132.209.46/liveplay-kk.rtxapp.com/live/program/live/ahwshd/4000000/mnf.m3u8"
+      }, {
+        "name": "百事通线路",
+        "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/ahwshd/2300000/mnf.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225701/index.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225671/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "山东卫视 -4M1080(移动专属源)",
+    "urls": [{
+        "name": "百事通线路",
+        "url": "http://112.132.209.46/liveplay-kk.rtxapp.com/live/program/live/sdwshd/4000000/mnf.m3u8"
+      }, {
+        "name": "百事通线路",
+        "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/sdwshd/2300000/mnf.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225672/index.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225642/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "广东南方卫视上星 -4M1080(移动专属源)",
+    "urls": [{
+      "name": "广西移动",
+      "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225748/index.m3u8"
+    }]
+  },
+  {
+    "name": "广东卫视 -4M1080(移动专属源)",
+    "urls": [{
+        "name": "百事通线路",
+        "url": "http://112.132.209.46/liveplay-kk.rtxapp.com/live/program/live/gdwshd/4000000/mnf.m3u8"
+      }, {
+        "name": "百事通线路",
+        "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/gdwshd/2300000/mnf.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225666/index.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225685/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "江苏卫视 -4M1080(移动专属源)",
+    "urls": [{
+        "name": "百事通线路",
+        "url": "http://112.132.209.46/liveplay-kk.rtxapp.com/live/program/live/jswshd/4000000/mnf.m3u8"
+      }, {
+        "name": "百事通线路",
+        "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/jswshd/2300000/mnf.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225722/index.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225636/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "江西卫视 -4M1080(移动专属源)",
+    "urls": [{
+        "name": "百事通线路",
+        "url": "http://112.132.209.46/liveplay-kk.rtxapp.com/live/program/live/jxwshd/4000000/mnf.m3u8"
+      }, {
+        "name": "百事通线路",
+        "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/jxwshd/2300000/mnf.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225669/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "浙江卫视 -4M1080(移动专属源)",
+    "urls": [{
+        "name": "百事通线路",
+        "url": "http://112.132.209.46/liveplay-kk.rtxapp.com/live/program/live/zjwshd/4000000/mnf.m3u8"
+      }, {
+        "name": "百事通线路",
+        "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/zjwshd/2300000/mnf.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225731/index.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225695/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "深圳卫视 -4M1080(移动专属源)",
+    "urls": [{
+        "name": "百事通线路",
+        "url": "http://112.132.209.46/liveplay-kk.rtxapp.com/live/program/live/szwshd/4000000/mnf.m3u8"
+      }, {
+        "name": "百事通线路",
+        "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/szwshd/2300000/mnf.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225725/index.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225691/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "湖北卫视 -4M1080(移动专属源)",
+    "urls": [{
+        "name": "百事通线路",
+        "url": "http://112.132.209.46/liveplay-kk.rtxapp.com/live/program/live/hbwshd/4000000/mnf.m3u8"
+      }, {
+        "name": "百事通线路",
+        "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/hbwshd/2300000/mnf.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225721/index.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225689/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "湖南卫视 -4M1080(移动专属源)",
+    "urls": [{
+        "name": "百事通线路",
+        "url": "http://112.132.209.46/liveplay-kk.rtxapp.com/live/program/live/hnwshd/4000000/mnf.m3u8"
+      }, {
+        "name": "百事通线路",
+        "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/hnwshd/2300000/mnf.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225719/index.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225692/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "辽宁卫视 -4M1080(移动专属源)",
+    "urls": [{
+        "name": "百事通线路",
+        "url": "http://112.132.209.46/liveplay-kk.rtxapp.com/live/program/live/lnwshd/4000000/mnf.m3u8"
+      }, {
+        "name": "百事通线路",
+        "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/lnwshd/2300000/mnf.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225779/index.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225639/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "重庆卫视 -4M1080(移动专属源)",
+    "urls": [{
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225745/index.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225679/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "黑龙江卫视 -4M1080(移动专属源)",
+    "urls": [{
+        "name": "百事通线路",
+        "url": "http://112.132.209.46/liveplay-kk.rtxapp.com/live/program/live/hljwshd/4000000/mnf.m3u8"
+      }, {
+        "name": "百事通线路",
+        "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/hljwshd/2300000/mnf.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225734/index.m3u8"
+      },
+      {
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225686/index.m3u8"
+      }
+    ]
+  }
+]

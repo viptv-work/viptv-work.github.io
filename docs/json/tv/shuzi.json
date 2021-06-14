@@ -1,0 +1,434 @@
+[{
+    "name": "淘娱乐 -北京IPTV(移动专属源)",
+    "urls": [{
+      "name": "北京移动",
+      "url": "http://otttv.bj.chinamobile.com/TVOD/88888888/224/3221226551/1.m3u8"
+    }]
+  },
+  {
+    "name": "淘电影 -北京IPTV(移动专属源)",
+    "urls": [{
+      "name": "北京移动",
+      "url": "http://otttv.bj.chinamobile.com/TVOD/88888888/224/3221226552/1.m3u8"
+    }]
+  },
+  {
+    "name": "淘剧场 -北京IPTV(移动专属源)",
+    "urls": [{
+      "name": "北京移动",
+      "url": "http://otttv.bj.chinamobile.com/TVOD/88888888/224/3221226553/1.m3u8"
+    }]
+  },
+  {
+    "name": "亚洲影院 - (移动专属源)",
+    "urls": [{
+        "name": "福建移动",
+        "url": "http://39.134.176.148/PLTV/88888888/224/3221226245/index.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://101.71.255.229:6610/zjhs/2/10052/index.m3u8?virtualDomain=zjhs.live_hls.zte.com"
+      }
+    ]
+  },
+  {
+    "name": "精品剧场 - (移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.134.176.148/PLTV/88888888/224/3221226181/index.m3u8"
+    }]
+  },
+  {
+    "name": "欧美电影 - (移动专属源)",
+    "urls": [{
+        "name": "福建移动",
+        "url": "http://39.134.176.148/PLTV/88888888/224/3221226176/index.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://101.71.255.229:6610/zjhs/2/10037/index.m3u8?virtualDomain=zjhs.live_hls.zte.com"
+      }
+    ]
+  },
+  {
+    "name": "CHC家庭影院 - (移动专属源)",
+    "urls": [{
+        "name": "福建移动",
+        "url": "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226462/index.m3u8"
+      }, {
+        "name": "福建移动",
+        "url": "http://111.20.105.60:6060/yinhe/2/ch00000090990000002085?virtualDomain=yinhe.live_hls.zte.com"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://61.189.255.139/live.aishang.ctlcdn.com/00000110240323_1/encoder/0/playlist.m3u8?CONTENTID=00000110240323_1"
+      }
+    ]
+  },
+  {
+    "name": "CHC高清电影 - (移动专属源)",
+    "urls": [{
+        "name": "福建移动",
+        "url": "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226463/index.m3u8"
+      }, {
+        "name": "福建移动",
+        "url": "http://61.189.255.139/live.aishang.ctlcdn.com/00000110240325_1/encoder/0/playlist.m3u8?CONTENTID=00000110240325_1"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://111.20.105.60:6060/yinhe/2/ch00000090990000002065?virtualDomain=yinhe.live_hls.zte.com"
+      }
+    ]
+  },
+  {
+    "name": "动作电影 - (移动专属源)",
+    "urls": [{
+        "name": "福建移动",
+        "url": "http://dbiptv.sn.chinamobile.com/PLTV/88888890/224/3221226465/index.m3u8"
+      }, {
+        "name": "福建移动",
+        "url": "http://61.189.255.139/live.aishang.ctlcdn.com/00000110240324_1/encoder/0/playlist.m3u8?CONTENTID=00000110240324_1"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://111.20.105.60:6060/yinhe/2/ch00000090990000002055?virtualDomain=yinhe.live_hls.zte.com"
+      }
+    ]
+  },
+  {
+    "name": "MAX极速汽车 - (移动专属源)",
+    "urls": [{
+        "name": "百事通线路",
+        "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/jsqchd/2300000/mnf.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://39.134.39.39/PLTV/88888888/224/3221226195/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "欢笑剧场 - (移动专属源)",
+    "urls": [
+      {
+        "name": "福建移动",
+        "url": "http://112.132.209.46/liveplay-kk.rtxapp.com/live/program/live/hxjchd/4000000/mnf.m3u8"
+      },
+      {
+      "name": "福建移动",
+      "url": "http://39.134.39.39/PLTV/88888888/224/3221226203/index.m3u8"
+    }]
+  },
+  {
+    "name": "都市剧场 - (移动专属源)",
+    "urls": [{
+        "name": "百事通线路",
+        "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/dsjchd/2300000/mnf.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://39.134.39.39/PLTV/88888888/224/3221226176/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "金马影院 - (移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://hpull.kktv8.com/livekktv/128600025/playlist.m3u8"
+    }]
+  },
+  {
+    "name": "第一财经 - (移动专属源)",
+    "urls": [{
+        "name": "福建移动",
+        "url": "http://39.134.168.91/PLTV/1/224/3221225494/index.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://39.134.39.37/PLTV/88888888/224/3221226172/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "点掌财经 - (移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://cclive2.aniu.tv/live/anzb.m3u8"
+    }]
+  },
+  {
+    "name": "SiTV - 七彩戏剧(移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221227025/index.m3u8"
+    }]
+  },
+  {
+    "name": "SiTV - 东方财经(移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221227122/index.m3u8"
+    }]
+  },
+  {
+    "name": "SiTV - 极速汽车(移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221227122/index.m3u8"
+    }]
+  },
+  {
+    "name": "SiTV - 法治天地(移动专属源)",
+    "urls": [{
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226143/index.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221227118/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "SiTV - 金色频道(移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221227126/index.m3u8"
+    }]
+  },
+  {
+    "name": "SiTV - 极速汽车(移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221227017/index.m3u8"
+    }]
+  },
+  {
+    "name": "SiTV - 动漫秀场(移动专属源)",
+    "urls": [{
+        "name": "百事通线路",
+        "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/dmxchd/2300000/mnf.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226141/index.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221227021/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "SiTV - 欢笑剧场(移动专属源)",
+    "urls": [{
+        "name": "百事通线路",
+        "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/hxjchd/2300000/mnf.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226729/index.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221227114/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "SiTV - 游戏风云(移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221227033/index.m3u8"
+    }]
+  },
+  {
+    "name": "SiTV - 生活时尚(移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221227029/index.m3u8"
+    }]
+  },
+  {
+    "name": "百视通 - 8M(移动专属源)",
+    "urls": [{
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221227134/index.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221227036/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "百事通 - 体育(移动专属源)",
+    "urls": [{
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226599/index.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226646/index.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226569/index.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226573/index.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226638/index.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226565/index.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226642/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "CGTN  - (移动专属源)",
+    "urls": [{
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226980/index.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221225822/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "CGTN - 纪录(移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221225813/index.m3u8"
+    }]
+  },
+  {
+    "name": "全纪实 - (百事通专属源)",
+    "urls": [{
+      "name": "百事通线路",
+      "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/qjshd/2300000/mnf.m3u8"
+    }]
+  },
+  {
+    "name": "中国教育 - 1(移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221227106/index.m3u8"
+    }]
+  },
+  {
+    "name": "中国教育 - 1(移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221225869/index.m3u8"
+    }]
+  },
+  {
+    "name": "中国教育 - 2(移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221227106/index.m3u8"
+    }]
+  },
+  {
+    "name": "中国教育 - 4(移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221227110/index.m3u8"
+    }]
+  },
+  {
+    "name": "影视 - 1(移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226708/index.m3u8"
+    }]
+  },
+  {
+    "name": "影视 - 5(移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226736/index.m3u8"
+    }]
+  },
+  {
+    "name": "影视 - 6(移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226692/index.m3u8"
+    }]
+  },
+  {
+    "name": "上海哈哈炫动 - (移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221225872/index.m3u8"
+    }]
+  },
+  {
+    "name": "北京卡酷少儿 - (移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226963/index.m3u8"
+    }]
+  },
+  {
+    "name": "广东嘉佳卡通 - (移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221227024/index.m3u8"
+    }]
+  },
+  {
+    "name": "湖南金鹰卡通 - (移动专属源)",
+    "urls": [{
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226959/index.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221225870/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "湖南先锋乒羽 - (移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226851/index.m3u8"
+    }]
+  },
+  {
+    "name": "湖南茶频道 - (移动专属源)",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226859/index.m3u8"
+    }]
+  },
+  {
+    "name": "炫动卡通 - (百事通专属源)",
+    "urls": [{
+      "name": "百事通线路",
+      "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/xdkt/1300000/mnf.m3u8"
+    }]
+  },
+  {
+    "name": "法制天地 - (百事通专属源)",
+    "urls": [{
+      "name": "百事通线路",
+      "url": "http://219.151.31.43:80/liveplay-kk.rtxapp.com/live/program/live/fztd/1300000/mnf.m3u8"
+    }]
+  }
+
+]

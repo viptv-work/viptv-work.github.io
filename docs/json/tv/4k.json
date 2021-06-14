@@ -1,0 +1,156 @@
+[{
+    "name": "CCTV-4K超高清",
+    "logo": "https://gitee.com/tyy85550424/IPTV/raw/master/logo/CCTV4k.png",
+    "urls": [{
+      "name": "北京移动",
+      "url": "http://117.148.187.83/PLTV/88888888/224/3221226758/index.m3u8"
+    }]  
+
+  },
+  {
+    "name": "BesTV4K",
+    "urls": [{
+        "name": "北京移动",
+        "url": "http://117.148.187.46/PLTV/88888888/224/3221226718/index.m3u8"
+      },
+      {
+        "name": "北京移动",
+        "url": "http://117.148.187.46/hwltc.tv.cdn.zj.chinamobile.com/PLTV/88888888/224/3221229311/01.m3u8?fmt=ts2hls"
+      }
+    ]
+  },
+  {
+    "name": "足球频道 - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "http://ivi.bupt.edu.cn:80/hls/zqhd.m3u8"
+    }]
+  },  
+  {
+    "name": "纯享4K",
+    "urls": [{
+        "name": "广西移动",
+        "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225726/index.m3u8"
+      }, {
+        "name": "江西移动",
+        "url": "http://39.134.115.163:8080/PLTV/88888910/224/3221225786/index.m3u8"
+      },
+      {
+        "name": "江西移动",
+        "url": "http://39.135.138.59:18890/PLTV/88888910/224/3221225786/index.m3u8"
+      },
+      {
+        "name": "福建移动",
+        "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226825/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "爱上4K",
+    "urls": [{
+      "name": "江西移动",
+      "url": "http://39.134.24.220/PLTV/88888888/224/3221226005/index.m3u8"
+    }]
+  },
+  {
+    "name": "芒果TV",
+    "urls": [{
+      "name": "福建移动",
+      "url": "http://39.135.53.199/ott.fj.chinamobile.com/PLTV/88888888/224/3221226887/index.m3u8"
+    }]
+  },
+  {
+    "name": "咪咕4K",
+    "urls": [{
+      "name": "广西移动",
+      "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225863/index.m3u8"
+    }]
+  }, {
+    "name": "VR测试",
+    "urls": [{
+      "name": "广西移动",
+      "url": "http://cdnrrs.gx.chinamobile.com/PLTV/88888888/224/3221225866/index.m3u8"
+    }]
+  },
+  {
+    "name": "欢笑剧场",
+    "logo": "https://gitee.com/tyy85550424/IPTV/raw/master/logo/欢笑剧场.png",
+    "urls": [{
+      "name": "江西移动",
+      "url": "http://39.134.39.37/PLTV/88888888/224/3221226318/index.m3u8"
+    }]
+  },
+  {
+    "name": "北京冬奥纪实4K",   
+    "urls": [{
+      "name": "北京移动HD", 
+      "url": "http://otttv.bj.chinamobile.com/TVOD/88888888/224/3221226563/1.m3u8"
+    },
+    {
+      "name": "北京移动HD", 
+      "url": "http://otttv.bj.chinamobile.com/TVOD/88888888/224/3221226564/1.m3u8"
+    }]
+  },
+  {
+    "name": "北京IPTV4K超清",
+    "logo": "https://gitee.com/tyy85550424/IPTV/raw/master/logo/北京IPTV4K超清.png",
+    "urls": [{
+      "name": "北京移动HD", 
+      "url": "http://otttv.bj.chinamobile.com/TVOD/88888888/224/3221226550/1.m3u8"
+    }]
+  },
+  {
+    "name": "北京IPTV淘BABY",    
+    "urls": [{
+      "name": "北京移动HD", 
+      "url": "http://otttv.bj.chinamobile.com/TVOD/88888888/224/3221226554/1.m3u8"
+    }]
+  },
+  {
+    "name": "北京IPTV淘剧场",    
+    "urls": [{
+      "name": "北京移动HD", 
+      "url": "http://otttv.bj.chinamobile.com/TVOD/88888888/224/3221226553/1.m3u8"
+    }]
+  },
+  {
+    "name": "北京IPTV淘娱乐",    
+    "urls": [{
+      "name": "北京移动HD", 
+      "url": "http://otttv.bj.chinamobile.com/TVOD/88888888/224/3221226551/1.m3u8"
+    }]
+  },
+  {
+    "name": "北京IPTV淘电影",    
+    "urls": [{
+      "name": "北京移动HD", 
+      "url": "http://otttv.bj.chinamobile.com/TVOD/88888888/224/3221226552/1.m3u8"
+    }]
+  },
+  {
+    "name": "北京IPTV萌宠TV",    
+    "urls": [{
+      "name": "北京移动HD", 
+      "url": "http://otttv.bj.chinamobile.com/TVOD/88888888/224/3221226555/1.m3u8"
+    }]
+  },
+  {
+    "name": "北京大健康",    
+    "urls": [{
+      "name": "北京移动HD", 
+      "url": "http://otttv.bj.chinamobile.com/TVOD/88888888/224/3221226556/1.m3u8"
+    }]
+  },
+  {
+    "name": "咪咕4K",
+    "logo": "https://gitee.com/tyy85550424/IPTV/raw/master/logo/北京IPTV4K超清.png",
+    "urls": [{
+      "name": "北京移动HD", 
+      "url": "http://otttv.bj.chinamobile.com/TVOD/88888888/224/3221226399/1.m3u8"
+    },
+    {
+      "name": "北京移动HD", 
+      "url": "http://otttv.bj.chinamobile.com/TVOD/88888888/224/3221226400/1.m3u8"
+    }]
+  }
+]

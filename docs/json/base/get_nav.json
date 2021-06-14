@@ -1,0 +1,64 @@
+[
+  [
+    [{
+      "id": "ivitv",
+      "name": "北邮电视",
+      "nav": "this.ivitvNav "
+    }, {
+      "id": "mgtv",
+      "name": "咪咕电视",
+      "nav": "this.mgtvNav"
+    }, {
+      "id": "cctvx",
+      "name": "CCTV频道",
+      "nav": "this.cctvxNav"
+    }],
+    [{
+      "id": "cbntv",
+      "name": "广电频道",
+      "nav": "this.cbntvNav"
+    }, {
+      "id": "iptv",
+      "name": "全球IPTV",
+      "nav": "this.iptvNav"
+    }, {
+      "id": "smtv",
+      "name": "私密IPTV",
+      "nav": "this.smtvNav"
+    }]
+  ],
+  [
+    [{
+        "id": "baidu",
+        "name": "百度直播",
+        "Nav": "this.baiduNav "
+      },
+      {
+        "id": "qedj",
+        "name": "企鹅电竞",
+        "Nav": "this.qedjNav "
+      }
+    ],
+    [{
+        "id": "qety",
+        "name": "企鹅体育",
+        "Nav": "this.qetyNav "
+      },
+      {
+        "id": "hpzb",
+        "name": "虎扑直播",
+        "Nav": "this.hpzbNav "
+      },
+      {
+        "id": "qszb",
+        "name": "球赛频道",
+        "Nav": "this.qszbNav "
+      },
+      {
+        "id": "zhibo",
+        "name": "中国体育",
+        "Nav": "this.zhiboNav "
+      }
+    ]
+  ]
+]

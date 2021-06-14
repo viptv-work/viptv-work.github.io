@@ -1,0 +1,485 @@
+[{
+    "name": "TVB-翡翠台",
+    "urls": [{
+      "name": "北京移动",
+      "url": "http://pullhls3948069e.live.126.net:80/live/3241ed20810336b22924180e5773fe84/playlist.m3u8"
+    }]
+  },
+  {
+    "logo": "https://viptv.gitee.io/api/img/logo/tv/ah.png",
+    "name": "凤凰卫视-资讯台(移动专属源)",
+    "urls": [{
+        "name": "凤凰专线",
+        "url": "http://zb.ios.ifeng.com:80/live/05QGCOB3T34/index.m3u8"
+      },
+      {
+        "name": "代理线路",
+        "url": "https://hnan.cloud/AQtQXg==.m3u8"
+      },
+      {
+        "name": "北京移动",
+        "url": "http://otttv.bj.chinamobile.com/TVOD/88888888/224/3221225949/1.m3u8"
+      },
+      {
+        "name": "陕西移动",
+        "url": "http://dbiptv.sn.chinamobile.com:80/PLTV/88888890/224/3221226546/index.m3u8"
+      },
+      {
+        "name": "移动HD",
+        "url": "http://117.169.124.37:6610/ysten-businessmobile/live/fhzixun/1.m3u8"
+      },
+      {
+        "name": "中国移动",
+        "url": "http://117.169.120.138:8080/live/fhzixun/index.m3u8"
+      },
+      {
+        "name": "中国移动",
+        "url": "http://117.169.120.160:8080/live/fhzixun/index.m3u8"
+      },
+      {
+        "name": "中国移动",
+        "url": "http://125.210.152.18:9090/live/FHZX_1200.m3u8"
+      }
+
+    ]
+  },
+  {
+    "name": "凤凰卫视-中文台(移动专属源)",
+    "logo": "https://gitee.com/tyy85550424/IPTV/raw/master/logo/CCTV4k.png",
+    "urls": [{
+        "name": "凤凰专线",
+        "url": "http://zb.ios.ifeng.com:80/live/05QGDA0CIRK/index.m3u8"
+      },
+      {
+        "name": "代理线路",
+        "url": "https://hnan.cloud/AQtUXg==.m3u8"
+      },
+      {
+        "name": "北京移动",
+        "url": "http://otttv.bj.chinamobile.com/TVOD/88888888/224/3221225942/1.m3u8"
+      },
+      {
+        "name": "北京移动",
+        "url": "http://otttv.bj.chinamobile.com/TVOD/88888888/224/3221225948/1.m3u8"
+      },
+      {
+        "name": "陕西移动",
+        "url": "http://dbiptv.sn.chinamobile.com:80/PLTV/88888890/224/3221226546/index.m3u8"
+      },
+      {
+        "name": "移动HD",
+        "url": "http://117.169.124.37:6610/ysten-businessmobile/live/fhchinese/1.m3u8"
+      },
+      {
+        "name": "移动HD",
+        "url": "http://117.169.120.138:8080/live/fhchinese/index.m3u8"
+      },
+
+      {
+        "name": "移动HD",
+        "url": "http://223.110.245.167:80/ott.js.chinamobile.com/PLTV/3/224/3221226922/index.m3u8"
+      },
+      {
+        "name": "中国移动",
+        "url": "http://125.210.152.18:9090/live/FHZW_1200.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "凤凰卫视-香港台(移动专属源)",
+    "urls": [{
+        "name": "代理线路",
+        "url": "https://hnan.cloud/BSJEXg==.m3u8"
+      },
+      {
+        "name": "北京移动",
+        "url": "http://223.110.245.136:80/ott.js.chinamobile.com/PLTV/3/224/3221226975/index.m3u8"
+      },
+      {
+        "name": "北京移动",
+        "url": "http://223.110.245.136:80/PLTV/3/224/3221226975/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "香港卫视(移动专属源)",
+    "urls": [{
+      "name": "代理线路",
+      "url": "https://hnan.cloud/BSJDUFpBXA0=.m3u8"
+    }]
+  },
+  {
+    "name": "香港C+ - 蓝光",
+    "urls": [{
+      "name": "超清蓝光",
+      "urls": "http://gslbmeiah.cdn.hk.chinamobile.com/livehls/MOB-U1-NO/03.m3u8"
+    }]
+  },
+  {
+    "name": "香港有限新闻台 - 超清蓝光",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/c047927d65907951c043fd2bcddf0b9c.flv"
+    }]
+  },
+  {
+    "name": "香港有限18台 - 超清蓝光",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/11968ab42e7d6008d91f928cbb1fe885.flv"
+    }]
+  },
+  {
+    "name": "香港有限高清603台 - 超清蓝光",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/0e42d45170da056ea3591b28164d6a91.flv"
+    }]
+  }, {
+    "name": "TVB无限新闻台 - 蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/e0d878ed274d84f60c6716e496a5a549.flv"
+    }, {
+      "name": "超清蓝光",
+      "url": "http://prd-vcache.edge-global.akamai.tvb.com:80/__cl/slocalr2625/__c/ott_C_h264/__op/default/__f/2/v1500000/index.m3u8"
+    }]
+  }, {
+    "name": "TVB无限财经台 - 蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/a18c26dba1dce94d044bfab9fcd599f2.flv"
+    }]
+  }, {
+    "name": "TVB翡翠台 - 超清蓝光",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/60eb7dd5e6d4d56adf4993f47ffe8579.flv"
+    }]
+  }, {
+    "name": "TVB明珠台 - 蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/8824b28b0b8a4eddbf1c51ea6020e97d.flv"
+    }]
+  }, {
+    "name": "TVB - j2超清蓝光",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/f7a6d4953ff5235ca0ae608a04705d47.flv"
+    }]
+  }, {
+    "name": "VIUTV - 超清蓝光",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/a233d94d186bfde1d24fbef72c9bacf8.flv"
+    }]
+  }, {
+    "name": "VIUTV - SIX超清蓝光",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/bbdf0c6ec478dd6d7ab6481619653689.flv"
+    }]
+  }, {
+    "name": "NOW新闻台 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/0d17a799ef572463198497b1bba450d5.flv"
+    }]
+  }, {
+    "name": "VIUTV - SIX超清蓝光",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/bbdf0c6ec478dd6d7ab6481619653689.flv"
+    }]
+  }, {
+    "name": "香港开电视 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/c93753edcc328f087e0343c937f76d4e.flv"
+    }]
+  }, {
+    "name": "港台电视31 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/c93753edcc328f087e0343c937f76d4e.flv"
+    }]
+  },
+  {
+    "name": "港台电视32 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/f52ed74341757303c06f76a047a506d7.flv"
+    }]
+  },
+  {
+    "name": "中天新闻台 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/55ae836b34aaddbcf9dd3359bdc998fa.flv"
+    }]
+  },
+  {
+    "name": "东森新闻台 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/3cc62b9cc340082a50baba53a3828a71.flv"
+    }]
+  },
+  {
+    "name": "东森财经新闻台 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/972c3a27d292f5060986f939a42fad9e.flv"
+    }]
+  },
+  {
+    "name": "壹新闻台 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/09499032b9a4620374ec7f9ac758aa4d.flv"
+    }]
+  },
+  {
+    "name": "台视新闻台 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/c60144615ad732ec454e396240683625.flv"
+    }]
+  },
+  {
+    "name": "中视新闻台 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/35530470ebcac8b62d90121bbceaa393.flv"
+    }]
+  },
+  {
+    "name": "华视新闻台 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/9439d9983fa1e692273a5184aaba0cb2.flv"
+    }]
+  },
+  {
+    "name": "TVBS新闻台 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/683f9fdba6cca8dd86a5331b3df6cc7e.flv"
+    }]
+  },
+  {
+    "name": "三立新闻台 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/c275765f8388b7eb92c54a2e275aabfb.flv"
+    }]
+  },
+  {
+    "name": "民视 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/1b433759c395af471c8b885b67e94764.flv"
+    }]
+  },
+  {
+    "name": "台视 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/99bcf7e5e48223128e1a6477f480335a.flv"
+    }]
+  },
+  {
+    "name": "中视 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/c43b4bde26e7db1a2dab46692649a310.flv"
+    }]
+  },
+  {
+    "name": "华视 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/c6093a190a4713c9699dae7cb7fd065e.flv"
+    }]
+  },
+  {
+    "name": "TVBS欢乐台 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/f6ec3e35866a4cd080744ec980a29a08.flv"
+    }]
+  },
+  {
+    "name": "东森超视 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/3697092dc064d99e116d726c73a387b0.flv"
+    }]
+  },
+  {
+    "name": "纬来体育台 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/261cfd6e5dc0fe08e56a5a5554de4222.flv"
+    }]
+  }, {
+    "name": "纬来日本台 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/6dc4fccbb3ac4d1253bd585cde8a2d20.flv"
+    }]
+  },
+  {
+    "name": "纬来音乐台 -蓝光(仅支持手机观看)",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "https://flv3948069e.live.126.net:443/live/ede08726777774ed263af011f50877bf.flv"
+    }]
+  },
+  {
+    "name": "澳门莲花 -蓝光高清",
+    "urls": [{
+      "name": "超清蓝光",
+      "url": "http://3739115358.cloudvdn.com:80/a.m3u8?domain=live-hls.macaulotustv.com&player=dIQAAL3DKIR3RnwW&secondToken=secondToken%3AZtriOw8VtRVz0Riq0P8SsfVUaWk&streamid=lotustv%3Alotustv%2Fmacaulotustv&v3=1"
+    }]
+  }, {
+    "name": "澳视葡文 - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "http://61.244.22.4/ch2/ch2.live/index.m3u8"
+    }]
+  }, {
+    "name": "澳视综艺 - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "http://61.244.22.5/ch6/_definst_/hd_ch6.live/playlist.m3u8"
+    }]
+  }, {
+    "name": "澳視衛星 - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "http://61.244.22.4/ch3/ch3.live/index.m3u8"
+    }]
+  }, {
+    "name": "澳視澳門 - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "http://61.244.22.4/ch1/ch1.live/index.m3u8"
+    }]
+  }, {
+    "name": "亚视ATV - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "https://15813114727637862976168173814320.live.prod.hkatv.com/a1_cbr_lo_720p.m3u8"
+    }]
+  }, {
+    "name": "CNN国际 - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "http://1111296894.rsc.cdn77.org/ls-54548-1/tracks-v1a1/mono.m3u8"
+    }]
+  }, {
+    "name": "大爱一台 - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "https://pulltv1.wanfudaluye.com/live/tv1.m3u8"
+    }]
+  }, {
+    "name": "大爱二台 - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "https://pulltv2.wanfudaluye.com/live/tv2.m3u8"
+    }]
+  }, {
+    "name": "大爱三台 - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "https://pulltv3.wanfudaluye.com/live/tv3.m3u8"
+    }]
+  }, {
+    "name": "半岛新闻 - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "http://live-hls-web-aja.getaj.net/AJA/02.m3u8"
+    }]
+  }, {
+    "name": "newSMax - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "https://nmxlive.akamaized.net/hls/live/529965/Live_1/index_1080.m3u8"
+    }]
+  }, {
+    "name": "TRT world - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "https://nmxlive.akamaized.net/hls/live/529965/Live_1/index_1080.m3u8"
+    }]
+  }, {
+    "name": "RTB - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "https://rtb-channel.glue.live/SMil:rtb1/chunklist_w1011936126_b1120000_sleng.m3u8"
+    }]
+  }, {
+    "name": "berita - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "https://rtmbeSMobile.secureswiftcontent.com/Origin03/ngrp:RTM3/chunklist_b2064000.m3u8"
+    }]
+  }, {
+    "name": "OKEY - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "https://rtmokeymobile.secureswiftcontent.com/Origin02/ngrp:RTM2/chunklist_b2064000.m3u8"
+    }]
+  }, {
+    "name": "TV5 - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "http://v3plusinfo247hls-i.akamaihd.net/hls/live/218877-b/v3plusinfo247hls/v3plusinfo247hls_1_1.m3u8"
+    }]
+  }, {
+    "name": "TV2 - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "https://rtm2mobile.secureswiftcontent.com/Origin01/ngrp:RTM1/chunklist_b2064000.m3u8"
+    }]
+  }, {
+    "name": "TOKYOMX - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "http://movie.mcas.jp/mcas/mx2_2/chunklist.m3u8"
+    }]
+  }, {
+    "name": "亚美卫视 - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "http://movie.mcas.jp/mcas/mx2_2/chunklist.m3u8"
+    }]
+  }, {
+    "name": "NHK24 - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "https://nhkw-zh-hlscomp.akamaized.net/8thz5iufork8wjip/playlist.m3u8"
+    }]
+  }, {
+    "name": "半岛英国 - 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "https://live-hls-web-aje.getaj.net/AJE/index.m3u8"
+    }]
+  }, {
+    "name": "Sky 1 Racing- 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "https://skylivesky-i.akamaihd.net/hls/live/569780/skylive/sky1_extreme@569780.m3u8"
+    }]
+  }, {
+    "name": "Sky 2 Racing- 超清蓝光",
+    "urls": [{
+      "name": "北京移动",
+      "url": "https://skylivesky-i.akamaihd.net/hls/live/569780/skylive/sky2_extreme@569780.m3u8"
+    }]
+  }
+]

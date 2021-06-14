@@ -1,0 +1,845 @@
+[{
+    "name": "CCTV-1 高清",
+    "logo": "https://gitee.com/tyy85550424/IPTV/raw/master/logo/CCTV1.png",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221226062/index.m3u8"
+    }]
+  },
+  {
+    "name": "陕西新闻资讯",
+    "logo": "https://gitee.com/tyy85550424/IPTV/raw/master/logo/CCTV1.png",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225500/index.m3u8"
+    }]
+  },
+  {
+    "name": "陕西都市青春",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225830/index.m3u8"
+    }]
+  },
+  {
+    "name": "陕西生活",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225531/index.m3u8"
+    }]
+  },
+  {
+    "name": "陕西公共",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225533/index.m3u8"
+    }]
+  },
+  {
+    "name": "陕西体育休闲",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225535/index.m3u8"
+    }]
+  },
+  {
+    "name": "陕西影视",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225532/index.m3u8"
+    }]
+  },
+  {
+    "name": "陕西西部电影",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225536/index.m3u8"
+    }]
+  },
+  {
+    "name": "西安新闻综合",
+    "urls": [{
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225668/index.m3u8"
+      },
+      {
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225811/index.m3u8"
+      },
+      {
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225812/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "白鹤都市",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221226032/index.m3u8"
+    }]
+  },
+  {
+    "name": "西安商务资讯",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221226033/index.m3u8"
+    }]
+  },
+  {
+    "name": "西安文化影视",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221226034/index.m3u8"
+    }]
+  },
+  {
+    "name": "西安丝路",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221226035/index.m3u8"
+    }]
+  },
+  {
+    "name": "西安购物",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221226036/index.m3u8"
+    }]
+  },
+  {
+    "name": "西安教育电视台",
+    "urls": [{
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221226014/index.m3u8"
+      },
+      {
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221226015/index.m3u8"
+      },
+      {
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221226037/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "蓝田综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225864/index.m3u8"
+    }]
+  },
+  {
+    "name": "蓝田二套",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225865/index.m3u8"
+    }]
+  },
+  {
+    "name": "长安一套",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225896/index.m3u8"
+    }]
+  },
+  {
+    "name": "高陵综合",
+    "urls": [{
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225920/index.m3u8"
+      },
+      {
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225970/index.m3u8"
+      },
+      {
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225836/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "阎良综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225866/index.m3u8"
+    }]
+  },
+  {
+    "name": "临潼综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225966/index.m3u8"
+    }]
+  },
+  {
+    "name": "临潼影视",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225967/index.m3u8"
+    }]
+  },
+  {
+    "name": "鄠邑综合",
+    "urls": [{
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225919/index.m3u8"
+      },
+      {
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225839/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "鄠邑二套",
+    "urls": [{
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225969/index.m3u8"
+      },
+      {
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225969/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "周至综合",
+    "urls": [{
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225837/index.m3u8"
+      },
+      {
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225867/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "周至综合",
+    "urls": [{
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225837/index.m3u8"
+      },
+      {
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225867/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "周至二套",
+    "urls": [{
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225968/index.m3u8"
+      },
+      {
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225838/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "泾渭影视",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225971/index.m3u8"
+    }]
+  },
+  {
+    "name": "咸阳新闻综合",
+    "urls": [{
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225659/index.m3u8"
+      },
+      {
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225815/index.m3u8"
+      },
+      {
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225816/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "咸阳影视",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221226041/index.m3u8"
+    }]
+  },
+  {
+    "name": "咸阳教育",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221226043/index.m3u8"
+    }]
+  },
+  {
+    "name": "杨凌综合",
+    "urls": [{
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225900/index.m3u8"
+      },
+      {
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225940/index.m3u8"
+      },
+      {
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225697/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "杨凌现代农业",
+    "urls": [{
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225901/index.m3u8"
+      },
+      {
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225941/index.m3u8"
+      },
+      {
+        "name": "陕西广电",
+        "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225698/index.m3u8"
+      }
+    ]
+  },
+  {
+    "name": "三原综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225973/index.m3u8"
+    }]
+  },
+  {
+    "name": "三原二套",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225974/index.m3u8"
+    }]
+  },
+  {
+    "name": "泾阳综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225974/index.m3u8"
+    },
+    {
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225917/index.m3u8"
+    }]
+  },
+  {
+    "name": "泾阳二套",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225988/index.m3u8"
+    }]
+  },
+  {
+    "name": "乾县综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225977/index.m3u8"
+    }]
+  },
+  {
+    "name": "礼泉新闻",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225978/index.m3u8"
+    }]
+  },
+  {
+    "name": "礼泉生活",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225979/index.m3u8"
+    }]
+  },
+  {
+    "name": "永寿综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225980/index.m3u8"
+    }]
+  },
+  {
+    "name": "永寿二套",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225981/index.m3u8"
+    }]
+  },
+  {
+    "name": "兴平综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225975/index.m3u8"
+    }]
+  },
+  {
+    "name": "兴平二套",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225976/index.m3u8"
+    }]
+  },
+  {
+    "name": "彬州新闻综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225982/index.m3u8"
+    }]
+  },
+  {
+    "name": "彬州人文经济",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225983/index.m3u8"
+    }]
+  },
+  {
+    "name": "旬邑综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225985/index.m3u8"
+    }]
+  },
+  {
+    "name": "淳化综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225986/index.m3u8"
+    }]
+  },
+  {
+    "name": "武功新闻综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225898/index.m3u8"
+    }]
+  },
+  {
+    "name": "武功二套",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225987/index.m3u8"
+    }]
+  },
+  {
+    "name": "长武综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225984/index.m3u8"
+    }]
+  },
+  {
+    "name": "铜川新闻综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225820/index.m3u8"
+    },
+    {
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225821/index.m3u8"
+    }]
+  },
+  {
+    "name": "铜川文化娱乐",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221226045/index.m3u8"
+    }]
+  },
+  {
+    "name": "耀州综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225884/index.m3u8"
+    }]
+  },
+  {
+    "name": "渭南新闻综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/32212256660/index.m3u8"
+    }]
+  },
+  {
+    "name": "渭南公共",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/32212256048/index.m3u8"
+    }]
+  },
+  {
+    "name": "渭南教育",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/32212256050/index.m3u8"
+    }]
+  },
+  {
+    "name": "渭南临渭",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/32212256056/index.m3u8"
+    }]
+  },
+  {
+    "name": "华州综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225955/index.m3u8"
+    }]
+  },
+  {
+    "name": "华州二套",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225956/index.m3u8"
+    }]
+  },
+  {
+    "name": "澄城新闻",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225961/index.m3u8"
+    },
+    {
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221226061/index.m3u8"
+    }]
+  },
+  {
+    "name": "澄城公共",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225962/index.m3u8"
+    }]
+  },
+  {
+    "name": "大荔新闻综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225912/index.m3u8"
+    }]
+  },  
+  {
+    "name": "美丽大荔",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225959/index.m3u8"
+    }]
+  },
+  {
+    "name": "大荔影视",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225960/index.m3u8"
+    }]
+  },
+  {
+    "name": "合阳综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225858/index.m3u8"
+    }]
+  },
+  {
+    "name": "合阳二套",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225859/index.m3u8"
+    }]
+  },
+  {
+    "name": "合阳三套",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225860/index.m3u8"
+    }]
+  },
+  {
+    "name": "蒲城综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225913/index.m3u8"
+    }]
+  },
+  {
+    "name": "蒲城二套",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225963/index.m3u8"
+    }]
+  },
+  {
+    "name": "白水综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225914/index.m3u8"
+    }]
+  },
+  {
+    "name": "白水二套",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225964/index.m3u8"
+    }]
+  },
+  {
+    "name": "潼关新闻综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225915/index.m3u8"
+    }]
+  },
+  {
+    "name": "潼关人文旅游",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225957/index.m3u8"
+    }]
+  },
+  {
+    "name": "潼关公共",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225958/index.m3u8"
+    }]
+  },
+  {
+    "name": "富平综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225905/index.m3u8"
+    }]
+  },
+  {
+    "name": "富平二套",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225906/index.m3u8"
+    }]
+  },
+  {
+    "name": "韩城综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225874/index.m3u8"
+    }]
+  },
+  {
+    "name": "韩城生活",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225965/index.m3u8"
+    }]
+  },
+  {
+    "name": "华阴综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225856/index.m3u8"
+    }]
+  },
+  {
+    "name": "华阴二套",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225857/index.m3u8"
+    }]
+  },
+  {
+    "name": "延安综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225662/index.m3u8"
+    },
+    {
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225700/index.m3u8"
+    },
+    {
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221226044/index.m3u8"
+    },
+    {
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225828/index.m3u8"
+    },
+    {
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225829/index.m3u8"
+    }]
+  },
+  {
+    "name": "延安公共",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221226051/index.m3u8"
+    }]
+  },
+  {
+    "name": "延安党员教育",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221226052/index.m3u8"
+    }]
+  },
+  {
+    "name": "宝塔电视台",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225885/index.m3u8"
+    }]
+  },
+  {
+    "name": "子长综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225887/index.m3u8"
+    }]
+  },
+  {
+    "name": "志丹综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225888/index.m3u8"
+    }]
+  },
+  {
+    "name": "延川综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225889/index.m3u8"
+    }]
+  },
+  {
+    "name": "安塞综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225902/index.m3u8"
+    }]
+  },
+  {
+    "name": "甘泉综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225904/index.m3u8"
+    }]
+  },
+  {
+    "name": "延长综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225907/index.m3u8"
+    }]
+  },
+  {
+    "name": "洛川综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225908/index.m3u8"
+    }]
+  },
+  {
+    "name": "宜川新闻综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225909/index.m3u8"
+    }]
+  },
+  {
+    "name": "黄龙综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225916/index.m3u8"
+    }]
+  },
+  {
+    "name": "黄陵综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225886/index.m3u8"
+    }]
+  },
+  {
+    "name": "富县综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225695/index.m3u8"
+    }]
+  },
+  {
+    "name": "吴起综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225910/index.m3u8"
+    }]
+  },
+  {
+    "name": "榆林一套",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225897/index.m3u8"
+    },
+    {
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225822/index.m3u8"
+    },
+    {
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225823/index.m3u8"
+    }]
+  },
+  {
+    "name": "榆林二套",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221226039/index.m3u8"
+    }]
+  },
+  {
+    "name": "横山综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225894/index.m3u8"
+    },
+    {
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221226000/index.m3u8"
+    }]
+  },
+  {
+    "name": "榆阳综合",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225852/index.m3u8"
+    }]
+  },
+  {
+    "name": "榆阳二套",
+    "urls": [{
+      "name": "陕西广电",
+      "url": "http://119.167.231.111/zycfcdn.gdwlcloud.com/PLTV/88888888/224/3221225990/index.m3u8"
+    }]
+  }
+  
+  
+  
+
+
+
+
+
+
+]
